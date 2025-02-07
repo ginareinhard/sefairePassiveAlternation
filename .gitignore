@@ -1,3 +1,6 @@
+.DS_store
+*term_paper.html
+.~lock.*
 .Rproj.user
 .Rhistory
 .RData

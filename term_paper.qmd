@@ -1,5 +1,20 @@
 ---
-title: "term_paper"
-format: html
-editor: visual
+title: "Term paper"
+subtitle: ""
+author: "Rose Hörsting & Gina Reinhard"
+date: "2025-03-15"
+engine: knitr
+bibliography: references.bib
+format: 
+  html:
+    df-print: default
+    toc: true
+    toc-depth: 3
+    fig-width: 10
+    fig-height: 8
+    number-sections: true
+    embed-resources: true
+link-citations: true
+csl: "apa_7th.csl"
+number-sections: true
 ---

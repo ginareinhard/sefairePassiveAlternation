@@ -23,45 +23,76 @@ number-sections: true
 
 # The French passive alternation of *être* and *se faire*
 
-## The canonical passive with *être*
+## Canonical passive with *être*
 
-## The *se faire* passive
+## *se faire* passive
 
 ### Historical background
 
--   “modern” construction that has become more and more popular: origin in middle of 20th centruy
--   grammaticalisation process and reanalysis → no transparent lexical meaning anymore; faire becomes auxiliary, se loses reflexive meaning → in merging they lose their reflexive and causative meaning and gain a passive reading (désémantisation)
+-   “modern” construction that has become more and more popular: origin in middle of 20th century @bellec_grammaticalisation_2015, @bellec_quand_2014
+-   grammaticalisation process and reanalysis → no transparent lexical meaning anymore; faire becomes auxiliary, se loses reflexive meaning → in merging they lose their reflexive and causative meaning and gain a passive reading (désémantisation, @bellec_construction_2014
 -   but causative construction did not disappear → coexists with passive reading
--   causative vs. passive reading of the “se faire” construction
--   criteria for causative reading (Lebellec)
--   but: amibiguity possible
--   Washio 1993
+-   causative vs. passive reading of the “se faire” construction @kupferman_construction_1995, @labelle_anticausativizing_2013 opposing Tasmowski and van Oelen (1987)
+-   criteria for causative reading @labelle_anticausativizing_2013
+-   but: amibiguity possible @washio_when_1993
 -   how much is it used today (according to authors/ background literature) and in which settings
     -   se faire less formal, more figurative and emotional, used to build the passive with indirect object as the agent & to express passivity in dynamic/ ongoing processes, more spoken
-    -   etre pasive more “neutral”, more formal, more written
+    -   etre passive more “neutral”, more formal, more written
 
 ### Structure and meaning
 
--   “se” as reflexive pronoun, “faire” as causative verb → passive auxiliary (Labelle) → Language example
+-   “se” as reflexive pronoun, “faire” as causative verb → passive auxiliary (@labelle_anticausativizing_2013) → Language example
 -   strategy of passivization: binding by a reflexive clitic
--   syntactic characteristics of se faire passive: (Labelle)
+-   syntactic characteristics of se faire passive: @labelle_anticausativizing_2013
     1.  The subject of the higher verb *faire* is interpreted as affected by the lower event as a result of (53).
     2.  There is a missing NP within the embedded VP.
     3.  The reflexive clitic on *faire* binds the missing NP and is coindexed with the subject of *faire*.
 
 ## *être* vs. *se faire*: Competition or complementation?
-- se faire does not always compete with canonical passive, only if missing NP is a direct object (Washio 1995, Labelle 16) → indirect object of the active sentence can only be used as the agent in se faire construction (no competition with etre → exclude)
-- defining the variable context
-### Maybe: Comparison to similar alternations in other languages; English, East Asian languages
+
+-   se faire does not always compete with canonical passive, only if missing NP is a direct object (Washio 1995, @labelle_anticausativizing_2013 [16]) → indirect object of the active sentence can only be used as the agent in se faire construction (no competition with etre → exclude)
+-   se faire passive has evolved to be used in sitations without a causer (passive reading) @bellec_construction_2014
+-   figurative, "besoin d’expressivité and extravagance" instead of "used up" canonical passive @bellec_construction_2014 [206]
+-   defining the variable context
+
+### Maybe: Comparison to similar alternations in other languages; English @bohmann_large-scale_2023, East Asian languages
+
+-   while some scholars speak of semantic differences between the canonical passive and the se faire passive, @kupferman_construction_1995 sees them as semnatically synonymous
 
 # Data and Methods
+
 ## Data Collection
+
 ## Logistic Regression
+
 ### Variables, Hypotheses, Preference constraints?
+
+#### Subject responsibility/ subject affectedness
+
+-   animacy
+    -   tagging: continuum? inanimate vs. animate? (@bohmann_large-scale_2023 added: ”body parts”, “other”; @hundt_be-_2024 added: “human”)
+    -   get passive: preponderence for animate subjects (@hundt_be-_2024), parallel for French
+    -   Gaatone and Tasmowski & Van Oelen: subject of se faire passive always causer; always responsible to some degree for the event; se faire passive strongly disfavours inanimate subjects; however @labelle_anticausativizing_2013 claims that there is no causer in passive se faire → subject is not necessarily responsible (also @washio_when_1993)
+    -   emotional affectedness (often negative), more common with animate subjects since inanimate subject can hardly be emotionally affected (interaction with verb types?)
+    -   se faire passive also found as used with inanimate subjects (sometimes in idioms, @labelle_anticausativizing_2013)
+    -   @bohmann_large-scale_2023: get passive becomes more likely with inanimate subjects over time; development towards a more general passive (43); significance of subject responsibility lessening
+-   Agent PP (par-phrase)
+    -   Hundt et al: “by-phrase openly assigns responsibility” to an external agent
+    -   @bohmann_large-scale_2023: “partially mitigate subject responsibility”, expected to favour be-passive (finding: more in the early data than now)
+    -   → par-phrase less likely for se faire than for etre passive?
+    -   @kupferman_construction_1995: agentivity requirement for agents denoted by par-phrase
+-   Verbs that denote responsibility (which would those be?)
+
+**Hypothesis:**
+
+Se faire is used frequently with subjects that are affected by an action (positively or negatively, emotionally or physically). Since animate subjects are more likely to experience affectedness than inanimate subjects we hypothesize that animate subjects will favour the *se faire* passive, while inanimate subjects will favour the canonical *être* passive.
+
+Further, we hypothesize that the presence of an agent PP (”par”-phrase) prefers the canonical être passive over the se faire passive (because it assigns responsibility to an external agent that is not the subject).
 
 ## (Maybe: Memory based learning)
 
 # Results
-# Discussion
-# Conclusion/Outlook
 
+# Discussion
+
+# Conclusion/Outlook

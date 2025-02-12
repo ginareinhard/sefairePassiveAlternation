@@ -18,3 +18,50 @@ link-citations: true
 csl: "apa_7th.csl"
 number-sections: true
 ---
+
+# Introduction
+
+# The French passive alternation of *être* and *se faire*
+
+## The canonical passive with *être*
+
+## The *se faire* passive
+
+### Historical background
+
+-   “modern” construction that has become more and more popular: origin in middle of 20th centruy
+-   grammaticalisation process and reanalysis → no transparent lexical meaning anymore; faire becomes auxiliary, se loses reflexive meaning → in merging they lose their reflexive and causative meaning and gain a passive reading (désémantisation)
+-   but causative construction did not disappear → coexists with passive reading
+-   causative vs. passive reading of the “se faire” construction
+-   criteria for causative reading (Lebellec)
+-   but: amibiguity possible
+-   Washio 1993
+-   how much is it used today (according to authors/ background literature) and in which settings
+    -   se faire less formal, more figurative and emotional, used to build the passive with indirect object as the agent & to express passivity in dynamic/ ongoing processes, more spoken
+    -   etre pasive more “neutral”, more formal, more written
+
+### Structure and meaning
+
+-   “se” as reflexive pronoun, “faire” as causative verb → passive auxiliary (Labelle) → Language example
+-   strategy of passivization: binding by a reflexive clitic
+-   syntactic characteristics of se faire passive: (Labelle)
+    1.  The subject of the higher verb *faire* is interpreted as affected by the lower event as a result of (53).
+    2.  There is a missing NP within the embedded VP.
+    3.  The reflexive clitic on *faire* binds the missing NP and is coindexed with the subject of *faire*.
+
+## *être* vs. *se faire*: Competition or complementation?
+- se faire does not always compete with canonical passive, only if missing NP is a direct object (Washio 1995, Labelle 16) → indirect object of the active sentence can only be used as the agent in se faire construction (no competition with etre → exclude)
+- defining the variable context
+### Maybe: Comparison to similar alternations in other languages; English, East Asian languages
+
+# Data and Methods
+## Data Collection
+## Logistic Regression
+### Variables, Hypotheses, Preference constraints?
+
+## (Maybe: Memory based learning)
+
+# Results
+# Discussion
+# Conclusion/Outlook
+

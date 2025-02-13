@@ -32,7 +32,7 @@ number-sections: true
 -   “modern” construction that has become more and more popular: origin in middle of 20th century @bellec_grammaticalisation_2015, @bellec_quand_2014
 -   grammaticalisation process and reanalysis → no transparent lexical meaning anymore; faire becomes auxiliary, se loses reflexive meaning → in merging they lose their reflexive and causative meaning and gain a passive reading (désémantisation, @bellec_construction_2014
 -   but causative construction did not disappear → coexists with passive reading
--   causative vs. passive reading of the “se faire” construction @kupferman_construction_1995, @labelle_anticausativizing_2013 opposing Tasmowski and van Oelen (1987)
+-   causative vs. passive reading of the “se faire” construction @kupferman_construction_1995, @labelle_anticausativizing_2013 opposing Tasmowski and van Oelen (1987); claimed that passive se faire is only a "weak reading" of the causative and/or that passive reading is not necessary since all constructions can be explained by causative reading @sveberg_se_2012
 -   criteria for causative reading @labelle_anticausativizing_2013
 -   but: amibiguity possible @washio_when_1993
 -   how much is it used today (according to authors/ background literature) and in which settings
@@ -42,7 +42,7 @@ number-sections: true
 ### Structure and meaning
 
 -   “se” as reflexive pronoun, “faire” as causative verb → passive auxiliary (@labelle_anticausativizing_2013) → Language example
--   strategy of passivization: binding by a reflexive clitic
+-   strategy of passivization: binding by a reflexive clitic @labelle_anticausativizing_2013 [23]
 -   syntactic characteristics of se faire passive: @labelle_anticausativizing_2013
     1.  The subject of the higher verb *faire* is interpreted as affected by the lower event as a result of (53).
     2.  There is a missing NP within the embedded VP.
@@ -95,7 +95,7 @@ Further, we hypothesize that the presence of an agent PP (”par”-phrase) pref
 
 -   verb telicity: être passive describes a result/ and endpoint (telic) while se faire passive is used for actions that are ongoing/ in process (atelic) @bellec_construction_2014
 -   se faire passive preferred for verbs that are in their nature ongoing (e.g. perception verbs) @bellec_construction_2014 [209]
--   periphrase constructions: "être en train de...", "venir de faire qc" (progressive) more natural with se faire passive than with être passive @bellec_construction_2014; être passive more stative and se faire passive more dynamic, inchoative Spang-Hannsen (1967:141), Novakava (2008:7) in @bellec_construction_2014
+-   periphrase constructions: "être en train de...", "venir de faire qc" (progressive) more natural with se faire passive than with être passive @bellec_construction_2014; être passive more stative and se faire passive more dynamic, inchoative Spang-Hannsen (1967:141), Novakava (2008:7) in @bellec_construction_2014; @keenan_passive_2007 [341]
 -   tense: se faire passive used more often with future actions because it emphasizes start and process of an action, être passive more acceptable in passé composé than in imparfait and present; passé composé also used with se faire if speaker wants to emphasize a process @bellec_construction_2014 [210]
 
 ### Modality
@@ -106,14 +106,13 @@ spoken vs. written
 
 Text genre, formal vs. informal
 
-### Adversativity/ Non-neutrality @bohmann_large-scale_2023[43]
+### Adversativity/ Non-neutrality @bohmann_large-scale_2023 [43]
 
 sentiment scores, Verb clusters, verb semantics
 
 ### Morphosyntactic features
 
 Negation, subject person, subject number
-
 
 ## (Maybe: Memory based learning)
 

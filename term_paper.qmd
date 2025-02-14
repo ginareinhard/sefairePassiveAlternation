@@ -106,11 +106,12 @@ difference between aspect and "Aktionsart"? -\> debated, in general: aspect as g
     -   According to @bellec_construction_2014 [209], the être passive is likely to describe a result/ mark an endpoint of an action, while the se faire passive is used for actions in process. This could be reflected in the telicity of the verb, where telic verbs favour the être passive and atelic verbs favour the se faire passive.
     -   se faire passive preferred for verbs that are in their nature ongoing (e.g. perception verbs) @bellec_construction_2014 [209]
 -   Periphrase constructions: "être en train de...", "venir de + INF", "aller +INF" (progressive) more natural with se faire passive than with être passive @bellec_construction_2014; être passive more stative and se faire passive more dynamic, inchoative @spang-hanssen_quelques_1967 \[141\] , @novakova_construction_2009 in @bellec_construction_2014; @keenan_passive_2007 [341]
+-   aspect tagging @hundt_be-_2024 : simple, perfect, progressive
 -   Tense: se faire passive used more often with future actions because it emphasizes start and process of an action, être passive more acceptable in passé composé than in imparfait and present; passé composé also used with se faire if speaker wants to emphasize a process @bellec_construction_2014 [210]
 
 ### Adversativity/ Non-neutrality @bohmann_large-scale_2023 [43]
 
--   Sentiment scores: se faire expected to occur more often with verbs that express negative sentiments (or positive, but more negative), also related to subject affectedness (interaction?)
+-   Sentiment scores: se faire expected to occur more often with verbs that express negative sentiments (or positive, but more negative), also related to subject affectedness (interaction?); tagging @hundt_be-_2024 : adversative, non-adversative/ neutral
 
 -   Verb clusters, verb semantics @bohmann_large-scale_2023 [51-52]
 

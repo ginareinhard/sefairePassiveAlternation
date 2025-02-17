@@ -76,21 +76,21 @@ Variables, Hypotheses, Preference constraints?
 
 ### Subject responsibility/ subject affectedness
 
-Subject responsibility in the se faire passive widely debated (as seen in the debate presented above): subject responsibility central for debate on whether the passive reading of se faire is a subtype of the causative reading or its own instance (@sveberg_se_2012) but @bellec_construction_2014 [212-213] argues against that
+Subject responsibility in the se faire passive widely debated (as seen in the debate presented above): subject responsibility central for debate on whether the passive reading of se faire is a subtype of the causative reading or its own instance (@sveberg_se_2012, @bellec_construction_2014 [212-213]).
 
--   animacy
+-   Animacy
     -   tagging: continuum? inanimate vs. animate? (@bohmann_large-scale_2023 added: ”body parts”, “other”; @hundt_be-_2024 added: “human”)
     -   Gaatone and Tasmowski & Van Oelen: subject of se faire passive always causer; always responsible to some degree for the event; se faire passive strongly disfavours inanimate subjects; however @labelle_anticausativizing_2013 claims that there is no causer in passive se faire → subject is not necessarily responsible (also @washio_when_1993)
     -   affectedness (often negative), more common with animate subjects since inanimate subjects are seldom affected
     -   but: se faire passive also found as used with inanimate subjects (in idioms, @labelle_anticausativizing_2013 and personifications, @sveberg_se_2012)
-    -   get passive: preponderence for animate subjects (@hundt_be-_2024), parallel for French
+    -   get passive: preponderence for animate subjects (@hundt_be-_2024), parallel for French?
     -   @bohmann_large-scale_2023: get passive becomes more likely with inanimate subjects over time; development towards a more general passive (43); significance of subject responsibility lessening
--   Agent PP (par-phrase)
-    -   @hundt_be-_2024, the “by-phrase openly assigns responsibility” to an external agent. @bohmann_large-scale_2023 adds, that the by-phrase
-    -   @bohmann_large-scale_2023: “partially mitigate subject responsibility”, expected to favour be-passive (finding: more in the early data than now)
+-   Agent PP (par/de-phrase, Complément d'agent)
+    -   @hundt_be-_2024, the “by-phrase openly assigns responsibility” to an external agent
+    -   @bohmann_large-scale_2023: by-phrase “partially mitigate subject responsibility”, expected to favour be-passive (finding: more in the early data than now)
     -   → par-phrase less likely for se faire than for etre passive?
     -   @kupferman_construction_1995: agentivity requirement for agents denoted by par-phrase
--   Verbs that denote responsibility/affectedness (which would those be?)
+-   Verbs that denote responsibility/affectedness?
 
 **Hypothesis:**
 
@@ -100,14 +100,14 @@ Further, we hypothesize that the presence of an agent PP (”par”-phrase) pref
 
 ### Aspectuality (Aspect/"Aktionsart")
 
-difference between aspect and "Aktionsart"? -\> debated, in general: aspect as grammatical, Aktionsart as lexical
+The overall consensus in the literature is that aspect marks progressivity grammatically and Aktionsart semantically/ lexically. However, this clear cut distinction of Aspect and Aktionart has been doubted, and some theories see Aktionart und Aspect as two instantiations of Aspectuality (Quelle, but not focus).
 
--   Telicity:
+-   **Telicity:**
     -   According to @bellec_construction_2014 [209], the être passive is likely to describe a result/ mark an endpoint of an action, while the se faire passive is used for actions in process. This could be reflected in the telicity of the verb, where telic verbs favour the être passive and atelic verbs favour the se faire passive.
     -   se faire passive preferred for verbs that are in their nature ongoing (e.g. perception verbs) @bellec_construction_2014 [209]
--   Periphrase constructions: "être en train de...", "venir de + INF", "aller +INF" (progressive) more natural with se faire passive than with être passive @bellec_construction_2014; être passive more stative and se faire passive more dynamic, inchoative @spang-hanssen_quelques_1967 \[141\] , @novakova_construction_2009 in @bellec_construction_2014; @keenan_passive_2007 [341]
+-   **Periphrase constructions**: According to @spang-hanssen_quelques_1967 \[141\] and @novakova_construction_2009, periphrases that denote progressivity such as “être en train de + INF”, “venir de + INF” and “aller + INF” occur more naturally with the se faire passive than with the être passive. This is due to the dynamicity that the se faire passive entails (Quelle) compared to the more stative être passive. (also: @bellec_construction_2014; @keenan_passive_2007 [341])
 -   aspect tagging @hundt_be-_2024 : simple, perfect, progressive
--   Tense: se faire passive used more often with future actions because it emphasizes start and process of an action, être passive more acceptable in passé composé than in imparfait and present; passé composé also used with se faire if speaker wants to emphasize a process @bellec_construction_2014 [210]
+-   **Tense:** Descriptions of future events are more likely to focus on the start and process of an event or an action than on its endpoint (@bellec_construction_2014 [210]) Therefore, it seems likely that future tense will favour the se faire passive over the être passive. Regarding past tense, the être passive will probably be more popular than se faire for constructions in the passé composé. (passé composé also used with se faire if speaker wants to emphasize a process, @bellec_construction_2014) In contrast, the se faire passive may be preferred if the action is described in the imparfait (only a guess).
 
 ### Adversativity/ Non-neutrality @bohmann_large-scale_2023 [43]
 

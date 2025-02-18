@@ -45,15 +45,6 @@ number-sections: true
 
 ## *se faire* passive
 
-### Historical background
-
--   @bellec_grammaticalisation_2015 and @bellec_quand_2014 date the se faire + INF passive construction to the middle of the 20th century and call it a "modern" construction that has since experienced a rapid increase in popularity
--   grammaticalisation process and reanalysis → no transparent lexical meaning anymore; faire becomes auxiliary, se loses reflexive meaning → in merging they lose their reflexive and causative meaning and gain a passive reading (désémantisation to semi-auxiliary), @bellec_construction_2014
--   but causative construction did not disappear → coexists with passive reading (widely debated, see below)
--   how much is it used today (according to authors/ background literature) and in which settings
-    -   se faire less formal, more figurative and emotional, used to build the passive with indirect object as the agent & to express passivity in dynamic/ ongoing processes, more spoken
-    -   etre passive more “neutral”, more formal, more written
-
 ### Structure and meaning
 
 The construction consists of the pronoun "se", the conjugated form of the verb "faire" and an infinitive (INF). According to @labelle_anticausativizing_2013\[235\] the construction is "formally causative, but semantically passive".
@@ -69,11 +60,13 @@ Jean s'est fait tuer hier.\
 Jean was killed yesterday. (passive)\
 jean made somebody kill him yesterday. (causative)
 
+@bellec_grammaticalisation_2015 and @bellec_quand_2014 date the se faire + INF passive construction to the middle of the 20th century and call it a "modern" construction that has since experienced a rapid increase in popularity. She describes a of process of grammaticalisation and and reanalysis for the PSF during/through which “se” has lost its reflexive meaning and “faire” has become an auxiliary. In merging, they form a “semi-auxiliary” and obtain a passive interpretation, while the causative meaning is lost (désémantisation). However, as @bellec_construction_2014 exaplains, the causative reading did not disappear but instead coexists with the passive reading (debated, see below).
+
 Crucially, the passive se faire construction and the causative se faire constructions are structurally identical and differ only in their semantics. As @labelle_anticausativizing_2013\[236\] explains, the ambiguity is resolved by "the lexical items involved". In the causative reading, "se" is understood to have reflexive meaning and "faire" is understood to have causative meaning. In contrast, if interpreted as a passive, the meanings of "se" and "faire" are not transparent: "se" is not necessarily reflexive and "faire" not causative. Thus, the subject is not necessarily responsible for the described event (@koenig_semantic_1992\[143\]: "any notion of causation is absent"). Sometimes both readings are possible and the ambiguity cannot be resolved @koenig_semantic_1992\[144\].
 
 Scholars have been wondering about the construction: "how can a passive-like construction arise from a combination of a causative and a reflexive marker, where no marking of the passive function is apparent?" @koenig_semantic_1992\[145\].
 
-@labelle_anticausativizing_2013 [23] suggests that the passive meaning is obtained through a syntactic mechanism: In the se faire passive, the embedded verb (i.e., the infinitive after faire) has an empty NP-object position. The reflexive clitic se binds the empty object position of the embedded verb (e.g., Il s’est fait insulter). Therefore, se connects the (missing) object-NP and the surface subject (coindexation). In contrast to the être passive, the object does not become the new subject but is connected to the subject by se. The subject is interpreted as affected because it is linked to the missing object of the embedded verb (which would be affected in the active sentence but is absent on the surface in se faire). For this to work, the embedded verb needs an agent as a subject (because otherwise, the missing object would not be affected).
+@labelle_anticausativizing_2013 [23] suggests that the passive meaning and (affected reading) is obtained through a syntactic mechanism: In the se faire passive, the embedded verb (i.e., the infinitive after faire) has an empty NP-object position. The reflexive clitic se binds the empty object position of the embedded verb (e.g., Il s’est fait insulter). Therefore, se connects the (missing) object-NP and the surface subject (coindexation). In contrast to the être passive, the object does not become the new subject but is connected to the subject by se. The subject is interpreted as affected because it is linked to the missing object of the embedded verb (which would be affected in the active sentence but is absent on the surface in se faire). For this to work, the embedded verb needs an agent as a subject (because otherwise, the missing object would not be affected).
 
 ### Debate of the construction's passive-status (vs. causative)
 
@@ -94,6 +87,9 @@ This debate has been central in the investigations of the se faire + INF constru
 -   se faire passive has evolved to be used in sitations without a causer (passive reading) @bellec_construction_2014
 -   figurative, "besoin d’expressivité and extravagance" instead of "used up" canonical passive @bellec_construction_2014 [206]
 -   while some scholars speak of semantic differences between the canonical être passive and the se faire passive, @kupferman_construction_1995 sees them as semantically synonymous -\> therefore: competition
+-   how much is it used today (according to authors/ background literature) and in which settings
+    -   se faire less formal, more figurative and emotional, used to build the passive with indirect object as the agent & to express passivity in dynamic/ ongoing processes, more spoken
+    -   etre passive more “neutral”, more formal, more written
 
 ### Maybe: Comparison to similar alternations in other languages
 

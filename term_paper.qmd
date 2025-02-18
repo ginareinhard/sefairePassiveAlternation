@@ -86,10 +86,11 @@ The question whether the referent of the subject in the se faire construction ho
 
 According to @bellec_construction_2014, the se faire passive has been grammaticalised into a semi-auxiliary where the meaning of its components are not transparent anymore and there is thus no reason for a causative reading.
 
--   criteria for causative reading @bellec_construction_2014\[207\]
-    -   subject is agentive; is initiator of the action and patient at the same time (with passive: only patient role)
-    -   reflexive particle functions as a reflexive (with passive: no reflexive meaning)
-    -   verb faire is causative, transparent cuasative meaning (with passive: only surface function, no inherent meaning)
+@bellec_construction_2014\[207\] defines the following three criteria for a causative reading, by which the causative and the passive interpretation are distinguished:
+
+-   In the causative, the subject referent is agentive and has both the role of a causer/ initator and a patient/ experiencer//initates the action, while at the same time being the experiencer/ patient of the action. In the passive, the subject referent has only the role of the patient.
+-   In the causative reading, the particle “se” functions has a reflexive meaning. In the passive reading, “se” is not reflexive.
+-   In the causative reading, “faire” has transparent causative meaning. In the passive reading, “faire” has no inherent meaning and is not causative.
 
 This debate has been central in the investigations of the se faire + INF constructions and cannot be left aside. However, it is essential to our study that we assume the passive reading of the se faire construction to exist since we compare it to the canonical être passive (-\> exclude causative readings?). Can our findings contribute to the debate of whether se faire deserves passive-status? If not: no need to spell out the debate in detail.
 

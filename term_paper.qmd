@@ -21,9 +21,27 @@ number-sections: true
 
 # Introduction
 
+-   rare construction: 5% of verbs in the French Treebank (FTB) are in the passive voice (vs. 9% in English for the same text type (source Roland et al.)) @da_cunha_lalternance_2020
+
 # The French passive alternation of *être* and *se faire*
 
 ## Canonical passive with *être*
+
+-   Function of the passive construction (semantic focus):
+
+-   Diathesis: Concept of the passive (passif long) as an inversion of the order/ syntactic function of the arguments (the subject argument and the object argument) in relation to the active construction. The object of the active "becomes" the subject in the passive. (Per default, in French the subject is coded at position 1 in the sentence)
+
+-   The omission of the agent argument, called the complément d'agent (*par* or *de* phrase), is also possible, resulting in the passif court -\> passif long with complément d'agent vs. passif court without complément d'agent
+
+-   Language examples from our corpus
+
+-   Passif long: approx. a quarter of all passive constructions in the FTB @da_cunha_lalternance_2020 (vs. 10% in oral French (source Hamma)
+
+-   evtl.: passive vs. *construction moyenne en se* (*La porte a été ouverte* vs. *la porte s'est ouverte*) -\> In the passif court, the agent argument is still implicit (Quellen)
+
+-   Subjects are preferably animate, definite, and pronominal: in @da_cunha_lalternance_2020 animate, definite and pronominal “arg2” subjects (object of the active) were more often found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice)
+
+-   Interesting: In @da_cunha_lalternance_2020 the passif court model shows a significant effect of grammatical gender: a feminine "arg1" favors the passive. Number also had an unexpected effect: a plural argument favoured the passive in all models. (+ Relativsätze & Priming als signifikante Faktoren)
 
 ## *se faire* passive
 
@@ -112,7 +130,7 @@ The overall consensus in the literature is that aspect marks progressivity gramm
 
 **Hypothesis:** Perception verbs, "dynamic" verbs more often with se faire passiv; Interaction of verb type with subject animacy??
 
-### Adversativity/ Non-neutrality 
+### Adversativity/ Non-neutrality
 
 The factor of "Adversativity/ Non-neutrality" is reflected in the semantics of the verb and captures (negative) consequences that the described action has on the subject. It has been found to be relevant to the choice between the be and get passive (@hundt_be-_2024\[89, 96-97\]). It is tagged on the verb as binary by @hundt_be-_2024 : adversative, non-adversative/ neutral.
 

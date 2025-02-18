@@ -21,7 +21,7 @@ number-sections: true
 
 # Introduction
 
--   rare construction: 5% of verbs in the French Treebank (FTB) are in the passive voice (vs. 9% in English for the same text type (source Roland et al.)) @da_cunha_lalternance_2020
+-   rare construction: 5% of verbs in the French Treebank (FTB) are in the passive voice (vs. 9% in English for the same text type (source @roland2007frequency)) @da_cunha_lalternance_2020
 
 # The French passive alternation of *être* and *se faire*
 
@@ -41,7 +41,7 @@ number-sections: true
 
 -   Subjects are preferably animate, definite, and pronominal: in @da_cunha_lalternance_2020 animate, definite and pronominal “arg2” subjects (object of the active) were more often found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice)
 
--   Interesting: In @da_cunha_lalternance_2020 the passif court model shows a significant effect of grammatical gender: a feminine "arg1" favors the passive. Number also had an unexpected effect: a plural argument favoured the passive in all models. (+ Relativsätze & Priming als signifikante Faktoren)
+-   Interesting: In @da_cunha_lalternance_2020 the passif court model shows a significant effect of grammatical gender: a feminine agent argumenr favors the passive. Number also had an unexpected effect: a plural argument favoured the passive in all models. (+ Relativsätze & Priming als signifikante Faktoren)
 
 ## *se faire* passive
 
@@ -92,7 +92,7 @@ This debate has been central in the investigations of the se faire + INF constru
 
 ## *être* vs. *se faire*: Competition or complementation? - Defining the variable context
 
--   se faire only competes with the canonical être passive if the missing NP is a direct object, (Washio 1995, @labelle_anticausativizing_2013 \[16\], the être passive "requires its subject to correspond to the direct object of an active sentence" @koenig_semantic_1992[144]
+-   se faire only competes with the canonical être passive if the missing NP is a direct object, (Washio 1995, @labelle_anticausativizing_2013 \[16\], the être passive "requires its subject to correspond to the direct object of an active sentence" @koenig_semantic_1992 [144]
 -   indirect object of the active sentence can only be used as the agent in se faire construction (i.e. no competition with être passive for ditransitive and reflexive verbs → exclude)
 -   se faire passive has evolved to be used in sitations without a causer (passive reading) @bellec_construction_2014
 -   figurative, "besoin d’expressivité and extravagance" instead of "used up" canonical passive @bellec_construction_2014 [206]

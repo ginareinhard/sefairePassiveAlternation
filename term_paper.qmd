@@ -56,7 +56,7 @@ number-sections: true
 
 ### Structure and meaning
 
-The construction consists of the pronoun "se", the conjugated form of the verb "faire" and an infinitive (INF). According to @labelle_anticausativizing_2013\[235\] the construction is "formally causative, but semantically passive". Scholars have been wondering about the construction: "how can a passive-like construction arise from a combination of a causative and a reflexive marker, where no marking of the passive function is apparent?" @koenig_semantic_1992\[145\]
+The construction consists of the pronoun "se", the conjugated form of the verb "faire" and an infinitive (INF). According to @labelle_anticausativizing_2013\[235\] the construction is "formally causative, but semantically passive".
 
 **Language examples**
 
@@ -71,12 +71,9 @@ jean made somebody kill him yesterday. (causative)
 
 Crucially, the passive se faire construction and the causative se faire constructions are structurally identical and differ only in their semantics. As @labelle_anticausativizing_2013\[236\] explains, the ambiguity is resolved by "the lexical items involved". In the causative reading, "se" is understood to have reflexive meaning and "faire" is understood to have causative meaning. In contrast, if interpreted as a passive, the meanings of "se" and "faire" are not transparent: "se" is not necessarily reflexive and "faire" not causative. Thus, the subject is not necessarily responsible for the described event (@koenig_semantic_1992\[143\]: "any notion of causation is absent"). Sometimes both readings are possible and the ambiguity cannot be resolved @koenig_semantic_1992\[144\].
 
--   “se” as reflexive pronoun, “faire” as causative verb → passive (semi-)auxiliary (@labelle_anticausativizing_2013) → Language example
--   strategy of passivization: binding by a reflexive clitic @labelle_anticausativizing_2013 [23]
--   syntactic characteristics of se faire passive: @labelle_anticausativizing_2013
-    1.  The subject of the higher verb *faire* is interpreted as affected by the lower event as a result of (53).
-    2.  There is a missing NP within the embedded VP.
-    3.  The reflexive clitic on *faire* binds the missing NP and is coindexed with the subject of *faire*.
+Scholars have been wondering about the construction: "how can a passive-like construction arise from a combination of a causative and a reflexive marker, where no marking of the passive function is apparent?" @koenig_semantic_1992\[145\].
+
+@labelle_anticausativizing_2013 [23] suggests that the passive meaning is obtained through a syntactic mechanism: In the se faire passive, the embedded verb (i.e., the infinitive after faire) has an empty NP-object position. The reflexive clitic se binds the empty object position of the embedded verb (e.g., Il s’est fait insulter). Therefore, se connects the (missing) object-NP and the surface subject (coindexation). In contrast to the être passive, the object does not become the new subject but is connected to the subject by se. The subject is interpreted as affected because it is linked to the missing object of the embedded verb (which would be affected in the active sentence but is absent on the surface in se faire). For this to work, the embedded verb needs an agent as a subject (because otherwise, the missing object would not be affected).
 
 ### Debate of the construction's passive-status (vs. causative)
 
@@ -101,7 +98,7 @@ This debate has been central in the investigations of the se faire + INF constru
 ### Maybe: Comparison to similar alternations in other languages
 
 -   English @bohmann_large-scale_2023, East Asian languages @washio_when_1993 and @guan_multifactorial_2024 , Swedish @cuypere_corpus-based_2014
--   se faire passive "typologically marked", comparison to other Romance languages @koenig_semantic_1992\[145\]
+-   se faire passive "typologically marked", comparison to other Romance languages @koenig_semantic_1992\[145\]; similar constructions exist in other Romance languages but passive reading only allowed in French @labelle_anticausativizing_2013\[236\]
 
 # Data and Methods
 

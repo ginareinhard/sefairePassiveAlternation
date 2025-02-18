@@ -63,7 +63,7 @@ The construction consists of the pronoun "se", the conjugated form of the verb "
 Pierre s'est fait offrir un poste par l'oncle de Louise.\
 'Pierre was offered a position by Louise's uncle.'
 
-Crucially, the passive se faire construction and the causative se faire constructions are structurally identical and differ only in their semantics. As @labelle_anticausativizing_2013\[236\] explains, the ambiguity is resolved by "the lexical items involved". In the causative reading, "se" is understood to have reflexive meaning and "faire" is understood to have causative meaning. In contrast, in the passive reading, the meanings of "se" and "faire" are not transparent anymore: "se" is not necessarily reflexive and "faire" is not necessarily causative. Thus, the subject is not necessarily responsible for the described event, it is not potentially not responsible.
+Crucially, the passive se faire construction and the causative se faire constructions are structurally identical and differ only in their semantics. As @labelle_anticausativizing_2013\[236\] explains, the ambiguity is resolved by "the lexical items involved". In the causative reading, "se" is understood to have reflexive meaning and "faire" is understood to have causative meaning. In contrast, in the passive reading, the meanings of "se" and "faire" are not transparent anymore: "se" is not necessarily reflexive and "faire" is not necessarily causative. Thus, the subject is not necessarily responsible for the described event.
 
 -   “se” as reflexive pronoun, “faire” as causative verb → passive (semi-)auxiliary (@labelle_anticausativizing_2013) → Language example
 -   strategy of passivization: binding by a reflexive clitic @labelle_anticausativizing_2013 [23]

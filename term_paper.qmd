@@ -21,27 +21,37 @@ number-sections: true
 
 # Introduction
 
--   rare construction: 5% of verbs in the French Treebank (FTB) are in the passive voice (vs. 9% in English for the same text type (source @roland2007frequency)) @da_cunha_lalternance_2020
+-   rare construction: Only 5% of verbs in the French Treebank (FTB) are in the passive voice ( @da_cunha_lalternance_2020) vs. 9% in English for the same text type (@roland2007frequency).
 
 # The French passive alternation of *être* and *se faire*
 
 ## Canonical passive with *être*
 
+### Structure and meaning
+
 -   Function of the passive construction (semantic focus):
 
 -   Diathesis: Concept of the passive (passif long) as an inversion of the order/ syntactic function of the arguments (the subject argument and the object argument) in relation to the active construction. The object of the active "becomes" the subject in the passive. (Per default, in French the subject is coded at position 1 in the sentence)
 
--   The omission of the agent argument, called the complément d'agent (*par* or *de* phrase), is also possible, resulting in the passif court -\> passif long with complément d'agent vs. passif court without complément d'agent
+-   The omission of the agent argument, called the *complément d'agent* (*par* or *de* phrase), is also possible. In this case, the construction is referred to as *passif court*, whereas the *passif long* explicitly includes the complément d'agent:
 
--   Language examples from our corpus
+    *Language examples from our corpus*
 
--   Passif long: approx. a quarter of all passive constructions in the FTB @da_cunha_lalternance_2020 (vs. 10% in oral French (source Hamma)
+    Approx. a quarter of all passive constructions in the French Treebank (FTB) are realised as passif long (@da_cunha_lalternance_2020), while in spoken French, the proportion is about 10% (source Hamma).
 
 -   evtl.: passive vs. *construction moyenne en se* (*La porte a été ouverte* vs. *la porte s'est ouverte*) -\> In the passif court, the agent argument is still implicit (Quellen)
 
--   Subjects are preferably animate, definite, and pronominal: in @da_cunha_lalternance_2020 animate, definite and pronominal “arg2” subjects (object of the active) were more often found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice)
+### XXXXXX
 
--   Interesting: In @da_cunha_lalternance_2020 the passif court model shows a significant effect of grammatical gender: a feminine agent argumenr favors the passive. Number also had an unexpected effect: a plural argument favoured the passive in all models. (+ Relativsätze & Priming als signifikante Faktoren)
+Several corpus studies on the active/passive alternation in French have shown that the choice between active and passive constructions is not purely syntactic, but that semantic and pragmatic factors also play a crucial role in determining whether a passive construction is favoured.
+
+-   Subjects in passive sentences are preferably animate, definite, and pronominal. In the study by @da_cunha_lalternance_2020, animate, definite, and pronominal arguments that function as the objects in active sentences were more frequently found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice)
+
+-   Animacy has been shown to play an important role in the active/passive alternation in French.
+
+-   Interestingly, gender also seems to play a role in the active/passive alternation. In @da_cunha_lalternance_2020 the passif court model showed a significant effect of grammatical gender: a feminine agent increased the likelihood of the the passive.
+
+-   Surprisingly, number also had an effect: a plural arguments favoured the passive in all models. (+ Relativsätze & Priming als signifikante Faktoren) @da_cunha_lalternance_2020
 
 ## *se faire* passive
 

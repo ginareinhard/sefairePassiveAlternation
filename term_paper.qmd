@@ -87,6 +87,8 @@ The above described stance taken by @bellec_construction_2014, @labelle_anticaus
 
 As @raineri_analyse_2010 [89] describes, there is also the possibility of a multitude of readings (@kokutani_sur_2005) and of a continuum between causative and passive (Hobak Haff 2000), later accepted by @raineri_analyse_2010 [154-166].
 
+This debate has been central in the investigations of the se faire + INF constructions and cannot be left aside. It deals with the question whether the construction we aim to investigate actually exists. Since our goal is to examine the passive alternation of être and se faire, it is essential that we make sure we compare être only to real passive constructions, and not causative constructions.
+
 The question whether the referent of the subject in the se faire construction holds any responsibility is central in the debate of the construction's passive-status. As @labelle_anticausativizing_2013 [15] explains: @gaatone_desagreable_1983 as well as @tasmowski-de_ryck_causatif_1987 center their argumentation that the se faire passive is a weak reading of the causative around the notion that the subject of the se faire construction "is always, even unconsciously, responsible for the occurrence of the embedded event." While @kupferman_construction_1995 sees causative and passive readings as homonymes with fundamentally different semantics and therefore claims that the se faire construction "deserves" to be viewed as a real passive, @sveberg_se_2012 thinks that the se faire construction is always causative and that even constructions with inanimate subjects can be causative if the subject is personified.
 
 @raineri_analyse_2010 [356-357] comes to the conclusion that despite its productivity as a passive construction, the PFS' status as a passive is problematic because it neither fits into two homonymes nor does it function a single weakly determined causative.
@@ -96,8 +98,6 @@ According to @bellec_construction_2014, the se faire passive has been grammatica
 -   In the causative, the subject referent is agentive and has both the role of causer/ initator and patient/ experiencer. The subject actively initiates what happens to him. In the passive, the subject referent has only the role of the patient, it is only affected by the action.
 -   In the causative reading, the particle “se” functions has a reflexive meaning. In the passive reading, “se” is not reflexive.
 -   In the causative reading, “faire” has transparent causative meaning. In the passive reading, “faire” has no inherent meaning and is not causative.
-
-This debate has been central in the investigations of the se faire + INF constructions and cannot be left aside. It deals with the question whether the construction we aim to investigate actually exists.
 
 However, even though the status of the PSF has been subject to disagreements and discussion, the literature clearly shows that there is a passive reading related to this construction. This is independent from whether the passive sense emerges from within the construction or out of the components it occurs with, or whether it has an underlying causative meaning. By comparing PSF and PE constructions, we may be able to shed light on this debate from a corpuslinguistics' perspective by examining which factors contribute to the choice between the two passives. <!-- (-> exclude causative readings?). Can our findings contribute to the debate of whether se faire deserves passive-status? If not: no need to spell out the debate in detail. -->
 

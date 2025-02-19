@@ -55,36 +55,38 @@ Several corpus studies on the active/passive alternation in French have shown th
 
 ## *se faire* passive
 
-### Structure and meaning
-
-The construction consists of the pronoun "se", the conjugated form of the verb "faire" and an infinitive (INF). According to @labelle_anticausativizing_2013\[235\] the construction is "formally causative, but semantically passive". @kupferman_construction_1995 reasons that the PSF is a real, fully adequate passive construction, equivalent to the être passive.
+### Historical background <!-- not sure if relevant -->
 
 @bellec_grammaticalisation_2015 and @bellec_quand_2014 date the se faire + INF passive construction (PSF) to the middle of the 20th century and call it a "modern" construction that has since experienced a rapid increase in popularity. She describes a process of grammaticalisation and reanalysis for the PSF during/through which “se” has lost its reflexive meaning and “faire” has become an auxiliary. In merging, they form a “semi-auxiliary” and obtain a passive interpretation, while the causative meaning is lost (désémantisation). However, @bellec_construction_2014 claims that the causative reading did not disappear but instead coexists with the passive reading (debated, see below).
 
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward
 
-**Language examples**
+### Structure and meaning
 
-@labelle_anticausativizing_2013\[235\]:\
-Pierre s'est fait offrir un poste par l'oncle de Louise.\
-'Pierre was offered a position by Louise's uncle.'
+The construction consists of the pronoun "se", the conjugated form of the verb "faire" and an infinitive (INF). According to @labelle_anticausativizing_2013\[235\] the construction is "formally causative, but semantically passive". The peculiarity of the construction has led scholars to wonder: "how can a passive-like construction arise from a combination of a causative and a reflexive marker, where no marking of the passive function is apparent?" (@koenig_semantic_1992\[145\]).
+
+Sentences including this construction can have either/both a passive and/or a causative sense:
+
+**Language examples**
 
 @koenig_semantic_1992\[143\]:\
 Jean s'est fait tuer hier.\
 Jean was killed yesterday. (passive)\
 Jean made somebody kill him yesterday. (causative)
 
-Scholars have been wondering about the construction: "how can a passive-like construction arise from a combination of a causative and a reflexive marker, where no marking of the passive function is apparent?" @koenig_semantic_1992\[145\].
+Crucially, passive se faire and causative se faire are structurally identical and differ only in their semantics. As @labelle_anticausativizing_2013\[236\] explains, the ambiguity is resolved by "the lexical items involved". In the causative reading, "se" is understood to have reflexive meaning and "faire" is understood to have causative meaning. In contrast, if interpreted as a passive, the meanings of "se" and "faire" are not transparent. Thus, the subject does not necessarily cause the event and is not necessarily responsible (@koenig_semantic_1992\[143\]: "any notion of causation is absent"). Sometimes both readings are possible and the ambiguity cannot be resolved @koenig_semantic_1992\[144\], for example when cognition and perception verbs are involved @bellec_construction_2014\[206, 207\].
+
+<!-- @kupferman_construction_1995 reasons that the PSF is a real, fully adequate passive construction, equivalent to the être passive. Others have different opinions... -->
+
+From the active to the se faire passive:
 
 @labelle_anticausativizing_2013 [23] suggests that the passive meaning and (affected reading) is obtained through a syntactic mechanism that involves binding the empty NP-object position of the embedded verb to the subject through the reflexive particle "se".
 
 <!-- In the se faire passive, the embedded verb (i.e., the infinitive after faire) has an empty NP-object position since only the subject is realised. The reflexive clitic "se" binds the empty object position of the embedded verb. Therefore, "se" connects the (missing) object-NP and the surface subject (coindexation). In contrast to the être passive, the object does not become the new subject but is connected to the subject by "se". The subject is interpreted as affected because it is linked to the missing object of the embedded verb (which would be affected in the active sentence but is absent on the surface in se faire). For this to work, the embedded verb needs an agent as a subject (because otherwise, the missing object would not be affected). -->
 
-Crucially, passive se faire and causative se faire are structurally identical and differ only in their semantics. As @labelle_anticausativizing_2013\[236\] explains, the ambiguity is resolved by "the lexical items involved". In the causative reading, "se" is understood to have reflexive meaning and "faire" is understood to have causative meaning. In contrast, if interpreted as a passive, the meanings of "se" and "faire" are not transparent. Thus, the subject does not necessarily cause the event and is not necessarily responsible (@koenig_semantic_1992\[143\]: "any notion of causation is absent"). Sometimes both readings are possible and the ambiguity cannot be resolved @koenig_semantic_1992\[144\], for example when cognition and perception verbs are involved @bellec_construction_2014\[206, 207\].
-
 ### Debate of the construction's passive-status (vs. causative)
 
-The above described stance by @bellec_construction_2014, @labelle_anticausativizing_2013, @koenig_semantic_1992 and @kupferman_construction_1995 that the PSF is a full-fledged passive construction is by no means undisputed. The opposing view - that the construction is a subtype of the causative - is also widely represented in the literature.
+The above described stance taken by @bellec_construction_2014, @labelle_anticausativizing_2013, @koenig_semantic_1992 and @kupferman_construction_1995 that the PSF is a full-fledged passive construction is by no means undisputed. The opposing view - that the construction is a subtype of the causative - is also widely represented in the literature.
 
 As @raineri_analyse_2010 describes, there are mainly two opposing views in the literature:
 
@@ -96,9 +98,7 @@ As @raineri_analyse_2010 describes, there are mainly two opposing views in the l
 
 The question whether the referent of the subject in the se faire construction holds any responsibility is central in the debate of the construction's passive-status. As @labelle_anticausativizing_2013 [15] explains: @gaatone_desagreable_1983 as well as @tasmowski-de_ryck_causatif_1987 center their argumentation that the se faire passive is only a "subtype"/ a weak reading of the causative around the notion that the subject of the se faire construction "is always, even unconsciously, responsible for the occurrence of the embedded event." @gaatone_desagreable_1983 claims that inanimate subjects are not possible with the se faire passive reading since they cannot be responsible. @labelle_anticausativizing_2013 argues against that by providing examples of the passive with inanimate subjects. While @kupferman_construction_1995 sees causative and passive readings as homonymes with fundamentally different semantics and therefore claims that the se faire construction "deserves" to be viewed as a real passive, @sveberg_se_2012 thinks that the se faire construction is always causative and that constructions with inanimate subjects can still be causative if the subject is personified.
 
-According to @bellec_construction_2014, the se faire passive has been grammaticalised into a semi-auxiliary where the meaning of its components are not transparent anymore and there is thus no reason for a causative reading.
-
-@bellec_construction_2014\[207\] defines the following three criteria for a causative reading, by which the causative and the passive interpretation are distinguished:
+According to @bellec_construction_2014, the se faire passive has been grammaticalised into a semi-auxiliary where the meaning of its components are not transparent anymore and there is thus no reason for a causative reading. @bellec_construction_2014\[207\] defines the following three criteria for a causative reading, by which the causative and the passive interpretation are distinguished:
 
 -   In the causative, the subject referent is agentive and has both the role of causer/ initator and patient/ experiencer. In the passive, the subject referent has only the role of the patient.
 -   In the causative reading, the particle “se” functions has a reflexive meaning. In the passive reading, “se” is not reflexive.
@@ -106,7 +106,7 @@ According to @bellec_construction_2014, the se faire passive has been grammatica
 
 This debate has been central in the investigations of the se faire + INF constructions and cannot be left aside in our study as it deals with the question whether the construction we aim to investigate actually exists.
 
-However, even though the status of the PSF has been subject of disagreements and discussion, the literature clearly shows that there is a passive reading related to this construction. This is independent from whether the passive sense emerges from within the construction or the components it occurs with. By comparing PSF and PE constructions, we may shed some light on this debate from a corpuslinguistics' standpoint by examining which factors contribute to the choice between the two passives. <!-- (-> exclude causative readings?). Can our findings contribute to the debate of whether se faire deserves passive-status? If not: no need to spell out the debate in detail. -->
+However, even though the status of the PSF has been subject to disagreements and discussion, the literature clearly shows that there is a passive reading related to this construction. This is independent from whether the passive sense emerges from within the construction or out of the components it occurs with. By comparing PSF and PE constructions, we may shed some light on this debate from a corpuslinguistics' standpoint by examining which factors contribute to the choice between the two passives. <!-- (-> exclude causative readings?). Can our findings contribute to the debate of whether se faire deserves passive-status? If not: no need to spell out the debate in detail. -->
 
 ## *être* vs. *se faire*: Competition or complementation? - Defining the variable context
 
@@ -132,28 +132,36 @@ The passive constructions of se faire and être are not always interchangeable: 
 
 Variables, Hypotheses, Preference constraints
 
-### Subject responsibility/"Nature of the subject" @raineri_analyse_2010 [92]
+### Subject responsibility
 
-Subject responsibility in the se faire passive widely debated and is central for the debate on whether the passive reading of se faire is a subtype of the causative reading or its own instance (see above; @sveberg_se_2012, @bellec_construction_2014 \[212-213\]). In @raineri_analyse_2010 [95]'s view, the idea that the PSF expresses subject responsibility is the "most common hypothesis" ("l'hypothèse la plus répandue") in the literature. but not "universally accepted" @raineri_analyse_2010 \[98\] and there are counter-examples @kupferman_construction_1995 [59].
+Subject responsibility in the se faire passive widely debated and is central for the debate on whether the passive reading of se faire is a subtype of the causative reading or its own instance (see above; @sveberg_se_2012, @bellec_construction_2014 \[212-213\]). In @raineri_analyse_2010 [95]'s view, the idea that the PSF expresses subject responsibility is the "most common hypothesis" ("l'hypothèse la plus répandue") in the literature. However, not "universally accepted" @raineri_analyse_2010 \[98\] as there are counter-examples @kupferman_construction_1995 [59].
 
--   **Animacy**
-    -   tagging: continuum? inanimate vs. animate? (@bohmann_large-scale_2023 added: ”body parts”, “other”; @hundt_be-_2024 added: “human”)
-    -   @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 subject of se faire passive always causer; always responsible to some degree for the event (@gaatone_desagreable_1983 \[164\] active patient in se faire vs. passive patient in etre) @raineri_analyse_2010 [96]; ( - restricting verb selection and explaining incompatibility with e.g. emotion verbs @raineri_analyse_2010 [94])
-    -   se faire passive strongly disfavours inanimate subjects; however @labelle_anticausativizing_2013 claims that there is no causer in passive se faire → subject is not necessarily responsible (also @washio_when_1993), Martin 2002: subject intentionality is not necessary but dynamicity is @raineri_analyse_2010 [90]
-    -   @koenig_semantic_1992\[151, 153\]: "subject of se faire passiv required to be animate", survey with Native speakers & acceptability ratings; dialect split, some speakers made extensions: allow inanimate subjects when "in its changed state it affects a relevant animate entity")
-    -   se faire more common with animate subjects since inanimate subjects are seldom affected/responsible but se faire passive also found as used with inanimate subjects (@novakova_construction_2009 [4]: a little bit less than §% in her corpus; examples; and Kokutani (@raineri_analyse_2010 [92]\] (and in idioms, @labelle_anticausativizing_2013 and personifications, @sveberg_se_2012))
-    -   get passive: preponderence for animate subjects (@hundt_be-_2024) but allows more inanimate subjects than se faire passive @raineri_analyse_2010 [92]
-    -   @bohmann_large-scale_2023: get passive becomes more likely with inanimate subjects over time; development towards a more general passive (43); significance of subject responsibility lessening, @raineri_analyse_2010 : possibility of grammaticalisation for French PSF as well
+In line with their argumentation that the passive reading of the se faire + INF is a type of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of the se faire passive is always a causer, as it is always responsible to some degree for the described event. In contrast, @kupferman_construction_1995 [98, 99]: PSF has inherent passive meaning and morphology occasionally allow interpreting the subject as partially responsible.
+
+@gaatone_desagreable_1983 \[164\] distinguishes between an "active patient" in se faire construction and a "passive patient" in the être passive.) @raineri_analyse_2010 [96]. However, @labelle_anticausativizing_2013 claims that there is no causer in passive se faire → subject is not necessarily responsible (also @washio_when_1993), Martin 2002: subject intentionality is not necessary but dynamicity is @raineri_analyse_2010 [90]. No consensus regarding the "causer"-degree/ status of the subject but @raineri_analyse_2010 reflects that all analysises have in common that the subject is always in some way connected to the event. (difference: affectedness/ responsibility/ intentionality)
+
+-   **Animacy** TAGGING: continuum? inanimate vs. animate? (@bohmann_large-scale_2023 added: ”body parts”, “other”; @hundt_be-_2024 added: “human”)
+
+    As implied in the debate of subject responsibility, subjects of se faire passive constructions are predominantly active participants of the described action. PSF would be more common with Ianimate subjects since inanimate subjects are rarley affected and even less frequently responsible. Indeed, this tendency is reflected in both corpus studies (@novakova_construction_2009) and experimental studies (@koenig_semantic_1992\[151, 153\]): In a survey, French Native speakers rated the acceptability of animate subjects with the se faire passive significantly higher than with inanimate subjects. Inanimate subject were only allowed by some speakers when the subject "affects a relevant animate entitity" (@koenig_semantic_1992 [151, 153]. The positive correlation of animate subjects and PSF is relatively indisputed: Subject animacy preponderance for the se faire passive seems to be one of the few aspects in which scholars agree (@raineri_analyse_2010 [92]).
+
+    Although it has also been claimed that the "subject of se faire passive \[is\] required to be animate", there are some examples for PSF occurring with inanimate subjects: (@novakova_construction_2009 [4]: a little bit less than ?% in her corpus; examples; and Kokutani (@raineri_analyse_2010 [92]\] (and in idioms, @labelle_anticausativizing_2013 and personifications, @sveberg_se_2012)).
+
+    The preference of the se faire passive of animate over inanimate subjects is parallel to the English get passive @hundt_be-_2024, although @raineri_analyse_2010 \[92\] says that the get passive allows more inanimate subjects than the se faire passive. According to @bohmann_large-scale_2023 [43], the get passive has become more likely with inanimate subjects over time which may signify a lessening of subject responsibility. @raineri_analyse_2010 brings up the possibility that a similar process of grammaticalisation may be happening in French.
+
+-   Interactions: @raineri_analyse_2010 [94] suspects that the PSF's animacy (almost-) constraint restricts verb selection and provides an explanation for the construction's incompatibility with certain verbs (not all verbs can occur with animate subjects).
+
 -   **Agent PP** (par-phrase, Complément d'agent)
+
     -   @hundt_be-_2024, the “by-phrase openly assigns responsibility” to an external agent
     -   @bohmann_large-scale_2023: by-phrase “partially mitigate subject responsibility”, expected to favour be-passive (finding: more in the early data than now)
     -   → par-phrase less likely for se faire than for etre passive?
     -   @kupferman_construction_1995: agentivity requirement for agents denoted by par-phrase; for PSF par-phrase with abstract cause not possible (in contrast to être passive?)
+
 -   **Modal verbs**: such as "devoir", "savoir", "pouvoir", "falloir", "vouloir" very frequent with se faire passive @novakova_construction_2009 \[9\] (in @raineri_analyse_2010 [97], reason: they denote "control" to the subject
 
 **Hypothesis:**
 
-Animate subjects will favour the *se faire* passive, while inanimate subjects will favour the canonical *être* passive.
+Animate subjects will favour the *se faire* passive, while inanimate subjects will favour the canonical *être* passive. PSF strongly favours animate subjects and disfavours inanimate subjects.
 
 Further, we hypothesize that the presence of an agent PP ("Complément d'agent") prefers the canonical être passive over the se faire passive (because it assigns responsibility to an external agent that is not the subject).
 

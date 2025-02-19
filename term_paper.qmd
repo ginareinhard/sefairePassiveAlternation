@@ -55,11 +55,11 @@ Several corpus studies on the active/passive alternation in French have shown th
 
 ## *se faire* passive
 
-### Historical background <!-- not sure if relevant -->
+<!-- ### Historical background
 
 @bellec_grammaticalisation_2015 and @bellec_quand_2014 date the se faire + INF passive construction (PSF) to the middle of the 20th century and call it a "modern" construction that has since experienced a rapid increase in popularity. She describes a process of grammaticalisation and reanalysis for the PSF during/through which “se” has lost its reflexive meaning and “faire” has become an auxiliary. In merging, they form a “semi-auxiliary” and obtain a passive interpretation, while the causative meaning is lost (désémantisation). However, @bellec_construction_2014 claims that the causative reading did not disappear but instead coexists with the passive reading (debated, see below).
 
--   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward
+-   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward -->
 
 ### Structure and meaning
 
@@ -157,7 +157,7 @@ The preference of the se faire passive of animate over inanimate subjects is par
 
 Animate subjects will favour the *se faire* passive, while inanimate subjects will favour the canonical *être* passive. PSF strongly favours animate subjects and disfavours inanimate subjects.
 
-Further, we hypothesize that the presence of an agent PP ("Complément d'agent") prefers the canonical être passive over the se faire passive (because it assigns responsibility to an external agent that is not the subject).
+Further, we hypothesize that the presence of an agent PP ("Complément d'agent") prefers the canonical être passive over the se faire passive (because it assigns responsibility to an external agent that is not the subject which is unusual for PSF).
 
 ### Aspectuality (Aspect/"Aktionsart")
 
@@ -179,13 +179,15 @@ The overall consensus in the literature is that aspect marks progressivity gramm
 The factor of "Adversativity/ Non-neutrality" is reflected in the semantics of the verb and captures (negative) consequences that the described action has on the subject. It has been found to be relevant to the choice between the be and get passive (@hundt_be-_2024 [89, 96-97]). It is tagged on the verb as binary by @hundt_be-_2024 : adversative, non-adversative/ neutral.
 
 -   @gaatone_desagreable_1983 in @raineri_analyse_2010 [103]: se faire passive has a sense "désagreable" (unpleasant); subject affected by unpleasant event -\> according to him unpleasant events contradict notion of subject responsibility because subjects would not willingly bring the unpleasant event onto themselves (therefore argument for "primacy of causative reading")
-    -   reason: if subject experiences a pleasant event and this is expressed by se faire -\> mostly the subject has initated the action -\> causative and not passive reading (language example?)/ in contrast, less likely that the subject initiates an unpleasant action
+    -   reason: if subject experiences a pleasant event and this is expressed by se faire -\> mostly the subject has initiated the action -\> causative and not passive reading (language example?)/ in contrast, less likely that the subject initiates an unpleasant action
     -   also @spang-hanssen_quelques_1967, @raineri_analyse_2010 parallels to English get passive
 -   @novakova_construction_2009 : 30% of verbs in PSF denote unpleasant events and 5% denote pleasant events (in @raineri_analyse_2010 [194])
--   @kupferman_construction_1995 [77]: Although he rejects that the "unpleasant" sense is a characteristic of se faire (also used with positive), he agrees that it is more commonly used for unpleasant contexts ("has tended to specialize in unpleasant roles" (compared to être))
+-   @kupferman_construction_1995 [77]: Although he rejects that the "unpleasant" sense is a characteristic of se faire (also used with positive), he agrees that it is more commonly used for unpleasant contexts ("has tended to specialize in unpleasant roles" (compared to être, which is more neutral)
 -   @bohmann_large-scale_2023 [38, 43] Sentiment values of verb participles extracted from SentiWordNet: positivity, negativity, objectivity scores; reversed if sentence is negated
     -   adversativity and non-neutrality hypothesis both expect get passive to favour verbs with negative scores; but only non-neutrality hypothesis predicts get passive to correlate positively with positive emotion scores
 -   Verb clusters, verb semantics @bohmann_large-scale_2023 [51-52]: 21 levels
+
+**Hypothesis:** Se faire passive will occur more often with verbs that have high negativity scores than être passive.
 
 **Interaction:** Affecteness of the subject may be reflected by an interaction of subject animacy and verb adversativity: Consequences of actions, expressed by adversative verbs, affect animate subjects more than inanimate subjects. Therefore, adversativity and animacy may co-occur frequently.
 

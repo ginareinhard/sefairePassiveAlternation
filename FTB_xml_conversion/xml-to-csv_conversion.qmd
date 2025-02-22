@@ -1,0 +1,53 @@
+---
+title: "xml"
+format: html
+editor: visual
+---
+
+```{r}
+
+library(xml2)
+library(tidyverse)
+
+```
+
+Read corpus XML file:
+
+```{r}
+
+xml_corpus <- read_xml("FTB_xml_conversion/corpus-fonctions.xml")
+
+```
+
+Find all the XML nodes (sentences/annotations):
+
+```{r}
+
+sentences <- xml_find_all(xml_corpus, ".//SENT")
+
+```
+
+Extract whole sentences and create data frame:
+
+```{r}
+
+data <- map_df(sentences, function(sent) {
+  sent_attrs <- as.list(xml_attrs(sent))
+  sentence_text <- xml_find_all(sent, ".//w") %>% xml_text() %>% paste(collapse = " ")
+  tibble(
+    sentence_id = sent_attrs$textID,
+    author = sent_attrs$author,
+    date = sent_attrs$date,
+    full_sentence = sentence_text
+  )
+})
+
+```
+
+Save as CSV file:
+
+```{r}
+
+write_csv(data, "corpus.csv")
+
+```

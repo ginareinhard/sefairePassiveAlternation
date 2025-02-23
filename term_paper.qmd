@@ -41,20 +41,7 @@ number-sections: true
 
 -   evtl.: passive vs. *construction moyenne en se* (*La porte a été ouverte* vs. *la porte s'est ouverte*) -\> In the passif court, the agent argument is still implicit (Quellen)
 
-### XXXXXX
-
-Several corpus studies on the active/passive alternation in French have shown that the choice between active and passive constructions is not purely syntactic, but that semantic and pragmatic factors also play a crucial role in determining whether a passive construction is favoured.
-
--   Subjects in passive sentences are preferably animate, definite, and pronominal. In the study by @da_cunha_lalternance_2020, animate, definite, and pronominal arguments that function as the objects in active sentences were more frequently found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice)
-
--   Animacy has been shown to play an important role in the active/passive alternation in French.
-
--   Interestingly, gender also seems to play a role in the active/passive alternation. In @da_cunha_lalternance_2020 the passif court model showed a significant effect of grammatical gender: a feminine agent increased the likelihood of the the passive.
-
--   Surprisingly, number also had an effect: a plural arguments favoured the passive in all models. (+ Relativsätze & Priming als signifikante Faktoren) @da_cunha_lalternance_2020
-
 ## *se faire* passive
-
 <!-- ### Historical background
 
 @bellec_grammaticalisation_2015 and @bellec_quand_2014 date the se faire + INF passive construction (PSF) to the middle of the 20th century and call it a "modern" construction that has since experienced a rapid increase in popularity. She describes a process of grammaticalisation and reanalysis for the PSF during/through which “se” has lost its reflexive meaning and “faire” has become an auxiliary. In merging, they form a “semi-auxiliary” and obtain a passive interpretation, while the causative meaning is lost (désémantisation). However, @bellec_construction_2014 claims that the causative reading did not disappear but instead coexists with the passive reading (debated, see below).
@@ -127,6 +114,18 @@ The passive constructions of se faire and être are not always interchangeable: 
 ## Logistic Regression
 
 Variables, Hypotheses, Preference constraints
+
+### XXXXXX
+
+Several corpus studies on the active/passive alternation in French have shown that the choice between active and passive constructions is not purely syntactic, but that semantic and pragmatic factors also play a crucial role in determining whether a passive construction is favoured.
+
+-   Subjects in passive sentences are preferably animate, definite, and pronominal. In the study by @da_cunha_lalternance_2020, animate, definite, and pronominal arguments that function as the objects in active sentences were more frequently found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice)
+
+-   Animacy has been shown to play an important role in the active/passive alternation in French.
+
+-   Interestingly, gender also seems to play a role in the active/passive alternation. In @da_cunha_lalternance_2020 the passif court model showed a significant effect of grammatical gender: a feminine agent increased the likelihood of the the passive.
+
+-   Surprisingly, number also had an effect: a plural arguments favoured the passive in all models. (+ Relativsätze & Priming als signifikante Faktoren) @da_cunha_lalternance_2020
 
 ### Subject responsibility
 

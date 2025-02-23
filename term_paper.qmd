@@ -52,9 +52,10 @@ number-sections: true
 
 The construction consists of the pronoun "se", the conjugated form of the verb "faire" and a verb in the infinitive. According to @labelle_anticausativizing_2013 [235] the construction is "formally causative, but semantically passive". Similarly to the être passive, the subject of the passive sentence is the experiencer of the action. As with être, the direct object of the active sentence becomes the subject of the passive sentence. *Language example: active sentence with two (animate) arguments, se faire passive sentence, evtl. etre passive sentence*
 
-Unlike the être passive, however, the diathesis is not restricted to the direct object: The PSF has "greater syntactic flexibility" (@raineri_analyse_2010 [93-95] and can also be formed with ditransitive verbs, where the indirect object becomes the subject: *Language example: active ditransitive sentence, se faire passiv.* Another possibility are possesor constructions where the subject of the passive is only part of the object in the active sentence are also possible. (Le coiffeur coupe les cheveux de Pierre. -\> Pierre s'est fait couper les cheveux). However, the passive status of these constructions are debated. They could also be understood as a causative because Pierre made the hairdresser cut his hair, but he still undergoes the action. (add source)
+Unlike the être passive, however, the diathesis is not restricted to the direct object: The PSF has "greater syntactic flexibility" (@raineri_analyse_2010 [93-95] and can also be formed with ditransitive verbs, where the indirect object becomes the subject: *Language example: active ditransitive sentence, se faire passiv.* Another possibility are possesor constructions where the subject of the passive is only part of the object in the active sentence (Le coiffeur coupe les cheveux de Pierre. -\> Pierre s'est fait couper les cheveux). 
+However, the passive status of these constructions is debated. Some could also be understood as causatives if the subject both initiates and undergoes the action. (Pierre made the hairdresser cut his hair) (add source))
 
-The peculiarity of the construction has led scholars to wonder: @koenig_semantic_1992\[145\] asks: "how can a passive-like construction arise from a combination of a causative and a reflexive marker, where no marking of the passive function is apparent?".
+The peculiarity of the construction has led scholars to wonder: "how can a passive-like construction arise from a combination of a causative and a reflexive marker, where no marking of the passive function is apparent?" (@koenig_semantic_1992 [145]).
 
 @labelle_anticausativizing_2013 [23] suggests that the passive meaning is obtained through a syntactic mechanism that involves binding the empty NP-object position of the embedded verb to the subject through the reflexive particle "se".
 
@@ -133,7 +134,7 @@ As indicated above, subject responsibility in the se faire passive is central in
 the PSF construction has a preference to mark the subject as an active participant (although according to @raineri_analyse_2010 [98] is is not "universally accepted" as some authors also name counterexamples @kupferman_construction_1995 [59].)
 In @raineri_analyse_2010 [95]'s view, the idea that the PSF expresses subject responsibility is the "most common hypothesis" ("l'hypothèse la plus répandue") in the literature. -->
 
-In line with their argumentation that the passive reading of se faire + INF is a type of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of the se faire passive is always a causer and therefore always responsible to some degree. This is contrasted to the être passive's subject referent, that is understood to be more neutral. @gaatone_desagreable_1983 [164] distinguishes between an "active patient" in se faire construction and a "passive patient" in the être passive (@raineri_analyse_2010 [96]).
+In line with their argumentation that the passive reading of se faire + INF is a type of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of the se faire passive is always a causer and therefore always responsible to some degree. This is contrasted to the être passive's subject referent, which is understood to be more neutral. @gaatone_desagreable_1983 [164] distinguishes between an "active patient" in se faire construction and a "passive patient" in the être passive (@raineri_analyse_2010 [96]).
 
 In contrast, @kupferman_construction_1995 [59] gives PSF examples where the subject cannot be interpreted as responsible, one of which is repeated here:
 
@@ -146,9 +147,9 @@ In contrast, @kupferman_construction_1995 [59] gives PSF examples where the subj
 
 According to him, subject responsibility emerges from the context and not from the PSF which is inherently passive [98, 99]. Further support for this notion is provided by @labelle_anticausativizing_2013 and @washio_when_1993. For @martin_construction_2002, subject dynamicity, but not subject intentionality, is a necessary condition in the PSF (@raineri_analyse_2010 [90]).
 
-Thus, although the requirement of subject responsibility in the PSF is not "universally accepted" (@raineri_analyse_2010 [98]), the analyses show at least some consensus in that the PSF construction has a preference to mark the subject as connected to the event (@raineri_analyse_2010), either through affectedness, responsibility or intentionality. This tendency does not exist for the être passive (quelle).
+Thus, although the requirement of subject responsibility in the PSF is not "universally accepted" (@raineri_analyse_2010 [98]), the analyses show at least some consensus in that the PSF construction prefers to mark the subject as connected to the event (@raineri_analyse_2010), either through affectedness, responsibility or intentionality. This tendency does not exist for the être passive (source).
 
--   **Animacy** TAGGING: continuum? inanimate vs. animate? (@bohmann_large-scale_2023 added: ”body parts”, “other”; @hundt_be-_2024 added: “human”)
+-   **Animacy** TAGGING: inanimate vs. animate (@bohmann_large-scale_2023 added: ”body parts”, “other”; @hundt_be-_2024 added: “human”)
 
 As implied in the debate of subject responsibility, subjects of se faire passive constructions are predominantly active participants of the described action. Since inanimate subjects are rarely affected and even less frequently responsible, PSF is common with animate subjects. While some scholars claim that only animate subjects are possible with the PSF, others provide counterexamples (@labelle_anticausativizing_2013, @kokutani_sur_2005, @novakova_construction_2009 \[4\], @sveberg_se_2012) (@raineri_analyse_2010 [92]).
 
@@ -159,21 +160,19 @@ The preference of the se faire passive of animate over inanimate subjects is par
 **Interaction**: @raineri_analyse_2010 [94] suspects that the PSF's animacy (almost-) constraint restricts verb selection and provides an explanation for the construction's incompatibility with certain verbs (not all verbs can occur with animate subjects).
 
 -   **Agent PP** (par-phrase, Complément d'agent)
-
     -   @hundt_be-_2024, the “by-phrase openly assigns responsibility” to an external agent
     -   @bohmann_large-scale_2023: by-phrase “partially mitigate subject responsibility”, expected to favour be-passive (finding: more in the early data than now)
-    -   → par-phrase less likely for se faire than for etre passive?
-    -   @kupferman_construction_1995: agentivity requirement for agents denoted by par-phrase; for PSF par-phrase with abstract cause not possible (in contrast to être passive?)
+    -   @kupferman_construction_1995: agentivity requirement for agents denoted by par-phrase; not possible for PSF par-phrase with abstract cause (in contrast to être passive?)
 
 <!-- -   **Modal verbs** (auxiliary): such as "devoir", "savoir", "pouvoir", "falloir", "vouloir" very frequent with se faire passive @novakova_construction_2009 \[9\] (in @raineri_analyse_2010 [97], reason: they denote "control" to the subject -->
 
 **Hypothesis:**
 
-Animate subjects will favour the *se faire* passive, while inanimate subjects will favour the canonical *être* passive. PSF strongly favours animate subjects and disfavours inanimate subjects.
+Both *se faire* and *être* passive favour animate subjects over inanimate subjects but subject animacy is a stronger predictor of the PSF than the êre passive.
 
-Further, we hypothesize that the presence of an agent PP ("Complément d'agent") prefers the canonical être passive over the se faire passive (because it assigns responsibility to an external agent that is not the subject which is unusual for PSF).
+Further, we hypothesize that the presence of an agent PP ("Complément d'agent") prefers the canonical être passive over the se faire passive (because it assigns responsibility to an external agent that is not the subject which is unusual for PSF, where the subject is usually somewhat agentive.
 
-### Aspectuality (Aspect/"Aktionsart")
+### Aspectuality
 
 @keenan_passive_2007 [340] cites one of Greenberg's universals: "G-5: If a language has two or more basic passives they are likely to differ semantically with respect to the aspect ranges they cover." This suggests that être and se faire passive will demonstrate different aspect preferences. Aspectuality is reflected in the verb, either in semantics (Aktionsart) or grammatical marking (Aspect). <!-- The overall consensus in the literature is that aspect marks progressivity grammatically and Aktionsart semantically/ lexically. However, this clear cut distinction of Aspect and Aktionart has been doubted, and some theories see Aktionsart und Aspect as two instantiations of Aspectuality (Quelle, not focus). FOOTNOTE -->
 
@@ -199,7 +198,7 @@ The factor of "Adversativity/ Non-neutrality" is reflected in the semantics of t
 
 **Hypothesis:** Se faire passive will occur more often with verbs that have high negativity scores than être passive.
 
-**Interaction:** Affecteness of the subject may be reflected by an interaction of subject animacy and verb adversativity: Consequences of actions, expressed by adversative verbs, affect animate subjects more than inanimate subjects. Therefore, adversativity and animacy may co-occur frequently.
+**Interaction:** Affecteness of the subject may be reflected by an interaction of subject animacy and verb adversativity: Negative consequences of actions, expressed by adversative verbs, affect animate subjects more than inanimate subjects.
 
 ### Mode
 

@@ -207,7 +207,7 @@ Further, we hypothesize that the presence of an agent PP ("Complément d'agent")
 
 @keenan_passive_2007 [340] cite one of Greenberg's universals: "G-5: If a language has two or more basic passives they are likely to differ semantically with respect to the aspect ranges they cover." Assuming that the PSF is a "basic passive", this suggests that the être and se faire passives will demonstrate different aspect preferences. Aspectuality is reflected in the verb, either in semantics ("Aktionsart") or grammatical marking (Tense, Aspect, Mode) [^1] (source missing!).
 
-[^1]: The overall consensus in the literature is that aspect marks progressivity grammatically and Aktionsart semantically/ lexically. However, this clear cut distinction of Aspect and Aktionart has been doubted, and some theories see Aktionsart und Aspect as two instantiations of Aspectuality (Quelle, not focus).
+[^1]: The general consensus in the literature is that aspect marks progressivity grammatically and Aktionsart semantically/ lexically. However, this clear distinction between aspect and Aktionart has been doubted, and some theories see Aktionsart und Aspect as two instantiations of Aspectuality (source missing!).
 
 -   **Verb semantics (Aktionsart), Clusters** (@bohmann_large-scale_2023 [51-52]: 21 levels):
     -   se faire passive works well with dynamic verbs but not with stative verbs @raineri_analyse_2010 \[90\], @kupferman_construction_1995 [67] (but exceptions provided by @novakova_construction_2009); Martin 2002, @raineri_analyse_2010 [100-103]; volitional verbs fit well with PSF because they involve an action that leads to a mental state change while non-volitional verbs do not
@@ -217,7 +217,7 @@ Further, we hypothesize that the presence of an agent PP ("Complément d'agent")
     -   **Aspect** tagging @hundt_be-_2024 : simple, perfect, progressive; @bohmann_large-scale_2023 [39]: "Form of auxiliary verb: present, preterite, perfect, infinitive, -ing"
         -   @raineri_analyse_2010 [365] sees the "type of process denoted by the verb" as a "necessary condition", inchoative/ durative aspect: "get passive and se faire passive focus on onset of the process that affects the subject referent, whereas be and etre passive present the process in its entirety, without offering an internal perspective."
     -   **Mode?** actuality, possibility, necessity) -
-        -   Modal verbs (auxiliary): such as "devoir", "savoir", "pouvoir", "falloir", "vouloir" very frequent with se faire passive \@novakova_construction_2009 \[9\] (in \@raineri_analyse_2010 \[97\], reason: they denote "control" to the subject IF POSSIBLE
+        -   Modal verbs (auxiliary): such as "devoir", "savoir", "pouvoir", "falloir", "vouloir" very frequent with se faire passive @novakova_construction_2009 [9] (in @raineri_analyse_2010 \[97\], reason: they denote "control" to the subject IF POSSIBLE
 -   **(Periphrase constructions**: According to @spang-hanssen_quelques_1967 \[141\] and @novakova_construction_2009, periphrases that denote progressivity such as “être en train de + INF”, “venir de + INF” and “aller + INF” occur more naturally with the se faire passive than with the être passive. This is due to the dynamicity that the se faire passive entails (Quelle) compared to the more stative être passive. (also: @bellec_construction_2014; @keenan_passive_2007 [341], @raineri_analyse_2010 [91])
 
 ### Adversativity/ Non-neutrality
@@ -226,7 +226,7 @@ The factor of "Adversativity/ Non-neutrality" is reflected in the semantics of t
 
 @gaatone_desagreable_1983 argues that the se faire passive has a strong "unpleasant sense" (sens désagreable") because it occurs mainly with verbs denoting unpleasant events [^2].
 
-[^2]: According to @gaatone_desagreable_1983, unpleasant events contradict notion of subject responsibility because subjects would not willingly bring the unpleasant event onto themselves (argument for "primacy of causative reading") According to him, the reason is subject involvement in se faire constructions: if the subject experiences a pleasant event and this is expressed by se faire -\> mostly the subject has initiated the action -\> causative and not passive reading (language example?)/ in contrast, It is less likely that the subject initiates an unpleasant action.
+[^2]: According to @gaatone_desagreable_1983, unpleasant events contradict the notion of subject responsibility because subjects would not willingly bring the unpleasant event upon themselves (argument for "primacy of causative reading"). According to him, the reason this is the subject's involvement in se faire constructions: if the subject experiences a pleasant event and this is expressed by se faire -\> mostly the subject has initiated the action -\> causative and not passive reading (language example?)/ in contrast, it is less likely that the subject initiates an unpleasant action.
 
 Although @kupferman_construction_1995 \[77\] rejects the "unpleasant sense" as a characteristic of se faire, he agrees that it is more commonly used in unpleasant contexts ("has tended to specialize in unpleasant roles" (compared to être, which is more neutral). This is supported by corpus data: @novakova_construction_2009 [110] found a clear preference for PSF to be realised with unpleasant actions, with 30% of verbs in PSF denoting unpleasant events and only 5% denoting pleasant events.
 
@@ -266,7 +266,7 @@ Negation, subject person, subject number, subject gender
 -   MBL very susceptible to majority classes -\> unbalanced data is a big problem (poor performance for minority classes possible)
 -   k-Nearest-Neighbor (kNN):
     -   kNN algorithm is trained on data to predict the most likely passive choice
-    -   nearest neighbours out of all instances are determined -\> observation receives class that majority of nearest neighbours has
+    -   nearest neighbours out of all instances are determined -\> observation receives class of majority of nearest neighbours
     -   leave-one-out-setting @theijssen2013choosing [244]: train on all but one, test on remaining instance, iterate for each instance
     -   hyperparameters setting (e.g. number of neighbors)? -\> help of wrapper
     -   Tutorial: <https://www.datacamp.com/tutorial/k-nearest-neighbors-knn-classification-with-r-tutorial>
@@ -281,7 +281,7 @@ Negation, subject person, subject number, subject gender
 -   in R: "class" or "caret" package
 -   set seed for reproducibility
 -   split set manually or by "caTools" library
--   Preprocessing/ Feature scaling if feautres have different scales, to ensure proportions between features and prevent feautre with largest scale to dominate distance calculations
+-   Preprocessing/ Feature scaling if feautres have different scales, to ensure proportions between features and prevent that features with largest scale dominate distance calculations
 -   caret: Model Tuning: find optimal value of "K"
 -   caret: train best performing model
 -   Model evaluation

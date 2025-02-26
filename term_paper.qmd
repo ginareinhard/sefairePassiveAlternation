@@ -112,6 +112,12 @@ The passive constructions of se faire and être are not always interchangeable: 
 
 ## Data Collection
 
+-   corpus:
+-   problem: data are extremely unbalanced (ratio in Parlatalk 1.7 Mio être vs. 3888 se faire (450:1)) -\> making the ratio 50: 50 would distort the reality significantly but keeping the ratio the model will almost always predict être
+-   strategy possibilites:
+    -   build a corpus where être is presented more than se faire but not as extreme (approximation, e.g. 30% se faire - 70% etre)
+    -   assign more weight to se faire constructions by "weights=" variable of glm function
+
 ## Logistic Regression
 
 Variables, Hypotheses, Preference constraints
@@ -222,6 +228,17 @@ Negation, subject person, subject number, subject gender
 @bohmann_large-scale_2023 [39]: get passive disfavoured in complex constructions (e.g. negation); parallel in French?
 
 ## (Maybe: Memory based learning)
+
+-   no problem with sparse observation of features/ low-freuqency events @theijssen2013choosing \[243, 244\] because it "does not rely on any kind of generative model"
+-   only mandatory annotation is class label @theijssen2013choosing [243] (passive choice)
+-   "simple-theory neutral features"/ or some linguistic features (animacy, verb, pp-phrase...)
+-   compares test instances with labeled training data (stored in the memory)
+-   k-Nearest-Neighbor (kNN):
+    -   kNN algorithm is trained on data to predict the most likely passive choice
+    -   nearest neighbours out of all instances are determined -\> observation receives class that majority of nearest neighbours has
+    -   MBL very susceptible to majority classes -\> unbalanced data is a big problem
+    -   leave-one-out-setting @theijssen2013choosing [244]: train on all but one, test on remaining instance, iterate for each instance
+    -   hyperparameters setting (e.g. number of neighbors)? -\> help of wrapper
 
 # Results
 

@@ -115,7 +115,7 @@ However, even though the status of the PSF has been subject to disagreements and
 
 ## *être* vs. *se faire*: Competition or complementation? - Defining the variable context
 
-Following @bohmann_large-scale_2023 \[35\] who claims that "only cases where both variants can be used interchangeably should be considered", we aim to exclude constructions that do not allow for a paraphrase with the other. The passive constructions of se faire and être are not always interchangeable: As described above, the canonical passive with être requires a direct object in the active equivalent becoming the new subject, @koenig_semantic_1992[144], @washio_when_1993, @labelle_anticausativizing_2013 [16]. Thus, for reflexive and ditransitive verbs, the être passive is not available and does not compete with se faire. These constructions will be excluded and only transitive verbs will be investigated.
+Following @bohmann_large-scale_2023 \[35\] who claims that "only cases where both variants can be used interchangeably should be considered", we aim to exclude constructions that do not allow for a paraphrase with the other. The passive constructions of se faire and être are not always interchangeable: As described above, the canonical passive with être requires a direct object in the active equivalent becoming the new subject, @koenig_semantic_1992 [144], @washio_when_1993, @labelle_anticausativizing_2013 [16]. Thus, for reflexive and ditransitive verbs, the être passive is not available and does not compete with se faire. These constructions will be excluded and only transitive verbs will be investigated.
 
 -   se faire passive has evolved to be used in situations without a causer (passive reading) @bellec_construction_2014
 -   figurative, "besoin d’expressivité and extravagance" instead of "used up" canonical passive @bellec_construction_2014 \[206\]; part of lexicalised expressions @novakova_construction_2009 [117]
@@ -136,9 +136,10 @@ Following @bohmann_large-scale_2023 \[35\] who claims that "only cases where bot
 ## Data Collection
 
 -   corpus:
--   problem: data are extremely unbalanced (ratio in Parlatalk 1.7 Mio être vs. 3888 se faire (450:1)) -\> making the ratio 50: 50 would distort the reality significantly but keeping the ratio the model will almost always predict être
+-   problem: data are extremely unbalanced (ratio in Parlatalk 1.7 Mio être vs. 3888 se faire (450:1)) -\> making the ratio 50: 50 would distort the reality significantly but if the ratio is kept the model will almost always predict être
 -   strategy possibilities:
-    -   build a corpus where être is presented more than se faire but not as extreme (approximation, e.g. 34% se faire - 60% etre) (over/undersampling within limits) assign more weight to se faire constructions by "weights=" variable of glm function
+    -   build a corpus where être is presented more than se faire but not as extreme (approximation, e.g. 34% se faire - 60% etre) ("over/undersampling within limits")
+    -   assign more weight to se faire constructions by "weights=" variable of glm function
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score)
 
@@ -205,13 +206,13 @@ Further, we hypothesize that the presence of an agent PP ("Complément d'agent")
 
 ### Aspectuality
 
-@keenan_passive_2007 [340] cite one of Greenberg's universals: "G-5: If a language has two or more basic passives they are likely to differ semantically with respect to the aspect ranges they cover." Assuming that the PSF is a "basic passive", this suggests that être and se faire passive will demonstrate different aspect preferences. Aspectuality is reflected in the verb, either in semantics (Aktionsart) or grammatical marking (Aspect) [^1].
+@keenan_passive_2007 [340] cite one of Greenberg's universals: "G-5: If a language has two or more basic passives they are likely to differ semantically with respect to the aspect ranges they cover." Assuming that the PSF is a "basic passive", this suggests that être and se faire passive will demonstrate different aspect preferences. Aspectuality is reflected in the verb, either in semantics ("Aktionsart") or grammatical marking (Tense, Aspect, Mode) [^1] (source missing!).
 
 [^1]: The overall consensus in the literature is that aspect marks progressivity grammatically and Aktionsart semantically/ lexically. However, this clear cut distinction of Aspect and Aktionart has been doubted, and some theories see Aktionsart und Aspect as two instantiations of Aspectuality (Quelle, not focus).
 
 -   **Verb semantics (Aktionsart), Clusters** (@bohmann_large-scale_2023 [51-52]: 21 levels):
     -   se faire passive works well with dynamic verbs but not with stative verbs @raineri_analyse_2010 \[90\], @kupferman_construction_1995 [67] (but exceptions provided by @novakova_construction_2009); Martin 2002, @raineri_analyse_2010 [100-103]; volitional verbs fit well with PSF because they involve an action that leads to a mental state change while non-volitional verbs do not
-    -   **Telicity:** According to @bellec_construction_2014 \[209\], the être passive is likely to describe a result/ mark an endpoint of an action, while the se faire passive is used for actions in process and verbs that are in their nature ongoing (e.g. perception verbs, @bellec_construction_2014 [209]). This could be reflected in the telicity of the verb, where telic verbs favour the être passive and atelic verbs favour the se faire passive.
+    -   Telicity: According to @bellec_construction_2014 \[209\], the être passive is likely to describe a result/ mark an endpoint of an action, while the se faire passive is used for actions in process and verbs that are in their nature ongoing (e.g. perception verbs, @bellec_construction_2014 [209]). This could be reflected in the telicity of the verb, where telic verbs favour the être passive and atelic verbs favour the se faire passive.
 -   **TAM (Tense, Aspect, Mode)**
     -   **Tense:** Descriptions of future events are more likely to focus on the start and process of an event/ action than on its endpoint (@bellec_construction_2014 [210]) Therefore, it seems likely that future tense will favour the se faire passive over the être passive. Regarding past tense, the être passive will probably be more popular than se faire for constructions in the passé composé (passé composé also used with se faire if speaker wants to emphasize a process, @bellec_construction_2014). In contrast, the se faire passive may be preferred if the action is described in the imparfait (only a guess).
     -   **Aspect** tagging @hundt_be-_2024 : simple, perfect, progressive; @bohmann_large-scale_2023 [39]: "Form of auxiliary verb: present, preterite, perfect, infinitive, -ing"
@@ -231,9 +232,10 @@ The factor of "Adversativity/ Non-neutrality" is reflected in semantics of the v
 Although @kupferman_construction_1995 \[77\] rejects the "unpleasant sense" as a characteristic of se faire, he agrees that it is more commonly used in unpleasant contexts ("has tended to specialize in unpleasant roles" (compared to être, which is more neutral). This is evidenced by corpus data: @novakova_construction_2009 [110] found a clear preference of the PSF to be realized with unpleasant actions, with 30% of verbs in PSF denoting unpleasant events and only 5% denoting pleasant events.
 
 -   @bohmann_large-scale_2023 [38, 43] Sentiment values of verb participles extracted from SentiWordNet: positivity, negativity, objectivity scores; reversed if sentence is negated
--   adversativity and non-neutrality hypothesis both expect get passive to favour verbs with negative scores; but only non-neutrality hypothesis predicts get passive to correlate positively with positive emotion scores
 
-**Hypothesis:** Se faire passive will occur more often with verbs that have high negativity scores than être passive.
+As @bohmann_large-scale_2023 notes, there are two hypotheses related to emotions of the verb: The adversativity and the non-neutrality hypothesis. Both expect the get passive to favour verbs with negative scores; but only the non-neutrality hypothesis predicts get passive to correlate positively with positive emotion scores as well.
+
+**Hypothesis:** Se faire passive be preferred over the être passive for verbs that denote "unpleasant" actions (as reflected by the sentiment analysis).
 
 **Interaction:** Affecteness of the subject may be reflected by an interaction of subject animacy and verb adversativity: Negative consequences of actions, expressed by adversative verbs, affect animate subjects more than inanimate subjects.
 
@@ -256,32 +258,34 @@ Negation, subject person, subject number, subject gender
 @bohmann_large-scale_2023 [39]: get passive disfavoured in complex constructions (e.g. negation); parallel in French?
 
 ## Memory based learning
+
 -   non-parametric: no assumptions about underlying distribution of data
 -   no problem with sparse observation of features/ low-frequency events @theijssen2013choosing [243, 244] because it "does not rely on any kind of generative model"
 -   only mandatory annotation is class label @theijssen2013choosing [243] (passive choice)
 -   "simple-theory neutral features"/ or some linguistic features (animacy, verb, pp-phrase...)
 -   compares test instances with labeled training data (stored in the memory)
- -   MBL very susceptible to majority classes -\> unbalanced data is a big problem (poor performance for minority classes possible)
+-   MBL very susceptible to majority classes -\> unbalanced data is a big problem (poor performance for minority classes possible)
 -   k-Nearest-Neighbor (kNN):
     -   kNN algorithm is trained on data to predict the most likely passive choice
     -   nearest neighbours out of all instances are determined -\> observation receives class that majority of nearest neighbours has
     -   leave-one-out-setting @theijssen2013choosing [244]: train on all but one, test on remaining instance, iterate for each instance
     -   hyperparameters setting (e.g. number of neighbors)? -\> help of wrapper
-    - Tutorial: <https://www.datacamp.com/tutorial/k-nearest-neighbors-knn-classification-with-r-tutorial>
-1. choose the value of K, which is the number of nearest neighbors that will be used to make the prediction.
-2. Calculate the distance between that point and all the points in the training set.
-3. Select the K nearest neighbors based on the distances calculated.
-4. Assign the label of the majority class to the new data point.
-5. Repeat steps 2 to 4 for all the data points in the test set.
-6. Evaluate the accuracy of the algorithm.
+    -   Tutorial: <https://www.datacamp.com/tutorial/k-nearest-neighbors-knn-classification-with-r-tutorial>
 
-- in R: "class" or "caret" package
-- set seed for reproducibility
-- split set manually or by "caTools" library
-- Preprocessing/ Feature scaling if feautres have different scales, to ensure proportions between features and prevent feautre with largest scale to dominate distance calculations
-- caret: Model Tuning: find optimal value of "K"
-- caret: train best performing model
-- Model evaluation
+1.  choose the value of K, which is the number of nearest neighbors that will be used to make the prediction.
+2.  Calculate the distance between that point and all the points in the training set.
+3.  Select the K nearest neighbors based on the distances calculated.
+4.  Assign the label of the majority class to the new data point.
+5.  Repeat steps 2 to 4 for all the data points in the test set.
+6.  Evaluate the accuracy of the algorithm.
+
+-   in R: "class" or "caret" package
+-   set seed for reproducibility
+-   split set manually or by "caTools" library
+-   Preprocessing/ Feature scaling if feautres have different scales, to ensure proportions between features and prevent feautre with largest scale to dominate distance calculations
+-   caret: Model Tuning: find optimal value of "K"
+-   caret: train best performing model
+-   Model evaluation
 
 # Results
 

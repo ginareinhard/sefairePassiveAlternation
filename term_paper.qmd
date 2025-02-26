@@ -87,13 +87,13 @@ On the other hand, @kupferman_construction_1995 sees causative and passive readi
 -   In the causative reading, the particle “se” functions has a reflexive meaning while in the passive reading, “se” is not reflexive.
 -   In the causative reading, “faire” has transparent causative meaning. This causative meaning is lost in the passive reading, where “faire” has no inherent meaning. <!-- add: how will we distinguish them / have we distinguished them in our study -->
 
-This debate has been central in the investigations of the se faire + INF constructions and cannot be left aside. Since our goal is to examine the passive alternation of être and se faire, it is essential that we make sure we compare être only to real passive constructions, and not causative constructions. We follow @raineri_analyse_2010 [165] in including only se faire + Inf constructions that have a natural paraphrase with the être passive, to include only constructions that contrast directly with être.
+This debate has been central in the investigations of the se faire + INF constructions and cannot be left aside. Since our goal is to examine the passive alternation of être and se faire, it is essential that we make sure we compare être only to real passive constructions, and not causative constructions (@bohmann_large-scale_2023 \[35\]: "all extracted forms should be genuine instances of the variable under investigation"). We follow @raineri_analyse_2010 [165] in including only se faire + Inf constructions that have a natural paraphrase with the être passive, to include only constructions that contrast directly with être.
 
 However, even though the status of the PSF has been subject to disagreements and discussion, the literature clearly shows that there is a passive reading related to this construction. This is independent from whether the passive sense emerges from within the construction or out of the components it occurs with, or whether it has an underlying causative meaning. By comparing PSF and PE constructions, we may be able to shed light on this debate from a corpuslinguistics' perspective by examining which factors contribute to the choice between the two passives. <!-- (-> exclude causative readings?). Can our findings contribute to the debate of whether se faire deserves passive-status? If not: no need to spell out the debate in detail. -->
 
 ## *être* vs. *se faire*: Competition or complementation? - Defining the variable context
 
-The passive constructions of se faire and être are not always interchangeable: As described above, the canonical passive with être requires a direct object in the active equivalent becoming the new subject, @koenig_semantic_1992\[144\], @washio_when_1993, @labelle_anticausativizing_2013\[16\]. Thus, for reflexive and ditransitive verbs, the être passive is not available and does not compete with se faire. These constructions will be excluded and only transitive verbs will be investigated.
+Following @bohmann_large-scale_2023 [35] who claims that "only cases where both variants can be used interchangeably should be considered", we aim to exclude constructions that do not allow for a paraphrase with the other. The passive constructions of se faire and être are not always interchangeable: As described above, the canonical passive with être requires a direct object in the active equivalent becoming the new subject, @koenig_semantic_1992\[144\], @washio_when_1993, @labelle_anticausativizing_2013[16]. Thus, for reflexive and ditransitive verbs, the être passive is not available and does not compete with se faire. These constructions will be excluded and only transitive verbs will be investigated.
 
 -   se faire passive has evolved to be used in situations without a causer (passive reading) @bellec_construction_2014
 -   figurative, "besoin d’expressivité and extravagance" instead of "used up" canonical passive @bellec_construction_2014 \[206\]; part of lexicalised expressions @novakova_construction_2009 [117]
@@ -102,6 +102,7 @@ The passive constructions of se faire and être are not always interchangeable: 
     -   se faire less formal, more figurative and emotional, used to build the passive with indirect object as the agent & to express passivity in dynamic/ ongoing processes, more spoken
     -   etre passive more “neutral”, more formal, more written
 -   strategy for @raineri_analyse_2010 to exclude causative constructions: keep only utterances for which the etre V paraphrase seems more natural than a causative paraphrase; also excludes lexicalised idioms because they convey a more complex meaning than paraphrase in etre
+-   être: exclude adjectives and some participles that do not form the passive (similar to @bohmann_large-scale_2023 \[36\])/ "instances that allow for gradation" @hundt_be-_2024 [92]
 
 ### Maybe: Comparison to similar alternations in other languages
 
@@ -117,6 +118,7 @@ The passive constructions of se faire and être are not always interchangeable: 
 -   strategy possibilites:
     -   build a corpus where être is presented more than se faire but not as extreme (approximation, e.g. 30% se faire - 70% etre)
     -   assign more weight to se faire constructions by "weights=" variable of glm function
+    -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
 
 ## Logistic Regression
 
@@ -155,55 +157,55 @@ According to him, subject responsibility emerges from the context and not from t
 
 Thus, although the requirement of subject responsibility in the PSF is not "universally accepted" (@raineri_analyse_2010 [98]), the analyses show at least some consensus in that the PSF construction prefers to mark the subject as connected to the event (@raineri_analyse_2010), either through affectedness, responsibility or intentionality. This tendency does not exist for the être passive (source).
 
--   **Animacy** TAGGING: inanimate vs. animate (@bohmann_large-scale_2023 added: ”body parts”, “other”; @hundt_be-_2024 added: “human”)
+-   **Animacy**
 
-As implied in the debate of subject responsibility, subjects of se faire passive constructions are predominantly active participants of the described action. Since inanimate subjects are rarely affected and even less frequently responsible, PSF is common with animate subjects. While some scholars claim that only animate subjects are possible with the PSF, others provide counterexamples (@labelle_anticausativizing_2013, @kokutani_sur_2005, @novakova_construction_2009 \[4\], @sveberg_se_2012) (@raineri_analyse_2010 [92]).
+As implied in the debate of subject responsibility, subjects of se faire passive constructions are predominantly active participants of the described action. Since inanimate subjects are rarely affected and even less frequently responsible, PSF is common with animate subjects. While some scholars claim that only animate subjects are possible with the PSF, others provide counterexamples (@labelle_anticausativizing_2013, @kokutani_sur_2005, @novakova_construction_2009 [4], @sveberg_se_2012) (@raineri_analyse_2010 [92]). We tag animacy as binary "inanimate"/ "animate" although we recognize that animacy has been prominently regarded as a continuum in the literature. 
 
-However, these examples seem to be exceptions as there is both corpus (@novakova_construction_2009 [111]) and experimental (@koenig_semantic_1992 \[151, 153\]) evidence that subject animacy and PSF correlate positively: In @novakova_construction_2009 [111]'s sorpus study, less than 3% of the se faire sentences had an inanimate subjects. In a survey by @koenig_semantic_1992, French Native speakers rated the acceptability of PSF with animate subjects significantly higher than with inanimate subjects. Inanimate subject were only allowed by some speakers when the subject "affects a relevant animate entitity" (@koenig_semantic_1992 [151, 153]. Subject animacy preponderance for the se faire passive seems to be one of the few aspects in which scholars agree (@raineri_analyse_2010 [92]).
+However, these examples seem to be exceptions as there is both corpus (@novakova_construction_2009 [111]) and experimental (@koenig_semantic_1992 \[151, 153\]) evidence that subject animacy and PSF correlate positively: In @novakova_construction_2009 [111]'s corpus study, less than 3% of the se faire sentences had an inanimate subjects. In a survey by @koenig_semantic_1992, French Native speakers rated the acceptability of PSF with animate subjects significantly higher than with inanimate subjects. Inanimate subject were only allowed by some speakers when the subject "affects a relevant animate entitity" (@koenig_semantic_1992 [151, 153]. Subject animacy preponderance for the se faire passive seems to be one of the few aspects in which scholars agree (@raineri_analyse_2010 [92]).
 
 <!-- The preference of the se faire passive of animate over inanimate subjects is parallel to the English get passive (@hundt_be-_2024), although @raineri_analyse_2010 [92] finds that the get passive allows more inanimate subjects than the se faire passive. According to @bohmann_large-scale_2023 [43], the get passive has become more likely with inanimate subjects over time which may signify a lessening of subject responsibility. @raineri_analyse_2010 brings up the possibility that a similar process of grammaticalisation may be happening in French. (not sure if relevant)-->
-
-**Interaction**: @raineri_analyse_2010 [94] suspects that the PSF's animacy (almost-) constraint restricts verb selection and provides an explanation for the construction's incompatibility with certain verbs (not all verbs can occur with animate subjects).
 
 -   **Agent PP** (par-phrase, Complément d'agent)
     -   @hundt_be-_2024, the “by-phrase openly assigns responsibility” to an external agent
     -   @bohmann_large-scale_2023: by-phrase “partially mitigate subject responsibility”, expected to favour be-passive (finding: more in the early data than now)
     -   @kupferman_construction_1995: agentivity requirement for agents denoted by par-phrase; not possible for PSF par-phrase with abstract cause (in contrast to être passive?)
 
-<!-- -   **Modal verbs** (auxiliary): such as "devoir", "savoir", "pouvoir", "falloir", "vouloir" very frequent with se faire passive @novakova_construction_2009 \[9\] (in @raineri_analyse_2010 [97], reason: they denote "control" to the subject -->
-
 **Hypothesis:**
 
-Both *se faire* and *être* passive favour animate subjects over inanimate subjects but subject animacy is a stronger predictor of the PSF than the êre passive.
+Both *se faire* and *être* passive favour animate subjects over inanimate subjects but subject animacy is a stronger predictor of the PSF than the être passive.
 
 Further, we hypothesize that the presence of an agent PP ("Complément d'agent") prefers the canonical être passive over the se faire passive (because it assigns responsibility to an external agent that is not the subject which is unusual for PSF, where the subject is usually somewhat agentive.
 
+**Interaction**: @raineri_analyse_2010 [94] suspects that the PSF's animacy (almost-) constraint restricts verb selection and provides an explanation for the construction's incompatibility with certain verbs (i.e. not all verbs can occur with animate subjects).
+
 ### Aspectuality
 
-@keenan_passive_2007 [340] cites one of Greenberg's universals: "G-5: If a language has two or more basic passives they are likely to differ semantically with respect to the aspect ranges they cover." This suggests that être and se faire passive will demonstrate different aspect preferences. Aspectuality is reflected in the verb, either in semantics (Aktionsart) or grammatical marking (Aspect). <!-- The overall consensus in the literature is that aspect marks progressivity grammatically and Aktionsart semantically/ lexically. However, this clear cut distinction of Aspect and Aktionart has been doubted, and some theories see Aktionsart und Aspect as two instantiations of Aspectuality (Quelle, not focus). FOOTNOTE -->
+@keenan_passive_2007 [340] cite one of Greenberg's universals: "G-5: If a language has two or more basic passives they are likely to differ semantically with respect to the aspect ranges they cover." This suggests that être and se faire passive will demonstrate different aspect preferences. Aspectuality is reflected in the verb, either in semantics (Aktionsart) or grammatical marking (Aspect) [^1].
 
--   **Verb semantics (Aktionsart), Clusters**:
+[^1]: The overall consensus in the literature is that aspect marks progressivity grammatically and Aktionsart semantically/ lexically. However, this clear cut distinction of Aspect and Aktionart has been doubted, and some theories see Aktionsart und Aspect as two instantiations of Aspectuality (Quelle, not focus).
+
+-   **Verb semantics (Aktionsart), Clusters** (@bohmann_large-scale_2023 [51-52]: 21 levels):
     -   se faire passive works well with dynamic verbs but not with stative verbs @raineri_analyse_2010 \[90\], @kupferman_construction_1995 [67] (but exceptions provided by @novakova_construction_2009); Martin 2002, @raineri_analyse_2010 [100-103]; volitional verbs fit well with PSF because they involve an action that leads to a mental state change while non-volitional verbs do not
     -   **Telicity:** According to @bellec_construction_2014 \[209\], the être passive is likely to describe a result/ mark an endpoint of an action, while the se faire passive is used for actions in process and verbs that are in their nature ongoing (e.g. perception verbs, @bellec_construction_2014 [209]). This could be reflected in the telicity of the verb, where telic verbs favour the être passive and atelic verbs favour the se faire passive.
 -   **TAM (Tense, Aspect, Mode)**
     -   **Tense:** Descriptions of future events are more likely to focus on the start and process of an event/ action than on its endpoint (@bellec_construction_2014 [210]) Therefore, it seems likely that future tense will favour the se faire passive over the être passive. Regarding past tense, the être passive will probably be more popular than se faire for constructions in the passé composé (passé composé also used with se faire if speaker wants to emphasize a process, @bellec_construction_2014). In contrast, the se faire passive may be preferred if the action is described in the imparfait (only a guess).
     -   **Aspect** tagging @hundt_be-_2024 : simple, perfect, progressive; @bohmann_large-scale_2023 [39]: "Form of auxiliary verb: present, preterite, perfect, infinitive, -ing"
         -   @raineri_analyse_2010 [365] sees the "type of process denoted by the verb" as a "necessary condition", inchoative/ durative aspect: "get passive and se faire passive focus on onset of the process that affects the subject referent, whereas be and etre passive present the process in its entirety, without offering an internal perspective."
-    -   (Mode? actuality, possibility, necessity)
+    -   (Mode? actuality, possibility, necessity) **Modal verbs** (auxiliary): such as "devoir", "savoir", "pouvoir", "falloir", "vouloir" very frequent with se faire passive \@novakova_construction_2009 [9] (in \@raineri_analyse_2010 \[97\], reason: they denote "control" to the subject
 -   **(Periphrase constructions**: According to @spang-hanssen_quelques_1967 \[141\] and @novakova_construction_2009, periphrases that denote progressivity such as “être en train de + INF”, “venir de + INF” and “aller + INF” occur more naturally with the se faire passive than with the être passive. This is due to the dynamicity that the se faire passive entails (Quelle) compared to the more stative être passive. (also: @bellec_construction_2014; @keenan_passive_2007 [341], @raineri_analyse_2010 [91])
 
 ### Adversativity/ Non-neutrality
 
-The factor of "Adversativity/ Non-neutrality" is reflected in the semantics of the verb and captures (negative) consequences that the described action has on the subject. It has been found to be relevant to the choice between the be and get passive (@hundt_be-_2024 [89, 96-97]). It is tagged on the verb as binary by @hundt_be-_2024 : adversative, non-adversative/ neutral. @spang-hanssen_quelques_1967 and @raineri_analyse_2010 draw parallels between the English get passive and the French PSF construction.
+The factor of "Adversativity/ Non-neutrality" is reflected in semantics of the verb and captures (negative) consequences the described action has on the subject. It has been found to be relevant to the choice between the be and get passive (@hundt_be-_2024 [89, 96-97]; @bohmann_large-scale_2023). @spang-hanssen_quelques_1967 and @raineri_analyse_2010 draw parallels between the English get passive and the French PSF construction. It is tagged on the verb as binary by @hundt_be-_2024 as adversative, non-adversative/ neutral.
 
--   @gaatone_desagreable_1983 in @raineri_analyse_2010 [103] makes argument that the se faire passive has a strong "unpleasant sense" (sens désagreable") in that it mainly occurs with verbs denoting unpleasant events. <!-- FOOTNOTE according to @gaatone_desagreable_1983, unpleasant events contradict notion of subject responsibility because subjects would not willingly bring the unpleasant event onto themselves (argument for "primacy of causative reading")-->
-    -   if subject experiences a pleasant event and this is expressed by se faire -\> mostly the subject has initiated the action -\> causative and not passive reading (language example?)/ in contrast, less likely that the subject initiates an unpleasant action
+@gaatone_desagreable_1983 makes argument that the se faire passive has a strong "unpleasant sense" (sens désagreable") because it mainly occurs with verbs denoting unpleasant events [^2].
 
-Although @kupferman_construction_1995 \[77\] rejects that the "unpleasant" sense is a characteristic of se faire (also used with positive), he agrees that it is more commonly used for unpleasant contexts ("has tended to specialize in unpleasant roles" (compared to être, which is more neutral). This is evidenced by corpus data: @novakova_construction_2009 [110] found a clear preference of the PSF to be realized with unpleasant actions, with 30% of verbs in PSF denoting unpleasant events and only 5% denoting pleasant events.
+[^2]: According to @gaatone_desagreable_1983, unpleasant events contradict notion of subject responsibility because subjects would not willingly bring the unpleasant event onto themselves (argument for "primacy of causative reading")  According to him, the reason is subject involvement in se faire constructions: if the subject experiences a pleasant event and this is expressed by se faire -\> mostly the subject has initiated the action -\> causative and not passive reading (language example?)/ in contrast, It is less likely that the subject initiates an unpleasant action.
+
+Although @kupferman_construction_1995 [77] rejects the "unpleasant sense" as a characteristic of se faire, he agrees that it is more commonly used in unpleasant contexts ("has tended to specialize in unpleasant roles" (compared to être, which is more neutral). This is evidenced by corpus data: @novakova_construction_2009 [110] found a clear preference of the PSF to be realized with unpleasant actions, with 30% of verbs in PSF denoting unpleasant events and only 5% denoting pleasant events.
 
 -   @bohmann_large-scale_2023 [38, 43] Sentiment values of verb participles extracted from SentiWordNet: positivity, negativity, objectivity scores; reversed if sentence is negated
     -   adversativity and non-neutrality hypothesis both expect get passive to favour verbs with negative scores; but only non-neutrality hypothesis predicts get passive to correlate positively with positive emotion scores
--   Verb clusters, verb semantics @bohmann_large-scale_2023 [51-52]: 21 levels
 
 **Hypothesis:** Se faire passive will occur more often with verbs that have high negativity scores than être passive.
 
@@ -227,9 +229,9 @@ Negation, subject person, subject number, subject gender
 
 @bohmann_large-scale_2023 [39]: get passive disfavoured in complex constructions (e.g. negation); parallel in French?
 
-## (Maybe: Memory based learning)
+## Memory based learning
 
--   no problem with sparse observation of features/ low-freuqency events @theijssen2013choosing \[243, 244\] because it "does not rely on any kind of generative model"
+-   no problem with sparse observation of features/ low-frequency events @theijssen2013choosing [243, 244] because it "does not rely on any kind of generative model"
 -   only mandatory annotation is class label @theijssen2013choosing [243] (passive choice)
 -   "simple-theory neutral features"/ or some linguistic features (animacy, verb, pp-phrase...)
 -   compares test instances with labeled training data (stored in the memory)

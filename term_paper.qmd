@@ -132,29 +132,31 @@ Since our aim is to investigate the passive alternation of être and se faire, i
 
 ## Data Collection
 
--   corpus:
+-   corpus: (+ reference)
+    -   comprising data from \[years\] extracted from Sketch Engine with a semi-automatic approach, including manual filtering
+    -   why did we choose it
+-   We selected an equal number of occurrences of *être* passive and *se faire* passive.
+    -   We made a list of the lemmas in the se faire constructions → used these lemmas to filter the être constructions
+
+    -   Exclusion of causative reading of se faire constructions: the same verbs have been used with être passive in the same corpus (find/extract the constructions) → depends on how many constructions we have left
+-   We have not taken into account impersonal passives (*example from corpus*)
+-   être passive: In their active/passive alternation study @da_cunha_lalternance_2020 only chose passive sentences in the compound past tense "NP a été VP" in order to favour verbal passives over adjectival passives (*La porte est ouverte*). However, we chose to include the present tense/all tenses. This decision was based on previous literature suggesting that the present tense favors *se faire* passive over *être* passive, making tense an important factor in our study.
+-   In line with @da_cunha_lalternance_2020 we chose complément d'agents introduced by the preposition *par*, avoiding additional variation caused by *de*.
 -   problem: data are extremely unbalanced (ratio in Parlatalk 1.7 Mio être vs. 3888 se faire (450:1)) -\> making the ratio 50: 50 would distort the reality significantly but if the ratio is kept the model will almost always predict être
 -   strategy possibilities:
     -   build a corpus where être is presented more than se faire but not as extreme (approximation, e.g. 34% se faire - 60% etre) ("over/undersampling within limits")
     -   assign more weight to se faire constructions by "weights=" variable of glm function
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score)
+-   Our sample therefore comprises XXX sentences/constructions: XX se faire and XX être passive, ... (short summary)
 
 ## Logistic Regression
 
 Variables, Hypotheses, Preference constraints
 
-### XXXXXX
-
-Several corpus studies on the active/passive alternation in French have shown that the choice between active and passive constructions is not purely syntactic, but that semantic and pragmatic factors also play a crucial role in determining whether a passive construction is favoured.
+Several corpus studies on voice choice in French have shown that the choice between active and passive constructions (*être* passive) is not purely syntactic, but that semantic and pragmatic factors also play a crucial role in determining whether a passive construction is favoured.
 
 -   Subjects in passive sentences are preferably animate, definite, and pronominal. In the study by @da_cunha_lalternance_2020, animate, definite, and pronominal arguments that function as the objects in active sentences were more frequently found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice)
-
--   Animacy has been shown to play an important role in the active/passive alternation in French.
-
--   Interestingly, gender also seems to play a role in the active/passive alternation. In @da_cunha_lalternance_2020 the passif court model showed a significant effect of grammatical gender: a feminine agent increased the likelihood of the the passive.
-
--   Surprisingly, number also had an effect: a plural arguments favoured the passive in all models. (+ Relativsätze & Priming als signifikante Faktoren) @da_cunha_lalternance_2020
 
 ### Subject responsibility
 
@@ -181,6 +183,8 @@ According to him, subject responsibility emerges from the context and not from t
 Thus, although the requirement of subject responsibility in the PSF is not "universally accepted" (@raineri_analyse_2010 [98]), the analyses show at least some consensus in that the PSF construction prefers to mark the subject as connected to the event (@raineri_analyse_2010), either through affectedness, responsibility or intentionality. This tendency does not exist for the être passive (source).
 
 -   **Animacy**
+
+Corpus studies have shown that animacy significantly influences voice choice in French. The animacy of the passive subject (not agent) has been shown to increase the likelihood of using the passive voice (*être* passive) over the active voice. @da_cunha_lalternance_2020 (+2022) -\> more explanation as to why
 
 As implied in the debate on subject responsibility, subjects of se faire passive constructions are predominantly active participants in the described action. Since inanimate subjects are rarely affected and even less often responsible, PSF is common with animate subjects. While some scholars claim that only animate subjects are possible with the PSF, others provide counterexamples (@labelle_anticausativizing_2013, @kokutani_sur_2005, @novakova_construction_2009 \[4\], @sveberg_se_2012) (@raineri_analyse_2010 [92]). We tag animacy as binary "inanimate"/ "animate" although we recognize that animacy has been prominently considered as a continuum in the literature.
 
@@ -236,12 +240,6 @@ As @bohmann_large-scale_2023 notes, there are two hypotheses related to emotions
 
 **Interaction:** Affecteness of the subject may be reflected by an interaction of subject animacy and verb adversativity: Negative consequences of actions, expressed by adversative verbs, affect animate subjects more than inanimate subjects.
 
-### Mode
-
-spoken vs. written
-
--   se faire passive favoured in spoken French; être passive favoured in written French @raineri_analyse_2010
-
 ### (Maybe: Register)
 
 Text genre, formal vs. informal
@@ -252,7 +250,20 @@ Text genre, formal vs. informal
 
 Negation, subject person, subject number, subject gender
 
+-   **Person**
+
+-   **Gender:** We want to test whether grammatical gender influences the alternation between *être* and *se faire* passives. Since previous findings indicate that a feminine **agent** increases the likelihood of *être* passive (passif court, which means the agent was omitted) over active voice, it is worth exploring whether this effect extends to the choice between *être* and *se faire* constructions. \@da_cunha_lalternance_2020 (+2022) found that in written French a feminine agent increased the likelihood of *être* passive (passif court model), with no interaction with animacy (whether the argument was human or non-human) (or definiteness). This could suggest that gender itself plays a direct role in voice choice. However, given the small sample size of the study, it is also possible that an interaction effect exists but was not statistically detectable in this study (check 2022 study). We want to test whether gender also plays a role independently for our alternation. Also: we expect (almost) no inanimate subjects in *se faire* passive contructions.\
+    \<-\> prominence/subject responsibility? (similar to animacy factor for *se faire* passive? grammatical gender though, not social gender but only expected to refer to animate feminine vs. masculine subjects for se faire??)
+
+    -   levels of the gender factor:
+
+    -   Hypothesis: A feminine **agent** favours the *être* passive /disfavours the *se faire* passive??
+
+-   **Number:** Surprisingly, number also had an effect in @da_cunha_lalternance_2020: plural arguments favoured the passive over active in all models. (+ Relativsätze & Priming als signifikante Faktoren) @da_cunha_lalternance_2020
+
 @bohmann_large-scale_2023 [39]: get passive disfavoured in complex constructions (e.g. negation); parallel in French?
+
+-   **Negation:**
 
 ## Memory based learning
 
@@ -289,5 +300,7 @@ Negation, subject person, subject number, subject gender
 # Discussion
 
 # Conclusion/Outlook
+
+Future studies: modality (spoken/written) as a factor (compare modalities), analyses on other modalities/varieties/registers
 
 # References

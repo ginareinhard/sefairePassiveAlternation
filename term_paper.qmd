@@ -26,7 +26,6 @@ p {
 }
 </style>
 ```
-
 ```{r}
 #| include: false
 #install.packages("glossr")
@@ -70,7 +69,6 @@ use_glossr(styling = list(
 
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward -->
 ```
-
 ### Structure and meaning
 
 The construction consists of the pronoun "se", the conjugated form of the verb "faire" and a verb in the infinitive. According to @labelle_anticausativizing_2013 [235] the construction is "formally causative, but semantically passive". Similar to the être passive, the subject of the passive sentence is the experiencer of the action. As with être, the direct object of the active sentence becomes the subject of the passive sentence. *Language example: active sentence with two (animate) arguments, se faire passive sentence, evtl. etre passive sentence*
@@ -101,7 +99,7 @@ The above-described stance taken by @bellec_construction_2014, @labelle_anticaus
 
 On the other hand, @kupferman_construction_1995 sees the causative and passive readings as homonyms with fundamentally different semantics and therefore assigns an inherent passive status to the se faire construction. This agrees with @bellec_construction_2014, according to whom the se faire passive has been grammaticalised into a semi-auxiliary with non-transparent components and there is thus no reason for a causative reading.
 
-@raineri_analyse_2010 \[356-357\] concludes that despite its productivity as a passive construction, the PSF is problematic because it neither fits into two homonyms nor functions as a single weak causative. @bellec_construction_2014[207] defines the following three criteria for a causative reading, which distinguish the causative from the passive interpretation:
+@raineri_analyse_2010 \[356-357\] concludes that despite its productivity as a passive construction, the PSF is problematic because it neither fits into two homonyms nor functions as a single weak causative. @bellec_construction_2014 [207] defines the following three criteria for a causative reading, which distinguish the causative from the passive interpretation:
 
 -   In the causative, the subject referent is agentive and has the role of both causer and patient. The subject actively initiates what happens to them. In the passive, the subject referent has only the role of the patient and is affected by the event.
 -   In the causative reading, the particle “se” has a reflexive meaning whereas in the passive reading, “se” is not reflexive.
@@ -217,7 +215,7 @@ Further, we hypothesize that the presence of an agent PP ("Complément d'agent")
     -   **Aspect** tagging @hundt_be-_2024 : simple, perfect, progressive; @bohmann_large-scale_2023 [39]: "Form of auxiliary verb: present, preterite, perfect, infinitive, -ing"
         -   @raineri_analyse_2010 [365] sees the "type of process denoted by the verb" as a "necessary condition", inchoative/ durative aspect: "get passive and se faire passive focus on onset of the process that affects the subject referent, whereas be and etre passive present the process in its entirety, without offering an internal perspective."
     -   **Mode?** actuality, possibility, necessity) -
-        -   Modal verbs (auxiliary): such as "devoir", "savoir", "pouvoir", "falloir", "vouloir" very frequent with se faire passive @novakova_construction_2009 [9] (in @raineri_analyse_2010 \[97\], reason: they denote "control" to the subject IF POSSIBLE
+        -   Modal verbs (auxiliary): such as "devoir", "savoir", "pouvoir", "falloir", "vouloir" very frequent with se faire passive @novakova_construction_2009 \[9\] (in @raineri_analyse_2010 [97], reason: they denote "control" to the subject IF POSSIBLE
 -   **(Periphrase constructions**: According to @spang-hanssen_quelques_1967 \[141\] and @novakova_construction_2009, periphrases that denote progressivity such as “être en train de + INF”, “venir de + INF” and “aller + INF” occur more naturally with the se faire passive than with the être passive. This is due to the dynamicity that the se faire passive entails (Quelle) compared to the more stative être passive. (also: @bellec_construction_2014; @keenan_passive_2007 [341], @raineri_analyse_2010 [91])
 
 ### Adversativity/ Non-neutrality

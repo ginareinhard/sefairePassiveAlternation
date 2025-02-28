@@ -26,6 +26,7 @@ p {
 }
 </style>
 ```
+
 ```{r}
 #| include: false
 #install.packages("glossr")
@@ -69,11 +70,12 @@ use_glossr(styling = list(
 
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward -->
 ```
+
 ### Structure and meaning
 
 The construction consists of the pronoun "se", the conjugated form of the verb "faire" and a verb in the infinitive. According to @labelle_anticausativizing_2013 [235] the construction is "formally causative, but semantically passive". Similar to the être passive, the subject of the passive sentence is the experiencer of the action. As with être, the direct object of the active sentence becomes the subject of the passive sentence. *Language example: active sentence with two (animate) arguments, se faire passive sentence, evtl. etre passive sentence*
 
-Unlike the être passive, however, the diathesis is not restricted to the direct object: The PSF has "greater syntactic flexibility" (@raineri_analyse_2010 [93-95] and can also be formed with ditransitive verbs, where the indirect object becomes the subject: *Language example: active ditransitive sentence, se faire passiv.* Another possibility are possesor constructions where the subject of the passive is only part of the object in the active sentence (Le coiffeur coupe les cheveux de Pierre. -\> Pierre s'est fait couper les cheveux). However, the passive status of these constructions is controversial, as discussed below/ in the next section. <!--Some could also be understood as causatives if the subject both initiates and undergoes the action. (Pierre made the hairdresser cut his hair) (add source)) -->
+Unlike the être passive, however, the diathesis is not restricted to the direct object: The PSF has "greater syntactic flexibility" (@raineri_analyse_2010 [93-95] and can also be formed with ditransitive verbs, where the indirect object becomes the subject: *Language example: active ditransitive sentence, se faire passiv.* <!-- Another possibility are possessor constructions where the subject of the passive is only part of the object in the active sentence (Le coiffeur coupe les cheveux de Pierre. -> Pierre s'est fait couper les cheveux). However, the passive status of these constructions is controversial, as discussed below/ in the next section. Some could also be understood as causatives if the subject both initiates and undergoes the action. (Pierre made the hairdresser cut his hair) (add source)) -->
 
 The peculiarity of the construction has led scholars to wonder: "how can a passive-like construction arise from a combination of a causative and a reflexive marker, where no marking of the passive function is apparent?" (@koenig_semantic_1992 [145]).
 
@@ -113,7 +115,7 @@ By comparing PSF and PE constructions, we may be able to shed light on this deba
 
 Following @bohmann_large-scale_2023 \[35\] who claim that "only cases where both variants can be used interchangeably should be considered", we aim to exclude constructions that do not allow for a paraphrase with the other. The passive constructions of se faire and être are not always interchangeable: As described above, the canonical passive with être requires a direct object in the active equivalent that becomes the new subject, @koenig_semantic_1992 [144], @washio_when_1993, @labelle_anticausativizing_2013 [16]. Thus, for reflexive and ditransitive verbs, the être passive is not available and does not compete with se faire. These constructions will be excluded and only transitive verbs will be studied.
 
-Since our aim is to investigate the passive alternation of être and se faire, it is essential to ensure that we only compare the être passive with real passive se faire constructions, and not with causative constructions (@bohmann_large-scale_2023 \[35\]: "all extracted forms should be genuine instances of the variable under investigation"). We follow @raineri_analyse_2010 [165] in including only se faire + Inf constructions that have a natural paraphrase with the être passive in order to include only constructions that directly contrast with être.
+<!-- Since our aim is to investigate the passive alternation of être and se faire, it is essential to ensure that we only compare the être passive with real passive se faire constructions, and not with causative constructions (@bohmann_large-scale_2023 [35]: "all extracted forms should be genuine instances of the variable under investigation"). --> We follow @raineri_analyse_2010 \[165\] in including only se faire + Inf constructions that have a natural paraphrase with the être passive in order to include only constructions that directly contrast with être.
 
 -   se faire passive has evolved to be used in situations without a causer (passive reading) @bellec_construction_2014
 -   figurative, "besoin d’expressivité and extravagance" instead of "used up" canonical passive @bellec_construction_2014 \[206\]; part of lexicalised expressions @novakova_construction_2009 [117]/ idioms @raineri_analyse_2010 [165]
@@ -186,9 +188,11 @@ Thus, although the requirement of subject responsibility in the PSF is not "univ
 
 Corpus studies have shown that animacy significantly influences voice choice in French. The animacy of the passive subject (not agent) has been shown to increase the likelihood of using the passive voice (*être* passive) over the active voice. @da_cunha_lalternance_2020 (+2022) -\> more explanation as to why
 
-As implied in the debate on subject responsibility, subjects of se faire passive constructions are predominantly active participants in the described action. Since inanimate subjects are rarely affected and even less often responsible, PSF is common with animate subjects. While some scholars claim that only animate subjects are possible with the PSF, others provide counterexamples (@labelle_anticausativizing_2013, @kokutani_sur_2005, @novakova_construction_2009 \[4\], @sveberg_se_2012) (@raineri_analyse_2010 [92]). We tag animacy as binary "inanimate"/ "animate" although we recognize that animacy has been prominently considered as a continuum in the literature.
+As implied in the debate on subject responsibility, subjects of se faire passive constructions are predominantly active participants in the described action. Since inanimate subjects are rarely affected and even less often responsible, PSF is common with animate subjects. While some scholars claim that only animate subjects are possible with the PSF, others provide counterexamples (@labelle_anticausativizing_2013, @kokutani_sur_2005, @novakova_construction_2009 \[4\], @sveberg_se_2012) (@raineri_analyse_2010 [92]).
 
 However, these examples appear to be exceptions as there is both corpus (@novakova_construction_2009 [111]) and experimental (@koenig_semantic_1992 \[151, 153\]) evidence that subject animacy and PSF are positively correlated: In @novakova_construction_2009 [111]'s corpus study, less than 3% of the se faire sentences had an inanimate subjects. In a survey by @koenig_semantic_1992, French native speakers rated the acceptability of PSF with animate subjects significantly higher than with inanimate subjects. Inanimate subjecta were only allowed by some speakers when the subject "affects a relevant animate entity" (@koenig_semantic_1992 [151, 153]. The preponderance of animate subjects for the se faire passive seems to be one of the few aspects on which scholars agree (@raineri_analyse_2010 [92]).
+
+We tag animacy as binary "inanimate"/ "animate" although we recognize that animacy has been prominently considered as a continuum in the literature.
 
 <!-- The preference of the se faire passive of animate over inanimate subjects is parallel to the English get passive (@hundt_be-_2024), although @raineri_analyse_2010 [92] finds that the get passive allows more inanimate subjects than the se faire passive. According to @bohmann_large-scale_2023 [43], the get passive has become more likely with inanimate subjects over time which may signify a lessening of subject responsibility. @raineri_analyse_2010 brings up the possibility that a similar process of grammaticalisation may be happening in French. (not sure if relevant)-->
 

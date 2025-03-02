@@ -136,6 +136,8 @@ We follow @raineri_analyse_2010 [165] in including only se faire + Inf construct
 
 ## Data Collection
 
+### Corpus
+
 -   corpus: (+ reference)
     -   comprising data from \[years\] extracted from Sketch Engine with a semi-automatic approach, including manual filtering
     -   why did we choose it
@@ -146,14 +148,15 @@ We follow @raineri_analyse_2010 [165] in including only se faire + Inf construct
 -   We have not taken into account impersonal passives (*example from corpus*)
 -   être passive: In their active/passive alternation study @da_cunha_lalternance_2020 only chose passive sentences in the compound past tense "NP a été VP" in order to favour verbal passives over adjectival passives (*La porte est ouverte*). However, we chose to include the present tense/all tenses. This decision was based on previous literature suggesting that the present tense favors *se faire* passive over *être* passive, making tense an important factor in our study.
 -   In line with @da_cunha_lalternance_2020 we chose complément d'agents introduced by the preposition *par*, avoiding additional variation caused by *de*.
--   problem: data are extremely unbalanced (ratio in ParlaMint être vs. se faire: ) -\> making the ratio 50: 50 would distort the reality significantly but if the ratio is kept the model will almost always predict être
--   strategy possibilities:
+
+<!-- problem: data are extremely unbalanced (ratio in ParlaMint être vs. se faire: ) -\> making the ratio 50: 50 would distort the reality significantly but if the ratio is kept the model will almost always predict être
+strategy possibilities:
     -   build a corpus where être is presented more than se faire but not as extreme (approximation, e.g. 40% se faire - 60% etre) ("over/undersampling within limits")
     -   assign more weight to se faire constructions by "weights=" variable of glm function
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
-    -   evaluate with precision & recall, not just accuracy (F1-score)
+    -   evaluate with precision & recall, not just accuracy (F1-score) -->
 
-**Semi-automated approach**
+### Semi-automated approach
 
 **se faire passive**
 
@@ -173,6 +176,23 @@ We follow @raineri_analyse_2010 [165] in including only se faire + Inf construct
 -   take a random sample from the concordance lines that is equal in size to the manually filtered amount of se faire constructions
 -   final sample: same amount of constructions for être and se faire, same lemmas, seed set
 -   Our sample therefore comprises XXX sentences/constructions: XX se faire and XX être passive, ... (short summary)
+
+### Borderline cases
+
+-   causative and passive: likely a continuum -\> therefore, many cases which are not clearly passive or causative or the subject is both the undergoer and the causer (se faire vacciner).
+
+-   as @bohmann_large-scale_2023, we have faced difficulties in defining the variable context and had to rely on a fuzzy context. In general, we have chosen a wide approach and have opted to include as many constructions as possible: That means that even if the causative reading appears more natural but there is a passive understanding because the subject undergoes an action it is included. For traceability, some unclear cases and our argumentation/ train of thought/ reasoning for our decision to include/ exclude (examples form corpus)
+
+-   exclude:
+    -   fixed expressions such as "se faire passer pour" *to impersonate*
+    -   expressions where an être passive is not natural or has a different meaning (attendre: "L'indemnisation se fait attendre" *The compensation is taking a long time to arrive/ is long overdue/ is a long time coming* vs. "être attendu" *to be expected;)*
+
+    difficult:
+    -   se faire entendre *to make oneself heard/ be heard*, être entendre *to be heard*
+    -   se faire sentir: *make itself felt* / *be felt*, être senti *to be felt*
+    -   context dependent???
+
+-   include: se faire vacciner, se faire élire: *to (go) get vaccinated, to get elected* included because although the subject is agentive and induces/ triggers the action, they also undergo it.
 
 ## Logistic Regression
 

@@ -269,7 +269,7 @@ Regarding the factor of aspectuality, @keenan_passive_2007 [340] cites one of Gr
 
 -   Telicity seems to be another important distinction: According to @bellec_construction_2014 \[209\], the être passive is likely to describe a result or mark an endpoint of an action, while the se faire passive is used for actions in progress and verbs that are in their nature ongoing (e.g. perception verbs, @bellec_construction_2014 [209]). This could be reflected in the telicity of the verb, with telic verbs preferring the être passive and atelic verbs favouring the se faire passive.
 
--   lemma clustering method
+-   lemma clustering method, not too many different levels because not each level will have enough data points
 
 -   **TAM (Tense, Aspect, Mode)**
 

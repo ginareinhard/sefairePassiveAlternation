@@ -75,7 +75,9 @@ use_glossr(styling = list(
 
 The construction consists of the pronoun "se", the conjugated form of the verb "faire" and a verb in the infinitive. According to @labelle_anticausativizing_2013 [235] the construction is "formally causative, but semantically passive". Similar to the être passive, the subject of the passive sentence is the experiencer of the action. As with être, the direct object of the active sentence becomes the subject of the passive sentence. *Language example: active sentence with two (animate) arguments, se faire passive sentence, evtl. etre passive sentence*
 
-Unlike the être passive, however, the diathesis is not restricted to the direct object: The PSF has "greater syntactic flexibility" (@raineri_analyse_2010 [93-95] and can also be formed with ditransitive verbs, where the indirect object becomes the subject: *Language example: active ditransitive sentence, se faire passiv.* <!-- Another possibility are possessor constructions where the subject of the passive is only part of the object in the active sentence (Le coiffeur coupe les cheveux de Pierre. -> Pierre s'est fait couper les cheveux). However, the passive status of these constructions is controversial, as discussed below/ in the next section. Some could also be understood as causatives if the subject both initiates and undergoes the action. (Pierre made the hairdresser cut his hair) (add source)) -->
+Unlike the être passive, however, the diathesis is not restricted to the direct object: The PSF has "greater syntactic flexibility" (@raineri_analyse_2010 [93-95] and can also be formed with ditransitive verbs, where the indirect object becomes the subject: *Language example: active ditransitive sentence, se faire passiv.* *les intéressés peuvent se faire expliquer tout ce qui touche aux retraites*
+
+<!-- Another possibility are possessor constructions where the subject of the passive is only part of the object in the active sentence (Le coiffeur coupe les cheveux de Pierre. -> Pierre s'est fait couper les cheveux). However, the passive status of these constructions is controversial, as discussed below/ in the next section. Some could also be understood as causatives if the subject both initiates and undergoes the action. (Pierre made the hairdresser cut his hair) (add source)) -->
 
 The peculiarity of the construction has led scholars to wonder: "how can a passive-like construction arise from a combination of a causative and a reflexive marker, where no marking of the passive function is apparent?" (@koenig_semantic_1992 [145]).
 
@@ -138,9 +140,9 @@ We follow @raineri_analyse_2010 [165] in including only se faire + Inf construct
 
 ### Corpus
 
--   corpus: (+ reference) ParlaMint
-    -   comprising data from \[years\] extracted from Sketch Engine with a semi-automatic approach, including manual filtering
-    -   why did we choose it
+We have chosen the French ParlaMint corpus [@11356/1864]. It comprises French parliamentary debates from 2017 to 2020 and includes 38,702,395 tokens (32,214,147 words). To extract the data we chose a semi-automatic approach that included manual filtering.
+
+-   why did we choose it
 -   We selected an equal number of occurrences of *être* passive and *se faire* passive.
     -   We made a list of the lemmas in the se faire constructions → used these lemmas to filter the être constructions
 
@@ -230,7 +232,7 @@ According to him, subject responsibility emerges from the context and not from t
 
 Thus, although the requirement of subject responsibility in the PSF is not "universally accepted" (@raineri_analyse_2010 [98], "une catégorie hétérogène complexe" (@raineri_analyse_2010 [249]), the analyses show at least some consensus in that the PSF construction prefers to mark the subject as connected to the event (@raineri_analyse_2010), either through affectedness, responsibility or intentionality. This tendency does not exist for the être passive (source).
 
--   **Animacy**
+**Animacy**
 
 Corpus studies have shown that animacy significantly influences voice choice in French. The animacy of the passive subject (not agent) has been shown to increase the likelihood of using the passive voice (*être* passive) over the active voice. @da_cunha_lalternance_2020 (+2022) -\> more explanation as to why
 
@@ -263,7 +265,7 @@ Regarding the factor of aspectuality, @keenan_passive_2007 [340] cites one of Gr
 
 -   **Verb semantics (Aktionsart), Clusters** (@bohmann_large-scale_2023 [51-52]: 21 levels):
 
-    Multiple hypotheses are found in the literature concerning the compatibility of certain verbs with the PSF. For example, @kupferman_construction_1995 \[67\] and @raineri_analyse_2010 \[90\] state that se faire passive works well with dynamic verbs but not with stative verbs. (but exceptions provided by @novakova_construction_2009); Martin 2002, @raineri_analyse_2010 [100-103].
+    Multiple hypotheses are found in the literature concerning the compatibility of certain verbs with the PSF. For example, @kupferman_construction_1995 \[67\] and @raineri_analyse_2010 [90] state that se faire passive works well with dynamic verbs but not with stative verbs. (but exceptions provided by @novakova_construction_2009); Martin 2002, @raineri_analyse_2010 [100-103].
 
 -   volitional verbs fit well with PSF because they involve an action that leads to a mental state change while non-volitional verbs do not
 

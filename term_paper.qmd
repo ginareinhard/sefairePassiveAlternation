@@ -115,9 +115,13 @@ By comparing PSF and PE constructions, we may be able to shed light on this deba
 
 ## *être* vs. *se faire*: Competition or complementation? - Defining the variable context
 
-Following @bohmann_large-scale_2023 [35] who claim that "only cases where both variants can be used interchangeably should be considered", we aim to exclude constructions that do not allow for a paraphrase with the other. Howeve
+Both se faire + Vinf and être + Vé are available for the active diathesis \[@novakova_construction_2009 \[108\]. However, as @novakova_construction_2009 [108] notes, the constructions differ in semantic nuances: "Elles ont un sens proche mais pas identique."
+
+Following @bohmann_large-scale_2023 [35] who claim that "only cases where both variants can be used interchangeably should be considered", we aim to exclude constructions that do not allow for a paraphrase with the other.
 
 The passive constructions of se faire and être are not always interchangeable: As described above, the canonical passive with être requires a direct object in the active equivalent that becomes the new subject, @koenig_semantic_1992 \[144\], @washio_when_1993, @labelle_anticausativizing_2013 [16]. Thus, for reflexive and ditransitive verbs, the être passive is not available and does not compete with se faire. These constructions will be excluded and only transitive verbs will be studied.
+
+The above discusses passive/ causative continuum makes the definition of the variable context particularly challenging as some constructions may be more passive than others - where to draw the line?
 
 @bohmann_large-scale_2023 [35] faces similar challenges when defining the variable context of the be and get passive: "passive gradient" exist where both GET and BE may be used, but where the choice between the two entails a semantic difference", "definition of the variable context is not just a problem of automation, but of linguistic interpretation" \[36\]. Follow
 
@@ -144,9 +148,11 @@ We follow @raineri_analyse_2010 [165] in including only se faire + Inf construct
 
 ### Corpus
 
-We have extracted the concordances from the French ParlaMint corpus [@11356/1864] using a CQL expression SketchEngine. ParlaMint consists of French parliamentary debates from 2017 to 2020 and contains 38,702,395 tokens (32,214,147 words). We chose this corpus because it is well-documented, POS-tagged and represents authentic French spoken language. We recognize that the genre of parliamentary debates is quite specialised and therefore results therefore cannot be generalized to all French spoken language. However, the language of parliamentary debates a fascinating genre in itself and is expected to reflect a wide range of topics, thus providing a cross-section of language varieties as they occur in French speech.
+In our investigation of spoken French language, we aimed to select a corpus that represents authentic French spoken language. After thorough consideration and exploration of our options, we decided for the French ParlaMint corpus [@11356/1864]. ParlaMint consists of French parliamentary debates from 2017 to 2020 and contains 38,702,395 tokens (32,214,147 words). We chose this corpus because it is well-documented, POS-tagged and contains rich meta data.
 
-To extract the data we chose a semi-automatic approach that included manual filtering.
+We recognize that the genre of parliamentary debates is quite specialised and therefore results therefore cannot be generalized to all French spoken language. However, the language of parliamentary debates a fascinating genre in itself (studied before: references) and is expected to reflect a wide range of topics, thus providing a cross-section of language varieties as they occur in French speech.
+
+We extracted the concordances from the French ParlaMint corpus [@11356/1864] using a CQL expression SketchEngine. To extract the data we chose a semi-automatic approach that included manual filtering.
 
 -   We selected an equal number of occurrences of *être* passive and *se faire* passive.
     -   We made a list of the lemmas in the se faire constructions → used these lemmas to filter the être constructions
@@ -247,20 +253,19 @@ However, these examples appear to be exceptions as there is both corpus (@novako
 
 We tag animacy as binary "inanimate"/ "animate" although we recognize that animacy has been prominently considered as a continuum in the literature.
 
-<!-- The preference of the se faire passive of animate over inanimate subjects is parallel to the English get passive (@hundt_be-_2024), although @raineri_analyse_2010 [92] finds that the get passive allows more inanimate subjects than the se faire passive. According to @bohmann_large-scale_2023 [43], the get passive has become more likely with inanimate subjects over time which may signify a lessening of subject responsibility. @raineri_analyse_2010 brings up the possibility that a similar process of grammaticalisation may be happening in French. (not sure if relevant)-->
-
--   **Agent PP** (par-phrase, Complément d'agent)
-    -   @hundt_be-_2024, the “by-phrase openly assigns responsibility” to an external agent
-    -   @bohmann_large-scale_2023: by-phrase “partially mitigate subject responsibility”, expected to favour be-passive (finding: more in the early data than now)
-    -   @kupferman_construction_1995: agentivity requirement for agents denoted by par-phrase; not possible for PSF par-phrase with abstract cause (in contrast to être passive?)
-
-**Hypothesis:**
-
-Both *se faire* and *être* passive favour animate subjects over inanimate subjects but subject animacy is a stronger predictor of the PSF than the être passive.
-
-Further, we hypothesize that the presence of an agent PP ("Complément d'agent") prefers the canonical être passive over the se faire passive (because it assigns responsibility to an external agent that is not the subject which is unusual for PSF, where the subject is usually somewhat agentive.
+**Hypothesis**: Both *se faire* and *être* passive favour animate subjects over inanimate subjects but subject animacy is a stronger predictor of the PSF than the être passive.
 
 **Interaction**: @raineri_analyse_2010 [94] suspects that the PSF's animacy (almost-) constraint restricts verb selection and provides an explanation for the construction's incompatibility with certain verbs (i.e. not all verbs can occur with animate subjects).
+
+<!-- The preference of the se faire passive of animate over inanimate subjects is parallel to the English get passive (@hundt_be-_2024), although @raineri_analyse_2010 [92] finds that the get passive allows more inanimate subjects than the se faire passive. According to @bohmann_large-scale_2023 [43], the get passive has become more likely with inanimate subjects over time which may signify a lessening of subject responsibility. @raineri_analyse_2010 brings up the possibility that a similar process of grammaticalisation may be happening in French. (not sure if relevant)-->
+
+**Agent PP** (par-phrase, Complément d'agent) 
+
+The par-phrase introduces an external agent into the passive construction: It denotes the causer/ instigator of the action and is often derived through diathesis from the subject of the active equivalent.
+
+We expect the presence or absence of the par-phrase to influence passive choice. The par-phrase introduces an external agent who is likely be the driving force behind the action described: @kupferman_construction_1995 postulates an "agentivity requirement" for agents denoted by the par-phrase, attributing a strong responsibility to the component. @hundt_be-_2024 and  @bohmann_large-scale_2023 found that in English, the Agent PP reduces subject responsibility by introducing an agentive/ responsible entity.
+
+**Hypothesis**: We hypothesize that the presence of an agent PP ("Complément d'agent") prefers the canonical être passive over the se faire passive (because it assigns responsibility to an external agent that is not the subject which is unusual for PSF, where the subject is usually somewhat agentive.)
 
 ### Aspectuality
 

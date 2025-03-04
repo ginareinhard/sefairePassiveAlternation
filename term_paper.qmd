@@ -115,7 +115,11 @@ By comparing PSF and PE constructions, we may be able to shed light on this deba
 
 ## *être* vs. *se faire*: Competition or complementation? - Defining the variable context
 
-Following @bohmann_large-scale_2023 \[35\] who claim that "only cases where both variants can be used interchangeably should be considered", we aim to exclude constructions that do not allow for a paraphrase with the other. The passive constructions of se faire and être are not always interchangeable: As described above, the canonical passive with être requires a direct object in the active equivalent that becomes the new subject, @koenig_semantic_1992 [144], @washio_when_1993, @labelle_anticausativizing_2013 [16]. Thus, for reflexive and ditransitive verbs, the être passive is not available and does not compete with se faire. These constructions will be excluded and only transitive verbs will be studied.
+Following @bohmann_large-scale_2023 [35] who claim that "only cases where both variants can be used interchangeably should be considered", we aim to exclude constructions that do not allow for a paraphrase with the other. Howeve
+
+The passive constructions of se faire and être are not always interchangeable: As described above, the canonical passive with être requires a direct object in the active equivalent that becomes the new subject, @koenig_semantic_1992 \[144\], @washio_when_1993, @labelle_anticausativizing_2013 [16]. Thus, for reflexive and ditransitive verbs, the être passive is not available and does not compete with se faire. These constructions will be excluded and only transitive verbs will be studied.
+
+@bohmann_large-scale_2023 [35] faces similar challenges when defining the variable context of the be and get passive: "passive gradient" exist where both GET and BE may be used, but where the choice between the two entails a semantic difference", "definition of the variable context is not just a problem of automation, but of linguistic interpretation" \[36\]. Follow
 
 <!-- Since our aim is to investigate the passive alternation of être and se faire, it is essential to ensure that we only compare the être passive with real passive se faire constructions, and not with causative constructions (@bohmann_large-scale_2023 [35]: "all extracted forms should be genuine instances of the variable under investigation"). -->
 
@@ -140,9 +144,10 @@ We follow @raineri_analyse_2010 [165] in including only se faire + Inf construct
 
 ### Corpus
 
-We have chosen the French ParlaMint corpus [@11356/1864]. It comprises French parliamentary debates from 2017 to 2020 and includes 38,702,395 tokens (32,214,147 words). To extract the data we chose a semi-automatic approach that included manual filtering.
+We have extracted the concordances from the French ParlaMint corpus [@11356/1864] using a CQL expression SketchEngine. ParlaMint consists of French parliamentary debates from 2017 to 2020 and contains 38,702,395 tokens (32,214,147 words). We chose this corpus because it is well-documented, POS-tagged and represents authentic French spoken language. We recognize that the genre of parliamentary debates is quite specialised and therefore results therefore cannot be generalized to all French spoken language. However, the language of parliamentary debates a fascinating genre in itself and is expected to reflect a wide range of topics, thus providing a cross-section of language varieties as they occur in French speech.
 
--   why did we choose it
+To extract the data we chose a semi-automatic approach that included manual filtering.
+
 -   We selected an equal number of occurrences of *être* passive and *se faire* passive.
     -   We made a list of the lemmas in the se faire constructions → used these lemmas to filter the être constructions
 

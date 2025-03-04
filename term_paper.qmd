@@ -196,18 +196,24 @@ strategy possibilities:
 
 -   causative and passive: likely a continuum -\> therefore, many cases which are not clearly passive or causative or the subject is both the undergoer and the causer (se faire vacciner).
 
--   as @bohmann_large-scale_2023, we have faced difficulties in defining the variable context and had to rely on a fuzzy context. In general, we have chosen a wide approach and have opted to include as many constructions as possible: That means that even if the causative reading appears more natural but there is a passive understanding because the subject undergoes an action it is included (goes against first criterion by @bellec_construction_2014). Also verbs could be causative in one context and passive in the other?? But for practical reasons, we had to... For traceability, some unclear cases and our argumentation/ reasoning for our decision to include/ exclude (examples form corpus)
+-   as @bohmann_large-scale_2023, we have faced difficulties in defining the variable context and had to rely on a fuzzy context. In general, we have chosen a wide approach and have opted to include as many constructions as possible: That means that even if the causative reading appears more natural but there is a passive understanding because the subject undergoes an action it is included (goes against first criterion by @bellec_construction_2014). Also verbs could be causative in one context and passive in the other?? But for practical reasons, we had to... For traceability, some high frequency unclear cases and our argumentation/ reasoning for our decision to include/ exclude (examples form corpus)
 
 -   exclude:
 
-    -   fixed expressions such as "se faire passer pour" *to impersonate*
+    -   fixed highly idiomatic expressions such as "se faire passer pour" *to impersonate*, "se faire avoir" *to be fooled*, "se faire mousser" *to boast/ to brag"
     -   expressions where an être passive is not natural or has a different meaning (attendre: "L'indemnisation se fait attendre" *The compensation is taking a long time to arrive/ is long overdue/ is a long time coming* vs. "être attendu" *to be expected;)*
+        -   se faire sentir: *make itself felt* / *be felt*, être senti *to be felt* -> mostly with "pour" -> no par-phrase possible (in general)
+        - se faire connaitre *to make oneself known* vs. "être connu" *to be known*
+           - se faire sentir pour
 
     difficult:
 
-    -   se faire entendre *to make oneself heard/ be heard*, être entendre *to be heard*
-    -   se faire sentir: *make itself felt* / *be felt*, être senti *to be felt*
+    -   se faire entendre *to make oneself heard/ be heard*, être entendre *to be heard*: context dependent, mostly clearly more causautive -> exclude?
     -   context dependent???
+    - se faire taper
+ 
+    - se faire sentir/ être senti -> 
+    
 
 -   include: se faire vacciner, se faire élire: *to (go) get vaccinated, to get elected* included because although the subject is agentive and induces/ triggers the action, they also undergo it.
 

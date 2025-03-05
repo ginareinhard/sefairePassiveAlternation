@@ -210,13 +210,11 @@ In addition to erroneously tagged constructions that are not real se faire + Vin
 
 -   Expressions containing verbs classified as "idiomes lexicalisés" (lexical-ized idioms) according to Raineri (2010: 163). These verbs neither carry a true causative nor passive meaning [^1]: entendre, sentir, attendre, désirer (Raineri 2010: 164); example: "Partout le mécontentement populaire se faire entendre sans qu'' on ait besoin de souffler sur les braises." *Everywhere, popular discontent is making itself heard without the need to fan the flames.*
 
+-   (Expressions with a transparent causative meaning - maybe not necessary if covered by the other criteria)
+
+-   (Expressions where an être passive has a very different meaning)
+
 [^1]: These verbs mainly occur with inanimate subjects (effects, consequences, discontent). @raineri_analyse_2010 [163-164] proposes that the causative meaning is not available for these verbs since the subject is not causing the event. There is also no passive meaning since they cannot cannot occur with a complément d’agent and do not have a paraphrase with être.
-
-<!-- -->
-
--   Expressions with a transparent causative meaning: *On veut **nous faire croire** que tous ces braves gens qui vont revenir...* They want to **make us believe** that all the brave people...
-
--   expressions where an être passive has a very different meaning; example: attendre: “L’indemnisation se fait attendre” *The compensation is taking a long time to arrive/ is long overdue/ is a long time coming* vs. “être attendu” *to be expected;*
 
 ## Logistic Regression
 

@@ -214,7 +214,7 @@ is acceptable, but
 
 is unusual, as *être connu* does not carry the same meaning.
 
-However, our somewhat "fuzzy" definition of what constitutes a passive alternation [@bohmann_large-scale_2023] posed some challenges: We aimed to exclude purely causative constructions, but the distinction between causative and passive was sometimes unclear. When is a construction semantically similar enough, and when is its meaning too causative? As expected, given the extensive debate on PSF's passive status (@sec-debate) and the challenges reported by @bohmann_large-scale_2023 in their investigation of the English *be*/*get* passive alternation, we came across a significant number of "unclear" cases during the manual filtering of *se faire* constructions.
+However, our somewhat "fuzzy" definition of what constitutes a passive alternation [@bohmann_large-scale_2023] posed some challenges: We excluded purely causative constructions, but the distinction between causative and passive was sometimes unclear. When is a construction semantically similar enough, and when is its meaning too causative? As expected, given the extensive debate on PSF's passive status (@sec-debate) and the challenges reported by @bohmann_large-scale_2023 in their investigation of the English *be*/*get* passive alternation, we came across a significant number of "unclear" cases during the manual filtering of *se faire* constructions.
 
 We have found many examples of se faire constructions cases where a clear binary distinction between passive and causative was not possible, for example because when the subject is both the undergoer and the causer of the action.
 

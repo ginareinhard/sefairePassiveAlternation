@@ -26,7 +26,6 @@ p {
 }
 </style>
 ```
-
 ```{r}
 #| include: false
 #install.packages("glossr")
@@ -41,7 +40,8 @@ use_glossr(styling = list(
 
 # Introduction
 
--   rare construction: Only 5% of verbs in the French Treebank (FTB) are in the passive voice ( @da_cunha_lalternance_2020) vs. 9% in English for the same text type (@roland2007frequency).
+-   The construction se faire + infinitive has developed through analogy with the passive voice. While it originally had a causative meaning (the subject has an active influence), in certain cases it can take on a purely passive reading, i.e. it behaves passively as an alternative to être.
+-   The passive voice in general is a rare construction: Only 5% of verbs in the French Treebank (FTB) are in the passive voice ( @da_cunha_lalternance_2020) vs. 9% in English for the same text type (@roland2007frequency)
 
 # The French passive alternation of *être* and *se faire*
 
@@ -50,6 +50,8 @@ use_glossr(styling = list(
 ### Structure and meaning
 
 -   Function of the passive construction (semantic focus):
+
+    -   Contrairement à la construction causative, le tour passif ne prend pour sujet qu'une entité affecté (selon Labelle 2002) (se faire)
 
 -   Diathesis: Concept of the passive (passif long) as an inversion of the order/ syntactic function of the arguments (the subject argument and the object argument) in relation to the active construction. The object of the active "becomes" the subject in the passive. (Per default, in French the subject is coded at position 1 in the sentence)
 
@@ -70,7 +72,6 @@ use_glossr(styling = list(
 
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward -->
 ```
-
 ### Structure and meaning
 
 The construction consists of the pronoun "se", the conjugated form of the verb "faire" and a verb in the infinitive. According to @labelle_anticausativizing_2013 [235] the construction is "formally causative, but semantically passive". Similar to the être passive, the subject of the passive sentence is the experiencer of the action. As with être, the direct object of the active sentence becomes the subject of the passive sentence. *Language example: active sentence with two (animate) arguments, se faire passive sentence, evtl. etre passive sentence*
@@ -129,7 +130,7 @@ Since our aim is to investigate the passive alternation of être and se faire, i
 
 We follow @raineri_analyse_2010 \[165\] in including only se faire + Inf constructions that have a natural paraphrase with the être passive in order to include only constructions that directly contrast with être. Following @bohmann_large-scale_2023 [35] who claim that "only cases where both variants can be used interchangeably should be considered", we aim to exclude constructions that do not allow for a paraphrase with the other.
 
-Therefore, passive constructions of se faire and être are not always interchangeable: As described above, the canonical passive with être requires a direct object in the active equivalent which becomes the new subject, @koenig_semantic_1992 \[144\], @washio_when_1993, @labelle_anticausativizing_2013 [16]. Thus, for reflexive and ditransitive verbs, the être passive is not available and does not compete with se faire. These constructions will be excluded and only transitive verbs will be studied.
+Passive constructions of se faire and être are not always interchangeable: As described above, the canonical passive with être requires a direct object in the active equivalent which becomes the new subject, @koenig_semantic_1992 \[144\], @washio_when_1993, @labelle_anticausativizing_2013 [16]. Thus, for reflexive and ditransitive verbs, the être passive is not available and does not compete with se faire. These constructions will be excluded and only transitive verbs will be studied.
 
 -   se faire passive has evolved to be used in situations without a causer (passive reading) @bellec_construction_2014
 -   figurative, "besoin d’expressivité and extravagance" instead of "used up" canonical passive @bellec_construction_2014 \[206\]; part of lexicalised expressions @novakova_construction_2009 [117]/ idioms @raineri_analyse_2010 [165]
@@ -172,12 +173,11 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
-
 ### Semi-automated approach
 
 **se faire passive**
 
--   extract se faire passive constructions with CQL expression
+-   extract se faire passive constructions with CQL expression, exclude erroneously tagged constructions that are not real se faire + Inf expressions (e.g.)
 -   manually: filter false positives (criteria: )
 -   extract lemmas → save in list
 -   annotate true positives for features
@@ -196,15 +196,33 @@ strategy possibilities:
 
 ### Borderline cases/ Manual filtering exclusion criteria
 
-As was to be expected given the extensive debate on PSF's passive status (@sec-debate) and the challenges reported by @bohmann_large-scale_2023 in their investigation of the English be/get passive alternation, we came across a significant number of "unclear" examples when manually filtering se faire constructions.
+As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + infinitive can sometimes have a 'passive effect' even without a direct 1:1 alternation with *être*. However, for our study of *se faire* + Infinitive and *être* + past participle as a passive alternation, our main criterion was to include only those constructions that could be paraphrased with the *être* passive. Consequently, we excluded expressions that could not be rephrased with the *être* passive, either because the *être* construction was ungrammatical or the meaning was fundamentally altered.
 
-Our main criterion was to include only constructions that could be paraphrased with the être passive, i.e. that were grammatical and similar in meaning. However, our somewhat "fuzzy" definition [@bohmann_large-scale_2023] posed some challenges: When is something similar in meaning and still acceptable, and when is the meaning too causative? We aimed to exclude purely causative constructions because they do not alternate with the être passive, but we have found many examples of se faire constructions cases where a binary passive/causative distinction is not possible, for example because since the subject is both the undergoer and the causer.
+A typical example of a construcion that met our criterion is:
 
-In general, we have chosen a wide approach and have opted to include as many constructions as possible: This means that even if the causative reading seems natural (because the subject triggers the event), but there is a passive understanding because the subject is undergoing an action, it has been included (going against the first criterion by @bellec_construction_2014). Examples of such constructions are "se faire vacciner" *to (go) be/get vaccinated*, "se faire élire" *to be/get elected; to stand for election.*
+*Il s’est fait insulter par son collègue.* (“He was insulted by his colleague.”) \[eigenes Beispiel ersetzen\]
 
-We are also aware that some verbs can be paasive in one context and causative in another and have come across such examples (e.g."se faire remarquer" *to get noticed, also: to draw attention to oneself).* But for practicality, we decided to include or exclude them on the basis of the verb lemma, rather than individually. For traceability, below are some high frequency ambiguous cases and our argumentation/ reasoning for our decision to include/ exclude them.
+*Il a été insulté par son collègue.* (“He was insulted by his colleague.”) \[eigenes Beispiel ersetzen\]
 
-In addition to erroneously tagged constructions that are not real se faire + Vinf expressions (e.g.), we excluded expressions that do not not allow for a paraphrase with the être passive, either because they are ungrammatical or fundamentally different in meaning. These include:
+By contrast, expressions such as *se faire connaître* were excluded. For instance:
+
+*Il s’est fait connaître grâce à ses romans.* (“He became known through his novels.”) \[eigenes Beispiel ersetzen\]
+
+is acceptable, but
+
+*\*Il a été connu grâce à ses romans.* \[eigenes Beispiel ersetzen\]
+
+is unusual, as *être connu* does not carry the same meaning.
+
+However, our somewhat "fuzzy" definition of what constitutes a passive alternation [@bohmann_large-scale_2023] posed some challenges: We aimed to exclude purely causative constructions, but the distinction between causative and passive was sometimes unclear. When is a construction semantically similar enough, and when is its meaning too causative? As expected, given the extensive debate on PSF's passive status (@sec-debate) and the challenges reported by @bohmann_large-scale_2023 in their investigation of the English *be*/*get* passive alternation, we came across a significant number of "unclear" cases during the manual filtering of *se faire* constructions.
+
+We have found many examples of se faire constructions cases where a clear binary distinction between passive and causative was not possible, for example because when the subject is both the undergoer and the causer of the action.
+
+In general, we opted for a wide approach, including as many constructions as possible. This means that even when the causative reading seems natural (because the subject triggers the event), but there is a passive understanding (since the subject is also undergoing an action), we included the construction. In doing so, we deviate from the first criterion established by @bellec_construction_2014. Examples of such constructions include *se faire vacciner* "to (go) be/get vaccinated" and *se faire élire* "to be/get elected" or "to stand for election".
+
+Some verbs can have a passive and a causative meaning, depending on the context. For example, *se faire remarquer* can mean both "to get noticed" and "to draw attention to oneself". To ensure consistency and practicality, we decided to include or exclude verbs on the basis of their lemma, rather than on individual occurrences. Below, we outline below some high-frequency ambiguous cases and provide our reasoning for the decidions to include or exclude them.
+
+We excluded:
 
 -   Fixed idiomatic expressions with a figurative meaning: "se faire passer pour" *to impersonate sb.*, "se faire avoir" *to be fooled*, "se faire mousser" *to boast/ to brag, "se faire taper sur les doigts" lit. to get a slap on the fingers, to be scolded* ; example: "Dites donc, vous savez vous faire mousser!" *My, you know how to make a fuss!/ You know how to blow your own trumpet!*
 
@@ -377,6 +395,8 @@ Negation, subject person, subject number, subject gender
 
 # Conclusion/Outlook
 
-Future studies: modality (spoken/written) as a factor (compare modalities), analyses on other modalities/varieties/registers
+-   Future studies: modality (spoken/written) as a factor (compare modalities), analyses on other modalities/varieties/registers
+
+-   it might be interesting to look at the cases we excluded and see how they differ from real passive. (Grauzone: Passiv-Nuance, aber keine echte Alternation; Grade der Passivität untersuchen)
 
 # References

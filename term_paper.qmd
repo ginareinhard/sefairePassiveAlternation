@@ -321,6 +321,12 @@ If we assume that the PSF is a "basic passive", this suggests that the *être* a
 
     Multiple hypotheses are found in the literature concerning the compatibility of certain verbs with the PSF. For example, @kupferman_construction_1995 \[67\] and @raineri_analyse_2010 [90] state that *se faire* passive works well with dynamic verbs but not with stative verbs. (but exceptions provided by @novakova_construction_2009); Martin 2002, @raineri_analyse_2010 [100-103].
 
+    -\> The *se faire* construction is generally considered incompatible with stative verbs and instead tends to occur with dynamic processes, focussing on cases where the source role is agentive and the target role is affected, which is the typical case of semantic transitivity. (@raineri_analyse_2010: 90).
+
+    -\> Kupferman (1995) argues that the *se faire* construction excludes stative verbs and verbs of state change with an external ‘cause’ argument, which explains differences in sentence acceptability (e.g. *Le pauvre s'est fait étrangler par le tueur* vs. \**Le pauvre s'est fait étrangler par cette cordelette*).
+
+    -\> However, Martin (2002) disagrees and explains that the source role can cause a change of state without being intentional, calling it an ‘effector’ rather than an ‘agent’. She cites examples such as *Isadora Duncan s'est fait étrangler par son écharpe* to support her view. She also claims that *se faire* constructions with psychological verbs (e.g. *Elle s'est fait séduire par Pierre*) are not always causative. Novakova (2008) also notes that ‘*se faire* constructions with stative verbs can, although rarely, be interpreted passively, as in *Il peine encore à se faire aimer par tous les siens.*
+
 -   volitional verbs fit well with PSF because they involve an action that leads to a mental state change while non-volitional verbs do not
 
 -   Telicity seems to be another important distinction: According to @bellec_construction_2014 \[209\], the *être* passive is likely to describe a result or mark an endpoint of an action, while the *se faire* passive is used for actions in progress and verbs that are in their nature ongoing (e.g. perception verbs, @bellec_construction_2014 [209]). This could be reflected in the telicity of the verb, with telic verbs preferring the *être* passive and atelic verbs favouring the *se faire* passive.
@@ -332,8 +338,9 @@ If we assume that the PSF is a "basic passive", this suggests that the *être* a
 -   **TAM (Tense, Aspect, Mood)**
 
     -   **Tense:** Descriptions of future events are more likely to focus on the start and process of an event/ action than on its endpoint (@bellec_construction_2014 [210]) Therefore, it seems likely that future tense will favour the se faire passive over the être passive. Regarding past tense, the être passive will probably be more popular than se faire for constructions in the passé composé (passé composé also used with se faire if speaker wants to emphasize a process, @bellec_construction_2014). In contrast, the se faire passive may be preferred if the action is described in the imparfait (only a guess).
-    -   **Aspect** tagging @hundt_be-_2024 : simple, perfect, progressive; @bohmann_large-scale_2023 [39]: "Form of auxiliary verb: present, preterite, perfect, infinitive, -ing" OR progressive/non-progressive
-        -   **(Periphrase constructions**: According to @spang-hanssen_quelques_1967 \[141\] and @novakova_construction_2009, periphrases that denote progressivity such as “être en train de + INF”, “venir de + INF” and “aller + INF” occur more naturally with the se faire passive than with the être passive. This is due to the dynamicity that the se faire passive entails (Quelle) compared to the more stative être passive. (also: @bellec_construction_2014; @keenan_passive_2007 [341], @raineri_analyse_2010 [91])
+    -   **Aspect**
+        -   tagging @hundt_be-_2024 : simple, perfect, progressive; @bohmann_large-scale_2023 [39]: "Form of auxiliary verb: present, preterite, perfect, infinitive, -ing" OR progressive/non-progressive
+            -   **(Periphrase constructions**: According to @spang-hanssen_quelques_1967 \[141\] and @novakova_construction_2009, periphrases that denote progressivity such as “être en train de + INF”, “venir de + INF” and “aller + INF” occur more naturally with the se faire passive than with the être passive. This is due to the dynamicity that the se faire passive entails (Quelle) compared to the more stative être passive. (also: @bellec_construction_2014; @keenan_passive_2007 [341], @raineri_analyse_2010 [91])
     -   **Mood:** indicative/ non-indicative (non-indicative = subjunctive, conditional, imperative)
 
 -   Modal verbs (auxiliary): such as "devoir", "savoir", "pouvoir", "falloir", "vouloir" very frequent with se faire passive @novakova_construction_2009 \[9\] (in @raineri_analyse_2010 [97], reason: they denote "control" to the subject IF POSSIBLE
@@ -350,27 +357,15 @@ In their corpus study on the English be - get passive alternation, @hundt_be-_20
 
 <!-- -   \@bohmann_large-scale_2023 [38, 43] Sentiment values of verb participles extracted from SentiWordNet: positivity, negativity, objectivity scores; reversed if sentence is negated -->
 
-As @bohmann_large-scale_2023 notes, there are two hypotheses related to emotions of the verb: The adversativity hypothesis and the non-neutrality hypothesis. Both expect the get passive to favour verbs with negative scores; but only the non-neutrality hypothesis predicts get passive to correlate positively with positive emotion scores as well. Since positive emotion verbs have been shown to be quite rare with PSF (@novakova_construction_2009 [110]) we have chosen to not test them/ put them together with "neutral".
+As @bohmann_large-scale_2023 notes, there are two hypotheses related to emotions of the verb: The adversativity hypothesis and the non-neutrality hypothesis. Both expect the *get* passive to favour verbs with negative scores; but only the non-neutrality hypothesis predicts get passive to correlate positively with positive emotion scores as well. Since positive emotion verbs have been shown to be quite rare with PSF (@novakova_construction_2009 [110]) we have chosen to not test them/ put them together with "neutral".
 
-**Hypothesis:** Se faire passive is preferred over the être passive for verbs that denote "unpleasant" actions (as reflected by verbs labeled as "adversative").
+**Hypothesis:** *se faire* passive is preferred over the *être* passive for verbs that denote "unpleasant" actions (as reflected by verbs labeled as "adversative").
 
 **Interaction:** Affecteness of the subject may be reflected by an interaction of subject animacy and verb adversativity: Negative consequences of actions, expressed by adversative verbs, affect animate subjects more than inanimate subjects.
 
-### (Maybe: Register)
-
-Text genre, formal vs. informal
-
--   se faire passive more likely in informal settings, être passive more likely in formal settings
-
 ### \[Morphosyntactic features\]
 
-Negation, subject number, subject gender
-
--   **Number:** Surprisingly, number also had an effect in @da_cunha_lalternance_2020: plural arguments favoured the passive over active in all models. (+ Relativsätze & Priming als signifikante Faktoren) @da_cunha_lalternance_2020
-
-@bohmann_large-scale_2023 [39]: get passive disfavoured in complex constructions (e.g. negation); parallel in French?
-
--   **Negation:**
+-   **Negation:** @bohmann_large-scale_2023 [39]: *get* passive disfavoured in complex constructions (e.g. negation); parallel in French?
 
 ## Memory based learning
 
@@ -409,6 +404,10 @@ Negation, subject number, subject gender
 # Conclusion/Outlook
 
 -   Future studies: modality (spoken/written) as a factor (compare modalities), analyses on other modalities/varieties/registers
+
+-   se faire passive more likely in informal settings, être passive more likely in formal settings
+
+-   definiteness & pronominality of the subject
 
 -   it might be interesting to look at the cases we excluded and see how they differ from real passive. (Grauzone: Passiv-Nuance, aber keine echte Alternation; Grade der Passivität untersuchen)
 

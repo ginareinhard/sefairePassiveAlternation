@@ -335,6 +335,8 @@ If we assume that the PSF is a "basic passive", this suggests that the *être* a
 
 -   lemma clustering method, not too many different levels because not each level will have enough data points
 
+-   **Hypothesis**: dynamic processes favour se faire, stative verbs disfavour se faire; volitional verbs favour se faire?
+
 -   **TAM (Tense, Aspect, Mood)**
 
     -   **Tense:** Descriptions of future events are more likely to focus on the start and process of an event/ action than on its endpoint (@bellec_construction_2014 [210]) Therefore, it seems likely that future tense will favour the se faire passive over the être passive. Regarding past tense, the être passive will probably be more popular than se faire for constructions in the passé composé (passé composé also used with se faire if speaker wants to emphasize a process, @bellec_construction_2014). In contrast, the se faire passive may be preferred if the action is described in the imparfait (only a guess).

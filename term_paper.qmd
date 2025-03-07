@@ -177,7 +177,7 @@ strategy possibilities:
 
 **se faire passive**
 
-We automatically extracted a sample of 1,193 *se faire* + infinitive constructions from the ParlaMint 2.0 corpus on Sketch Engine \[source?\] using a CQL expression. After extraction, we manually filtered the data to exclude false-positive constructions (i.e. constructions that were not *se faire* + infinitive constructions) and those that did not fulfil our predefined criteria for *se faire* passives (see below). The final sample comprised 521 *se faire* passives. We then annotated the lemmas of these constructions and relevant linguistic features, such as verb form, subject animacy and grammatical gender, in order to prepare the data for statistical modelling.
+We automatically extracted a sample of 1,193 *se faire* + infinitive constructions from the ParlaMint 2.0 corpus on Sketch Engine \[source?\] using a CQL expression. After extraction, we manually filtered the data to exclude false-positive constructions (i.e. constructions that were not *se faire* + infinitive constructions) and those that did not fulfil our predefined criteria for *se faire* passives (see below). The final sample comprised 520 *se faire* passives. We then annotated the lemmas of these constructions and relevant linguistic features, such as verb form, subject animacy and grammatical gender, in order to prepare the data for statistical modelling.
 
 **être passive**
 

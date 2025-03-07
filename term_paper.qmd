@@ -26,6 +26,7 @@ p {
 }
 </style>
 ```
+
 ```{r}
 #| include: false
 #install.packages("glossr")
@@ -72,6 +73,7 @@ use_glossr(styling = list(
 
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward -->
 ```
+
 ### Structure and meaning
 
 The construction consists of the pronoun "se", the conjugated form of the verb "faire" and a verb in the infinitive. According to @labelle_anticausativizing_2013 [235] the construction is "formally causative, but semantically passive". Similar to the être passive, the subject of the passive sentence is the experiencer of the action. As with être, the direct object of the active sentence becomes the subject of the passive sentence. *Language example: active sentence with two (animate) arguments, se faire passive sentence, evtl. etre passive sentence*
@@ -173,6 +175,7 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
+
 ### Semi-automated approach
 
 **se faire passive**
@@ -317,15 +320,15 @@ If we assume that the PSF is a "basic passive", this suggests that the *être* a
 
 [^2]: The general consensus in the literature is that aspect marks progressivity grammatically and Aktionsart semantically/ lexically. However, this clear distinction between aspect and Aktionart has been doubted, and some theories see Aktionsart und Aspect as two instantiations of Aspectuality (source missing!).
 
--   **Verb semantics (Aktionsart), Clusters** (@bohmann_large-scale_2023 [51-52]: 21 levels):
+-   **Verb semantics (Aktionsart), Clusters** (@bohmann_large-scale_2023 [51-52]:
 
     Multiple hypotheses are found in the literature concerning the compatibility of certain verbs with the PSF. For example, @kupferman_construction_1995 \[67\] and @raineri_analyse_2010 [90] state that *se faire* passive works well with dynamic verbs but not with stative verbs. (but exceptions provided by @novakova_construction_2009); Martin 2002, @raineri_analyse_2010 [100-103].
 
     -\> The *se faire* construction is generally considered incompatible with stative verbs and instead tends to occur with dynamic processes, focussing on cases where the source role is agentive and the target role is affected, which is the typical case of semantic transitivity. (@raineri_analyse_2010: 90).
 
-    -\> Kupferman (1995) argues that the *se faire* construction excludes stative verbs and verbs of state change with an external ‘cause’ argument, which explains differences in sentence acceptability (e.g. *Le pauvre s'est fait étrangler par le tueur* vs. \**Le pauvre s'est fait étrangler par cette cordelette*).
+    -\> @kupferman_construction_1995 argues that the *se faire* construction excludes stative verbs and verbs of state change with an external ‘cause’ argument, which explains differences in sentence acceptability (e.g. *Le pauvre s'est fait étrangler par le tueur* vs. \**Le pauvre s'est fait étrangler par cette cordelette*).
 
-    -\> However, Martin (2002) disagrees and explains that the source role can cause a change of state without being intentional, calling it an ‘effector’ rather than an ‘agent’. She cites examples such as *Isadora Duncan s'est fait étrangler par son écharpe* to support her view. She also claims that *se faire* constructions with psychological verbs (e.g. *Elle s'est fait séduire par Pierre*) are not always causative. Novakova (2008) also notes that ‘*se faire* constructions with stative verbs can, although rarely, be interpreted passively, as in *Il peine encore à se faire aimer par tous les siens.*
+    -\> However, @martin_construction_2002 disagrees and explains that the source role can cause a change of state without being intentional, calling it an ‘effector’ rather than an ‘agent’. She cites examples such as *Isadora Duncan s'est fait étrangler par son écharpe* to support her view. She also claims that *se faire* constructions with psychological verbs (e.g. *Elle s'est fait séduire par Pierre*) are not always causative. @novakova_construction_2009 also notes that ‘*se faire* constructions with stative verbs can, although rarely, be interpreted passively, as in *Il peine encore à se faire aimer par tous les siens.*
 
 -   volitional verbs fit well with PSF because they involve an action that leads to a mental state change while non-volitional verbs do not
 
@@ -333,7 +336,35 @@ If we assume that the PSF is a "basic passive", this suggests that the *être* a
 
 -   @raineri_analyse_2010 [365] sees the "type of process denoted by the verb" as a "necessary condition", inchoative/ durative aspect: "get passive and se faire passive focus on onset of the process that affects the subject referent, whereas be and etre passive present the process in its entirety, without offering an internal perspective."
 
--   lemma clustering method, not too many different levels because not each level will have enough data points
+-   lemma clustering method, not too many different levels because not each level will have enough data points: communication; don, privation; entrée, sortie; frapper, toucher; états physiques et comportements; locatif; mouvement sur place; munir, démunir; verbes psychologiques; réalisation, mise en état; saisir, serrer, posséder; transformation, changement; union, réunion; verbes auxiliaires @francois_presentation_2007 [4]
+
+-   communication
+
+-   giving, depriving
+
+-   entering, leaving
+
+-   hitting, touching
+
+-   physical states and behaviours
+
+-   locative
+
+-   movement in place
+
+-   equipping, disarming
+
+-   psychological verbs
+
+-   realisation, preparation
+
+-   seizing, clasping, possessing
+
+-   transformation, change
+
+-   union, reunion
+
+-   auxiliary verbs
 
 -   **Hypothesis**: dynamic processes favour se faire, stative verbs disfavour se faire; volitional verbs favour se faire?
 
@@ -345,7 +376,7 @@ If we assume that the PSF is a "basic passive", this suggests that the *être* a
             -   **(Periphrase constructions**: According to @spang-hanssen_quelques_1967 \[141\] and @novakova_construction_2009, periphrases that denote progressivity such as “être en train de + INF”, “venir de + INF” and “aller + INF” occur more naturally with the se faire passive than with the être passive. This is due to the dynamicity that the se faire passive entails (Quelle) compared to the more stative être passive. (also: @bellec_construction_2014; @keenan_passive_2007 [341], @raineri_analyse_2010 [91])
     -   **Mood:** indicative/ non-indicative (non-indicative = subjunctive, conditional, imperative)
 
--   Modal verbs (auxiliary): such as "devoir", "savoir", "pouvoir", "falloir", "vouloir" very frequent with se faire passive @novakova_construction_2009 \[9\] (in @raineri_analyse_2010 [97], reason: they denote "control" to the subject IF POSSIBLE
+-   Modal verbs (auxiliary): such as "devoir", "savoir", "pouvoir", "falloir", "vouloir" very frequent with se faire passive @novakova_construction_2009 \[9\] (in @raineri_analyse_2010 [97], reason: they denote "control" to the subject
 
 ### Adversativity/ Non-neutrality
 

@@ -26,7 +26,6 @@ p {
 }
 </style>
 ```
-
 ```{r}
 #| include: false
 #install.packages("glossr")
@@ -73,7 +72,6 @@ use_glossr(styling = list(
 
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward -->
 ```
-
 ### Structure and meaning
 
 The construction consists of the pronoun "se", the conjugated form of the verb "faire" and a verb in the infinitive. According to @labelle_anticausativizing_2013 [235] the construction is "formally causative, but semantically passive". Similar to the être passive, the subject of the passive sentence is the experiencer of the action. As with être, the direct object of the active sentence becomes the subject of the passive sentence. *Language example: active sentence with two (animate) arguments, se faire passive sentence, evtl. etre passive sentence*
@@ -175,7 +173,6 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
-
 ### Semi-automated approach
 
 **se faire passive**
@@ -281,7 +278,7 @@ As implied in the debate on subject responsibility, subjects of se faire passive
 
 However, these examples appear to be exceptions as there is both corpus (@novakova_construction_2009 [111]) and experimental (@koenig_semantic_1992 \[151, 153\]) evidence that subject animacy and PSF are positively correlated: In @novakova_construction_2009 [111]'s corpus study, less than 3% of the se faire sentences had an inanimate subjects. In a survey by @koenig_semantic_1992, French native speakers rated the acceptability of PSF with animate subjects significantly higher than with inanimate subjects. Inanimate subjecta were only allowed by some speakers when the subject "affects a relevant animate entity" (@koenig_semantic_1992 [151, 153]. The preponderance of animate subjects for the se faire passive seems to be one of the few aspects on which scholars agree (@raineri_analyse_2010 [92]).
 
-We tag animacy as binary "inanimate"/ "animate" although we recognize that animacy has been considered as a hierarchical sclae in the literature, most prominently by @zaenen_animacy_2004.
+We tag animacy as binary "inanimate"/ "animate" although we recognize that animacy has been considered as a hierarchical scale in the literature, most prominently by @zaenen_animacy_2004.
 
 **Hypothesis**: Both *se faire* and *être* passive favour animate subjects over inanimate subjects but subject animacy is a stronger predictor of the PSF than the être passive.
 
@@ -289,13 +286,30 @@ We tag animacy as binary "inanimate"/ "animate" although we recognize that anima
 
 <!-- The preference of the se faire passive of animate over inanimate subjects is parallel to the English get passive (@hundt_be-_2024), although @raineri_analyse_2010 [92] finds that the get passive allows more inanimate subjects than the se faire passive. According to @bohmann_large-scale_2023 [43], the get passive has become more likely with inanimate subjects over time which may signify a lessening of subject responsibility. @raineri_analyse_2010 brings up the possibility that a similar process of grammaticalisation may be happening in French. (not sure if relevant)-->
 
-**Agent PP** (par-phrase, Complément d'agent)
+**Gender**
 
-The par-phrase introduces an external agent into the passive construction: It denotes the causer/ instigator of the action and is often derived through diathesis from the subject of the active equivalent.
+We want to test whether grammatical gender influences the alternation between *être* and *se faire* passives. Since previous findings indicate that a feminine **agent** increases the likelihood of *être* passive (passif court, which means the agent was omitted) over active voice, it is worth exploring whether this effect extends to the choice between *être* and *se faire* constructions. \@da_cunha_lalternance_2020 (+2022) found that in written French a feminine agent increased the likelihood of *être* passive (passif court model), with no interaction with animacy (whether the argument was human or non-human) (or definiteness). This could suggest that gender itself plays a direct role in voice choice. However, given the small sample size of the study, it is also possible that an interaction effect exists but was not statistically detectable in this study (check 2022 study). We want to test whether gender also plays a role independently for our alternation. Also: we expect (almost) no inanimate subjects in *se faire* passive contructions.\
+\<-\> prominence/subject responsibility? (similar to animacy factor for *se faire* passive? grammatical gender though, not social gender but only expected to refer to animate feminine vs. masculine subjects for se faire??)
+
+-   levels: unknown, mixed, masculine, feminine
+
+**Hypothesis**: (A feminine **agent** favours the *être* passive /disfavours the *se faire* passive??)
+
+-   A feminine subject disfavors the *se faire* passive over the *être* passive? -\> if feminine referents are perceived as less active/agentive participants in the event (what about unknown/mixed?)
+
+**Complément d'agent (Agent PP)**
+
+(The par-phrase introduces an external agent into the passive construction: It denotes the causer/ instigator of the action and is often derived through diathesis from the subject of the active equivalent.)
 
 We expect the presence or absence of the par-phrase to influence passive choice. The par-phrase introduces an external agent who is likely the driving force behind the action described: @kupferman_construction_1995 postulates an "agentivity requirement" for agents denoted by the par-phrase, attributing a strong responsibility to the component. @hundt_be-_2024 and @bohmann_large-scale_2023 found that in English, the Agent PP reduces subject responsibility by introducing an agentive/ responsible entity.
 
 **Hypothesis**: We hypothesize that the presence of an agent PP ("Complément d'agent") prefers the canonical être passive over the se faire passive (because it assigns responsibility to an external agent that is not the subject which is unusual for PSF, where the subject is usually somewhat agentive.)
+
+-   0: favours se faire passive
+
+-   par: favours être passive
+
+-   de: favours être passive (even more?); as the se faire passives favours dynamic, often adversative actions -\> interaction?
 
 ### Aspectuality
 
@@ -348,18 +362,9 @@ Text genre, formal vs. informal
 
 -   se faire passive more likely in informal settings, être passive more likely in formal settings
 
-### Morphosyntactic features
+### \[Morphosyntactic features\]
 
-Negation, subject person, subject number, subject gender
-
--   **Person**
-
--   **Gender:** We want to test whether grammatical gender influences the alternation between *être* and *se faire* passives. Since previous findings indicate that a feminine **agent** increases the likelihood of *être* passive (passif court, which means the agent was omitted) over active voice, it is worth exploring whether this effect extends to the choice between *être* and *se faire* constructions. \@da_cunha_lalternance_2020 (+2022) found that in written French a feminine agent increased the likelihood of *être* passive (passif court model), with no interaction with animacy (whether the argument was human or non-human) (or definiteness). This could suggest that gender itself plays a direct role in voice choice. However, given the small sample size of the study, it is also possible that an interaction effect exists but was not statistically detectable in this study (check 2022 study). We want to test whether gender also plays a role independently for our alternation. Also: we expect (almost) no inanimate subjects in *se faire* passive contructions.\
-    \<-\> prominence/subject responsibility? (similar to animacy factor for *se faire* passive? grammatical gender though, not social gender but only expected to refer to animate feminine vs. masculine subjects for se faire??)
-
-    -   levels of the gender factor:
-
-    -   Hypothesis: A feminine **agent** favours the *être* passive /disfavours the *se faire* passive??
+Negation, subject number, subject gender
 
 -   **Number:** Surprisingly, number also had an effect in @da_cunha_lalternance_2020: plural arguments favoured the passive over active in all models. (+ Relativsätze & Priming als signifikante Faktoren) @da_cunha_lalternance_2020
 

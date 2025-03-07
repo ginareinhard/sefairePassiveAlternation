@@ -288,14 +288,13 @@ We tag animacy as binary "inanimate"/ "animate" although we recognize that anima
 
 **Gender**
 
-We want to test whether grammatical gender influences the alternation between *être* and *se faire* passives. Since previous findings indicate that a feminine **agent** increases the likelihood of *être* passive (passif court, which means the agent was omitted) over active voice, it is worth exploring whether this effect extends to the choice between *être* and *se faire* constructions. \@da_cunha_lalternance_2020 (+2022) found that in written French a feminine agent increased the likelihood of *être* passive (passif court model), with no interaction with animacy (whether the argument was human or non-human) (or definiteness). This could suggest that gender itself plays a direct role in voice choice. However, given the small sample size of the study, it is also possible that an interaction effect exists but was not statistically detectable in this study (check 2022 study). We want to test whether gender also plays a role independently for our alternation. Also: we expect (almost) no inanimate subjects in *se faire* passive contructions.\
-\<-\> prominence/subject responsibility? (similar to animacy factor for *se faire* passive? grammatical gender though, not social gender but only expected to refer to animate feminine vs. masculine subjects for se faire??)
+Since previous research suggests that grammatical gender plays a role in voice choice, it is worth investigating whether this effect extends to the alternation between *être* and *se faire* passives.
 
--   levels: unknown, mixed, masculine, feminine
+@da_cunha_lalternance_2020 (+2022) found that in written French, a feminine agent increased the likelihood of *être* passives (in the passif court model, i.e. when the agent is omitted) over the active voice, with no interaction with animacy (whether the argument was human or non-human) \[or definiteness\]. This suggests that gender itself may directly influence voice choice. However, given the study’s small sample size, it is also possible that an interaction effect exists but was not statistically significant \[check 2022 study\].
 
-**Hypothesis**: (A feminine **agent** favours the *être* passive /disfavours the *se faire* passive??)
+Since we do not infer the agent from context in this study, our analysis focuses solely on the subject’s gender. If *se faire* passives favour subjects with high responsibility, salience or affectedness, the grammatical gender of the subject may influence the alternation between *se faire* and *être* passive. Specifically, if feminine referents are perceived as less active or agentive in certain contexts, a feminine subject may favour *être* passives over *se faire* passives.
 
--   A feminine subject disfavors the *se faire* passive over the *être* passive? -\> if feminine referents are perceived as less active/agentive participants in the event (what about unknown/mixed?)
+To test this, we categorise gender into four levels: unknown, mixed, masculine, and feminine. Our hypothesis is that a feminine subject will favor the *être* passive and disfavor the *se faire* passive. We will test the potential interaction between gender and animacy, as the effect of grammatical gender may depend on whether the subject is animate or inanimate, potentially linking to the social gender of animate subject referents. Additionally, we will examine how unknown or mixed-gender subjects behave in terms of this alternation.
 
 **Complément d'agent (Agent PP)**
 

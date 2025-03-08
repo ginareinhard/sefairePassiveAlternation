@@ -330,37 +330,24 @@ If we assume that the PSF is a "basic passive", this suggests that the *être* a
 
 -   Telicity seems to be another important distinction: According to @bellec_construction_2014 \[209\], the *être* passive is likely to describe a result or mark an endpoint of an action, while the *se faire* passive is used for actions in progress and verbs that are in their nature ongoing (e.g. perception verbs, @bellec_construction_2014 [209]). This could be reflected in the telicity of the verb, with telic verbs preferring the *être* passive and atelic verbs favouring the *se faire* passive.
 
--   lemma clustering method, not too many different levels because not each level will have enough data points: communication; don, privation; entrée, sortie; frapper, toucher; états physiques et comportements; locatif; mouvement sur place; munir, démunir; verbes psychologiques; réalisation, mise en état; saisir, serrer, posséder; transformation, changement; union, réunion; verbes auxiliaires @francois_presentation_2007 [4]
+| Verb cluster | hypothesised passive preference | Verb examples |
+|--------------------------------------|-----------------|-----------------|
+| giving, depriving (don, privation) | se faire |  |
+| entering, leaving (entrée, sortie) | se faire |  |
+| hitting, touching (frapper, toucher) | se faire |  |
+| movement in place (mouvement sur place) | se faire |  |
+| equipping, disarming (munir, démunir) | se faire |  |
+| transformation, change (transformation, changement) | se faire |  |
+| realisation, preparation (réalisation, mise en état) | se faire |  |
+| physical states and behaviours (états physiques et comportements) | être |  |
+| locative (locatif) | être |  |
+| union, reunion (union, réunion) | ? |  |
+| psychological verbs (verbes psychologiques) | être? (mental states) |  |
+| seizing, clasping, possessing (saisir, serrer, posséder) | se faire? (adversativity) |  |
+| communication | se faire ? (volitional) |  |
+| auxiliary verbs | être? (stative) |  |
 
--   @bohmann_large-scale_2023 [44]: be predicted by more formal verbs encoding deontic/ menatl actions and changes in quality/ quantity; get preferred for physical motion, concrete actions, primarily negative verbs and low frequency verbs
-
--   communication
-
--   giving, depriving
-
--   entering, leaving
-
--   hitting, touching
-
--   physical states and behaviours
-
--   locative
-
--   movement in place
-
--   equipping, disarming
-
--   psychological verbs
-
--   realisation, preparation
-
--   seizing, clasping, possessing
-
--   transformation, change
-
--   union, reunion
-
--   auxiliary verbs
+: Hypothesised passive preference for verbs based on clusters/ classes by @francois_presentation_2007 [4]
 
 -   **Hypothesis**: dynamic processes favour se faire, stative verbs disfavour se faire; volitional verbs favour se faire?
 

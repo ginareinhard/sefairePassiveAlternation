@@ -322,9 +322,9 @@ If we assume that the PSF is a "basic passive", this suggests that the *être* a
 
 -   **Verb semantics (Aktionsart), Clusters** (@bohmann_large-scale_2023 [51-52]:
 
-    Multiple hypotheses are found in the literature concerning the compatibility of certain verbs with the PSF. For example, @kupferman_construction_1995 \[67\] and @raineri_analyse_2010 [90] state that *se faire* passive works well with dynamic verbs but not with stative verbs. (but exceptions provided by @novakova_construction_2009); Martin 2002, @raineri_analyse_2010 [100-103].
+    Multiple hypotheses are found in the literature concerning the compatibility of certain verbs with the PSF. For example, @kupferman_construction_1995 \[67\] and @raineri_analyse_2010 [90] state that *se faire* passive works well with dynamic verbs but not with stative verbs, although exceptions are provided by @novakova_construction_2009); @martin_construction_2002 and @raineri_analyse_2010 [100-103].
 
-    -\> The *se faire* construction is generally considered incompatible with stative verbs and instead tends to occur with dynamic processes, focussing on cases where the source role is agentive and the target role is affected, which is the typical case of semantic transitivity. (@raineri_analyse_2010: 90).
+    -\> The *se faire* construction is generally considered incompatible with stative verbs and instead tends to occur with dynamic processes, focusing on cases where the source role is agentive and the target role is affected, which is the typical case of semantic transitivity. (@raineri_analyse_2010: 90).
 
     -\> @kupferman_construction_1995 argues that the *se faire* construction excludes stative verbs and verbs of state change with an external ‘cause’ argument, which explains differences in sentence acceptability (e.g. *Le pauvre s'est fait étrangler par le tueur* vs. \**Le pauvre s'est fait étrangler par cette cordelette*).
 
@@ -334,9 +334,9 @@ If we assume that the PSF is a "basic passive", this suggests that the *être* a
 
 -   Telicity seems to be another important distinction: According to @bellec_construction_2014 \[209\], the *être* passive is likely to describe a result or mark an endpoint of an action, while the *se faire* passive is used for actions in progress and verbs that are in their nature ongoing (e.g. perception verbs, @bellec_construction_2014 [209]). This could be reflected in the telicity of the verb, with telic verbs preferring the *être* passive and atelic verbs favouring the *se faire* passive.
 
--   @raineri_analyse_2010 [365] sees the "type of process denoted by the verb" as a "necessary condition", inchoative/ durative aspect: "get passive and se faire passive focus on onset of the process that affects the subject referent, whereas be and etre passive present the process in its entirety, without offering an internal perspective."
-
 -   lemma clustering method, not too many different levels because not each level will have enough data points: communication; don, privation; entrée, sortie; frapper, toucher; états physiques et comportements; locatif; mouvement sur place; munir, démunir; verbes psychologiques; réalisation, mise en état; saisir, serrer, posséder; transformation, changement; union, réunion; verbes auxiliaires @francois_presentation_2007 [4]
+
+-   @bohmann_large-scale_2023 [44]: be predicted by more formal verbs encoding deontic/ menatl actions and changes in quality/ quantity; get preferred for physical motion, concrete actions, primarily negative verbs and low frequency verbs
 
 -   communication
 
@@ -372,9 +372,10 @@ If we assume that the PSF is a "basic passive", this suggests that the *être* a
 
     -   **Tense:** Descriptions of future events are more likely to focus on the start and process of an event/ action than on its endpoint (@bellec_construction_2014 [210]) Therefore, it seems likely that future tense will favour the se faire passive over the être passive. Regarding past tense, the être passive will probably be more popular than se faire for constructions in the passé composé (passé composé also used with se faire if speaker wants to emphasize a process, @bellec_construction_2014). In contrast, the se faire passive may be preferred if the action is described in the imparfait (only a guess).
     -   **Aspect**
+        -   @raineri_analyse_2010 [365] sees the "type of process denoted by the verb" as a "necessary condition", inchoative/ durative aspect: "get passive and se faire passive focus on onset of the process that affects the subject referent, whereas be and etre passive present the process in its entirety, without offering an internal perspective."
         -   tagging @hundt_be-_2024 : simple, perfect, progressive; @bohmann_large-scale_2023 [39]: "Form of auxiliary verb: present, preterite, perfect, infinitive, -ing" OR progressive/non-progressive
-            -   **(Periphrase constructions**: According to @spang-hanssen_quelques_1967 \[141\] and @novakova_construction_2009, periphrases that denote progressivity such as “être en train de + INF”, “venir de + INF” and “aller + INF” occur more naturally with the se faire passive than with the être passive. This is due to the dynamicity that the se faire passive entails (Quelle) compared to the more stative être passive. (also: @bellec_construction_2014; @keenan_passive_2007 [341], @raineri_analyse_2010 [91])
-    -   **Mood:** indicative/ non-indicative (non-indicative = subjunctive, conditional, imperative)
+        -   **(Periphrase constructions**: According to @spang-hanssen_quelques_1967 \[141\] and @novakova_construction_2009, periphrases that denote progressivity such as “être en train de + INF”, “venir de + INF” and “aller + INF” occur more naturally with the se faire passive than with the être passive. This is due to the dynamicity that the se faire passive entails (Quelle) compared to the more stative être passive. (also: @bellec_construction_2014; @keenan_passive_2007 \[341\], @raineri_analyse_2010 \[91\])
+    -   **Mood:** indicative/ non-indicative (non-indicative = subjunctive, conditional, (imperative))
 
 -   Modal verbs (auxiliary): such as "devoir", "savoir", "pouvoir", "falloir", "vouloir" very frequent with se faire passive @novakova_construction_2009 \[9\] (in @raineri_analyse_2010 [97], reason: they denote "control" to the subject
 

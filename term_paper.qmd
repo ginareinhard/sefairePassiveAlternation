@@ -302,13 +302,9 @@ To test this, we categorise gender into four levels: unknown, mixed, masculine, 
 
 We expect the presence or absence of the par-phrase to influence passive choice. The par-phrase introduces an external agent who is likely the driving force behind the action described: @kupferman_construction_1995 postulates an "agentivity requirement" for agents denoted by the par-phrase, attributing a strong responsibility to the component. @hundt_be-_2024 and @bohmann_large-scale_2023 found that in English, the Agent PP reduces subject responsibility by introducing an agentive/ responsible entity.
 
-**Hypothesis**: We hypothesize that the presence of an agent PP ("Complément d'agent") prefers the canonical être passive over the se faire passive (because it assigns responsibility to an external agent that is not the subject which is unusual for PSF, where the subject is usually somewhat agentive.)
+We hypothesize that the complément d'agent influences the choice between *se faire* and *être* passives. The presence of a complément d'agent should favor *être* passives, as it introduces a responsible external argument and shifts responsibility away from the subject. In contrast, the absence of a complément d'agent is expected to favor *se faire* passives, which imply some degree of subject responsibility.
 
--   0: favours se faire passive
-
--   par: favours être passive
-
--   de: favours être passive (even more?); as the se faire passives favours dynamic, often adversative actions -\> interaction?
+We expect phrases with *de* to have an even stronger effect than phrases with *par*, as they typically refer to less agentive or abstract sources (instead of agents), contradicting the dynamic nature of the *se faire* passive, which typically occurs with adversative or strongly agentive actions. To examine this, we will test the interaction between the compément d'agent and the verb cluster and adversativity??, as we expect the *se faire* passive to be favoured by dynamic and adversative verbs (see seq-XXX).
 
 ### Aspectuality
 
@@ -374,7 +370,7 @@ If we assume that the PSF is a "basic passive", this suggests that the *être* a
     -   **Aspect**
         -   @raineri_analyse_2010 [365] sees the "type of process denoted by the verb" as a "necessary condition", inchoative/ durative aspect: "get passive and se faire passive focus on onset of the process that affects the subject referent, whereas be and etre passive present the process in its entirety, without offering an internal perspective."
         -   tagging @hundt_be-_2024 : simple, perfect, progressive; @bohmann_large-scale_2023 [39]: "Form of auxiliary verb: present, preterite, perfect, infinitive, -ing" OR progressive/non-progressive
-        -   **(Periphrase constructions**: According to @spang-hanssen_quelques_1967 \[141\] and @novakova_construction_2009, periphrases that denote progressivity such as “être en train de + INF”, “venir de + INF” and “aller + INF” occur more naturally with the se faire passive than with the être passive. This is due to the dynamicity that the se faire passive entails (Quelle) compared to the more stative être passive. (also: @bellec_construction_2014; @keenan_passive_2007 \[341\], @raineri_analyse_2010 \[91\])
+        -   **(Periphrase constructions**: According to @spang-hanssen_quelques_1967 \[141\] and @novakova_construction_2009, periphrases that denote progressivity such as “être en train de + INF”, “venir de + INF” and “aller + INF” occur more naturally with the se faire passive than with the être passive. This is due to the dynamicity that the se faire passive entails (Quelle) compared to the more stative être passive. (also: @bellec_construction_2014; @keenan_passive_2007 [341], @raineri_analyse_2010 [91])
     -   **Mood:** indicative/ non-indicative (non-indicative = subjunctive, conditional, (imperative))
 
 -   Modal verbs (auxiliary): such as "devoir", "savoir", "pouvoir", "falloir", "vouloir" very frequent with se faire passive @novakova_construction_2009 \[9\] (in @raineri_analyse_2010 [97], reason: they denote "control" to the subject

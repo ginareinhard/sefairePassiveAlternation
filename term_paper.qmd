@@ -304,7 +304,7 @@ We expect the presence or absence of the par-phrase to influence passive choice.
 
 We hypothesize that the complément d'agent influences the choice between *se faire* and *être* passives. The presence of a complément d'agent should favor *être* passives, as it introduces a responsible external argument and shifts responsibility away from the subject. In contrast, the absence of a complément d'agent is expected to favor *se faire* passives, which imply some degree of subject responsibility.
 
-We expect phrases with *de* to have an even stronger effect than phrases with *par*, as they typically refer to less agentive or abstract sources (instead of agents), contradicting the dynamic nature of the *se faire* passive, which typically occurs with adversative or strongly agentive actions. To examine this, we will test the interaction between the compément d'agent and the verb cluster and adversativity??, as we expect the *se faire* passive to be favoured by dynamic and adversative verbs (see seq-XXX).
+We expect phrases with *de* to have an even stronger effect than phrases with *par*, as they typically refer to less agentive or abstract sources (instead of agents), contradicting the dynamic nature of the *se faire* passive, which typically occurs with adversative or strongly agentive actions. To examine this, we will test the interaction between the compément d'agent and the verb cluster??, as we expect the *se faire* passive to be favoured by dynamic and adversative verbs (see seq-XXX).
 
 ### Aspectuality
 

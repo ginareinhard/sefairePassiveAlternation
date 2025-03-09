@@ -269,7 +269,7 @@ Thus, although the requirement of subject responsibility in the PSF is not "univ
 
 **Animacy**
 
-Corpus studies have shown that animacy significantly influences voice choice in French. The animacy of the passive subject (not agent) has been shown to increase the likelihood of using the passive voice (*être* passive) over the active voice. @da_cunha_lalternance_2020 (+2022) -\> more explanation as to why
+Corpus studies have shown that animacy significantly influences voice choice in French. The animacy of the passive subject (not agent) has been shown to increase the likelihood of using the passive voice (*être* passive) over the active voice. @da_cunha_lalternance_2020 (+ @da2022alternance) -\> more explanation as to why
 
 As implied in the debate on subject responsibility, subjects of se faire passive constructions are predominantly active participants in the described action. Since inanimate subjects are rarely affected and even less often responsible, PSF is common with animate subjects. While some scholars claim that only animate subjects are possible with the PSF, others provide counterexamples (@labelle_anticausativizing_2013, @kokutani_sur_2005, @novakova_construction_2009 \[4\], @sveberg_se_2012) (@raineri_analyse_2010 [92]).
 

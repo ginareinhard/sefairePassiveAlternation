@@ -42,6 +42,7 @@ use_glossr(styling = list(
 
 -   The construction se faire + infinitive has developed through analogy with the passive voice. While it originally had a causative meaning (the subject has an active influence), in certain cases it can take on a purely passive reading, i.e. it behaves passively as an alternative to être.
 -   The passive voice in general is a rare construction: Only 5% of verbs in the French Treebank (FTB) are in the passive voice ( @da_cunha_lalternance_2020) vs. 9% in English for the same text type (@roland2007frequency)
+-   quantitative, multivariational, probabilistic approach / method of statistical modelling of corpus data
 
 # The French passive alternation of *être* and *se faire*
 
@@ -52,6 +53,7 @@ use_glossr(styling = list(
 -   Function of the passive construction (semantic focus):
 
     -   Contrairement à la construction causative, le tour passif ne prend pour sujet qu'une entité affecté (selon Labelle 2002) (se faire)
+    -   Morphosyntax
 
 -   Diathesis: Concept of the passive (passif long) as an inversion of the order/ syntactic function of the arguments (the subject argument and the object argument) in relation to the active construction. The object of the active "becomes" the subject in the passive. (Per default, in French the subject is coded at position 1 in the sentence)
 
@@ -62,6 +64,8 @@ use_glossr(styling = list(
     Approx. a quarter of all passive constructions in the French Treebank (FTB) are realised as passif long (@da_cunha_lalternance_2020), while in spoken French, the proportion is about 10% (source Hamma).
 
 -   evtl.: passive vs. *construction moyenne en se* (*La porte a été ouverte* vs. *la porte s'est ouverte*) -\> In the passif court, the agent argument is still implicit (Quellen)
+
+-   the passive is more frequent in written than in spoken French @da2022alternance ?
 
 ## *se faire* passive
 
@@ -175,6 +179,8 @@ strategy possibilities:
 ```
 ### Semi-automated approach
 
+we opted for a balanced sample containing as many se faire as être passives (numbers and characteristics)
+
 **se faire passive**
 
 We automatically extracted a sample of 1,193 *se faire* + infinitive constructions from the ParlaMint 2.0 corpus on Sketch Engine \[source?\] using a CQL expression. After extraction, we manually filtered the data to exclude false-positive constructions (i.e. constructions that were not *se faire* + infinitive constructions) and those that did not fulfil our predefined criteria for *se faire* passives (see below). The final sample comprised 520 *se faire* passives. We then annotated the lemmas of these constructions and relevant linguistic features, such as verb form, subject animacy and grammatical gender, in order to prepare the data for statistical modelling.
@@ -236,6 +242,8 @@ We excluded:
 -   (Expressions where an être passive has a very different meaning)
 
 [^1]: These verbs mainly occur with inanimate subjects (effects, consequences, discontent). @raineri_analyse_2010 [163-164] proposes that the causative meaning is not available for these verbs since the subject is not causing the event. There is also no passive meaning since they cannot cannot occur with a complément d’agent and do not have a paraphrase with être.
+
+-\> summary of the sample?
 
 ## Logistic Regression
 
@@ -332,6 +340,8 @@ We do not examine mood in this study.
 -   volitional verbs fit well with PSF because they involve an action that leads to a mental state change while non-volitional verbs do not
 
 -   Telicity seems to be another important distinction: According to @bellec_construction_2014 \[209\], the *être* passive is likely to describe a result or mark an endpoint of an action, while the *se faire* passive is used for actions in progress and verbs that are in their nature ongoing (e.g. perception verbs, @bellec_construction_2014 [209]). This could be reflected in the telicity of the verb, with telic verbs preferring the *être* passive and atelic verbs favouring the *se faire* passive.
+
+-   Semantic class of the verb (lemma), using the dictionary *Les Verbes Français - LVF* (Dubois&Dubois-Charlier 1997)
 
 | Verb cluster                                                      | hypothesised passive preference | Verb examples |
 |------------------------------------|------------------|------------------|

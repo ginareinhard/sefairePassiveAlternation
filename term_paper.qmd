@@ -512,10 +512,6 @@ As @bohmann_large-scale_2023 notes, there are two hypotheses related to emotions
 
 **Interaction:** Affecteness of the subject may be reflected by an interaction of subject animacy and verb adversativity: Negative consequences of actions, expressed by adversative verbs, affect animate subjects more than inanimate subjects.
 
-### \[Morphosyntactic features\]
-
--   **Negation:** @bohmann_large-scale_2023 [39]: *get* passive disfavoured in complex constructions (e.g. negation); parallel in French?
-
 ## Memory based learning
 
 -   non-parametric: no assumptions about underlying distribution of data

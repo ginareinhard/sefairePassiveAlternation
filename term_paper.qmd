@@ -35,7 +35,7 @@ library(tidyverse)
 
 ```
 
-```{r styling, incluce=FALSE}
+```{r styling, include=FALSE}
 
 use_glossr(styling = list(
   source = "b",
@@ -190,7 +190,7 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
-```{r lemma-list}
+```{r lemma-list, include=FALSE}
 
 lemmas <- sefaire_sample |> 
   count(lemma)
@@ -203,7 +203,7 @@ we opted for a balanced sample containing as many se faire as être passives (nu
 
 **se faire passive**
 
-We automatically extracted a sample of 1,193 *se faire* + infinitive constructions from the ParlaMint 2.0 corpus on Sketch Engine \[source?\] using a CQL expression. After extraction, we manually filtered the data to exclude false-positive constructions (i.e. constructions that were not *se faire* + infinitive constructions) and those that did not fulfil our predefined criteria for *se faire* passives (see below). The final sample comprised 520 *se faire* passives. We then annotated the lemmas of these constructions and relevant linguistic features, such as verb form, subject animacy and grammatical gender, in order to prepare the data for statistical modelling.
+We automatically extracted a sample of 1,193 *se faire* + infinitive constructions from the ParlaMint 2.0 corpus on Sketch Engine \[source?\] using a CQL expression. After extraction, we manually filtered the data to exclude false-positive constructions (i.e. constructions that were not *se faire* + infinitive constructions) and those that did not fulfil our predefined criteria for *se faire* passives (see below). The final sample comprised 507 \[count with inline code\] *se faire* passives. We then annotated the lemmas of these constructions and relevant linguistic features, such as verb form, subject animacy and grammatical gender, in order to prepare the data for statistical modelling.
 
 **être passive**
 

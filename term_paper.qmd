@@ -385,14 +385,13 @@ Suggestion for grouping clusters together (losely based on categories of @bohman
 
 -   (auxiliaries) : preference for être? // drop?
 
--   **TAM (Tense, Aspect, Mood)**
+-   **TA (Tense, Aspect)**
 
     -   **Tense:** Descriptions of future events are more likely to focus on the start and process of an event/ action than on its endpoint (@bellec_construction_2014 [210]) Therefore, it seems likely that future tense will favour the se faire passive over the être passive. Regarding past tense, the être passive will probably be more popular than se faire for constructions in the passé composé. In the present, both passives are expected to be equally distributed.
     -   **Aspect**
         -   @raineri_analyse_2010 [365] sees the "type of process denoted by the verb" as a "necessary condition", inchoative/ durative aspect: "get passive and se faire passive focus on onset of the process that affects the subject referent, whereas be and etre passive present the process in its entirety, without offering an internal perspective."
         -   tagging @hundt_be-_2024 : simple, perfect, progressive; @bohmann_large-scale_2023 [39]: "Form of auxiliary verb: present, preterite, perfect, infinitive, -ing" OR progressive/non-progressive
         -   **(Periphrase constructions**: According to @spang-hanssen_quelques_1967 \[141\] and @novakova_construction_2009, periphrases that denote progressivity such as “être en train de + INF”, “venir de + INF” and “aller + INF” occur more naturally with the se faire passive than with the être passive. This is due to the dynamicity that the se faire passive entails (Quelle) compared to the more stative être passive. (also: @bellec_construction_2014; @keenan_passive_2007 [341], @raineri_analyse_2010 [91])
-    -   **Mood:** indicative/ non-indicative (non-indicative = subjunctive, conditional, (imperative)) // realis/ irrealis
 
 -   Modal verbs (auxiliary): such as "devoir", "savoir", "pouvoir", "falloir", "vouloir" very frequent with se faire passive @novakova_construction_2009 \[9\] (in @raineri_analyse_2010 [97], reason: they denote "control" to the subject
 

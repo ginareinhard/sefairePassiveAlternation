@@ -26,16 +26,29 @@ p {
 }
 </style>
 ```
-```{r}
-#| include: false
-#install.packages("glossr")
+```{r load-libraries, include=FALSE}
 
+library(here)
+#install.packages("glossr")
 library(glossr)
+library(tidyverse)
+
+```
+
+```{r styling, incluce=FALSE}
+
 use_glossr(styling = list(
   source = "b",
   first = "",
   font_family = "Cambria"
 ))
+
+```
+
+```{r import-data, include=FALSE}
+
+sefaire_sample <- read.csv(file = here("data", "sefaire_sample.csv"))
+
 ```
 
 # Introduction
@@ -177,6 +190,13 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
+```{r lemma-list}
+
+lemmas <- sefaire_sample |> 
+  count(lemma)
+
+```
+
 ### Semi-automated approach
 
 we opted for a balanced sample containing as many se faire as être passives (numbers and characteristics)

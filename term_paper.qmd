@@ -26,7 +26,6 @@ p {
 }
 </style>
 ```
-
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -90,7 +89,6 @@ sefaire_sample <- read.csv(file = here("data", "sefaire_sample.csv"))
 
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward -->
 ```
-
 ### Structure and meaning
 
 The construction consists of the pronoun "se", the conjugated form of the verb "faire" and a verb in the infinitive. According to @labelle_anticausativizing_2013 [235] the construction is "formally causative, but semantically passive". Similar to the être passive, the subject of the passive sentence is the experiencer of the action. As with être, the direct object of the active sentence becomes the subject of the passive sentence. *Language example: active sentence with two (animate) arguments, se faire passive sentence, evtl. etre passive sentence*
@@ -192,7 +190,6 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
-
 ```{r lemma-list, include=FALSE}
 
 lemmas <- sefaire_sample |> 
@@ -206,7 +203,7 @@ we opted for a balanced sample containing as many se faire as être passives (nu
 
 **se faire passive**
 
-We automatically extracted a sample of 1,193 *se faire* + infinitive constructions from the ParlaMint 2.0 corpus on Sketch Engine \[source?\] using a CQL expression. After extraction, we manually filtered the data to exclude false-positive constructions (i.e. constructions that were not *se faire* + infinitive constructions) and those that did not fulfil our predefined criteria for *se faire* passives (see below). The final sample comprised 507 \[count with inline code\] *se faire* passives. We then annotated the lemmas of these constructions and relevant linguistic features, such as verb form, subject animacy and grammatical gender, in order to prepare the data for statistical modelling.
+We automatically extracted a sample of 1,193 *se faire* + infinitive constructions from the ParlaMint 2.0 corpus on Sketch Engine \[source?\] using a CQL expression. After extraction, we manually filtered the data to exclude false-positive constructions (i.e. constructions that were not *se faire* + infinitive constructions) and those that did not fulfil our predefined criteria for *se faire* passives (see below). The final sample comprised 535 \[count with inline code\] *se faire* passives. We then annotated the lemmas of these constructions and relevant linguistic features, such as verb form, subject animacy and grammatical gender, in order to prepare the data for statistical modelling.
 
 **être passive**
 
@@ -468,7 +465,7 @@ Suggestion for grouping clusters together (losely based on categories of @bohman
 
 **Aspect and Tense marking**
 
-According to @raineri_analyse_2010 \[365\], the "type of process denoted by the verb" is a "necessary condition". inchoative/ durative aspect: "get passive and se faire passive focus on onset of the process that affects the subject referent, whereas be and être passive present the process in its entirety, without offering an internal perspective." ?
+According to @raineri_analyse_2010 [365], the "type of process denoted by the verb" is a "necessary condition". inchoative/ durative aspect: "get passive and se faire passive focus on onset of the process that affects the subject referent, whereas be and être passive present the process in its entirety, without offering an internal perspective." ?
 
 Tense can serve as an indicator of aspect in terms of how it sets the temporal focus of a sentence. Constructions in the passé composé tend to focus on the completed event, which could increase the likelihood of the *être* passive over the *se faire* passive. In contrast, the imparfait, which emphasises the ongoing process, might favour the *se faire* passive. In the present tense, we expect both passives to be evenly distributed, as the present tense emphasises neither the end point nor the process. Descriptions of future events tend to emphasise the beginning and ongoing process of an action rather than its end point (@bellec_construction_2014 [210]). We therefore expect that in the future tense, the *se faire* passive is favoured over the *être* passive.
 

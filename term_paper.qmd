@@ -376,7 +376,19 @@ We do not examine mood in this study.
 
     -   Communication verbs (favouring the active voice): strongly favour the active construction due to their syntactic disposition and their tendency to use object clauses, may be less compatible with se faire passives, presence of an animate or human subject of the corresponding active construction may further reduce the likelihood of se faire ?
 
-    -   Neutral verb classes (e.g. psychological, behavioural, movement, transfer): do not show a strong passive preference, distribution on être and se faire passives may depend on additional factors ?
+    -   Mental and local states (psychological verbs?, physical states and behaviours, locative, emotions): highly stative, disfavours se faire/favours être
+
+    -   Neutral verb classes (e.g. psychological verbs?, behavioural, movement, transfer): do not show a strong passive preference, distribution on être and se faire passives may depend on additional factors ?
+
+-   OR merge communication verbs and mental and local states into one category that prefers être over se faire and introduce another category for movement verbs (frequently occuring with se faire according to @raineri_analyse_2010 [90]: "les verbes de mouvement "aller" et "venir", qui mettent en relief la phase initiale du procès (Spang-Hanssen 1967 : 143)136 et les verbes de perception (Novakova 2008 : 9), qui impliquent un procès duratif"); suggested categories:
+
+    -   frapper-type verbs (summarise as: "immediate physical actions" or "applied force" after @bohmann_large-scale_2023 ?)
+
+    -   movement: going, coming, entering, leaving etc.
+
+    -   communication & mental states: emotions etc.
+
+    -   neutral/ other (everything else)
 
 -   se faire passives might be particularly favoured by highly dynamic, adversative verbs such as *frapper*, while verb classes that favour active constructions (e.g. communicative verbs) might be less compatible. ?
 
@@ -456,7 +468,7 @@ Suggestion for grouping clusters together (losely based on categories of @bohman
 
 **Aspect and Tense marking**
 
-According to\@raineri_analyse_2010 \[365\], the "type of process denoted by the verb" is a "necessary condition". inchoative/ durative aspect: "get passive and se faire passive focus on onset of the process that affects the subject referent, whereas be and être passive present the process in its entirety, without offering an internal perspective." ?
+According to @raineri_analyse_2010 \[365\], the "type of process denoted by the verb" is a "necessary condition". inchoative/ durative aspect: "get passive and se faire passive focus on onset of the process that affects the subject referent, whereas be and être passive present the process in its entirety, without offering an internal perspective." ?
 
 Tense can serve as an indicator of aspect in terms of how it sets the temporal focus of a sentence. Constructions in the passé composé tend to focus on the completed event, which could increase the likelihood of the *être* passive over the *se faire* passive. In contrast, the imparfait, which emphasises the ongoing process, might favour the *se faire* passive. In the present tense, we expect both passives to be evenly distributed, as the present tense emphasises neither the end point nor the process. Descriptions of future events tend to emphasise the beginning and ongoing process of an action rather than its end point (@bellec_construction_2014 [210]). We therefore expect that in the future tense, the *se faire* passive is favoured over the *être* passive.
 

@@ -26,6 +26,7 @@ p {
 }
 </style>
 ```
+
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -89,6 +90,7 @@ sefaire_sample <- read.csv(file = here("data", "sefaire_sample.csv"))
 
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward -->
 ```
+
 ### Structure and meaning
 
 The construction consists of the pronoun "se", the conjugated form of the verb "faire" and a verb in the infinitive. According to @labelle_anticausativizing_2013 [235] the construction is "formally causative, but semantically passive". Similar to the être passive, the subject of the passive sentence is the experiencer of the action. As with être, the direct object of the active sentence becomes the subject of the passive sentence. *Language example: active sentence with two (animate) arguments, se faire passive sentence, evtl. etre passive sentence*
@@ -190,6 +192,7 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
+
 ```{r lemma-list, include=FALSE}
 
 lemmas <- sefaire_sample |> 
@@ -264,6 +267,35 @@ We excluded:
 [^1]: These verbs mainly occur with inanimate subjects (effects, consequences, discontent). @raineri_analyse_2010 [163-164] proposes that the causative meaning is not available for these verbs since the subject is not causing the event. There is also no passive meaning since they cannot cannot occur with a complément d’agent and do not have a paraphrase with être.
 
 -\> summary of the sample?
+
+### Annotation Guidelines
+Gender (masculin/ feminin/ mixed/ unknown)
+- Assign masculin or féminin if the gender is clearly marked grammatically:
+-   Through a pronoun (il(s), elle(s))
+-   Through an adjective or participle that marks gender (heureux/heureuse, content/contente)
+- Use mixed only if:
+  - The context clearly refers to a mixed-gender group (un groupe d’hommes et de femmes)
+  - The grammatical form is not gendered, but the semantic context indicates mixed gender (nous referring explicitly to men and women)
+- Assign unknown if:
+  - No grammatical gender marking is present
+  - For on, vous, je, and nous (if no grammatical marking appears)
+  - For expletive subjects (il faut)
+
+Progressivity (progressive/ non-progressive)
+- Assign "progressive" if:
+  - The "se faire" construction is directly in the imparfait or future (except for futur antérieur) → indicates an ongoing or habitual action
+  - The "se faire" construction is linked to an ongoing action, indicated by:
+A participe présent → Example: Ils acceptent de se faire endoctriner. → progressive/ gerondig + participe présent (en courant - while running)
+- periphrases e.g., être en train de (present continuous), aller + inf (futur proche), continuer à + Infinitif
+- adverbs/ Adverbial Phrases Indicating Ongoing Action: Temporal adverbs that imply duration or repetition:
+En ce moment (at the moment)
+Actuellement (currently)
+Toujours (always)
+Depuis (since)
+Encore (still)
+non-progressive:
+- passé composé, plus-que-parfait, présent, futur antérieur (...)
+- progressiveness is hinted at by another verb in the sentence (e.g., falloir or être) and not from the "se faire" construction itself 
 
 ## Logistic Regression
 

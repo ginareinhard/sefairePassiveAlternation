@@ -269,33 +269,44 @@ We excluded:
 -\> summary of the sample?
 
 ### Annotation Guidelines
+
 Gender (masculin/ feminin/ mixed/ unknown)
-- Assign masculin or féminin if the gender is clearly marked grammatically:
--   Through a pronoun (il(s), elle(s))
--   Through an adjective or participle that marks gender (heureux/heureuse, content/contente)
-- Use mixed only if:
-  - The context clearly refers to a mixed-gender group (un groupe d’hommes et de femmes)
-  - The grammatical form is not gendered, but the semantic context indicates mixed gender (nous referring explicitly to men and women)
-- Assign unknown if:
-  - No grammatical gender marking is present
-  - For on, vous, je, and nous (if no grammatical marking appears)
-  - For expletive subjects (il faut)
+
+-   Assign masculin or féminin if the gender is clearly marked grammatically:
+
+    -   Through a pronoun (il(s), elle(s))
+
+    -   Through an adjective or participle that marks gender (heureux/heureuse, content/contente)
+
+-   Use mixed only if:
+
+    -   The context clearly refers to a mixed-gender group (un groupe d’hommes et de femmes)
+
+    -   The grammatical form is not gendered, but the semantic context indicates mixed gender (nous referring explicitly to men and women)
+
+-   Assign unknown if:
+
+    -   No grammatical gender marking is present
+
+    -   For on, vous, je, and nous (if no grammatical marking appears)
+
+    -   For expletive subjects (il faut)
 
 Progressivity (progressive/ non-progressive)
-- Assign "progressive" if:
-  - The "se faire" construction is directly in the imparfait or future (except for futur antérieur) → indicates an ongoing or habitual action
-  - The "se faire" construction is linked to an ongoing action, indicated by:
-A participe présent → Example: Ils acceptent de se faire endoctriner. → progressive/ gerondig + participe présent (en courant - while running)
-- periphrases e.g., être en train de (present continuous), aller + inf (futur proche), continuer à + Infinitif
-- adverbs/ Adverbial Phrases Indicating Ongoing Action: Temporal adverbs that imply duration or repetition:
-En ce moment (at the moment)
-Actuellement (currently)
-Toujours (always)
-Depuis (since)
-Encore (still)
-non-progressive:
-- passé composé, plus-que-parfait, présent, futur antérieur (...)
-- progressiveness is hinted at by another verb in the sentence (e.g., falloir or être) and not from the "se faire" construction itself 
+
+-   Assign "progressive" if:
+
+    -   The "se faire" construction is directly in the imparfait or future (except for futur antérieur) → indicates an ongoing or habitual action
+
+    -   The "se faire" construction is linked to an ongoing action, indicated by: A participe présent → Example: Ils acceptent de se faire endoctriner. → progressive/ gerondif + participe présent (en courant - while running)
+
+    -   periphrases e.g., être en train de (present continuous), aller + inf (futur proche), continuer à + Infinitif
+
+    -   adverbs/ Adverbial Phrases Indicating Ongoing Action: Temporal adverbs that imply duration or repetition: En ce moment (at the moment), Actuellement (currently), Toujours (always), Depuis (since), Encore (still)
+
+-   Assign "non-progressive" if:
+
+    -   passé composé, plus-que-parfait, présent, futur antérieur (...) - progressiveness is hinted at by another verb in the sentence (e.g., falloir or être) and not from the "se faire" construction itself
 
 ## Logistic Regression
 

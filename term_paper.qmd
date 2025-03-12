@@ -270,7 +270,7 @@ We excluded:
 
 ### Annotation Guidelines
 
-Gender (masculin/ feminin/ mixed/ unknown)
+**Gender (masculin/ feminin/ mixed/ unknown)**
 
 -   Assign masculin or féminin if the gender is clearly marked grammatically:
 
@@ -292,7 +292,7 @@ Gender (masculin/ feminin/ mixed/ unknown)
 
     -   For expletive subjects (il faut)
 
-Progressivity (progressive/ non-progressive)
+**Progressivity (progressive/ non-progressive)**
 
 -   Assign "progressive" if:
 

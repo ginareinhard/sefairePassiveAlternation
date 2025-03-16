@@ -26,7 +26,6 @@ p {
 }
 </style>
 ```
-
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -90,7 +89,6 @@ sefaire_sample <- read.csv(file = here("data", "sefaire_sample.csv"))
 
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward -->
 ```
-
 ### Structure and meaning
 
 The construction consists of the pronoun "se", the conjugated form of the verb "faire" and a verb in the infinitive. According to @labelle_anticausativizing_2013 [235] the construction is "formally causative, but semantically passive". Similar to the être passive, the subject of the passive sentence is the experiencer of the action. As with être, the direct object of the active sentence becomes the subject of the passive sentence. *Language example: active sentence with two (animate) arguments, se faire passive sentence, evtl. etre passive sentence*
@@ -192,7 +190,6 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
-
 ```{r lemma-list, include=FALSE}
 
 lemmas <- sefaire_sample |> 
@@ -255,6 +252,8 @@ Some verbs can have a passive and a causative meaning, depending on the context.
 We excluded:
 
 -   Fixed idiomatic expressions with a figurative meaning: "se faire passer pour" *to impersonate sb.*, "se faire avoir" *to be fooled*, "se faire mousser" *to boast/ to brag, "se faire taper sur les doigts" lit. to get a slap on the fingers, to be scolded* ; example: "Dites donc, vous savez vous faire mousser!" *My, you know how to make a fuss!/ You know how to blow your own trumpet!*
+
+    -   \+ *se faire rouler dans la farine*
 
 -   Expressions that cannot be converted into a correct active sentence (i.e., the direct object of the active sentence is not the subject of the passive sentence). (ditransitive, intransitive verbs ?), example: "mais se faire expliquer des elements de justice n'est pas la même chose que d'acheter en ligne des produits bio ou une paire de chaussures." *but getting an explanation of legal matters is not the same as buying organic products or a pair of shoes online*
 
@@ -378,6 +377,8 @@ We expect phrases with *de* to have an even stronger effect than phrases with *p
 
 such as "devoir", "savoir", "pouvoir", "falloir", "vouloir" very frequent with se faire passive @novakova_construction_2009 \[9\] (in @raineri_analyse_2010 [97], reason: they denote "control" to the subject
 
+-   modal category limited to/ only comprises modal verbs for the scope of our study, not other similar constructions denoting subject responsibility (e.g. avoir besoin de, arriver à, réussir à, envier de, avoir des difficultés pour, avoir la possibilité de, avoir envie de, ...)
+
 ### Aspectuality
 
 Regarding the factor of aspectuality, @keenan_passive_2007 [340] cites one of Greenberg's universals:
@@ -468,6 +469,8 @@ We do not examine mood in this study.
 
 : Hypothesised passive preference for verbs based on clusters/ classes by @francois_presentation_2007 [4]
 
+We have used the classes from the lexicon in the annotation. If there was no exact match, we used the closest similar class. In one case (*caillasser*) there was no entry in the lexicon: Here we assigned the category hitting-touching (similar to *attaquer, frapper, bombarder, ...*)
+
 Suggestion for grouping clusters together (losely based on categories of @bohmann_large-scale_2023 [51])
 
 -   goal-directed controlled motion// immediate physical actions: **preference for se faire?** *difficult because of telicity*
@@ -520,11 +523,13 @@ We decide against coding tense, aspect (and mood?) as separate factors, but to c
 
 **levels**:
 
--   "progressive": imparfait, futur, periphrase constructions
+-   "progressive": imparfait, futur, periphrase constructions (called "progressive but includes temse)
 
 -   "non-progressive": passé composé, plus-que-parfait, present tense without periphrase construction
 
-! & "**se faisant remplacer" -\> progressive form?**
+    -   \+ imparfait referring to states?
+
+! & "**se faisant remplacer" -\> progressive form**
 
 Progressive category: emphasises ongoing or continuous actions, includes the imparfait, futur (except for futur antérieur - "I will have..."), and periphrastic constructions like *être en train de* + INF, *venir de* + INF or *aller* + INF.
 
@@ -584,6 +589,8 @@ As @bohmann_large-scale_2023 notes, there are two hypotheses related to emotions
 
 # Discussion
 
+-   interaction animacy x gender: *personne* (feminine) occurs frequently in the sample
+
 # Conclusion/Outlook
 
 -   Future studies: modality (spoken/written) as a factor (compare modalities), analyses on other modalities/varieties/registers
@@ -595,5 +602,7 @@ As @bohmann_large-scale_2023 notes, there are two hypotheses related to emotions
 -   it might be interesting to look at the cases we excluded and see how they differ from real passive. (Grauzone: Passiv-Nuance, aber keine echte Alternation; Grade der Passivität untersuchen)
 
 -   Limitation: Lemmas were determined by the lemmas occuring in se faire constructions
+
+-   modal category only comprises modal verbs in our study, other similar constructions denoting subject responsibility could be interesting to examine (e.g. avoir besoin de, arriver à, réussir à, envier de, avoir des difficultés pour, avoir la possibilité de, avoir envie de, ...)
 
 # References

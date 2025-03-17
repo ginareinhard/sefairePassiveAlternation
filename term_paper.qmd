@@ -59,6 +59,15 @@ etre_sample <- rbind(etre_sample_1, etre_sample_2, etre_sample_3)
 
 ```
 
+```{r randomization, include=FALSE}
+
+set.seed(2142637384) #lottery numbers too long, deleted last digit
+
+etre_sample_randomized <- etre_sample |>
+  slice_sample(n = 700)
+
+```
+
 # Introduction
 
 -   The construction se faire + infinitive has developed through analogy with the passive voice. While it originally had a causative meaning (the subject has an active influence), in certain cases it can take on a purely passive reading, i.e. it behaves passively as an alternative to être.

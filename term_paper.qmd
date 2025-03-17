@@ -59,11 +59,11 @@ etre_sample <- rbind(etre_sample_1, etre_sample_2, etre_sample_3)
 
 ```
 
-```{r randomization, include=FALSE}
+```{r randomisation, include=FALSE}
 
 set.seed(2142637384) #lottery numbers too long, deleted last digit
 
-etre_sample_randomized <- etre_sample |>
+etre_sample_randomised <- etre_sample |>
   slice_sample(n = 700)
 
 ```

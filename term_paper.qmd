@@ -168,11 +168,11 @@ Passive constructions of se faire and être are not always interchangeable: As d
 
 ### Corpus
 
-In our investigation of spoken French language, we aimed to select a corpus that represents authentic French spoken language. After thorough consideration and exploration of our options, we decided for the French ParlaMint corpus [@11356/1864]. ParlaMint consists of French parliamentary debates from 2017 to 2020 and contains 38,702,395 tokens (32,214,147 words). We chose this corpus because it is well-documented, POS-tagged and contains rich meta data.
+In our investigation of spoken French language, we aimed to select a corpus that represents authentic French spoken language. After thorough consideration and exploration of our options, we decided for the French ParlaMint corpus [@11356/1431]. ParlaMint consists of French parliamentary debates from 2017 to 2020 and contains 38,702,395 tokens (32,214,147 words). We chose this corpus because it is well-documented, POS-tagged and contains rich meta data.
 
 We recognize that the genre of parliamentary debates is quite specialised and our results therefore cannot be generalized to all French spoken language. However, the language of parliamentary debates is a fascinating genre in itself (studied before: references) and is expected to reflect a wide range of topics, thus providing a cross-section of language varieties as they occur in French speech.
 
-We extracted the concordances from the French ParlaMint corpus [@11356/1864] using a CQL expression SketchEngine. To extract the data we chose a semi-automatic approach that included manual filtering.
+We extracted the concordances from the French ParlaMint corpus [@11356/1431] using a CQL expression SketchEngine. To extract the data we chose a semi-automatic approach that included manual filtering.
 
 -   We selected an equal number of occurrences of *être* passive and *se faire* passive.
     -   We made a list of the lemmas in the se faire constructions → used these lemmas to filter the être constructions

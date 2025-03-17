@@ -26,7 +26,6 @@ p {
 }
 </style>
 ```
-
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -52,6 +51,12 @@ sefaire_sample <- read.csv(file = here("data", "sefaire_sample.csv"))
 etre_sample_1 <- read.csv(file = here("data", "etre_sample_1.csv"))
 etre_sample_2 <- read.csv(file = here("data", "etre_sample_2.csv"))
 etre_sample_3 <- read.csv(file = here("data", "etre_sample_3.csv"))
+```
+
+```{r etre-sample, include=FALSE}
+
+etre_sample <- rbind(etre_sample_1, etre_sample_2, etre_sample_3)
+
 ```
 
 # Introduction
@@ -92,7 +97,6 @@ etre_sample_3 <- read.csv(file = here("data", "etre_sample_3.csv"))
 
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward -->
 ```
-
 ### Structure and meaning
 
 The construction consists of the pronoun "se", the conjugated form of the verb "faire" and a verb in the infinitive. According to @labelle_anticausativizing_2013 [235] the construction is "formally causative, but semantically passive". Similar to the être passive, the subject of the passive sentence is the experiencer of the action. As with être, the direct object of the active sentence becomes the subject of the passive sentence. *Language example: active sentence with two (animate) arguments, se faire passive sentence, evtl. etre passive sentence*
@@ -194,7 +198,6 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
-
 ```{r lemma-list, include=FALSE}
 
 lemmas <- sefaire_sample |> 

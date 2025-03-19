@@ -26,7 +26,6 @@ p {
 }
 </style>
 ```
-
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -86,8 +85,15 @@ write.csv(etre_sample_randomised,"./data/etre_sample.csv")
 
 -   Function of the passive construction (semantic focus):
 
-    -   Contrairement à la construction causative, le tour passif ne prend pour sujet qu'une entité affecté (selon Labelle 2002) (se faire)
-    -   Morphosyntax
+Interpreting the passive **without** an agent: The passive allows the subject to be omitted, which generally has the effect of presenting the situation without specifying the cause or the individual who is responsible. (GGF: 219)
+
+The French passive construction is based on the passive participle (participe passé), which is characterised by its form and construction: its form is identical to that of the past participle (participe passé): *acheté* The subject of the active is removed or becomes the complément d'agent. The *complément direct* of the active becomes the subject (or remains the complement in the impersonal passive: Il sera acheté un livre.).
+
+We refer to a *passif long* if there is an agent complement (complément d'agent), and a short pass in the other cases.
+
+The impersonal passive (*passif impersonnel*) is available for some verbs without a complément direct (*Il a été ri de cette histoire.*).
+
+(source: GGF: 210)
 
 -   Diathesis: Concept of the passive (passif long) as an inversion of the order/ syntactic function of the arguments (the subject argument and the object argument) in relation to the active construction. The object of the active "becomes" the subject in the passive. (Per default, in French the subject is coded at position 1 in the sentence)
 
@@ -101,6 +107,8 @@ write.csv(etre_sample_randomised,"./data/etre_sample.csv")
 
 -   the passive is more frequent in written than in spoken French @da2022alternance ?
 
+-   Contrairement à la construction causative, le tour passif ne prend pour sujet qu'une entité affecté (selon Labelle 2002) (se faire)
+
 ## *se faire* passive
 
 ```{=html}
@@ -110,7 +118,6 @@ write.csv(etre_sample_randomised,"./data/etre_sample.csv")
 
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward -->
 ```
-
 ### Structure and meaning
 
 The construction consists of the pronoun "se", the conjugated form of the verb "faire" and a verb in the infinitive. According to @labelle_anticausativizing_2013 [235] the construction is "formally causative, but semantically passive". Similar to the être passive, the subject of the passive sentence is the experiencer of the action. As with être, the direct object of the active sentence becomes the subject of the passive sentence. *Language example: active sentence with two (animate) arguments, se faire passive sentence, evtl. etre passive sentence*
@@ -212,7 +219,6 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
-
 ```{r lemma-list, include=FALSE}
 
 lemmas <- sefaire_sample |> 

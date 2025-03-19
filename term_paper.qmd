@@ -48,15 +48,15 @@ use_glossr(styling = list(
 ```{r import-data, include=FALSE}
 
 sefaire_sample <- read.csv(file = here("data", "sefaire_sample.csv"))
-etre_sample_a <- read.csv(file = here("data", "etre_sample_a.csv"))
-etre_sample_b <- read.csv(file = here("data", "etre_sample_b.csv"))
-etre_sample_c <- read.csv(file = here("data", "etre_sample_c.csv"))
-etre_sample_d <- read.csv(file = here("data", "etre_sample_d.csv"))
+etre_sample_1 <- read.csv(file = here("data", "etre_sample_1.2.csv"))
+etre_sample_2 <- read.csv(file = here("data", "etre_sample_2.2.csv"))
+etre_sample_3 <- read.csv(file = here("data", "etre_sample_3.2.csv"))
+etre_sample_4 <- read.csv(file = here("data", "etre_sample_4.2.csv"))
 ```
 
 ```{r etre-sample, include=FALSE}
 
-etre_sample <- rbind(etre_sample_a, etre_sample_b, etre_sample_c, etre_sample_d)
+etre_sample <- rbind(etre_sample_1, etre_sample_2, etre_sample_3, etre_sample_4)
 
 ```
 
@@ -67,7 +67,7 @@ set.seed(2142637384) #lottery numbers too long, deleted last digit
 etre_sample_randomised <- etre_sample |>
   slice_sample(n = 700)
 
-write.csv(etre_sample_randomised,"./data/etre_sample.csv")
+write.csv(etre_sample_randomised,"./data/etre_sample_random.csv")
 
 ```
 

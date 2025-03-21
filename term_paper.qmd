@@ -70,6 +70,12 @@ etre_sample_randomised <- etre_sample |>
 write.csv(etre_sample_randomised,"./data/etre_sample_random.csv")
 
 ```
+```{r}
+unique_lemma <- unique(sefaire_sample$lemma)
+lemma_list <- sprintf('lemma="%s"', unique_lemma)
+cat(paste(lemma_list, collapse = " | "))
+
+```
 
 # Introduction
 

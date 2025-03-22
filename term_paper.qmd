@@ -70,6 +70,7 @@ etre_sample_randomised <- etre_sample |>
 write.csv(etre_sample_randomised,"./data/etre_sample_randomised.csv")
 
 ```
+
 ```{r}
 unique_lemma <- unique(sefaire_sample$lemma)
 lemma_list <- sprintf('lemma="%s"', unique_lemma)
@@ -288,7 +289,7 @@ We excluded:
 
 -   Fixed idiomatic expressions with a figurative meaning: "se faire passer pour" *to impersonate sb.*, "se faire avoir" *to be fooled*, "se faire mousser" *to boast/ to brag, "se faire taper sur les doigts" lit. to get a slap on the fingers, to be scolded* ; example: "Dites donc, vous savez vous faire mousser!" *My, you know how to make a fuss!/ You know how to blow your own trumpet!*
 
-    -   \+ *se faire rouler dans la farine*
+    -   \+ *se faire **rouler** dans la farine + se faire **mener** par le bout du nez*
 
 -   Expressions that cannot be converted into a correct active sentence (i.e., the direct object of the active sentence is not the subject of the passive sentence). (ditransitive, intransitive verbs ?), example: "mais se faire expliquer des elements de justice n'est pas la même chose que d'acheter en ligne des produits bio ou une paire de chaussures." *but getting an explanation of legal matters is not the same as buying organic products or a pair of shoes online*
 
@@ -297,6 +298,8 @@ We excluded:
 -   (Expressions with a transparent causative meaning - maybe not necessary if covered by the other criteria)
 
 -   (Expressions where an être passive has a very different meaning)
+
+-   impersonal être passive constructions (passif impersonnel)
 
 [^1]: These verbs mainly occur with inanimate subjects (effects, consequences, discontent). @raineri_analyse_2010 [163-164] proposes that the causative meaning is not available for these verbs since the subject is not causing the event. There is also no passive meaning since they cannot cannot occur with a complément d’agent and do not have a paraphrase with être.
 

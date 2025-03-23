@@ -91,6 +91,8 @@ cat(paste(lemma_list, collapse = " | "))
 
 The canonical passive with *être* in French inverts the syntactic functions of the arguments within a clause. The object of the active sentence becomes the subject in the passive voice - a phenomenon known as diathesis. In French, the subject usually occurs at the first position of the sentence, and the passive voice uses this syntactic priority to shift the focus and emphasise the undergoer over the agent.
 
+Interpreting the passive **without** an agent: The passive allows the subject to be omitted, which generally has the effect of presenting the situation without specifying the cause or the individual who is responsible. The passif court the action or the result of the action. (GGF: 219)
+
 -   Unlike e.g. the causative construction, the passive takes only an affected entity as its subject (according to Labelle 2002) (se faire)
 
 The French passive construction consists of the *participe passif* (passive participle), which has the same form as the *participe passé* (past participle) and in most cases *être* as an **attributive** verb. In the passive construction, the subject of the active sentence becomes an adjunct phrase (*complément d'agent*, introduced by *par* or *de*), which can be omitted, while the active direct object takes the place of the subject (GGF 210-211). -\> examples?
@@ -105,11 +107,9 @@ An impersonal passive (*passif impersonnel*) is also possible in French for some
 
 With a state verb, active and passive sentences are generally semantically equivalent (Tout le monde aime Marie. / Marie est aimée de tout de monde.). (GGF: 219)
 
-With an event verb, expressing a change of state or place, the passive describes a change in the initial situation or the result of this change. In the passé composé, the sentences *On a servi la biere* and *La bière a été servi* appear to be equivalent. In the present tense, on the other hand, or in the imperfect tense, the active phrase (On sert la bière) may describe a situation in progress, and the passive phrase a resulting state (La bière est servi). In the passive, the presence of an agent complement can encourage the interpretation of an event, with a present tense of habit (La bière est servi par le patron). (GGF: 219)
+With an event verb, expressing a change of state or place, the passive describes a change in the initial situation or the result of this change. In the passé composé, the sentences *On a servi la biere* and *La bière a été servi* appear to be equivalent. In the present tense, on the other hand, or in the imperfect tense, the active phrase (On sert la bière) may describe a situation in progress, and the passive phrase a resulting state (La bière est servi). In the passive, the presence of an agent complement can favour the interpretation of an event, with a present tense of habit (La bière est servi par le patron). (GGF: 219)
 
 Some grammars distinguish between a *passif verbal*, with an event interpretation, and an *passif adjectival*, with a resultative interpretation. For (GGF: 219), this is about semantic differences, concerning the aspect of the situation.
-
-Interpreting the passive **without** an agent: The passive allows the subject to be omitted, which generally has the effect of presenting the situation without specifying the cause or the individual who is responsible. The passif court the action or the result of the action. (GGF: 219)
 
 (source: GGF: 210)
 

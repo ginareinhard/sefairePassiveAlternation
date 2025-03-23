@@ -81,7 +81,6 @@ cat(paste(lemma_list, collapse = " | "))
 # Introduction
 
 -   The construction se faire + infinitive has developed through analogy with the passive voice. While it originally had a causative meaning (the subject has an active influence), in certain cases it can take on a purely passive reading, i.e. it behaves passively as an alternative to être.
--   The passive voice in general is a rare construction: Only 5% of verbs in the French Treebank (FTB) are in the passive voice ( @da_cunha_lalternance_2020) vs. 9% in English for the same text type (@roland2007frequency)
 -   quantitative, multivariational, probabilistic approach / method of statistical modelling of corpus data
 
 # The French passive alternation of *être* and *se faire*
@@ -92,9 +91,9 @@ cat(paste(lemma_list, collapse = " | "))
 
 The canonical passive with être in French inverts the syntactic functions of the arguments within a clause. In other words, the object of the active sentence becomes the subject in the passive voice - a phenomenon known as diathesis. In French, the subject usually occurs at the first position of the sentence, and the passive voice uses this syntactic priority to shift the focus and emphasise the undergoer over the agent.
 
-The French passive construction consists of the passive participle (*participe passif*), which has the same form as the past participle (*participe passé*) and in most cases *être* as an auxiliary verb (GGF 211). In the passive construction, the subject of the active sentence becomes an adjunct phrase (*complément d'agent*, introduced by *par* or *de*), which can be omitted, while the active direct object takes the place of the subject (GGF 210). -\> examples?
+The French passive construction consists of the *participe passif* (passive participle), which has the same form as the *participe passé* (past participle) and in most cases *être* as an **attributive** verb. In the passive construction, the subject of the active sentence becomes an adjunct phrase (*complément d'agent*, introduced by *par* or *de*), which can be omitted, while the active direct object takes the place of the subject (GGF 210-211). -\> examples?
 
-We refer to a *passif long* if there is an agent complement (complément d'agent), and a passif court in the other cases.
+We refer to a *passif long* if there is an agent complement (complément d'agent), and a *passif court* in the other cases.
 
 -   The omission of the agent argument, called the *complément d'agent* (*par* or *de* phrase), is also possible. In this case, the construction is referred to as *passif court*, whereas the *passif long* explicitly includes the complément d'agent:
 
@@ -102,7 +101,9 @@ We refer to a *passif long* if there is an agent complement (complément d'agent
 
     Approx. a quarter of all passive constructions in the French Treebank (FTB) are realised as passif long (@da_cunha_lalternance_2020), while in spoken French, the proportion is about 10% (source Hamma).
 
-Passif impersonnel: With impersonal passives, the direct object can remain as a complement, as in *Il sera acheté un livre* (‘A book is bought’) (GGF 210).
+Passif impersonnel:
+
+The impersonal passive (*passif impersonnel*) is available for some verbs without a complément direct (*Il a été ri de cette histoire.*). With impersonal passives, the direct object can remain as a complement, as in *Il sera acheté un livre* (‘A book is bought’) (GGF 210).
 
 With a state verb, active and passive sentences are generally semantically equivalent (Tout le monde aime Marie. / Marie est aimée de tout de monde.). (GGF: 219)
 
@@ -112,15 +113,15 @@ Some grammars distinguish between a passif verbal, with an event interpretation,
 
 Interpreting the passive **without** an agent: The passive allows the subject to be omitted, which generally has the effect of presenting the situation without specifying the cause or the individual who is responsible. The passif court the action or the result of the action. (GGF: 219)
 
-The impersonal passive (*passif impersonnel*) is available for some verbs without a complément direct (*Il a été ri de cette histoire.*).
-
 (source: GGF: 210)
 
--   evtl.: passive vs. *construction moyenne en se* (*La porte a été ouverte* vs. *la porte s'est ouverte*) -\> In the passif court, the agent argument is still implicit (Quellen)
+-   (evtl.: passive vs. *construction moyenne en se* (*La porte a été ouverte* vs. *la porte s'est ouverte*) -\> In the passif court, the agent argument is still implicit (Quellen))
+
+-   The passive voice in general is a rare construction: Only 5% of verbs in the French Treebank (FTB) are in the passive voice ( @da_cunha_lalternance_2020) vs. 9% in English for the same text type (@roland2007frequency)
 
 -   the passive is more frequent in written than in spoken French @da2022alternance ?
 
--   Contrairement à la construction causative, le tour passif ne prend pour sujet qu'une entité affecté (selon Labelle 2002) (se faire)
+-   the passive turn takes only one affected entity as its subject, unlike the causative construction (according to Labelle 2002) (se faire)
 
 ## *se faire* passive
 

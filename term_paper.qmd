@@ -90,25 +90,31 @@ cat(paste(lemma_list, collapse = " | "))
 
 ### Structure and meaning
 
--   Function of the passive construction (semantic focus):
+The canonical passive with être in French inverts the syntactic functions of the arguments within a clause. In other words, the object of the active sentence becomes the subject in the passive voice - a phenomenon known as diathesis. In French, the subject usually occurs at the first position of the sentence, and the passive voice uses this syntactic priority to shift the focus and emphasise the undergoer over the agent.
 
-Interpreting the passive **without** an agent: The passive allows the subject to be omitted, which generally has the effect of presenting the situation without specifying the cause or the individual who is responsible. (GGF: 219)
+The French passive construction consists of the passive participle (*participe passif*), which has the same form as the past participle (*participe passé*) and in most cases *être* as an auxiliary verb (GGF 211). In the passive construction, the subject of the active sentence becomes an adjunct phrase (*complément d'agent*, introduced by *par* or *de*), which can be omitted, while the active direct object takes the place of the subject (GGF 210). -\> examples?
 
-The French passive construction is based on the passive participle (participe passé), which is characterised by its form and construction: its form is identical to that of the past participle (participe passé): *acheté* The subject of the active is removed or becomes the complément d'agent. The *complément direct* of the active becomes the subject (or remains the complement in the impersonal passive: Il sera acheté un livre.).
-
-We refer to a *passif long* if there is an agent complement (complément d'agent), and a short pass in the other cases.
-
-The impersonal passive (*passif impersonnel*) is available for some verbs without a complément direct (*Il a été ri de cette histoire.*).
-
-(source: GGF: 210)
-
--   Diathesis: Concept of the passive (passif long) as an inversion of the order/ syntactic function of the arguments (the subject argument and the object argument) in relation to the active construction. The object of the active "becomes" the subject in the passive. (Per default, in French the subject is coded at position 1 in the sentence)
+We refer to a *passif long* if there is an agent complement (complément d'agent), and a passif court in the other cases.
 
 -   The omission of the agent argument, called the *complément d'agent* (*par* or *de* phrase), is also possible. In this case, the construction is referred to as *passif court*, whereas the *passif long* explicitly includes the complément d'agent:
 
     *Language examples from our corpus*
 
     Approx. a quarter of all passive constructions in the French Treebank (FTB) are realised as passif long (@da_cunha_lalternance_2020), while in spoken French, the proportion is about 10% (source Hamma).
+
+Passif impersonnel: With impersonal passives, the direct object can remain as a complement, as in *Il sera acheté un livre* (‘A book is bought’) (GGF 210).
+
+With a state verb, active and passive sentences are generally semantically equivalent (Tout le monde aime Marie. / Marie est aimée de tout de monde.). (GGF: 219)
+
+With an event verb, expressing a change of state or place, the passive describes a change in the initial situation or the result of this change. In the passé composé, the sentences *On a servi la biere* and *La bière a été servi* appear to be equivalent. In the present tense, on the other hand, or in the imperfect tense, the active phrase (On sert la bière) may describe a situation in progress, and the passive phrase a resulting state (La bière est servi). In the passive, the presence of an agent complement can encourage the interpretation of an event, with a present tense of habit (La bière est servi par le patron). (GGF: 219)
+
+Some grammars distinguish between a passif verbal, with an event interpretation, and an passif adjectival, with a resultative interpretation. For (GGF: 219), this is about semantic differenceces, concerning the aspect of the situation.
+
+Interpreting the passive **without** an agent: The passive allows the subject to be omitted, which generally has the effect of presenting the situation without specifying the cause or the individual who is responsible. The passif court the action or the result of the action. (GGF: 219)
+
+The impersonal passive (*passif impersonnel*) is available for some verbs without a complément direct (*Il a été ri de cette histoire.*).
+
+(source: GGF: 210)
 
 -   evtl.: passive vs. *construction moyenne en se* (*La porte a été ouverte* vs. *la porte s'est ouverte*) -\> In the passif court, the agent argument is still implicit (Quellen)
 

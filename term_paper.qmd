@@ -72,14 +72,37 @@ etre_sample_randomised <- etre_sample |>
 write.csv(etre_sample_randomised,"./data/etre_sample_randomised.csv")
 
 ```
-```{r downsample, include=FALSE}
+```{r downsampling, include=FALSE}
 set.seed(2142637384)
 
 etre_sample_532 <- etre_sample_clean |> 
   slice_sample(n= 532)
+```
+
+
+```{r downsampling_correction, include=FALSE}
+#one false positive was found after sampling (ID=332) but sampling completely new not possible
+set.seed(2142637384)
+
+etre_sample_533 <- etre_sample_clean |> 
+  slice_sample(n= 533)
+
+etre_sample_1 <- etre_sample_533 |> 
+  filter(!etre_sample_533$ID %in% etre_sample_532$ID)
+```
+
+
+```{r downsample_correction, include=FALSE}
+# ID217 is "next in line" given the seed
+# correction: remove 332 and add 217 to sample
+etre_sample_532 <- etre_sample_532 |> 
+  filter(ID != "332") |> 
+  bind_rows(etre_sample_1)
 
 write.csv(etre_sample_532,"./data/etre_sample_532.csv")
+
 ```
+
 ```{r etre_difference, include=FALSE}
 difference_list <- etre_sample_clean |> 
   filter(!etre_sample_clean$ID %in% etre_sample_532$ID)

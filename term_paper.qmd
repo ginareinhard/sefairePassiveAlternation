@@ -382,7 +382,7 @@ We excluded:
 
 ### Inter-rater agreement
 
-Cohen's ϰ (Kappa) following @levshina_how_2015 [201] and the cran documentation of the psy package documentation (<https://cran.r-project.org/web/packages/psy/psy.pdf>)
+As the analysis required detailed (and very time consuming) manual annotation, we decided to split the annotation work between us. However, to ensure consistent annotation, a representative sample of one third of all instances (320; 33,25%) were double annotated, i.e. by both of us. For these instances, we calculated Cohen's ϰ (Kappa) as a measure of inter-rater agreement, (following @levshina_how_2015 [201] and the documentation in the psy package documentation (<https://cran.r-project.org/web/packages/psy/psy.pdf>).)
 
 Data preprocessing
 
@@ -431,6 +431,8 @@ mean_kappa <- mean(kappa_values)
 mean_kappa #0.8120668, very high agreement :)
 
 ```
+
+The inter-rater agreement is high at 0.81.
 
 ## Logistic Regression
 

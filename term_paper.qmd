@@ -423,6 +423,10 @@ etre_sample_annotated <- etre_sample_annotated |>
   select(reference, speaker, everything())
 
 #still some differences left: être has an "ID" column which se faire does not; être has two agent_pp columns because it was annotated by A and B while se faire only has one, since agent_pp of se faire constructions was annotated there one person (annotator A)
+
+#rename agent_pp for clarity
+sefaire_sample_annotated <- sefaire_sample_annotated |> 
+  rename(agent_pp_A = agent_pp)
 ```
 
 Combine the data
@@ -441,7 +445,7 @@ passive_sample_combined <- passive_sample_combined |>
   mutate(across(where(is.character), factor))
 # summary
 summary(passive_sample_combined)
-#looks good, two "animate?" in subj_animacy_A
+#looks good
 ```
 
 add "NA" as value for all cases that are only annotated by one person
@@ -765,14 +769,17 @@ As @bohmann_large-scale_2023 notes, there are two hypotheses related to emotions
 
 ```{r merge-to-main-dataset}
 #goal: one dataset with one column for each factor, the column includes the annotation of the "main" annotator
+# agent pp column wenn passive variant se faire ist -> nimm den Wert aus column "agent pp", wenn passive variant etre ist gehe so vor wie bei den anderen, also wenn annotator A ist, nimm den Wert aus agent_pp_a, wenn Annotator  B ist nimm den Wert aus agent_pp_b
 passive_sample_clean <- passive_sample_combined |> 
   mutate(
     subj_animacy = case_when(annotator == "A" ~ subj_animacy_A,
                              annotator == "B" ~ subj_animacy_B),
-    subj_gender = case_when(annotator == "A" ~ subj_animacy_A,
-                            annotator == "B" ~subj_animacy_B),
-    agent_pp = case_when(annotator == "A" ~ agent_pp_A,
-                         annotator == "B" ~ agent_pp_B),
+    subj_gender = case_when(annotator == "A" ~ subj_gender_A,
+                            annotator == "B" ~subj_gender_B),
+    agent_pp = case_when(passive_variant == "se faire" ~ agent_pp_A,
+                         passive_variant == "être" ~ case_when(
+                           annotator == "A" ~ agent_pp_A,
+                           annotator == "B" ~ agent_pp_B)),
     modal = case_when(annotator == "A" ~ modal_A,
                       annotator == "B" ~ modal_B),
     tam = case_when(annotator == "A" ~ tam_A, 

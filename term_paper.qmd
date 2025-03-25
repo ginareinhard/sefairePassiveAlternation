@@ -762,6 +762,8 @@ As @bohmann_large-scale_2023 notes, there are two hypotheses related to emotions
 
 # Results
 
+## Data preparation
+
 ```{r merge-to-main-dataset}
 #goal: one dataset with one column for each factor, the column includes the annotation of the "main" annotator
 # agent pp column wenn passive variant se faire ist -> nimm den Wert aus column "agent pp", wenn passive variant etre ist gehe so vor wie bei den anderen, also wenn annotator A ist, nimm den Wert aus agent_pp_a, wenn Annotator  B ist nimm den Wert aus agent_pp_b
@@ -788,12 +790,13 @@ passive_sample_clean <- passive_sample_combined |>
 # remove now-redundant A and B columns, remove ID (irrelevant since it's only there for être)
 passive_sample_clean <- passive_sample_clean |> 
   select(-subj_animacy_A, -subj_animacy_B, -subj_gender_A, -subj_gender_B, -agent_pp_A, -agent_pp_B, -modal_A, -modal_B, -tam_A, -tam_B, -cluster_A, -cluster_B, -adversativity_A, -adversativity_B, -ID)
+
+str(passive_sample_clean)
 ```
 
 ## Data exploration
 
-```{r data-exploration, include=FALSE}
-str(passive_sample_clean)
+```{r data-exploration}
 mosaicplot(passive_variant ~ subj_animacy,
            data = passive_sample_clean)
 
@@ -808,13 +811,15 @@ mosaicplot(subj_gender ~ passive_variant,
 
 ```
 
+## Binomial logistic regression
+
 ordering levels: by default alphabetical; reference level always the first, i.e.:
 
 -   passive variant: être
 
--   subj_animacy: animate, inanimate
+-   subj_animacy: animate, inanimate (better: inanimate?)
 
--   subj_gender: feminine
+-   subj_gender: feminine (better: unknown?)
 
 -   agent_pp: 0
 
@@ -822,9 +827,125 @@ ordering levels: by default alphabetical; reference level always the first, i.e.
 
 -   tam: non-progressive
 
--   cluster: communication
+-   cluster: communication (better: neutral?)
 
--   adversativity: adversative
+-   adversativity: adversative (better: non-adversative?)
+
+```{r packages-regression, include=FALSE}
+library(mclm)
+library(kableExtra)
+library(lmerTest)
+library(afex)
+library(ggeffects)
+library(sjPlot)
+```
+
+## Model selection
+
+```{r regression-model}
+passive_glmer <- glmer(
+    passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:cluster + subj_animacy:adversativity + cluster:adversativity) +
+               (1 | lemma) + (1 | speaker),
+    family = "binomial", 
+    data = passive_sample_clean,
+    control = glmerControl(optimizer = "bobyqa")
+  )
+
+summary(passive_glmer) #AIC: 785.1 
+tab_model(passive_glmer) # Marginal R2 / Conditional R2	0.598 / 0.746
+```
+
+random effects: variance of the speaker very very small (1.359e-13), does not need to be kept; variance of the lemma is bigger (1.917e) and should be kept.
+
+significant effects:
+
+-   main effects: (subj gender\[unknown\]); cluster\[hitting-touching\]; cluster\[neutral\]
+
+-   interactions: subj animacy \[inanimate\]× subj gender \[unknown\]; **subj animacy \[inanimate\]\
+    × adversativity \[non-adversative\]**
+
+removing non-significant interactions (cluster:adversativity and subj_animacy:cluster) and random effect of speaker:
+
+```{r model-1}
+model_1 <- glmer(
+    passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:adversativity) + (1 | lemma),
+    family = "binomial", 
+    data = passive_sample_clean,
+    control = glmerControl(optimizer = "bobyqa")
+  )
+
+summary(model_1) #AIC: 790.7(higher i.e. slightly worse?)
+tab_model(model_1) # Marginal R2 / Conditional R2	0.599 / 0.747 (minimally higher, i.e. slightly better?)
+```
+
+removing non-significant fixed effects (agent_pp, modal, tam)
+
+```{r model-2}
+model_2 <- glmer(
+    passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:adversativity) + (1 | lemma),
+    family = "binomial", 
+    data = passive_sample_clean,
+    control = glmerControl(optimizer = "bobyqa")
+  )
+
+summary(model_2) #AIC: 786.3 (lower than model 1, minimally higher than max model)
+tab_model(model_2) # Marginal R2 / Conditional R2	0.596 / 0.746 (minimally lower than tow previous model (but almost identical with fewer factors!))
+
+```
+
+significant effects in model_2: cluster\[hitting-touching\]; cluster \[neutral\]; subj animacy \[inanimate\] × subj gender \[unknown\]; subj animacy \[inanimate\] × adversativity \[non-adversative\]
+
+### Concordance index C
+
+```{r concordance-index}
+#model_2
+Hmisc::somers2(
+  predict(model_2), as.numeric(passive_sample_clean$passive_variant)-1
+)["C"] 
+# C 0.9549173 - pretty good I think?
+```
+
+```{r coefficients, include=FALSE}
+model_2_coef <- coefficients(summary(model_2))[,"Estimate"]
+
+model_2_coef
+#"a negative coefficient expressed as a logit (or log odds) shows that this outcome is less probably than the reference level"
+
+#convert from log odds to odds:
+exp(model_2_coef)
+
+#convert odds to probabilities
+exp(model_2_coef) / (1 + exp(model_2_coef))
+```
+
+```{r}
+ggpredict(model_2, "cluster") |> 
+  plot()
+
+ggpredict(model_2, c("subj_animacy", "subj_gender")) |>
+  plot()
+
+ggpredict(model_2, c("subj_animacy", "adversativity")) |> 
+  plot()
+```
+
+Interpretation of subj_animacy x adversativity: for animate subject se faire is very likely, whether the construction is adversative or not does not make a huge difference. For inanimate subjects however, adversative constructions are realized more often with se faire while non-adversative constructions are less likely with se faire.
+
+random intercepts
+
+```{r}
+ranef <- as.data.frame(ranef(model_2))
+
+ranef |> 
+  filter(grpvar == "lemma") |>
+  filter(condval < -0.8 | condval > 0.8) |> 
+  ggplot(aes(x = reorder(grp, condval), y = condval)) +
+  geom_point() +
+  geom_errorbar(aes(ymin=condval-condsd, ymax=condval+condsd)) +
+  labs(x = "Lemma", 
+       y = "Variation in intercept estimate (logit)") +
+  coord_flip()
+```
 
 # Discussion
 

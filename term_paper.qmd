@@ -81,7 +81,7 @@ etre_sample_532 <- etre_sample_clean |>
   slice_sample(n= 532)
 ```
 
-```{r downsampling_correction, include=FALSE}
+```{r downsampling-false-positive, include=FALSE}
 #one false positive was found after sampling (ID=332) but sampling completely new not possible
 set.seed(2142637384)
 
@@ -92,7 +92,7 @@ etre_sample_1 <- etre_sample_533 |>
   filter(!etre_sample_533$ID %in% etre_sample_532$ID)
 ```
 
-```{r downsample_correction, include=FALSE}
+```{r downsampling-correction, include=FALSE}
 # ID217 is "next in line" given the seed
 # correction: remove 332 and add 217 to sample
 etre_sample_532 <- etre_sample_532 |> 
@@ -103,7 +103,7 @@ write.csv(etre_sample_532,"./data/etre_sample_532.csv")
 
 ```
 
-```{r etre_difference, include=FALSE}
+```{r etre-difference, include=FALSE}
 difference_list <- etre_sample_clean |> 
   filter(!etre_sample_clean$ID %in% etre_sample_532$ID)
 
@@ -384,55 +384,104 @@ We excluded:
 
 As the analysis required detailed (and very time consuming) manual annotation, we decided to split the annotation work between us. However, to ensure consistent annotation, a representative sample of one third of all instances (320; 33,25%) were double annotated, i.e. by both of us. For these instances, we calculated Cohen's ϰ (Kappa) as a measure of inter-rater agreement, (following @levshina_how_2015 [201] and the documentation in the psy package documentation (<https://cran.r-project.org/web/packages/psy/psy.pdf>).)
 
+```{r read-annotated-data}
+sefaire_sample_annotated <- read.csv(file = here("data", "sefaire_sample_annotated.csv"))
+etre_sample_annotated <- read.csv(file = here("data", "etre_sample_annotated.csv"))
+```
+
 Data preprocessing
+
+```{r data-cleaning-colnames}
+colnames(etre_sample_annotated)
+colnames(sefaire_sample_annotated)
+```
+
+Some differences between the two datasets, mainly regaridng columns speaker and reference: se faire sample has a "speaker" column which includes the speaker id and the name and a "reference" column that includes the speaker ID and the date; etre sample has only a "reference" column that includes speaker ID, date, name
+
+Goal: two columns consistent across both datasets, one "speaker" (name), one "reference" (ID), drop date
+
+```{r data-cleaning-colnames-2}
+# 1. se faire
+# separate "speaker" column into reference and speaker
+sefaire_sample_annotated <- sefaire_sample_annotated |> 
+  mutate(reference = sapply(str_split(speaker, ",", n = 2), `[`, 1),
+         speaker = sapply(str_split(speaker, ",", n = 2), `[`, 2))
+# remove now redundant "Reference", remove "Kommentar" column, put new "reference" column in first position
+sefaire_sample_annotated <- sefaire_sample_annotated |> 
+  mutate(Reference = NULL, Kommentar = NULL) |> 
+  select(reference, everything())
+
+# 2. être
+# separate "Reference" column into reference and speaker
+etre_sample_annotated <- etre_sample_annotated |> 
+  mutate(reference = sapply(str_split(Reference, ",", n = 3), `[`, 1),
+         speaker = sapply(str_split(Reference, ",", n = 3), `[`, 3))
+
+# remove now redundant "Reference" column, remove now redundant "Reference", remove "Kommentar" column, put new "reference" column in first position
+etre_sample_annotated <- etre_sample_annotated |> 
+  mutate(Reference = NULL, Kommentar = NULL) |> 
+  select(reference, speaker, everything())
+
+#still some differences left: être has an "ID" column which se faire does not; être has two agent_pp columns because it was annotated by A and B while se faire only has one, since agent_pp was annotated there by one person
+```
 
 Combine the data
 
-```{r data_combine, include=FALSE}
-etre_sample_532_IAA <- read.csv(file = here("data", "etre_sample_532_IAA.csv"))
-#se_faire_sample <- read.csv(file = here("data", "se_faire_sample_IAA.csv"))
-#passive_sample_combined <- bind_rows(etre_sample_532, sefaire_sample) 
+```{r combine-data}
+passive_sample_combined <- bind_rows(etre_sample_annotated, sefaire_sample_annotated) 
+```
+
+check for typos/ inconsistencies in tagging in combined data
+
+```{r data-cleaning-2}
+#check data type
+class(passive_sample_combined$subj_animacy_A)
+#"character", convert to factor
+passive_sample_combined <- passive_sample_combined |> 
+  mutate(across(where(is.character), factor))
+# summary
+summary(passive_sample_combined)
+#looks good, two "animate?" in subj_animacy_A
 ```
 
 add "NA" as value for all cases that are only annotated by one person
 
-```{r add_NA, include=FALSE}
-etre_sample_532_IAA[etre_sample_532_IAA == ""] <- NA
-
+```{r add-NA}
+passive_sample_combined[passive_sample_combined == ""] <- NA
 ```
 
-```{r kappa, include=FALSE}
+```{r cohens-kappa}
 # install.packages("psy")
 library(psy)
-kappa_animacy <- ckappa(etre_sample_532_IAA[c("subj_animacy_A", "subj_animacy_B")])
-kappa_animacy #0.8555957
+kappa_animacy <- ckappa(passive_sample_combined[c("subj_animacy_A", "subj_animacy_B")])
+kappa_animacy #0.9096219
 
-kappa_gender <- ckappa(etre_sample_532_IAA[c("subj_gender_A", "subj_gender_B")])
-kappa_gender #0.8941021
+kappa_gender <- ckappa(passive_sample_combined[c("subj_gender_A", "subj_gender_B")])
+kappa_gender #0.8746109
 
-kappa_agent_pp <- ckappa(etre_sample_532_IAA[c("agent_pp_A", "agent_pp_B")])
+kappa_agent_pp <- ckappa(passive_sample_combined[c("agent_pp_A", "agent_pp_B")])
 kappa_agent_pp #0.9118457
 
-kappa_modal <- ckappa(etre_sample_532_IAA[c("modal_A", "modal_B")])
-kappa_modal #0.96
+kappa_modal <- ckappa(passive_sample_combined[c("modal_A", "modal_B")])
+kappa_modal #0.9469328
 
-kappa_tam <- ckappa(etre_sample_532_IAA[c("tam_A", "tam_B")])
-kappa_tam #0.8323071
+kappa_tam <- ckappa(passive_sample_combined[c("tam_A", "tam_B")])
+kappa_tam  #0.7702391
 
-kappa_cluster <- ckappa(etre_sample_532_IAA[c("cluster_A", "cluster_B")])
-kappa_cluster #0.7003745
+kappa_cluster <- ckappa(passive_sample_combined[c("cluster_A", "cluster_B")])
+kappa_cluster #0.8326557
 
-kappa_adversativity <- ckappa(etre_sample_532_IAA[c("adversativity_A", "adversativity_B")])
-kappa_adversativity #0.6122779
+kappa_adversativity <- ckappa(passive_sample_combined[c("adversativity_A", "adversativity_B")])
+kappa_adversativity #0.6700877
 
 kappa_values <- c(kappa_animacy$kappa, kappa_agent_pp$kappa, kappa_modal$kappa, kappa_tam$kappa, kappa_cluster$kappa, kappa_adversativity$kappa)
 
 mean_kappa <- mean(kappa_values)
-mean_kappa #0.8120668, very high agreement :)
+mean_kappa #0.8403021, very high agreement :)
 
 ```
 
-The inter-rater agreement is high at 0.81.
+The inter-rater agreement is high at 0.84.
 
 ## Logistic Regression
 

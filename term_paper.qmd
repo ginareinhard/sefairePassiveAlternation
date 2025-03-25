@@ -434,23 +434,19 @@ Combine the data
 passive_sample_combined <- bind_rows(etre_sample_annotated, sefaire_sample_annotated) 
 ```
 
-check for typos/ inconsistencies in tagging in combined data
+check for typos/ inconsistencies in tagging in combined data; convert to factor; add "NA" as value for all cases that are only annotated by one person
 
 ```{r data-cleaning-2}
 #check data type
 class(passive_sample_combined$subj_animacy_A)
 #"character", convert to factor
 passive_sample_combined <- passive_sample_combined |> 
-  mutate(across(where(is.character), factor))
+  mutate(across(where(is.character), ~ na_if(.x, ""))) |> 
+  mutate(across(where(is.character), factor)) |> 
+  mutate(across(where(is.factor), droplevels))  
 # summary
 summary(passive_sample_combined)
 #looks good
-```
-
-add "NA" as value for all cases that are only annotated by one person
-
-```{r add-NA}
-passive_sample_combined[passive_sample_combined == ""] <- NA
 ```
 
 ```{r cohens-kappa}
@@ -797,6 +793,7 @@ passive_sample_clean <- passive_sample_clean |>
 ## Data exploration
 
 ```{r data-exploration, include=FALSE}
+str(passive_sample_clean)
 mosaicplot(passive_variant ~ subj_animacy,
            data = passive_sample_clean)
 
@@ -807,9 +804,27 @@ mosaicplot(passive_variant ~ adversativity,
            data = passive_sample_clean)
 
 mosaicplot(subj_gender ~ passive_variant,
-           data = passive_sample_clean) # sot sure why passive variant names disappear
+           data = passive_sample_clean)
 
 ```
+
+ordering levels: by default alphabetical; reference level always the first, i.e.:
+
+-   passive variant: être
+
+-   subj_animacy: animate, inanimate
+
+-   subj_gender: feminine
+
+-   agent_pp: 0
+
+-   modal: no
+
+-   tam: non-progressive
+
+-   cluster: communication
+
+-   adversativity: adversative
 
 # Discussion
 

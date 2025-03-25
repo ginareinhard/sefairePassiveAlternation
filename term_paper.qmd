@@ -26,6 +26,7 @@ p {
 }
 </style>
 ```
+
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -72,13 +73,13 @@ etre_sample_randomised <- etre_sample |>
 write.csv(etre_sample_randomised,"./data/etre_sample_randomised.csv")
 
 ```
+
 ```{r downsampling, include=FALSE}
 set.seed(2142637384)
 
 etre_sample_532 <- etre_sample_clean |> 
   slice_sample(n= 532)
 ```
-
 
 ```{r downsampling_correction, include=FALSE}
 #one false positive was found after sampling (ID=332) but sampling completely new not possible
@@ -90,7 +91,6 @@ etre_sample_533 <- etre_sample_clean |>
 etre_sample_1 <- etre_sample_533 |> 
   filter(!etre_sample_533$ID %in% etre_sample_532$ID)
 ```
-
 
 ```{r downsample_correction, include=FALSE}
 # ID217 is "next in line" given the seed
@@ -158,6 +158,7 @@ The passive voice is relatively rare in French, accounting for only 5% of verbs 
 
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward -->
 ```
+
 ### Structure and meaning
 
 The construction consists of the pronoun "se", the conjugated form of the verb "faire" and a verb in the infinitive. According to @labelle_anticausativizing_2013 [235] the construction is "formally causative, but semantically passive". Similar to the être passive, the subject of the passive sentence is the experiencer of the action. As with être, the direct object of the active sentence becomes the subject of the passive sentence. *Language example: active sentence with two (animate) arguments, se faire passive sentence, evtl. etre passive sentence*
@@ -259,6 +260,7 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
+
 ```{r lemma-list, include=FALSE}
 
 lemmas <- sefaire_sample |> 
@@ -377,6 +379,58 @@ We excluded:
 -   Assign "non-progressive" if:
 
     -   passé composé, plus-que-parfait, présent, futur antérieur (...) - progressiveness is hinted at by another verb in the sentence (e.g., falloir or être) and not from the "se faire" construction itself
+
+### Inter-rater agreement
+
+Cohen's ϰ (Kappa) following @levshina_how_2015 [201] and the cran documentation of the psy package documentation (<https://cran.r-project.org/web/packages/psy/psy.pdf>)
+
+Data preprocessing
+
+Combine the data
+
+```{r data_combine, include=FALSE}
+etre_sample_532_IAA <- read.csv(file = here("data", "etre_sample_532_IAA.csv"))
+#se_faire_sample <- read.csv(file = here("data", "se_faire_sample_IAA.csv"))
+#passive_sample_combined <- bind_rows(etre_sample_532, sefaire_sample) 
+```
+
+add "NA" as value for all cases that are only annotated by one person
+
+```{r add_NA, include=FALSE}
+etre_sample_532_IAA[etre_sample_532_IAA == ""] <- NA
+
+```
+
+```{r kappa, include=FALSE}
+# install.packages("psy")
+library(psy)
+kappa_animacy <- ckappa(etre_sample_532_IAA[c("subj_animacy_A", "subj_animacy_B")])
+kappa_animacy #0.8555957
+
+kappa_gender <- ckappa(etre_sample_532_IAA[c("subj_gender_A", "subj_gender_B")])
+kappa_gender #0.8941021
+
+kappa_agent_pp <- ckappa(etre_sample_532_IAA[c("agent_pp_A", "agent_pp_B")])
+kappa_agent_pp #0.9118457
+
+kappa_modal <- ckappa(etre_sample_532_IAA[c("modal_A", "modal_B")])
+kappa_modal #0.96
+
+kappa_tam <- ckappa(etre_sample_532_IAA[c("tam_A", "tam_B")])
+kappa_tam #0.8323071
+
+kappa_cluster <- ckappa(etre_sample_532_IAA[c("cluster_A", "cluster_B")])
+kappa_cluster #0.7003745
+
+kappa_adversativity <- ckappa(etre_sample_532_IAA[c("adversativity_A", "adversativity_B")])
+kappa_adversativity #0.6122779
+
+kappa_values <- c(kappa_animacy$kappa, kappa_agent_pp$kappa, kappa_modal$kappa, kappa_tam$kappa, kappa_cluster$kappa, kappa_adversativity$kappa)
+
+mean_kappa <- mean(kappa_values)
+mean_kappa #0.8120668, very high agreement :)
+
+```
 
 ## Logistic Regression
 

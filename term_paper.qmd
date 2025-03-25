@@ -417,7 +417,7 @@ etre_sample_annotated <- etre_sample_annotated |>
   mutate(reference = sapply(str_split(Reference, ",", n = 3), `[`, 1),
          speaker = sapply(str_split(Reference, ",", n = 3), `[`, 3))
 
-# remove now redundant "Reference" column, remove now redundant "Reference", remove "Kommentar" column, put new "reference" column in first position
+# remove now redundant "Reference" column, remove now redundant "Reference", remove "Kommentar" column, put new "reference" und "speaker" column in first position
 etre_sample_annotated <- etre_sample_annotated |> 
   select(-Reference, -Kommentar) |> 
   select(reference, speaker, everything())

@@ -53,8 +53,6 @@ etre_sample_1 <- read.csv(file = here("data", "etre_sample_1.csv"))
 etre_sample_2 <- read.csv(file = here("data", "etre_sample_2.csv"))
 etre_sample_3 <- read.csv(file = here("data", "etre_sample_3.csv"))
 etre_sample_4 <- read.csv(file = here("data", "etre_sample_4.csv"))
-
-etre_sample_clean <- read.csv(file = here("data","etre_sample_clean.csv"))
 ```
 
 ```{r etre-sample, include=FALSE}
@@ -75,6 +73,7 @@ write.csv(etre_sample_randomised,"./data/etre_sample_randomised.csv")
 ```
 
 ```{r downsampling, include=FALSE}
+etre_sample_clean <- read.csv(file = here("data","etre_sample_clean.csv"))
 set.seed(2142637384)
 
 etre_sample_532 <- etre_sample_clean |> 

@@ -396,7 +396,7 @@ colnames(etre_sample_annotated)
 colnames(sefaire_sample_annotated)
 ```
 
-Some differences between the two datasets, mainly regaridng columns speaker and reference: se faire sample has a "speaker" column which includes the speaker id and the name and a "reference" column that includes the speaker ID and the date; etre sample has only a "reference" column that includes speaker ID, date, name
+Some differences between the two datasets, mainly regarding columns speaker and reference: se faire sample has a "speaker" column which includes the speaker id and the name and a "reference" column that includes the speaker ID and the date; etre sample has only a "reference" column that includes speaker ID, date, name
 
 Goal: two columns consistent across both datasets, one "speaker" (name), one "reference" (ID), drop date
 
@@ -408,7 +408,7 @@ sefaire_sample_annotated <- sefaire_sample_annotated |>
          speaker = sapply(str_split(speaker, ",", n = 2), `[`, 2))
 # remove now redundant "Reference", remove "Kommentar" column, put new "reference" column in first position
 sefaire_sample_annotated <- sefaire_sample_annotated |> 
-  mutate(Reference = NULL, Kommentar = NULL) |> 
+  select(-Reference, -Kommentar) |> 
   select(reference, everything())
 
 # 2. être
@@ -419,10 +419,10 @@ etre_sample_annotated <- etre_sample_annotated |>
 
 # remove now redundant "Reference" column, remove now redundant "Reference", remove "Kommentar" column, put new "reference" column in first position
 etre_sample_annotated <- etre_sample_annotated |> 
-  mutate(Reference = NULL, Kommentar = NULL) |> 
+  select(-Reference, -Kommentar) |> 
   select(reference, speaker, everything())
 
-#still some differences left: être has an "ID" column which se faire does not; être has two agent_pp columns because it was annotated by A and B while se faire only has one, since agent_pp was annotated there by one person
+#still some differences left: être has an "ID" column which se faire does not; être has two agent_pp columns because it was annotated by A and B while se faire only has one, since agent_pp of se faire constructions was annotated there one person (annotator A)
 ```
 
 Combine the data
@@ -477,7 +477,7 @@ kappa_adversativity #0.6700877
 kappa_values <- c(kappa_animacy$kappa, kappa_agent_pp$kappa, kappa_modal$kappa, kappa_tam$kappa, kappa_cluster$kappa, kappa_adversativity$kappa)
 
 mean_kappa <- mean(kappa_values)
-mean_kappa #0.8403021, very high agreement :)
+mean_kappa #0.8402305, very high agreement :)
 
 ```
 
@@ -729,7 +729,7 @@ As @bohmann_large-scale_2023 notes, there are two hypotheses related to emotions
 
 **Hypothesis:** *se faire* passive is preferred over the *être* passive for verbs that denote "unpleasant" actions (as reflected by verbs labeled as "adversative").
 
-**Interaction:** Affecteness of the subject may be reflected by an interaction of subject animacy and verb adversativity: Negative consequences of actions, expressed by adversative verbs, affect animate subjects more than inanimate subjects.
+**Interaction:** Affectedness of the subject may be reflected by an interaction of subject animacy and verb adversativity: Negative consequences of actions, expressed by adversative verbs, affect animate subjects more than inanimate subjects.
 
 ## Memory based learning
 
@@ -762,6 +762,31 @@ As @bohmann_large-scale_2023 notes, there are two hypotheses related to emotions
 -   Model evaluation
 
 # Results
+
+```{r merge-to-main-dataset}
+#goal: one dataset with one column for each factor, the column includes the annotation of the "main" annotator
+passive_sample_clean <- passive_sample_combined |> 
+  mutate(
+    subj_animacy = case_when(annotator == "A" ~ subj_animacy_A,
+                             annotator == "B" ~ subj_animacy_B),
+    subj_gender = case_when(annotator == "A" ~ subj_animacy_A,
+                            annotator == "B" ~subj_animacy_B),
+    agent_pp = case_when(annotator == "A" ~ agent_pp_A,
+                         annotator == "B" ~ agent_pp_B),
+    modal = case_when(annotator == "A" ~ modal_A,
+                      annotator == "B" ~ modal_B),
+    tam = case_when(annotator == "A" ~ tam_A, 
+                    annotator == "B" ~ tam_B),
+    cluster = case_when(annotator == "A" ~ cluster_A, 
+                        annotator == "B" ~ cluster_B),
+    adversativitiy = case_when(annotator == "A" ~ adversativity_A, 
+                               annotator == "B" ~ adversativity_B)
+  )
+
+# remove now-redundant A and B columns, remove ID (irrelevant since it's only there for être)
+passive_sample_clean <- passive_sample_clean |> 
+  select(-subj_animacy_A, -subj_animacy_B, -subj_gender_A, -subj_gender_B, -agent_pp_A, -agent_pp_B, -modal_A, -modal_B, -tam_A, -tam_B, -cluster_A, -cluster_B, -adversativity_A, -adversativity_B, -ID)
+```
 
 # Discussion
 

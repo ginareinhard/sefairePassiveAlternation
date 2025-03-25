@@ -160,9 +160,9 @@ The passive voice is relatively rare in French, accounting for only 5% of verbs 
 
 ### Structure and meaning
 
-The construction consists of the pronoun "se", the conjugated form of the verb "faire" and a verb in the infinitive. According to @labelle_anticausativizing_2013 [235] the construction is "formally causative, but semantically passive". Similar to the être passive, the subject of the passive sentence is the experiencer of the action. As with être, the direct object of the active sentence becomes the subject of the passive sentence. *Language example: active sentence with two (animate) arguments, se faire passive sentence, evtl. etre passive sentence*
+In its standard form, the se faire passive construction consists of the pronoun "se", the conjugated form of the verb "faire" and a verb in the infinitive. According to @labelle_anticausativizing_2013 [235] the construction is "formally causative, but semantically passive". Similar to the être passive, the subject of the passive sentence is the experiencer of the action. As with être, the direct object of the active sentence becomes the subject of the passive sentence. *Language example: active sentence with two (animate) arguments, se faire passive sentence, evtl. etre passive sentence*
 
-Unlike the être passive, however, the diathesis is not restricted to the direct object: The PSF has "greater syntactic flexibility" (@raineri_analyse_2010 [93-95] and can also be formed with ditransitive verbs, where the indirect object becomes the subject: *Language example: active ditransitive sentence, se faire passiv.* *les intéressés peuvent se faire expliquer tout ce qui touche aux retraites*
+Unlike the être passive, however, the diathesis is not restricted to the direct object: The PSF has "greater syntactic flexibility" (@raineri_analyse_2010 [93-95]) and can also be formed with ditransitive verbs, where the indirect object becomes the subject: *Language example: active ditransitive sentence, se faire passiv.* *les intéressés peuvent se faire expliquer tout ce qui touche aux retraites*
 
 <!-- Another possibility are possessor constructions where the subject of the passive is only part of the object in the active sentence (Le coiffeur coupe les cheveux de Pierre. -> Pierre s'est fait couper les cheveux). However, the passive status of these constructions is controversial, as discussed below/ in the next section. Some could also be understood as causatives if the subject both initiates and undergoes the action. (Pierre made the hairdresser cut his hair) (add source)) -->
 
@@ -785,13 +785,30 @@ passive_sample_clean <- passive_sample_combined |>
                     annotator == "B" ~ tam_B),
     cluster = case_when(annotator == "A" ~ cluster_A, 
                         annotator == "B" ~ cluster_B),
-    adversativitiy = case_when(annotator == "A" ~ adversativity_A, 
+    adversativity = case_when(annotator == "A" ~ adversativity_A, 
                                annotator == "B" ~ adversativity_B)
   )
 
 # remove now-redundant A and B columns, remove ID (irrelevant since it's only there for être)
 passive_sample_clean <- passive_sample_clean |> 
   select(-subj_animacy_A, -subj_animacy_B, -subj_gender_A, -subj_gender_B, -agent_pp_A, -agent_pp_B, -modal_A, -modal_B, -tam_A, -tam_B, -cluster_A, -cluster_B, -adversativity_A, -adversativity_B, -ID)
+```
+
+## Data exploration
+
+```{r data-exploration, include=FALSE}
+mosaicplot(passive_variant ~ subj_animacy,
+           data = passive_sample_clean)
+
+mosaicplot(passive_variant ~ tam,
+           data = passive_sample_clean)
+
+mosaicplot(passive_variant ~ adversativity,
+           data = passive_sample_clean)
+
+mosaicplot(subj_gender ~ passive_variant,
+           data = passive_sample_clean) # sot sure why passive variant names disappear
+
 ```
 
 # Discussion

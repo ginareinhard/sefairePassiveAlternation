@@ -160,7 +160,11 @@ The passive voice is relatively rare in French, accounting for only 5% of verbs 
 
 ### Structure and meaning
 
-In its standard form, the se faire passive construction consists of the pronoun "se", the conjugated form of the verb "faire" and a verb in the infinitive. According to @labelle_anticausativizing_2013 [235] the construction is "formally causative, but semantically passive". Similar to the être passive, the subject of the passive sentence is the experiencer of the action. As with être, the direct object of the active sentence becomes the subject of the passive sentence. *Language example: active sentence with two (animate) arguments, se faire passive sentence, evtl. etre passive sentence*
+The "se faire" passive construction is available as an alternative way to express passive meaning: When constructing a passive sentence, the French speaker may choose to use "se faire" instead of the canonical "être", a passive alternation.
+
+*Je remarque d'' ailleurs que ce sont souvent ceux qui filment qui se font éborgner ou sont blessés par des tirs de LBD.*
+
+"Incidentally, I've noticed that it's often those filming **who get their eyes poked** out or **are injured** by LBD fire."
 
 Unlike the être passive, however, the diathesis is not restricted to the direct object: The PSF has "greater syntactic flexibility" (@raineri_analyse_2010 [93-95]) and can also be formed with ditransitive verbs, where the indirect object becomes the subject: *Language example: active ditransitive sentence, se faire passiv.* *les intéressés peuvent se faire expliquer tout ce qui touche aux retraites*
 
@@ -206,7 +210,11 @@ By comparing PSF and PE constructions, we may be able to shed light on this deba
 
 Both se faire + Vinf and être + Vé are available for the active diathesis [@novakova_construction_2009 [108] and assign the role of an undergoer to the subject NP. However, as @novakova_construction_2009 [108] notes, the constructions differ in semantic nuances: "Elles ont un sens proche mais pas identique." Thus, they are not semantically identical but rather potentially carry different meanings that may be more or less pronounced depending on the context: Previous research suggests that se faire passive is more likely to have a causative undertone while the être passive is more neutral - possibility of a continuum/ passive gradient. However, this is what makes the analysis interesting and our research worthwhile - what are the exact factors that influence the choice between the the two variants?
 
-*Language example from corpus where être passive and se faire passive are used in the same sentence @hundt_be-_2024 [91]*
+The two passive variants may also be used in the same sentence:
+
+*Je remarque d'' ailleurs que ce sont souvent ceux qui filment qui se font éborgner ou sont blessés par des tirs de LBD.*
+
+"Incidentally, I've noticed that it's often those filming **who get their eyes poked** out or **are injured** by LBD fire."
 
 This introduces certain difficulties: The passive/ causative continuum discussed in @sec-debate makes the definition of the variable context particularly challenging as some constructions may be more passive than others - where to draw the line?
 
@@ -388,7 +396,7 @@ sefaire_sample_annotated <- read.csv(file = here("data", "sefaire_sample_annotat
 etre_sample_annotated <- read.csv(file = here("data", "etre_sample_annotated.csv"))
 ```
 
-Data preprocessing
+**Data preprocessing**
 
 ```{r data-cleaning-colnames}
 colnames(etre_sample_annotated)
@@ -439,13 +447,15 @@ check for typos/ inconsistencies in tagging in combined data; convert to factor;
 ```{r data-cleaning-2}
 #check data type
 class(passive_sample_combined$subj_animacy_A)
-#"character", convert to factor
+#"character", convert to factor and fill "empty" values with NA
 passive_sample_combined <- passive_sample_combined |> 
   mutate(across(where(is.character), ~ na_if(.x, ""))) |> 
   mutate(across(where(is.character), factor)) |> 
-  mutate(across(where(is.factor), droplevels))  
+  mutate(across(where(is.factor), droplevels)) # to not include NA as a level
 # summary
-summary(passive_sample_combined)
+passive_sample_combined |> 
+  select(subj_animacy_A, subj_animacy_B, subj_gender_A, subj_gender_B, agent_pp_A, agent_pp_B, modal_A, modal_B, tam_A, tam_B, cluster_A, cluster_B, adversativity_A, adversativity_B) |> 
+  summary()
 #looks good
 ```
 
@@ -480,7 +490,7 @@ mean_kappa #0.8402305, very high agreement :)
 
 ```
 
-The inter-rater agreement is high at 0.84.
+The inter-rater agreement is high at 0.84. Find table to compare
 
 ## Logistic Regression
 
@@ -764,9 +774,11 @@ As @bohmann_large-scale_2023 notes, there are two hypotheses related to emotions
 
 ## Data preparation
 
+For the main analysis, the se faire and être data were merged into one "clean" dataset where each column corresponds to one factor. This column includes the annotation of the first annotator (annotator A for half of the observations, annotator B for the other half).
+
 ```{r merge-to-main-dataset}
 #goal: one dataset with one column for each factor, the column includes the annotation of the "main" annotator
-# agent pp column wenn passive variant se faire ist -> nimm den Wert aus column "agent pp", wenn passive variant etre ist gehe so vor wie bei den anderen, also wenn annotator A ist, nimm den Wert aus agent_pp_a, wenn Annotator  B ist nimm den Wert aus agent_pp_b
+# special case agent pp column: if passive variant is se faire -> take value from column "agent pp_A", if passive variant is être is: same procedure as with the other variables
 passive_sample_clean <- passive_sample_combined |> 
   mutate(
     subj_animacy = case_when(annotator == "A" ~ subj_animacy_A,
@@ -790,13 +802,30 @@ passive_sample_clean <- passive_sample_combined |>
 # remove now-redundant A and B columns, remove ID (irrelevant since it's only there for être)
 passive_sample_clean <- passive_sample_clean |> 
   select(-subj_animacy_A, -subj_animacy_B, -subj_gender_A, -subj_gender_B, -agent_pp_A, -agent_pp_B, -modal_A, -modal_B, -tam_A, -tam_B, -cluster_A, -cluster_B, -adversativity_A, -adversativity_B, -ID)
-
-str(passive_sample_clean)
 ```
 
 ## Data exploration
 
-```{r data-exploration}
+Taking a look at the data:
+
+```{r data-exploration-check, include=FALSE}
+str(passive_sample_clean)
+head(passive_sample_clean)
+```
+
+@gries_statistics_2021 [441]
+
+```{r}
+prop.table(table(passive_sample_clean$subj_gender))
+#level "mixed" too rare? 
+#cross-tabulation
+table(passive_sample_clean$subj_gender, passive_sample_clean$passive_variant)
+ftable(passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy, passive_sample_clean$subj_gender)
+```
+
+Some mosaic plots for exploration:
+
+```{r data-exploration-plots}
 mosaicplot(passive_variant ~ subj_animacy,
            data = passive_sample_clean)
 
@@ -811,13 +840,34 @@ mosaicplot(subj_gender ~ passive_variant,
 
 ```
 
+More in @levshina_how_2015: Chapter 4 and @gries_statistics_2021 Chapter 3/Descriptive statistics & visualisations) and Chapter 6 (Mixed effects regression modeling)
+
 ## Binomial logistic regression
 
-ordering levels: by default alphabetical; reference level always the first, i.e.:
+```{r packages-regression, include=FALSE}
+library(mclm)
+library(kableExtra)
+library(lmerTest)
+library(afex)
+library(ggeffects)
+library(sjPlot)
+#Levshina: Rling not available (Warning in install.packages : package ‘Rling’ is not available for this version of R); therefore no funktion "lrm"
+library(rms)
+library(visreg)
+library(car)
+```
+
+@levshina_how_2015 [253] "logit represents the chances of construction A to be chosen in a particular type of context compared with the chances of construction B to be used in the same type of context."
+
+intercept: "value that determines the chances of an outcome when all predictors are equal to zero (for quantitative variables) or the reference value (for categorical variables)".
+
+### Reference levels
+
+ordering levels: by default alphabetical; reference level always the first, i.e. (suggestion in brackets):
 
 -   passive variant: être
 
--   subj_animacy: animate, inanimate (better: inanimate?)
+-   subj_animacy: animate
 
 -   subj_gender: feminine (better: unknown?)
 
@@ -831,18 +881,21 @@ ordering levels: by default alphabetical; reference level always the first, i.e.
 
 -   adversativity: adversative (better: non-adversative?)
 
-```{r packages-regression, include=FALSE}
-library(mclm)
-library(kableExtra)
-library(lmerTest)
-library(afex)
-library(ggeffects)
-library(sjPlot)
+idea for reference levels: construct the most "standard" case: être passive, inanimate, unknown, modal: no, non-progressive, cluster: neutral, non-adversative ?
+
+```{r reference-levels}
+#example: change reference level from "animate" to "inanimate" (Levshina 2015: 78)
+passive_sample_clean$subj_animacy <- relevel(passive_sample_clean$subj_animacy, ref = "inanimate")
+str(passive_sample_clean)
 ```
 
-## Model selection
+### Model selection: Maximum likelihood
 
-```{r regression-model}
+#### glmer
+
+Function following @gries_statistics_2021 [442](& Elens Scripts)
+
+```{r regression-model, output=FALSE}
 passive_glmer <- glmer(
     passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:cluster + subj_animacy:adversativity + cluster:adversativity) +
                (1 | lemma) + (1 | speaker),
@@ -866,7 +919,7 @@ significant effects:
 
 removing non-significant interactions (cluster:adversativity and subj_animacy:cluster) and random effect of speaker:
 
-```{r model-1}
+```{r model-1, output=FALSE}
 model_1 <- glmer(
     passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:adversativity) + (1 | lemma),
     family = "binomial", 
@@ -895,7 +948,7 @@ tab_model(model_2) # Marginal R2 / Conditional R2	0.596 / 0.746 (minimally lower
 
 significant effects in model_2: cluster\[hitting-touching\]; cluster \[neutral\]; subj animacy \[inanimate\] × subj gender \[unknown\]; subj animacy \[inanimate\] × adversativity \[non-adversative\]
 
-### Concordance index C
+**Concordance index C**
 
 ```{r concordance-index}
 #model_2
@@ -918,7 +971,9 @@ exp(model_2_coef)
 exp(model_2_coef) / (1 + exp(model_2_coef))
 ```
 
-```{r}
+Some plots of significant effects:
+
+```{r model-2-plots}
 ggpredict(model_2, "cluster") |> 
   plot()
 
@@ -931,7 +986,7 @@ ggpredict(model_2, c("subj_animacy", "adversativity")) |>
 
 Interpretation of subj_animacy x adversativity: for animate subject se faire is very likely, whether the construction is adversative or not does not make a huge difference. For inanimate subjects however, adversative constructions are realized more often with se faire while non-adversative constructions are less likely with se faire.
 
-random intercepts
+**Random intercepts**
 
 ```{r}
 ranef <- as.data.frame(ranef(model_2))
@@ -946,6 +1001,28 @@ ranef |>
        y = "Variation in intercept estimate (logit)") +
   coord_flip()
 ```
+
+#### lrm
+
+Function following @levshina_how_2015 [258] (258-276) - no random effects!
+
+```{r lrm-model}
+passive_lrm <- lrm(
+  passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:cluster + subj_animacy:adversativity + cluster:adversativity),
+  data = passive_sample_clean
+)
+
+#no random effects
+passive_lrm
+#intercept: 2.2777
+#convert to odds:
+exp(2.2777) #9.75422
+#meaning: chances of se faire are 9.75422 times greater than être given this context (default reference levels)
+```
+
+coefficients: if positive, level boosts the chance of se faire (decreases chance of être)
+
+R-squared not recommended as central measure @levshina_how_2015 [259], Hosmer & Lemeshow (2000: 167)
 
 # Discussion
 

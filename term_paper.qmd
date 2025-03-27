@@ -710,7 +710,7 @@ Non-progressive category: completed actions, includes the passé composé, plus-
 
 Our hypothesis is that progressive marking (whether through tense or periphrasis) favours the *se faire* passive, while non-progressive marking (e.g., passé composé, plus-que-parfait) favours the *être* passive.
 
-### Adversativity/ Non-neutrality
+### Adversativity
 
 The factor of "Adversativity/ Non-neutrality" is reflected in the semantics of the verb and captures the (negative) consequences of the described action for the subject. It has been found to be relevant to the choice between the be and get passive (@hundt_be-_2024 [89, 96-97]; @bohmann_large-scale_2023). @spang-hanssen_quelques_1967 and @raineri_analyse_2010 draw parallels between the English get passive and the French PSF construction.
 
@@ -926,7 +926,6 @@ freq_gender_wide |>
 ```
 
 Frequencies for Passive Variants Gender and Animacy
-
 :::
 
 As shown in @tbl-gender ...
@@ -972,9 +971,17 @@ For inanimate subjects, the difference in frequency between masculine and femini
 
 ### TAM
 
+```{r}
+table(passive_sample_clean$agent_pp, passive_sample_clean$passive_variant)
+```
+
 ### Cluster
 
 ### Adversativity
+
+```{r}
+table(passive_sample_clean$adversativity, passive_sample_clean$passive_variant)
+```
 
 Some mosaic plots for exploration:
 
@@ -983,6 +990,9 @@ mosaicplot(passive_variant ~ subj_gender,
            data = passive_sample_clean)
 
 mosaicplot(passive_variant ~ tam,
+           data = passive_sample_clean)
+
+mosaicplot(passive_variant ~ agent_pp,
            data = passive_sample_clean)
 
 mosaicplot(passive_variant ~ adversativity,
@@ -1036,15 +1046,24 @@ ordering levels: by default alphabetical; reference level always the first, i.e.
 
 idea for reference levels: construct the most "standard" case: être passive, inanimate, unknown, modal: no, non-progressive, cluster: neutral, non-adversative ?
 
-```{r reference-levels}
+```{r reference-levels, include = FALSE}
 #exclude "mixed" gender because of low frequency (would likely skew the data)
+#merge "de" and "par" into a "present category"
 passive_sample_clean <- passive_sample_clean|>
   filter(subj_gender != "mixed") |>
   droplevels()
 
+# passive_sample_clean <- passive_sample_clean |> 
+#   mutate(agent_pp = case_when( #to merge par and de
+#     agent_pp %in% c("par", "de") ~ "present",
+#     TRUE ~ agent_pp
+#   )) |> 
+#   mutate(agent_pp = factor(agent_pp))
+
 passive_sample_without_unknown <- passive_sample_clean|> 
   filter(subj_gender != "unknown") |>
   droplevels()
+
 #change reference levels: "animate" to "inanimate", "communication" to "neutral", "adversative" to "non-adversative" (Levshina 2015: 78)
 #passive_sample_clean$subj_animacy <- relevel(passive_sample_clean$subj_animacy, ref = "inanimate")
 passive_sample_clean$subj_gender <- relevel(passive_sample_clean$subj_gender, ref = "masculine")
@@ -1056,6 +1075,7 @@ passive_sample_without_unknown$cluster <- relevel(passive_sample_without_unknown
 passive_sample_without_unknown$adversativity <- relevel(passive_sample_without_unknown$adversativity, ref = "non-adversative")
 
 levels(passive_sample_clean$subj_gender)
+levels(passive_sample_clean$agent_pp)
 levels(passive_sample_without_unknown$subj_gender)
 ```
 
@@ -1063,7 +1083,7 @@ levels(passive_sample_without_unknown$subj_gender)
 
 #### glmer
 
-Function following @gries_statistics_2021 [442](&%20Elens%20Scripts)
+Function following @gries_statistics_2021 [442]
 
 ```{r regression-model, output=FALSE}
 passive_glmer <- glmer(
@@ -1177,13 +1197,21 @@ exp(model_2_coef)
 
 overall significance test for the model by comparing 0 model to full model and use an anova between those @gries_statistics_2021 [445-446]
 
-```{r model2-significance}
+```{r model2-significance, include = FALSE}
 null_model <- glmer(passive_variant ~ 1 + (1|lemma), data = passive_sample_clean, family = binomial)
 
 anova(model_2, null_model, test="Chisq")
 #highly significant!!
 #relative likelihood
 (exp((AIC(null_model)-AIC(model_2))/2))
+
+### model without unknown
+null_model <- glmer(passive_variant ~ 1 + (1|lemma), data = passive_sample_without_unknown, family = binomial)
+
+anova(final_model_without_unknown, null_model, test="Chisq")
+#highly significant!!
+#relative likelihood
+(exp((AIC(null_model)-AIC(final_model_without_unknown))/2))
 ```
 
 Some plots of significant effects:

@@ -981,13 +981,13 @@ table(passive_sample_clean$agent_pp, passive_sample_clean$passive_variant)
 
 ```{r, include=FALSE}
 
-freq_gender <- passive_sample_without_unknown |> 
+freq_cluster <- passive_sample_without_unknown |> 
   count(passive_variant, cluster) |> 
   group_by(passive_variant) |> 
   mutate(relative = round(proportions(n), 2)) |> 
   ungroup()
 
-freq_gender_wide <- freq_gender |> 
+freq_cluster_wide <- freq_cluster |> 
   pivot_wider(names_from = passive_variant, values_from = c(n, relative), values_fill = list(n = 0, Relative = 0))
 
 ```
@@ -995,7 +995,7 @@ freq_gender_wide <- freq_gender |>
 ::: {#tbl-cluster}
 ```{r, echo=FALSE}
 
-freq_gender_wide |> 
+freq_cluster_wide |> 
   kable(format = "html", digits = 2, col.names = c("Factor?", "être", "se faire", "être in %", "se faire in %")) |> 
   kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 
@@ -1005,6 +1005,48 @@ Frequencies for Passive Variants Cluster
 :::
 
 As shown in @tbl-cluster ...
+
+```{r cluster-plot, echo=FALSE}
+
+ggplot(passive_sample_without_unknown, 
+       aes(x = passive_variant, 
+           fill = cluster)) +
+  geom_bar(position = "dodge") +
+  scale_y_continuous(expand = c(0,0)) +
+  labs(title = "plot",
+       x = "passive variant cluster",
+       y = "Count") +
+  theme_classic()
+
+```
+
+```{r, include=FALSE}
+
+freq_communication <- passive_sample_without_unknown |> 
+  filter(cluster == "communication") |> 
+  count(passive_variant, lemma) |> 
+  group_by(passive_variant) |> 
+  mutate(relative = round(proportions(n), 2)) |> 
+  ungroup()
+
+freq_communication_wide <- freq_communication |> 
+  pivot_wider(names_from = passive_variant, values_from = c(n, relative), values_fill = list(n = 0, Relative = 0))
+
+```
+
+@tbl-cluster-lemmas shows that the most frequent lemmas that occur with *se faire* are *insulter* (10 occurences), *engueuler* (7 occurences), and *représenter* (4 occurences). *insulter* and *engueuler* are both adversative verbs, so this could also be the reason why they favour *se faire*.
+
+::: {#tbl-cluster-lemmas}
+```{r, echo=FALSE}
+
+freq_communication_wide |> 
+  kable(format = "html", digits = 2, col.names = c("Factor?", "être", "se faire", "être in %", "se faire in %")) |> 
+  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+
+```
+
+Frequencies for communication lemmas
+:::
 
 ### Adversativity
 

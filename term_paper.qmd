@@ -846,32 +846,36 @@ We only have categorical data; therefore mean and standard deviation are not mea
 table(passive_sample_clean$subj_animacy) |> 
   sort(decreasing = TRUE)
 
-#cross-tabulation
+#cross-tabulation for hypothesised interactions
 table(passive_sample_clean$subj_animacy, passive_sample_clean$passive_variant)
 
 table(passive_sample_clean$subj_animacy, passive_sample_clean$subj_gender)
 
-ftable(passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy, passive_sample_clean$subj_gender)
+table(passive_sample_clean$subj_animacy, passive_sample_clean$cluster)
+
+table(passive_sample_clean$subj_animacy, passive_sample_clean$adversativity)
+
+# ftable(passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy, passive_sample_clean$subj_gender)
+# 
+# ftable(passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy, passive_sample_clean$cluster)
+# 
+# ftable(passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy, passive_sample_clean$adversativity)
 
 #proportions (Gries)
-prop.table(table(passive_sample_clean$subj_animacy))
+prop.table(table(passive_sample_clean$subj_animacy, passive_sample_clean$passive_variant))
 #alternatively: (Elen)
-table(passive_sample_clean$subj_animacy) |> 
-  sort(decreasing = TRUE) |> 
-  proportions()
+#table(passive_sample_clean$subj_animacy) |> 
+#  sort(decreasing = TRUE) |> 
+#  proportions()
 
 prop.table(table(passive_sample_clean$subj_animacy, passive_sample_clean$passive_variant))
 ```
 
+Mode: animate 704 animate (300 etre, 504 se faire); 360 inanimate (332 etre, 28 se faire); inanimate se faire only 0.026 percent of the data.
+
 Plots (Elens Textbook Chapter 10)
 
 ```{r animacy-descriptive-plots}
-passive_sample_clean |> 
-ggplot(mapping = aes(x = subj_animacy)) +
-  geom_bar() +
-  labs(x = "Subject Animacy",
-       y = "Number of observations")
-
 passive_sample_clean |> 
 ggplot(mapping = aes(x = subj_animacy)) +
   geom_bar() +
@@ -881,9 +885,22 @@ ggplot(mapping = aes(x = subj_animacy)) +
        y = "Number of observations") +
   theme_bw()
 
+passive_sample_clean |> 
+ggplot(mapping = aes(x = subj_animacy)) +
+  geom_bar() +
+  facet_wrap(~ passive_variant + adversativity) +
+  #scale_y_continuous(expand = c(0,0)) + 
+  labs(x = "Subject Animacy",
+       y = "Number of observations") +
+  theme_bw()
+
 mosaicplot(passive_variant ~ subj_animacy,
            data = passive_sample_clean)
 ```
+
+In se faire passive constructions, the subject is animate the great majority of the time. For être, the animacy is more evenly distributed, with a slight tendency toward inanimate subjects.
+
+very different distribution for non-adversative constructions: in être, most non-adversative construtions are with inanimate subjects while for se faire, most non-adversative constructions are with animate subjects.
 
 ### Subject gender
 

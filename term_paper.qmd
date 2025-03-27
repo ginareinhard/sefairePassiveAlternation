@@ -844,7 +844,8 @@ We only have categorical data; therefore mean and standard deviation are not mea
 
 ```{r animacy-descriptive-tables}
 table(passive_sample_clean$subj_animacy) |> 
-  sort(decreasing = TRUE)
+  sort(decreasing = TRUE) |> 
+  proportions ()
 
 #cross-tabulation for hypothesised interactions
 table(passive_sample_clean$subj_animacy, passive_sample_clean$passive_variant)
@@ -872,7 +873,7 @@ prop.table(table(passive_sample_clean$subj_animacy, passive_sample_clean$passive
 #  proportions()
 ```
 
-Overall, the majority of constructions have animate subjects (mode: animate(704)). However, in être passive constructions there are more inanimate than animate subjects (332 inanimate, 200 animate), while the se faire passive shows a strong tendency toward animate subjects (504 animate, 28 inanimate), as visualised in these plots:
+Overall, two-thirds of the constructions have animate subjects (mode: animate; 704 vs. 360 inanimate). However, in *être* passives, inanimate subjects are more frequent than animate ones (332 inanimate, 200 animate), whereas *se faire* passives show a strong preference for animate subjects (504 animate, 28 inanimate), as shown in these plots:
 
 ```{r animacy-descriptive-plots}
 passive_sample_clean |> 
@@ -888,9 +889,9 @@ mosaicplot(passive_variant ~ subj_animacy,
            data = passive_sample_clean)
 ```
 
-In se faire passive constructions, the subject is animate the great majority of the time. For être, the animacy is more evenly distributed, with a slight tendency toward inanimate subjects.
+The plot shows clearly that in *se faire* passives, the subject is animate in the great majority of cases. In contrast, for *être*, subject animacy is more evenly distributed, with a slight preference for inanimate subjects.
 
-Animcy x Adversativity:
+Animacy x Adversativity:
 
 ```{r animacy-adversativity-plots}
 passive_sample_clean |> 

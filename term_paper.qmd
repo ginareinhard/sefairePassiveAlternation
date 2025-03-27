@@ -1076,7 +1076,7 @@ vif(model_2)
 
 significant effects in model_2 (final model?):
 
--   cluster\[communiction\];
+-   cluster\[communication\];
 
 -   subj animacy \[inanimate\] × subj gender \[unknown\];
 
@@ -1089,7 +1089,7 @@ significant effects in model_2 (final model?):
 Hmisc::somers2(
   predict(model_2), as.numeric(passive_sample_clean$passive_variant)-1
 )["C"] 
-# C 0.9549516 - pretty good I think?
+# C 0.9549516 - pretty good I think? "outstanding discrimination" according to Hosmer & Lemeshow (2000: 162) in Levshina (2015: 259)
 ```
 
 ```{r coefficients, include=FALSE}
@@ -1102,7 +1102,18 @@ model_2_coef
 exp(model_2_coef)
 
 #convert odds to probabilities
-exp(model_2_coef) / (1 + exp(model_2_coef))
+#exp(model_2_coef) / (1 + exp(model_2_coef))
+```
+
+overall significance test for the model by comparing 0 model to full model and use an anova between those @gries_statistics_2021 [445-446]
+
+```{r model2-significance}
+null_model <- glmer(passive_variant ~ 1 + (1|lemma), data = passive_sample_clean, family = binomial)
+
+anova(model_2, null_model, test="Chisq")
+#highly significant!!
+#relative likelihood
+(exp((AIC(null_model)-AIC(model_2))/2))
 ```
 
 Some plots of significant effects:

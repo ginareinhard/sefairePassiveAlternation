@@ -830,7 +830,7 @@ str(passive_sample_clean)
 head(passive_sample_clean)
 ```
 
-We only have categorical data; therefore mean and standard deviation are not meaningful. Descriptive statistics for each variable (following Elens textbook Chapter 8):
+We only have categorical data; therefore mean and standard deviation are not meaningful. Descriptive statistics for each variable (following Elens textbook Chapter 8 & 10 and @gries_statistics_2021 [441]
 
 -   table to get an overview of distributions of values and the mode (measure of central tendency) -\> sort
 
@@ -840,15 +840,71 @@ We only have categorical data; therefore mean and standard deviation are not mea
 
 -   bar plots, mosaic plots
 
-@gries_statistics_2021 [441]
+### Subject animacy
 
-```{r data-exploration-table}
-prop.table(table(passive_sample_clean$subj_gender))
-#level "mixed" too rare? 
+```{r animacy-descriptive-tables, include=FALSE}
+table(passive_sample_clean$subj_animacy) |> 
+  sort(decreasing = TRUE)
+
+#cross-tabulation
+table(passive_sample_clean$subj_animacy, passive_sample_clean$passive_variant)
+
+table(passive_sample_clean$subj_animacy, passive_sample_clean$subj_gender)
+
+ftable(passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy, passive_sample_clean$subj_gender)
+
+#proportions (Gries)
+prop.table(table(passive_sample_clean$subj_animacy))
+#alternatively: (Elen)
+table(passive_sample_clean$subj_animacy) |> 
+  sort(decreasing = TRUE) |> 
+  proportions()
+
+prop.table(table(passive_sample_clean$subj_animacy, passive_sample_clean$passive_variant))
+```
+
+Plots (Elens Textbook Chapter 10)
+
+```{r animacy-descriptive-plots}
+passive_sample_clean |> 
+ggplot(mapping = aes(x = subj_animacy)) +
+  geom_bar() +
+  labs(x = "Subject Animacy",
+       y = "Number of observations")
+
+passive_sample_clean |> 
+ggplot(mapping = aes(x = subj_animacy)) +
+  geom_bar() +
+  facet_wrap(~ passive_variant) +
+  #scale_y_continuous(expand = c(0,0)) + 
+  labs(x = "Subject Animacy",
+       y = "Number of observations") +
+  theme_bw()
+
+mosaicplot(passive_variant ~ subj_animacy,
+           data = passive_sample_clean)
+```
+
+### Subject gender
+
+```{r gender-descriptive}
+table(passive_sample_clean$subj_gender) |> 
+  sort(decreasing = TRUE)
+#level "mixed" too rare? (11 occurences)
 #cross-tabulation
 table(passive_sample_clean$subj_gender, passive_sample_clean$passive_variant)
-ftable(passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy, passive_sample_clean$subj_gender)
+prop.table(table(passive_sample_clean$subj_gender))
 ```
+
+### Complément d'agent
+
+### Modal
+
+### TAM
+
+### Cluster
+
+### Adversativity
 
 Some mosaic plots for exploration:
 

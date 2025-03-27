@@ -963,13 +963,13 @@ table(passive_sample_clean$agent_pp, passive_sample_clean$passive_variant)
 
 ### Adversativity
 
-```{r}
+```{r, echo=FALSE}
 table(passive_sample_clean$adversativity)
 ```
 
-```{r animacy-adversativity-plots}
+```{r animacy-adversativity-plots, echo = FALSE}
 #Interaction Animacy: Adversativity:
-passive_sample_without_unknown |> 
+passive_sample_clean |> 
 ggplot(mapping = aes(x = subj_animacy, fill = adversativity)) +
   geom_bar() +
   facet_wrap(~ passive_variant) +
@@ -984,7 +984,7 @@ For se faire, both adversative and non-adversative constructions more frequently
 
 Some mosaic plots for exploration:
 
-```{r data-exploration-plots}
+```{r data-exploration-plots, ECHO=FALSE}
 mosaicplot(passive_variant ~ subj_gender,
            data = passive_sample_clean)
 
@@ -1071,6 +1071,7 @@ passive_sample_clean$cluster <- relevel(passive_sample_clean$cluster, ref = "neu
 passive_sample_clean$adversativity <- relevel(passive_sample_clean$adversativity, ref = "non-adversative")
 
 passive_sample_without_unknown$subj_gender <- relevel(passive_sample_without_unknown$subj_gender, ref = "masculine")
+passive_sample_without_unknown$subj_animacy <- relevel(passive_sample_without_unknown$subj_animacy, ref = "inanimate")
 passive_sample_without_unknown$cluster <- relevel(passive_sample_without_unknown$cluster, ref = "neutral")
 passive_sample_without_unknown$adversativity <- relevel(passive_sample_without_unknown$adversativity, ref = "non-adversative")
 
@@ -1080,8 +1081,6 @@ levels(passive_sample_without_unknown$subj_gender)
 ```
 
 ### Model selection: Maximum likelihood
-
-#### glmer
 
 Function following @gries_statistics_2021 [442]
 
@@ -1153,16 +1152,16 @@ tab_model(model_1_without_unknown) #Marginal R2 / Conditional R2	0.453 / 0.659
 removing non-significant fixed effects (agent_pp, modal, tam)
 
 ```{r model-2, output=FALSE}
-# model_2 <- glmer(
-#     passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:adversativity) + (1 | lemma),
-#     family = "binomial", 
-#     data = passive_sample_clean,
-#     control = glmerControl(optimizer = "bobyqa")
-#   )
-# 
-# summary(model_2) # AIC: 771.5 without level "mixed")
-# tab_model(model_2) # Marginal R2 / Conditional R2 0.599 / 0.748 (slightly lower than model_1 but with fewer factors!)
-# vif(model_2)
+model_2 <- glmer(
+    passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:adversativity) + (1 | lemma),
+    family = "binomial",
+    data = passive_sample_clean,
+    control = glmerControl(optimizer = "bobyqa")
+  )
+
+summary(model_2) # AIC: 771.5 without level "mixed")
+tab_model(model_2) # Marginal R2 / Conditional R2 0.599 / 0.748 (slightly lower than model_1 but with fewer factors!)
+vif(model_2)
 ```
 
 without subject gender (non-significant without unknown)
@@ -1179,6 +1178,12 @@ summary(final_model_without_unknown) # AIC: 730.7
 tab_model(final_model_without_unknown) # Marginal R2 / Conditional R2	0.448 / 0.658
 vif(final_model_without_unknown)
 ```
+
+Intercept: 2.073421; meaning: chances of se faire are 2.073421 times greater than être given this context
+
+coefficients: if positive, level boosts the chance of se faire (decreases chance of être)
+
+R-squared not recommended as central measure @levshina_how_2015 [259], Hosmer & Lemeshow (2000: 167)
 
 significant effects in final_model_without_unknown (final model?):
 
@@ -1235,7 +1240,7 @@ ggpredict(model_2, "cluster") |>
   plot()
 
 #ggpredict(model_2, c("subj_animacy", "subj_gender")) |>
-  plot()
+#  plot()
 
 ggpredict(final_model_without_unknown, c("subj_animacy", "adversativity")) |> 
   plot()
@@ -1258,28 +1263,6 @@ ranef |>
        y = "Variation in intercept estimate (logit)") +
   coord_flip()
 ```
-
-#### lrm
-
-Function following @levshina_how_2015 [258] (258-276) - no random effects!
-
-```{r lrm-model}
-passive_lrm <- lrm(
-  passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:cluster + subj_animacy:adversativity + cluster:adversativity),
-  data = passive_sample_clean
-)
-
-#no random effects
-passive_lrm
-#intercept: 2.2777
-#convert to odds:
-exp(2.2777) #9.75422
-#meaning: chances of se faire are 9.75422 times greater than être given this context (default reference levels)
-```
-
-coefficients: if positive, level boosts the chance of se faire (decreases chance of être)
-
-R-squared not recommended as central measure @levshina_how_2015 [259], Hosmer & Lemeshow (2000: 167)
 
 # Discussion
 

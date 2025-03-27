@@ -26,6 +26,7 @@ p {
 }
 </style>
 ```
+
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -157,6 +158,7 @@ The passive voice is relatively rare in French, accounting for only 5% of verbs 
 
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward -->
 ```
+
 ### Structure and meaning
 
 The *se faire* passive construction provides an alternative way to express passive meaning in French: When constructing a passive sentence, the French speaker may choose to use *se faire* instead of the canonical *être*: The two constructions form a passive alternation. Various scholars have examined the *se faire* passive, such as @bellec_construction_2014, @labelle_anticausativizing_2013, @koenig_semantic_1992, @kupferman_construction_1995, @raineri_analyse_2010, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987, to name a few.
@@ -283,6 +285,7 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
+
 ```{r lemma-list, include=FALSE}
 
 lemmas <- sefaire_sample |> 
@@ -524,6 +527,7 @@ As indicated above, the question whether the referent of the subject in the se f
 the PSF construction has a preference to mark the subject as an active participant (although according to @raineri_analyse_2010 [98] is is not "universally accepted" as some authors also name counterexamples @kupferman_construction_1995 [59].)
 In @raineri_analyse_2010 [95]'s view, the idea that the PSF expresses subject responsibility is the "most common hypothesis" ("l'hypothèse la plus répandue") in the literature. -->
 ```
+
 In line with their argument that the passive reading of se faire + INF is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of the se faire passive is always a causer and therefore always responsible to some degree. This is contrasted to the être passive's subject referent, which is see as more neutral. @gaatone_desagreable_1983 [164] distinguishes between an "active patient" in the se faire construction and a "passive patient" in the être passive (@raineri_analyse_2010 [96]).
 
 In contrast, @kupferman_construction_1995 [59] gives PSF examples where the subject cannot be interpreted as responsible, one of which is repeated here:
@@ -1033,8 +1037,16 @@ ordering levels: by default alphabetical; reference level always the first, i.e.
 idea for reference levels: construct the most "standard" case: être passive, inanimate, unknown, modal: no, non-progressive, cluster: neutral, non-adversative ?
 
 ```{r reference-levels}
-#example: change reference level from "animate" to "inanimate" (Levshina 2015: 78)
-passive_sample_clean$subj_animacy <- relevel(passive_sample_clean$subj_animacy, ref = "inanimate")
+#exclude "mixed" gender because of low frequency (would likely skew the data)
+passive_sample_clean <- passive_sample_clean|>
+filter(subj_gender != "mixed") |>
+droplevels()
+#change reference levels: "animate" to "inanimate", "communication" to "neutral", "adversative" to "non-adversative" (Levshina 2015: 78)
+#passive_sample_clean$subj_animacy <- relevel(passive_sample_clean$subj_animacy, ref = "inanimate")
+passive_sample_clean$subj_gender <- relevel(passive_sample_clean$subj_gender, ref = "masculine")
+passive_sample_clean$cluster <- relevel(passive_sample_clean$cluster, ref = "neutral")
+passive_sample_clean$adversativity <- relevel(passive_sample_clean$adversativity, ref = "non-adversative")
+
 str(passive_sample_clean)
 ```
 
@@ -1054,7 +1066,8 @@ passive_glmer <- glmer(
   )
 
 summary(passive_glmer) #AIC: 785.1 
-tab_model(passive_glmer) # Marginal R2 / Conditional R2	0.598 / 0.746
+tab_model(passive_glmer) # Marginal R2 / Conditional R2	0.598 / 0.746 // 0.704 / NA
+vif(passive_glmer)
 ```
 
 random effects: variance of the speaker very very small (1.359e-13), does not need to be kept; variance of the lemma is bigger (1.917e) and should be kept.
@@ -1076,8 +1089,8 @@ model_1 <- glmer(
     control = glmerControl(optimizer = "bobyqa")
   )
 
-summary(model_1) #AIC: 790.7(higher i.e. slightly worse?)
-tab_model(model_1) # Marginal R2 / Conditional R2	0.599 / 0.747 (minimally higher, i.e. slightly better?)
+summary(model_1) #AIC: 776.8(higher i.e. slightly worse?)
+tab_model(model_1) # Marginal R2 / Conditional R2	0.601 / 0.750 (minimally higher, i.e. slightly better?)
 ```
 
 removing non-significant fixed effects (agent_pp, modal, tam)
@@ -1090,12 +1103,18 @@ model_2 <- glmer(
     control = glmerControl(optimizer = "bobyqa")
   )
 
-summary(model_2) #AIC: 786.3 (lower than model 1, minimally higher than max model)
-tab_model(model_2) # Marginal R2 / Conditional R2	0.596 / 0.746 (minimally lower than tow previous model (but almost identical with fewer factors!))
-
+summary(model_2) # AIC: 771.5 without level "mixed")
+tab_model(model_2) # Marginal R2 / Conditional R2 0.599 / 0.748 (slightly lower than model_1 but with fewer factors!)
+vif(model_2)
 ```
 
-significant effects in model_2: cluster\[hitting-touching\]; cluster \[neutral\]; subj animacy \[inanimate\] × subj gender \[unknown\]; subj animacy \[inanimate\] × adversativity \[non-adversative\]
+significant effects in model_2 (final model?):
+
+-   cluster\[communication\];
+
+-   subj animacy \[inanimate\] × subj gender \[unknown\];
+
+-   subj animacy \[inanimate\] × adversativity \[adversative\]
 
 **Concordance index C**
 
@@ -1104,7 +1123,7 @@ significant effects in model_2: cluster\[hitting-touching\]; cluster \[neutral\]
 Hmisc::somers2(
   predict(model_2), as.numeric(passive_sample_clean$passive_variant)-1
 )["C"] 
-# C 0.9549173 - pretty good I think?
+# C 0.9549516 - pretty good I think? "outstanding discrimination" according to Hosmer & Lemeshow (2000: 162) in Levshina (2015: 259)
 ```
 
 ```{r coefficients, include=FALSE}
@@ -1117,7 +1136,18 @@ model_2_coef
 exp(model_2_coef)
 
 #convert odds to probabilities
-exp(model_2_coef) / (1 + exp(model_2_coef))
+#exp(model_2_coef) / (1 + exp(model_2_coef))
+```
+
+overall significance test for the model by comparing 0 model to full model and use an anova between those @gries_statistics_2021 [445-446]
+
+```{r model2-significance}
+null_model <- glmer(passive_variant ~ 1 + (1|lemma), data = passive_sample_clean, family = binomial)
+
+anova(model_2, null_model, test="Chisq")
+#highly significant!!
+#relative likelihood
+(exp((AIC(null_model)-AIC(model_2))/2))
 ```
 
 Some plots of significant effects:

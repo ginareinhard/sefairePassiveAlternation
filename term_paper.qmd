@@ -31,6 +31,7 @@ p {
 library(here)
 #install.packages("glossr")
 library(glossr)
+library(kableExtra)
 library(tidyverse)
 
 ```
@@ -878,13 +879,10 @@ For *se faire*, both adversative and non-adversative constructions more frequent
 ```{r gender-descriptive}
 table(passive_sample_clean$subj_gender) |> 
   sort(decreasing = TRUE)
-#level "mixed" too rare? (11 occurences)
-#cross-tabulation
-table(passive_sample_clean$subj_gender, passive_sample_clean$passive_variant)
 prop.table(table(passive_sample_clean$subj_gender))
 ```
 
-```{r}
+```{r, include=FALSE}
 
 passive_sample_clean_filtered <- passive_sample_clean |> 
   filter(subj_gender != "mixed")
@@ -895,21 +893,55 @@ passive_sample_clean_filtered2 <- passive_sample_clean |>
 
 ```
 
-```{r gender-plot}
+```{r, include=FALSE}
+
+#table(passive_sample_clean$subj_gender, passive_sample_clean$passive_variant)
+
+```
+
+```{r, include=FALSE}
+
+freq_gender <- passive_sample_clean |> 
+  count(passive_variant, subj_gender) |> 
+  group_by(passive_variant) |> 
+  mutate(relative = round(proportions(n), 2)) |> 
+  ungroup()
+
+freq_gender_wide <- freq_gender |> 
+  pivot_wider(names_from = passive_variant, values_from = c(n, relative), values_fill = list(n = 0, Relative = 0))
+
+```
+
+::: {#tbl-gender}
+```{r, echo=FALSE}
+
+freq_gender_wide |> 
+  kable(format = "html", digits = 2, col.names = c("Factor?", "être", "se faire", "être in %", "se faire in %")) |> 
+  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+
+```
+
+Frequencies for Passive Variants Gender and Animacy
+
+:::
+
+As shown in @tbl-gender ...
+
+```{r gender-plot, echo=FALSE}
 
 ggplot(passive_sample_clean_filtered, 
        aes(x = passive_variant, 
            fill = subj_gender)) +
-  geom_bar(position = "dodge") +  # No need for stat="identity"
+  geom_bar(position = "dodge") +
   scale_y_continuous(expand = c(0,0)) +
   labs(title = "plot",
        x = "passive variant grammatical gender",
-       y = "Count") +  # Change y-axis label to "Count" 
+       y = "Count") +
   theme_classic()
 
 ```
 
-```{r}
+```{r, echo=FALSE}
 
 ggplot(passive_sample_clean_filtered2, 
        aes(x = subj_animacy, fill = subj_gender)) +
@@ -919,7 +951,9 @@ ggplot(passive_sample_clean_filtered2,
        x = "Subject Animacy",
        y = "Number of Observations", 
        fill = "Subject Gender") +
+  scale_fill_manual(values = c("#FC8D62", "#8DA0CB")) +
   theme_bw()
+
 ```
 
 The barplots show that the *être* passive occurs most frequently with inanimate feminine subjects, while the *se faire* passive occurs most frequently with animate masculine subjects. This distribution supports the hypothesis that *se faire* is more frequent with animate male subjects than with animate female subjects.

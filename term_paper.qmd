@@ -26,7 +26,6 @@ p {
 }
 </style>
 ```
-
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -158,7 +157,6 @@ The passive voice is relatively rare in French, accounting for only 5% of verbs 
 
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward -->
 ```
-
 ### Structure and meaning
 
 The *se faire* passive construction provides an alternative way to express passive meaning in French: When constructing a passive sentence, the French speaker may choose to use *se faire* instead of the canonical *être*: The two constructions form a passive alternation. Various scholars have examined the *se faire* passive, such as @bellec_construction_2014, @labelle_anticausativizing_2013, @koenig_semantic_1992, @kupferman_construction_1995, @raineri_analyse_2010, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987, to name a few.
@@ -285,7 +283,6 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
-
 ```{r lemma-list, include=FALSE}
 
 lemmas <- sefaire_sample |> 
@@ -527,7 +524,6 @@ As indicated above, the question whether the referent of the subject in the se f
 the PSF construction has a preference to mark the subject as an active participant (although according to @raineri_analyse_2010 [98] is is not "universally accepted" as some authors also name counterexamples @kupferman_construction_1995 [59].)
 In @raineri_analyse_2010 [95]'s view, the idea that the PSF expresses subject responsibility is the "most common hypothesis" ("l'hypothèse la plus répandue") in the literature. -->
 ```
-
 In line with their argument that the passive reading of se faire + INF is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of the se faire passive is always a causer and therefore always responsible to some degree. This is contrasted to the être passive's subject referent, which is see as more neutral. @gaatone_desagreable_1983 [164] distinguishes between an "active patient" in the se faire construction and a "passive patient" in the être passive (@raineri_analyse_2010 [96]).
 
 In contrast, @kupferman_construction_1995 [59] gives PSF examples where the subject cannot be interpreted as responsible, one of which is repeated here:
@@ -792,6 +788,28 @@ passive_sample_clean <- passive_sample_clean |>
   select(-subj_animacy_A, -subj_animacy_B, -subj_gender_A, -subj_gender_B, -agent_pp_A, -agent_pp_B, -modal_A, -modal_B, -tam_A, -tam_B, -cluster_A, -cluster_B, -adversativity_A, -adversativity_B, -ID)
 ```
 
+```{r}
+
+#exclude "mixed" gender because of low frequency (would likely skew the data)
+#merge "de" and "par" into a "present category"
+passive_sample_clean <- passive_sample_clean|>
+  filter(subj_gender != "mixed") |>
+  droplevels()
+
+# passive_sample_clean <- passive_sample_clean |> 
+#   mutate(agent_pp = case_when( #to merge par and de
+#     agent_pp %in% c("par", "de") ~ "present",
+#     TRUE ~ agent_pp
+#   )) |> 
+#   mutate(agent_pp = factor(agent_pp))
+
+passive_sample_without_unknown <- passive_sample_clean|> 
+  filter(subj_gender != "mixed") |> 
+  filter(subj_gender != "unknown") |>
+  droplevels()
+
+```
+
 ## Data exploration
 
 Taking a look at the data:
@@ -872,24 +890,24 @@ prop.table(table(passive_sample_clean$subj_gender))
 
 ```{r, include=FALSE}
 
-passive_sample_clean_filtered <- passive_sample_clean |> 
-  filter(subj_gender != "mixed")
+#passive_sample_clean_filtered <- passive_sample_clean |> 
+#  filter(subj_gender != "mixed")
 
-passive_sample_clean_filtered2 <- passive_sample_clean |> 
-  filter(subj_gender != "mixed") |>
-  filter(subj_gender != "unknown")
-
-```
-
-```{r, include=FALSE}
-
-table(passive_sample_clean$subj_gender, passive_sample_clean$passive_variant)
+#passive_sample_clean_filtered2 <- passive_sample_clean |> 
+#  filter(subj_gender != "mixed") |>
+#  filter(subj_gender != "unknown")
 
 ```
 
 ```{r, include=FALSE}
 
-freq_gender <- passive_sample_clean |> 
+#table(passive_sample_clean$subj_gender, passive_sample_clean$passive_variant)
+
+```
+
+```{r, include=FALSE}
+
+freq_gender <- passive_sample_without_unknown |> 
   count(passive_variant, subj_gender) |> 
   group_by(passive_variant) |> 
   mutate(relative = round(proportions(n), 2)) |> 
@@ -916,7 +934,7 @@ As shown in @tbl-gender ...
 
 ```{r gender-plot, echo=FALSE}
 
-ggplot(passive_sample_clean_filtered, 
+ggplot(passive_sample_without_unknown, 
        aes(x = passive_variant, 
            fill = subj_gender)) +
   geom_bar(position = "dodge") +
@@ -930,7 +948,7 @@ ggplot(passive_sample_clean_filtered,
 
 ```{r, echo=FALSE}
 
-ggplot(passive_sample_clean_filtered2, 
+ggplot(passive_sample_without_unknown, 
        aes(x = subj_animacy, fill = subj_gender)) +
   geom_bar(position = "dodge") +  
   facet_wrap(~ passive_variant) +  
@@ -960,6 +978,33 @@ table(passive_sample_clean$agent_pp, passive_sample_clean$passive_variant)
 ### TAM
 
 ### Cluster
+
+```{r, include=FALSE}
+
+freq_gender <- passive_sample_without_unknown |> 
+  count(passive_variant, cluster) |> 
+  group_by(passive_variant) |> 
+  mutate(relative = round(proportions(n), 2)) |> 
+  ungroup()
+
+freq_gender_wide <- freq_gender |> 
+  pivot_wider(names_from = passive_variant, values_from = c(n, relative), values_fill = list(n = 0, Relative = 0))
+
+```
+
+::: {#tbl-cluster}
+```{r, echo=FALSE}
+
+freq_gender_wide |> 
+  kable(format = "html", digits = 2, col.names = c("Factor?", "être", "se faire", "être in %", "se faire in %")) |> 
+  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+
+```
+
+Frequencies for Passive Variants Cluster
+:::
+
+As shown in @tbl-cluster ...
 
 ### Adversativity
 
@@ -1046,23 +1091,6 @@ ordering levels: by default alphabetical; reference level always the first, i.e.
 idea for reference levels: construct the most "standard" case: être passive, inanimate, unknown, modal: no, non-progressive, cluster: neutral, non-adversative ?
 
 ```{r reference-levels, include = FALSE}
-#exclude "mixed" gender because of low frequency (would likely skew the data)
-#merge "de" and "par" into a "present category"
-passive_sample_clean <- passive_sample_clean|>
-  filter(subj_gender != "mixed") |>
-  droplevels()
-
-# passive_sample_clean <- passive_sample_clean |> 
-#   mutate(agent_pp = case_when( #to merge par and de
-#     agent_pp %in% c("par", "de") ~ "present",
-#     TRUE ~ agent_pp
-#   )) |> 
-#   mutate(agent_pp = factor(agent_pp))
-
-passive_sample_without_unknown <- passive_sample_clean|> 
-  filter(subj_gender != "mixed") |> 
-  filter(subj_gender != "unknown") |>
-  droplevels()
 
 #change reference levels: "animate" to "inanimate", "communication" to "neutral", "adversative" to "non-adversative" (Levshina 2015: 78)
 #passive_sample_clean$subj_animacy <- relevel(passive_sample_clean$subj_animacy, ref = "inanimate")

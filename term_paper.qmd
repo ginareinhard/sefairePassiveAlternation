@@ -862,22 +862,6 @@ mosaicplot(passive_variant ~ subj_animacy,
 
 The plot shows clearly that in *se faire* passives, the subject is animate in the great majority of cases. In contrast, for *être*, subject animacy is more evenly distributed, with a slight preference for inanimate subjects.
 
-Animacy x Adversativity:
-
-```{r animacy-adversativity-plots}
-passive_sample_clean |> 
-ggplot(mapping = aes(x = subj_animacy, fill = adversativity)) +
-  geom_bar() +
-  facet_wrap(~ passive_variant + adversativity) +
-  #scale_y_continuous(expand = c(0,0)) + 
-  labs(x = "Subject Animacy",
-       y = "Number of observations", 
-       fill = "Adversativity" ) +
-  theme_bw()
-```
-
-For *se faire*, both adversative and non-adversative constructions more frequently occur with animate subjects. In contrast, for *être*, non-adversative constructions are more common with inanimate subjects than with animate ones. Adversative constructions are generally less frequent and fairly evenly distributed.
-
 ### Subject gender
 
 ```{r gender-descriptive}
@@ -899,7 +883,7 @@ passive_sample_clean_filtered2 <- passive_sample_clean |>
 
 ```{r, include=FALSE}
 
-#table(passive_sample_clean$subj_gender, passive_sample_clean$passive_variant)
+table(passive_sample_clean$subj_gender, passive_sample_clean$passive_variant)
 
 ```
 
@@ -967,21 +951,36 @@ For inanimate subjects, the difference in frequency between masculine and femini
 
 ### Complément d'agent
 
-### Modal
-
-### TAM
-
 ```{r}
 table(passive_sample_clean$agent_pp, passive_sample_clean$passive_variant)
 ```
+
+### Modal
+
+### TAM
 
 ### Cluster
 
 ### Adversativity
 
 ```{r}
-table(passive_sample_clean$adversativity, passive_sample_clean$passive_variant)
+table(passive_sample_clean$adversativity)
 ```
+
+```{r animacy-adversativity-plots}
+#Interaction Animacy: Adversativity:
+passive_sample_without_unknown |> 
+ggplot(mapping = aes(x = subj_animacy, fill = adversativity)) +
+  geom_bar() +
+  facet_wrap(~ passive_variant) +
+  #scale_y_continuous(expand = c(0,0)) + 
+  labs(x = "Subject Animacy",
+       y = "Number of observations", 
+       fill = "Adversativity" ) +
+  theme_bw()
+```
+
+For se faire, both adversative and non-adversative constructions more frequently occur with animate subjects. In contrast, for être, non-adversative constructions are more common with inanimate subjects than with animate ones. Adversative constructions are generally less frequent and fairly evenly distributed.
 
 Some mosaic plots for exploration:
 
@@ -1061,6 +1060,7 @@ passive_sample_clean <- passive_sample_clean|>
 #   mutate(agent_pp = factor(agent_pp))
 
 passive_sample_without_unknown <- passive_sample_clean|> 
+  filter(subj_gender != "mixed") |> 
   filter(subj_gender != "unknown") |>
   droplevels()
 
@@ -1086,20 +1086,20 @@ levels(passive_sample_without_unknown$subj_gender)
 Function following @gries_statistics_2021 [442]
 
 ```{r regression-model, output=FALSE}
-passive_glmer <- glmer(
-    passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:cluster + subj_animacy:adversativity + cluster:adversativity) +
-               (1 | lemma) + (1 | speaker),
-    family = "binomial", 
-    data = passive_sample_clean,
-    control = glmerControl(optimizer = "bobyqa")
-  )
-
-summary(passive_glmer) #AIC: 785.1 
-tab_model(passive_glmer) # Marginal R2 / Conditional R2	0.598 / 0.746 // 0.704 / NA
-vif(passive_glmer)
+# passive_glmer <- glmer(
+#     passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:cluster + subj_animacy:adversativity + cluster:adversativity) +
+#                (1 | lemma) + (1 | speaker),
+#     family = "binomial", 
+#     data = passive_sample_clean,
+#     control = glmerControl(optimizer = "bobyqa")
+#   )
+# 
+# summary(passive_glmer) #AIC: 785.1 
+# tab_model(passive_glmer) # Marginal R2 / Conditional R2	0.598 / 0.746 // 0.704 / NA
+# vif(passive_glmer)
 ```
 
-```{r}
+```{r model-without-unknown, output=FALSE}
 passive_glmer_without_unknown <- glmer(
     passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:cluster + subj_animacy:adversativity + cluster:adversativity) +
                (1 | lemma) + (1 | speaker),
@@ -1108,8 +1108,8 @@ passive_glmer_without_unknown <- glmer(
     control = glmerControl(optimizer = "bobyqa")
   )
 
-summary(passive_glmer_without_unknown) #AIC: 785.1 
-tab_model(passive_glmer_without_unknown) # Marginal R2 / Conditional R2	0.598 / 0.746 // 0.704 / NA
+summary(passive_glmer_without_unknown) #AIC: 731.2
+tab_model(passive_glmer_without_unknown) # Marginal R2 / Conditional R2	0.462 / 0.668 // 0.704 / NA
 vif(passive_glmer_without_unknown)
 ```
 
@@ -1125,50 +1125,64 @@ significant effects:
 removing non-significant interactions (cluster:adversativity and subj_animacy:cluster) and random effect of speaker:
 
 ```{r model-1, output=FALSE}
-model_1 <- glmer(
-    passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:adversativity) + (1 | lemma),
-    family = "binomial", 
-    data = passive_sample_clean,
+# model_1 <- glmer(
+#     passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:adversativity) + (1 | lemma),
+#     family = "binomial", 
+#     data = passive_sample_clean,
+#     control = glmerControl(optimizer = "bobyqa")
+#   )
+# 
+# summary(model_1) #AIC: 776.8(higher i.e. slightly worse?)
+# tab_model(model_1) # Marginal R2 / Conditional R2	0.601 / 0.750 (minimally higher, i.e. slightly better?)
+```
+
+removing subj_animacy: subj_gender
+
+```{r, output = FALSE}
+model_1_without_unknown <- glmer(
+    passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma),
+    family = "binomial",
+    data = passive_sample_without_unknown,
     control = glmerControl(optimizer = "bobyqa")
   )
 
-summary(model_1) #AIC: 776.8(higher i.e. slightly worse?)
-tab_model(model_1) # Marginal R2 / Conditional R2	0.601 / 0.750 (minimally higher, i.e. slightly better?)
+summary(model_1_without_unknown) # AIC: 738
+tab_model(model_1_without_unknown) #Marginal R2 / Conditional R2	0.453 / 0.659
 ```
 
 removing non-significant fixed effects (agent_pp, modal, tam)
 
-```{r model-2}
-model_2 <- glmer(
-    passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:adversativity) + (1 | lemma),
-    family = "binomial", 
-    data = passive_sample_clean,
-    control = glmerControl(optimizer = "bobyqa")
-  )
-
-summary(model_2) # AIC: 771.5 without level "mixed")
-tab_model(model_2) # Marginal R2 / Conditional R2 0.599 / 0.748 (slightly lower than model_1 but with fewer factors!)
-vif(model_2)
+```{r model-2, output=FALSE}
+# model_2 <- glmer(
+#     passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:adversativity) + (1 | lemma),
+#     family = "binomial", 
+#     data = passive_sample_clean,
+#     control = glmerControl(optimizer = "bobyqa")
+#   )
+# 
+# summary(model_2) # AIC: 771.5 without level "mixed")
+# tab_model(model_2) # Marginal R2 / Conditional R2 0.599 / 0.748 (slightly lower than model_1 but with fewer factors!)
+# vif(model_2)
 ```
+
+without subject gender (non-significant without unknown)
 
 ```{r}
 final_model_without_unknown <- glmer(
-    passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma),
+    passive_variant ~ (subj_animacy + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma),
     family = "binomial", 
     data = passive_sample_without_unknown,
     control = glmerControl(optimizer = "bobyqa")
   )
 
-summary(final_model_without_unknown)
-tab_model(final_model_without_unknown) 
+summary(final_model_without_unknown) # AIC: 730.7
+tab_model(final_model_without_unknown) # Marginal R2 / Conditional R2	0.448 / 0.658
 vif(final_model_without_unknown)
 ```
 
-significant effects in model_2 (final model?):
+significant effects in final_model_without_unknown (final model?):
 
 -   cluster\[communication\];
-
--   subj animacy \[inanimate\] × subj gender \[unknown\];
 
 -   subj animacy \[inanimate\] × adversativity \[adversative\]
 
@@ -1177,9 +1191,9 @@ significant effects in model_2 (final model?):
 ```{r concordance-index}
 #model_2
 Hmisc::somers2(
-  predict(model_2), as.numeric(passive_sample_clean$passive_variant)-1
+  predict(final_model_without_unknown), as.numeric(passive_sample_without_unknown$passive_variant)-1
 )["C"] 
-# C 0.9549516 - pretty good I think? "outstanding discrimination" according to Hosmer & Lemeshow (2000: 162) in Levshina (2015: 259)
+# C 0.9388979 - pretty good I think? "outstanding discrimination" according to Hosmer & Lemeshow (2000: 162) in Levshina (2015: 259)
 ```
 
 ```{r coefficients, include=FALSE}
@@ -1220,10 +1234,10 @@ Some plots of significant effects:
 ggpredict(model_2, "cluster") |> 
   plot()
 
-ggpredict(model_2, c("subj_animacy", "subj_gender")) |>
+#ggpredict(model_2, c("subj_animacy", "subj_gender")) |>
   plot()
 
-ggpredict(model_2, c("subj_animacy", "adversativity")) |> 
+ggpredict(final_model_without_unknown, c("subj_animacy", "adversativity")) |> 
   plot()
 ```
 
@@ -1232,7 +1246,7 @@ Interpretation of subj_animacy x adversativity: for animate subject se faire is 
 **Random intercepts**
 
 ```{r}
-ranef <- as.data.frame(ranef(model_2))
+ranef <- as.data.frame(ranef(final_model_without_unknown))
 
 ranef |> 
   filter(grpvar == "lemma") |>

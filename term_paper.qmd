@@ -830,9 +830,19 @@ str(passive_sample_clean)
 head(passive_sample_clean)
 ```
 
+We only have categorical data; therefore mean and standard deviation are not meaningful. Descriptive statistics for each variable (following Elens textbook Chapter 8):
+
+-   table to get an overview of distributions of values and the mode (measure of central tendency) -\> sort
+
+-   where appropiate: cross tabulations
+
+-   proportions
+
+-   bar plots, mosaic plots
+
 @gries_statistics_2021 [441]
 
-```{r}
+```{r data-exploration-table}
 prop.table(table(passive_sample_clean$subj_gender))
 #level "mixed" too rare? 
 #cross-tabulation

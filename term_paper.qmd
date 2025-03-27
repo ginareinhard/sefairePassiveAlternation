@@ -842,20 +842,23 @@ We only have categorical data; therefore mean and standard deviation are not mea
 
 ### Subject animacy
 
-```{r animacy-descriptive-tables, include=FALSE}
+```{r animacy-descriptive-tables}
 table(passive_sample_clean$subj_animacy) |> 
   sort(decreasing = TRUE)
 
 #cross-tabulation for hypothesised interactions
 table(passive_sample_clean$subj_animacy, passive_sample_clean$passive_variant)
 
-table(passive_sample_clean$subj_animacy, passive_sample_clean$subj_gender)
+# not really helpful/ meaningful:
 
-table(passive_sample_clean$subj_animacy, passive_sample_clean$cluster)
-
-table(passive_sample_clean$subj_animacy, passive_sample_clean$adversativity)
-
-# ftable(passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy, passive_sample_clean$subj_gender)
+# table(passive_sample_clean$subj_animacy, passive_sample_clean$subj_gender)
+# 
+# table(passive_sample_clean$subj_animacy, passive_sample_clean$cluster)
+# 
+# table(passive_sample_clean$subj_animacy, passive_sample_clean$adversativity)
+# 
+#  ftable(passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy, passive_sample_clean$subj_gender) |> 
+#    proportions()
 # 
 # ftable(passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy, passive_sample_clean$cluster)
 # 
@@ -867,13 +870,9 @@ prop.table(table(passive_sample_clean$subj_animacy, passive_sample_clean$passive
 #table(passive_sample_clean$subj_animacy) |> 
 #  sort(decreasing = TRUE) |> 
 #  proportions()
-
-prop.table(table(passive_sample_clean$subj_animacy, passive_sample_clean$passive_variant))
 ```
 
-Mode: animate 704 animate (300 etre, 504 se faire); 360 inanimate (332 etre, 28 se faire); inanimate se faire only 0.026 percent of the data.
-
-Plots (Elens Textbook Chapter 10)
+Overall, the majority of constructions have animate subjects (mode: animate(704)). However, in être passive constructions there are more inanimate than animate subjects (332 inanimate, 200 animate), while the se faire passive shows a strong tendency toward animate subjects (504 animate, 28 inanimate), as visualised in these plots:
 
 ```{r animacy-descriptive-plots}
 passive_sample_clean |> 
@@ -885,22 +884,27 @@ ggplot(mapping = aes(x = subj_animacy)) +
        y = "Number of observations") +
   theme_bw()
 
-passive_sample_clean |> 
-ggplot(mapping = aes(x = subj_animacy)) +
-  geom_bar() +
-  facet_wrap(~ passive_variant + adversativity) +
-  #scale_y_continuous(expand = c(0,0)) + 
-  labs(x = "Subject Animacy",
-       y = "Number of observations") +
-  theme_bw()
-
 mosaicplot(passive_variant ~ subj_animacy,
            data = passive_sample_clean)
 ```
 
 In se faire passive constructions, the subject is animate the great majority of the time. For être, the animacy is more evenly distributed, with a slight tendency toward inanimate subjects.
 
-very different distribution for non-adversative constructions: in être, most non-adversative construtions are with inanimate subjects while for se faire, most non-adversative constructions are with animate subjects.
+Animcy x Adversativity:
+
+```{r animacy-adversativity-plots}
+passive_sample_clean |> 
+ggplot(mapping = aes(x = subj_animacy, fill = adversativity)) +
+  geom_bar() +
+  facet_wrap(~ passive_variant + adversativity) +
+  #scale_y_continuous(expand = c(0,0)) + 
+  labs(x = "Subject Animacy",
+       y = "Number of observations", 
+       fill = "Adversativity" ) +
+  theme_bw()
+```
+
+For *se faire*, both adversative and non-adversative constructions more frequently occur with animate subjects. In contrast, for *être*, non-adversative constructions are more common with inanimate subjects than with animate ones. Adversative constructions are generally less frequent and fairly evenly distributed.
 
 ### Subject gender
 

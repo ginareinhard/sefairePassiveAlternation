@@ -517,7 +517,9 @@ Several corpus studies on voice choice in French have shown that the choice betw
 
 ### Subject responsibility
 
-As indicated above, subject responsibility in the se faire passive is central to the debate about the construction's passive-status (see above; @sveberg_se_2012, @bellec_construction_2014 [212-213]) <!-- whether the passive reading of se faire is a type of the causative reading or its own instance --> <!-- As indicated above, the question whether the referent of the subject in the se faire construction holds any responsibility is central in the debate of the construction's passive-status. However, there is general consensus that
+As indicated above, the question whether the referent of the subject in the se faire construction holds any responsibility is central to the debate of the construction's passive-status (see above; @sveberg_se_2012, @bellec_construction_2014 [212-213]).
+
+<!-- whether the passive reading of se faire is a type of the causative reading or its own instance --> <!--  However, there is general consensus that
 the PSF construction has a preference to mark the subject as an active participant (although according to @raineri_analyse_2010 [98] is is not "universally accepted" as some authors also name counterexamples @kupferman_construction_1995 [59].)
 In @raineri_analyse_2010 [95]'s view, the idea that the PSF expresses subject responsibility is the "most common hypothesis" ("l'hypothèse la plus répandue") in the literature. -->
 
@@ -671,43 +673,7 @@ We do not examine mood in this study.
 
 : Hypothesised passive preference for verbs based on clusters/ classes by @francois_presentation_2007 [4]
 
-We have used the classes from the lexicon in the annotation. If there was no exact match, we used the closest similar class. In one case (*caillasser*) there was no entry in the lexicon: Here we assigned the category hitting-touching (similar to *attaquer, frapper, bombarder, ...*)
-
-Suggestion for grouping clusters together (losely based on categories of @bohmann_large-scale_2023 [51])
-
--   goal-directed controlled motion// immediate physical actions: **preference for se faire?** *difficult because of telicity*
-
-    -   giving, depriving (don, privation)
-
-    -   equipping, disarming (munir, démunir)
-
-    -   realisation, preparation (réalisation, mise en état)
-
-    -   hitting, touching (frapper, toucher)
-
-    -   seizing, clasping, possessing (saisir, serrer, posséder)
-
--   verbs of change/ movement : **preference for se faire**
-
-    -   entering, leaving (entrée, sortie)
-
-    -   movement in place (mouvement sur place)
-
-    -   transformation, change (transformation, changement)
-
--   states : **preference for être**
-
-    -   physical states and behaviours (états physiques et comportements)
-
-    -   locative (locatif)
-
--   psychological verbs/ emotions : **preference for être**
-
--   communication : preference for être?
-
--   union, reunion (union, réunion) : preference for être?// drop?
-
--   (auxiliaries) : preference for être? // drop?
+We have used the classes *communication* and *hitting-touching* from the lexicon in the annotation, as we expect communication verbs to favour the être passive and hitting-touching verbs to favour se faire passives. We expect all other classes to not have a preference for either passive variant and therefore group them together as neutral. If there was no exact match, we used the closest similar class. In one case (*caillasser*) there was no entry in the lexicon: Here we assigned the category hitting-touching (similar to *attaquer, frapper, bombarder, ...*)
 
 **Aspect and Tense Marking**
 
@@ -931,7 +897,7 @@ prop.table(table(passive_sample_clean$subj_gender))
 Some mosaic plots for exploration:
 
 ```{r data-exploration-plots}
-mosaicplot(passive_variant ~ subj_animacy,
+mosaicplot(passive_variant ~ subj_gender,
            data = passive_sample_clean)
 
 mosaicplot(passive_variant ~ tam,

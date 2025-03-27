@@ -1008,7 +1008,7 @@ passive_sample_clean <- passive_sample_clean|>
 filter(subj_gender != "mixed") |>
 droplevels()
 #change reference levels: "animate" to "inanimate", "communication" to "neutral", "adversative" to "non-adversative" (Levshina 2015: 78)
-passive_sample_clean$subj_animacy <- relevel(passive_sample_clean$subj_animacy, ref = "inanimate")
+#passive_sample_clean$subj_animacy <- relevel(passive_sample_clean$subj_animacy, ref = "inanimate")
 passive_sample_clean$subj_gender <- relevel(passive_sample_clean$subj_gender, ref = "masculine")
 passive_sample_clean$cluster <- relevel(passive_sample_clean$cluster, ref = "neutral")
 passive_sample_clean$adversativity <- relevel(passive_sample_clean$adversativity, ref = "non-adversative")
@@ -1074,7 +1074,13 @@ tab_model(model_2) # Marginal R2 / Conditional R2 0.599 / 0.748 (slightly lower 
 vif(model_2)
 ```
 
-significant effects in model_2: cluster\[hitting-touching\]; cluster \[neutral\]; subj animacy \[inanimate\] × subj gender \[unknown\]; subj animacy \[inanimate\] × adversativity \[non-adversative\]
+significant effects in model_2 (final model?):
+
+-   cluster\[communiction\];
+
+-   subj animacy \[inanimate\] × subj gender \[unknown\];
+
+-   subj animacy \[inanimate\] × adversativity \[adversative\]
 
 **Concordance index C**
 

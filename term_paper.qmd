@@ -1005,15 +1005,24 @@ idea for reference levels: construct the most "standard" case: être passive, in
 ```{r reference-levels}
 #exclude "mixed" gender because of low frequency (would likely skew the data)
 passive_sample_clean <- passive_sample_clean|>
-filter(subj_gender != "mixed") |>
-droplevels()
+  filter(subj_gender != "mixed") |>
+  droplevels()
+
+passive_sample_without_unknown <- passive_sample_clean|> 
+  filter(subj_gender != "unknown") |>
+  droplevels()
 #change reference levels: "animate" to "inanimate", "communication" to "neutral", "adversative" to "non-adversative" (Levshina 2015: 78)
 #passive_sample_clean$subj_animacy <- relevel(passive_sample_clean$subj_animacy, ref = "inanimate")
 passive_sample_clean$subj_gender <- relevel(passive_sample_clean$subj_gender, ref = "masculine")
 passive_sample_clean$cluster <- relevel(passive_sample_clean$cluster, ref = "neutral")
 passive_sample_clean$adversativity <- relevel(passive_sample_clean$adversativity, ref = "non-adversative")
 
-str(passive_sample_clean)
+passive_sample_without_unknown$subj_gender <- relevel(passive_sample_without_unknown$subj_gender, ref = "masculine")
+passive_sample_without_unknown$cluster <- relevel(passive_sample_without_unknown$cluster, ref = "neutral")
+passive_sample_without_unknown$adversativity <- relevel(passive_sample_without_unknown$adversativity, ref = "non-adversative")
+
+levels(passive_sample_clean$subj_gender)
+levels(passive_sample_without_unknown$subj_gender)
 ```
 
 ### Model selection: Maximum likelihood
@@ -1034,6 +1043,20 @@ passive_glmer <- glmer(
 summary(passive_glmer) #AIC: 785.1 
 tab_model(passive_glmer) # Marginal R2 / Conditional R2	0.598 / 0.746 // 0.704 / NA
 vif(passive_glmer)
+```
+
+```{r}
+passive_glmer_without_unknown <- glmer(
+    passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:cluster + subj_animacy:adversativity + cluster:adversativity) +
+               (1 | lemma) + (1 | speaker),
+    family = "binomial", 
+    data = passive_sample_without_unknown,
+    control = glmerControl(optimizer = "bobyqa")
+  )
+
+summary(passive_glmer_without_unknown) #AIC: 785.1 
+tab_model(passive_glmer_without_unknown) # Marginal R2 / Conditional R2	0.598 / 0.746 // 0.704 / NA
+vif(passive_glmer_without_unknown)
 ```
 
 random effects: variance of the speaker very very small (1.359e-13), does not need to be kept; variance of the lemma is bigger (1.917e) and should be kept.
@@ -1072,6 +1095,19 @@ model_2 <- glmer(
 summary(model_2) # AIC: 771.5 without level "mixed")
 tab_model(model_2) # Marginal R2 / Conditional R2 0.599 / 0.748 (slightly lower than model_1 but with fewer factors!)
 vif(model_2)
+```
+
+```{r}
+final_model_without_unknown <- glmer(
+    passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma),
+    family = "binomial", 
+    data = passive_sample_without_unknown,
+    control = glmerControl(optimizer = "bobyqa")
+  )
+
+summary(final_model_without_unknown)
+tab_model(final_model_without_unknown) 
+vif(final_model_without_unknown)
 ```
 
 significant effects in model_2 (final model?):

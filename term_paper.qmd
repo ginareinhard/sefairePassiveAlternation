@@ -26,7 +26,6 @@ p {
 }
 </style>
 ```
-
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -129,25 +128,23 @@ cat(paste(lemma_list, collapse = " | "))
 
 ### Structure and meaning
 
-The canonical passive with *être* in French inverts the syntactic functions of the arguments within a clause. The object of the active sentence becomes the subject in the passive voice - a phenomenon known as diathesis. In French, the subject usually occurs at the first position of the sentence, and the passive voice uses this syntactic priority to shift the focus and emphasise the undergoer over the agent.
+The canonical passive with *être* in French inverts the syntactic functions of the arguments within a clause. The object of the active sentence, i.e. the undergoer, becomes the subject in the passive voice - a phenomenon known as diathesis. In French, the subject usually appears in the first position of a sentence. The *être* passive uses this syntactically salient position to shift the focus away from the actor and towards the undergoer.
 
-Interpreting the passive **without** an agent: The passive allows the subject to be omitted, which generally has the effect of presenting the situation without specifying the cause or the individual who is responsible. The passif court the action or the result of the action. (GGF: 219)
+The French *être* passive construction consists of a form of the attributive verb *être* and the *participe passif* (passive participle), which is identical in form to the *participe passé* (past participle). Although other attributive verbs, such as *rester* and *sembler*, can also be used in passive constructions, they are less common. This term paper will focus specifically on the passive formed with *être*. In the passive construction, the subject of the active sentence becomes an adjunct phrase (*complément d'agent*), introduced by *par* or *de*, which can be omitted. The construction is referred to as *passif long* when a *complément d'agent* is present, and *passif court* when the agent is omitted [@abeille2021grande 210-211].
 
--   Unlike e.g. the causative construction, the passive takes only an affected entity as its subject (according to Labelle 2002) (se faire)
+For example, in the following sentences from our sample from the ParlaMint 2.1 corpus [@11356/1431], in (1) the agent *nos concitoyens* appears in the *complément d'agent* introduced by *par*, while in (2) the agent is omitted:
 
-The French passive construction consists of the *participe passif* (passive participle), which has the same form as the *participe passé* (past participle) and in most cases *être* as an **attributive** verb. In the passive construction, the subject of the active sentence becomes an adjunct phrase (*complément d'agent*, introduced by *par* or *de*), which can be omitted, while the active direct object takes the place of the subject (GGF 210-211). -\> examples?
+\(1\) *\[...\]* *ils sont élus par nos concitoyens au suffrage universel.\
+* '\[...\] they ar*'*e elected by our fellow citizens through universal suffrage.'
 
-We refer to a *passif long* if there is a complément d'agent (1), and a *passif court* in the other cases:
+\(2\) *Les députés sont élus pour contrôler votre action.\
+* 'The members of parliament are elected to monitor your actions.'
 
-\(1\) *\[...\]* *ils sont élus par nos concitoyens au suffrage universel.* (example from ParlaMint corpus)
+An impersonal passive (*passif impersonnel*) is also possible in French. With impersonal passives, the direct object can remain as a complement, as in *Il sera acheté un livre* (‘A book is bought’) [@abeille2021grande 210].
 
-\(2\) *Les députés sont élus pour contrôler votre action.* (example from ParlaMint corpus)
+Some grammars distinguish between a *passif verbal*, with an event interpretation, and an *passif adjectival*, with a resultative interpretation. According to *La grande grammaire du français* [@abeille2021grande], this is about semantic differences, concerning the aspect of the situation. With a state verb, active and passive sentences are generally semantically equivalent (Tout le monde aime Marie. / Marie est aimée de tout de monde.). With an event verb, expressing a change of state or place, the passive describes a change in the initial situation or the result of this change. In the passé composé, the sentences *On a servi la biere* and *La bière a été servi* appear to be equivalent. In the present tense, on the other hand, or in the imperfect tense, the active phrase (On sert la bière) may describe a situation in progress, and the passive phrase a resulting state (La bière est servi). In the passive, the presence of an agent complement can favour the interpretation of an event, with a present tense of habit (La bière est servi par le patron). The passive court without an agent generally has the effect of presenting the situation without specifying the cause or the individual who is responsible. Its semantic focus lies on the action or the result of the action. [@abeille2021grande 219].
 
-An impersonal passive (*passif impersonnel*) is also possible in French for some verbs without a complément direct (*Il a été ri de cette histoire.*). With impersonal passives, the direct object can remain as a complement, as in *Il sera acheté un livre* (‘A book is bought’) (GGF 210).
-
-Some grammars distinguish between a *passif verbal*, with an event interpretation, and an *passif adjectival*, with a resultative interpretation. For (GGF: 219), this is about semantic differences, concerning the aspect of the situation. With a state verb, active and passive sentences are generally semantically equivalent (Tout le monde aime Marie. / Marie est aimée de tout de monde.). With an event verb, expressing a change of state or place, the passive describes a change in the initial situation or the result of this change. In the passé composé, the sentences *On a servi la biere* and *La bière a été servi* appear to be equivalent. In the present tense, on the other hand, or in the imperfect tense, the active phrase (On sert la bière) may describe a situation in progress, and the passive phrase a resulting state (La bière est servi). In the passive, the presence of an agent complement can favour the interpretation of an event, with a present tense of habit (La bière est servi par le patron). (GGF: 219)
-
-The passive voice is relatively rare in French, accounting for only 5% of verbs in the French Treebank (FTB) (\@da_cunha_lalternance_2020), compared to 9% in English for the same text type (\@roland2007frequency). Overall, the passive voice is more frequently used in written French than in spoken French (\@da2022alternance). Approximately a quarter of passive constructions in the FTB are *passif long* (\@da_cunha_lalternance_2020), while in spoken French, this proportion drops to about 10% (source: Hamma). -\> frequency in our corpus?
+(The passive voice is relatively rare in French, accounting for only 5% of verbs in the French Treebank (FTB) (\@da_cunha_lalternance_2020), compared to 9% in English for the same text type (\@roland2007frequency). Overall, the passive voice is more frequently used in written French than in spoken French (\@da2022alternance). Approximately a quarter of passive constructions in the FTB are *passif long* (\@da_cunha_lalternance_2020), while in spoken French, this proportion drops to about 10% (source: Hamma). **-\> frequency in our corpus?**)
 
 ## *se faire* passive
 
@@ -158,7 +155,6 @@ The passive voice is relatively rare in French, accounting for only 5% of verbs 
 
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward -->
 ```
-
 ### Structure and meaning
 
 The *se faire* passive construction provides an alternative way to express passive meaning in French: When constructing a passive sentence, the French speaker may choose to use *se faire* instead of the canonical *être*: The two constructions form a passive alternation. Various scholars have examined the *se faire* passive, such as @bellec_construction_2014, @labelle_anticausativizing_2013, @koenig_semantic_1992, @kupferman_construction_1995, @raineri_analyse_2010, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987, to name a few.
@@ -285,7 +281,6 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
-
 ```{r lemma-list, include=FALSE}
 
 lemmas <- sefaire_sample |> 
@@ -527,7 +522,6 @@ As indicated above, the question whether the referent of the subject in the se f
 the PSF construction has a preference to mark the subject as an active participant (although according to @raineri_analyse_2010 [98] is is not "universally accepted" as some authors also name counterexamples @kupferman_construction_1995 [59].)
 In @raineri_analyse_2010 [95]'s view, the idea that the PSF expresses subject responsibility is the "most common hypothesis" ("l'hypothèse la plus répandue") in the literature. -->
 ```
-
 In line with their argument that the passive reading of se faire + INF is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of the se faire passive is always a causer and therefore always responsible to some degree. This is contrasted to the être passive's subject referent, which is see as more neutral. @gaatone_desagreable_1983 [164] distinguishes between an "active patient" in the se faire construction and a "passive patient" in the être passive (@raineri_analyse_2010 [96]).
 
 In contrast, @kupferman_construction_1995 [59] gives PSF examples where the subject cannot be interpreted as responsible, one of which is repeated here:

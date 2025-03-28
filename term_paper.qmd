@@ -1347,6 +1347,12 @@ ranef |>
 
 -   interaction animacy x gender: *personne* (feminine) occurs frequently in the sample
 
+A limitation of our study is that the lemmas were determined based on those occurring in *se faire* constructions, which may have influenced the analysis.
+
+The "modal" category in our study only includes modal verbs. Other similar constructions that express subject responsibility, such as *avoir besoin de*, *arriver à*, *réussir à*, *envier de*, *avoir des difficultés pour*, *avoir la possibilité de*, and *avoir envie de*, etc. could also be interesting to examine in future research.
+
+It could be valuable to examine the cases we excluded from our analysis to understand how they differ from genuine passive constructions. This would provide insight into the gray area where passive nuances are present, but no true alternation occurs, allowing for a closer examination of varying degrees of passivity.
+
 # Conclusion/Outlook
 
 -   Future studies: modality (spoken/written) as a factor (compare modalities), analyses on other modalities/varieties/registers
@@ -1354,11 +1360,5 @@ ranef |>
 -   se faire passive more likely in informal settings, être passive more likely in formal settings
 
 -   definiteness & pronominality of the subject
-
--   it might be interesting to look at the cases we excluded and see how they differ from real passive. (Grauzone: Passiv-Nuance, aber keine echte Alternation; Grade der Passivität untersuchen)
-
--   Limitation: Lemmas were determined by the lemmas occuring in se faire constructions
-
--   modal category only comprises modal verbs in our study, other similar constructions denoting subject responsibility could be interesting to examine (e.g. avoir besoin de, arriver à, réussir à, envier de, avoir des difficultés pour, avoir la possibilité de, avoir envie de, ...)
 
 # References

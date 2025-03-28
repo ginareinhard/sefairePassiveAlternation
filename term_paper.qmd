@@ -119,8 +119,9 @@ cat(paste(lemma_list, collapse = " | "))
 
 # Introduction
 
--   The construction se faire + infinitive has developed through analogy with the passive voice. While it originally had a causative meaning (the subject has an active influence), in certain cases it can take on a purely passive reading, i.e. it behaves passively as an alternative to être.
--   quantitative, multivariational, probabilistic approach / method of statistical modelling of corpus data
+The construction *se faire* + infinitive has evolved through analogy with the passive voice. Initially, it carried a causative meaning, where the subject had an active influence. However, in certain contexts, it can take on a purely passive interpretation, functioning as an alternative to the *être* passive construction.
+
+In this study, we apply a quantitative, multivariate, probabilistic approach to statistically model corpus data.
 
 # The French passive alternation of *être* and *se faire*
 

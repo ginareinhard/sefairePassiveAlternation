@@ -119,7 +119,9 @@ cat(paste(lemma_list, collapse = " | "))
 
 # Introduction
 
-The construction *se faire* + infinitive has evolved through analogy with the passive voice. Initially, it carried a causative meaning, where the subject had an active influence. However, in certain contexts, it can take on a purely passive interpretation, functioning as an alternative to the *être* passive construction.
+The French construction *se faire* + infinitive has evolved through analogy with the passive voice. Initially, it carried a causative meaning, where the subject had an active influence. However, in certain contexts, it can take on a purely passive interpretation, functioning as an alternative to the *être* passive construction.
+
+What factors influence the "se faire" vs. "être" passive alternation in spoken French (specifically: parliamentary debates)? In other words: what factors influence speakers' choice between the "se faire" and the "être" passive construction?
 
 In this study, we apply a quantitative, multivariate, probabilistic approach to statistically model corpus data.
 

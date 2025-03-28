@@ -1111,8 +1111,7 @@ ordering levels: by default alphabetical; reference level always the first, i.e.
 idea for reference levels: construct the most "standard" case: être passive, inanimate, unknown, modal: no, non-progressive, cluster: neutral, non-adversative ?
 
 ```{r reference-levels, include = FALSE}
-
-#change reference levels: "animate" to "inanimate", "communication" to "neutral", "adversative" to "non-adversative" (Levshina 2015: 78)
+#change reference levels: "animate" to "inanimate", "communication" to "neutral", "adversative" to "non-adversative"
 #passive_sample_clean$subj_animacy <- relevel(passive_sample_clean$subj_animacy, ref = "inanimate")
 passive_sample_clean$subj_gender <- relevel(passive_sample_clean$subj_gender, ref = "masculine")
 passive_sample_clean$cluster <- relevel(passive_sample_clean$cluster, ref = "neutral")
@@ -1325,7 +1324,11 @@ ggpredict(final_model_without_unknown, c("subj_animacy", "adversativity")) |>
 
 ```
 
-Interpretation of Subject Animacy × Adversativity: For animate subjects, *se faire* is highly likely to occur, regardless of whether the construction is adversative or not. In contrast, for inanimate subjects, adversative constructions are more frequently realised with *se faire*, while non-adversative constructions are less likely to appear with this form.
+If the subject is inanimate and non-adversative, the être passive is almost exclusively used and therefoee far more likely than the se faire passive.
+
+However, the likelihood of the se faire passive increases significantly when the construction has an adversative sense: In our study, se faire and être were equally likely for inanimate subjects and adversative contexts,.
+
+In contast, constructions with animate subjects show a strong preference for the se faire passive regardless of adversativity: The chance of se faire being used is high for both inadversative and adversative contexts (and increases a litte but more for adversative contexts, but not significantly).
 
 **Random intercepts**
 

@@ -26,6 +26,7 @@ p {
 }
 </style>
 ```
+
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -157,6 +158,7 @@ The passive voice is relatively rare in French, accounting for only 5% of verbs 
 
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward -->
 ```
+
 ### Structure and meaning
 
 The *se faire* passive construction provides an alternative way to express passive meaning in French: When constructing a passive sentence, the French speaker may choose to use *se faire* instead of the canonical *être*: The two constructions form a passive alternation. Various scholars have examined the *se faire* passive, such as @bellec_construction_2014, @labelle_anticausativizing_2013, @koenig_semantic_1992, @kupferman_construction_1995, @raineri_analyse_2010, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987, to name a few.
@@ -222,19 +224,19 @@ This debate has been central to the investigation of the se faire constructions 
 
 ## *être* and *se faire*: Competition or complementation? - Defining the variable context
 
-Both se faire + Vinf and être + Vé are available for the active diathesis [@novakova_construction_2009 [108]] and assign the role of an undergoer to the subject NP. However, as @novakova_construction_2009 [108] notes, the constructions differ in semantic nuances: "Elles ont un sens proche mais pas identique." Thus, they are not semantically identical but rather potentially carry different meanings that may be more or less pronounced depending on the context: Previous research suggests that se faire passive is more likely to have a causative undertone while the être passive is more neutral - possibility of a continuum/ passive gradient. However, this is what makes the analysis interesting and our research worthwhile - what are the exact factors that influence the choice between the the two variants?
-
-According to @raineri_analyse_2010 [87], the se faire passive is "une tournure marquée, sémantiquement contrainte et associée à des types de discours oraux et/ou informels ("marked, semantically constrained phrase associated with oral and/or informal discourse").
-
-The two passive variants may also be used in the same sentence:
+Both se faire and être passives are available for the active diathesis [@novakova_construction_2009 [108]] and assign the role of the undergoer to the subject referent. However, as @novakova_construction_2009 [108] notes, the constructions differ in semantic nuances: "Elles ont un sens proche mais pas identique." Both variants may be used in the same context/ sentence:
 
 *Je remarque d'' ailleurs que ce sont souvent ceux qui filment qui se font éborgner ou sont blessés par des tirs de LBD.*
 
 "Incidentally, I've noticed that it's often those filming **who get their eyes poked** out or **are injured** by LBD fire."
 
-This introduces certain difficulties: The passive/ causative continuum discussed in @sec-debate makes the definition of the variable context particularly challenging as some constructions may be more passive than others - where to draw the line?
+According to @raineri_analyse_2010 [87], the se faire passive is "une tournure marquée, sémantiquement contrainte et associée à des types de discours oraux et/ou informels ("marked, semantically constrained phrase associated with oral and/or informal discourse").
 
-@bohmann_large-scale_2023 [35] face similar challenges when defining the variable context of the be and get passive: "passive gradient" exist where both GET and BE may be used, but where the choice between the two entails a semantic difference", "definition of the variable context is not just a problem of automation, but of linguistic interpretation" \[36\]. Follow
+This demonstrates that the two passive variants are not semantically identical but rather potentially carry different meanings that may be more or less pronounced depending on the context: Previous research suggests that se faire passive is more likely to have a causative undertone while the être passive is more neutral. it has been proposed that constructions vary in their passivity ( "passive gradient", @bohmann_large-scale_2023 [34])) and that there is a continuum between causatity and passivity. However, this is what makes the analysis interesting and our research worthwhile - what are the exact factors that influence the choice between the the two variants?
+
+This introduces certain difficulties: The passive/ causative continuum discussed in @sec-debate makes the definition of the variable context particularly challenging as some constructions may be more passive than others - Deciding where to draw the line between a passive and causative construction is a nuanced task.
+
+@bohmann_large-scale_2023 [35] face similar challenges when defining the variable context of the be and get passive: "passive gradient" exist where both GET and BE may be used, but where the choice between the two entails a semantic difference", "definition of the variable context is not just a problem of automation, but of linguistic interpretation" \[36\].
 
 Since our aim is to investigate the passive alternation of être and se faire, it is important to ensure that we only compare the être passive with real passive se faire constructions, and not with causative constructions (@bohmann_large-scale_2023 [35]: "all extracted forms should be genuine instances of the variable under investigation").
 
@@ -283,6 +285,7 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
+
 ```{r lemma-list, include=FALSE}
 
 lemmas <- sefaire_sample |> 
@@ -524,6 +527,7 @@ As indicated above, the question whether the referent of the subject in the se f
 the PSF construction has a preference to mark the subject as an active participant (although according to @raineri_analyse_2010 [98] is is not "universally accepted" as some authors also name counterexamples @kupferman_construction_1995 [59].)
 In @raineri_analyse_2010 [95]'s view, the idea that the PSF expresses subject responsibility is the "most common hypothesis" ("l'hypothèse la plus répandue") in the literature. -->
 ```
+
 In line with their argument that the passive reading of se faire + INF is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of the se faire passive is always a causer and therefore always responsible to some degree. This is contrasted to the être passive's subject referent, which is see as more neutral. @gaatone_desagreable_1983 [164] distinguishes between an "active patient" in the se faire construction and a "passive patient" in the être passive (@raineri_analyse_2010 [96]).
 
 In contrast, @kupferman_construction_1995 [59] gives PSF examples where the subject cannot be interpreted as responsible, one of which is repeated here:
@@ -626,7 +630,7 @@ We expect this effect to hold for the *se faire* passive as well. Even though bo
 
 As shown in @fig-clusters in the study by @da2022alternance the preference for active constructions was not statistically significant for location verbs, while the probability of communication verbs occurring in the active was significantly higher. Some classes showed no clear effect on passive frequency, with approximately equal distributions of active and passive forms (e.g. verbs of perception, cognition, psychological states, behaviour, movement and transfer). Locative and communicative verbs, on the other hand, appeared more frequently in the active voice.
 
-![Frequencies of active and passive constructions across verb clusters (@da2022alternance)](images/clusters_dacunha-abeillé.png){#fig-clusters alt="Frequency of active and passive constructions for the verb clusters" fig-align="center" width="480"}
+![Frequency of active and passive constructions for the verb clusters](images/clusters_dacunha-abeillé.png){#fig-clusters fig-align="center" width="480"}
 
 One possible explanation for this tendency is verbal disposition? (**Stallings, MacDonald & O'Seaghdha 1998**). According to this hypothesis, verbs show a preference for certain syntactic constructions that speakers store in their mental lexicon. Communicative verbs often occur with object clauses, which rarely function as subjects. Since the active voice allows these verbs to maintain a direct object, they naturally favour active constructions over passive ones. A similar argument was made by **Thuilier (2012)** in relation to communicative verbs and postverbal complements. Moreover, communicative verbs often involve an animate or human argument, which tends to be encoded as the subject in active constructions.
 

@@ -131,7 +131,7 @@ In this study, we apply a quantitative, multivariate, probabilistic approach to 
 
 ### Structure and meaning
 
-The canonical passive with *être* in French inverts the syntactic functions of the arguments within a clause. The object of the active sentence, i.e. the undergoer, becomes the subject in the passive voice - a phenomenon known as diathesis. In French, the subject usually appears in the first position of a sentence. The *être* passive uses this syntactically salient position to shift the focus away from the actor and towards the undergoer.
+The canonical passive with *être* in French inverts the syntactic functions of the arguments within a clause. The object of the active sentence, i.e. the undergoer, becomes the subject in the passive voice - a phenomenon known as diathesis. In French, the subject usually appears in the first position of a sentence. The *être* passive uses the topicalisation to shift the focus away from the actor and towards the undergoer.
 
 The French *être* passive construction consists of a form of the attributive verb *être* and the *participe passif* (passive participle), which is identical in form to the *participe passé* (past participle). Although other attributive verbs, such as *rester* and *sembler*, can also be used in passive constructions, they are less common. This term paper will focus specifically on the passive formed with *être*. In the passive construction, the subject of the active sentence becomes an adjunct phrase (*complément d'agent*), introduced by *par* or *de*, which can be omitted. The construction is referred to as *passif long* when a *complément d'agent* is present, and *passif court* when the agent is omitted [@abeille2021grande 210-211].
 

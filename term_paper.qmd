@@ -179,13 +179,13 @@ The *se faire* passive construction provides an alternative way to express passi
 
 The *se faire* passive construction consists of the pronoun *se* (which shows agreement with the subject), a form of the verb *faire* ("to do"), and a verb in the infinitive.
 
-\(3\) *Des policiers se font agresser.* (ParlaMint corpus)\
-"Police officers were attacked/ have been attacked."
+> 3.  *Des policiers se font agresser.* (ParlaMint corpus)\
+>     "Police officers were/ have been attacked."
 
 Similar to the être passive, the direct object of the active sentence becomes the subject of the passive sentence. This subject is the affected experiencer of the action described (compare to example above). Unlike the être passive, however, the diathesis is not restricted to the direct object: The PSF has "greater syntactic flexibility" (@raineri_analyse_2010 [93-95]) and can also occur with ditransitive verbs, where the indirect object becomes the subject:
 
-\(4\) *Les intéressés peuvent se faire expliquer tout ce qui touche aux retraites.* (ParlaMint corpus)*\
-*"Interested parties can have everything related to pensions explained to them."
+> 4.  *Les intéressés peuvent se faire expliquer tout ce qui touche aux retraites.* (ParlaMint corpus)\
+>     "Interested parties can have everything related to pensions explained to them."
 
 The *se faire* passive also allows possessor constructions, where the subject of the passive corresponds to part of the object in the active sentence:
 
@@ -261,7 +261,7 @@ We follow @raineri_analyse_2010 \[165\] in including only *se faire* constructio
 
 As described above, the canonical passive with être requires a direct object in the active equivalent which becomes the new subject (@koenig_semantic_1992 \[144\], @washio_when_1993, @labelle_anticausativizing_2013 [16]). Thus, for reflexive and ditransitive verbs, the être passive is not available and does not compete with se faire. These constructions will be excluded and only transitive verbs will be studied. Similarly, some verb participles and adjectives in French are structurally identical.
 
-We recognize this "fuzzy" (@bohmann_large-scale_2023 [50]) variable context as both a challenge and a chance: It is exactly these subtle differences that make the analysis interesting and our research worthwhile. In our study, we therefore aim to examine the exact factors that influence the choice between the the two variants by statistixally modeling real language data.
+We recognize this "fuzzy" (@bohmann_large-scale_2023 [50]) variable context as both a challenge and a chance: It is exactly these subtle differences that make the analysis interesting and our research worthwhile. In our study, we therefore aim to examine the exact factors that influence the choice between the the two variants by statistically modeling real language data.
 
 <!-- être: exclude adjectives and some participles that do not form the passive (similar to @bohmann_large-scale_2023 [36])/ "instances that allow for gradation" @hundt_be-_2024 [92];; Maybe better in Borderline cases/ filtering criteria) -->
 
@@ -1198,9 +1198,12 @@ levels(passive_sample_unknown$subj_gender)
 
 ### Model selection: Maximum likelihood
 
-Function following @gries_statistics_2021 [442]
+::: {.panel-tabset}
 
-```{r full-passive-glmer, include = FALSE}
+## Full Model 
+Function following @gries_statistics_2021 [442]
+```{r full-passive-glmer, output = FALSE}
+#| code-fold: true
 full_passive_glmer <- glmer(
     passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:cluster + subj_animacy:adversativity + cluster:adversativity) +
                (1 | lemma) + (1 | speaker),
@@ -1209,53 +1212,51 @@ full_passive_glmer <- glmer(
     control = glmerControl(optimizer = "bobyqa")
   )
 
-summary(full_passive_glmer) #AIC: 785.1
+summary(full_passive_glmer) #AIC: 732.5
 vif(full_passive_glmer)
 ```
-
 ```{r full-passive-glmer-tab, echo = FALSE}
-tab_model(full_passive_glmer) # Marginal R2 / Conditional R2	0.598 / 0.746 // 0.704 / NA
+tab_model(full_passive_glmer)
 ```
 
-random effects: variance of the speaker very very small (1.359e-13), does not need to be kept; variance of the lemma is bigger (1.917e) and should be kept.
+## Model Back-1
+Removing non-significant interactions (cluster:adversativity, subj_animacy:cluster, subj_animacy:subj_gender):
 
-significant effects:
-
--   main effects: (subj gender\[unknown\]); cluster\[hitting-touching\]; cluster\[neutral\]
-
--   interactions: subj animacy \[inanimate\]× subj gender \[unknown\]; **subj animacy \[inanimate\]\
-    × adversativity \[non-adversative\]**
-
-removing non-significant interactions (cluster:adversativity, subj_animacy:cluster, subj_animacy:subj_gender):
-
-```{r model-1, include = FALSE}
-model_1 <- glmer(
+```{r model-back-1, output = FALSE}
+#| code-fold: true
+model_back_1 <- glmer(
     passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma) + (1 | speaker),
     family = "binomial",
     data = passive_sample_clean,
     control = glmerControl(optimizer = "bobyqa")
   )
 
-summary(model_1) #AIC: 776.8(higher i.e. slightly worse?)
-tab_model(model_1) # Marginal R2 / Conditional R2	0.601 / 0.750 (minimally higher, i.e. slightly better?)
+summary(model_back_1) #AIC: 725.4
+```
+```{r model-back-1-tab, echo = FALSE}
+tab_model(model_back_1)
 ```
 
+## Final Model
 removing non-significant fixed effects (agent_pp, modal, tam, subj_gender)
-
-```{r final-model, echo = FALSE}
+```{r final-model, output = FALSE}
+#| code-fold: true
 final_model <- glmer(
     passive_variant ~ (subj_animacy + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma) + (1 | speaker),
     family = "binomial",
     data = passive_sample_clean,
     control = glmerControl(optimizer = "bobyqa")
   )
-
 summary(final_model) # AIC: 718.6 
-tab_model(final_model) # Marginal R2 / Conditional R2	0.445 / 0.660
 vif(final_model)
 ```
+```{r final-model-tab, echo = FALSE}
+tab_model(final_model) # Marginal R2 / Conditional R2	0.445 / 0.660
+```
 
-Intercept: 2.97; meaning: chances of se faire are 2.073421 times greater than être given this context
+:::
+
+Intercept: 2.97; meaning: chances of se faire are 2.97 times greater than être given this context (animate subject, neutral verb, adversative sense)
 
 coefficients: if positive, level boosts the chance of se faire (decreases chance of être)
 
@@ -1398,7 +1399,7 @@ It could be valuable to examine the cases we excluded from our analysis to under
 
 # Appendix {.appendix}
 
-## Models {.appendix}
+## Alternative models {.appendix}
 
 ```{r model-with-unknown, include = FALSE}
 passive_glmer_unknown <- glmer(

@@ -26,6 +26,7 @@ p {
 }
 </style>
 ```
+
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -171,6 +172,7 @@ Some grammars distinguish between a *passif verbal*, with an event interpretatio
 
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward -->
 ```
+
 ### Structure and meaning
 
 The *se faire* passive construction provides an alternative way to express passive meaning in French: When constructing a passive sentence, the French speaker may choose to use *se faire* instead of the canonical *être*: The two constructions form a passive alternation. Various scholars have examined the *se faire* passive, such as @bellec_construction_2014, @labelle_anticausativizing_2013, @koenig_semantic_1992, @kupferman_construction_1995, @raineri_analyse_2010, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987, to name a few.
@@ -299,6 +301,7 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
+
 ```{r lemma-list, include=FALSE}
 
 lemmas <- sefaire_sample |> 
@@ -553,6 +556,7 @@ As indicated above, the question whether the referent of the subject in the se f
 the PSF construction has a preference to mark the subject as an active participant (although according to @raineri_analyse_2010 [98] is is not "universally accepted" as some authors also name counterexamples @kupferman_construction_1995 [59].)
 In @raineri_analyse_2010 [95]'s view, the idea that the PSF expresses subject responsibility is the "most common hypothesis" ("l'hypothèse la plus répandue") in the literature. -->
 ```
+
 In line with their argument that the passive reading of se faire + INF is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of the se faire passive is always a causer and therefore always responsible to some degree. This is contrasted to the être passive's subject referent, which is see as more neutral. @gaatone_desagreable_1983 [164] distinguishes between an "active patient" in the se faire construction and a "passive patient" in the être passive (@raineri_analyse_2010 [96]).
 
 In contrast, @kupferman_construction_1995 [59] gives PSF examples where the subject cannot be interpreted as responsible, one of which is repeated here:
@@ -603,41 +607,41 @@ The *complément d'agent* introduces an external agent into the passive construc
 
 The *complément d'agent* is optional. It is usually formed with *par*, sometimes also with *de*, and even more rarely with *dans*. We do not consider the special case with *dans* in our analysis. Semantically, the *complément d'agent* does not always refer to an agent. Verbs where the subject is an infinitive or a subordinate clause as well as certain state verbs occur with *de* in the passive voice. With a nominal subject, the passive with *de* is a remnant of Classical French and is therefore very rare, affecting only 2% of cases. In most cases, *de* alternates with *par* in contemporary French, although some verbs, such as *constituer*, naturally prefer *de*. For verbs like *aider*, a human *complément d’agent* is more natural than an abstract one. The verbs that allow this construction are often state verbs but belong to different semantic classes **(examples to be provided in** @tbl-X**?****)**. The choice between *par* and *de* is not always interchangeable in meaning. For example, with the verb *accompagner*, a *complément d’agent* with *par* implies a more active role of the argument than with *de*. *de* is generally associated with non-dynamic, static, or non-agentive interpretations[@abeille2021grande 216-218].
 
-+-----------------------------------------------------------------------------------------------+----------+
-| Verbs                                                                                         | Examples |
-+===============================================================================================+==========+
-| d'accompagnement:                                                                             |          |
-|                                                                                               |          |
-| *accompagner*, *escorter*                                                                     |          |
-+-----------------------------------------------------------------------------------------------+----------+
-| d'assistance:                                                                                 |          |
-|                                                                                               |          |
-| *aider*, *appuyer*, *assister*, *seconder*                                                    |          |
-+-----------------------------------------------------------------------------------------------+----------+
-| donnant la composition d'un groupe:                                                           |          |
-|                                                                                               |          |
-| *composer*, *constituer*, *former*                                                            |          |
-+-----------------------------------------------------------------------------------------------+----------+
-| instrumentaux:                                                                                |          |
-|                                                                                               |          |
-| *entourer*, *recouvrir*                                                                       |          |
-+-----------------------------------------------------------------------------------------------+----------+
-| de localisation:                                                                              |          |
-|                                                                                               |          |
-| *précéder*, *suivre*                                                                          |          |
-+-----------------------------------------------------------------------------------------------+----------+
-| d'opinion ou d'activité intellectuelle:                                                       |          |
-|                                                                                               |          |
-| *admettre*, *approuver*, *comprendre*, *connaitre*, *rejeter*, *tolérer*                      |          |
-+-----------------------------------------------------------------------------------------------+----------+
-| de perception:                                                                                |          |
-|                                                                                               |          |
-| *écouter*, *entendre*, *voir*                                                                 |          |
-+-----------------------------------------------------------------------------------------------+----------+
-| de sentiment:                                                                                 |          |
-|                                                                                               |          |
-| *aimer*, *apprécier*, *craindre*, *détester*, *envier*, *inquiéter*, *mépriser*, *surprendre* |          |
-+-----------------------------------------------------------------------------------------------+----------+
++-----------------------------------------------------------------------------------------------+-----------+
+| Verbs                                                                                         | Examples  |
++===============================================================================================+===========+
+| d'accompagnement:                                                                             |           |
+|                                                                                               |           |
+| *accompagner*, *escorter*                                                                     |           |
++-----------------------------------------------------------------------------------------------+-----------+
+| d'assistance:                                                                                 |           |
+|                                                                                               |           |
+| *aider*, *appuyer*, *assister*, *seconder*                                                    |           |
++-----------------------------------------------------------------------------------------------+-----------+
+| donnant la composition d'un groupe:                                                           |           |
+|                                                                                               |           |
+| *composer*, *constituer*, *former*                                                            |           |
++-----------------------------------------------------------------------------------------------+-----------+
+| instrumentaux:                                                                                |           |
+|                                                                                               |           |
+| *entourer*, *recouvrir*                                                                       |           |
++-----------------------------------------------------------------------------------------------+-----------+
+| de localisation:                                                                              |           |
+|                                                                                               |           |
+| *précéder*, *suivre*                                                                          |           |
++-----------------------------------------------------------------------------------------------+-----------+
+| d'opinion ou d'activité intellectuelle:                                                       |           |
+|                                                                                               |           |
+| *admettre*, *approuver*, *comprendre*, *connaitre*, *rejeter*, *tolérer*                      |           |
++-----------------------------------------------------------------------------------------------+-----------+
+| de perception:                                                                                |           |
+|                                                                                               |           |
+| *écouter*, *entendre*, *voir*                                                                 |           |
++-----------------------------------------------------------------------------------------------+-----------+
+| de sentiment:                                                                                 |           |
+|                                                                                               |           |
+| *aimer*, *apprécier*, *craindre*, *détester*, *envier*, *inquiéter*, *mépriser*, *surprendre* |           |
++-----------------------------------------------------------------------------------------------+-----------+
 
 : main verbs with de passive (GGF 217)
 
@@ -1180,10 +1184,10 @@ Levels are by default ordered alphabetically. We change the reference levels to 
 
 ```{r reference-levels, include = FALSE}
 #change reference levels: "animate" to "inanimate", "communication" to "neutral", "adversative" to "non-adversative"
-passive_sample_clean$subj_animacy <- relevel(passive_sample_clean$subj_animacy, ref = "inanimate")
+#passive_sample_clean$subj_animacy <- relevel(passive_sample_clean$subj_animacy, ref = "inanimate")
 passive_sample_clean$subj_gender <- relevel(passive_sample_clean$subj_gender, ref = "masculine")
 passive_sample_clean$cluster <- relevel(passive_sample_clean$cluster, ref = "neutral")
-passive_sample_clean$adversativity <- relevel(passive_sample_clean$adversativity, ref = "non-adversative")
+#passive_sample_clean$adversativity <- relevel(passive_sample_clean$adversativity, ref = "non-adversative")
 
 passive_sample_unknown$subj_gender <- relevel(passive_sample_unknown$subj_gender, ref = "masculine")
 passive_sample_unknown$subj_animacy <- relevel(passive_sample_unknown$subj_animacy, ref = "inanimate")
@@ -1225,11 +1229,11 @@ significant effects:
 -   interactions: subj animacy \[inanimate\]× subj gender \[unknown\]; **subj animacy \[inanimate\]\
     × adversativity \[non-adversative\]**
 
-removing non-significant interactions (cluster:adversativity, subj_animacy:cluster, subj_animacy:subj_gender) and random effect of speaker:
+removing non-significant interactions (cluster:adversativity, subj_animacy:cluster, subj_animacy:subj_gender):
 
 ```{r model-1, include = FALSE}
 model_1 <- glmer(
-    passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma),
+    passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma) + (1 | speaker),
     family = "binomial",
     data = passive_sample_clean,
     control = glmerControl(optimizer = "bobyqa")
@@ -1243,7 +1247,7 @@ removing non-significant fixed effects (agent_pp, modal, tam, subj_gender)
 
 ```{r final-model, echo = FALSE}
 final_model <- glmer(
-    passive_variant ~ (subj_animacy + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma),
+    passive_variant ~ (subj_animacy + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma) + (1 | speaker),
     family = "binomial",
     data = passive_sample_clean,
     control = glmerControl(optimizer = "bobyqa")
@@ -1270,10 +1274,11 @@ significant effects in final_model_without_unknown (final model?):
 
 ```{r concordance-index}
 #model_2
-Hmisc::somers2(
-  predict(final_model), as.numeric(passive_sample_clean$passive_variant)-1
-)["C"] 
-# C 0.9388979 - pretty good I think? "outstanding discrimination" according to Hosmer & Lemeshow (2000: 162) in Levshina (2015: 259)
+predictions <- predict(final_model, type = "response", na.action = na.omit)
+outcome <- as.numeric(na.omit(passive_sample_clean)$passive_variant) - 1
+
+Hmisc::somers2(predictions, outcome)["C"]
+# C 0.9414132 - pretty good I think? "outstanding discrimination" according to Hosmer & Lemeshow (2000: 162) in Levshina (2015: 259)
 ```
 
 ```{r coefficients, include=FALSE}
@@ -1292,7 +1297,7 @@ exp(model_2_coef)
 overall significance test for the model by comparing 0 model to full model and use an anova between those @gries_statistics_2021 [445-446]
 
 ```{r model2-significance, echo = FALSE}
-null_model <- glmer(passive_variant ~ 1 + (1|lemma), data = passive_sample_clean, family = binomial)
+null_model <- glmer(passive_variant ~ 1 + (1 | lemma) + (1 | speaker), data = passive_sample_clean, family = binomial)
 
 anova(final_model, null_model, test="Chisq")
 #highly significant!!
@@ -1396,7 +1401,7 @@ It could be valuable to examine the cases we excluded from our analysis to under
 
 # Appendix {.appendix}
 
-# Models {.appendix}
+## Models {.appendix}
 
 ```{r model-with-unknown, include = FALSE}
 passive_glmer_unknown <- glmer(

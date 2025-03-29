@@ -165,13 +165,13 @@ Some grammars distinguish between a *passif verbal*, with an event interpretatio
 
 ## *se faire* passive
 
-```{=html}
-<!-- ### Historical background
+
+<!--  Historical background
 
 @bellec_grammaticalisation_2015 and @bellec_quand_2014 date the se faire + INF passive construction (PSF) to the middle of the 20th century and call it a "modern" construction that has since experienced a rapid increase in popularity. She describes a process of grammaticalisation and reanalysis for the PSF during/through which “se” has lost its reflexive meaning and “faire” has become an auxiliary. In merging, they form a “semi-auxiliary” and obtain a passive interpretation, while the causative meaning is lost (désémantisation). However, @bellec_construction_2014 claims that the causative reading did not disappear but instead coexists with the passive reading (debated, see below).
 
--   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward -->
-```
+-   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward 
+-   se faire passive "typologically marked", comparison to other Romance languages @koenig_semantic_1992 \[145\]; similar constructions exist in other Romance languages but passive reading only allowed in French @labelle_anticausativizing_2013 [236] -->
 
 ### Structure and meaning
 
@@ -206,7 +206,7 @@ These accounts offer only a brief glimpse into the analysis of the *se faire* co
 
 The following @sec-debate will explore the controversial issues surrounding the passive reading, including its distinction from the syntactically identical causative reading.
 
-### Passive vs. causative - Debate of the construction's passive-status {#sec-debate}
+### Passive vs. causative: debate of the passive status debated {#sec-debate}
 
 The above-described stance taken by @bellec_construction_2014, @labelle_anticausativizing_2013, @koenig_semantic_1992 and @kupferman_construction_1995 that the PSF is a full-fledged passive construction is by no means undisputed. The opposing view - that the construction is a type of causative - is also widely represented in the literature.
 
@@ -238,7 +238,8 @@ Thus, causative and passive readings of the se faire construction are distinguis
 
 This debate has been central to the investigation of the se faire constructions and cannot be left aside. However, even if the status of the PSF has been the subject of disagreement and discussion, the literature clearly shows that there is a passive reading associated with this construction. This is independent of whether the passive sense emerges from within the construction or from the components it occurs with, or whether it has an underlying causative meaning. By comparing *se faire* and *être* constructions, and examining the factors contributing to the choice of one or the other, we may be able to shed light on this debate from a corpuslinguistic perspective. <!-- (-> exclude causative readings?). Can our findings contribute to the debate of whether se faire deserves passive-status? If not: no need to spell out the debate in detail. -->
 
-## *être* and *se faire*: Competition or complementation? - Defining the variable context
+## *être* and *se faire*: competition or complementation? 
+### Defining the variable context
 
 Both se faire and être passives are available for the active diathesis [@novakova_construction_2009 [108]] and assign the role of the undergoer to the subject referent. @kupferman_construction_1995 sees the two constructions as semantically synonymous as they both convey a passive sense. Therefore, the two variants form an alternation and are expected to compete with each other in contexts where passive needs to be expressed. We find that both variants may be used in the same context/ sentence:
 
@@ -264,279 +265,6 @@ As described above, the canonical passive with être requires a direct object in
 We recognize this "fuzzy" (@bohmann_large-scale_2023 [50]) variable context as both a challenge and a chance: It is exactly these subtle differences that make the analysis interesting and our research worthwhile. In our study, we therefore aim to examine the exact factors that influence the choice between the the two variants by statistically modeling real language data.
 
 <!-- être: exclude adjectives and some participles that do not form the passive (similar to @bohmann_large-scale_2023 [36])/ "instances that allow for gradation" @hundt_be-_2024 [92];; Maybe better in Borderline cases/ filtering criteria) -->
-
-### Maybe: Comparison to similar alternations in other languages
-
--   English @bohmann_large-scale_2023, East Asian languages @washio_when_1993 and @guan_multifactorial_2024 , Swedish @cuypere_corpus-based_2014
--   se faire passive "typologically marked", comparison to other Romance languages @koenig_semantic_1992 \[145\]; similar constructions exist in other Romance languages but passive reading only allowed in French @labelle_anticausativizing_2013 [236]
-
-# Data and Methods
-
-## Data Collection
-
-### Corpus
-
-In our investigation of spoken French language, we aimed to select a corpus that represents authentic French spoken language. After thorough consideration and exploration of our options, we decided for the French ParlaMint corpus [@11356/1431]. ParlaMint consists of French parliamentary debates from 2017 to 2020 and contains 38,702,395 tokens (32,214,147 words). We chose this corpus because it is well-documented, POS-tagged and contains rich meta data.
-
-We recognize that the genre of parliamentary debates is quite specialised and our results therefore cannot be generalized to all French spoken language. However, the language of parliamentary debates is a fascinating genre in itself (studied before: references) and is expected to reflect a wide range of topics, thus providing a cross-section of language varieties as they occur in French speech.
-
-We extracted the concordances from the French ParlaMint corpus [@11356/1431] using a CQL expression in SketchEngine. To extract the data we chose a semi-automatic approach that included manual filtering.
-
--   We selected an equal number of occurrences of *être* passive and *se faire* passive.
-    -   We made a list of the lemmas in the se faire constructions → used these lemmas to filter the être constructions
-
-    -   Exclusion of causative reading of se faire constructions: the same verbs have been used with être passive in the same corpus (find/extract the constructions) → depends on how many constructions we have left
--   We have not taken into account impersonal passives (*example from corpus*)
--   être passive: In their active/passive alternation study @da_cunha_lalternance_2020 only chose passive sentences in the compound past tense "NP a été VP" in order to favour verbal passives over adjectival passives (*La porte est ouverte*). However, we chose to include the present tense/all tenses. This decision was based on previous literature suggesting that the present tense favors *se faire* passive over *être* passive, making tense an important factor in our study.
--   In line with @da_cunha_lalternance_2020 we chose complément d'agents introduced by the preposition *par*, avoiding additional variation caused by *de*.
-
-```{=html}
-<!-- problem: data are extremely unbalanced (ratio in ParlaMint être vs. se faire: ) -\> making the ratio 50: 50 would distort the reality significantly but if the ratio is kept the model will almost always predict être
-strategy possibilities:
-    -   build a corpus where être is presented more than se faire but not as extreme (approximation, e.g. 40% se faire - 60% etre) ("over/undersampling within limits")
-    -   assign more weight to se faire constructions by "weights=" variable of glm function
-    -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
-    -   evaluate with precision & recall, not just accuracy (F1-score) -->
-```
-
-```{r lemma-list, include=FALSE}
-
-lemmas <- sefaire_sample |> 
-  count(lemma)
-
-```
-
-### Semi-automated approach
-
-we opted for a balanced sample containing as many se faire as être passives (numbers and characteristics)
-
-**se faire passive**
-
-We automatically extracted a sample of 1,254 *se faire* + infinitive constructions from the ParlaMint 2.0 corpus on Sketch Engine \[source?\] using a CQL expression. After extraction, we manually filtered the data to exclude false-positive constructions (i.e. constructions that were not *se faire* + infinitive constructions) and those that did not fulfil our predefined criteria for *se faire* passives (see below). The final sample comprised 535 \[count with inline code\] *se faire* passives. We then annotated the lemmas of these constructions and relevant linguistic features, such as verb form, subject animacy and grammatical gender, in order to prepare the data for statistical modelling.
-
-**être passive**
-
--   extract être passive constructions with CQL expression
--   In Sketch Engine: Import Word List → lemma list extracted from se faire constructions (for comparability of the constructions, making sure that differences between être and se faire are not due to individual differences of the verb) → Filter out only verb lemmas of se faire from concordance lines → download
-
-**determine sample by setting a seed**
-
--   seed determined by future lottery numbers (12.3.2025, <https://www.lotto.de/lotto-6aus49/lottozahlen>) → function set.seed( ) in R
--   take a random sample from the concordance lines that is equal in size to the manually filtered amount of se faire constructions
--   final sample: same amount of constructions for être and se faire, same lemmas, seed set
--   Our sample therefore comprises XXX sentences/constructions: XX se faire and XX être passive, ... (short summary)
-
-### Borderline cases/ Manual filtering exclusion criteria
-
-As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + infinitive can sometimes have a 'passive effect' even without a direct 1:1 alternation with *être*. However, for our study of *se faire* + Infinitive and *être* + past participle as a passive alternation, our main criterion was to include only those constructions that could be paraphrased with the *être* passive. Consequently, we excluded expressions that could not be rephrased with the *être* passive, either because the *être* construction was ungrammatical or the meaning was fundamentally altered.
-
-A typical example of a construcion that met our criterion is:
-
-*Il s’est fait insulter par son collègue.* (“He was insulted by his colleague.”) \[eigenes Beispiel ersetzen\]
-
-*Il a été insulté par son collègue.* (“He was insulted by his colleague.”) \[eigenes Beispiel ersetzen\]
-
-By contrast, expressions such as *se faire connaître* were excluded. For instance:
-
-*Il s’est fait connaître grâce à ses romans.* (“He became known through his novels.”) \[eigenes Beispiel ersetzen\]
-
-is acceptable, but
-
-*\*Il a été connu grâce à ses romans.* \[eigenes Beispiel ersetzen\]
-
-is unusual, as *être connu* does not carry the same meaning.
-
-However, our somewhat "fuzzy" definition of what constitutes a passive alternation [@bohmann_large-scale_2023] posed some challenges: We excluded purely causative constructions, but the distinction between causative and passive was sometimes unclear. When is a construction semantically similar enough, and when is its meaning too causative? As expected, given the extensive debate on PSF's passive status (@sec-debate) and the challenges reported by @bohmann_large-scale_2023 in their investigation of the English *be*/*get* passive alternation, we came across a significant number of "unclear" cases during the manual filtering of *se faire* constructions.
-
-(This approach is also supported by linguistic analyses that suggest a continuum between causative and passive meanings in *se faire* constructions. that is, *se faire* constructions can switch between passive and causative interpretations depending on the context. The flexibility of this construction suggests that a strict binary classification is inappropriate and reinforces the idea of a causal/passive continuum - at one pole a reduced agentivity of the subject's referent - rather than a rigid distinction. @raineri_analyse_2010 pp. 154ff)
-
-(If the action of the subject is reduced to mere initiation (\[+ déclenchement\]), the se faire construction can be completely paraphrased with an être passive without changing the content of the sentence. For example, *Il se fait remarquer par une patrouille de police* (“He is noticed by a police patrol”) and Il est remarqué par une patrouille de police (“He is noticed by a police patrol”) show an extensive equivalence between se faire and être. Similarly, the other elements in the co-text of *élire* examples weakens the causative strength and strengthens the passive effect. -\> agentivité **variable** / passive-causative continuum with *élire* depending on context @raineri_analyse_2010 p. 160)
-
-We have found many examples of se faire constructions cases where a clear binary distinction between passive and causative was not possible, for example because when the subject is both the undergoer and the causer of the action.
-
-In general, we opted for a broad approach, including as many constructions as possible. This means that even when the causative reading is more natural (because the subject triggers the event), we included the construction as long as a passive understanding was also plausible (since the subject is also undergoing an action). In doing so, we deviate from the first criterion established by @bellec_construction_2014. Examples of such constructions include *se faire vacciner* "to (go) be/get vaccinated" and *se faire élire* "to be/get elected" or "to stand for election".
-
-Some verbs can have a passive and a causative meaning, depending on the context. For example, *se faire remarquer* can mean both "to get noticed" and "to draw attention to oneself". To ensure consistency and practicality, we decided to include or exclude verbs on the basis of their lemma, rather than on individual occurrences. Below, we outline below some high-frequency ambiguous cases and provide our reasoning for the decidions to include or exclude them.
-
-We excluded:
-
--   Fixed idiomatic expressions with a figurative meaning: "se faire passer pour" *to impersonate sb.*, "se faire avoir" *to be fooled*, "se faire mousser" *to boast/ to brag, "se faire taper sur les doigts" lit. to get a slap on the fingers, to be scolded* ; example: "Dites donc, vous savez vous faire mousser!" *My, you know how to make a fuss!/ You know how to blow your own trumpet!*
-
-    -   \+ *se faire **rouler** dans la farine + se faire **mener** par le bout du nez*
-
--   Expressions that cannot be converted into a correct active sentence (i.e., the direct object of the active sentence is not the subject of the passive sentence). (ditransitive, intransitive verbs ?), example: "mais se faire expliquer des elements de justice n'est pas la même chose que d'acheter en ligne des produits bio ou une paire de chaussures." *but getting an explanation of legal matters is not the same as buying organic products or a pair of shoes online*
-
--   Expressions containing verbs classified as "idiomes lexicalisés" (lexicalised idioms) according to Raineri (2010: 163). These verbs neither carry a true causative nor passive meaning [^2]: entendre, sentir, attendre, désirer (Raineri 2010: 164); example: "Partout le mécontentement populaire se faire entendre sans qu'' on ait besoin de souffler sur les braises." *Everywhere, popular discontent is making itself heard without the need to fan the flames.*
-
--   (Expressions with a transparent causative meaning - maybe not necessary if covered by the other criteria)
-
--   (Expressions where an être passive has a very different meaning)
-
--   impersonal être passive constructions (passif impersonnel)
-
-[^2]: These verbs mainly occur with inanimate subjects (effects, consequences, discontent). @raineri_analyse_2010 [163-164] proposes that the causative meaning is not available for these verbs since the subject is not causing the event. There is also no passive meaning since they cannot cannot occur with a complément d’agent and do not have a paraphrase with être.
-
--\> summary of the sample?
-
-### Annotation Guidelines
-
-**Gender (masculin/ feminin/ mixed/ unknown)**
-
--   Assign masculin or féminin if the gender is clearly marked grammatically:
-
-    -   Through a pronoun (il(s), elle(s))
-
-    -   Through an adjective or participle that marks gender (heureux/heureuse, content/contente)
-
--   Use mixed only if:
-
-    -   The context clearly refers to a mixed-gender group (un groupe d’hommes et de femmes)
-
-    -   The grammatical form is not gendered, but the semantic context indicates mixed gender (nous referring explicitly to men and women)
-
--   Assign unknown if:
-
-    -   No grammatical gender marking is present
-
-    -   For on, vous, je, and nous (if no grammatical marking appears)
-
-    -   For expletive subjects (il faut)
-
-**Progressivity (progressive/ non-progressive)**
-
--   Assign "progressive" if:
-
-    -   The "se faire" construction is directly in the imparfait or future (except for futur antérieur) → indicates an ongoing or habitual action
-
-    -   The "se faire" construction is linked to an ongoing action, indicated by: A participe présent → Example: Ils acceptent de se faire endoctriner. → progressive/ gerondif + participe présent (en courant - while running)
-
-    -   periphrases e.g., être en train de (present continuous), aller + inf (futur proche), continuer à + Infinitif
-
-    -   adverbs/ Adverbial Phrases Indicating Ongoing Action: Temporal adverbs that imply duration or repetition: En ce moment (at the moment), Actuellement (currently), Toujours (always), Depuis (since), Encore (still)
-
--   Assign "non-progressive" if:
-
-    -   passé composé, plus-que-parfait, présent, futur antérieur (...) - progressiveness is hinted at by another verb in the sentence (e.g., falloir or être) and not from the "se faire" construction itself
-
-### Inter-rater agreement
-
-As the analysis required detailed (and time consuming) manual annotation, we decided to split the annotation work between us. However, to ensure consistent annotation, a representative sample of one third of all instances (320; 33,25%) were double annotated, i.e. by both of us. For these instances, we calculated Cohen's ϰ (Kappa) as a measure of inter-rater agreement (following @levshina_how_2015 [201] and the documentation in the psy package documentation (<https://cran.r-project.org/web/packages/psy/psy.pdf>).)
-
-```{r read-annotated-data, include = FALSE}
-sefaire_sample_annotated <- read.csv(file = here("data", "sefaire_sample_annotated.csv"))
-etre_sample_annotated <- read.csv(file = here("data", "etre_sample_annotated.csv"))
-```
-
-```{r data-cleaning-colnames, include = FALSE}
-# data preprocessing
-colnames(etre_sample_annotated)
-colnames(sefaire_sample_annotated)
-
-# Differences between the two datasets mainly regard columns speaker and reference: se faire sample has a "speaker" column which includes the speaker id and the name and a "reference" column that includes the speaker ID and the date; être sample has only a "reference" column that includes speaker ID, date, name
-```
-
-```{r data-cleaning-colnames-2, include = FALSE}
-# Goal: two columns consistent across both datasets, one "speaker" (name), one "reference" (ID), drop date
-# 1. se faire
-# separate "speaker" column into reference and speaker
-sefaire_sample_annotated <- sefaire_sample_annotated |> 
-  mutate(reference = sapply(str_split(speaker, ",", n = 2), `[`, 1),
-         speaker = sapply(str_split(speaker, ",", n = 2), `[`, 2))
-# remove now redundant "Reference", remove "Kommentar" column, put new "reference" column in first position
-sefaire_sample_annotated <- sefaire_sample_annotated |> 
-  select(-Reference, -Kommentar) |> 
-  select(reference, everything())
-
-# 2. être
-# separate "Reference" column into reference and speaker
-etre_sample_annotated <- etre_sample_annotated |> 
-  mutate(reference = sapply(str_split(Reference, ",", n = 3), `[`, 1),
-         speaker = sapply(str_split(Reference, ",", n = 3), `[`, 3))
-
-# remove now redundant "Reference" column, remove now redundant "Reference", remove "Kommentar" column, put new "reference" und "speaker" column in first position
-etre_sample_annotated <- etre_sample_annotated |> 
-  select(-Reference, -Kommentar) |> 
-  select(reference, speaker, everything())
-
-#still some differences left: être has an "ID" column which se faire does not; être has two agent_pp columns because it was annotated by A and B while se faire only has one, since agent_pp of se faire constructions was annotated there one person (annotator A)
-
-#rename agent_pp for clarity
-sefaire_sample_annotated <- sefaire_sample_annotated |> 
-  rename(agent_pp_A = agent_pp)
-```
-
-```{r combine-data, include = FALSE}
-#combine the data
-passive_sample_combined <- bind_rows(etre_sample_annotated, sefaire_sample_annotated) 
-```
-
-```{r data-cleaning-2, include = FALSE}
-# check for typos/ tagging inconsistencies in combined data; convert to factor; add "NA" as value for all cases that are only annotated by one person
-#check data type
-class(passive_sample_combined$subj_animacy_A)
-#"character", convert to factor and fill "empty" values with NA
-passive_sample_combined <- passive_sample_combined |> 
-  mutate(across(where(is.character), ~ na_if(.x, ""))) |> 
-  mutate(across(where(is.character), factor)) |> 
-  mutate(across(where(is.factor), droplevels)) # to not include NA as a level
-# summary
-passive_sample_combined |> 
-  select(subj_animacy_A, subj_animacy_B, subj_gender_A, subj_gender_B, agent_pp_A, agent_pp_B, modal_A, modal_B, tam_A, tam_B, cluster_A, cluster_B, adversativity_A, adversativity_B) |> 
-  summary()
-#looks good
-```
-
-```{r cohens-kappa, include = FALSE}
-kappa_animacy <- ckappa(passive_sample_combined[c("subj_animacy_A", "subj_animacy_B")]) 
-kappa_animacy #0.9096219
-
-kappa_gender <- ckappa(passive_sample_combined[c("subj_gender_A", "subj_gender_B")])
-kappa_gender #0.8746109
-
-kappa_agent_pp <- ckappa(passive_sample_combined[c("agent_pp_A", "agent_pp_B")])
-kappa_agent_pp #0.9118457
-
-kappa_modal <- ckappa(passive_sample_combined[c("modal_A", "modal_B")])
-kappa_modal #0.9469328
-
-kappa_tam <- ckappa(passive_sample_combined[c("tam_A", "tam_B")])
-kappa_tam  #0.7702391
-
-kappa_cluster <- ckappa(passive_sample_combined[c("cluster_A", "cluster_B")])
-kappa_cluster #0.8326557
-
-kappa_adversativity <- ckappa(passive_sample_combined[c("adversativity_A", "adversativity_B")])
-kappa_adversativity #0.6700877
-
-kappa_values <- c(kappa_animacy$kappa, kappa_agent_pp$kappa, kappa_modal$kappa, kappa_tam$kappa, kappa_cluster$kappa, kappa_adversativity$kappa)
-
-mean_kappa <- mean(kappa_values)
-mean_kappa #0.8402305, very high agreement :)
-```
-
-+--------------------+---------------+----------------------------------------------+
-| Variable           | Cohen's ϰ     | Strength of Agreement @landis1977measurement |
-+====================+===============+==============================================+
-| Subject animacy    | 0.9096219     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-| Subject gender     | 0.8746109     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-| Complément d'agent | 0.9118457     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-| Modal              | 0.9469328     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-| TAM                | 0.7702391     | substantial                                  |
-+--------------------+---------------+----------------------------------------------+
-| Cluster            | 0.8326557     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-| Adversativity      | 0.6700877     | substantial                                  |
-+--------------------+---------------+----------------------------------------------+
-| Mean               | 0.8402305     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-
-We follow the influential benchmark categorisation of @landis1977measurement [165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". The mean inter-rater agreement is high at 0.84. Agreement ist lowest for adversativity (0.67) and TAM (0.77).
-
-## Logistic Regression
 
 Several corpus studies on voice choice in French have shown that the choice between active and passive constructions (*être* passive) is not purely syntactic, but that semantic and pragmatic factors also play a crucial role in determining whether a passive construction is favoured.
 
@@ -798,39 +526,224 @@ As @bohmann_large-scale_2023 notes in their investigation of the be/get alternat
 
 **Interaction:** Affectedness of the subject may be reflected by an interaction of subject animacy and verb adversativity: Negative consequences of actions, expressed by adversative verbs, affect animate subjects more than inanimate subjects.
 
-## Memory based learning
+<!-- ### Maybe: Comparison to similar alternations in other languages
 
--   non-parametric: no assumptions about underlying distribution of data
--   no problem with sparse observation of features/ low-frequency events @theijssen2013choosing [243, 244] because it "does not rely on any kind of generative model"
--   only mandatory annotation is class label @theijssen2013choosing [243] (passive choice)
--   "simple-theory neutral features"/ or some linguistic features (animacy, verb, pp-phrase...)
--   compares test instances with labeled training data (stored in the memory)
--   MBL very susceptible to majority classes -\> unbalanced data is a big problem (poor performance for minority classes possible)
--   k-Nearest-Neighbor (kNN):
-    -   kNN algorithm is trained on data to predict the most likely passive choice
-    -   nearest neighbours out of all instances are determined -\> observation receives class of majority of nearest neighbours
-    -   leave-one-out-setting @theijssen2013choosing [244]: train on all but one, test on remaining instance, iterate for each instance
-    -   hyperparameters setting (e.g. number of neighbors)? -\> help of wrapper
-    -   Tutorial: <https://www.datacamp.com/tutorial/k-nearest-neighbors-knn-classification-with-r-tutorial>
+-   English @bohmann_large-scale_2023, East Asian languages @washio_when_1993 and @guan_multifactorial_2024 , Swedish @cuypere_corpus-based_2014 -->
 
-1.  choose the value of K, which is the number of nearest neighbors that will be used to make the prediction.
-2.  Calculate the distance between that point and all the points in the training set.
-3.  Select the K nearest neighbors based on the distances calculated.
-4.  Assign the label of the majority class to the new data point.
-5.  Repeat steps 2 to 4 for all the data points in the test set.
-6.  Evaluate the accuracy of the algorithm.
+# Data and Methods
 
--   in R: "class" or "caret" package
--   set seed for reproducibility
--   split set manually or by "caTools" library
--   Preprocessing/ Feature scaling if feautres have different scales, to ensure proportions between features and prevent that features with largest scale dominate distance calculations
--   caret: Model Tuning: find optimal value of "K"
--   caret: train best performing model
--   Model evaluation
+## Data Collection
 
-# Results
+### Corpus
 
-## Data preprocessing
+In our investigation of spoken French language, we aimed to select a corpus that represents authentic French spoken language. After thorough consideration and exploration of our options, we decided for the French ParlaMint corpus [@11356/1431]. ParlaMint consists of French parliamentary debates from 2017 to 2020 and contains 38,702,395 tokens (32,214,147 words). We chose this corpus because it is well-documented, POS-tagged and contains rich meta data.
+
+We recognize that the genre of parliamentary debates is quite specialised and our results therefore cannot be generalized to all French spoken language. However, the language of parliamentary debates is a fascinating genre in itself (studied before: references) and is expected to reflect a wide range of topics, thus providing a cross-section of language varieties as they occur in French speech.
+
+We extracted the concordances from the French ParlaMint corpus [@11356/1431] using a CQL expression in SketchEngine. To extract the data we chose a semi-automatic approach that included manual filtering.
+
+-   We selected an equal number of occurrences of *être* passive and *se faire* passive.
+    -   We made a list of the lemmas in the se faire constructions → used these lemmas to filter the être constructions
+
+    -   Exclusion of causative reading of se faire constructions: the same verbs have been used with être passive in the same corpus (find/extract the constructions) → depends on how many constructions we have left
+-   We have not taken into account impersonal passives (*example from corpus*)
+-   être passive: In their active/passive alternation study @da_cunha_lalternance_2020 only chose passive sentences in the compound past tense "NP a été VP" in order to favour verbal passives over adjectival passives (*La porte est ouverte*). However, we chose to include the present tense/all tenses. This decision was based on previous literature suggesting that the present tense favors *se faire* passive over *être* passive, making tense an important factor in our study.
+-   In line with @da_cunha_lalternance_2020 we chose complément d'agents introduced by the preposition *par*, avoiding additional variation caused by *de*.
+
+```{=html}
+<!-- problem: data are extremely unbalanced (ratio in ParlaMint être vs. se faire: ) -\> making the ratio 50: 50 would distort the reality significantly but if the ratio is kept the model will almost always predict être
+strategy possibilities:
+    -   build a corpus where être is presented more than se faire but not as extreme (approximation, e.g. 40% se faire - 60% etre) ("over/undersampling within limits")
+    -   assign more weight to se faire constructions by "weights=" variable of glm function
+    -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
+    -   evaluate with precision & recall, not just accuracy (F1-score) -->
+```
+
+```{r lemma-list, include=FALSE}
+
+lemmas <- sefaire_sample |> 
+  count(lemma)
+
+```
+
+### Semi-automated approach
+
+we opted for a balanced sample containing as many se faire as être passives (numbers and characteristics)
+
+**se faire passive**
+
+We automatically extracted a sample of 1,254 *se faire* + infinitive constructions from the ParlaMint 2.0 corpus on Sketch Engine \[source?\] using a CQL expression. After extraction, we manually filtered the data to exclude false-positive constructions (i.e. constructions that were not *se faire* + infinitive constructions) and those that did not fulfil our predefined criteria for *se faire* passives (see below). The final sample comprised 535 \[count with inline code\] *se faire* passives. We then annotated the lemmas of these constructions and relevant linguistic features, such as verb form, subject animacy and grammatical gender, in order to prepare the data for statistical modelling.
+
+**être passive**
+
+-   extract être passive constructions with CQL expression
+-   In Sketch Engine: Import Word List → lemma list extracted from se faire constructions (for comparability of the constructions, making sure that differences between être and se faire are not due to individual differences of the verb) → Filter out only verb lemmas of se faire from concordance lines → download
+
+**determine sample by setting a seed**
+
+-   seed determined by future lottery numbers (12.3.2025, <https://www.lotto.de/lotto-6aus49/lottozahlen>) → function set.seed( ) in R
+-   take a random sample from the concordance lines that is equal in size to the manually filtered amount of se faire constructions
+-   final sample: same amount of constructions for être and se faire, same lemmas, seed set
+-   Our sample therefore comprises XXX sentences/constructions: XX se faire and XX être passive, ... (short summary)
+
+### Borderline cases/ Manual filtering exclusion criteria
+
+As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + infinitive can sometimes have a 'passive effect' even without a direct 1:1 alternation with *être*. However, for our study of *se faire* + Infinitive and *être* + past participle as a passive alternation, our main criterion was to include only those constructions that could be paraphrased with the *être* passive. Consequently, we excluded expressions that could not be rephrased with the *être* passive, either because the *être* construction was ungrammatical or the meaning was fundamentally altered.
+
+A typical example of a construcion that met our criterion is:
+
+*Il s’est fait insulter par son collègue.* (“He was insulted by his colleague.”) \[eigenes Beispiel ersetzen\]
+
+*Il a été insulté par son collègue.* (“He was insulted by his colleague.”) \[eigenes Beispiel ersetzen\]
+
+By contrast, expressions such as *se faire connaître* were excluded. For instance:
+
+*Il s’est fait connaître grâce à ses romans.* (“He became known through his novels.”) \[eigenes Beispiel ersetzen\]
+
+is acceptable, but
+
+*\*Il a été connu grâce à ses romans.* \[eigenes Beispiel ersetzen\]
+
+is unusual, as *être connu* does not carry the same meaning.
+
+However, our somewhat "fuzzy" definition of what constitutes a passive alternation [@bohmann_large-scale_2023] posed some challenges: We excluded purely causative constructions, but the distinction between causative and passive was sometimes unclear. When is a construction semantically similar enough, and when is its meaning too causative? As expected, given the extensive debate on PSF's passive status (@sec-debate) and the challenges reported by @bohmann_large-scale_2023 in their investigation of the English *be*/*get* passive alternation, we came across a significant number of "unclear" cases during the manual filtering of *se faire* constructions.
+
+(This approach is also supported by linguistic analyses that suggest a continuum between causative and passive meanings in *se faire* constructions. that is, *se faire* constructions can switch between passive and causative interpretations depending on the context. The flexibility of this construction suggests that a strict binary classification is inappropriate and reinforces the idea of a causal/passive continuum - at one pole a reduced agentivity of the subject's referent - rather than a rigid distinction. @raineri_analyse_2010 pp. 154ff)
+
+(If the action of the subject is reduced to mere initiation (\[+ déclenchement\]), the se faire construction can be completely paraphrased with an être passive without changing the content of the sentence. For example, *Il se fait remarquer par une patrouille de police* (“He is noticed by a police patrol”) and Il est remarqué par une patrouille de police (“He is noticed by a police patrol”) show an extensive equivalence between se faire and être. Similarly, the other elements in the co-text of *élire* examples weakens the causative strength and strengthens the passive effect. -\> agentivité **variable** / passive-causative continuum with *élire* depending on context @raineri_analyse_2010 p. 160)
+
+We have found many examples of se faire constructions cases where a clear binary distinction between passive and causative was not possible, for example because when the subject is both the undergoer and the causer of the action.
+
+In general, we opted for a broad approach, including as many constructions as possible. This means that even when the causative reading is more natural (because the subject triggers the event), we included the construction as long as a passive understanding was also plausible (since the subject is also undergoing an action). In doing so, we deviate from the first criterion established by @bellec_construction_2014. Examples of such constructions include *se faire vacciner* "to (go) be/get vaccinated" and *se faire élire* "to be/get elected" or "to stand for election".
+
+Some verbs can have a passive and a causative meaning, depending on the context. For example, *se faire remarquer* can mean both "to get noticed" and "to draw attention to oneself". To ensure consistency and practicality, we decided to include or exclude verbs on the basis of their lemma, rather than on individual occurrences. Below, we outline below some high-frequency ambiguous cases and provide our reasoning for the decidions to include or exclude them.
+
+We excluded:
+
+-   Fixed idiomatic expressions with a figurative meaning: "se faire passer pour" *to impersonate sb.*, "se faire avoir" *to be fooled*, "se faire mousser" *to boast/ to brag, "se faire taper sur les doigts" lit. to get a slap on the fingers, to be scolded* ; example: "Dites donc, vous savez vous faire mousser!" *My, you know how to make a fuss!/ You know how to blow your own trumpet!*
+
+    -   \+ *se faire **rouler** dans la farine + se faire **mener** par le bout du nez*
+
+-   Expressions that cannot be converted into a correct active sentence (i.e., the direct object of the active sentence is not the subject of the passive sentence). (ditransitive, intransitive verbs ?), example: "mais se faire expliquer des elements de justice n'est pas la même chose que d'acheter en ligne des produits bio ou une paire de chaussures." *but getting an explanation of legal matters is not the same as buying organic products or a pair of shoes online*
+
+-   Expressions containing verbs classified as "idiomes lexicalisés" (lexicalised idioms) according to Raineri (2010: 163). These verbs neither carry a true causative nor passive meaning [^2]: entendre, sentir, attendre, désirer (Raineri 2010: 164); example: "Partout le mécontentement populaire se faire entendre sans qu'' on ait besoin de souffler sur les braises." *Everywhere, popular discontent is making itself heard without the need to fan the flames.*
+
+-   (Expressions with a transparent causative meaning - maybe not necessary if covered by the other criteria)
+
+-   (Expressions where an être passive has a very different meaning)
+
+-   impersonal être passive constructions (passif impersonnel)
+
+[^2]: These verbs mainly occur with inanimate subjects (effects, consequences, discontent). @raineri_analyse_2010 [163-164] proposes that the causative meaning is not available for these verbs since the subject is not causing the event. There is also no passive meaning since they cannot cannot occur with a complément d’agent and do not have a paraphrase with être.
+
+-\> summary of the sample?
+
+<!-- ### Annotation Guidelines
+
+**Gender (masculin/ feminin/ mixed/ unknown)**
+
+-   Assign masculin or féminin if the gender is clearly marked grammatically:
+
+    -   Through a pronoun (il(s), elle(s))
+
+    -   Through an adjective or participle that marks gender (heureux/heureuse, content/contente)
+
+-   Use mixed only if:
+
+    -   The context clearly refers to a mixed-gender group (un groupe d’hommes et de femmes)
+
+    -   The grammatical form is not gendered, but the semantic context indicates mixed gender (nous referring explicitly to men and women)
+
+-   Assign unknown if:
+
+    -   No grammatical gender marking is present
+
+    -   For on, vous, je, and nous (if no grammatical marking appears)
+
+    -   For expletive subjects (il faut)
+
+**Progressivity (progressive/ non-progressive)**
+
+-   Assign "progressive" if:
+
+    -   The "se faire" construction is directly in the imparfait or future (except for futur antérieur) → indicates an ongoing or habitual action
+
+    -   The "se faire" construction is linked to an ongoing action, indicated by: A participe présent → Example: Ils acceptent de se faire endoctriner. → progressive/ gerondif + participe présent (en courant - while running)
+
+    -   periphrases e.g., être en train de (present continuous), aller + inf (futur proche), continuer à + Infinitif
+
+    -   adverbs/ Adverbial Phrases Indicating Ongoing Action: Temporal adverbs that imply duration or repetition: En ce moment (at the moment), Actuellement (currently), Toujours (always), Depuis (since), Encore (still)
+
+-   Assign "non-progressive" if:
+
+    -   passé composé, plus-que-parfait, présent, futur antérieur (...) - progressiveness is hinted at by another verb in the sentence (e.g., falloir or être) and not from the "se faire" construction itself
+-->
+
+### Data preprocessing
+
+```{r read-annotated-data, include = FALSE}
+sefaire_sample_annotated <- read.csv(file = here("data", "sefaire_sample_annotated.csv"))
+etre_sample_annotated <- read.csv(file = here("data", "etre_sample_annotated.csv"))
+```
+
+```{r data-cleaning-colnames, include = FALSE}
+# data preprocessing
+colnames(etre_sample_annotated)
+colnames(sefaire_sample_annotated)
+
+# Differences between the two datasets mainly regard columns speaker and reference: se faire sample has a "speaker" column which includes the speaker id and the name and a "reference" column that includes the speaker ID and the date; être sample has only a "reference" column that includes speaker ID, date, name
+```
+
+```{r data-cleaning-colnames-2, include = FALSE}
+# Goal: two columns consistent across both datasets, one "speaker" (name), one "reference" (ID), drop date
+# 1. se faire
+# separate "speaker" column into reference and speaker
+sefaire_sample_annotated <- sefaire_sample_annotated |> 
+  mutate(reference = sapply(str_split(speaker, ",", n = 2), `[`, 1),
+         speaker = sapply(str_split(speaker, ",", n = 2), `[`, 2))
+# remove now redundant "Reference", remove "Kommentar" column, put new "reference" column in first position
+sefaire_sample_annotated <- sefaire_sample_annotated |> 
+  select(-Reference, -Kommentar) |> 
+  select(reference, everything())
+
+# 2. être
+# separate "Reference" column into reference and speaker
+etre_sample_annotated <- etre_sample_annotated |> 
+  mutate(reference = sapply(str_split(Reference, ",", n = 3), `[`, 1),
+         speaker = sapply(str_split(Reference, ",", n = 3), `[`, 3))
+
+# remove now redundant "Reference" column, remove now redundant "Reference", remove "Kommentar" column, put new "reference" und "speaker" column in first position
+etre_sample_annotated <- etre_sample_annotated |> 
+  select(-Reference, -Kommentar) |> 
+  select(reference, speaker, everything())
+
+#still some differences left: être has an "ID" column which se faire does not; être has two agent_pp columns because it was annotated by A and B while se faire only has one, since agent_pp of se faire constructions was annotated there one person (annotator A)
+
+#rename agent_pp for clarity
+sefaire_sample_annotated <- sefaire_sample_annotated |> 
+  rename(agent_pp_A = agent_pp)
+```
+
+```{r combine-data, include = FALSE}
+#combine the data
+passive_sample_combined <- bind_rows(etre_sample_annotated, sefaire_sample_annotated) 
+```
+
+```{r data-cleaning-2, include = FALSE}
+# check for typos/ tagging inconsistencies in combined data; convert to factor; add "NA" as value for all cases that are only annotated by one person
+#check data type
+class(passive_sample_combined$subj_animacy_A)
+#"character", convert to factor and fill "empty" values with NA
+passive_sample_combined <- passive_sample_combined |> 
+  mutate(across(where(is.character), ~ na_if(.x, ""))) |> 
+  mutate(across(where(is.character), factor)) |> 
+  mutate(across(where(is.factor), droplevels)) # to not include NA as a level
+# summary
+passive_sample_combined |> 
+  select(subj_animacy_A, subj_animacy_B, subj_gender_A, subj_gender_B, agent_pp_A, agent_pp_B, modal_A, modal_B, tam_A, tam_B, cluster_A, cluster_B, adversativity_A, adversativity_B) |> 
+  summary()
+#looks good
+```
 
 For the main analysis, the se faire and être data were merged into one "clean" dataset where each column corresponds to one factor. This column includes the annotation of the first annotator (annotator A for half of the observations, annotator B for the other half).
 
@@ -864,7 +777,7 @@ passive_sample_clean <- passive_sample_clean |>
 
 ```{r cleaning-main-data, include=FALSE}
 # exclude "mixed" gender because of low frequency (would likely skew the data)
-# exclude "unknown" gender
+# exclude "unknown" gender (needs to be reasoned and explained!)
 # (merge "de" and "par" into a "present category")
 passive_sample_clean <- passive_sample_clean|> 
   filter(subj_gender != "mixed") |> 
@@ -885,7 +798,258 @@ passive_sample_unknown <- passive_sample_clean|>
 
 ```
 
-## Data exploration
+
+### Inter-rater agreement
+
+As the analysis required detailed (and time consuming) manual annotation, we decided to split the annotation work between us. However, to ensure consistent annotation, a representative sample of one third of all instances (320; 33,25%) were double annotated, i.e. by both of us. For these instances, we calculated Cohen's ϰ (Kappa) as a measure of inter-rater agreement (following @levshina_how_2015 [201] and the documentation in the psy package documentation (<https://cran.r-project.org/web/packages/psy/psy.pdf>).)
+
+```{r cohens-kappa, include = FALSE}
+kappa_animacy <- ckappa(passive_sample_combined[c("subj_animacy_A", "subj_animacy_B")]) 
+kappa_animacy #0.9096219
+
+kappa_gender <- ckappa(passive_sample_combined[c("subj_gender_A", "subj_gender_B")])
+kappa_gender #0.8746109
+
+kappa_agent_pp <- ckappa(passive_sample_combined[c("agent_pp_A", "agent_pp_B")])
+kappa_agent_pp #0.9118457
+
+kappa_modal <- ckappa(passive_sample_combined[c("modal_A", "modal_B")])
+kappa_modal #0.9469328
+
+kappa_tam <- ckappa(passive_sample_combined[c("tam_A", "tam_B")])
+kappa_tam  #0.7702391
+
+kappa_cluster <- ckappa(passive_sample_combined[c("cluster_A", "cluster_B")])
+kappa_cluster #0.8326557
+
+kappa_adversativity <- ckappa(passive_sample_combined[c("adversativity_A", "adversativity_B")])
+kappa_adversativity #0.6700877
+
+kappa_values <- c(kappa_animacy$kappa, kappa_agent_pp$kappa, kappa_modal$kappa, kappa_tam$kappa, kappa_cluster$kappa, kappa_adversativity$kappa)
+
+mean_kappa <- mean(kappa_values)
+mean_kappa #0.8402305, very high agreement :)
+```
+
++--------------------+---------------+----------------------------------------------+
+| Variable           | Cohen's ϰ     | Strength of Agreement @landis1977measurement |
++====================+===============+==============================================+
+| Subject animacy    | 0.9096219     | almost perfect                               |
++--------------------+---------------+----------------------------------------------+
+| Subject gender     | 0.8746109     | almost perfect                               |
++--------------------+---------------+----------------------------------------------+
+| Complément d'agent | 0.9118457     | almost perfect                               |
++--------------------+---------------+----------------------------------------------+
+| Modal              | 0.9469328     | almost perfect                               |
++--------------------+---------------+----------------------------------------------+
+| TAM                | 0.7702391     | substantial                                  |
++--------------------+---------------+----------------------------------------------+
+| Cluster            | 0.8326557     | almost perfect                               |
++--------------------+---------------+----------------------------------------------+
+| Adversativity      | 0.6700877     | substantial                                  |
++--------------------+---------------+----------------------------------------------+
+| Mean               | 0.8402305     | almost perfect                               |
++--------------------+---------------+----------------------------------------------+
+
+We follow the influential benchmark categorisation of @landis1977measurement [165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". The mean inter-rater agreement is high at 0.84. Agreement ist lowest for adversativity (0.67) and TAM (0.77).
+
+## Binomial logistic regression
+
+@levshina_how_2015 [253] "logit represents the chances of construction A to be chosen in a particular type of context compared with the chances of construction B to be used in the same type of context."
+
+intercept: "value that determines the chances of an outcome when all predictors are equal to zero (for quantitative variables) or the reference value (for categorical variables)".
+
+### Levels
+
+Levels are by default ordered alphabetically. We change the reference levels to the most "standard" case.
+
++--------------------+-----------------+------------------------------------------+
+| Variable           | Label           | Levels                                   |
++====================+=================+==========================================+
+| Passive variant    | passive_variant | être, se faire                           |
++--------------------+-----------------+------------------------------------------+
+| Subject animacy    | subj_animacy    | inanimate, animate                       |
++--------------------+-----------------+------------------------------------------+
+| Subject gender     | subj_gender     | masculine, feminine                      |
++--------------------+-----------------+------------------------------------------+
+| Complément d'agent | agent_pp        | 0, par, de // 0, present                 |
++--------------------+-----------------+------------------------------------------+
+| Modal              | modal           | no, yes                                  |
++--------------------+-----------------+------------------------------------------+
+| TAM                | tam             | non-progressive, progressive             |
++--------------------+-----------------+------------------------------------------+
+| Cluster            | cluster         | neutral, communication, hitting-touching |
++--------------------+-----------------+------------------------------------------+
+| Adversativity      | adversativity   | non-adversative, adversative             |
++--------------------+-----------------+------------------------------------------+
+
+: Overview of variables for the *être: se faire* passive alternation
+
+```{r reference-levels, include = FALSE}
+#change reference levels: "animate" to "inanimate", "communication" to "neutral", "adversative" to "non-adversative"
+#passive_sample_clean$subj_animacy <- relevel(passive_sample_clean$subj_animacy, ref = "inanimate")
+passive_sample_clean$subj_gender <- relevel(passive_sample_clean$subj_gender, ref = "masculine")
+passive_sample_clean$cluster <- relevel(passive_sample_clean$cluster, ref = "neutral")
+#passive_sample_clean$adversativity <- relevel(passive_sample_clean$adversativity, ref = "non-adversative")
+
+passive_sample_unknown$subj_gender <- relevel(passive_sample_unknown$subj_gender, ref = "masculine")
+passive_sample_unknown$subj_animacy <- relevel(passive_sample_unknown$subj_animacy, ref = "inanimate")
+passive_sample_unknown$cluster <- relevel(passive_sample_unknown$cluster, ref = "neutral")
+passive_sample_unknown$adversativity <- relevel(passive_sample_unknown$adversativity, ref = "non-adversative")
+
+levels(passive_sample_clean$subj_gender)
+levels(passive_sample_clean$agent_pp)
+levels(passive_sample_unknown$subj_gender)
+```
+
+### Model selection: Maximum likelihood
+
+::: {.panel-tabset}
+
+#### Full Model 
+Function following @gries_statistics_2021 [442]
+```{r full-passive-glmer, output = FALSE}
+#| code-fold: true
+full_passive_glmer <- glmer(
+    passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:cluster + subj_animacy:adversativity + cluster:adversativity) +
+               (1 | lemma) + (1 | speaker),
+    family = "binomial",
+    data = passive_sample_clean,
+    control = glmerControl(optimizer = "bobyqa")
+  )
+
+summary(full_passive_glmer) #AIC: 732.5
+vif(full_passive_glmer)
+```
+```{r full-passive-glmer-tab, echo = FALSE}
+tab_model(full_passive_glmer)
+```
+
+#### Model Back-1
+Removing non-significant interactions (cluster:adversativity, subj_animacy:cluster, subj_animacy:subj_gender):
+
+```{r model-back-1, output = FALSE}
+#| code-fold: true
+model_back_1 <- glmer(
+    passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma) + (1 | speaker),
+    family = "binomial",
+    data = passive_sample_clean,
+    control = glmerControl(optimizer = "bobyqa")
+  )
+
+summary(model_back_1) #AIC: 725.4
+```
+```{r model-back-1-tab, echo = FALSE}
+tab_model(model_back_1)
+```
+
+#### Final Model
+removing non-significant fixed effects (agent_pp, modal, tam, subj_gender)
+```{r final-model, output = FALSE}
+#| code-fold: true
+final_model <- glmer(
+    passive_variant ~ (subj_animacy + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma) + (1 | speaker),
+    family = "binomial",
+    data = passive_sample_clean,
+    control = glmerControl(optimizer = "bobyqa")
+  )
+summary(final_model) # AIC: 718.6 
+vif(final_model)
+```
+```{r final-model-tab, echo = FALSE}
+tab_model(final_model) # Marginal R2 / Conditional R2	0.445 / 0.660
+```
+
+:::
+
+Intercept: 2.97; meaning: chances of se faire are 2.97 times greater than être given this context (animate subject, neutral verb, adversative sense)
+
+coefficients: if positive, level boosts the chance of se faire (decreases chance of être)
+
+R-squared not recommended as central measure @levshina_how_2015 [259], Hosmer & Lemeshow (2000: 167)
+
+significant effects in final_model_without_unknown (final model?):
+
+-   cluster\[communication\];
+
+-   subj animacy \[inanimate\] × adversativity \[adversative\]
+
+**Concordance index C**
+
+```{r concordance-index}
+#model_2
+predictions <- predict(final_model, type = "response", na.action = na.omit)
+outcome <- as.numeric(na.omit(passive_sample_clean)$passive_variant) - 1
+
+Hmisc::somers2(predictions, outcome)["C"]
+# C 0.9414132 - pretty good I think? "outstanding discrimination" according to Hosmer & Lemeshow (2000: 162) in Levshina (2015: 259)
+```
+
+```{r coefficients, include=FALSE}
+model_2_coef <- coefficients(summary(final_model))[,"Estimate"]
+
+model_2_coef
+#"a negative coefficient expressed as a logit (or log odds) shows that this outcome is less probably than the reference level"
+
+#convert from log odds to odds:
+exp(model_2_coef)
+
+#convert odds to probabilities
+#exp(model_2_coef) / (1 + exp(model_2_coef))
+```
+
+overall significance test for the model by comparing 0 model to full model and use an anova between those @gries_statistics_2021 [445-446]
+
+```{r model2-significance, echo = FALSE}
+null_model <- glmer(passive_variant ~ 1 + (1 | lemma) + (1 | speaker), data = passive_sample_clean, family = binomial)
+
+anova(final_model, null_model, test="Chisq")
+#highly significant!!
+#relative likelihood
+(exp((AIC(null_model)-AIC(final_model))/2))
+
+# ### model with unknown
+# null_model <- glmer(passive_variant ~ 1 + (1|lemma), data = passive_sample_without_unknown, family = binomial)
+# 
+# anova(final_model_without_unknown, null_model, test="Chisq")
+# #highly significant!!
+# #relative likelihood
+# (exp((AIC(null_model)-AIC(final_model_without_unknown))/2))
+```
+
+<!-- ## Memory based learning
+
+-   non-parametric: no assumptions about underlying distribution of data
+-   no problem with sparse observation of features/ low-frequency events @theijssen2013choosing [243, 244] because it "does not rely on any kind of generative model"
+-   only mandatory annotation is class label @theijssen2013choosing [243] (passive choice)
+-   "simple-theory neutral features"/ or some linguistic features (animacy, verb, pp-phrase...)
+-   compares test instances with labeled training data (stored in the memory)
+-   MBL very susceptible to majority classes -\> unbalanced data is a big problem (poor performance for minority classes possible)
+-   k-Nearest-Neighbor (kNN):
+    -   kNN algorithm is trained on data to predict the most likely passive choice
+    -   nearest neighbours out of all instances are determined -\> observation receives class of majority of nearest neighbours
+    -   leave-one-out-setting @theijssen2013choosing [244]: train on all but one, test on remaining instance, iterate for each instance
+    -   hyperparameters setting (e.g. number of neighbors)? -\> help of wrapper
+    -   Tutorial: <https://www.datacamp.com/tutorial/k-nearest-neighbors-knn-classification-with-r-tutorial>
+
+1.  choose the value of K, which is the number of nearest neighbors that will be used to make the prediction.
+2.  Calculate the distance between that point and all the points in the training set.
+3.  Select the K nearest neighbors based on the distances calculated.
+4.  Assign the label of the majority class to the new data point.
+5.  Repeat steps 2 to 4 for all the data points in the test set.
+6.  Evaluate the accuracy of the algorithm.
+
+-   in R: "class" or "caret" package
+-   set seed for reproducibility
+-   split set manually or by "caTools" library
+-   Preprocessing/ Feature scaling if feautres have different scales, to ensure proportions between features and prevent that features with largest scale dominate distance calculations
+-   caret: Model Tuning: find optimal value of "K"
+-   caret: train best performing model
+-   Model evaluation -->
+
+# Results
+
+## Descriptive statistics (Data exploration)
 
 Taking a look at the data:
 
@@ -1147,169 +1311,10 @@ mosaicplot(subj_gender ~ passive_variant,
 
 More in @levshina_how_2015: Chapter 4 and @gries_statistics_2021 Chapter 3/Descriptive statistics & visualisations) and Chapter 6 (Mixed effects regression modeling)
 
-## Binomial logistic regression
-
-@levshina_how_2015 [253] "logit represents the chances of construction A to be chosen in a particular type of context compared with the chances of construction B to be used in the same type of context."
-
-intercept: "value that determines the chances of an outcome when all predictors are equal to zero (for quantitative variables) or the reference value (for categorical variables)".
-
-### Levels
-
-Levels are by default ordered alphabetically. We change the reference levels to the most "standard" case.
-
-+--------------------+-----------------+------------------------------------------+
-| Variable           | Label           | Levels                                   |
-+====================+=================+==========================================+
-| Passive variant    | passive_variant | être, se faire                           |
-+--------------------+-----------------+------------------------------------------+
-| Subject animacy    | subj_animacy    | inanimate, animate                       |
-+--------------------+-----------------+------------------------------------------+
-| Subject gender     | subj_gender     | masculine, feminine                      |
-+--------------------+-----------------+------------------------------------------+
-| Complément d'agent | agent_pp        | 0, par, de // 0, present                 |
-+--------------------+-----------------+------------------------------------------+
-| Modal              | modal           | no, yes                                  |
-+--------------------+-----------------+------------------------------------------+
-| TAM                | tam             | non-progressive, progressive             |
-+--------------------+-----------------+------------------------------------------+
-| Cluster            | cluster         | neutral, communication, hitting-touching |
-+--------------------+-----------------+------------------------------------------+
-| Adversativity      | adversativity   | non-adversative, adversative             |
-+--------------------+-----------------+------------------------------------------+
-
-: Overview of variables for the *être: se faire* passive alternation
-
-```{r reference-levels, include = FALSE}
-#change reference levels: "animate" to "inanimate", "communication" to "neutral", "adversative" to "non-adversative"
-#passive_sample_clean$subj_animacy <- relevel(passive_sample_clean$subj_animacy, ref = "inanimate")
-passive_sample_clean$subj_gender <- relevel(passive_sample_clean$subj_gender, ref = "masculine")
-passive_sample_clean$cluster <- relevel(passive_sample_clean$cluster, ref = "neutral")
-#passive_sample_clean$adversativity <- relevel(passive_sample_clean$adversativity, ref = "non-adversative")
-
-passive_sample_unknown$subj_gender <- relevel(passive_sample_unknown$subj_gender, ref = "masculine")
-passive_sample_unknown$subj_animacy <- relevel(passive_sample_unknown$subj_animacy, ref = "inanimate")
-passive_sample_unknown$cluster <- relevel(passive_sample_unknown$cluster, ref = "neutral")
-passive_sample_unknown$adversativity <- relevel(passive_sample_unknown$adversativity, ref = "non-adversative")
-
-levels(passive_sample_clean$subj_gender)
-levels(passive_sample_clean$agent_pp)
-levels(passive_sample_unknown$subj_gender)
-```
-
-### Model selection: Maximum likelihood
-
-::: {.panel-tabset}
-
-## Full Model 
-Function following @gries_statistics_2021 [442]
-```{r full-passive-glmer, output = FALSE}
-#| code-fold: true
-full_passive_glmer <- glmer(
-    passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:cluster + subj_animacy:adversativity + cluster:adversativity) +
-               (1 | lemma) + (1 | speaker),
-    family = "binomial",
-    data = passive_sample_clean,
-    control = glmerControl(optimizer = "bobyqa")
-  )
-
-summary(full_passive_glmer) #AIC: 732.5
-vif(full_passive_glmer)
-```
-```{r full-passive-glmer-tab, echo = FALSE}
-tab_model(full_passive_glmer)
-```
-
-## Model Back-1
-Removing non-significant interactions (cluster:adversativity, subj_animacy:cluster, subj_animacy:subj_gender):
-
-```{r model-back-1, output = FALSE}
-#| code-fold: true
-model_back_1 <- glmer(
-    passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma) + (1 | speaker),
-    family = "binomial",
-    data = passive_sample_clean,
-    control = glmerControl(optimizer = "bobyqa")
-  )
-
-summary(model_back_1) #AIC: 725.4
-```
-```{r model-back-1-tab, echo = FALSE}
-tab_model(model_back_1)
-```
-
-## Final Model
-removing non-significant fixed effects (agent_pp, modal, tam, subj_gender)
-```{r final-model, output = FALSE}
-#| code-fold: true
-final_model <- glmer(
-    passive_variant ~ (subj_animacy + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma) + (1 | speaker),
-    family = "binomial",
-    data = passive_sample_clean,
-    control = glmerControl(optimizer = "bobyqa")
-  )
-summary(final_model) # AIC: 718.6 
-vif(final_model)
-```
-```{r final-model-tab, echo = FALSE}
-tab_model(final_model) # Marginal R2 / Conditional R2	0.445 / 0.660
-```
-
-:::
-
-Intercept: 2.97; meaning: chances of se faire are 2.97 times greater than être given this context (animate subject, neutral verb, adversative sense)
-
-coefficients: if positive, level boosts the chance of se faire (decreases chance of être)
-
-R-squared not recommended as central measure @levshina_how_2015 [259], Hosmer & Lemeshow (2000: 167)
-
-significant effects in final_model_without_unknown (final model?):
-
--   cluster\[communication\];
-
--   subj animacy \[inanimate\] × adversativity \[adversative\]
-
-**Concordance index C**
-
-```{r concordance-index}
-#model_2
-predictions <- predict(final_model, type = "response", na.action = na.omit)
-outcome <- as.numeric(na.omit(passive_sample_clean)$passive_variant) - 1
-
-Hmisc::somers2(predictions, outcome)["C"]
-# C 0.9414132 - pretty good I think? "outstanding discrimination" according to Hosmer & Lemeshow (2000: 162) in Levshina (2015: 259)
-```
-
-```{r coefficients, include=FALSE}
-model_2_coef <- coefficients(summary(final_model))[,"Estimate"]
-
-model_2_coef
-#"a negative coefficient expressed as a logit (or log odds) shows that this outcome is less probably than the reference level"
-
-#convert from log odds to odds:
-exp(model_2_coef)
-
-#convert odds to probabilities
-#exp(model_2_coef) / (1 + exp(model_2_coef))
-```
-
-overall significance test for the model by comparing 0 model to full model and use an anova between those @gries_statistics_2021 [445-446]
-
-```{r model2-significance, echo = FALSE}
-null_model <- glmer(passive_variant ~ 1 + (1 | lemma) + (1 | speaker), data = passive_sample_clean, family = binomial)
-
-anova(final_model, null_model, test="Chisq")
-#highly significant!!
-#relative likelihood
-(exp((AIC(null_model)-AIC(final_model))/2))
-
-# ### model with unknown
-# null_model <- glmer(passive_variant ~ 1 + (1|lemma), data = passive_sample_without_unknown, family = binomial)
-# 
-# anova(final_model_without_unknown, null_model, test="Chisq")
-# #highly significant!!
-# #relative likelihood
-# (exp((AIC(null_model)-AIC(final_model_without_unknown))/2))
-```
+## Effects of logistic regression
+### Subject responsibility
+### Aspectuality
+Reporting and interpreting results of the logistic regression with regard to our hypotheses and descriptive statistics
 
 Surprisingly, and contrary to our hypothesis, the only significant main effect in our model is the verb cluster, with communication verbs favouring *se faire* over *être* passive constructions.
 
@@ -1348,21 +1353,6 @@ freq_communication_wide |>
 Frequencies for communication lemmas
 :::
 
-```{r interaction-model-plot, echo=FALSE}
-
-ggpredict(final_model, c("subj_animacy", "adversativity")) |> 
-  plot()
-
-```
-
-If the subject is inanimate and non-adversative, the être passive is almost exclusively used and therefoee far more likely than the se faire passive.
-
-However, the likelihood of the se faire passive increases significantly when the construction has an adversative sense: In our study, se faire and être were equally likely for inanimate subjects and adversative contexts,.
-
-In contast, constructions with animate subjects show a strong preference for the se faire passive regardless of adversativity: The chance of se faire being used is high for both inadversative and adversative contexts (and increases a litte but more for adversative contexts, but not significantly).
-
-**Random intercepts**
-
 ```{r ranef-final-model, echo = FALSE}
 ranef <- as.data.frame(ranef(final_model))
 
@@ -1376,6 +1366,22 @@ ranef |>
        y = "Variation in intercept estimate (logit)") +
   coord_flip()
 ```
+
+### Adversativity
+```{r interaction-model-plot, echo=FALSE}
+
+ggpredict(final_model, c("subj_animacy", "adversativity")) |> 
+  plot()
+
+```
+
+If the subject is inanimate and non-adversative, the être passive is almost exclusively used and therefore far more likely than the se faire passive.
+
+However, the likelihood of the se faire passive increases significantly when the construction has an adversative sense: In our study, se faire and être were equally likely for inanimate subjects and adversative contexts,.
+
+In contast, constructions with animate subjects show a strong preference for the se faire passive regardless of adversativity: The chance of se faire being used is high for both inadversative and adversative contexts (and increases a litte but more for adversative contexts, but not significantly).
+
+**Random intercepts**
 
 # Discussion
 

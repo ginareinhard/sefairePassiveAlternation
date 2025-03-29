@@ -45,6 +45,7 @@ library(lmerTest)
 library(afex)
 library(ggeffects)
 library(sjPlot)
+library(rms)
 library(visreg)
 library(car)
 ```
@@ -176,7 +177,7 @@ Some grammars distinguish between a *passif verbal*, with an event interpretatio
 
 The *se faire* passive construction provides an alternative way to express passive meaning in French: When constructing a passive sentence, the French speaker may choose to use *se faire* instead of the canonical *être*: The two constructions form a passive alternation. Various scholars have examined the *se faire* passive, such as @bellec_construction_2014, @labelle_anticausativizing_2013, @koenig_semantic_1992, @kupferman_construction_1995, @raineri_analyse_2010, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987, to name a few.
 
-The *se faire* passive construction consists of the pronoun *se* (which shows agreement with the subject), a form of the verb *faire ("to do")*, and a verb in the infinitive.
+The *se faire* passive construction consists of the pronoun *se* (which shows agreement with the subject), a form of the verb *faire* ("to do"), and a verb in the infinitive.
 
 \(3\) *Des policiers se font agresser.* (ParlaMint corpus)\
 "Police officers were attacked/ have been attacked."
@@ -186,8 +187,6 @@ Similar to the être passive, the direct object of the active sentence becomes t
 \(4\) *Les intéressés peuvent se faire expliquer tout ce qui touche aux retraites.* (ParlaMint corpus)*\
 *"Interested parties can have everything related to pensions explained to them."
 
-reconstructed active equivalent: "One can explain everything to do with pensions to interested parties." (find one with "par")
-
 The *se faire* passive also allows possessor constructions, where the subject of the passive corresponds to part of the object in the active sentence:
 
 \(5\) *Le coiffeur coupe les cheveux de Pierre. - Pierre s'est fait couper les cheveux (par le coiffeur)\
@@ -195,13 +194,17 @@ The *se faire* passive also allows possessor constructions, where the subject of
 
 However, whether constructions like (5) count as true passives is controversial. Some scholars argue that the se faire construction is fundamentally causative rather than passive, since the subject both initiates and undergoes the action (e.g. "Pierre made the hairdresser cut his hair"). More on that in @sec-debate.
 
-The semantics of the components, mainly the fundamentally causative nature of the verb "faire" and the passive reading, create a semantic discrepancy/ tension: @labelle_anticausativizing_2013 \[235\] classifies the construction as “formally causative, but semantically passive”. This apparent contradiction has led scholars to question the nature of the construction, as @koenig_semantic_1992 [145] put it: "how can a passive-like construction arise from a combination of a causative and a reflexive marker, where no marking of the passive function is apparent?".
+There is a semantic tension between the fundamentally causative nature of the verb *faire* and the passive reading, which has been subject to several discussions in the literature. @labelle_anticausativizing_2013 \[235\] classifies the construction as “formally causative, but semantically passive”. The apparent contradiction has led scholars to question the nature of the construction, as @koenig_semantic_1992 [145] put it: "how can a passive-like construction arise from a combination of a causative and a reflexive marker, where no marking of the passive function is apparent?".
 
-Various answers to this question have been proposed in the literature: @kupferman_construction_1995 sees the causative and passive readings as homonyms with fundamentally different semantics and therefore assigns an inherent passive status to the se faire construction. This is in line with @bellec_construction_2014 and @bellec_quand_2014, who takes a diachronic approach: She describes a process of grammaticalisation and reanalysis for the PSF through which “se” lost its reflexive meaning and “faire” became an auxiliary. According to her, the se faire passive has been grammaticalised into a semi-auxiliary with non-transparent components. In this process, it has lost its causative meaning, which, however, has not disappeared but now coexists with the passive reading. Note, however, that @raineri_analyse_2010 [280-305]'s corpus study suggests that the se faire passive did not derive from the causative reading but evolved independently.
+Various answers to this question have been proposed: @kupferman_construction_1995 sees the causative and passive readings as homonyms with fundamentally different semantics and therefore assigns an inherent passive status to the se faire construction. This is in line with Bellec (@bellec_construction_2014 and @bellec_quand_2014), who takes a diachronic approach: She describes a process of grammaticalisation and reanalysis for the PSF through which “se” lost its reflexive meaning and “faire” became an auxiliary. According to her, the se faire passive has been grammaticalised into a semi-auxiliary with components that are semantically non-transparent. She claims that the causative meaning has not disappeared but now coexists with the passive reading. Note, however, @raineri_analyse_2010 [280-305]'s corpus study, which suggests that the *se faire* passive did not derive from the causative reading but evolved independently.
 
-A syntactic approach is taken by @labelle_anticausativizing_2013 [23], who suggests that the passive meaning is obtained by a syntactic mechanism that involves binding the empty NP-object position of the embedded verb to the subject via the reflexive particle "se" [^1]. However, the distinction between causativity and passivity with regard to *se faire* remains controversial, as will be described in the following @sec-debate.
+A syntactic approach is taken by @labelle_anticausativizing_2013 [23], who suggests that the passive meaning is obtained by a syntactic mechanism that binds the empty NP-object position of the embedded verb to the subject via the reflexive particle "se". The subject is then interpreted as affected because it is linked to the missing object of the embedded verb (which would be affected in the active sentence but is absent on the surface in se faire) [^1].
 
 [^1]: In the se faire passive, the embedded verb (i.e., the infinitive after faire) has an empty NP-object position since only the subject is realised. The reflexive clitic "se" binds the empty object position of the embedded verb. Therefore, "se" connects the (missing) object-NP and the surface subject (coindexation). In contrast to the être passive, the object does not become the new subject but is connected to the subject by "se". The subject is interpreted as affected because it is linked to the missing object of the embedded verb (which would be affected in the active sentence but is absent on the surface in se faire). For this to work, the embedded verb needs an agent as a subject (because otherwise, the missing object would not be affected).
+
+These accounts offer only a brief glimpse into the analysis of the *se faire* construction, which has intrigued scholars due to its distinctive nature. How does the passive reading emerge, and how does it differ from the syntactically identical causative reading? These questions remains controversial, as will be discussed in the following @sec-debate.
+
+The following @sec-debate will explore the controversial issues surrounding the passive reading, including its distinction from the syntactically identical causative reading.
 
 ### Passive vs. causative - Debate of the construction's passive-status {#sec-debate}
 
@@ -427,9 +430,8 @@ sefaire_sample_annotated <- read.csv(file = here("data", "sefaire_sample_annotat
 etre_sample_annotated <- read.csv(file = here("data", "etre_sample_annotated.csv"))
 ```
 
-**Data preprocessing**
-
 ```{r data-cleaning-colnames, include = FALSE}
+# data preprocessing
 colnames(etre_sample_annotated)
 colnames(sefaire_sample_annotated)
 
@@ -487,8 +489,8 @@ passive_sample_combined |>
 #looks good
 ```
 
-```{r cohens-kappa, echo = FALSE}
-kappa_animacy <- ckappa(passive_sample_combined[c("subj_animacy_A", "subj_animacy_B")])
+```{r cohens-kappa, include = FALSE}
+kappa_animacy <- ckappa(passive_sample_combined[c("subj_animacy_A", "subj_animacy_B")]) 
 kappa_animacy #0.9096219
 
 kappa_gender <- ckappa(passive_sample_combined[c("subj_gender_A", "subj_gender_B")])
@@ -513,10 +515,29 @@ kappa_values <- c(kappa_animacy$kappa, kappa_agent_pp$kappa, kappa_modal$kappa, 
 
 mean_kappa <- mean(kappa_values)
 mean_kappa #0.8402305, very high agreement :)
-
 ```
 
-The inter-rater agreement is high at 0.84.
++----------------------+-----------------------+----------------------------------------------+
+| Variable             | Cohen's ϰ             | Strength of Agreement @landis1977measurement |
++======================+=======================+==============================================+
+| Subject animacy      | 0.9096219             | almost perfect                               |
++----------------------+-----------------------+----------------------------------------------+
+| Subject gender       | 0.8746109             | almost perfect                               |
++----------------------+-----------------------+----------------------------------------------+
+| Complément d'agent   | 0.9118457             | almost perfect                               |
++----------------------+-----------------------+----------------------------------------------+
+| Modal                | 0.9469328             | almost perfect                               |
++----------------------+-----------------------+----------------------------------------------+
+| TAM                  | 0.7702391             | substantial                                  |
++----------------------+-----------------------+----------------------------------------------+
+| Cluster              | 0.8326557             | almost perfect                               |
++----------------------+-----------------------+----------------------------------------------+
+| Adversativity        | 0.6700877             | substantial                                  |
++----------------------+-----------------------+----------------------------------------------+
+| Mean                 | 0.8402305             | almost perfect                               |
++----------------------+-----------------------+----------------------------------------------+
+
+We follow the influential benchmark categorisation of @landis1977measurement [165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". The mean inter-rater agreement is high at 0.84. Agreement ist lowest for adversativity (0.67) and TAM (0.77).
 
 ## Logistic Regression
 
@@ -844,7 +865,7 @@ We only have categorical data; therefore mean and standard deviation are not mea
 
 ### Subject animacy
 
-```{r animacy-descriptive-tables}
+```{r animacy-descriptive-tables, echo = FALSE}
 table(passive_sample_clean$subj_animacy) |> 
   sort(decreasing = TRUE) |> 
   proportions ()
@@ -877,7 +898,7 @@ prop.table(table(passive_sample_clean$subj_animacy, passive_sample_clean$passive
 
 Overall, two-thirds of the constructions have animate subjects (mode: animate; 704 vs. 360 inanimate). However, in *être* passives, inanimate subjects are more frequent than animate ones (332 inanimate, 200 animate), whereas *se faire* passives show a strong preference for animate subjects (504 animate, 28 inanimate), as shown in these plots:
 
-```{r animacy-descriptive-plots}
+```{r animacy-descriptive-plots, echo = FALSE}
 passive_sample_clean |> 
 ggplot(mapping = aes(x = subj_animacy)) +
   geom_bar() +
@@ -899,6 +920,13 @@ The plot shows clearly that in *se faire* passives, the subject is animate in th
 table(passive_sample_clean$subj_gender) |> 
   sort(decreasing = TRUE)
 prop.table(table(passive_sample_clean$subj_gender))
+
+subj_table <- table(passive_sample_without_unknown$subj_gender, passive_sample_without_unknown$passive_variant)
+
+# install.packages("vcd")
+# library(vcd)
+# assocstats(subj_table)
+#small effect size
 ```
 
 ```{r, include=FALSE}
@@ -1037,6 +1065,8 @@ ggplot(passive_sample_without_unknown,
 
 ```{r, echo=FALSE}
 table(passive_sample_clean$adversativity, passive_sample_clean$passive_variant)
+
+ftable(passive_sample_without_unknown$adversativity, passive_sample_without_unknown$passive_variant, passive_sample_without_unknown$subj_animacy)
 ```
 
 ```{r animacy-adversativity-plots, echo = FALSE}

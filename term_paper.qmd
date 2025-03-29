@@ -1199,7 +1199,7 @@ levels(passive_sample_unknown$subj_gender)
 
 Function following @gries_statistics_2021 [442]
 
-```{r regression-model, output=FALSE}
+```{r full-passive-glmer, include = FALSE}
 full_passive_glmer <- glmer(
     passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:cluster + subj_animacy:adversativity + cluster:adversativity) +
                (1 | lemma) + (1 | speaker),
@@ -1209,8 +1209,11 @@ full_passive_glmer <- glmer(
   )
 
 summary(full_passive_glmer) #AIC: 785.1
-tab_model(full_passive_glmer) # Marginal R2 / Conditional R2	0.598 / 0.746 // 0.704 / NA
 vif(full_passive_glmer)
+```
+
+```{r full-passive-glmer-tab, echo = FALSE}
+tab_model(full_passive_glmer) # Marginal R2 / Conditional R2	0.598 / 0.746 // 0.704 / NA
 ```
 
 random effects: variance of the speaker very very small (1.359e-13), does not need to be kept; variance of the lemma is bigger (1.917e) and should be kept.
@@ -1251,8 +1254,6 @@ tab_model(final_model) # Marginal R2 / Conditional R2 0.599 / 0.748 (slightly lo
 vif(final_model)
 ```
 
-without subject gender (non-significant without unknown)
-
 Intercept: 2.073421; meaning: chances of se faire are 2.073421 times greater than être given this context
 
 coefficients: if positive, level boosts the chance of se faire (decreases chance of être)
@@ -1290,7 +1291,7 @@ exp(model_2_coef)
 
 overall significance test for the model by comparing 0 model to full model and use an anova between those @gries_statistics_2021 [445-446]
 
-```{r model2-significance, include = FALSE}
+```{r model2-significance, echo = FALSE}
 null_model <- glmer(passive_variant ~ 1 + (1|lemma), data = passive_sample_clean, family = binomial)
 
 anova(final_model, null_model, test="Chisq")
@@ -1309,7 +1310,7 @@ anova(final_model, null_model, test="Chisq")
 
 Surprisingly, and contrary to our hypothesis, the only significant main effect in our model is the verb cluster, with communication verbs favouring *se faire* over *être* passive constructions.
 
-```{r cluster-model-plot, echo =FALSE}
+```{r cluster-model-plot, echo = FALSE}
 
 ggpredict(final_model, "cluster") |> 
   plot()
@@ -1393,9 +1394,9 @@ It could be valuable to examine the cases we excluded from our analysis to under
 
 -   memory-based learning
 
-# Appendix
+# Appendix {.appendix}
 
-# Appendix A: Models {.appendix}
+# Models {.appendix}
 
 ```{r model-with-unknown, include = FALSE}
 passive_glmer_unknown <- glmer(
@@ -1412,15 +1413,15 @@ vif(passive_glmer_unknown)
 ```
 
 ```{r, include = FALSE}
-model_1_unknown <- glmer(
-    passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:adversativity) + (1 | lemma),
-    family = "binomial",
-    data = passive_sample_unknown,
-    control = glmerControl(optimizer = "bobyqa")
-  )
-
-summary(model_1_unknown) # AIC: 738
-tab_model(model_1_unknown) #Marginal R2 / Conditional R2	0.453 / 0.659
+# model_1_unknown <- glmer(
+#     passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:adversativity) + (1 | lemma),
+#     family = "binomial",
+#     data = passive_sample_unknown,
+#     control = glmerControl(optimizer = "bobyqa")
+#   )
+# 
+# summary(model_1_unknown) # AIC: 738
+# tab_model(model_1_unknown) #Marginal R2 / Conditional R2	0.453 / 0.659
 ```
 
 ```{r final-model-unknown, echo = FALSE}

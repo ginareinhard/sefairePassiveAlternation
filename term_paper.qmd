@@ -165,13 +165,14 @@ Some grammars distinguish between a *passif verbal*, with an event interpretatio
 
 ## *se faire* passive
 
-
+```{=html}
 <!--  Historical background
 
 @bellec_grammaticalisation_2015 and @bellec_quand_2014 date the se faire + INF passive construction (PSF) to the middle of the 20th century and call it a "modern" construction that has since experienced a rapid increase in popularity. She describes a process of grammaticalisation and reanalysis for the PSF during/through which “se” has lost its reflexive meaning and “faire” has become an auxiliary. In merging, they form a “semi-auxiliary” and obtain a passive interpretation, while the causative meaning is lost (désémantisation). However, @bellec_construction_2014 claims that the causative reading did not disappear but instead coexists with the passive reading (debated, see below).
 
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward 
 -   se faire passive "typologically marked", comparison to other Romance languages @koenig_semantic_1992 \[145\]; similar constructions exist in other Romance languages but passive reading only allowed in French @labelle_anticausativizing_2013 [236] -->
+```
 
 ### Structure and meaning
 
@@ -189,16 +190,20 @@ Similar to the être passive, the direct object of the active sentence becomes t
 
 The *se faire* passive also allows possessor constructions, where the subject of the passive corresponds to part of the object in the active sentence:
 
-\(5\) *Le coiffeur coupe les cheveux de Pierre. - Pierre s'est fait couper les cheveux (par le coiffeur)\
-*"The hairdresser cuts Pierre's hair - Pierre had his hair cut (by the hairdresser)."
+> 5.  
+>
+>     a.  *Le coiffeur coupe les cheveux de Pierres.*\
+>         "The hairdresser cuts Pierre's hair."\
+>     b.  *Pierre s'est fait couper les cheveux (par le coiffeur).*\
+>         "Pierre had his hair cut (by the hairdresser)."
 
-However, whether constructions like (5) count as true passives is controversial. Some scholars argue that the se faire construction is fundamentally causative rather than passive, since the subject both initiates and undergoes the action (e.g. "Pierre made the hairdresser cut his hair"). More on that in @sec-debate.
+However, whether constructions like 5b. count as true passives is controversial. Some scholars argue that the se faire construction is fundamentally causative rather than passive, since the subject both initiates and undergoes the action (as in: "Pierre made the hairdresser cut his hair"). More on that in @sec-debate.
 
 There is a semantic tension between the fundamentally causative nature of the verb *faire* and the passive reading, which has been subject to several discussions in the literature. @labelle_anticausativizing_2013 \[235\] classifies the construction as “formally causative, but semantically passive”. The apparent contradiction has led scholars to question the nature of the construction, as @koenig_semantic_1992 [145] put it: "how can a passive-like construction arise from a combination of a causative and a reflexive marker, where no marking of the passive function is apparent?".
 
 Various answers to this question have been proposed: @kupferman_construction_1995 sees the causative and passive readings as homonyms with fundamentally different semantics and therefore assigns an inherent passive status to the se faire construction. This is in line with Bellec (@bellec_construction_2014 and @bellec_quand_2014), who takes a diachronic approach: She describes a process of grammaticalisation and reanalysis for the PSF through which “se” lost its reflexive meaning and “faire” became an auxiliary. According to her, the se faire passive has been grammaticalised into a semi-auxiliary with components that are semantically non-transparent. She claims that the causative meaning has not disappeared but now coexists with the passive reading. Note, however, @raineri_analyse_2010 [280-305]'s corpus study, which suggests that the *se faire* passive did not derive from the causative reading but evolved independently.
 
-A syntactic approach is taken by @labelle_anticausativizing_2013 [23], who suggests that the passive meaning is obtained by a syntactic mechanism that binds the empty NP-object position of the embedded verb to the subject via the reflexive particle "se". The subject is then interpreted as affected because it is linked to the missing object of the embedded verb (which would be affected in the active sentence but is absent on the surface in se faire) [^1].
+A syntactic approach is taken by @labelle_anticausativizing_2013 [23], who suggests that the passive meaning is obtained by a mechanism that binds the empty NP-object position of the embedded verb to the subject via the reflexive particle "se". The subject is then interpreted as affected because it is linked to the missing object of the embedded verb (which would be affected in the active sentence but is absent on the surface in se faire) [^1].
 
 [^1]: In the se faire passive, the embedded verb (i.e., the infinitive after faire) has an empty NP-object position since only the subject is realised. The reflexive clitic "se" binds the empty object position of the embedded verb. Therefore, "se" connects the (missing) object-NP and the surface subject (coindexation). In contrast to the être passive, the object does not become the new subject but is connected to the subject by "se". The subject is interpreted as affected because it is linked to the missing object of the embedded verb (which would be affected in the active sentence but is absent on the surface in se faire). For this to work, the embedded verb needs an agent as a subject (because otherwise, the missing object would not be affected).
 
@@ -214,13 +219,13 @@ It is most prominently presented by @tasmowski-de_ryck_causatif_1987 and @gaaton
 
 Sentences including the *se faire* construction can have both/either a passive and/or a causative sense (@koenig_semantic_1992\[143\]):
 
-\(6\) *Ce qui signifie que si nous ne le votons pas, nous **nous ferons taper** des deux côtés.\
-*This means that if we don't vote for it, **we”ll be slammed** from both sides.\
-This means that if we don't vote for it, **we'll make ourselves get slammed** from both sides.
+> 6.  *Ce qui signifie que si nous ne le votons pas, nous **nous ferons taper** des deux côtés.* (ParlaMint corpus)\
+>     "This means that if we don't vote for it, **we”ll be slammed** from both sides."\
+>     "This means that if we don't vote for it, **we'll make ourselves get slammed** from both sides."
 
-\(7\) *il y a \[…\] des parlementaires qui **se sont fait élire** sur la promesse de ne pas supprimer 120 000 postes.\
-"*there are \[…\] Members of Parliament **who** **were elected** on the promise not to cut 120,000 jobs.”\
-"there are \[…\] Members of Parliament **who** **made themselves be elected** on the promise not to cut 120,000 jobs.”
+> 7.  *il y a \[…\] des parlementaires qui **se sont fait élire** sur la promesse de ne pas supprimer 120 000 postes.* (ParlaMint corpus)\
+>     "there are \[…\] Members of Parliament who **were elected** on the promise not to cut 120,000 jobs."\
+>     "there are \[…\] Members of Parliament who **made themselves be elected** on the promise not to cut 120,000 jobs."
 
 As @washio_when_1993 \[45\] describes, the linguistic proximity of causativity and passivity is not exclusive for French but quite typical in cross-linguistic contexts, stating that "passive and causative senses are shown to share a basic conceptual structure" across the world's languages. Crucially, passive se faire and causative se faire are structurally identical, differing only in their semantics. According to @labelle_anticausativizing_2013 [236] the ambiguity is resolved by "the lexical items involved", that is, by the semantic nature of the three main components: subject referent, "se" and "faire".
 
@@ -238,13 +243,14 @@ Thus, causative and passive readings of the se faire construction are distinguis
 
 This debate has been central to the investigation of the se faire constructions and cannot be left aside. However, even if the status of the PSF has been the subject of disagreement and discussion, the literature clearly shows that there is a passive reading associated with this construction. This is independent of whether the passive sense emerges from within the construction or from the components it occurs with, or whether it has an underlying causative meaning. By comparing *se faire* and *être* constructions, and examining the factors contributing to the choice of one or the other, we may be able to shed light on this debate from a corpuslinguistic perspective. <!-- (-> exclude causative readings?). Can our findings contribute to the debate of whether se faire deserves passive-status? If not: no need to spell out the debate in detail. -->
 
-## *être* and *se faire*: competition or complementation? 
+## *être* and *se faire*: competition or complementation?
+
 ### Defining the variable context
 
 Both se faire and être passives are available for the active diathesis [@novakova_construction_2009 [108]] and assign the role of the undergoer to the subject referent. @kupferman_construction_1995 sees the two constructions as semantically synonymous as they both convey a passive sense. Therefore, the two variants form an alternation and are expected to compete with each other in contexts where passive needs to be expressed. We find that both variants may be used in the same context/ sentence:
 
-\(8\) *Je remarque d'' ailleurs que ce sont souvent ceux qui filment qui **se font éborgner** ou **sont blessés** par des tirs de LBD.\
-*"Incidentally, I've noticed that it's often those filming **who get their eyes poked** out or **are injured** by LBD fire."
+> 8.  *Je remarque d' ailleurs que ce sont souvent ceux qui filment qui **se font éborgner** ou **sont blessés** par des tirs de LBD*. (ParlaMint)\
+>     "Incidentally, I've noticed that it's often those filming who **get their eyes poked out** or **are injured** by LBD fire."
 
 However, some scholars speak of semantic differences between the canonical être passive and the se faire passive: As @novakova_construction_2009 [108] notes, the constructions differ in semantic nuances, as they have *un sens proche mais pas identique* ("a similar but not identical sense").
 
@@ -286,15 +292,8 @@ In line with their argument that the passive reading of se faire + INF is a kind
 
 In contrast, @kupferman_construction_1995 [59] gives PSF examples where the subject cannot be interpreted as responsible, one of which is repeated here:
 
-```{r gloss}
-#| echo: false
-gloss_non_resp <- as_gloss(
-  "elle sanglotait parce que son tout jeune bébé venait de se faire enlever les amygdales.",
-translation = "She sobbed because her little baby got operated on for tonsilitis.",
-source = "Kupferman (1995: 59)"
-)
-gloss_non_resp
-```
+> 9.  *Elle sanglotait parce que son tout jeune bébé venait de se faire enlever les amygdales.* (@kupferman_construction_1995 [59])\
+>     "She sobbed because her little baby got operated on for tonsilitis."
 
 According to him, subject responsibility emerges from the context and not from the PSF, which is inherently passive [98, 99]. Further support for this idea comes from @labelle_anticausativizing_2013 and @washio_when_1993. For @martin_construction_2002, subject dynamism, but not subject intentionality, is a necessary condition in the PSF (@raineri_analyse_2010 [90]).
 
@@ -390,9 +389,9 @@ Regarding the factor of aspectuality, @keenan_passive_2007 [340] cites one of Gr
 
 "If a language has two or more basic passives they are likely to differ semantically with respect to the aspect ranges they cover." \[Greenberg source with page number\]
 
-If we assume that the PSF is a "basic passive", this suggests that the *être* and *se faire* passives have different aspectual preferences. Aspectuality is expressed through the verb, either via inherent lexical semantics ("Aktionsart") or grammatical marking, such as tense, aspect, and mood [^3] (source missing!).
+If we assume that the PSF is a "basic passive", this suggests that the *être* and *se faire* passives have different aspectual preferences. Aspectuality is expressed through the verb, either via inherent lexical semantics ("Aktionsart") or grammatical marking, such as tense, aspect, and mood [^2] (source missing!).
 
-[^3]: The general consensus in the literature is that aspect marks progressivity grammatically and Aktionsart semantically/ lexically. However, this clear distinction between aspect and Aktionart has been doubted, and some theories see Aktionsart und Aspect as two instantiations of Aspectuality (source missing!).
+[^2]: The general consensus in the literature is that aspect marks progressivity grammatically and Aktionsart semantically/ lexically. However, this clear distinction between aspect and Aktionart has been doubted, and some theories see Aktionsart und Aspect as two instantiations of Aspectuality (source missing!).
 
 We do not examine mood in this study.
 
@@ -512,9 +511,9 @@ Our hypothesis is that progressive marking (whether through tense or periphrasis
 
 The factor of "Adversativity" is reflected in the semantics of the verb and captures the (negative) consequences of the described action for the subject. It has been found to be relevant to the choice between the be and get passive (@hundt_be-_2024 [89, 96-97]; @bohmann_large-scale_2023). @spang-hanssen_quelques_1967 and @raineri_analyse_2010 draw parallels between the English get passive and the French PSF construction.
 
-@gaatone_desagreable_1983 argues that the se faire passive has a strong "unpleasant sense" ("sens désagreable") because it occurs mainly with verbs denoting unpleasant events [^4]. Although @kupferman_construction_1995 \[77\] rejects the "unpleasant sense" as a characteristic of se faire, he agrees that it is more commonly used in unpleasant contexts ("has tended to specialize in unpleasant roles" (compared to être, which is more neutral)). This is supported by corpus data: @novakova_construction_2009 [110] found a clear preference for PSF to be realised with unpleasant actions, with 30% of verbs in PSF denoting unpleasant events and only 5% denoting pleasant events. Also: @raineri_analyse_2010 [247].
+@gaatone_desagreable_1983 argues that the se faire passive has a strong "unpleasant sense" ("sens désagreable") because it occurs mainly with verbs denoting unpleasant events [^3]. Although @kupferman_construction_1995 \[77\] rejects the "unpleasant sense" as a characteristic of se faire, he agrees that it is more commonly used in unpleasant contexts ("has tended to specialize in unpleasant roles" (compared to être, which is more neutral)). This is supported by corpus data: @novakova_construction_2009 [110] found a clear preference for PSF to be realised with unpleasant actions, with 30% of verbs in PSF denoting unpleasant events and only 5% denoting pleasant events. Also: @raineri_analyse_2010 [247].
 
-[^4]: According to @gaatone_desagreable_1983, unpleasant events contradict the notion of subject responsibility because subjects would not willingly bring the unpleasant event upon themselves (argument for "primacy of causative reading"). According to him, the reason this is the subject's involvement in se faire constructions: if the subject experiences a pleasant event and this is expressed by se faire -\> mostly the subject has initiated the action -\> causative and not passive reading (language example?)/ in contrast, it is less likely that the subject initiates an unpleasant action.
+[^3]: According to @gaatone_desagreable_1983, unpleasant events contradict the notion of subject responsibility because subjects would not willingly bring the unpleasant event upon themselves (argument for "primacy of causative reading"). According to him, the reason this is the subject's involvement in se faire constructions: if the subject experiences a pleasant event and this is expressed by se faire -\> mostly the subject has initiated the action -\> causative and not passive reading (language example?)/ in contrast, it is less likely that the subject initiates an unpleasant action.
 
 In their corpus study on the English be - get passive alternation, @hundt_be-_2024 label this factor as binary on the verb as adversative, non-adversative/neutral. For practicality and clear statistical modelling, We follow them in our annotation: "Adversative" if event negatively affects the subject, "non-adversative" if event is neutral or positive.
 
@@ -526,9 +525,11 @@ As @bohmann_large-scale_2023 notes in their investigation of the be/get alternat
 
 **Interaction:** Affectedness of the subject may be reflected by an interaction of subject animacy and verb adversativity: Negative consequences of actions, expressed by adversative verbs, affect animate subjects more than inanimate subjects.
 
+```{=html}
 <!-- ### Maybe: Comparison to similar alternations in other languages
 
 -   English @bohmann_large-scale_2023, East Asian languages @washio_when_1993 and @guan_multifactorial_2024 , Swedish @cuypere_corpus-based_2014 -->
+```
 
 # Data and Methods
 
@@ -626,7 +627,7 @@ We excluded:
 
 -   Expressions that cannot be converted into a correct active sentence (i.e., the direct object of the active sentence is not the subject of the passive sentence). (ditransitive, intransitive verbs ?), example: "mais se faire expliquer des elements de justice n'est pas la même chose que d'acheter en ligne des produits bio ou une paire de chaussures." *but getting an explanation of legal matters is not the same as buying organic products or a pair of shoes online*
 
--   Expressions containing verbs classified as "idiomes lexicalisés" (lexicalised idioms) according to Raineri (2010: 163). These verbs neither carry a true causative nor passive meaning [^2]: entendre, sentir, attendre, désirer (Raineri 2010: 164); example: "Partout le mécontentement populaire se faire entendre sans qu'' on ait besoin de souffler sur les braises." *Everywhere, popular discontent is making itself heard without the need to fan the flames.*
+-   Expressions containing verbs classified as "idiomes lexicalisés" (lexicalised idioms) according to Raineri (2010: 163). These verbs neither carry a true causative nor passive meaning [^4]: entendre, sentir, attendre, désirer (Raineri 2010: 164); example: "Partout le mécontentement populaire se faire entendre sans qu'' on ait besoin de souffler sur les braises." *Everywhere, popular discontent is making itself heard without the need to fan the flames.*
 
 -   (Expressions with a transparent causative meaning - maybe not necessary if covered by the other criteria)
 
@@ -634,10 +635,11 @@ We excluded:
 
 -   impersonal être passive constructions (passif impersonnel)
 
-[^2]: These verbs mainly occur with inanimate subjects (effects, consequences, discontent). @raineri_analyse_2010 [163-164] proposes that the causative meaning is not available for these verbs since the subject is not causing the event. There is also no passive meaning since they cannot cannot occur with a complément d’agent and do not have a paraphrase with être.
+[^4]: These verbs mainly occur with inanimate subjects (effects, consequences, discontent). @raineri_analyse_2010 [163-164] proposes that the causative meaning is not available for these verbs since the subject is not causing the event. There is also no passive meaning since they cannot cannot occur with a complément d’agent and do not have a paraphrase with être.
 
 -\> summary of the sample?
 
+```{=html}
 <!-- ### Annotation Guidelines
 
 **Gender (masculin/ feminin/ mixed/ unknown)**
@@ -678,6 +680,7 @@ We excluded:
 
     -   passé composé, plus-que-parfait, présent, futur antérieur (...) - progressiveness is hinted at by another verb in the sentence (e.g., falloir or être) and not from the "se faire" construction itself
 -->
+```
 
 ### Data preprocessing
 
@@ -798,7 +801,6 @@ passive_sample_unknown <- passive_sample_clean|>
 
 ```
 
-
 ### Inter-rater agreement
 
 As the analysis required detailed (and time consuming) manual annotation, we decided to split the annotation work between us. However, to ensure consistent annotation, a representative sample of one third of all instances (320; 33,25%) were double annotated, i.e. by both of us. For these instances, we calculated Cohen's ϰ (Kappa) as a measure of inter-rater agreement (following @levshina_how_2015 [201] and the documentation in the psy package documentation (<https://cran.r-project.org/web/packages/psy/psy.pdf>).)
@@ -904,10 +906,11 @@ levels(passive_sample_unknown$subj_gender)
 
 ### Model selection: Maximum likelihood
 
-::: {.panel-tabset}
+::: panel-tabset
+#### Full Model
 
-#### Full Model 
 Function following @gries_statistics_2021 [442]
+
 ```{r full-passive-glmer, output = FALSE}
 #| code-fold: true
 full_passive_glmer <- glmer(
@@ -921,11 +924,13 @@ full_passive_glmer <- glmer(
 summary(full_passive_glmer) #AIC: 732.5
 vif(full_passive_glmer)
 ```
+
 ```{r full-passive-glmer-tab, echo = FALSE}
 tab_model(full_passive_glmer)
 ```
 
 #### Model Back-1
+
 Removing non-significant interactions (cluster:adversativity, subj_animacy:cluster, subj_animacy:subj_gender):
 
 ```{r model-back-1, output = FALSE}
@@ -939,12 +944,15 @@ model_back_1 <- glmer(
 
 summary(model_back_1) #AIC: 725.4
 ```
+
 ```{r model-back-1-tab, echo = FALSE}
 tab_model(model_back_1)
 ```
 
 #### Final Model
+
 removing non-significant fixed effects (agent_pp, modal, tam, subj_gender)
+
 ```{r final-model, output = FALSE}
 #| code-fold: true
 final_model <- glmer(
@@ -956,10 +964,10 @@ final_model <- glmer(
 summary(final_model) # AIC: 718.6 
 vif(final_model)
 ```
+
 ```{r final-model-tab, echo = FALSE}
 tab_model(final_model) # Marginal R2 / Conditional R2	0.445 / 0.660
 ```
-
 :::
 
 Intercept: 2.97; meaning: chances of se faire are 2.97 times greater than être given this context (animate subject, neutral verb, adversative sense)
@@ -1017,6 +1025,7 @@ anova(final_model, null_model, test="Chisq")
 # (exp((AIC(null_model)-AIC(final_model_without_unknown))/2))
 ```
 
+```{=html}
 <!-- ## Memory based learning
 
 -   non-parametric: no assumptions about underlying distribution of data
@@ -1046,6 +1055,7 @@ anova(final_model, null_model, test="Chisq")
 -   caret: Model Tuning: find optimal value of "K"
 -   caret: train best performing model
 -   Model evaluation -->
+```
 
 # Results
 
@@ -1312,8 +1322,11 @@ mosaicplot(subj_gender ~ passive_variant,
 More in @levshina_how_2015: Chapter 4 and @gries_statistics_2021 Chapter 3/Descriptive statistics & visualisations) and Chapter 6 (Mixed effects regression modeling)
 
 ## Effects of logistic regression
+
 ### Subject responsibility
+
 ### Aspectuality
+
 Reporting and interpreting results of the logistic regression with regard to our hypotheses and descriptive statistics
 
 Surprisingly, and contrary to our hypothesis, the only significant main effect in our model is the verb cluster, with communication verbs favouring *se faire* over *être* passive constructions.
@@ -1353,6 +1366,7 @@ freq_communication_wide |>
 Frequencies for communication lemmas
 :::
 
+**Random intercepts**
 ```{r ranef-final-model, echo = FALSE}
 ranef <- as.data.frame(ranef(final_model))
 
@@ -1368,6 +1382,7 @@ ranef |>
 ```
 
 ### Adversativity
+
 ```{r interaction-model-plot, echo=FALSE}
 
 ggpredict(final_model, c("subj_animacy", "adversativity")) |> 
@@ -1380,8 +1395,6 @@ If the subject is inanimate and non-adversative, the être passive is almost exc
 However, the likelihood of the se faire passive increases significantly when the construction has an adversative sense: In our study, se faire and être were equally likely for inanimate subjects and adversative contexts,.
 
 In contast, constructions with animate subjects show a strong preference for the se faire passive regardless of adversativity: The chance of se faire being used is high for both inadversative and adversative contexts (and increases a litte but more for adversative contexts, but not significantly).
-
-**Random intercepts**
 
 # Discussion
 

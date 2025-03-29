@@ -1227,7 +1227,7 @@ significant effects:
 
 removing non-significant interactions (cluster:adversativity, subj_animacy:cluster, subj_animacy:subj_gender) and random effect of speaker:
 
-```{r model-1, echo = FALSE}
+```{r model-1, include = FALSE}
 model_1 <- glmer(
     passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma),
     family = "binomial",
@@ -1243,7 +1243,7 @@ removing non-significant fixed effects (agent_pp, modal, tam, subj_gender)
 
 ```{r final-model, echo = FALSE}
 final_model <- glmer(
-    passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma),
+    passive_variant ~ (subj_animacy + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma),
     family = "binomial",
     data = passive_sample_clean,
     control = glmerControl(optimizer = "bobyqa")

@@ -240,33 +240,30 @@ This debate has been central to the investigation of the se faire constructions 
 
 ## *être* and *se faire*: Competition or complementation? - Defining the variable context
 
-Both se faire and être passives are available for the active diathesis [@novakova_construction_2009 [108]] and assign the role of the undergoer to the subject referent. However, as @novakova_construction_2009 [108] notes, the constructions differ in semantic nuances: "Elles ont un sens proche mais pas identique." Both variants may be used in the same context/ sentence:
+Both se faire and être passives are available for the active diathesis [@novakova_construction_2009 [108]] and assign the role of the undergoer to the subject referent. @kupferman_construction_1995 sees the two constructions as semantically synonymous as they both convey a passive sense. Therefore, the two variants form an alternation and are expected to compete with each other in contexts where passive needs to be expressed. We find that both variants may be used in the same context/ sentence:
 
-*Je remarque d'' ailleurs que ce sont souvent ceux qui filment qui se font éborgner ou sont blessés par des tirs de LBD.*
+\(8\) *Je remarque d'' ailleurs que ce sont souvent ceux qui filment qui **se font éborgner** ou **sont blessés** par des tirs de LBD.\
+*"Incidentally, I've noticed that it's often those filming **who get their eyes poked** out or **are injured** by LBD fire."
 
-"Incidentally, I've noticed that it's often those filming **who get their eyes poked** out or **are injured** by LBD fire."
+However, some scholars speak of semantic differences between the canonical être passive and the se faire passive: As @novakova_construction_2009 [108] notes, the constructions differ in semantic nuances, as they have *un sens proche mais pas identique* ("a similar but not identical sense").
 
-According to @raineri_analyse_2010 [87], the se faire passive is "une tournure marquée, sémantiquement contrainte et associée à des types de discours oraux et/ou informels ("marked, semantically constrained phrase associated with oral and/or informal discourse").
+According to @raineri_analyse_2010 [87], the se faire passive is marked and predominantly used in informal contexts. In contrast to the canonical *être* passive, *se faire* is reported to prefer spoken language over written language. Additionally, the *se faire* passive has a strongly figurative sense that être does not have: It is often used as part of idiomatic or lexicalised expressions (@raineri_analyse_2010 \[165\], @novakova_construction_2009 [117]), and associated with a "besoin d’expressivité and extravagance" ("a need of expressivity and extravagance") @bellec_construction_2014 [206].
 
-This demonstrates that the two passive variants are not semantically identical but rather potentially carry different meanings that may be more or less pronounced depending on the context: Previous research suggests that se faire passive is more likely to have a causative undertone while the être passive is more neutral. it has been proposed that constructions vary in their passivity ( "passive gradient", @bohmann_large-scale_2023 [34])) and that there is a continuum between causatity and passivity. However, this is what makes the analysis interesting and our research worthwhile - what are the exact factors that influence the choice between the the two variants?
+Previous research also suggests that se faire passive is more likely to have a causative undertone while the être passive is more neutral. As discussed in @sec-debate, it has been proposed that the constructions vary in their degree of passivity ( "passive gradient", @bohmann_large-scale_2023 [34])) and that even within the se faire passive, there exists a continuum between causatity and passivity (@raineri_analyse_2010).
 
-This introduces certain difficulties: The passive/ causative continuum discussed in @sec-debate makes the definition of the variable context particularly challenging as some constructions may be more passive than others - Deciding where to draw the line between a passive and causative construction is a nuanced task.
+This demonstrates that the two passive variants are not semantically identical but rather potentially carry different meanings. These meanings may be more or less pronounced depending on the context. This potential semantic difference introduces certain difficulties in the contrastive analysis of the alternation.
 
-@bohmann_large-scale_2023 [35] face similar challenges when defining the variable context of the be and get passive: "passive gradient" exist where both GET and BE may be used, but where the choice between the two entails a semantic difference", "definition of the variable context is not just a problem of automation, but of linguistic interpretation" \[36\].
+The passive/ causative continuum makes the definition of the variable context particularly challenging as some constructions may be more passive than others. Deciding where to draw the line between a passive and causative construction is therefore a nuanced task. @bohmann_large-scale_2023 [35-36] face similar challenges when defining the variable context of the English be and get passive alternation.
 
 Since our aim is to investigate the passive alternation of être and se faire, it is important to ensure that we only compare the être passive with real passive se faire constructions, and not with causative constructions (@bohmann_large-scale_2023 [35]: "all extracted forms should be genuine instances of the variable under investigation").
 
-We follow @raineri_analyse_2010 \[165\] in including only se faire + Inf constructions that have a natural paraphrase with the être passive in order to include only constructions that directly contrast with être. Following @bohmann_large-scale_2023 [35] who claim that "only cases where both variants can be used interchangeably should be considered", we aim to exclude constructions that do not allow for a paraphrase with the other.
+We follow @raineri_analyse_2010 \[165\] in including only *se faire* constructions that have a natural paraphrase with the *être* passive in order to investigate only constructions participating in the alternation. Following @bohmann_large-scale_2023 [35] who claim that "only cases where both variants can be used interchangeably should be considered", we aim to exclude constructions that do not allow for a paraphrase with the other, i.e. are not contrastive suhc as idioms.
 
-Passive constructions of se faire and être are not always interchangeable: As described above, the canonical passive with être requires a direct object in the active equivalent which becomes the new subject, @koenig_semantic_1992 \[144\], @washio_when_1993, @labelle_anticausativizing_2013 [16]. Thus, for reflexive and ditransitive verbs, the être passive is not available and does not compete with se faire. These constructions will be excluded and only transitive verbs will be studied.
+As described above, the canonical passive with être requires a direct object in the active equivalent which becomes the new subject (@koenig_semantic_1992 \[144\], @washio_when_1993, @labelle_anticausativizing_2013 [16]). Thus, for reflexive and ditransitive verbs, the être passive is not available and does not compete with se faire. These constructions will be excluded and only transitive verbs will be studied. Similarly, some verb participles and adjectives in French are structurally identical.
 
--   se faire passive has evolved to be used in situations without a causer (passive reading) @bellec_construction_2014
--   figurative, "besoin d’expressivité and extravagance" instead of "used up" canonical passive @bellec_construction_2014 \[206\]; part of lexicalised expressions @novakova_construction_2009 [117]/ idioms @raineri_analyse_2010 [165]
--   while some scholars speak of semantic differences between the canonical être passive and the se faire passive, @kupferman_construction_1995 sees them as semantically synonymous -\> therefore: competition
--   how much is it used today (according to authors/ background literature) and in which settings
-    -   se faire less formal, more figurative and emotional, used to build the passive with indirect object as the agent & to express passivity in dynamic/ ongoing processes, more spoken
-    -   etre passive more “neutral”, more formal, more written
--   être: exclude adjectives and some participles that do not form the passive (similar to @bohmann_large-scale_2023 \[36\])/ "instances that allow for gradation" @hundt_be-_2024 [92]
+We recognize this "fuzzy" (@bohmann_large-scale_2023 [50]) variable context as both a challenge and a chance: It is exactly these subtle differences that make the analysis interesting and our research worthwhile. In our study, we therefore aim to examine the exact factors that influence the choice between the the two variants by statistixally modeling real language data.
+
+<!-- être: exclude adjectives and some participles that do not form the passive (similar to @bohmann_large-scale_2023 [36])/ "instances that allow for gradation" @hundt_be-_2024 [92];; Maybe better in Borderline cases/ filtering criteria) -->
 
 ### Maybe: Comparison to similar alternations in other languages
 
@@ -1253,12 +1250,12 @@ final_model <- glmer(
     control = glmerControl(optimizer = "bobyqa")
   )
 
-summary(final_model) # AIC: 771.5 without level "mixed")
-tab_model(final_model) # Marginal R2 / Conditional R2 0.599 / 0.748 (slightly lower than model_1 but with fewer factors!)
+summary(final_model) # AIC: 718.6 
+tab_model(final_model) # Marginal R2 / Conditional R2	0.445 / 0.660
 vif(final_model)
 ```
 
-Intercept: 2.073421; meaning: chances of se faire are 2.073421 times greater than être given this context
+Intercept: 2.97; meaning: chances of se faire are 2.073421 times greater than être given this context
 
 coefficients: if positive, level boosts the chance of se faire (decreases chance of être)
 

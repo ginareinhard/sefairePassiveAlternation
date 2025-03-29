@@ -26,7 +26,6 @@ p {
 }
 </style>
 ```
-
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -141,7 +140,7 @@ In this study, we apply a quantitative, multivariate, probabilistic approach to 
 
 # The French passive alternation of *être* and *se faire*
 
-## Canonical passive with *être*
+## Canonical passive with *être* {#sec-etre}
 
 ### Structure and meaning
 
@@ -172,7 +171,6 @@ Some grammars distinguish between a *passif verbal*, with an event interpretatio
 
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward -->
 ```
-
 ### Structure and meaning
 
 The *se faire* passive construction provides an alternative way to express passive meaning in French: When constructing a passive sentence, the French speaker may choose to use *se faire* instead of the canonical *être*: The two constructions form a passive alternation. Various scholars have examined the *se faire* passive, such as @bellec_construction_2014, @labelle_anticausativizing_2013, @koenig_semantic_1992, @kupferman_construction_1995, @raineri_analyse_2010, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987, to name a few.
@@ -301,7 +299,6 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
-
 ```{r lemma-list, include=FALSE}
 
 lemmas <- sefaire_sample |> 
@@ -517,25 +514,25 @@ mean_kappa <- mean(kappa_values)
 mean_kappa #0.8402305, very high agreement :)
 ```
 
-+----------------------+-----------------------+----------------------------------------------+
-| Variable             | Cohen's ϰ             | Strength of Agreement @landis1977measurement |
-+======================+=======================+==============================================+
-| Subject animacy      | 0.9096219             | almost perfect                               |
-+----------------------+-----------------------+----------------------------------------------+
-| Subject gender       | 0.8746109             | almost perfect                               |
-+----------------------+-----------------------+----------------------------------------------+
-| Complément d'agent   | 0.9118457             | almost perfect                               |
-+----------------------+-----------------------+----------------------------------------------+
-| Modal                | 0.9469328             | almost perfect                               |
-+----------------------+-----------------------+----------------------------------------------+
-| TAM                  | 0.7702391             | substantial                                  |
-+----------------------+-----------------------+----------------------------------------------+
-| Cluster              | 0.8326557             | almost perfect                               |
-+----------------------+-----------------------+----------------------------------------------+
-| Adversativity        | 0.6700877             | substantial                                  |
-+----------------------+-----------------------+----------------------------------------------+
-| Mean                 | 0.8402305             | almost perfect                               |
-+----------------------+-----------------------+----------------------------------------------+
++--------------------+-----------------+----------------------------------------------+
+| Variable           | Cohen's ϰ       | Strength of Agreement @landis1977measurement |
++====================+=================+==============================================+
+| Subject animacy    | 0.9096219       | almost perfect                               |
++--------------------+-----------------+----------------------------------------------+
+| Subject gender     | 0.8746109       | almost perfect                               |
++--------------------+-----------------+----------------------------------------------+
+| Complément d'agent | 0.9118457       | almost perfect                               |
++--------------------+-----------------+----------------------------------------------+
+| Modal              | 0.9469328       | almost perfect                               |
++--------------------+-----------------+----------------------------------------------+
+| TAM                | 0.7702391       | substantial                                  |
++--------------------+-----------------+----------------------------------------------+
+| Cluster            | 0.8326557       | almost perfect                               |
++--------------------+-----------------+----------------------------------------------+
+| Adversativity      | 0.6700877       | substantial                                  |
++--------------------+-----------------+----------------------------------------------+
+| Mean               | 0.8402305       | almost perfect                               |
++--------------------+-----------------+----------------------------------------------+
 
 We follow the influential benchmark categorisation of @landis1977measurement [165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". The mean inter-rater agreement is high at 0.84. Agreement ist lowest for adversativity (0.67) and TAM (0.77).
 
@@ -556,7 +553,6 @@ As indicated above, the question whether the referent of the subject in the se f
 the PSF construction has a preference to mark the subject as an active participant (although according to @raineri_analyse_2010 [98] is is not "universally accepted" as some authors also name counterexamples @kupferman_construction_1995 [59].)
 In @raineri_analyse_2010 [95]'s view, the idea that the PSF expresses subject responsibility is the "most common hypothesis" ("l'hypothèse la plus répandue") in the literature. -->
 ```
-
 In line with their argument that the passive reading of se faire + INF is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of the se faire passive is always a causer and therefore always responsible to some degree. This is contrasted to the être passive's subject referent, which is see as more neutral. @gaatone_desagreable_1983 [164] distinguishes between an "active patient" in the se faire construction and a "passive patient" in the être passive (@raineri_analyse_2010 [96]).
 
 In contrast, @kupferman_construction_1995 [59] gives PSF examples where the subject cannot be interpreted as responsible, one of which is repeated here:
@@ -601,15 +597,19 @@ Since we do not infer the agent from context in this study, our analysis focuses
 
 To test this, we categorise gender into four levels: unknown, mixed, masculine, and feminine. Our hypothesis is that a feminine subject will favour the *être* passive and disfavor the *se faire* passive. We will test the potential interaction between gender and animacy, as the effect of grammatical gender may depend on whether the subject is animate or inanimate, potentially linking to the social gender of animate subject referents. Additionally, we will examine how unknown or mixed-gender subjects behave in terms of this alternation.
 
-**Complément d'agent (Agent PP)**
+**Complément d'agent**
 
-(The par-phrase introduces an external agent into the passive construction: It denotes the causer/ instigator of the action and is often derived through diathesis from the subject of the active equivalent.)
+The *complément d'agent* introduces an external agent into the passive construction: it refers to the causer or instigator of the action and is derived through diathesis from the subject of the corresponding active sentence (see @sec-etre).
 
-We expect the presence or absence of the par-phrase to influence passive choice. The par-phrase introduces an external agent who is likely the driving force behind the action described: @kupferman_construction_1995 postulates an "agentivity requirement" for agents denoted by the par-phrase, attributing a strong responsibility to the component. @hundt_be-_2024 and @bohmann_large-scale_2023 found that in English, the Agent PP reduces subject responsibility by introducing an agentive/ responsible entity.
+The *complément d'agent* is optional. It is usually formed with *par*, sometimes also with *de*, and even more rarely with *dans*. We do not consider the special case with *dans* in our analysis. Semantically, the *complément d'agent* does not always refer to an agent. Verbs where the subject is an infinitive or a subordinate clause as well as certain state verbs occur with *de* in the passive voice. With a nominal subject, the passive with *de* is a remnant of Classical French and is therefore very rare, affecting only 2% of cases. In most cases, *de* alternates with *par* in contemporary French, although some verbs, such as *constituer*, naturally prefer *de*. For verbs like *aider*, a human *complément d’agent* is more natural than an abstract one. The verbs that allow this construction are often state verbs but belong to different semantic classes **(examples to be provided)**. The choice between *par* and *de* is not always interchangeable in meaning. For example, with the verb *accompagner*, a *complément d’agent* with *par* implies a more active role of the argument than with *de*. *de* is generally associated with non-dynamic, static, or non-agentive interpretations[@abeille2021grande 216-218].
 
-We hypothesize that the complément d'agent influences the choice between *se faire* and *être* passives. The presence of a complément d'agent should favor *être* passives, as it introduces a responsible external argument and shifts responsibility away from the subject. In contrast, the absence of a complément d'agent is expected to favor *se faire* passives, which imply some degree of subject responsibility.
+We are aware that introducing the *complément d'agent* as a predictor in our analysis introduces an additional source of variance, along with potential interactions and potential collinearity. However, we have chosen to include it, as we believe it is relevant to subject responsibility.
 
-We expect phrases with *de* to have an even stronger effect than phrases with *par*, as they typically refer to less agentive or abstract sources (instead of agents), contradicting the dynamic nature of the *se faire* passive, which typically occurs with adversative or strongly agentive actions. To examine this, we will test the interaction between the complément d'agent and the verb cluster??, as we expect the *se faire* passive to be favoured by dynamic and adversative verbs (see seq-XXX).
+We expect the presence or absence of the *complément d'agent* to influence passive choice. The *complément d'agent* introduces an external argument that is likely the driving force behind the action described: @kupferman_construction_1995 postulates an "agentivity requirement" for agents denoted by the *complément d'agent* with *par*, attributing a strong responsibility to the component. @hundt_be-_2024 and @bohmann_large-scale_2023 found that in English passive constructions, the Agent PP (**Abkürzung auflösen**) reduces subject responsibility by introducing another entity that is agentive and responsible.
+
+We hypothesize that the *complément d'agent* influences the choice between *se faire* and *être* passives. The presence of a *complément d'agent* should favor *être* passives, as it introduces a responsible external argument and shifts responsibility away from the subject. In contrast, the absence of a complément d'agent is expected to favor *se faire* passives, which imply some degree of subject responsibility.
+
+We expect phrases with *de* to have an even stronger effect than phrases with *par*, as they typically refer to less agentive or abstract sources (instead of agents), contradicting the dynamic nature of the *se faire* passive construction, which typically occurs with adversative or strongly agentive actions. To examine this, we will test the interaction between the complément d'agent and the verb cluster??, as we expect the *se faire* passive to be favoured by dynamic and adversative verbs (see @seq-XXX).
 
 **Modal verbs** (auxiliary)
 
@@ -1116,16 +1116,16 @@ intercept: "value that determines the chances of an outcome when all predictors 
 
 Levels are by default ordered alphabetically. We change the reference levels to the most "standard" case.
 
-| Variable | Label | Levels |
-|----|----|----|
-| Passive variant | passive_variant | être, se faire |
-| Subject animacy | subj_animacy | inanimate, animate |
-| Subject gender | subj_gender | masculine, feminine |
-| Complément d'agent | agent_pp | 0, par, de // 0, present |
-| Modal | modal | no, yes |
-| TAM | tam | non-progressive, progressive |
-| Cluster | cluster | neutral, communication, hitting-touching |
-| Adversativity | adversativity | non-adversative, adversative |
+| Variable           | Label           | Levels                                   |
+|--------------------|-----------------|------------------------------------------|
+| Passive variant    | passive_variant | être, se faire                           |
+| Subject animacy    | subj_animacy    | inanimate, animate                       |
+| Subject gender     | subj_gender     | masculine, feminine                      |
+| Complément d'agent | agent_pp        | 0, par, de // 0, present                 |
+| Modal              | modal           | no, yes                                  |
+| TAM                | tam             | non-progressive, progressive             |
+| Cluster            | cluster         | neutral, communication, hitting-touching |
+| Adversativity      | adversativity   | non-adversative, adversative             |
 
 : Overview of variables for the *être: se faire* passive alternation
 

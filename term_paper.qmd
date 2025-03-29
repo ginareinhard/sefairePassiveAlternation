@@ -262,9 +262,7 @@ This demonstrates that the two passive variants are not semantically identical b
 
 The passive/ causative continuum makes the definition of the variable context particularly challenging as some constructions may be more passive than others. Deciding where to draw the line between a passive and causative construction is therefore a nuanced task. @bohmann_large-scale_2023 [35-36] face similar challenges when defining the variable context of the English be and get passive alternation.
 
-Since our aim is to investigate the passive alternation of être and se faire, it is important to ensure that we only compare the être passive with real passive se faire constructions, and not with causative constructions (@bohmann_large-scale_2023 [35]: "all extracted forms should be genuine instances of the variable under investigation").
-
-We follow @raineri_analyse_2010 \[165\] in including only *se faire* constructions that have a natural paraphrase with the *être* passive in order to investigate only constructions participating in the alternation. Following @bohmann_large-scale_2023 [35] who claim that "only cases where both variants can be used interchangeably should be considered", we aim to exclude constructions that do not allow for a paraphrase with the other, i.e. are not contrastive suhc as idioms.
+Since our aim is to investigate the passive alternation of être and se faire, it is important to ensure that we only compare the être passive with real passive se faire constructions, and not with causative constructions (@bohmann_large-scale_2023 \[35\]: "all extracted forms should be genuine instances of the variable under investigation"). We follow @raineri_analyse_2010 [165] in including only *se faire* constructions that have a natural paraphrase with the *être* passive in order to investigate only constructions participating in the alternation. Following @bohmann_large-scale_2023 [35] who claim that "only cases where both variants can be used interchangeably should be considered", we aim to exclude constructions that do not allow for a paraphrase with the other, i.e. are not contrastive suhc as idioms.
 
 As described above, the canonical passive with être requires a direct object in the active equivalent which becomes the new subject (@koenig_semantic_1992 \[144\], @washio_when_1993, @labelle_anticausativizing_2013 [16]). Thus, for reflexive and ditransitive verbs, the être passive is not available and does not compete with se faire. These constructions will be excluded and only transitive verbs will be studied. Similarly, some verb participles and adjectives in French are structurally identical.
 
@@ -863,18 +861,18 @@ intercept: "value that determines the chances of an outcome when all predictors 
 
 ### Levels
 
-Levels are by default ordered alphabetically. We change the reference levels to the most "standard" case.
+Levels are by default ordered alphabetically. We change the reference levels either to the most "standard" case, or, if this would negatively affect the stability of the model, to the most frequent case.
 
 +--------------------+-----------------+------------------------------------------+
 | Variable           | Label           | Levels                                   |
 +====================+=================+==========================================+
 | Passive variant    | passive_variant | être, se faire                           |
 +--------------------+-----------------+------------------------------------------+
-| Subject animacy    | subj_animacy    | inanimate, animate                       |
+| Subject animacy    | subj_animacy    | animate, inanimate                       |
 +--------------------+-----------------+------------------------------------------+
 | Subject gender     | subj_gender     | masculine, feminine                      |
 +--------------------+-----------------+------------------------------------------+
-| Complément d'agent | agent_pp        | 0, par, de // 0, present                 |
+| Complément d'agent | agent_pp        | 0, par, de                               |
 +--------------------+-----------------+------------------------------------------+
 | Modal              | modal           | no, yes                                  |
 +--------------------+-----------------+------------------------------------------+
@@ -882,7 +880,7 @@ Levels are by default ordered alphabetically. We change the reference levels to 
 +--------------------+-----------------+------------------------------------------+
 | Cluster            | cluster         | neutral, communication, hitting-touching |
 +--------------------+-----------------+------------------------------------------+
-| Adversativity      | adversativity   | non-adversative, adversative             |
+| Adversativity      | adversativity   | adversative, non-adversative             |
 +--------------------+-----------------+------------------------------------------+
 
 : Overview of variables for the *être: se faire* passive alternation
@@ -982,10 +980,10 @@ significant effects in final_model_without_unknown (final model?):
 
 -   subj animacy \[inanimate\] × adversativity \[adversative\]
 
-**Concordance index C**
+### Concordance Index and Significance
 
-```{r concordance-index}
-#model_2
+```{r concordance-index, echo = FALSE}
+#| code-fold: true
 predictions <- predict(final_model, type = "response", na.action = na.omit)
 outcome <- as.numeric(na.omit(passive_sample_clean)$passive_variant) - 1
 
@@ -1367,6 +1365,7 @@ Frequencies for communication lemmas
 :::
 
 **Random intercepts**
+
 ```{r ranef-final-model, echo = FALSE}
 ranef <- as.data.frame(ranef(final_model))
 

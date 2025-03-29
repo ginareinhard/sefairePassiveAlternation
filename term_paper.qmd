@@ -517,25 +517,25 @@ mean_kappa <- mean(kappa_values)
 mean_kappa #0.8402305, very high agreement :)
 ```
 
-+----------------------+-----------------------+----------------------------------------------+
-| Variable             | Cohen's ϰ             | Strength of Agreement @landis1977measurement |
-+======================+=======================+==============================================+
-| Subject animacy      | 0.9096219             | almost perfect                               |
-+----------------------+-----------------------+----------------------------------------------+
-| Subject gender       | 0.8746109             | almost perfect                               |
-+----------------------+-----------------------+----------------------------------------------+
-| Complément d'agent   | 0.9118457             | almost perfect                               |
-+----------------------+-----------------------+----------------------------------------------+
-| Modal                | 0.9469328             | almost perfect                               |
-+----------------------+-----------------------+----------------------------------------------+
-| TAM                  | 0.7702391             | substantial                                  |
-+----------------------+-----------------------+----------------------------------------------+
-| Cluster              | 0.8326557             | almost perfect                               |
-+----------------------+-----------------------+----------------------------------------------+
-| Adversativity        | 0.6700877             | substantial                                  |
-+----------------------+-----------------------+----------------------------------------------+
-| Mean                 | 0.8402305             | almost perfect                               |
-+----------------------+-----------------------+----------------------------------------------+
++--------------------+-----------------+----------------------------------------------+
+| Variable           | Cohen's ϰ       | Strength of Agreement @landis1977measurement |
++====================+=================+==============================================+
+| Subject animacy    | 0.9096219       | almost perfect                               |
++--------------------+-----------------+----------------------------------------------+
+| Subject gender     | 0.8746109       | almost perfect                               |
++--------------------+-----------------+----------------------------------------------+
+| Complément d'agent | 0.9118457       | almost perfect                               |
++--------------------+-----------------+----------------------------------------------+
+| Modal              | 0.9469328       | almost perfect                               |
++--------------------+-----------------+----------------------------------------------+
+| TAM                | 0.7702391       | substantial                                  |
++--------------------+-----------------+----------------------------------------------+
+| Cluster            | 0.8326557       | almost perfect                               |
++--------------------+-----------------+----------------------------------------------+
+| Adversativity      | 0.6700877       | substantial                                  |
++--------------------+-----------------+----------------------------------------------+
+| Mean               | 0.8402305       | almost perfect                               |
++--------------------+-----------------+----------------------------------------------+
 
 We follow the influential benchmark categorisation of @landis1977measurement [165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". The mean inter-rater agreement is high at 0.84. Agreement ist lowest for adversativity (0.67) and TAM (0.77).
 
@@ -824,10 +824,12 @@ passive_sample_clean <- passive_sample_clean |>
 ```
 
 ```{r cleaning-main-data, include=FALSE}
-#exclude "mixed" gender because of low frequency (would likely skew the data)
-#(merge "de" and "par" into a "present category")
-passive_sample_clean <- passive_sample_clean|>
-  filter(subj_gender != "mixed") |>
+# exclude "mixed" gender because of low frequency (would likely skew the data)
+# exclude "unknown" gender
+# (merge "de" and "par" into a "present category")
+passive_sample_clean <- passive_sample_clean|> 
+  filter(subj_gender != "mixed") |> 
+  filter(subj_gender != "unknown") |>
   droplevels()
 
 # passive_sample_clean <- passive_sample_clean |> 
@@ -837,9 +839,9 @@ passive_sample_clean <- passive_sample_clean|>
 #   )) |> 
 #   mutate(agent_pp = factor(agent_pp))
 
-passive_sample_without_unknown <- passive_sample_clean|> 
-  filter(subj_gender != "mixed") |> 
-  filter(subj_gender != "unknown") |>
+#sample with "unknown" kept
+passive_sample_unknown <- passive_sample_clean|>
+  filter(subj_gender != "mixed") |>
   droplevels()
 
 ```
@@ -921,7 +923,7 @@ table(passive_sample_clean$subj_gender) |>
   sort(decreasing = TRUE)
 prop.table(table(passive_sample_clean$subj_gender))
 
-subj_table <- table(passive_sample_without_unknown$subj_gender, passive_sample_without_unknown$passive_variant)
+subj_table <- table(passive_sample_clean$subj_gender, passive_sample_clean$passive_variant)
 
 # install.packages("vcd")
 # library(vcd)
@@ -948,7 +950,7 @@ subj_table <- table(passive_sample_without_unknown$subj_gender, passive_sample_w
 
 ```{r, include=FALSE}
 
-freq_gender <- passive_sample_without_unknown |> 
+freq_gender <- passive_sample_clean |> 
   count(passive_variant, subj_gender) |> 
   group_by(passive_variant) |> 
   mutate(relative = round(proportions(n), 2)) |> 
@@ -975,7 +977,7 @@ As shown in @tbl-gender ...
 
 ```{r gender-plot, echo=FALSE}
 
-ggplot(passive_sample_without_unknown, 
+ggplot(passive_sample_clean, 
        aes(x = passive_variant, 
            fill = subj_gender)) +
   geom_bar(position = "dodge") +
@@ -989,7 +991,7 @@ ggplot(passive_sample_without_unknown,
 
 ```{r, echo=FALSE}
 
-ggplot(passive_sample_without_unknown, 
+ggplot(passive_sample_clean, 
        aes(x = subj_animacy, fill = subj_gender)) +
   geom_bar(position = "dodge") +  
   facet_wrap(~ passive_variant) +  
@@ -1022,7 +1024,7 @@ table(passive_sample_clean$agent_pp, passive_sample_clean$passive_variant)
 
 ```{r, include=FALSE}
 
-freq_cluster <- passive_sample_without_unknown |> 
+freq_cluster <- passive_sample_clean |> 
   count(passive_variant, cluster) |> 
   group_by(passive_variant) |> 
   mutate(relative = round(proportions(n), 2)) |> 
@@ -1049,7 +1051,7 @@ As shown in @tbl-cluster ...
 
 ```{r cluster-plot, echo=FALSE}
 
-ggplot(passive_sample_without_unknown, 
+ggplot(passive_sample_clean, 
        aes(x = passive_variant, 
            fill = cluster)) +
   geom_bar(position = "dodge") +
@@ -1066,7 +1068,7 @@ ggplot(passive_sample_without_unknown,
 ```{r, echo=FALSE}
 table(passive_sample_clean$adversativity, passive_sample_clean$passive_variant)
 
-ftable(passive_sample_without_unknown$adversativity, passive_sample_without_unknown$passive_variant, passive_sample_without_unknown$subj_animacy)
+ftable(passive_sample_clean$adversativity, passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy)
 ```
 
 ```{r animacy-adversativity-plots, echo = FALSE}
@@ -1131,19 +1133,19 @@ Levels are by default ordered alphabetically. We change the reference levels to 
 
 ```{r reference-levels, include = FALSE}
 #change reference levels: "animate" to "inanimate", "communication" to "neutral", "adversative" to "non-adversative"
-#passive_sample_clean$subj_animacy <- relevel(passive_sample_clean$subj_animacy, ref = "inanimate")
+passive_sample_clean$subj_animacy <- relevel(passive_sample_clean$subj_animacy, ref = "inanimate")
 passive_sample_clean$subj_gender <- relevel(passive_sample_clean$subj_gender, ref = "masculine")
 passive_sample_clean$cluster <- relevel(passive_sample_clean$cluster, ref = "neutral")
 passive_sample_clean$adversativity <- relevel(passive_sample_clean$adversativity, ref = "non-adversative")
 
-passive_sample_without_unknown$subj_gender <- relevel(passive_sample_without_unknown$subj_gender, ref = "masculine")
-passive_sample_without_unknown$subj_animacy <- relevel(passive_sample_without_unknown$subj_animacy, ref = "inanimate")
-passive_sample_without_unknown$cluster <- relevel(passive_sample_without_unknown$cluster, ref = "neutral")
-passive_sample_without_unknown$adversativity <- relevel(passive_sample_without_unknown$adversativity, ref = "non-adversative")
+passive_sample_unknown$subj_gender <- relevel(passive_sample_unknown$subj_gender, ref = "masculine")
+passive_sample_unknown$subj_animacy <- relevel(passive_sample_unknown$subj_animacy, ref = "inanimate")
+passive_sample_unknown$cluster <- relevel(passive_sample_unknown$cluster, ref = "neutral")
+passive_sample_unknown$adversativity <- relevel(passive_sample_unknown$adversativity, ref = "non-adversative")
 
 levels(passive_sample_clean$subj_gender)
 levels(passive_sample_clean$agent_pp)
-levels(passive_sample_without_unknown$subj_gender)
+levels(passive_sample_unknown$subj_gender)
 ```
 
 ### Model selection: Maximum likelihood
@@ -1151,31 +1153,17 @@ levels(passive_sample_without_unknown$subj_gender)
 Function following @gries_statistics_2021 [442]
 
 ```{r regression-model, output=FALSE}
-# passive_glmer <- glmer(
-#     passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:cluster + subj_animacy:adversativity + cluster:adversativity) +
-#                (1 | lemma) + (1 | speaker),
-#     family = "binomial", 
-#     data = passive_sample_clean,
-#     control = glmerControl(optimizer = "bobyqa")
-#   )
-# 
-# summary(passive_glmer) #AIC: 785.1 
-# tab_model(passive_glmer) # Marginal R2 / Conditional R2	0.598 / 0.746 // 0.704 / NA
-# vif(passive_glmer)
-```
-
-```{r model-without-unknown, output=FALSE}
-passive_glmer_without_unknown <- glmer(
+full_passive_glmer <- glmer(
     passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:cluster + subj_animacy:adversativity + cluster:adversativity) +
                (1 | lemma) + (1 | speaker),
-    family = "binomial", 
-    data = passive_sample_without_unknown,
+    family = "binomial",
+    data = passive_sample_clean,
     control = glmerControl(optimizer = "bobyqa")
   )
 
-summary(passive_glmer_without_unknown) #AIC: 731.2
-tab_model(passive_glmer_without_unknown) # Marginal R2 / Conditional R2	0.462 / 0.668 // 0.704 / NA
-vif(passive_glmer_without_unknown)
+summary(full_passive_glmer) #AIC: 785.1
+tab_model(full_passive_glmer) # Marginal R2 / Conditional R2	0.598 / 0.746 // 0.704 / NA
+vif(full_passive_glmer)
 ```
 
 random effects: variance of the speaker very very small (1.359e-13), does not need to be kept; variance of the lemma is bigger (1.917e) and should be kept.
@@ -1187,63 +1175,36 @@ significant effects:
 -   interactions: subj animacy \[inanimate\]× subj gender \[unknown\]; **subj animacy \[inanimate\]\
     × adversativity \[non-adversative\]**
 
-removing non-significant interactions (cluster:adversativity and subj_animacy:cluster) and random effect of speaker:
+removing non-significant interactions (cluster:adversativity, subj_animacy:cluster, subj_animacy:subj_gender) and random effect of speaker:
 
-```{r model-1, output=FALSE}
-# model_1 <- glmer(
-#     passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:adversativity) + (1 | lemma),
-#     family = "binomial", 
-#     data = passive_sample_clean,
-#     control = glmerControl(optimizer = "bobyqa")
-#   )
-# 
-# summary(model_1) #AIC: 776.8(higher i.e. slightly worse?)
-# tab_model(model_1) # Marginal R2 / Conditional R2	0.601 / 0.750 (minimally higher, i.e. slightly better?)
-```
-
-removing subj_animacy: subj_gender
-
-```{r, output = FALSE}
-model_1_without_unknown <- glmer(
+```{r model-1, echo = FALSE}
+model_1 <- glmer(
     passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma),
-    family = "binomial",
-    data = passive_sample_without_unknown,
-    control = glmerControl(optimizer = "bobyqa")
-  )
-
-summary(model_1_without_unknown) # AIC: 738
-tab_model(model_1_without_unknown) #Marginal R2 / Conditional R2	0.453 / 0.659
-```
-
-removing non-significant fixed effects (agent_pp, modal, tam)
-
-```{r model-2, output=FALSE}
-model_2 <- glmer(
-    passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:adversativity) + (1 | lemma),
     family = "binomial",
     data = passive_sample_clean,
     control = glmerControl(optimizer = "bobyqa")
   )
 
-summary(model_2) # AIC: 771.5 without level "mixed")
-tab_model(model_2) # Marginal R2 / Conditional R2 0.599 / 0.748 (slightly lower than model_1 but with fewer factors!)
-vif(model_2)
+summary(model_1) #AIC: 776.8(higher i.e. slightly worse?)
+tab_model(model_1) # Marginal R2 / Conditional R2	0.601 / 0.750 (minimally higher, i.e. slightly better?)
 ```
 
-without subject gender (non-significant without unknown)
+removing non-significant fixed effects (agent_pp, modal, tam, subj_gender)
 
-```{r}
-final_model_without_unknown <- glmer(
-    passive_variant ~ (subj_animacy + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma),
-    family = "binomial", 
-    data = passive_sample_without_unknown,
+```{r final-model, echo = FALSE}
+final_model <- glmer(
+    passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma),
+    family = "binomial",
+    data = passive_sample_clean,
     control = glmerControl(optimizer = "bobyqa")
   )
 
-summary(final_model_without_unknown) # AIC: 730.7
-tab_model(final_model_without_unknown) # Marginal R2 / Conditional R2	0.448 / 0.658
-vif(final_model_without_unknown)
+summary(final_model) # AIC: 771.5 without level "mixed")
+tab_model(final_model) # Marginal R2 / Conditional R2 0.599 / 0.748 (slightly lower than model_1 but with fewer factors!)
+vif(final_model)
 ```
+
+without subject gender (non-significant without unknown)
 
 Intercept: 2.073421; meaning: chances of se faire are 2.073421 times greater than être given this context
 
@@ -1262,13 +1223,13 @@ significant effects in final_model_without_unknown (final model?):
 ```{r concordance-index}
 #model_2
 Hmisc::somers2(
-  predict(final_model_without_unknown), as.numeric(passive_sample_without_unknown$passive_variant)-1
+  predict(final_model), as.numeric(passive_sample_clean$passive_variant)-1
 )["C"] 
 # C 0.9388979 - pretty good I think? "outstanding discrimination" according to Hosmer & Lemeshow (2000: 162) in Levshina (2015: 259)
 ```
 
 ```{r coefficients, include=FALSE}
-model_2_coef <- coefficients(summary(model_2))[,"Estimate"]
+model_2_coef <- coefficients(summary(final_model))[,"Estimate"]
 
 model_2_coef
 #"a negative coefficient expressed as a logit (or log odds) shows that this outcome is less probably than the reference level"
@@ -1285,25 +1246,25 @@ overall significance test for the model by comparing 0 model to full model and u
 ```{r model2-significance, include = FALSE}
 null_model <- glmer(passive_variant ~ 1 + (1|lemma), data = passive_sample_clean, family = binomial)
 
-anova(model_2, null_model, test="Chisq")
+anova(final_model, null_model, test="Chisq")
 #highly significant!!
 #relative likelihood
-(exp((AIC(null_model)-AIC(model_2))/2))
+(exp((AIC(null_model)-AIC(final_model))/2))
 
-### model without unknown
-null_model <- glmer(passive_variant ~ 1 + (1|lemma), data = passive_sample_without_unknown, family = binomial)
-
-anova(final_model_without_unknown, null_model, test="Chisq")
-#highly significant!!
-#relative likelihood
-(exp((AIC(null_model)-AIC(final_model_without_unknown))/2))
+# ### model with unknown
+# null_model <- glmer(passive_variant ~ 1 + (1|lemma), data = passive_sample_without_unknown, family = binomial)
+# 
+# anova(final_model_without_unknown, null_model, test="Chisq")
+# #highly significant!!
+# #relative likelihood
+# (exp((AIC(null_model)-AIC(final_model_without_unknown))/2))
 ```
 
 Surprisingly, and contrary to our hypothesis, the only significant main effect in our model is the verb cluster, with communication verbs favouring *se faire* over *être* passive constructions.
 
 ```{r cluster-model-plot, echo =FALSE}
 
-ggpredict(model_2, "cluster") |> 
+ggpredict(final_model, "cluster") |> 
   plot()
 
 ```
@@ -1312,7 +1273,7 @@ ggpredict(model_2, "cluster") |>
 
 ```{r cluster-lemmas, include=FALSE}
 
-freq_communication <- passive_sample_without_unknown |> 
+freq_communication <- passive_sample_clean |> 
   filter(cluster == "communication") |> 
   count(passive_variant, lemma) |> 
   group_by(passive_variant) |> 
@@ -1338,7 +1299,7 @@ Frequencies for communication lemmas
 
 ```{r interaction-model-plot, echo=FALSE}
 
-ggpredict(final_model_without_unknown, c("subj_animacy", "adversativity")) |> 
+ggpredict(final_model, c("subj_animacy", "adversativity")) |> 
   plot()
 
 ```
@@ -1351,8 +1312,8 @@ In contast, constructions with animate subjects show a strong preference for the
 
 **Random intercepts**
 
-```{r}
-ranef <- as.data.frame(ranef(final_model_without_unknown))
+```{r ranef-final-model, echo = FALSE}
+ranef <- as.data.frame(ranef(final_model))
 
 ranef |> 
   filter(grpvar == "lemma") |>
@@ -1383,4 +1344,43 @@ It could be valuable to examine the cases we excluded from our analysis to under
 
 -   definiteness & pronominality of the subject
 
-# References
+# Appendix
+
+# Appendix A: Models {.appendix}
+```{r model-with-unknown, include = FALSE}
+passive_glmer_unknown <- glmer(
+    passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:cluster + subj_animacy:adversativity + cluster:adversativity) +
+               (1 | lemma) + (1 | speaker),
+    family = "binomial", 
+    data = passive_sample_unknown,
+    control = glmerControl(optimizer = "bobyqa")
+  )
+
+summary(passive_glmer_unknown) #AIC: 731.2
+tab_model(passive_glmer_unknown) # Marginal R2 / Conditional R2	0.462 / 0.668 // 0.704 / NA
+vif(passive_glmer_unknown)
+```
+```{r, include = FALSE}
+model_1_unknown <- glmer(
+    passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:adversativity) + (1 | lemma),
+    family = "binomial",
+    data = passive_sample_unknown,
+    control = glmerControl(optimizer = "bobyqa")
+  )
+
+summary(model_1_unknown) # AIC: 738
+tab_model(model_1_unknown) #Marginal R2 / Conditional R2	0.453 / 0.659
+```
+
+```{r final-model-unknown, echo = FALSE}
+final_model_unknown <- glmer(
+    passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:adversativity) + (1 | lemma),
+    family = "binomial", 
+    data = passive_sample_unknown,
+    control = glmerControl(optimizer = "bobyqa")
+  )
+
+summary(final_model_unknown) # AIC: 730.7
+tab_model(final_model_unknown) # Marginal R2 / Conditional R2	0.448 / 0.658
+vif(final_model_unknown)
+```

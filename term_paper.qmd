@@ -151,6 +151,7 @@ The French *être* passive construction consists of a form of the attributive ve
 For example, in the following sentences from our sample from the French ParlaMint 2.1 corpus [@11356/1431], in 1.a the agent *nos concitoyens* appears in the *complément d'agent* introduced by *par*, while in 1.b the agent is omitted:
 
 > (1) 
+>
 >     (a) *\[...\] ils sont élus par nos concitoyens au suffrage universel.*\
 >         "\[...\] they are elected by our fellow citizens through universal suffrage."
 >     (b) *Les députés sont élus pour contrôler votre action.*\
@@ -336,6 +337,8 @@ such as "devoir", "savoir", "pouvoir", "falloir", "vouloir" very frequent with s
 
 -   modal category limited to/ only comprises modal verbs for the scope of our study, not other similar constructions denoting subject responsibility (e.g. avoir besoin de, arriver à, réussir à, envier de, avoir des difficultés pour, avoir la possibilité de, avoir envie de, ...)
 
+Volitional verbs align well with SE FAIRE passives because they involve an intentional action that results in a change of mental state, whereas non-volitional verbs do not (source?).
+
 ### Aspectuality
 
 Regarding the factor of aspectuality, @keenan_passive_2007 [340] cites one of Greenberg's universals:
@@ -350,39 +353,23 @@ We do not examine mood in this study.
 
 **Semantic verb clusters**
 
-The *se faire* construction tends to occur with dynamic processes, focusing on cases where the source role is agentive and the target role is affected, which is the typical case of semantic transitivity \[@raineri_analyse_2010 90, 238\]. Multiple hypotheses are found in the literature concerning the compatibility of certain verbs with the *se faire* passive variant. For example, @kupferman_construction_1995 \[67\] and @raineri_analyse_2010 \[90\] state that *se faire* passive works well with dynamic verbs but not with stative verbs or verbs of state change with an external "cause" argument, although exceptions are provided by @novakova_construction_2009 **pages?**, @martin_construction_2002 **pages?** and @raineri_analyse_2010 [100-103].
+The [se faire]{.smallcaps} construction tends to occur with dynamic processes, focusing on cases where the source role is agentive and the target role is affected, which is the typical case of semantic transitivity [@raineri_analyse_2010 90, 238]. Multiple hypotheses are found in the literature concerning the compatibility of certain verbs with the [se faire]{.smallcaps} passive variant. For example, @kupferman_construction_1995 \[67\] and @raineri_analyse_2010 [90] state that the [se faire]{.smallcaps} passive works well with dynamic verbs but not with stative verbs or verbs of state change with an external "cause" argument, although exceptions are provided by @novakova_construction_2009 **pages?**, @martin_construction_2002 **pages?** and @raineri_analyse_2010 [100-103].
 
-However, @martin_construction_2002 [14] argues that a source can induce a change of state without intentionality and should therefore be classified as an "effector" rather than an agent. To support this argument, she points out that while the sentence in 1. is ungrammatical, 2. is more acceptable, suggesting that the role of the source does not necessarily imply agency:
+However, @martin_construction_2002 [14] argues that a source can induce a change of state without intentionality and should therefore be classified as an "effector" rather than an agent. To support this argument, she points out that while example 1.a is ungrammatical, 1.b is more acceptable, suggesting that the role of the source does not necessarily imply agency:
 
 1.  
 
     a.  \**Je me suis fait étrangler par mon écharpe.\
-        *"I was / have been strangled by my scarf."
+        *'I was strangled by my scarf.'
 
     b.  *Isadora Duncan s'est fait étrangler par son écharpe qui s'est prise dans l'essieu de sa voiture.\
-        *"Isadora Duncan was / has been strangled by her scarf, which got caught in the axle of her car."
+        *'Isadora Duncan was strangled by her scarf, which got caught in the axle of her car.'
 
-She also argues that *se faire* constructions with psychological verbs, such as in *Elle s'est fait séduire par Pierre*, are not always causative. @novakova_construction_2009 also notes that *s*while rare, *se faire* constructions with stative verbs can sometimes be interpreted passively, as in *Il peine encore à se faire aimer par tous les siens*.
+She also argues that [se faire]{.smallcaps} constructions with psychological verbs, such as in *Elle s'est fait séduire par Pierre* 'She was seduced by Pierre', are not always causative. @novakova_construction_2009 also notes that while rare, [se faire]{.smallcaps} constructions with stative verbs can sometimes be interpreted passively, as in *Il peine encore à se faire aimer par tous les siens* 'He still struggles to be loved by all his own'.
 
--   volitional verbs fit well with PSF because they involve an action that leads to a mental state change while non-volitional verbs do not
+The semantic class of the verb has been shown to play a crucial role in the use of the passive voice in oral French. In the corpus study by @da2022alternance, 85% of *frapper* ('hitting-touching') class verbs occurred in passive constructions, while only 15% were used in the active voice. This is consistent with findings from journalistic English, where verbs describing violent actions are often used in the passive voice (**source**). According to @da2022alternance, this preference can be explained by two factors: (1) the topical character of the affected undergoer, which makes it more likely to be promoted to the subject position, and (2) the possibility to omit an unknown or less salient agent, which aligns with the concept of subject responsibility. We expect this effect to hold for the [se faire]{.smallcaps} passive as well. Even though both the [se faire]{.smallcaps} and [être]{.smallcaps} passives topicalise the undergoer, the [se faire]{.smallcaps} passive typically implies some degree of subject involvement, so highly dynamic verbs such as *frapper* might increase the likelihood that it is favoured over the [être]{.smallcaps} passive, in which the subject is a more passive patient.
 
--   Telicity seems to be another important distinction: According to @bellec_construction_2014 \[209\], the *être* passive is likely to describe a result or mark an endpoint of an action, while the *se faire* passive is used for actions in progress and verbs that are in their nature ongoing (e.g. perception verbs, @bellec_construction_2014 [209]). This could be reflected in the telicity of the verb, with telic verbs preferring the *être* passive and atelic verbs favouring the *se faire* passive.
-
--   (movement verbs (frequently occuring with se faire according to @raineri_analyse_2010 [90]: "les verbes de mouvement "aller" et "venir", qui mettent en relief la phase initiale du procès (Spang-Hanssen 1967 : 143)136 et les verbes de perception (Novakova 2008 : 9), qui impliquent un procès duratif"); suggested categories:
-
-    -   frapper-type verbs (summarise as: "immediate physical actions" or "applied force" after @bohmann_large-scale_2023 ?)
-
-    -   movement: going, coming, entering, leaving etc.
-
-    -   communication & mental states: emotions etc.
-
-    -   neutral)
-
-We decided to include the semantic class of the verb lemma as a factor, following the classification in the dictionary "Les Verbes Français - LVF" **(Dubois&Dubois-Charlier 1997)**, in line with @da2022alternance. @da2022alternance showed that the semantic class of the verb plays a crucial role in the use of the passive voice in oral French. In their study, 85% of *frapper* class verbs occurred in passive constructions, while only 15% were used in the active voice. This is consistent with findings from journalistic English, where verbs describing violent actions are often used in the passive voice (source). According to @da2022alternance, this preference can be explained by two factors: (1) the topical character of the affected patient, which makes it more likely to be promoted to the subject position, and (2) the possibility of the omission of an unknown or less salient agent.
-
-We expect this effect to hold for the *se faire* passive as well. Even though both the *se faire* and *être* passives topicalise the patient, the *se faire* passive typically implies some degree of subject involvement, so highly dynamic (and adversative) verbs such as *frapper* might increase the likelihood that it is favoured over the *être* passive, in which the subject is a more passive patient. However, this effect could interact with other factors ??
-
-As shown in @fig-clusters in the study by @da2022alternance the preference for active constructions was not statistically significant for location verbs, while the probability of communication verbs occurring in the active was significantly higher. Some classes showed no clear effect on passive frequency, with approximately equal distributions of active and passive forms (e.g. verbs of perception, cognition, psychological states, behaviour, movement and transfer). Locative and communicative verbs, on the other hand, appeared more frequently in the active voice.
+Following @da2022alternance (+**2020**?), We decided to include the semantic class of the verb lemma as a factor, using the classification in the online dictionary "Les Verbes Français - LVF" **(Dubois&Dubois-Charlier 1997)**. As shown in @fig-clusters in the study by @da2022alternance the preference for active constructions was not statistically significant for location verbs, while the probability of communication verbs occurring in the active was significantly higher. Some classes showed no clear effect on passive frequency, with approximately equal distributions of active and passive forms (e.g. verbs of perception, cognition, psychological states, behaviour, movement and transfer). Locative and communicative verbs, on the other hand, appeared more frequently in the active voice.
 
 ![Frequency of active and passive constructions for the verb clusters](images/clusters_dacunha-abeillé.png){#fig-clusters fig-align="center" width="480"}
 
@@ -395,6 +382,11 @@ One possible explanation for this tendency is verbal disposition? (**Stallings, 
 -   Neutral verb classes (e.g. psychological verbs, behavioural, movement, transfer): do not show a strong passive preference, distribution on être and se faire passives may depend on additional factors
 
 se faire passives might be particularly favoured by highly dynamic hitting-touching verbs such as *frapper*, while verb classes that favour active constructions (e.g. communicative verbs) might be less compatible.
+
+We have used the classes *communication* and *hitting-touching* from the lexicon in the annotation, as we expect communication verbs to favour the être passive and hitting-touching verbs to favour se faire passives. We expect all other classes to not have a preference for either passive variant and therefore group them together as neutral. If there was no exact match, we used the closest similar class. In one case (*caillasser*) there was no entry in the lexicon: Here we assigned the category hitting-touching (similar to *attaquer, frapper, bombarder, ...*)
+
+**However, this effect could interact with other factors:** - Animacy and verb clusters: The choice of passive construction could be influenced not only by the verb cluster alone, but by the combination of these two factors: e.g. animacy could have a stronger effect if the verb is from the hitting-touching category or the neutral category ("se faire" could be strongly favoured with animate subjects compared to inanimate subjects), while this effect could be weaker with communicative verbs for which "être" passive could be favoured regardless of animacy.\
+Adversativity could reinforce "se faire" more in communication and neutral verbs than in hitting-touching verbs: Communication verbs tend to favour "être" and neutral verbs have no strong preference, but adversative constructions may shift both toward "se faire". Since hitting-touching verbs are inherently highly adversative, adversativity is unlikely to strongly affect their passive preference.
 
 +-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Verb cluster                                                      | hypothesised passive preference | Verb examples                                                                                                                                                                                                                       |
@@ -434,8 +426,6 @@ se faire passives might be particularly favoured by highly dynamic hitting-touch
 
 : Hypothesised passive preference for verbs based on clusters/ classes by @francois_presentation_2007 [4]
 
-We have used the classes *communication* and *hitting-touching* from the lexicon in the annotation, as we expect communication verbs to favour the être passive and hitting-touching verbs to favour se faire passives. We expect all other classes to not have a preference for either passive variant and therefore group them together as neutral. If there was no exact match, we used the closest similar class. In one case (*caillasser*) there was no entry in the lexicon: Here we assigned the category hitting-touching (similar to *attaquer, frapper, bombarder, ...*)
-
 **Aspect and Tense Marking**
 
 The tense and aspect markings French cannot be clearly distinguished from each other because they heavily influence each other and depend on each other.
@@ -449,6 +439,8 @@ According to @spang-hanssen_quelques_1967 \[141\] and @novakova_construction_200
 We decide against coding tense, aspect (and mood?) as separate factors, but to consider them in the context of a functional category that reflects the difference between process focus (progressive) and result focus (non-progressive). Therefore, we establish a TAM-category with two levels: progressive and non-progressive. The descision to not keep the categories separately is based on findings by @bellec_construction_2014 \[210\] who argues that aspectuality and tense are closely intertwined and together are responsible for whether a sentence is understood to be progressive or non-progressive. This marking reflects the more functional nature of category distinction in French rather than the formal distinction in English for example. And even in English: @bohmann_large-scale_2023 [39]: "Form of auxiliary verb: present, preterite, perfect, infinitive, -ing" OR progressive/non-progressive) -\> only effect found by @bohmann_large-scale_2023 \[49\] that present and preterite disfavour get passive. @hundt_be-_2024 [97] does tag tense and aspect separately but later, in the interpretation, interpret them together in terms of a tam category (result: se faire favours progressive but non-significant effect).
 
 (sentence for conditional marking: Subjonctif and conditional forms excluded because of CQL? Or: We mark them according to the tense they occur with)
+
+Movement verbs also frequently occur with SE FAIRE, as noted by \@raineri_analyse_2010 \[90\], who highlights the verbs *aller* and *venir* as examples. These verbs emphasize the initial phase of the process (*Spang-Hanssen 1967: 143*). Additionally, perception verbs, which imply a durative process, are also attested in *se faire* constructions (*Novakova 2008: 9*).
 
 **levels**:
 
@@ -1342,6 +1334,8 @@ In contast, constructions with animate subjects show a strong preference for the
 A limitation of our study is that the lemmas were determined based on those occurring in *se faire* constructions, which may have influenced the analysis.
 
 The "modal" category in our study only includes modal verbs. Other similar constructions that express subject responsibility, such as *avoir besoin de*, *arriver à*, *réussir à*, *envier de*, *avoir des difficultés pour*, *avoir la possibilité de*, and *avoir envie de*, etc. could also be interesting to examine in future research.
+
+(Telicity seems to be another important distinction: According to @bellec_construction_2014 \[209\], the *être* passive is likely to describe a result or mark an endpoint of an action, while the *se faire* passive is used for actions in progress and verbs that are in their nature ongoing (e.g. perception verbs, @bellec_construction_2014 [209]). This could be reflected in the telicity of the verb, with telic verbs preferring the *être* passive and atelic verbs favouring the *se faire* passive.)
 
 It could be valuable to examine the cases we excluded from our analysis to understand how they differ from genuine passive constructions. This would provide insight into the gray area where passive nuances are present, but no true alternation occurs, allowing for a closer examination of varying degrees of passivity.
 

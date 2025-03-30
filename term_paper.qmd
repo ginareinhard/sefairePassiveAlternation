@@ -1462,7 +1462,7 @@ vif(passive_glmer_unknown)
 
 ```{r final-model-unknown, echo = FALSE}
 final_model_unknown <- glmer(
-    passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:adversativity) + (1 | lemma),
+    passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:adversativity) + (1|speaker) + (1 | lemma),
     family = "binomial", 
     data = passive_sample_unknown,
     control = glmerControl(optimizer = "bobyqa")
@@ -1475,6 +1475,8 @@ vif(final_model_unknown)
 plot(residuals(final_model_unknown) ~ predict(final_model_unknown))
 
 sim_res <- simulateResiduals(final_model_unknown)
+library(arm)
+binnedplot(predict(final_model_unknown), residuals(final_model_unknown))
 plot(sim_res)
 testDispersion(sim_res)
 ```

@@ -348,15 +348,21 @@ If we assume that the PSF is a "basic passive", this suggests that the *être* a
 
 We do not examine mood in this study.
 
-**Semantic verb clusters** (@bohmann_large-scale_2023 [51-52]:
+**Semantic verb clusters**
 
-Multiple hypotheses are found in the literature concerning the compatibility of certain verbs with the *se faire* passive variant. For example, @kupferman_construction_1995 \[67\] and @raineri_analyse_2010 [90] state that *se faire* passive works well with dynamic verbs but not with stative verbs, although exceptions are provided by @novakova_construction_2009); @martin_construction_2002 and @raineri_analyse_2010 [100-103].
+The *se faire* construction tends to occur with dynamic processes, focusing on cases where the source role is agentive and the target role is affected, which is the typical case of semantic transitivity \[@raineri_analyse_2010 90, 238\]. Multiple hypotheses are found in the literature concerning the compatibility of certain verbs with the *se faire* passive variant. For example, @kupferman_construction_1995 \[67\] and @raineri_analyse_2010 \[90\] state that *se faire* passive works well with dynamic verbs but not with stative verbs or verbs of state change with an external "cause" argument, although exceptions are provided by @novakova_construction_2009 **pages?**, @martin_construction_2002 **pages?** and @raineri_analyse_2010 [100-103].
 
-The *se faire* construction is generally considered incompatible with stative verbs and instead tends to occur with dynamic processes, focusing on cases where the source role is agentive and the target role is affected, which is the typical case of semantic transitivity. (@raineri_analyse_2010: 90, 238).
+However, @martin_construction_2002 [14] argues that a source can induce a change of state without intentionality and should therefore be classified as an "effector" rather than an agent. To support this argument, she points out that while the sentence in 1. is ungrammatical, 2. is more acceptable, suggesting that the role of the source does not necessarily imply agency:
 
-@kupferman_construction_1995 argues that the *se faire* construction excludes stative verbs and verbs of state change with an external ‘cause’ argument, which explains differences in sentence acceptability (e.g. *Le pauvre s'est fait étrangler par le tueur* vs. \**Le pauvre s'est fait étrangler par cette cordelette*).
+1.  
 
-However, @martin_construction_2002 disagrees and explains that the source role can cause a change of state without being intentional, calling it an ‘effector’ rather than an ‘agent’. She cites examples such as *Isadora Duncan s'est fait étrangler par son écharpe* to support her view. She also claims that *se faire* constructions with psychological verbs (e.g. *Elle s'est fait séduire par Pierre*) are not always causative. @novakova_construction_2009 also notes that ‘*se faire* constructions with stative verbs can, although rarely, be interpreted passively, as in *Il peine encore à se faire aimer par tous les siens.*
+    a.  \**Je me suis fait étrangler par mon écharpe.\
+        *"I was / have been strangled by my scarf."
+
+    b.  *Isadora Duncan s'est fait étrangler par son écharpe qui s'est prise dans l'essieu de sa voiture.\
+        *"Isadora Duncan was / has been strangled by her scarf, which got caught in the axle of her car."
+
+She also argues that *se faire* constructions with psychological verbs, such as in *Elle s'est fait séduire par Pierre*, are not always causative. @novakova_construction_2009 also notes that *s*while rare, *se faire* constructions with stative verbs can sometimes be interpreted passively, as in *Il peine encore à se faire aimer par tous les siens*.
 
 -   volitional verbs fit well with PSF because they involve an action that leads to a mental state change while non-volitional verbs do not
 

@@ -925,7 +925,6 @@ vif(full_passive_glmer)
 
 ```{r full-passive-glmer-tab, echo = FALSE}
 tab_model(full_passive_glmer)
-plot(residuals(full_passive_glmer) ~ predict(full_passive_glmer))
 ```
 
 #### Model Back-1
@@ -965,19 +964,17 @@ vif(final_model)
 
 ```{r final-model-tab, echo = FALSE}
 tab_model(final_model) # Marginal R2 / Conditional R2	0.445 / 0.660
-
-
 ```
 :::
 
-checking residuals (pronblematic???) https://cran.r-project.org/web/packages/DHARMa/vignettes/DHARMa.html (recommended in @gries_statistics_2021 [445])
+checking residuals (problematic???) https://cran.r-project.org/web/packages/DHARMa/vignettes/DHARMa.html (recommended in @gries_statistics_2021 [445])
 
-```{r}
+```{r residuals-diagnostics, echo = FALSE}
 plot(residuals(final_model) ~ predict(final_model))
-install.packages("DHARMa")
+#install.packages("DHARMa")
 library(DHARMa)
+sim_res <- simulateResiduals(final_model)
 plot(sim_res)
-testResiduals(sim_res)
 testDispersion(sim_res)
 ```
 

@@ -1095,11 +1095,11 @@ The plot shows clearly that in *se faire* passives, the subject is animate in th
 ### Subject gender
 
 ```{r gender-descriptive}
-table(passive_sample_clean$subj_gender) |> 
+table(passive_sample_unknown$subj_gender) |> 
   sort(decreasing = TRUE)
-prop.table(table(passive_sample_clean$subj_gender))
+prop.table(table(passive_sample_unknown$subj_gender))
 
-subj_table <- table(passive_sample_clean$subj_gender, passive_sample_clean$passive_variant)
+subj_table <- table(passive_sample_unknown$subj_gender, passive_sample_unknown$passive_variant)
 
 # install.packages("vcd")
 # library(vcd)
@@ -1109,24 +1109,7 @@ subj_table <- table(passive_sample_clean$subj_gender, passive_sample_clean$passi
 
 ```{r, include=FALSE}
 
-#passive_sample_clean_filtered <- passive_sample_clean |> 
-#  filter(subj_gender != "mixed")
-
-#passive_sample_clean_filtered2 <- passive_sample_clean |> 
-#  filter(subj_gender != "mixed") |>
-#  filter(subj_gender != "unknown")
-
-```
-
-```{r, include=FALSE}
-
-#table(passive_sample_clean$subj_gender, passive_sample_clean$passive_variant)
-
-```
-
-```{r, include=FALSE}
-
-freq_gender <- passive_sample_clean |> 
+freq_gender <- passive_sample_unknown |> 
   count(passive_variant, subj_gender) |> 
   group_by(passive_variant) |> 
   mutate(relative = round(proportions(n), 2)) |> 
@@ -1150,20 +1133,6 @@ Frequencies for Passive Variants Gender and Animacy
 :::
 
 As shown in @tbl-gender ...
-
-```{r gender-plot, echo=FALSE}
-
-ggplot(passive_sample_clean, 
-       aes(x = passive_variant, 
-           fill = subj_gender)) +
-  geom_bar(position = "dodge") +
-  scale_y_continuous(expand = c(0,0)) +
-  labs(title = "plot",
-       x = "passive variant grammatical gender",
-       y = "Count") +
-  theme_classic()
-
-```
 
 ```{r, echo=FALSE}
 

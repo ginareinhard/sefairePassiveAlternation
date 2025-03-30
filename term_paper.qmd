@@ -925,6 +925,7 @@ vif(full_passive_glmer)
 
 ```{r full-passive-glmer-tab, echo = FALSE}
 tab_model(full_passive_glmer)
+plot(residuals(full_passive_glmer) ~ predict(full_passive_glmer))
 ```
 
 #### Model Back-1
@@ -956,8 +957,7 @@ removing non-significant fixed effects (agent_pp, modal, tam, subj_gender)
 final_model <- glmer(
     passive_variant ~ (subj_animacy + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma) + (1 | speaker),
     family = "binomial",
-    data = passive_sample_clean,
-    control = glmerControl(optimizer = "bobyqa")
+    data = passive_sample_clean
   )
 summary(final_model) # AIC: 718.6 
 vif(final_model)
@@ -965,8 +965,21 @@ vif(final_model)
 
 ```{r final-model-tab, echo = FALSE}
 tab_model(final_model) # Marginal R2 / Conditional R2	0.445 / 0.660
+
+
 ```
 :::
+
+checking residuals (pronblematic???) https://cran.r-project.org/web/packages/DHARMa/vignettes/DHARMa.html (recommended in @gries_statistics_2021 [445])
+
+```{r}
+plot(residuals(final_model) ~ predict(final_model))
+install.packages("DHARMa")
+library(DHARMa)
+plot(sim_res)
+testResiduals(sim_res)
+testDispersion(sim_res)
+```
 
 Intercept: 2.97; meaning: chances of se faire are 2.97 times greater than être given this context (animate subject, neutral verb, adversative sense)
 
@@ -992,13 +1005,13 @@ Hmisc::somers2(predictions, outcome)["C"]
 ```
 
 ```{r coefficients, include=FALSE}
-model_2_coef <- coefficients(summary(final_model))[,"Estimate"]
+final_model_coef <- coefficients(summary(final_model))[,"Estimate"]
 
-model_2_coef
+final_model_coef
 #"a negative coefficient expressed as a logit (or log odds) shows that this outcome is less probably than the reference level"
 
 #convert from log odds to odds:
-exp(model_2_coef)
+exp(final_model_coef)
 
 #convert odds to probabilities
 #exp(model_2_coef) / (1 + exp(model_2_coef))

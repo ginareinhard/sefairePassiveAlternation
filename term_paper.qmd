@@ -148,13 +148,13 @@ The canonical passive with *être* in French inverts the syntactic functions of 
 
 The French *être* passive construction consists of a form of the attributive verb *être* and the *participe passif* (passive participle), which is identical in form to the *participe passé* (past participle). Although other attributive verbs, such as *rester* and *sembler*, can also be used in passive constructions, they are less common. This term paper will focus specifically on the passive formed with *être*. In the passive construction, the subject of the active sentence becomes an adjunct phrase (*complément d'agent*), introduced by *par* or *de*, which can be omitted. The construction is referred to as *passif long* when a *complément d'agent* is present, and *passif court* when the agent is omitted [@abeille2021grande 210-211].
 
-For example, in the following sentences from our sample from the ParlaMint 2.1 corpus [@11356/1431], in (1) the agent *nos concitoyens* appears in the *complément d'agent* introduced by *par*, while in (2) the agent is omitted:
+For example, in the following sentences from our sample from the French ParlaMint 2.1 corpus [@11356/1431], in 1.a the agent *nos concitoyens* appears in the *complément d'agent* introduced by *par*, while in 1.b the agent is omitted:
 
-\(1\) *\[...\]* *ils sont élus par nos concitoyens au suffrage universel.\
-* '\[...\] they ar*'*e elected by our fellow citizens through universal suffrage.'
-
-\(2\) *Les députés sont élus pour contrôler votre action.\
-* 'The members of parliament are elected to monitor your actions.'
+> (1) 
+>     (a) *\[...\] ils sont élus par nos concitoyens au suffrage universel.*\
+>         "\[...\] they are elected by our fellow citizens through universal suffrage."
+>     (b) *Les députés sont élus pour contrôler votre action.*\
+>         "The members of parliament are elected to monitor your actions."
 
 An impersonal passive (*passif impersonnel*) is also possible in French. With impersonal passives, the direct object can remain as a complement, as in *Il sera acheté un livre* (‘A book will be bought’) [@abeille2021grande 210].
 

@@ -777,8 +777,15 @@ passive_sample_clean <- passive_sample_clean |>
   select(-subj_animacy_A, -subj_animacy_B, -subj_gender_A, -subj_gender_B, -agent_pp_A, -agent_pp_B, -modal_A, -modal_B, -tam_A, -tam_B, -cluster_A, -cluster_B, -adversativity_A, -adversativity_B, -ID)
 ```
 
+reasoning: why exclude unknown and mixed?
 ```{r cleaning-main-data, include=FALSE}
 # exclude "mixed" gender because of low frequency (would likely skew the data)
+
+#sample with "unknown" kept
+passive_sample_unknown <- passive_sample_clean|>
+  filter(subj_gender != "mixed") |>
+  droplevels()
+
 # exclude "unknown" gender (needs to be reasoned and explained!)
 # (merge "de" and "par" into a "present category")
 passive_sample_clean <- passive_sample_clean|> 
@@ -793,16 +800,16 @@ passive_sample_clean <- passive_sample_clean|>
 #   )) |> 
 #   mutate(agent_pp = factor(agent_pp))
 
-#sample with "unknown" kept
-passive_sample_unknown <- passive_sample_clean|>
-  filter(subj_gender != "mixed") |>
-  droplevels()
+
+
+levels(passive_sample_clean$subj_gender)
+levels(passive_sample_unknown$subj_gender)
 
 ```
 
 ### Inter-rater agreement
 
-As the analysis required detailed (and time consuming) manual annotation, we decided to split the annotation work between us. However, to ensure consistent annotation, a representative sample of one third of all instances (320; 33,25%) were double annotated, i.e. by both of us. For these instances, we calculated Cohen's ϰ (Kappa) as a measure of inter-rater agreement (following @levshina_how_2015 [201] and the documentation in the psy package documentation (<https://cran.r-project.org/web/packages/psy/psy.pdf>).)
+As the analysis required detailed (and time consuming) manual annotation, we decided to split the annotation work between us. However, to ensure consistent annotation, a representative sample of one third of all instances (320; 33,25%) were double annotated, i.e. by both of us. For these instances, we calculated Cohen's ϰ (Kappa) as a measure of inter-rater agreement, following Levshina [-@levshina_how_2015: 201. and the documentation in the psy package documentation (<https://cran.r-project.org/web/packages/psy/psy.pdf>).)
 
 ```{r cohens-kappa, include = FALSE}
 kappa_animacy <- ckappa(passive_sample_combined[c("subj_animacy_A", "subj_animacy_B")]) 
@@ -852,13 +859,11 @@ mean_kappa #0.8402305, very high agreement :)
 | Mean               | 0.8402305     | almost perfect                               |
 +--------------------+---------------+----------------------------------------------+
 
-We follow the influential benchmark categorisation of @landis1977measurement [165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". The mean inter-rater agreement is high at 0.84. Agreement ist lowest for adversativity (0.67) and TAM (0.77).
+We classified the ϰ-values using the influential benchmark categorisation of @landis1977measurement [165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". Mean inter-rater agreement was high at 0.84. Agreement was lowest for adversativity (0.67) and TAM (0.77).
 
 ## Binomial logistic regression
 
-@levshina_how_2015 [253] "logit represents the chances of construction A to be chosen in a particular type of context compared with the chances of construction B to be used in the same type of context."
-
-intercept: "value that determines the chances of an outcome when all predictors are equal to zero (for quantitative variables) or the reference value (for categorical variables)".
+Levshina [-@levshina_how_2015: 253]: "logit represents the chances of construction A to be chosen in a particular type of context compared with the chances of construction B to be used in the same type of context."
 
 ### Levels
 
@@ -979,9 +984,8 @@ plot(sim_res)
 testDispersion(sim_res)
 ```
 
-Intercept: 2.97; meaning: chances of se faire are 2.97 times greater than être given this context (animate subject, neutral verb, adversative sense)
-
-coefficients: if positive, level boosts the chance of se faire (decreases chance of être)
+The intercept of the final model is 2.97. This means that if the subject is animate, the cluster of the verb is neutral and the construction has an adversative sense, the chances of se faire are 2.97 times greater than être.
+A positive coefficient means that the level boosts the chance of se faire (and therefore, decreases the chance of être). 
 
 R-squared not recommended as central measure @levshina_how_2015 [259], Hosmer & Lemeshow (2000: 167)
 
@@ -1467,4 +1471,10 @@ final_model_unknown <- glmer(
 summary(final_model_unknown) # AIC: 730.7
 tab_model(final_model_unknown) # Marginal R2 / Conditional R2	0.448 / 0.658
 vif(final_model_unknown)
+
+plot(residuals(final_model_unknown) ~ predict(final_model_unknown))
+
+sim_res <- simulateResiduals(final_model_unknown)
+plot(sim_res)
+testDispersion(sim_res)
 ```

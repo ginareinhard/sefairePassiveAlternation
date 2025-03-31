@@ -26,7 +26,6 @@ p {
 }
 </style>
 ```
-
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -174,7 +173,6 @@ Some grammars distinguish between a *passif verbal*, with an event interpretatio
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward 
 -   se faire passive "typologically marked", comparison to other Romance languages @koenig_semantic_1992 \[145\]; similar constructions exist in other Romance languages but passive reading only allowed in French @labelle_anticausativizing_2013 [236] -->
 ```
-
 ### Structure and meaning
 
 The [se faire]{.smallcaps} passive construction provides an alternative way to express passive meaning in French: When constructing a passive sentence, the French speaker may choose to use [se faire]{.smallcaps} instead of the canonical [être]{.smallcaps}: The two constructions form a passive alternation. The [se faire]{.smallcaps} passive has been investigated by various scholars, such as @bellec_construction_2014, @gaatone_desagreable_1983, @koenig_semantic_1992, @kupferman_construction_1995, @labelle_anticausativizing_2013, @raineri_analyse_2010, @novakova_construction_2009, and @tasmowski-de_ryck_causatif_1987, to name a few.
@@ -274,7 +272,6 @@ We recognize this "fuzzy" [@bohmann_large-scale_2023: 50] variable context as bo
 
 -   Subjects in passive sentences are preferably animate, definite, and pronominal. In the study by @da_cunha_lalternance_2020, animate, definite, and pronominal arguments that function as the objects in active sentences were more frequently found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice) -->
 ```
-
 ### Subject responsibility
 
 As indicated above, the question whether the referent of the subject in the [se faire]{.smallcaps} construction holds any responsibility is central to the debate of the construction's passive-status (see above; @sveberg_se_2012, @bellec_construction_2014 \[212-213\]). In line with their argument that the passive reading of [se faire]{.smallcaps} is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of [se faire]{.smallcaps} is always a causer and therefore always responsible to some degree. This is contrasted to the être passive's subject referent, which is see as more neutral. Gaatone [-@gaatone_desagreable_1983: 164] distinguishes between an "active patient" in [se faire]{.smallcaps} and a "passive patient" in the être passive [@raineri_analyse_2010: 96].
@@ -286,7 +283,6 @@ As indicated above, the question whether the referent of the subject in the [se 
 the PSF construction has a preference to mark the subject as an active participant (although according to @raineri_analyse_2010 [98] is is not "universally accepted" as some authors also name counterexamples @kupferman_construction_1995 [59].)
 In @raineri_analyse_2010 [95]'s view, the idea that the PSF expresses subject responsibility is the "most common hypothesis" ("l'hypothèse la plus répandue") in the literature. -->
 ```
-
 In contrast, Kupferman [-@kupferman_construction_1995: 59] gives [se faire]{.smallcaps} examples where the subject cannot be interpreted as responsible, one of which is repeated here:
 
 > 9.  *Elle sanglotait parce que son tout jeune bébé venait de se faire enlever les amygdales.* [@kupferman_construction_1995: 59]\
@@ -372,11 +368,11 @@ She also argues that [se faire]{.smallcaps} with psychological verbs, such as in
 
 The semantic class of the verb has been shown to play a crucial role in the use of the passive voice in oral French [@da2022alternance] and in the alternation between [be]{.smallcaps} and [get]{.smallcaps} passives in English [@bohmann_large-scale_2023]. Following @da2022alternance, we include the semantic class of the verb lemma as a factor in our analysis, using the classification in the online dictionary "Les Verbes Français - LVF" [@lvf]. **TableX** in the @appendix presents the French verb clusters established by @francois_presentation_2007, on which this dictionary is based, along with language examples from our dataset.
 
-In the corpus study by @da2022alternance, 85% of *frapper* ('hitting-touching') class verbs occurred in passive constructions, while only 15% were used in the active voice. This is consistent with findings from journalistic English, where verbs describing violent actions are often used in the passive voice (**source**). According to @da2022alternance, this preference can be explained by two factors: (1) the topical character of the affected undergoer, which makes it more likely to be promoted to the subject position, and (2) the possibility to omit an unknown or less salient agent, which aligns with the concept of subject responsibility. We expect this effect to hold for [se faire]{.smallcaps} as well. Even though both [se faire]{.smallcaps} and [être]{.smallcaps} topicalise the undergoer, [se faire]{.smallcaps} typically implies some degree of subject involvement, so highly dynamic verbs such as *frapper* might increase the likelihood that it is favoured over [être]{.smallcaps}, where the subject is a more passive patient.
+In the corpus study by @da2022alternance, 85% of *frapper* ('hitting-touching', verbs describing violent actions) class verbs occurred in passive constructions, while only 15% were used in the active voice. This is consistent with findings from journalistic English, where verbs describing violent actions are frequently used in the passive voice [@henley1995syntax] **and Bohmann?**. According to @da2022alternance, this preference can be explained by two factors: (1) the topical character of the undergoer affected by a hitting-touching action, which makes it more likely to be promoted to the subject position, and (2) the possibility to omit an unknown or less salient agent, which aligns with the concept of subject responsibility. We expect this effect to hold for [se faire]{.smallcaps} as well. Even though both [se faire]{.smallcaps} and [être]{.smallcaps} topicalise the undergoer, [se faire]{.smallcaps} typically implies some degree of subject involvement, so highly dynamic verbs such as *frapper* might increase the likelihood that it is favoured over [être]{.smallcaps}, where the subject is a more passive patient.
 
 As shown in @fig-clusters, in the study by @da2022alternance on oral French the preference for active constructions was not statistically significant for location verbs, while the probability of communication verbs occurring in the active was significantly higher. Some classes showed no clear effect on passive frequency, with approximately equal distributions of active and passive forms (e.g. verbs of perception, cognition, psychological states, behaviour, movement and transfer). Locative and communicative verbs, on the other hand, appeared more frequently in the active voice.
 
-![Frequency of active and passive constructions for the verb clusters](images/clusters_dacunha-abeillé.png){#fig-clusters fig-align="center" width="480"}
+![Frequency of active and passive constructions for the verb clusters](images/clusters_dacunha-abeillé.png){#fig-clusters fig-align="center" width="460"}
 
 One possible explanation for this tendency is verbal disposition? (**Stallings, MacDonald & O'Seaghdha 1998**). According to this hypothesis, verbs show a preference for certain syntactic constructions that speakers store in their mental lexicon. Communicative verbs often occur with object clauses, which rarely function as subjects. Since the active voice allows these verbs to maintain a direct object, they naturally favour active constructions over passive ones. A similar argument was made by **Thuilier (2012)** in relation to communicative verbs and postverbal complements. Moreover, communicative verbs often involve an animate or human argument, which tends to be encoded as the subject in active constructions.
 
@@ -446,7 +442,6 @@ In their corpus study on the English be: get passive alternation, @hundt_be-_202
 
 -   English @bohmann_large-scale_2023, East Asian languages @washio_when_1993 and @guan_multifactorial_2024 , Swedish @cuypere_corpus-based_2014 -->
 ```
-
 # Data and Methods
 
 Prior to conducting our study, we preregistered its protocol on the platform "AsPredicted" (**Wharton Credibility Lab, University of Pennsylvania**) to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed here: <https://aspredicted.org/gp6y-dd8p.pdf>.
@@ -477,7 +472,6 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
-
 ```{r lemma-list, include=FALSE}
 
 lemmas <- sefaire_sample |> 
@@ -505,7 +499,6 @@ For the être passive constructions, we searched constructions using a CQL expre
 -   In Sketch Engine: Import Word List → lemma list extracted from se faire constructions (for comparability of the constructions, making sure that differences between être and se faire are not due to individual differences of the verb) → Filter out only verb lemmas of se faire from concordance lines → download
 -   final sample: same amount of constructions for être and se faire, same lemmas, seed set -->
 ```
-
 ### Borderline cases/ Manual filtering exclusion criteria
 
 As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + infinitive can sometimes have a 'passive effect' even without a direct 1:1 alternation with *être*. However, for our study of *se faire* + Infinitive and *être* + past participle as a passive alternation, our main criterion was to include only those constructions that could be paraphrased with the *être* passive. Consequently, we excluded expressions that could not be rephrased with the *être* passive, either because the *être* construction was ungrammatical or the meaning was fundamentally altered.
@@ -602,7 +595,6 @@ We excluded:
     -   passé composé, plus-que-parfait, présent, futur antérieur (...) - progressiveness is hinted at by another verb in the sentence (e.g., falloir or être) and not from the "se faire" construction itself
 -->
 ```
-
 ### Data preprocessing
 
 As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some preprocessing steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all complément d' agents of [se faire]{.smallcaps} during inital filtering, the column "agent_pp" was renamed to "agent_pp_A". The datasets were then combined, variables were converted from characters to factors and empty values were replaced with "NA" to ensure proper handling of missing values in statistical analysis.
@@ -1018,7 +1010,6 @@ anova(final_model, null_model, test="Chisq")
 -   caret: train best performing model
 -   Model evaluation -->
 ```
-
 # Results
 
 ## Descriptive statistics (Data exploration)

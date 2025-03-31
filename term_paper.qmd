@@ -26,6 +26,7 @@ p {
 }
 </style>
 ```
+
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -173,6 +174,7 @@ Some grammars distinguish between a *passif verbal*, with an event interpretatio
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward 
 -   se faire passive "typologically marked", comparison to other Romance languages @koenig_semantic_1992 \[145\]; similar constructions exist in other Romance languages but passive reading only allowed in French @labelle_anticausativizing_2013 [236] -->
 ```
+
 ### Structure and meaning
 
 The [se faire]{.smallcaps} passive construction provides an alternative way to express passive meaning in French: When constructing a passive sentence, the French speaker may choose to use [se faire]{.smallcaps} instead of the canonical [être]{.smallcaps}: The two constructions form a passive alternation. The [se faire]{.smallcaps} passive has been investigated by various scholars, such as @bellec_construction_2014, @gaatone_desagreable_1983, @koenig_semantic_1992, @kupferman_construction_1995, @labelle_anticausativizing_2013, @raineri_analyse_2010, @novakova_construction_2009, and @tasmowski-de_ryck_causatif_1987, to name a few.
@@ -272,6 +274,7 @@ We recognize this "fuzzy" [@bohmann_large-scale_2023: 50] variable context as bo
 
 -   Subjects in passive sentences are preferably animate, definite, and pronominal. In the study by @da_cunha_lalternance_2020, animate, definite, and pronominal arguments that function as the objects in active sentences were more frequently found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice) -->
 ```
+
 ### Subject responsibility
 
 As indicated above, the question whether the referent of the subject in the [se faire]{.smallcaps} construction holds any responsibility is central to the debate of the construction's passive-status (see above; @sveberg_se_2012, @bellec_construction_2014 \[212-213\]). In line with their argument that the passive reading of [se faire]{.smallcaps} is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of [se faire]{.smallcaps} is always a causer and therefore always responsible to some degree. This is contrasted to the être passive's subject referent, which is see as more neutral. Gaatone [-@gaatone_desagreable_1983: 164] distinguishes between an "active patient" in [se faire]{.smallcaps} and a "passive patient" in the être passive [@raineri_analyse_2010: 96].
@@ -283,6 +286,7 @@ As indicated above, the question whether the referent of the subject in the [se 
 the PSF construction has a preference to mark the subject as an active participant (although according to @raineri_analyse_2010 [98] is is not "universally accepted" as some authors also name counterexamples @kupferman_construction_1995 [59].)
 In @raineri_analyse_2010 [95]'s view, the idea that the PSF expresses subject responsibility is the "most common hypothesis" ("l'hypothèse la plus répandue") in the literature. -->
 ```
+
 In contrast, Kupferman [-@kupferman_construction_1995: 59] gives [se faire]{.smallcaps} examples where the subject cannot be interpreted as responsible, one of which is repeated here:
 
 > 9.  *Elle sanglotait parce que son tout jeune bébé venait de se faire enlever les amygdales.* [@kupferman_construction_1995: 59]\
@@ -442,6 +446,7 @@ In their corpus study on the English be: get passive alternation, @hundt_be-_202
 
 -   English @bohmann_large-scale_2023, East Asian languages @washio_when_1993 and @guan_multifactorial_2024 , Swedish @cuypere_corpus-based_2014 -->
 ```
+
 # Data and Methods
 
 Prior to conducting our study, we preregistered its protocol on the platform "AsPredicted" (**Wharton Credibility Lab, University of Pennsylvania**) to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed here: <https://aspredicted.org/gp6y-dd8p.pdf>.
@@ -472,6 +477,7 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
+
 ```{r lemma-list, include=FALSE}
 
 lemmas <- sefaire_sample |> 
@@ -499,6 +505,7 @@ For the être passive constructions, we searched constructions using a CQL expre
 -   In Sketch Engine: Import Word List → lemma list extracted from se faire constructions (for comparability of the constructions, making sure that differences between être and se faire are not due to individual differences of the verb) → Filter out only verb lemmas of se faire from concordance lines → download
 -   final sample: same amount of constructions for être and se faire, same lemmas, seed set -->
 ```
+
 ### Borderline cases/ Manual filtering exclusion criteria
 
 As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + infinitive can sometimes have a 'passive effect' even without a direct 1:1 alternation with *être*. However, for our study of *se faire* + Infinitive and *être* + past participle as a passive alternation, our main criterion was to include only those constructions that could be paraphrased with the *être* passive. Consequently, we excluded expressions that could not be rephrased with the *être* passive, either because the *être* construction was ungrammatical or the meaning was fundamentally altered.
@@ -595,6 +602,7 @@ We excluded:
     -   passé composé, plus-que-parfait, présent, futur antérieur (...) - progressiveness is hinted at by another verb in the sentence (e.g., falloir or être) and not from the "se faire" construction itself
 -->
 ```
+
 ### Data preprocessing
 
 As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some preprocessing steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all complément d' agents of [se faire]{.smallcaps} during inital filtering, the column "agent_pp" was renamed to "agent_pp_A". The datasets were then combined, variables were converted from characters to factors and empty values were replaced with "NA" to ensure proper handling of missing values in statistical analysis.
@@ -730,7 +738,7 @@ levels(passive_sample_unknown$subj_gender)
 
 ### Inter-rater agreement
 
-As the analysis required detailed (and time consuming) manual annotation, we decided to split the annotation work between us. However, to ensure consistent annotation, a representative sample of one third of all instances (320; 33,25%) were double annotated, i.e. by both of us. For these instances, we calculated Cohen's ϰ (Kappa) as a measure of inter-rater agreement, following Levshina \[-@levshina_how_2015: 201. and the documentation in the psy package documentation (<https://cran.r-project.org/web/packages/psy/psy.pdf>).)
+As the analysis required detailed (and time consuming) manual annotation, we decided to split the annotation work between us. However, to ensure consistent annotation, a representative sample of one third of all instances (320; 33,25%) were double annotated, i.e. by both of us. For these instances, we calculated Cohen's ϰ (Kappa) as a measure of inter-rater agreement, following Levshina [-@levshina_how_2015: 201] and the documentation in the psy package documentation (<https://cran.r-project.org/web/packages/psy/psy.pdf>).)
 
 ```{r cohens-kappa, include = FALSE}
 kappa_animacy <- ckappa(passive_sample_combined[c("subj_animacy_A", "subj_animacy_B")]) 
@@ -786,7 +794,7 @@ We classified the ϰ-values using the influential benchmark categorisation of La
 
 In addition to conducting a descriptive analysis of the data, we employed a binomial logistic regression model to test our hypotheses. This method provides a logit value for each variable that "represents the chances of construction A to be chosen in a particular type of context compared with the chances of construction B to be used in the same type of context" [@levshina_how_2015: 253]. The model allowed us to exactly track the influence of factors and their interactions on the chances of [se faire]{.smallcaps} being used over [être]{.smallcaps}.
 
-### Levels
+### Levels {#sec-levels}
 
 The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (passive variant: être, complément d'agent: 0, modal: no, TAM: non-progressive, cluster: neutral). If this would negatively affect the stability of the model, the most frequent (subject animacy: animate, subject gender: masculine) or the most evenly distributed case (adversativity: adversative) was selected.
 
@@ -829,14 +837,18 @@ levels(passive_sample_clean$agent_pp)
 levels(passive_sample_unknown$subj_gender)
 ```
 
-### Model selection: Maximum likelihood
+### Model selection
 
-We fit a mixed-effects binomial logistic regression model in R following Levshina [-@levshina_how_2015: 253-276] and Gries [-@gries_statistics_2021: 393-452]. The model calculates the log of the odds that a given construction is realized with „se faire“. To control for individual variation, we include the verb lemma and the speaker (as indicated in the meta data) as random effects. We set a significance threshold p-value of 0.05.
+We fit a mixed-effects binomial logistic regression model in `R` following Levshina [-@levshina_how_2015: 253-276] and Gries [-@gries_statistics_2021: 393-452]. The model estimates the log of the odds that a given construction is realized with [se faire]{.smallcaps}. To account for individual variation, we include the verb `lemma` and the `speaker` (as indicated in the meta data of ParlaMint 2.1) as random effects.
+
+We set a significance threshold p-value of 0.05 and apply backward stepwise selection [@gries_statistics_2021: 366]. Model quality was monitored and compared using the Aikaike Information Criterion (AIC), with preference given to the model with the lower AIC value [@gries_statistics_2021: 366]. Non-significant factors were removed one-by-one, starting with the one with the highest non-significant p-value [@gries_statistics_2021: 366]. Additionally, we evaluated model fit using R^2^, aiming to find the model with the highest possible value and therefore explains most of the variance. Note, however, that Levshina [-@levshina_how_2015] raises concern about the meaningfulness of R^2^ in logistic regression.
 
 ::: panel-tabset
-#### Full Model
+#### Maximal Model
 
-First, we build maximal model that includes all the factors, interactions and random effects described in sec.
+First, we constructed a model that included all the factors described in @sec-levels, the interactions we hypothesise to be significant, and the random effects of speaker and lemma. While the model does not include all theoretically possible interactions, it is considered maximal in the sense that it encompasses all factors and interactions identified in the literature review as potentially meaningful and contributing to passive choice.
+
+The AIC is 732.5, with an R^2^ of 0.46 when excluding random effects and 0.67 when accounting for them.
 
 $$
 \begin{align*}
@@ -871,15 +883,13 @@ vif(full_passive_glmer)
 # cluster:adversativity      50.563250  2        2.666605
 ```
 
-The AIC is 732.5, the R^2^ is 0.460 without considering random effects (marginal) and 0.670 with random effects.
-
 ```{r full-passive-glmer-tab, echo = FALSE}
-tab_model(full_passive_glmer)
+tab_model(full_passive_glmer, show.aic = TRUE)
 ```
 
-#### Model Back-1
+#### Model without non-significant interactions
 
-In the first step, all non-significant interactions ($cluster:adversativity$, $subjAnimacy:cluster$, $subjAnimacy:subjGender$) are removed. With this step, the AIC improves to 725.4 with an R^2^ of 0.450 / 0.664. Thus, without the interactions, the model accuracy increased while the variance that the model can explain decreased slightly. The categories `subj_gender`, `agent_pp`, `modal` and `tam` are non-significant. with p-values \> 0.05.
+In the first step, all non-significant interactions (`cluster:adversativity`, `subjAnimacy:cluster`, `subjAnimacy:subjGender`) were removed, improving the AIC improved to 725.4 with an R^2^ of 0.450 / 0.664. Thus, without the interactions, model accuracy increased while the explained variance decreased slightly. With $p$-values \> 0.05, the categories `subj_gender`, `agent_pp`, `modal` and `tam` were found to be non-significant.
 
 ```{r model-back-1, output = FALSE}
 #| code-fold: true
@@ -894,12 +904,12 @@ summary(model_back_1) #AIC: 725.4
 ```
 
 ```{r model-back-1-tab, echo = FALSE}
-tab_model(model_back_1)
+tab_model(model_back_1, show.aic = TRUE)
 ```
 
-#### Final Model (Minimal model)
+#### Final Model
 
-Non-significant fixed effects were removed step-by step, however, only the final model is reported here. Despite subj_gender having a p-value of \>0.05, and therefore being non-significant, we decided to keep it in our model for theoretical reasons/ interpretation. The AIC of 719.2 shows that removing `agent_pp`, `modal` and `tam` enhanced the quality of the final model while the R^2^ stayed constant at 0.451 / 0.662.
+Non-significant fixed effects were removed step by step, starting with `tam`, which had the highest p-value. At each step, the main effect with the highest $p$-value was eliminated. The final model is reported here. Although `subj_gender` remained non-significant ($p$ \> 0.05), we retained it for theoretical and interpretative reasons. The AIC of 719.2 indicates that removing `agent_pp`, `modal` and `tam` improved the model quality while R^2^ stayed constant at 0.451 / 0.662.
 
 ```{r final-model, output = FALSE}
 #| code-fold: true
@@ -913,7 +923,7 @@ vif(final_model)
 ```
 
 ```{r final-model-tab, echo = FALSE}
-tab_model(final_model) #Marginal R2 / Conditional R2	0.451 / 0.662
+tab_model(final_model, show.aic = TRUE) #Marginal R2 / Conditional R2	0.451 / 0.662
 ```
 :::
 
@@ -921,7 +931,7 @@ tab_model(final_model) #Marginal R2 / Conditional R2	0.451 / 0.662
 
 checking residuals (problematic???) https://cran.r-project.org/web/packages/DHARMa/vignettes/DHARMa.html (recommended in @gries_statistics_2021 [445])
 
-```{r residuals-diagnostics, echo = FALSE}
+```{r residuals-diagnostics, include = FALSE}
 plot(residuals(final_model) ~ predict(final_model))
 #install.packages("DHARMa")
 library(DHARMa)
@@ -934,7 +944,7 @@ testDispersion(sim_res)
 
 **Log odds**
 
-Looking at the log odds, it becomes apparent that
+Looking at the log odds of the significant variables, it becomes apparent that communication verbs boost the chance of [se faire]{.smallcaps} being used, while [être]{.smallcaps} is more likely in non-adversative contexts with inanimate subjects. Although non-significant, feminine subjects favour [se faire]{.smallcaps} over [être]{.smallcaps}.
 
 ```{r coefficients-log-odds, echo = FALSE}
 final_model_coef <- coefficients(summary(final_model))[,"Estimate"]
@@ -942,9 +952,7 @@ final_model_coef
 #"a negative coefficient expressed as a logit (or log odds) shows that this outcome is less probably than the reference level"
 ```
 
-A positive coefficient means that the level boosts the chance of se faire (and therefore, decreases the chance of être).
-
-Odds Ratios
+**Odds Ratios**
 
 ```{r coefficients-odds, include=FALSE}
 #convert from log odds to odds:
@@ -954,34 +962,29 @@ exp(final_model_coef)
 #exp(model_2_coef) / (1 + exp(model_2_coef))
 ```
 
-The intercept of the final model is 2.78. This means that if the subject is animate and masculine, the cluster of the verb is neutral and the construction has an adversative sense, the chances of se faire are 2.78 times greater than être.
-
-R-squared not recommended as central measure @levshina_how_2015 [259], Hosmer & Lemeshow (2000: 167)
-
-significant effects in final_model_without_unknown (final model?):
-
--   cluster\[communication\];
-
--   subj animacy \[inanimate\] × adversativity \[adversative\]
+The intercept of the final model is 2.78. This means that in the context of the reference levels (subject is animate and masculine, the cluster of the verb is neutral and the construction has an adversative sense), the chances of [se faire]{.smallcpas} being chosen are 2.78 times greater than [être]{.smallcaps}. The exact values of odds ratios are interpreted in the results section @sec-results-log-effects, where they are interpreted with regard to our hypotheses.
 
 ### Concordance Index and Significance
 
-```{r concordance-index, echo = FALSE}
+As Levshina [-@levshina_how_2015: 256] describes, the concordance index measures the ability of the model to discriminate correctly by providing the proportion of times when the model predicts the use of the variant correctly.
+
+```{r concordance-index}
 #| code-fold: true
 predictions <- predict(final_model, type = "response", na.action = na.omit)
 outcome <- as.numeric(na.omit(passive_sample_clean)$passive_variant) - 1
 
-Hmisc::somers2(predictions, outcome)["C"]
-# C 0.9414132 - pretty good I think? "outstanding discrimination" according to Hosmer & Lemeshow (2000: 162) in Levshina (2015: 259)
+(Hmisc::somers2(predictions, outcome)["C"])
 ```
 
-overall significance test for the model by comparing 0 model to full model and use an anova between those @gries_statistics_2021 [445-446]
+For our model, the concordance index is high at 0.94. Comparing this to the scale reported in Levshina [-@levshina_how_2015: 259], our model shows "outstanding discrimination".
+
+Additonally, we apply an overall significance test by comparing it to a model without predictors (i.e. null model) using an ANOVA [@gries_statistics_2021: 445-446].
 
 ```{r model2-significance, echo = FALSE}
 null_model <- glmer(passive_variant ~ 1 + (1 | lemma) + (1 | speaker), data = passive_sample_clean, family = binomial)
 
 anova(final_model, null_model, test="Chisq")
-#highly significant!!
+#highly significant!
 #relative likelihood
 (exp((AIC(null_model)-AIC(final_model))/2))
 
@@ -993,6 +996,8 @@ anova(final_model, null_model, test="Chisq")
 # #relative likelihood
 # (exp((AIC(null_model)-AIC(final_model_without_unknown))/2))
 ```
+
+The ANOVA shows that our model is highly significant (LR-test=181.02, $p$ \<0.0001), indicating a strong improvement over the null model. The model has a vastly higher relative likelihood compared to the null model.
 
 ```{=html}
 <!-- ## Memory based learning
@@ -1025,6 +1030,7 @@ anova(final_model, null_model, test="Chisq")
 -   caret: train best performing model
 -   Model evaluation -->
 ```
+
 # Results
 
 ## Descriptive statistics (Data exploration)
@@ -1260,7 +1266,7 @@ mosaicplot(subj_gender ~ passive_variant,
 
 More in @levshina_how_2015: Chapter 4 and @gries_statistics_2021 Chapter 3/Descriptive statistics & visualisations) and Chapter 6 (Mixed effects regression modeling)
 
-## Effects of logistic regression
+## Effects of logistic regression {#sec-results-log-effects}
 
 ### Subject responsibility
 

@@ -308,7 +308,7 @@ We tag animacy as binary "inanimate"/ "animate" although we recognize that anima
 
 **Hypothesis**: Both [se faire]{.smallcaps} and *être* passive favour animate subjects over inanimate subjects but subject animacy is a stronger predictor of [se faire]{.smallcaps} than the être passive.
 
-**Interaction**: @raineri_analyse_2010 [94] suspects that [se faire]{.smallcaps}'s animacy (almost-) constraint restricts verb selection and provides an explanation for the construction's incompatibility with certain verbs (i.e. not all verbs can occur with animate subjects).
+**Interaction**: @raineri_analyse_2010 [94] suspects that [se faire]{.smallcaps} restricts verb selection and provides an explanation for the construction's incompatibility with certain verbs. Therefore, we hypothesise that the choice of passive construction could be influenced not only by animacy or verb cluster alone, but by the combination of these two factors: For example, animacy could have a stronger effect if the verb is from the hitting-touching category or the neutral category ([se faire]{.smallcaps} could be strongly favoured with animate subjects compared to inanimate subjects), while this effect could be weaker with communicative verbs for which “être” passive could be favoured regardless of animacy.
 
 <!-- The preference of the se faire passive of animate over inanimate subjects is parallel to the English get passive (@hundt_be-_2024), although @raineri_analyse_2010 [92] finds that the get passive allows more inanimate subjects than the se faire passive. According to @bohmann_large-scale_2023 [43], the get passive has become more likely with inanimate subjects over time which may signify a lessening of subject responsibility. @raineri_analyse_2010 brings up the possibility that a similar process of grammaticalisation may be happening in French. (not sure if relevant)-->
 
@@ -482,6 +482,8 @@ In their corpus study on the English be: get passive alternation, @hundt_be-_202
 ```
 
 # Data and Methods
+
+Previous to conducting our study, we preregistered it on the platform "AsPredicted" to increase transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed here: <https://aspredicted.org/gp6y-dd8p.pdf>.
 
 ## Data Collection
 

@@ -26,7 +26,6 @@ p {
 }
 </style>
 ```
-
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -174,7 +173,6 @@ Some grammars distinguish between a *passif verbal*, with an event interpretatio
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward 
 -   se faire passive "typologically marked", comparison to other Romance languages @koenig_semantic_1992 \[145\]; similar constructions exist in other Romance languages but passive reading only allowed in French @labelle_anticausativizing_2013 [236] -->
 ```
-
 ### Structure and meaning
 
 The [se faire]{.smallcaps} passive construction provides an alternative way to express passive meaning in French: When constructing a passive sentence, the French speaker may choose to use [se faire]{.smallcaps} instead of the canonical [être]{.smallcaps}: The two constructions form a passive alternation. The [se faire]{.smallcaps} passive has been investigated by various scholars, such as @bellec_construction_2014, @gaatone_desagreable_1983, @koenig_semantic_1992, @kupferman_construction_1995, @labelle_anticausativizing_2013, @raineri_analyse_2010, @novakova_construction_2009, and @tasmowski-de_ryck_causatif_1987, to name a few.
@@ -274,7 +272,6 @@ We recognize this "fuzzy" [@bohmann_large-scale_2023: 50] variable context as bo
 
 -   Subjects in passive sentences are preferably animate, definite, and pronominal. In the study by @da_cunha_lalternance_2020, animate, definite, and pronominal arguments that function as the objects in active sentences were more frequently found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice) -->
 ```
-
 ### Subject responsibility
 
 As indicated above, the question whether the referent of the subject in the [se faire]{.smallcaps} construction holds any responsibility is central to the debate of the construction's passive-status (see above; @sveberg_se_2012, @bellec_construction_2014 \[212-213\]). In line with their argument that the passive reading of [se faire]{.smallcaps} is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of [se faire]{.smallcaps} is always a causer and therefore always responsible to some degree. This is contrasted to the être passive's subject referent, which is see as more neutral. Gaatone [-@gaatone_desagreable_1983: 164] distinguishes between an "active patient" in [se faire]{.smallcaps} and a "passive patient" in the être passive [@raineri_analyse_2010: 96].
@@ -286,7 +283,6 @@ As indicated above, the question whether the referent of the subject in the [se 
 the PSF construction has a preference to mark the subject as an active participant (although according to @raineri_analyse_2010 [98] is is not "universally accepted" as some authors also name counterexamples @kupferman_construction_1995 [59].)
 In @raineri_analyse_2010 [95]'s view, the idea that the PSF expresses subject responsibility is the "most common hypothesis" ("l'hypothèse la plus répandue") in the literature. -->
 ```
-
 In contrast, Kupferman [-@kupferman_construction_1995: 59] gives [se faire]{.smallcaps} examples where the subject cannot be interpreted as responsible, one of which is repeated here:
 
 > 9.  *Elle sanglotait parce que son tout jeune bébé venait de se faire enlever les amygdales.* [@kupferman_construction_1995: 59]\
@@ -391,44 +387,6 @@ We have used the classes *communication* and *hitting-touching* from the lexicon
 **However, this effect could interact with other factors:** - Animacy and verb clusters: The choice of passive construction could be influenced not only by the verb cluster alone, but by the combination of these two factors: e.g. animacy could have a stronger effect if the verb is from the hitting-touching category or the neutral category ("se faire" could be strongly favoured with animate subjects compared to inanimate subjects), while this effect could be weaker with communicative verbs for which "être" passive could be favoured regardless of animacy.\
 Adversativity could reinforce "se faire" more in communication and neutral verbs than in hitting-touching verbs: Communication verbs tend to favour "être" and neutral verbs have no strong preference, but adversative constructions may shift both toward "se faire". Since hitting-touching verbs are inherently highly adversative, adversativity is unlikely to strongly affect their passive preference.
 
-+-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Verb cluster                                                      | hypothesised passive preference | Verb examples                                                                                                                                                                                                                       |
-+===================================================================+=================================+=====================================================================================================================================================================================================================================+
-| giving, depriving (don, privation)                                | neutral                         | aider (*une personne victime, à 57 ans, d'' un accident entraînant l'' apparition d'' un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*)                              |
-+-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| entering, leaving (entrée, sortie)                                | neutral                         | engager (*cela répond à votre attente à l'' égard de fonctionnaires qui quitteraient l'' administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*)                                              |
-|                                                                   |                                 |                                                                                                                                                                                                                                     |
-|                                                                   |                                 | transplanter (*Afin de protéger nos concitoyens de l'' exposition aux risques sanitaires qu'' ils encourraient en se faisant transplanter à l'' étranger puis en revenant en France sans forcément recourir aux soins nécessaires*) |
-+-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| hitting, touching (frapper, toucher)                              | se faire                        | tuer (*ces hommes que l'' on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays*)                                                                                      |
-+-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| movement in place (mouvement sur place)                           | neutral                         |                                                                                                                                                                                                                                     |
-+-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| equipping, disarming (munir, démunir)                             | neutral                         | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie*)                                                                                                                                          |
-+-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| transformation, change (transformation, changement)               | neutral                         | remplacer (*afin que le premier puisse se faire remplacer par le second*)                                                                                                                                                           |
-+-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| realisation, preparation (réalisation, mise en état)              | neutral                         | photographier (*J '' ajoute la diminution du nombre de points où l'' on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'' identité ou son passeport*.)                |
-+-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| physical states and behaviours (états physiques et comportements) | neutral                         | aider (*afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'' en sont pas informés.*)                                                                                                |
-+-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| locative (locatif)                                                | neutral                         | accepter (*Oliver Wendell Holmes écrit ainsi que " la meilleure épreuve de vérité est le pouvoir d'' une pensée de se faire accepter dans la compétition du marché " – competition of the market.*)                                 |
-+-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| union, reunion (union, réunion)                                   | neutral                         |                                                                                                                                                                                                                                     |
-+-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| psychological verbs (verbes psychologiques)                       | neutral                         | écouter (*Le problème , on l' a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*)                                                                              |
-|                                                                   |                                 |                                                                                                                                                                                                                                     |
-|                                                                   |                                 | suivre (*les patientes seront contraintes de multiplier les déplacements pour se faire suivre.*)                                                                                                                                    |
-+-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| seizing, clasping, possessing (saisir, serrer, posséder)          | neutral                         | élire (*avant que M. Hollande ne se fasse élire en affirmant qu'' il ne signerait pas le TSCG en l'' état.*)                                                                                                                        |
-+-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| communication                                                     | être                            | accuser (*il est devenu impossible de l'' exprimer dans le débat public sans se faire accuser de haïr les policiers*)                                                                                                               |
-+-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| auxiliary verbs                                                   | \-                              | \-                                                                                                                                                                                                                                  |
-+-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-: Hypothesised passive preference for verbs based on clusters/ classes by @francois_presentation_2007 [4]
-
 **TAM**
 
 The tense and aspect markings French cannot be clearly distinguished from each other because they heavily influence each other and depend on each other.
@@ -482,7 +440,6 @@ In their corpus study on the English be: get passive alternation, @hundt_be-_202
 
 -   English @bohmann_large-scale_2023, East Asian languages @washio_when_1993 and @guan_multifactorial_2024 , Swedish @cuypere_corpus-based_2014 -->
 ```
-
 # Data and Methods
 
 Prior to conducting our study, we preregistered its protocol on the platform "AsPredicted" (**Wharton Credibility Lab, University of Pennsylvania**) to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed here: <https://aspredicted.org/gp6y-dd8p.pdf>.
@@ -513,7 +470,6 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
-
 ```{r lemma-list, include=FALSE}
 
 lemmas <- sefaire_sample |> 
@@ -541,7 +497,6 @@ For the être passive constructions, we searched constructions using a CQL expre
 -   In Sketch Engine: Import Word List → lemma list extracted from se faire constructions (for comparability of the constructions, making sure that differences between être and se faire are not due to individual differences of the verb) → Filter out only verb lemmas of se faire from concordance lines → download
 -   final sample: same amount of constructions for être and se faire, same lemmas, seed set -->
 ```
-
 ### Borderline cases/ Manual filtering exclusion criteria
 
 As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + infinitive can sometimes have a 'passive effect' even without a direct 1:1 alternation with *être*. However, for our study of *se faire* + Infinitive and *être* + past participle as a passive alternation, our main criterion was to include only those constructions that could be paraphrased with the *être* passive. Consequently, we excluded expressions that could not be rephrased with the *être* passive, either because the *être* construction was ungrammatical or the meaning was fundamentally altered.
@@ -638,7 +593,6 @@ We excluded:
     -   passé composé, plus-que-parfait, présent, futur antérieur (...) - progressiveness is hinted at by another verb in the sentence (e.g., falloir or être) and not from the "se faire" construction itself
 -->
 ```
-
 ### Data preprocessing
 
 As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some preprocessing steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all complément d' agents of [se faire]{.smallcaps} during inital filtering, the column "agent_pp" was renamed to "agent_pp_A". The datasets were then combined, variables were converted from characters to factors and empty values were replaced with "NA" to ensure proper handling of missing values in statistical analysis.
@@ -1033,7 +987,6 @@ anova(final_model, null_model, test="Chisq")
 -   caret: train best performing model
 -   Model evaluation -->
 ```
-
 # Results
 
 ## Descriptive statistics (Data exploration)
@@ -1368,6 +1321,46 @@ It could be valuable to examine the cases we excluded from our analysis to under
 -   memory-based learning
 
 # Appendix {.appendix}
+
+## Verb clusters with examples {.appendix}
+
++-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Verb cluster                                                      | hypothesised passive preference | Verb examples                                                                                                                                                                                                                       |
++===================================================================+=================================+=====================================================================================================================================================================================================================================+
+| giving, depriving (don, privation)                                | neutral                         | aider (*une personne victime, à 57 ans, d'' un accident entraînant l'' apparition d'' un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*)                              |
++-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| entering, leaving (entrée, sortie)                                | neutral                         | engager (*cela répond à votre attente à l'' égard de fonctionnaires qui quitteraient l'' administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*)                                              |
+|                                                                   |                                 |                                                                                                                                                                                                                                     |
+|                                                                   |                                 | transplanter (*Afin de protéger nos concitoyens de l'' exposition aux risques sanitaires qu'' ils encourraient en se faisant transplanter à l'' étranger puis en revenant en France sans forcément recourir aux soins nécessaires*) |
++-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| hitting, touching (frapper, toucher)                              | se faire                        | tuer (*ces hommes que l'' on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays*)                                                                                      |
++-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| movement in place (mouvement sur place)                           | neutral                         |                                                                                                                                                                                                                                     |
++-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| equipping, disarming (munir, démunir)                             | neutral                         | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie*)                                                                                                                                          |
++-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| transformation, change (transformation, changement)               | neutral                         | remplacer (*afin que le premier puisse se faire remplacer par le second*)                                                                                                                                                           |
++-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| realisation, preparation (réalisation, mise en état)              | neutral                         | photographier (*J '' ajoute la diminution du nombre de points où l'' on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'' identité ou son passeport*.)                |
++-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| physical states and behaviours (états physiques et comportements) | neutral                         | aider (*afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'' en sont pas informés.*)                                                                                                |
++-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| locative (locatif)                                                | neutral                         | accepter (*Oliver Wendell Holmes écrit ainsi que " la meilleure épreuve de vérité est le pouvoir d'' une pensée de se faire accepter dans la compétition du marché " – competition of the market.*)                                 |
++-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| union, reunion (union, réunion)                                   | neutral                         |                                                                                                                                                                                                                                     |
++-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| psychological verbs (verbes psychologiques)                       | neutral                         | écouter (*Le problème , on l' a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*)                                                                              |
+|                                                                   |                                 |                                                                                                                                                                                                                                     |
+|                                                                   |                                 | suivre (*les patientes seront contraintes de multiplier les déplacements pour se faire suivre.*)                                                                                                                                    |
++-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| seizing, clasping, possessing (saisir, serrer, posséder)          | neutral                         | élire (*avant que M. Hollande ne se fasse élire en affirmant qu'' il ne signerait pas le TSCG en l'' état.*)                                                                                                                        |
++-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| communication                                                     | être                            | accuser (*il est devenu impossible de l'' exprimer dans le débat public sans se faire accuser de haïr les policiers*)                                                                                                               |
++-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| auxiliary verbs                                                   | \-                              | \-                                                                                                                                                                                                                                  |
++-------------------------------------------------------------------+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+: Hypothesised passive preference for verbs based on clusters/ classes by @francois_presentation_2007 [4]
 
 ## Alternative models {.appendix}
 

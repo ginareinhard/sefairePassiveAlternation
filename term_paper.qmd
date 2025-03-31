@@ -836,7 +836,7 @@ We fit a mixed-effects binomial logistic regression model in R following Levshin
 ::: panel-tabset
 #### Full Model
 
-Gries 442. First, we build maximal model that includes all the factors, interactions and random effects described in sec.
+First, we build maximal model that includes all the factors, interactions and random effects described in sec.
 
 $$
 \begin{align*}
@@ -871,13 +871,15 @@ vif(full_passive_glmer)
 # cluster:adversativity      50.563250  2        2.666605
 ```
 
+The AIC is 732.5, the R^2^ is 0.460 without considering random effects (marginal) and 0.670 with random effects.
+
 ```{r full-passive-glmer-tab, echo = FALSE}
 tab_model(full_passive_glmer)
 ```
 
 #### Model Back-1
 
-In the first step, Removing non-significant interactions (cluster:adversativity, subj_animacy:cluster, subj_animacy:subj_gender):
+In the first step, all non-significant interactions ($cluster:adversativity$, $subjAnimacy:cluster$, $subjAnimacy:subjGender$) are removed. With this step, the AIC improves to 725.4 with an R^2^ of 0.450 / 0.664. Thus, without the interactions, the model accuracy increased while the variance that the model can explain decreased slightly. The categories `subj_gender`, `agent_pp`, `modal` and `tam` are non-significant. with p-values \> 0.05.
 
 ```{r model-back-1, output = FALSE}
 #| code-fold: true
@@ -895,25 +897,27 @@ summary(model_back_1) #AIC: 725.4
 tab_model(model_back_1)
 ```
 
-#### Final Model
+#### Final Model (Minimal model)
 
-removing non-significant fixed effects (agent_pp, modal, tam, subj_gender)
+Non-significant fixed effects were removed step-by step, however, only the final model is reported here. Despite subj_gender having a p-value of \>0.05, and therefore being non-significant, we decided to keep it in our model for theoretical reasons/ interpretation. The AIC of 719.2 shows that removing `agent_pp`, `modal` and `tam` enhanced the quality of the final model while the R^2^ stayed constant at 0.451 / 0.662.
 
 ```{r final-model, output = FALSE}
 #| code-fold: true
 final_model <- glmer(
-    passive_variant ~ (subj_animacy + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma) + (1 | speaker),
+    passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma) + (1 | speaker),
     family = "binomial",
     data = passive_sample_clean
   )
-summary(final_model) # AIC: 718.6 
+summary(final_model) # AIC: 719.2
 vif(final_model)
 ```
 
 ```{r final-model-tab, echo = FALSE}
-tab_model(final_model) # Marginal R2 / Conditional R2	0.445 / 0.660
+tab_model(final_model) #Marginal R2 / Conditional R2	0.451 / 0.662
 ```
 :::
+
+### Residuals and Coefficients
 
 checking residuals (problematic???) https://cran.r-project.org/web/packages/DHARMa/vignettes/DHARMa.html (recommended in @gries_statistics_2021 [445])
 
@@ -921,12 +925,36 @@ checking residuals (problematic???) https://cran.r-project.org/web/packages/DHAR
 plot(residuals(final_model) ~ predict(final_model))
 #install.packages("DHARMa")
 library(DHARMa)
+library(arm)
+binnedplot(predict(final_model), residuals(final_model))
 sim_res <- simulateResiduals(final_model)
 plot(sim_res)
 testDispersion(sim_res)
 ```
 
-The intercept of the final model is 2.97. This means that if the subject is animate, the cluster of the verb is neutral and the construction has an adversative sense, the chances of se faire are 2.97 times greater than être. A positive coefficient means that the level boosts the chance of se faire (and therefore, decreases the chance of être).
+**Log odds**
+
+Looking at the log odds, it becomes apparent that
+
+```{r coefficients-log-odds, echo = FALSE}
+final_model_coef <- coefficients(summary(final_model))[,"Estimate"]
+final_model_coef
+#"a negative coefficient expressed as a logit (or log odds) shows that this outcome is less probably than the reference level"
+```
+
+A positive coefficient means that the level boosts the chance of se faire (and therefore, decreases the chance of être).
+
+Odds Ratios
+
+```{r coefficients-odds, include=FALSE}
+#convert from log odds to odds:
+exp(final_model_coef)
+
+#convert odds to probabilities
+#exp(model_2_coef) / (1 + exp(model_2_coef))
+```
+
+The intercept of the final model is 2.78. This means that if the subject is animate and masculine, the cluster of the verb is neutral and the construction has an adversative sense, the chances of se faire are 2.78 times greater than être.
 
 R-squared not recommended as central measure @levshina_how_2015 [259], Hosmer & Lemeshow (2000: 167)
 
@@ -945,19 +973,6 @@ outcome <- as.numeric(na.omit(passive_sample_clean)$passive_variant) - 1
 
 Hmisc::somers2(predictions, outcome)["C"]
 # C 0.9414132 - pretty good I think? "outstanding discrimination" according to Hosmer & Lemeshow (2000: 162) in Levshina (2015: 259)
-```
-
-```{r coefficients, include=FALSE}
-final_model_coef <- coefficients(summary(final_model))[,"Estimate"]
-
-final_model_coef
-#"a negative coefficient expressed as a logit (or log odds) shows that this outcome is less probably than the reference level"
-
-#convert from log odds to odds:
-exp(final_model_coef)
-
-#convert odds to probabilities
-#exp(model_2_coef) / (1 + exp(model_2_coef))
 ```
 
 overall significance test for the model by comparing 0 model to full model and use an anova between those @gries_statistics_2021 [445-446]
@@ -1430,7 +1445,6 @@ vif(final_model_unknown)
 plot(residuals(final_model_unknown) ~ predict(final_model_unknown))
 
 sim_res <- simulateResiduals(final_model_unknown)
-library(arm)
 binnedplot(predict(final_model_unknown), residuals(final_model_unknown))
 plot(sim_res)
 testDispersion(sim_res)

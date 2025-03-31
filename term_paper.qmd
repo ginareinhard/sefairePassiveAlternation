@@ -294,7 +294,7 @@ In contrast, Kupferman [-@kupferman_construction_1995: 59] gives [se faire]{.sma
 
 According to him, subject responsibility emerges from the context and not from the inherently passive [se faire]{.smallcaps} construction [@kupferman_construction_1995: 98-99]. Further support for this idea comes from @labelle_anticausativizing_2013 and @washio_when_1993. For @martin_construction_2002, subject dynamism, but not subject intentionality, is a necessary condition [@raineri_analyse_2010: 90].
 
-Thus, although the requirement of subject responsibility in [se faire]{.smallcaps} is not "universally accepted" [@raineri_analyse_2010: 98], ("une catégorie hétérogène complexe" (@raineri_analyse_2010 [249]), the analyses show some consensus in that [se faire]{.smallcaps} prefers to mark the subject as connected to the event [@raineri_analyse_2010], either through affectedness, responsibility or intentionality. We expect that his tendency is less pronounced for the être passive. In our study, we model subject responsibility by the factors subject animacy, subject gender, Complément d'agent, and modal verbs.
+Thus, although the requirement of subject responsibility in [se faire]{.smallcaps} is not "universally accepted" [@raineri_analyse_2010: 98], ("une catégorie hétérogène complexe" (@raineri_analyse_2010 [249]), the analyses show some consensus in that [se faire]{.smallcaps} prefers to mark the subject as connected to the event [@raineri_analyse_2010], either through affectedness, responsibility or intentionality. We expect that his tendency is less pronounced for the être passive. In our study, we model subject responsibility by the factors subject animacy, subject gender, Complément d'agent, and modal verbs. Our overarching hypothesis is that [se faire]{.smallcaps} will be favoured over [être]{.smallcaps} in constructions with responsible subjects, indicated by animate, masculine subjects, the absence of complément d'agents and the presence of modal verbs.
 
 **Subject Animacy**
 
@@ -351,6 +351,8 @@ If we assume that [se faire]{.smallcaps} is a "basic passive", this suggests tha
 [^2]: The general consensus in the literature is that aspect marks progressivity grammatically and Aktionsart marks it semantically/ lexically. However, this clear distinction between aspect and Aktionart has been doubted, and some theories see Aktionsart und Aspect as two instantiations of Aspectuality [@Dik+1997+217+246: 221].
 
 <!-- We do not examine mood in this study.-->
+
+Our overall predictions regarding aspectuality is a preponderance for [se faire]{.smallcaps} for hitting-touching verbs and progressive aspect.
 
 **Semantic verb clusters**
 
@@ -483,7 +485,7 @@ In their corpus study on the English be: get passive alternation, @hundt_be-_202
 
 # Data and Methods
 
-Previous to conducting our study, we preregistered it on the platform "AsPredicted" to increase transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed here: <https://aspredicted.org/gp6y-dd8p.pdf>.
+Prior to conducting our study, we preregistered its protocol on the platform "AsPredicted" (**Wharton Credibility Lab, University of Pennsylvania**) to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed here: <https://aspredicted.org/gp6y-dd8p.pdf>.
 
 ## Data Collection
 
@@ -639,12 +641,15 @@ We excluded:
 
 ### Data preprocessing
 
+As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some preprocessing steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all complément d' agents of [se faire]{.smallcaps} during inital filtering, the column "agent_pp" was renamed to "agent_pp_A". The datasets were then combined, variables were converted from characters to factors and empty values were replaced with "NA" to ensure proper handling of missing values in statistical analysis.
+
 ```{r read-annotated-data, include = FALSE}
 sefaire_sample_annotated <- read.csv(file = here("data", "sefaire_sample_annotated.csv"))
 etre_sample_annotated <- read.csv(file = here("data", "etre_sample_annotated.csv"))
 ```
 
 ```{r data-cleaning-colnames, include = FALSE}
+#| code-fold: true
 # data preprocessing
 colnames(etre_sample_annotated)
 colnames(sefaire_sample_annotated)
@@ -652,7 +657,8 @@ colnames(sefaire_sample_annotated)
 # Differences between the two datasets mainly regard columns speaker and reference: se faire sample has a "speaker" column which includes the speaker id and the name and a "reference" column that includes the speaker ID and the date; être sample has only a "reference" column that includes speaker ID, date, name
 ```
 
-```{r data-cleaning-colnames-2, include = FALSE}
+```{r data-cleaning-colnames-2, echo = TRUE}
+#| code-fold: true
 # Goal: two columns consistent across both datasets, one "speaker" (name), one "reference" (ID), drop date
 # 1. se faire
 # separate "speaker" column into reference and speaker
@@ -682,12 +688,14 @@ sefaire_sample_annotated <- sefaire_sample_annotated |>
   rename(agent_pp_A = agent_pp)
 ```
 
-```{r combine-data, include = FALSE}
+```{r combine-data}
+#| code-fold: true
 #combine the data
 passive_sample_combined <- bind_rows(etre_sample_annotated, sefaire_sample_annotated) 
 ```
 
 ```{r data-cleaning-2, include = FALSE}
+#| code-fold: true
 # check for typos/ tagging inconsistencies in combined data; convert to factor; add "NA" as value for all cases that are only annotated by one person
 #check data type
 class(passive_sample_combined$subj_animacy_A)
@@ -700,12 +708,12 @@ passive_sample_combined <- passive_sample_combined |>
 passive_sample_combined |> 
   select(subj_animacy_A, subj_animacy_B, subj_gender_A, subj_gender_B, agent_pp_A, agent_pp_B, modal_A, modal_B, tam_A, tam_B, cluster_A, cluster_B, adversativity_A, adversativity_B) |> 
   summary()
-#looks good
 ```
 
 For the main analysis, the se faire and être data were merged into one "clean" dataset where each column corresponds to one factor. This column includes the annotation of the first annotator (annotator A for half of the observations, annotator B for the other half).
 
-```{r merge-to-main-dataset, include = FALSE}
+```{r merge-to-main-dataset}
+#| code-fold: true
 #goal: one dataset with one column for each factor, the column includes the annotation of the "main" annotator
 # special case agent pp column: if passive variant is se faire -> take value from column "agent pp_A", if passive variant is être is: same procedure as with the other variables
 passive_sample_clean <- passive_sample_combined |> 
@@ -733,6 +741,8 @@ passive_sample_clean <- passive_sample_clean |>
   select(-subj_animacy_A, -subj_animacy_B, -subj_gender_A, -subj_gender_B, -agent_pp_A, -agent_pp_B, -modal_A, -modal_B, -tam_A, -tam_B, -cluster_A, -cluster_B, -adversativity_A, -adversativity_B, -ID)
 ```
 
+The sample comprised 1064 observations: 532 for [se faire]{.smallcaps} and [être]{.smallcaps} each.
+
 reasoning: why exclude unknown and mixed?
 
 ```{r cleaning-main-data, include=FALSE}
@@ -756,8 +766,6 @@ passive_sample_clean <- passive_sample_clean|>
 #     TRUE ~ agent_pp
 #   )) |> 
 #   mutate(agent_pp = factor(agent_pp))
-
-
 
 levels(passive_sample_clean$subj_gender)
 levels(passive_sample_unknown$subj_gender)
@@ -816,15 +824,15 @@ mean_kappa #0.8402305, very high agreement :)
 | Mean               | 0.8402305     | almost perfect                               |
 +--------------------+---------------+----------------------------------------------+
 
-We classified the ϰ-values using the influential benchmark categorisation of @landis1977measurement [165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". Mean inter-rater agreement was high at 0.84. Agreement was lowest for adversativity (0.67) and TAM (0.77).
+We classified the ϰ-values using the influential benchmark categorisation of Landis and Koch [-@landis1977measurement: 165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". Mean inter-rater agreement was high at 0.84. Agreement was lowest for the cateogories Adversativity (0.67) and TAM (0.77).
 
 ## Binomial logistic regression
 
-Levshina [-@levshina_how_2015: 253]: "logit represents the chances of construction A to be chosen in a particular type of context compared with the chances of construction B to be used in the same type of context."
+In addition to conducting a descriptive analysis of the data, we employed a binomial logistic regression model to test our hypotheses. This method provides a logit value for each variable that "represents the chances of construction A to be chosen in a particular type of context compared with the chances of construction B to be used in the same type of context" [@levshina_how_2015: 253]. The model allowed us to exactly track the influence of factors and their interactions on the chances of [se faire]{.smallcaps} being used over [être]{.smallcaps}.
 
 ### Levels
 
-Levels are by default ordered alphabetically. We change the reference levels either to the most "standard" case, or, if this would negatively affect the stability of the model, to the most frequent case.
+The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (passive variant: être, complément d'agent: 0, modal: no, TAM: non-progressive, cluster: neutral). If this would negatively affect the stability of the model, the most frequent (subject animacy: animate, subject gender: masculine) or the most evenly distributed case (adversativity: adversative) was selected.
 
 +--------------------+-----------------+------------------------------------------+
 | Variable           | Label           | Levels                                   |
@@ -1215,6 +1223,8 @@ ggplot(passive_sample_clean,
 ```
 
 ### Adversativity
+
+We find a significant effect of
 
 ```{r, echo=FALSE}
 table(passive_sample_clean$adversativity, passive_sample_clean$passive_variant)

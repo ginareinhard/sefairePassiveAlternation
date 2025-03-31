@@ -342,17 +342,13 @@ Volitional verbs align well with [se faire]{.smallcaps} because they involve an 
 
 ### Aspectuality
 
-Regarding the factor of aspectuality, @keenan_passive_2007 [340] propose the following generalisation:
-
-"If a language has two or more basic passives they are likely to differ semantically with respect to the aspect ranges they cover."
-
-If we assume that [se faire]{.smallcaps} is a "basic passive", this suggests that the *être* and [se faire]{.smallcaps} have different aspectual preferences. Aspectuality is expressed through the verb, either via inherent lexical semantics ("Aktionsart") or grammatical marking, such as tense, aspect, and mood [^2] [@kortmann_triad_1991 : 13].
+Regarding the factor of aspectuality, @keenan_passive_2007 [340] propose the following generalisation: "If a language has two or more basic passives they are likely to differ semantically with respect to the aspect ranges they cover." If we assume that [se faire]{.smallcaps} is a "basic passive", this suggests that the *être* and [se faire]{.smallcaps} have different aspectual preferences. Aspectuality is expressed through the verb, either via inherent lexical semantics ("Aktionsart") or grammatical marking, such as tense, aspect, and mood [^2] [@kortmann_triad_1991 : 13].
 
 [^2]: The general consensus in the literature is that aspect marks progressivity grammatically and Aktionsart marks it semantically/ lexically. However, this clear distinction between aspect and Aktionart has been doubted, and some theories see Aktionsart und Aspect as two instantiations of Aspectuality [@Dik+1997+217+246: 221].
 
 <!-- We do not examine mood in this study.-->
 
-Our overall predictions regarding aspectuality is a preponderance for [se faire]{.smallcaps} for hitting-touching verbs and progressive aspect.
+Our overall predictions regarding aspectuality is a preponderance of [se faire]{.smallcaps} for hitting-touching verbs and progressive aspect.
 
 **Semantic verb clusters**
 
@@ -909,7 +905,7 @@ tab_model(model_back_1, show.aic = TRUE)
 
 #### Final Model
 
-Non-significant fixed effects were removed step by step, starting with `tam`, which had the highest p-value. At each step, the main effect with the highest $p$-value was eliminated. The final model is reported here. Although `subj_gender` remained non-significant ($p$ \> 0.05), we retained it for theoretical and interpretative reasons. The AIC of 719.2 indicates that removing `agent_pp`, `modal` and `tam` improved the model quality while R^2^ stayed constant at 0.451 / 0.662.
+Non-significant fixed effects were removed step by step, starting with `tam`, which had the highest $p$-value. At each step, the main effect with the highest $p$-value was eliminated. The final model is reported here. Although `subj_gender` remained non-significant ($p$ \> 0.05), we retained it for theoretical and interpretative reasons. The AIC of 719.2 indicates that removing `agent_pp`, `modal` and `tam` improved the model quality while R^2^ stayed constant at 0.451 / 0.662.
 
 ```{r final-model, output = FALSE}
 #| code-fold: true

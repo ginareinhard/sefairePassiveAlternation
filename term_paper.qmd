@@ -26,6 +26,7 @@ p {
 }
 </style>
 ```
+
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -163,7 +164,7 @@ Some grammars distinguish between a *passif verbal*, with an event interpretatio
 
 (The passive voice is relatively rare in French, accounting for only 5% of verbs in the French Treebank (FTB) (\@da_cunha_lalternance_2020), compared to 9% in English for the same text type (\@roland2007frequency). Overall, the passive voice is more frequently used in written French than in spoken French (\@da2022alternance). Approximately a quarter of passive constructions in the FTB are *passif long* (\@da_cunha_lalternance_2020), while in spoken French, this proportion drops to about 10% (source: Hamma). **-\> frequency in our corpus?**)
 
-## *se faire* passive
+## [se faire]{.smallcaps} passive
 
 ```{=html}
 <!--  Historical background
@@ -173,6 +174,7 @@ Some grammars distinguish between a *passif verbal*, with an event interpretatio
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward 
 -   se faire passive "typologically marked", comparison to other Romance languages @koenig_semantic_1992 \[145\]; similar constructions exist in other Romance languages but passive reading only allowed in French @labelle_anticausativizing_2013 [236] -->
 ```
+
 ### Structure and meaning
 
 The [se faire]{.smallcaps} passive construction provides an alternative way to express passive meaning in French: When constructing a passive sentence, the French speaker may choose to use [se faire]{.smallcaps} instead of the canonical [être]{.smallcaps}: The two constructions form a passive alternation. The [se faire]{.smallcaps} passive has been investigated by various scholars, such as @bellec_construction_2014, @gaatone_desagreable_1983, @koenig_semantic_1992, @kupferman_construction_1995, @labelle_anticausativizing_2013, @raineri_analyse_2010, @novakova_construction_2009, and @tasmowski-de_ryck_causatif_1987, to name a few.
@@ -196,7 +198,7 @@ The [se faire]{.smallcaps} passive also allows possessor constructions, where th
 >     b.  *Pierre s'est fait couper les cheveux (par le coiffeur).*\
 >         'Pierre had his hair cut (by the hairdresser).'
 
-However, constructions like 5b. count are especially controversial. Some scholars argue that such instances of [se faire]{.smallcaps} are fundamentally causative rather than passive, since the subject both initiates and undergoes the action (as in: "Pierre made the hairdresser cut his hair"). This debate will be outlined in @sec-debate.
+However, constructions like 5b. are especially controversial. Some scholars (e.g. Sveberg [-@sveberg_se_2012] ) argue that such instances of [se faire]{.smallcaps} are fundamentally causative rather than passive, since the subject both initiates and undergoes the action (as in: "Pierre made the hairdresser cut his hair"). This debate will be outlined in @sec-debate.
 
 The semantic tension between the fundamentally causative nature of the verb *faire* and the passive reading has been subject to several discussions in the literature. Labelle [-@labelle_anticausativizing_2013: 235] classifies the construction as “formally causative, but semantically passive”. The apparent contradiction has led scholars to question the nature of the construction, as Koenig and Pederson [-@koenig_semantic_1992: 145] put it: "how can a passive-like construction arise from a combination of a causative and a reflexive marker, where no marking of the passive function is apparent?".
 
@@ -210,7 +212,7 @@ These accounts offer only a brief glimpse into the analysis of [se faire]{.small
 
 The following @sec-debate will explore the controversial issues surrounding the passive reading, including its distinction from the syntactically identical causative reading.
 
-### Passive vs. Causative: The Debated Passive-Status of [se faire]{.smallcaps} {#sec-debate}
+### Passive vs. Causative: The Debated Passive Status of [se faire]{.smallcaps} {#sec-debate}
 
 The above-described stance taken by @bellec_construction_2014, @labelle_anticausativizing_2013, @koenig_semantic_1992 and @kupferman_construction_1995 that the PSF is a full-fledged passive construction is by no means undisputed. The opposing view - that the construction is a type of causative - is also widely represented in the literature.
 
@@ -270,6 +272,7 @@ We recognize this "fuzzy" [@bohmann_large-scale_2023: 50] variable context as bo
 
 -   Subjects in passive sentences are preferably animate, definite, and pronominal. In the study by @da_cunha_lalternance_2020, animate, definite, and pronominal arguments that function as the objects in active sentences were more frequently found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice) -->
 ```
+
 ### Subject responsibility
 
 As indicated above, the question whether the referent of the subject in the [se faire]{.smallcaps} construction holds any responsibility is central to the debate of the construction's passive-status (see above; @sveberg_se_2012, @bellec_construction_2014 \[212-213\]). In line with their argument that the passive reading of [se faire]{.smallcaps} is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of [se faire]{.smallcaps} is always a causer and therefore always responsible to some degree. This is contrasted to the être passive's subject referent, which is seen as more neutral. Gaatone [-@gaatone_desagreable_1983: 164] distinguishes between an "active patient" in [se faire]{.smallcaps} and a "passive patient" in the être passive [@raineri_analyse_2010: 96].
@@ -281,6 +284,7 @@ As indicated above, the question whether the referent of the subject in the [se 
 the PSF construction has a preference to mark the subject as an active participant (although according to @raineri_analyse_2010 [98] is is not "universally accepted" as some authors also name counterexamples @kupferman_construction_1995 [59].)
 In @raineri_analyse_2010 [95]'s view, the idea that the PSF expresses subject responsibility is the "most common hypothesis" ("l'hypothèse la plus répandue") in the literature. -->
 ```
+
 In contrast, Kupferman [-@kupferman_construction_1995: 59] gives [se faire]{.smallcaps} examples where the subject cannot be interpreted as responsible, one of which is repeated here:
 
 > 9.  *Elle sanglotait parce que son tout jeune bébé venait de se faire enlever les amygdales.* [@kupferman_construction_1995: 59]\
@@ -427,6 +431,7 @@ In their corpus study on the English be: get passive alternation, @hundt_be-_202
 
 -   English @bohmann_large-scale_2023, East Asian languages @washio_when_1993 and @guan_multifactorial_2024 , Swedish @cuypere_corpus-based_2014 -->
 ```
+
 # Data and Methods
 
 Prior to conducting our study, we preregistered its protocol on the platform "AsPredicted" (**Wharton Credibility Lab, University of Pennsylvania**) to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed here: <https://aspredicted.org/gp6y-dd8p.pdf>.
@@ -457,6 +462,7 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
+
 ```{r lemma-list, include=FALSE}
 
 lemmas <- sefaire_sample |> 
@@ -484,6 +490,7 @@ For the être passive constructions, we searched constructions using a CQL expre
 -   In Sketch Engine: Import Word List → lemma list extracted from se faire constructions (for comparability of the constructions, making sure that differences between être and se faire are not due to individual differences of the verb) → Filter out only verb lemmas of se faire from concordance lines → download
 -   final sample: same amount of constructions for être and se faire, same lemmas, seed set -->
 ```
+
 ### Borderline cases/ Manual filtering exclusion criteria
 
 As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + infinitive can sometimes have a 'passive effect' even without a direct 1:1 alternation with *être*. However, for our study of *se faire* + Infinitive and *être* + past participle as a passive alternation, our main criterion was to include only those constructions that could be paraphrased with the *être* passive. Consequently, we excluded expressions that could not be rephrased with the *être* passive, either because the *être* construction was ungrammatical or the meaning was fundamentally altered.
@@ -580,9 +587,10 @@ We excluded:
     -   passé composé, plus-que-parfait, présent, futur antérieur (...) - progressiveness is hinted at by another verb in the sentence (e.g., falloir or être) and not from the "se faire" construction itself
 -->
 ```
-### Data preprocessing {#sec-data-preprocessing}
 
-As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some preprocessing steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all complément d' agents of [se faire]{.smallcaps} during inital filtering, the column `agent_pp` was renamed to `agent_pp_A`. The datasets were then combined, variables were converted from characters to factors and empty values were replaced with `NA` to ensure proper handling of missing values in statistical analysis.
+### Inter-rater agreement
+
+As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all complément d' agents of [se faire]{.smallcaps} during inital filtering, the column `agent_pp` was renamed to `agent_pp_A`. The datasets were then combined, variables were converted from characters to factors and empty values were replaced with `NA` to ensure proper handling of missing values in statistical analysis.
 
 ```{r read-annotated-data, include = FALSE}
 sefaire_sample_annotated <- read.csv(file = here("data", "sefaire_sample_annotated.csv"))
@@ -630,13 +638,13 @@ sefaire_sample_annotated <- sefaire_sample_annotated |>
   rename(agent_pp_A = agent_pp)
 ```
 
-```{r combine-data}
+```{r combine-data, include = FALSE}
 #| code-fold: true
 #combine the data
 passive_sample_combined <- bind_rows(etre_sample_annotated, sefaire_sample_annotated) 
 ```
 
-```{r data-cleaning-2, include = FALSE}
+```{r data-cleaning-2}
 #| code-fold: true
 # check for typos/ tagging inconsistencies in combined data; convert to factor; add "NA" as value for all cases that are only annotated by one person
 #check data type
@@ -652,7 +660,61 @@ passive_sample_combined |>
   summary()
 ```
 
-For the main analysis, the se faire and être data were merged into one "clean" dataset where each column corresponds to one factor. This column includes the annotation of the first annotator (annotator A for half of the observations, annotator B for the other half).
+Since the analysis required detailed (and time consuming) manual annotation, we decided to split the annotation work between us. However, to ensure consistent annotation, a representative sample of one third of all instances (320; 33,25%) were double annotated, i.e. by both of us. For these instances, we calculated Cohen's ϰ (Kappa) as a measure of inter-rater agreement, following Levshina [-@levshina_how_2015: 201] and the documentation in the psy package documentation (<https://cran.r-project.org/web/packages/psy/psy.pdf>).)
+
+```{r cohens-kappa, include = FALSE}
+kappa_animacy <- ckappa(passive_sample_combined[c("subj_animacy_A", "subj_animacy_B")]) 
+kappa_animacy #0.9096219
+
+kappa_gender <- ckappa(passive_sample_combined[c("subj_gender_A", "subj_gender_B")])
+kappa_gender #0.8746109
+
+kappa_agent_pp <- ckappa(passive_sample_combined[c("agent_pp_A", "agent_pp_B")])
+kappa_agent_pp #0.9118457
+
+kappa_modal <- ckappa(passive_sample_combined[c("modal_A", "modal_B")])
+kappa_modal #0.9469328
+
+kappa_tam <- ckappa(passive_sample_combined[c("tam_A", "tam_B")])
+kappa_tam  #0.7702391
+
+kappa_cluster <- ckappa(passive_sample_combined[c("cluster_A", "cluster_B")])
+kappa_cluster #0.8326557
+
+kappa_adversativity <- ckappa(passive_sample_combined[c("adversativity_A", "adversativity_B")])
+kappa_adversativity #0.6700877
+
+kappa_values <- c(kappa_animacy$kappa, kappa_agent_pp$kappa, kappa_modal$kappa, kappa_tam$kappa, kappa_cluster$kappa, kappa_adversativity$kappa)
+
+mean_kappa <- mean(kappa_values)
+mean_kappa #0.8402305, very high agreement :)
+```
+
++--------------------+---------------+----------------------------------------------+
+| Variable           | Cohen's ϰ     | Strength of Agreement @landis1977measurement |
++====================+===============+==============================================+
+| Subject animacy    | 0.9096219     | almost perfect                               |
++--------------------+---------------+----------------------------------------------+
+| Subject gender     | 0.8746109     | almost perfect                               |
++--------------------+---------------+----------------------------------------------+
+| Complément d'agent | 0.9118457     | almost perfect                               |
++--------------------+---------------+----------------------------------------------+
+| Modal              | 0.9469328     | almost perfect                               |
++--------------------+---------------+----------------------------------------------+
+| TAM                | 0.7702391     | substantial                                  |
++--------------------+---------------+----------------------------------------------+
+| Cluster            | 0.8326557     | almost perfect                               |
++--------------------+---------------+----------------------------------------------+
+| Adversativity      | 0.6700877     | substantial                                  |
++--------------------+---------------+----------------------------------------------+
+| Mean               | 0.8402305     | almost perfect                               |
++--------------------+---------------+----------------------------------------------+
+
+We classified the ϰ-values using the influential benchmark categorisation of Landis and Koch [-@landis1977measurement: 165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". Mean inter-rater agreement was high at 0.84. Agreement was lowest for the cateogories Adversativity (0.67) and TAM (0.77).
+
+### Data preprocessing {#sec-data-preprocessing}
+
+For the main analysis, the combined data of [se faire]{.smallcaps} and [être]{.smallcaps} data were merged into one "clean" dataset where each column corresponds to one factor. This column includes the annotation of the first annotator (annotator A for half of the observations, annotator B for the other half).
 
 ```{r merge-to-main-dataset}
 #| code-fold: true
@@ -728,60 +790,6 @@ levels(passive_sample_unknown$subj_gender)
 table(passive_sample_clean$passive_variant)
 
 ```
-
-### Inter-rater agreement
-
-As the analysis required detailed (and time consuming) manual annotation, we decided to split the annotation work between us. However, to ensure consistent annotation, a representative sample of one third of all instances (320; 33,25%) were double annotated, i.e. by both of us. For these instances, we calculated Cohen's ϰ (Kappa) as a measure of inter-rater agreement, following Levshina [-@levshina_how_2015: 201] and the documentation in the psy package documentation (<https://cran.r-project.org/web/packages/psy/psy.pdf>).)
-
-```{r cohens-kappa, include = FALSE}
-kappa_animacy <- ckappa(passive_sample_combined[c("subj_animacy_A", "subj_animacy_B")]) 
-kappa_animacy #0.9096219
-
-kappa_gender <- ckappa(passive_sample_combined[c("subj_gender_A", "subj_gender_B")])
-kappa_gender #0.8746109
-
-kappa_agent_pp <- ckappa(passive_sample_combined[c("agent_pp_A", "agent_pp_B")])
-kappa_agent_pp #0.9118457
-
-kappa_modal <- ckappa(passive_sample_combined[c("modal_A", "modal_B")])
-kappa_modal #0.9469328
-
-kappa_tam <- ckappa(passive_sample_combined[c("tam_A", "tam_B")])
-kappa_tam  #0.7702391
-
-kappa_cluster <- ckappa(passive_sample_combined[c("cluster_A", "cluster_B")])
-kappa_cluster #0.8326557
-
-kappa_adversativity <- ckappa(passive_sample_combined[c("adversativity_A", "adversativity_B")])
-kappa_adversativity #0.6700877
-
-kappa_values <- c(kappa_animacy$kappa, kappa_agent_pp$kappa, kappa_modal$kappa, kappa_tam$kappa, kappa_cluster$kappa, kappa_adversativity$kappa)
-
-mean_kappa <- mean(kappa_values)
-mean_kappa #0.8402305, very high agreement :)
-```
-
-+--------------------+---------------+----------------------------------------------+
-| Variable           | Cohen's ϰ     | Strength of Agreement @landis1977measurement |
-+====================+===============+==============================================+
-| Subject animacy    | 0.9096219     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-| Subject gender     | 0.8746109     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-| Complément d'agent | 0.9118457     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-| Modal              | 0.9469328     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-| TAM                | 0.7702391     | substantial                                  |
-+--------------------+---------------+----------------------------------------------+
-| Cluster            | 0.8326557     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-| Adversativity      | 0.6700877     | substantial                                  |
-+--------------------+---------------+----------------------------------------------+
-| Mean               | 0.8402305     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-
-We classified the ϰ-values using the influential benchmark categorisation of Landis and Koch [-@landis1977measurement: 165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". Mean inter-rater agreement was high at 0.84. Agreement was lowest for the cateogories Adversativity (0.67) and TAM (0.77).
 
 ## Binomial logistic regression
 
@@ -1032,6 +1040,7 @@ The ANOVA shows that our model is highly significant (LR-test=181.02, $p$ \<0.00
 -   caret: train best performing model
 -   Model evaluation -->
 ```
+
 # Results
 
 ## Descriptive statistics (Data exploration)
@@ -1368,13 +1377,11 @@ As @fig-animacy-adversativity-log illustrates, the likelihood of [se faire]{.sma
 
 # Discussion
 
-Reflecting the many-faceted (and partly conflicting) literature on the French passive construction and especially on [se faire]{.smallcaps}, our study has shown that passive is a complex and nuanced construct. This entails some challenges for the systematic study of both passive alternations generally, and of [se faire]{.smallcpas}: [être]{.smallcaps} specifically. Firstly, the variable context of the is necessarily quite loose due to [se faire]{.smallcaps} adjacency to the formally (syntactically) identical causative construction. As has been shown, several borderline cases exist which can take both causative and passiv meaning depending on the specific context. Similarly, [être]{.smallcaps} may constructions range between the statal passive and the progressive passive, with the statal passive sometimes being undistingushable from and adjectival construction. Decisions had to made with regard to which constructions to include and which to exclude; however, a different set of choices could be just as justified and would likely have produced substantially different results.
+Reflecting the multifaceted (and partly conflicting) literature on the French passive construction and especially on [se faire]{.smallcaps}, our study has shown that passive is a complex and nuanced phenomenon. This entails some challenges for the systematic study of both passive alternations in general, and of [se faire]{.smallcaps} and [être]{.smallcaps} specifically. Firstly, the variable context is necessarily broad due to [se faire]{.smallcaps}'s adjacency to the formally (syntactically) identical causative construction. As has been shown, several borderline cases be interpreted as either causative or passive meaning depending on the specifc context. Similarly, [être]{.smallcaps} constructions may range between the stative passive and the progressive passive, with the former sometimes being undistingushable from adjectival constructions. Decisions had to be made regarding inclusion and exclusion criteria; however, a different set of choices could have been equally justified and might have yielded different results.
 
-With regard to our hypotheses, although not many significant effects were found, the strong interaction of subject animacy and adversativity clearly hints at the preponderance of [se faire]{.smallcaps} to be utilised with an animate subject. Animacy seems to be the main mediating factor since [se faire]{.smallcaps} was likely for animate subjects both in adversative and non-adversative contexts while its likelhood decreased drastically for inanimate subjects (although inanimate subjects in adversative contexts were more likely than in inadversative contexts); supporting the notion of Gaatone of an "active patient".
+With regard to our hypotheses, although few significant effects were found, the strong interaction of subject animacy and adversativity clearly hints at the preponderance of [se faire]{.smallcaps} to be utilised with animate subjects. Animacy seems to be the main mediating factor since [se faire]{.smallcaps} was likely for animate subjects both in adversative and non-adversative contexts while its likelihood decreased significantly for inanimate subjects (although inanimate subjects in adversative contexts were more likely than in non-adversative contexts); supporting @gaatone_desagreable_1983 's the notion of an "active patient".
 
-However, in line with @kupferman, this does not necessarily mean that the subject is responsible for the event and brings the negative consequences onto themselves. Rather, the fact that adversativity also significantly increased the likelihood of se faire being used supports a theory of subject affectedness being pronounced/ emphasised by the use of [se faire]{.smallcaps} over [être]{.smallcaps}. (However, note that inter-rater agreement was lowest for adversativity - indicating unclarity regarding this factor (although still "substantial"))
-
-was the interaction effect of animacy and adversativity: shows that se faire strongly prefers animate subjects: likely with both adversative and non-adversative contexts while for inanimate subjects, inadversative constructions are much less likely to occur with se faire than adversative and constructions. (However, note that inter-rater agreement was lowest for adversativity - indicating unclarity regarding this factor (although still "substantial")) potential reason: not enough data?
+However, as @kupferman_construction_1995 argues, this does not necessarily mean that the subject is responsible for the event and brings negative consequences upon themselves. Rather, the fact that adversativity also significantly increased the likelihood of [se faire]{.smallcaps} being used with inanimate subjects supports the idea that [se faire]{.smallcaps}, more than [être]{.smallcaps}, emphasises subject affectedness. Notably, inter-rater agreement was lowest for adversativity, suggesting some ambiguity regarding this factor, although it was still considered 'substantial'.
 
 -   problematic category gender/ unknown; no real effect of gender - maybe tendency?
 

@@ -597,9 +597,9 @@ We excluded:
 -->
 ```
 
-### Data preprocessing
+### Data preprocessing {#sec-data-preprocessing}
 
-As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some preprocessing steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all complément d' agents of [se faire]{.smallcaps} during inital filtering, the column "agent_pp" was renamed to "agent_pp_A". The datasets were then combined, variables were converted from characters to factors and empty values were replaced with "NA" to ensure proper handling of missing values in statistical analysis.
+As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some preprocessing steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all complément d' agents of [se faire]{.smallcaps} during inital filtering, the column `agent_pp` was renamed to `agent_pp_A`. The datasets were then combined, variables were converted from characters to factors and empty values were replaced with `NA` to ensure proper handling of missing values in statistical analysis.
 
 ```{r read-annotated-data, include = FALSE}
 sefaire_sample_annotated <- read.csv(file = here("data", "sefaire_sample_annotated.csv"))
@@ -623,6 +623,7 @@ colnames(sefaire_sample_annotated)
 sefaire_sample_annotated <- sefaire_sample_annotated |> 
   mutate(reference = sapply(str_split(speaker, ",", n = 2), `[`, 1),
          speaker = sapply(str_split(speaker, ",", n = 2), `[`, 2))
+
 # remove now redundant "Reference", remove "Kommentar" column, put new "reference" column in first position
 sefaire_sample_annotated <- sefaire_sample_annotated |> 
   select(-Reference, -Kommentar) |> 
@@ -699,13 +700,24 @@ passive_sample_clean <- passive_sample_clean |>
   select(-subj_animacy_A, -subj_animacy_B, -subj_gender_A, -subj_gender_B, -agent_pp_A, -agent_pp_B, -modal_A, -modal_B, -tam_A, -tam_B, -cluster_A, -cluster_B, -adversativity_A, -adversativity_B, -ID)
 ```
 
-The sample comprised 1064 observations: 532 for [se faire]{.smallcaps} and [être]{.smallcaps} each.
+The sample comprised 1064 observations: 532 for [se faire]{.smallcaps} and [être]{.smallcaps} each. Taking a look at the distribution among the categories to identify scarce combinations and patterns that could be problematic for analysis: <!-- create nicer looking table -->
 
-reasoning: why exclude unknown and mixed?
+```{r first-look-main-data, echo = FALSE}
+table(passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy)
+table(passive_sample_clean$passive_variant, passive_sample_clean$subj_gender)
+table(passive_sample_clean$passive_variant, passive_sample_clean$agent_pp)
+table(passive_sample_clean$passive_variant, passive_sample_clean$modal)
+table(passive_sample_clean$passive_variant, passive_sample_clean$tam)
+table(passive_sample_clean$passive_variant, passive_sample_clean$cluster)
+table(passive_sample_clean$passive_variant, passive_sample_clean$adversativity)
+```
+
+Some patterns are observed in the distribution of constructions: We see that the `subj_animacy` level "inanimate" has comparatively few occurences with [se faire]{.smallcaps}. The level "mixed" of `subject gender` appears infrequently overall and is excluded to prevent skewing of the analysis. The Complément d'agent "de" also is quite infrequent with [se faire]{.smallcaps} but is kept for now (may be excluded later if shown to negatively impact the analysis)
+
+The level "unknown" appears much more often with [se faire]{.smallcaps} than with [être]{.smallcaps}, potentially revealing an annotation-related effect: When annotating gender, we took grammatical gender marking into account. Since [être]{.smallcaps} is realized with a participle that always agrees in gender with the subject, gender was always identifiable and only impersonal constructions were annotated as "unknown". In contrast, \[[se faire]{.smallcpas}\]{.smallcaps} is very common with infinitive constructions, which do not indicate gender. Therefore, when gender was not apparent from the context, it was assigned the label "unknown". We suspect that this creates an artifact because "unknown" is strongly correlated with infinitive constructions, and therefore with [se faire]{.smallcaps}. To test this, we create two separate data frames, one including unknown and one excluding unknown, which will be compared in the analysis. The data without "unknown" includes 503 [être]{.smallcaps} and 367 [se faire]{.smallcaps} constructions.
 
 ```{r cleaning-main-data, include=FALSE}
 # exclude "mixed" gender because of low frequency (would likely skew the data)
-
 #sample with "unknown" kept
 passive_sample_unknown <- passive_sample_clean|>
   filter(subj_gender != "mixed") |>
@@ -725,8 +737,12 @@ passive_sample_clean <- passive_sample_clean|>
 #   )) |> 
 #   mutate(agent_pp = factor(agent_pp))
 
+#check levels
 levels(passive_sample_clean$subj_gender)
 levels(passive_sample_unknown$subj_gender)
+
+#check passive distribution without unknown
+table(passive_sample_clean$passive_variant)
 
 ```
 
@@ -822,9 +838,9 @@ passive_sample_clean$cluster <- relevel(passive_sample_clean$cluster, ref = "neu
 #passive_sample_clean$adversativity <- relevel(passive_sample_clean$adversativity, ref = "non-adversative")
 
 passive_sample_unknown$subj_gender <- relevel(passive_sample_unknown$subj_gender, ref = "masculine")
-passive_sample_unknown$subj_animacy <- relevel(passive_sample_unknown$subj_animacy, ref = "inanimate")
+#passive_sample_unknown$subj_animacy <- relevel(passive_sample_unknown$subj_animacy, ref = "inanimate")
 passive_sample_unknown$cluster <- relevel(passive_sample_unknown$cluster, ref = "neutral")
-passive_sample_unknown$adversativity <- relevel(passive_sample_unknown$adversativity, ref = "non-adversative")
+#passive_sample_unknown$adversativity <- relevel(passive_sample_unknown$adversativity, ref = "non-adversative")
 
 levels(passive_sample_clean$subj_gender)
 levels(passive_sample_clean$agent_pp)
@@ -840,16 +856,37 @@ We set a significance threshold p-value of 0.05 and apply backward stepwise sele
 ::: panel-tabset
 #### Maximal Model
 
-First, we constructed a model that included all the factors described in @sec-levels, the interactions we hypothesise to be significant, and the random effects of speaker and lemma. While the model does not include all theoretically possible interactions, it is considered maximal in the sense that it encompasses all factors and interactions identified in the literature review as potentially meaningful and contributing to passive choice.
-
-The AIC is 732.5, with an R^2^ of 0.46 when excluding random effects and 0.67 when accounting for them. Since the variance explained by the random effects is larger than zero, they must be kept.
+First, we construct a model that included all the factors described in @sec-levels, the interactions we hypothesise to be significant, and the random effects of speaker and lemma. While the model does not include all theoretically possible interactions, it is considered maximal in the sense that it encompasses all factors and interactions identified in the literature review as potentially meaningful and contributing to passive choice.
 
 $$
 \begin{align*}
-passiveVariant & \sim subjAnimacy + subjGender + agentPP + modal + tam + cluster \: + \\ & \qquad adversativity + subjAnimacy \cdot gender + subjAnimacy \cdot cluster \: + \\ & \qquad subjAnimacy \cdot adversativity + cluster \cdot adversativity \: + \\ 
+passiveVariant & \sim subjAnimacy + subjGender + agentPP + modal + tam + cluster \: + \\ & \qquad adversativity + subjAnimacy:gender + subjAnimacy:cluster \: + \\ & \qquad subjAnimacy:adversativity + cluster:adversativity \: + \\ 
 & \qquad (1|lemma) + (1|speaker)
 \end{align*}
 $$
+
+Although the main effect of `subj_gender` cannot be interpeted due to its participation in an interaction, it is striking that the odds ratio of `subject gender[unknown]` is very high with a huge confidence interval of 10.49 – 124.99. The AIC is 771.3 with an R^2^ of 0.599 when excluding random effects and 0.748 when accounting for them. The vif-analysis reveals no high collinearity values for `subject gender` or the interaction `subject animacy:subject gender`. However, as explained in @sec-data-preprocessing, we suspect an annotated-related artifact related to "unknown". We decide to compare the model to one fitted on the data set that excludes "unknown" constructions.
+
+```{r max-model-unknown, output = FALSE}
+#| code-fold: true
+final_model_unknown <- glmer(
+    passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:cluster + subj_animacy:adversativity + cluster:adversativity) + (1|speaker) + (1 | lemma),
+    family = "binomial", 
+    data = passive_sample_unknown,
+    control = glmerControl(optimizer = "bobyqa")
+  )
+
+summary(final_model_unknown) # AIC: 759.3
+```
+
+```{r max-model-unknown-tab, echo = FALSE}
+tab_model(final_model_unknown, show.aic = TRUE) # Marginal R2 / Conditional R2	0.701 / NA
+vif(final_model_unknown)
+```
+
+#### Model without "unknown"
+
+After excluding "unknown", the model immediately looks more stable. The improvement is reflected in the much smaller AIC of 732.5. The model has an R^2^ of 0.46 / 0.67. Although this is lower than the model without "unknown", and therefore explains less variance, overall, the model seems to make better (i.e. more stable and more precise) predictions. Since the variance explained by the random effects is larger than zero, the random effects must be kept. Due to its better perfomrance, the data without "unknown" are used in future models.
 
 ```{r full-passive-glmer, output = FALSE}
 #| code-fold: true
@@ -863,18 +900,6 @@ full_passive_glmer <- glmer(
 
 summary(full_passive_glmer) #AIC: 732.5
 vif(full_passive_glmer)
-#                                 GVIF Df GVIF^(1/(2*Df))
-# subj_animacy                4.209237  1        2.051642
-# subj_gender                 1.373802  1        1.172093
-# agent_pp                    1.041076  2        1.010115
-# modal                       1.044101  1        1.021813
-# tam                         1.022810  1        1.011341
-# cluster                    57.865906  2        2.758073
-# adversativity               1.462643  1        1.209398
-# subj_animacy:subj_gender    3.041097  1        1.743874
-# subj_animacy:cluster        1.871213  2        1.169582
-# subj_animacy:adversativity  2.578481  1        1.605765
-# cluster:adversativity      50.563250  2        2.666605
 ```
 
 ```{r full-passive-glmer-tab, echo = FALSE}
@@ -883,7 +908,7 @@ tab_model(full_passive_glmer, show.aic = TRUE)
 
 #### Model without non-significant interactions
 
-In the first step, all non-significant interactions (`cluster:adversativity`, `subjAnimacy:cluster`, `subjAnimacy:subjGender`) were removed, improving the AIC improved to 725.4 with an R^2^ of 0.450 / 0.664. Thus, without the interactions, model accuracy increased while the explained variance decreased slightly. With $p$-values \> 0.05, the categories `subj_gender`, `agent_pp`, `modal` and `tam` were found to be non-significant.
+All non-significant interactions (`cluster:adversativity`, `subjAnimacy:cluster`, `subjAnimacy:subjGender`) are removed, improving the AIC to 725.4 with an R^2^ of 0.450 / 0.664. Thus, without the interactions, model accuracy increases while the explained variance decreases slightly. With $p$-values \> 0.05, the categories `subj_gender`, `agent_pp`, `modal` and `tam` are found to be non-significant.
 
 ```{r model-back-1, output = FALSE}
 #| code-fold: true
@@ -903,7 +928,7 @@ tab_model(model_back_1, show.aic = TRUE)
 
 #### Final Model
 
-Non-significant fixed effects were removed step by step, starting with `tam`, which had the highest $p$-value. At each step, the main effect with the highest $p$-value was eliminated. The final model is reported here. Although `subj_gender` remained non-significant ($p$ \> 0.05), we retained it for theoretical and interpretative reasons. The AIC of 719.2 indicates that removing `agent_pp`, `modal` and `tam` improved the model quality while R^2^ stayed constant at 0.451 / 0.662.
+Non-significant fixed effects are removed step by step, starting with `tam`, which has the highest $p$-value. At each step, the main effect with the highest $p$-value is eliminated. The final model is reported here. Although `subj_gender` remains non-significant ($p$ \> 0.05), we retain it for theoretical and interpretative reasons. The AIC of 719.2 indicates that removing `agent_pp`, `modal` and `tam` improved the model quality while R^2^ stayed constant at 0.451 / 0.662.
 
 ```{r final-model, output = FALSE}
 #| code-fold: true
@@ -956,7 +981,7 @@ exp(final_model_coef)
 #exp(model_2_coef) / (1 + exp(model_2_coef))
 ```
 
-The intercept of the final model is 2.78. This means that in the context of the reference levels (subject is animate and masculine, the cluster of the verb is neutral and the construction has an adversative sense), the chances of [se faire]{.smallcpas} being chosen are 2.78 times greater than [être]{.smallcaps}. The exact values of odds ratios are interpreted in the results section @sec-results-log-effects, where they are interpreted with regard to our hypotheses.
+The intercept of the final model is 2.78. This means that in the context of the reference levels (subject is animate and masculine, the cluster of the verb is neutral and the construction has an adversative sense), the chances of [se faire]{.smallcpas} being chosen are 2.78 times greater than [être]{.smallcaps}. The exact values of odds ratios are interpreted with regard to our hypothesies in @sec-results-log-effects.
 
 ### Concordance Index and Significance
 
@@ -1034,6 +1059,8 @@ Taking a look at the data:
 ```{r data-exploration-check, include=FALSE}
 str(passive_sample_clean)
 head(passive_sample_clean)
+
+table(passive_sample_clean$passive_variant)
 ```
 
 We only have categorical data; therefore mean and standard deviation are not meaningful. Descriptive statistics for each variable (following Elens textbook Chapter 8 & 10 and @gries_statistics_2021 [441]
@@ -1359,6 +1386,26 @@ As @fig-animacy-adversativity-log illustrates, the likelihood of [se faire]{.sma
 
 # Discussion
 
+Our study has shown that:
+
+-   passive is complex and nuanced, not black and white -\> challenges for studies of alternation; with regard to hypotheses: not many significant effects were found, potential reason: not enough data?
+
+-   Only clear indication of both subject responsibility and adversativity was the interaction effect of animacy and adversativity: shows that se faire strongly prefers animate subjects: likely with both adversative and non-adversative contexts while for inanimate subjects, inadversative constructions are much less likely to occur with se faire than adversative and constructions. (However, note that inter-rater agreement was lowest for adversativity - indicating unclarity regarding this factor (although still "substantial"))
+
+-   problematic category gender/ unknown; no real effect of gender - maybe tendency?
+
+-   regarding aspectuality
+
+    -   cluster effect: communication with [se faire]{.smallcaps}; (also preferred with hitting-touching verbs but non-signficant)
+
+    -   no effects of modal: summarising tense aspect and mood in a tam category of "progressivity" with strict classification of tenses (although sometimes not fitting in context) potentially problematic (but also needed to ensure inter-rate agreement and limited by the fact that neither of the authors is a native speaker of French) - overall labeling maybe not nuanced enough?
+
+    -   random effect of lemma accounts for a lot of the variance - agrees with Bohmann [-@bohmann_large-scale_2023: 48] who reports evidence that the English \[get\] passive, which has been shown to be similar to [se faire]{.smallcaps} in several regards, "is largely lexically conditioned"
+
+One limitation of our study is that the predictions of our model do not directly reflect real-life language use, as [être]{.smallcaps} is far more common than [se faire]{.smallcaps}, which is comparatively rare (ratio in ParlaMint: 324,836 (38.300) être: 1,254 se faire). We created a balanced data set based on [se faire]{.smallcaps} lemmas to prevent our model from being dominated by frequency effects produced by extreme data unbalance.[^5] This approach allowed us to investigate the factors influencing passive choice and their complex interplay. However, it must be kept in mind that this ratio is artificial does not reflect the reality of passive use, in which [être]{.smallcaps} is chosen as the default in most contexts, and [se faire]{.smallcaps} remains a marked exception.
+
+[^5]: Note that the ratio ended up not being exactly 50:50 because we had to exclude the gender "unknown" which removed 165 se faire and only 29 être constructions. However, this is is still much more balanced than the actual ratio.
+
 -   interaction animacy x gender: *personne* (feminine) occurs frequently in the sample
 
 A limitation of our study is that the lemmas were determined based on those occurring in *se faire* constructions, which may have influenced the analysis.
@@ -1368,6 +1415,10 @@ The "modal" category in our study only includes modal verbs. Other similar const
 (Telicity seems to be another important distinction: According to @bellec_construction_2014 \[209\], the *être* passive is likely to describe a result or mark an endpoint of an action, while the *se faire* passive is used for actions in progress and verbs that are in their nature ongoing (e.g. perception verbs, @bellec_construction_2014 [209]). This could be reflected in the telicity of the verb, with telic verbs preferring the *être* passive and atelic verbs favouring the *se faire* passive.)
 
 It could be valuable to examine the cases we excluded from our analysis to understand how they differ from genuine passive constructions. This would provide insight into the gray area where passive nuances are present, but no true alternation occurs, allowing for a closer examination of varying degrees of passivity.
+
+"Both the potential insights and the problems entailed by this approach are considerable." [@bohmann_large-scale_2023: 49]
+
+-   implications for causativity debate?
 
 # Conclusion/Outlook
 
@@ -1449,7 +1500,7 @@ vif(passive_glmer_unknown)
 # tab_model(model_1_unknown) #Marginal R2 / Conditional R2	0.453 / 0.659
 ```
 
-```{r final-model-unknown, echo = FALSE}
+```{r final-model-unknown, include = FALSE}
 final_model_unknown <- glmer(
     passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:adversativity) + (1|speaker) + (1 | lemma),
     family = "binomial", 
@@ -1457,9 +1508,9 @@ final_model_unknown <- glmer(
     control = glmerControl(optimizer = "bobyqa")
   )
 
-summary(final_model_unknown) # AIC: 730.7
-tab_model(final_model_unknown) # Marginal R2 / Conditional R2	0.448 / 0.658
+summary(final_model_unknown) # AIC: 759.3
 vif(final_model_unknown)
+tab_model(final_model_unknown)
 ```
 
 ```{r residuals-model-unknown, include = FALSE}

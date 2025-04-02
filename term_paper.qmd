@@ -175,19 +175,19 @@ Some grammars distinguish between a *passif verbal*, with an event interpretatio
 ```
 ### Structure and meaning
 
-The [se faire]{.smallcaps} passive construction provides an alternative way to express passive meaning in French: When constructing a passive sentence, the French speaker may choose to use [se faire]{.smallcaps} instead of the canonical [être]{.smallcaps}: The two constructions form a passive alternation. The [se faire]{.smallcaps} passive has been investigated by various scholars, such as @bellec_construction_2014, @gaatone_desagreable_1983, @koenig_semantic_1992, @kupferman_construction_1995, @labelle_anticausativizing_2013, @raineri_analyse_2010, @novakova_construction_2009, and @tasmowski-de_ryck_causatif_1987, to name a few.
+The [se faire]{.smallcaps} passive construction, hereinafter called [se faire]{.smallcaps}, provides an alternative way to express passive meaning in French. When constructing a passive sentence, French speakers may choose to use [se faire]{.smallcaps} instead of the canonical [être]{.smallcaps}. [se faire]{.smallcaps} has been investigated and discussed by various scholars, such as @bellec_construction_2014, @gaatone_desagreable_1983, @koenig_semantic_1992, @kupferman_construction_1995, @labelle_anticausativizing_2013, @raineri_analyse_2010, @novakova_construction_2009, and @tasmowski-de_ryck_causatif_1987, to name a few.
 
-The [se faire]{.smallcaps} passive construction consists of the pronoun *se* (which shows agreement with the subject), a form of the verb *faire* ('to do'), and a verb in the infinitive.
+[se faire]{.smallcaps} consists of the pronoun *se* (which shows agreement with the subject), a form of the verb *faire* ('to do'), and a verb in the infinitive.
 
 > 3.  *Des policiers se font agresser.* (ParlaMint corpus)\
 >     'Police officers were/ have been attacked.'
 
-Similar to the [être]{.smallcaps} passive, the direct object of the active sentence becomes the subject of the passive sentence. This subject is the affected experiencer of the action described (compare to example above). Unlike the être passive, however, the diathesis is not restricted to the direct object: [se faire]{.smallcaps} has "greater syntactic flexibility" [@raineri_analyse_2010: 93-95] and can also occur with ditransitive verbs, where the indirect object becomes the subject:
+Similar to [être]{.smallcaps}, the direct object of the active sentence becomes the subject of the passive sentence. This subject is the affected experiencer of the action described (compare to example above). Different than with [être]{.smallcaps}, however, the diathesis is not restricted to the direct object: [se faire]{.smallcaps} has "greater syntactic flexibility" [@raineri_analyse_2010: 93-95] and can also occur with ditransitive verbs, where the indirect object becomes the subject:
 
 > 4.  *Les intéressés peuvent se faire expliquer tout ce qui touche aux retraites.* (ParlaMint corpus)\
 >     'Interested parties can have everything related to pensions explained to them.'
 
-The [se faire]{.smallcaps} passive also allows possessor constructions, where the subject of the passive corresponds to part of the object in the active sentence:
+[se faire]{.smallcaps} also allows possessor constructions, where the subject of the passive corresponds to part of the object in the active sentence:
 
 > 5.  
 >
@@ -196,9 +196,9 @@ The [se faire]{.smallcaps} passive also allows possessor constructions, where th
 >     b.  *Pierre s'est fait couper les cheveux (par le coiffeur).*\
 >         'Pierre had his hair cut (by the hairdresser).'
 
-However, constructions like 5b. are especially controversial. Some scholars (e.g. Sveberg [-@sveberg_se_2012] ) argue that such instances of [se faire]{.smallcaps} are fundamentally causative rather than passive, since the subject both initiates and undergoes the action (as in: "Pierre made the hairdresser cut his hair"). This debate will be outlined in @sec-debate.
+However, constructions like 5b. are controversial: Some scholars (e.g. Sveberg [-@sveberg_se_2012] argue that such instances of [se faire]{.smallcaps} are fundamentally causative rather than passive, since the subject both initiates and undergoes the action (as in: "Pierre made the hairdresser cut his hair"). This debate will be outlined in @sec-debate.
 
-The semantic tension between the fundamentally causative nature of the verb *faire* and the passive reading has been subject to several discussions in the literature. Labelle [-@labelle_anticausativizing_2013: 235] classifies the construction as “formally causative, but semantically passive”. The apparent contradiction has led scholars to question the nature of the construction, as Koenig and Pederson [-@koenig_semantic_1992: 145] put it: "how can a passive-like construction arise from a combination of a causative and a reflexive marker, where no marking of the passive function is apparent?".
+The semantic tension between the fundamentally causative nature of the verb *faire* and the passive reading has been discussed extensively in the literature. Labelle [-@labelle_anticausativizing_2013: 235] classifies the construction as “formally causative, but semantically passive”. The apparent contradiction has led scholars to question the nature of the construction, as Koenig and Pederson [-@koenig_semantic_1992: 145] put it: "how can a passive-like construction arise from a combination of a causative and a reflexive marker, where no marking of the passive function is apparent?".
 
 Various answers to this question have been proposed: @kupferman_construction_1995 sees the causative and passive readings as homonyms with fundamentally different semantics and therefore assigns an inherent passive status to the se faire construction. This is in line with Bellec (@bellec_construction_2014, @bellec_quand_2014), who takes a diachronic approach: She describes a process of grammaticalisation and reanalysis for [se faire]{.smallcaps} through which “se” lost its reflexive meaning and “faire” became an auxiliary. According to her, [se faire]{.smallcaps} has been grammaticalised into a "semi-auxiliary" with components that are semantically non-transparent. She claims that the causative meaning has not disappeared but now coexists with the passive reading. Note, however, Raineri [-@raineri_analyse_2010: 280-305]'s corpus study, which suggests that the [se faire]{.smallcaps} passive did not derive from the causative reading but evolved independently.
 

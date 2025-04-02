@@ -298,11 +298,11 @@ Thus, although the requirement of subject responsibility in [se faire]{.smallcap
 
 Corpus studies have shown that animacy significantly influences voice choice in French. The animacy of the passive subject (not agent) has been shown to increase the likelihood of using the passive voice (*être* passive) over the active voice. @da_cunha_lalternance_2020 (+ @da2022alternance) -\> more explanation as to why
 
-As implied in the debate on subject responsibility, subjects of [se faire]{.smallcaps} are predominantly active participants in the described action. Since inanimate subjects are rarely affected and even less often responsible, [se faire]{.smallcaps} is common with animate subjects. While some scholars claim that only animate subjects are possible with the [se faire]{.smallcaps}, others provide counterexamples (cf. @labelle_anticausativizing_2013, @kokutani_sur_2005, @novakova_construction_2009 \[4\], @sveberg_se_2012) (@raineri_analyse_2010 [92]).
+As implied in the debate on subject responsibility, subjects of [se faire]{.smallcaps} are predominantly active participants in the described action. Since inanimate subjects are rarely affected and even less often responsible, [se faire]{.smallcaps} is common with animate subjects. While some scholars claim that only animate subjects are possible with the [se faire]{.smallcaps}, others provide counterexamples [@labelle_anticausativizing_2013; @kokutani_sur_2005, @novakova_construction_2009: 4; @sveberg_se_2012] (@raineri_analyse_2010 [92]).
 
-However, these examples appear to be exceptions as there is both corpus (@novakova_construction_2009 [111]) and experimental (@koenig_semantic_1992 \[151, 153\]) evidence that subject animacy and [se faire]{.smallcaps} are positively correlated: In @novakova_construction_2009 [111]'s corpus study, less than 3% of the [se faire]{.smallcaps} sentences had an inanimate subjects. In a survey by @koenig_semantic_1992, French native speakers rated the acceptability of [se faire]{.smallcaps} with animate subjects significantly higher than with inanimate subjects. Inanimate subjects were only allowed by some speakers when the subject "affects a relevant animate entity" (@koenig_semantic_1992 [151, 153]. The preponderance of animate subjects for [se faire]{.smallcaps} seems to be one of the few aspects on which scholars agree (@raineri_analyse_2010 [92]).
+However, these examples appear to be exceptions as there are both corpus (@novakova_construction_2009 [111]) and experimental (@koenig_semantic_1992 \[151, 153\]) evidence that subject animacy and [se faire]{.smallcaps} are positively correlated: In @novakova_construction_2009 [111]'s corpus study, less than 3% of the [se faire]{.smallcaps} sentences had an inanimate subjects. In a survey by @koenig_semantic_1992, French native speakers rated the acceptability of [se faire]{.smallcaps} with animate subjects significantly higher than with inanimate subjects. Inanimate subjects were only allowed by some speakers when the subject "affects a relevant animate entity" (@koenig_semantic_1992 [151, 153]. The preponderance of animate subjects for [se faire]{.smallcaps} seems to be one of the few aspects on which scholars agree (@raineri_analyse_2010 [92]).
 
-We tag animacy as binary "inanimate"/ "animate" although we recognize that animacy has been considered as a hierarchical scale in the literature, most prominently by @zaenen_animacy_2004.
+We tag animacy as binary "inanimate"/ "animate" although we recognize that animacy has been considered as a hierarchical scale in the literature, most prominently by @zaenen_animacy_2004. Following @zaenen_animacy_2004, organisations are understood as "collectivites of humans" and therefore annotated as "animate".
 
 **Hypothesis**: Both [se faire]{.smallcaps} and *être* passive favour animate subjects over inanimate subjects but subject animacy is a stronger predictor of [se faire]{.smallcaps} than the être passive.
 
@@ -491,7 +491,7 @@ For the être passive constructions, we searched constructions using a CQL expre
 -   final sample: same amount of constructions for être and se faire, same lemmas, seed set -->
 ```
 
-### Borderline cases/ Manual filtering exclusion criteria
+### Manual filtering exclusion criteria/ Borderline Cases
 
 As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + infinitive can sometimes have a 'passive effect' even without a direct 1:1 alternation with *être*. However, for our study of *se faire* + Infinitive and *être* + past participle as a passive alternation, our main criterion was to include only those constructions that could be paraphrased with the *être* passive. Consequently, we excluded expressions that could not be rephrased with the *être* passive, either because the *être* construction was ungrammatical or the meaning was fundamentally altered.
 
@@ -1043,8 +1043,6 @@ The ANOVA shows that our model is highly significant (LR-test=181.02, $p$ \<0.00
 
 # Results
 
-## Descriptive statistics (Data exploration)
-
 Taking a look at the data:
 
 ```{r data-exploration-check, include=FALSE}
@@ -1064,7 +1062,11 @@ We only have categorical data; therefore mean and standard deviation are not mea
 
 -   bar plots, mosaic plots
 
-### Subject animacy
+## Subject responsibility
+
+<!-- We found no significant effect of subject gender, complément d'agent, and modal verbs. The significant main effect of subject animacy cannot be interpreted because it is being distorted by its interaction with adversativity. Interpret subject gender nevertheless as a tendency/ possibility? -->
+
+### Subject Animacy
 
 ```{r animacy-descriptive-tables, echo = FALSE}
 table(passive_sample_clean$subj_animacy) |> 
@@ -1072,22 +1074,10 @@ table(passive_sample_clean$subj_animacy) |>
   proportions ()
 
 #cross-tabulation for hypothesised interactions
-table(passive_sample_clean$subj_animacy, passive_sample_clean$passive_variant)
+tab_animacy <- table(passive_sample_clean$subj_animacy, passive_sample_clean$passive_variant)
+tab_animacy
 
-# not really helpful/ meaningful:
-
-# table(passive_sample_clean$subj_animacy, passive_sample_clean$subj_gender)
-# 
-# table(passive_sample_clean$subj_animacy, passive_sample_clean$cluster)
-# 
-# table(passive_sample_clean$subj_animacy, passive_sample_clean$adversativity)
-# 
-#  ftable(passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy, passive_sample_clean$subj_gender) |> 
-#    proportions()
-# 
-# ftable(passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy, passive_sample_clean$cluster)
-# 
-# ftable(passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy, passive_sample_clean$adversativity)
+prop.table(tab_animacy, margin = 2) * 100
 
 #proportions (Gries)
 prop.table(table(passive_sample_clean$subj_animacy, passive_sample_clean$passive_variant))
@@ -1097,7 +1087,9 @@ prop.table(table(passive_sample_clean$subj_animacy, passive_sample_clean$passive
 #  proportions()
 ```
 
-Overall, two-thirds of the constructions have animate subjects (mode: animate; 704 vs. 360 inanimate). However, in *être* passives, inanimate subjects are more frequent than animate ones (332 inanimate, 200 animate), whereas *se faire* passives show a strong preference for animate subjects (504 animate, 28 inanimate), as shown in these plots:
+Overall, two-thirds of the constructions have animate subjects (mode: animate; 704 vs. 360 inanimate). However, in *être* passives, inanimate subjects are more frequent than animate ones (195 animate, 332 inanimate; about 39% animate, 61% inaniamte), whereas *se faire* passives show a strong preference for animate subjects (341 animate, 26 inanimate - 93% animate, 7% inanimate), as shown in these plots:
+
+qualitative analysis: one example from our corpus of an inaniamte construction?
 
 ```{r animacy-descriptive-plots, echo = FALSE}
 passive_sample_clean |> 
@@ -1115,7 +1107,7 @@ mosaicplot(passive_variant ~ subj_animacy,
 
 The plot shows clearly that in *se faire* passives, the subject is animate in the great majority of cases. In contrast, for *être*, subject animacy is more evenly distributed, with a slight preference for inanimate subjects.
 
-### Subject gender
+### Subject Gender
 
 ```{r gender-descriptive}
 table(passive_sample_unknown$subj_gender) |> 
@@ -1184,129 +1176,7 @@ For inanimate subjects, the difference in frequency between masculine and femini
 table(passive_sample_clean$agent_pp, passive_sample_clean$passive_variant)
 ```
 
-### Modal
-
-### TAM
-
-### Cluster
-
-```{r, include=FALSE}
-
-freq_cluster <- passive_sample_clean |> 
-  count(passive_variant, cluster) |> 
-  group_by(passive_variant) |> 
-  mutate(relative = round(proportions(n), 2)) |> 
-  ungroup()
-
-freq_cluster_wide <- freq_cluster |> 
-  pivot_wider(names_from = passive_variant, values_from = c(n, relative), values_fill = list(n = 0, Relative = 0))
-
-```
-
-::: {#tbl-cluster}
-```{r, echo=FALSE}
-
-freq_cluster_wide |> 
-  kable(format = "html", digits = 2, col.names = c("Factor?", "être", "se faire", "être in %", "se faire in %")) |> 
-  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
-
-```
-
-Frequencies for Passive Variants Cluster
-:::
-
-As shown in @tbl-cluster ...
-
-```{r cluster-plot, echo=FALSE}
-
-ggplot(passive_sample_clean, 
-       aes(x = passive_variant, 
-           fill = cluster)) +
-  geom_bar(position = "dodge") +
-  scale_y_continuous(expand = c(0,0)) +
-  labs(title = "plot",
-       x = "passive variant cluster",
-       y = "Count") +
-  theme_classic()
-
-```
-
-### Adversativity
-
-Overall, non-adversative constructions occured more frequently than adversative constructions in our data, with a ratio of 69.08% to 30.92%. However, adversative constructions were more common with [se faire]{.smallcaps} than with [être]{.smallcaps}: While only about one fifth (22.66%) of [être]{.smallcaps} were adversative, this was the case for two fifths (42.23%) of [se faire]{.smallcaps}.
-
-```{r adversativity-tab, include = FALSE}
-table(passive_sample_clean$adversativity) |> 
-  proportions() * 100
-
-tab_adv<- table(passive_sample_clean$adversativity, passive_sample_clean$passive_variant)
-
-prop.table(tab_adv, margin = 2) * 100
-```
-
-```{r adversativity-plot, echo = FALSE}
-# passive_sample_clean |> 
-# ggplot(mapping = aes(x = adversativity, fill = adversativity)) +
-#   geom_bar(position = "dodge") +
-#   facet_wrap(~ passive_variant) +
-#   #scale_y_continuous(expand = c(0,0)) + 
-#   theme_bw() +
-#   theme(legend.position = "none") +
-#   labs(x = "Subject Animacy",
-#        y = "Number of Observations")
-
-mosaicplot(passive_variant ~ adversativity,
-           data = passive_sample_clean,
-           main = "Ratio of passive variant and adversativity",
-           xlab = "adversativity",
-           ylab = "passive variant",
-           col = c("lightblue", "orange"))
-```
-
-Regarding the interaction between animacy and adversativity, both adversative and non-adversative constructions with [se faire]{.smallcaps} were used more frequently with animate subjects, while [être]{.smallcaps} constructions were more common with inanimate subjects in non-adversative contexts. The interaction is explored in detail in @sec-results-log-effects.
-
-```{r animacy-adversativity-plots, include = FALSE}
-#| label: fig-animacy-adversativity
-#Interaction Animacy: Adversativity:
-ftable(passive_sample_clean$adversativity, passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy)
-
-passive_sample_clean |> 
-ggplot(mapping = aes(x = subj_animacy, fill = adversativity)) +
-  geom_bar(position="dodge") +
-  facet_wrap(~ passive_variant) +
-  scale_y_continuous(expand = c(0,0)) + 
-  labs(x = "Subject Animacy",
-       y = "Number of Observations", 
-       fill = "Adversativity" ) +
-  theme_bw()
-```
-
-<!-- Some mosaic plots for exploration:-->
-
-```{r data-exploration-plots, include = FALSE}
-# mosaicplot(passive_variant ~ subj_gender,
-#            data = passive_sample_clean)
-
-mosaicplot(passive_variant ~ tam,
-           data = passive_sample_clean)
-
-mosaicplot(passive_variant ~ agent_pp,
-           data = passive_sample_clean)
-
-mosaicplot(subj_gender ~ passive_variant,
-           data = passive_sample_clean)
-
-```
-
-## Effects of logistic regression {#sec-results-log-effects}
-
-Reporting and interpreting results of the logistic regression with regard to our hypotheses and descriptive statistics
-
-### Subject responsibility
-
-We found no significant effect of subject gender, complément d'agent, and modal verbs. The significant main effect of subject animacy cannot be interpreted because it is being distorted by its interaction with adversativity. Interpret subject gender nevertheless as a tendency/ possibility?
-
-### Aspectuality
+## Aspectuality
 
 Surprisingly, and contrary to our hypothesis, the only significant main effect in our model is the verb cluster, with communication verbs favouring *se faire* over *être* passive constructions.
 
@@ -1361,53 +1231,168 @@ ranef |>
   coord_flip()
 ```
 
-### Adversativity
+### Cluster
 
-Our final model revealed a significant interaction between subject animacy and adversativity with an odds ratio of 0.06 and a confidence interval of 0.02-0.2. This means that [se faire]{.smallcaps} is 0.06 times as likely as [être]{.smallcaps} when the subject is inanimate and the context is in non-adversative. In other words, in these contexts, [se faire]{.smallcaps} is used significantly less frequently than [être]{.smallcaps}. Conversely, since the categories are binary, this also implies that [se faire]{.smallcaps} is much more common in adversative contexts and with animate subjects than [être]{.smallcaps}. The interaction is visualised in @fig-animacy-adversativity-log:
+```{r, include=FALSE}
 
-```{r interaction-model-plot, echo=FALSE}
-#| label: fig-animacy-adversativity-log
+freq_cluster <- passive_sample_clean |> 
+  count(passive_variant, cluster) |> 
+  group_by(passive_variant) |> 
+  mutate(relative = round(proportions(n), 2)) |> 
+  ungroup()
 
-ggpredict(final_model, c("subj_animacy", "adversativity")) |> 
-  plot()
+freq_cluster_wide <- freq_cluster |> 
+  pivot_wider(names_from = passive_variant, values_from = c(n, relative), values_fill = list(n = 0, Relative = 0))
 
 ```
 
-As @fig-animacy-adversativity-log illustrates, the likelihood of [se faire]{.smallcaps} being used with inanimate subjects increases significantly when the construction has an adversative meaning: [se faire]{.smallcaps} and [être]{.smallcaps} are equally likely for inanimate subjects in adversative contexts, whereas in non-adversative contexts, [être]{.smallcaps} is almost always preferred. In contrast, constructions with animate subjects strongly favor [se faire]{.smallcaps}, with a slight additional increase in its likelihood in adversative contexts.
+::: {#tbl-cluster}
+```{r, echo=FALSE}
+
+freq_cluster_wide |> 
+  kable(format = "html", digits = 2, col.names = c("Factor?", "être", "se faire", "être in %", "se faire in %")) |> 
+  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+
+```
+
+Frequencies for Passive Variants Cluster
+:::
+
+As shown in @tbl-cluster ...
+
+```{r cluster-plot, echo=FALSE}
+
+ggplot(passive_sample_clean, 
+       aes(x = passive_variant, 
+           fill = cluster)) +
+  geom_bar(position = "dodge") +
+  scale_y_continuous(expand = c(0,0)) +
+  labs(title = "plot",
+       x = "passive variant cluster",
+       y = "Count") +
+  theme_classic()
+
+```
+
+## Adversativity
+
+Overall, non-adversative constructions occured more frequently than adversative constructions in our data, with a ratio of 69.08% to 30.92%. However, adversative constructions were more common with [se faire]{.smallcaps} than with [être]{.smallcaps}: While only about one fifth (22.66%) of [être]{.smallcaps} were adversative, this was the case for two fifths (42.23%) of [se faire]{.smallcaps}.
+
+```{r adversativity-tab, echo = FALSE}
+table(passive_sample_clean$adversativity) |> 
+  proportions() * 100
+
+tab_adv<- table(passive_sample_clean$adversativity, passive_sample_clean$passive_variant)
+
+prop.table(tab_adv, margin = 2) * 100
+```
+
+```{r adversativity-plot, echo = FALSE}
+# passive_sample_clean |> 
+# ggplot(mapping = aes(x = adversativity, fill = adversativity)) +
+#   geom_bar(position = "dodge") +
+#   facet_wrap(~ passive_variant) +
+#   #scale_y_continuous(expand = c(0,0)) + 
+#   theme_bw() +
+#   theme(legend.position = "none") +
+#   labs(x = "Subject Animacy",
+#        y = "Number of Observations")
+
+mosaicplot(passive_variant ~ adversativity,
+           data = passive_sample_clean,
+           main = "Ratio of passive variant and adversativity",
+           xlab = "adversativity",
+           ylab = "passive variant",
+           col = c("lightblue", "orange"))
+```
+
+Regarding the interaction between subject animacy and adversativity, both adversative and non-adversative constructions with [se faire]{.smallcaps} were used more frequently with animate subjects, while [être]{.smallcaps} constructions were more common with inanimate subjects in non-adversative contexts.
+
+```{r animacy-adversativity-plots, include = FALSE}
+#| label: fig-animacy-adversativity
+#Interaction Animacy: Adversativity:
+ftable(passive_sample_clean$adversativity, passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy)
+
+passive_sample_clean |> 
+ggplot(mapping = aes(x = subj_animacy, fill = adversativity)) +
+  geom_bar(position="dodge") +
+  facet_wrap(~ passive_variant) +
+  scale_y_continuous(expand = c(0,0)) + 
+  labs(x = "Subject Animacy",
+       y = "Number of Observations", 
+       fill = "Adversativity" ) +
+  theme_bw()
+```
+
+The logistic regression model revealed a significant interaction between subject animacy and adversativity with an odds ratio of 0.06 and a confidence interval of 0.02-0.2. This means that [se faire]{.smallcaps} is 0.06 times as likely as [être]{.smallcaps} when the subject is inanimate and the context is in non-adversative. In other words, in these contexts, [se faire]{.smallcaps} is used significantly less frequently than [être]{.smallcaps}. Conversely, since the categories are binary, this also implies that [se faire]{.smallcaps} is much more common in adversative contexts and with animate subjects than [être]{.smallcaps}.
+
+```{r interaction-model-plot, echo=FALSE, warning=FALSE}
+#| label: fig-animacy-adversativity-log
+
+ggpredict(final_model, c("subj_animacy", "adversativity")) |> 
+  plot() +
+  scale_color_manual(values = c("lightblue", "orange")) +
+  theme_bw()
+
+ggpredict(final_model, c("adversativity", "subj_animacy")) |> 
+  plot() +
+  theme_bw()
+```
+
+As @fig-animacy-adversativity-log illustrates, animate subjects strongly favor [se faire]{.smallcaps} regardless of adversativity, with only a slight additional increase in its likelihood in adversative contexts. In contrast, the likelihood of [se faire]{.smallcaps} being used with inanimate subjects increases significantly when the construction has an adversative meaning: [se faire]{.smallcaps} and [être]{.smallcaps} are almost equally likely for inanimate subjects in adversative contexts (40% likelihood of [se faire]{.smallcaps}) whereas in non-adversative contexts, [être]{.smallcaps} is almost exclusively used.
+
+Even though an analysis of the most frequent lemmas shows that [se faire]{.smallcaps} most frequent verbs *insulter* and *engueuler* are adversative, there was no significant interaction effect of adversativity and cluster.
+
+<!-- Some mosaic plots for exploration:-->
+
+```{r data-exploration-plots, include = FALSE}
+# mosaicplot(passive_variant ~ subj_gender,
+#            data = passive_sample_clean)
+
+mosaicplot(passive_variant ~ tam,
+           data = passive_sample_clean)
+
+mosaicplot(passive_variant ~ agent_pp,
+           data = passive_sample_clean)
+
+mosaicplot(subj_gender ~ passive_variant,
+           data = passive_sample_clean)
+
+```
 
 # Discussion
 
-Reflecting the multifaceted (and partly conflicting) literature on the French passive construction and especially on [se faire]{.smallcaps}, our study has shown that passive is a complex and nuanced phenomenon. This entails some challenges for the systematic study of both passive alternations in general, and of [se faire]{.smallcaps} and [être]{.smallcaps} specifically. Firstly, the variable context is necessarily broad due to [se faire]{.smallcaps}'s adjacency to the formally (syntactically) identical causative construction. As has been shown, several borderline cases be interpreted as either causative or passive meaning depending on the specifc context. Similarly, [être]{.smallcaps} constructions may range between the stative passive and the progressive passive, with the former sometimes being undistingushable from adjectival constructions. Decisions had to be made regarding inclusion and exclusion criteria; however, a different set of choices could have been equally justified and might have yielded different results.
+As the multifaceted and partly conflicting literature suggests, the passive is a complex and nuanced phenomenon. This entails some challenges for the systematic study of both passive alternations in general, and of [se faire]{.smallcaps} and [être]{.smallcaps} specifically. Firstly, the variable context is necessarily broad due to [se faire]{.smallcaps}'s similarity to the structurally identical causative construction. As has been shown, several borderline cases can be interpreted as either causative or passive (sometimes even both) depending on the specific context. Similarly, [être]{.smallcaps} constructions range between the stative passive and the progressive passive, with the former sometimes being indistingushable from adjectival constructions. Decisions had to be made regarding inclusion and exclusion criteria; however, a different set of choices could have been equally justified and might have yielded different results. It could be valuable to examine the cases we excluded from our analysis to understand how they differ from genuine passive constructions. This would provide insight into the gray area where passive nuances are present, but no true alternation occurs, allowing for a closer examination of varying degrees of passivity.
 
-With regard to our hypotheses, although few significant effects were found, the strong interaction of subject animacy and adversativity clearly hints at the preponderance of [se faire]{.smallcaps} to be utilised with animate subjects. Animacy seems to be the main mediating factor since [se faire]{.smallcaps} was likely for animate subjects both in adversative and non-adversative contexts while its likelihood decreased significantly for inanimate subjects (although inanimate subjects in adversative contexts were more likely than in non-adversative contexts); supporting @gaatone_desagreable_1983 's the notion of an "active patient".
+With regard to our hypotheses, although few significant effects were found, the strong interaction of subject animacy and adversativity clearly shows that [se faire]{.smallcaps} predominently occurs with animate subjects and in adversative contexts. Subject animacy seems to be the main mediating factor: [se faire]{.smallcaps} is very likely for animate subjects in both adversative and non-adversative contexts while its likelihood decreases significantly for inanimate subjects. This is in line with the vast previous evidence on [se faire]{.smallcaps}'s preference for animate subjects [@koenig_semantic_1992; @novakova_construction_2009; @spang-hanssen_quelques_1967; @tasmowski-de_ryck_causatif_1987; @raineri_analyse_2010: 92]. However, our analysis challenge the claim by @tasmowski-de_ryck_causatif_1987 and @spang-hanssen_quelques_1967 that [se faire]{.smallcaps} strictly requires an animate subject: Our data provide evidence of inanimate subjects occuring with [se faire]{.smallcaps} (7%). Consequently, our model predicts that while [se faire]{.smallcaps} has a high chance (55% to 85%) to occur with animate subjects, it may also be found with inanimate subjects, particularly in adversative contexts.
 
-However, as @kupferman_construction_1995 argues, this does not necessarily mean that the subject is responsible for the event and brings negative consequences upon themselves. Rather, the fact that adversativity also significantly increased the likelihood of [se faire]{.smallcaps} being used with inanimate subjects supports the idea that [se faire]{.smallcaps}, more than [être]{.smallcaps}, emphasises subject affectedness. Notably, inter-rater agreement was lowest for adversativity, suggesting some ambiguity regarding this factor, although it was still considered 'substantial'.
+However, as @kupferman_construction_1995 argues, even a strong correlation of subject animacy, adversativity and [se faire]{.smallcaps} does not necessarily imply that the subject is responsible for the event and brings negative consequences upon themselves. Instead, the increased likelihood of [se faire]{.smallcaps} with inanimate subjects in adversative contexts compared to non-adversative contexts suggests that the construction emphasises subject affectedness more than [être]{.smallcaps}. [Note, however, that inter-rater agreement was lowest for adversativity, suggesting some ambiguity regarding this factor, although it was still considered 'substantial']. Overall, we consider these findings to support the theory of [se faire]{.smallcaps} being preferred over canoncial [être]{.smallcaps} when marking subject affectedness.
+
+The remaining factors used to test subject responsibility (subject gender, complement d'agent, modal) did not yield significant effects. This may be taken as further indication for... / this may further strenghthen an argument against subject responsibility and toward subject affectness// The absence of additional significant effects related to subject responsibility may further support this notion.
+
 
 -   problematic category gender/ unknown; no real effect of gender - maybe tendency?
+
+   -   no effects of modal: summarising tense aspect and mood in a tam category of "progressivity" with strict classification of tenses (although sometimes not fitting in context) potentially problematic (but also needed to ensure inter-rater agreement and limited by the fact that neither of the authors is a native speaker of French) - overall labeling maybe not nuanced enough?
+    The "modal" category in our study only includes modal verbs. Other similar constructions that express subject responsibility, such as *avoir besoin de*, *arriver à*, *réussir à*, *envier de*, *avoir des difficultés pour*, *avoir la possibilité de*, and *avoir envie de*, etc. could also be interesting to examine in future research.
 
 -   regarding aspectuality
 
     -   cluster effect: communication with [se faire]{.smallcaps}; (also preferred with hitting-touching verbs but non-signficant)
 
-    -   no effects of modal: summarising tense aspect and mood in a tam category of "progressivity" with strict classification of tenses (although sometimes not fitting in context) potentially problematic (but also needed to ensure inter-rate agreement and limited by the fact that neither of the authors is a native speaker of French) - overall labeling maybe not nuanced enough?
-
     -   random effect of lemma accounts for a lot of the variance - agrees with Bohmann [-@bohmann_large-scale_2023: 48] who reports evidence that the English \[get\] passive, which has been shown to be similar to [se faire]{.smallcaps} in several regards, "is largely lexically conditioned"
 
-One limitation of our study is that the predictions of our model do not directly reflect real-life language use, as [être]{.smallcaps} is far more common than [se faire]{.smallcaps}, which is comparatively rare (ratio in ParlaMint: 324,836 (38.300) être: 1,254 se faire). We created a balanced data set based on [se faire]{.smallcaps} lemmas to prevent our model from being dominated by frequency effects produced by extreme data unbalance.[^5] This approach allowed us to investigate the factors influencing passive choice and their complex interplay. However, it must be kept in mind that this ratio is artificial does not reflect the reality of passive use, in which [être]{.smallcaps} is chosen as the default in most contexts, and [se faire]{.smallcaps} remains a marked exception.
+One limitation of our study is that the predictions of our model do not directly reflect real-life language use, as [être]{.smallcaps} is far more common than [se faire]{.smallcaps}, which is comparatively rare (ratio in ParlaMint: 324,836 (38.300) être: 1,254 se faire). We created a balanced data set based on [se faire]{.smallcaps} lemmas to prevent our model from being dominated by frequency effects produced by extreme data unbalance.[^5] This approach allowed us to investigate the factors influencing passive choice and their complex interplay. However, it must be kept in mind that this ratio is artificial does not reflect the reality of passive use, in which [être]{.smallcaps} is chosen as the default in most contexts, and [se faire]{.smallcaps} remains a marked exception. 
 
 [^5]: Note that the ratio ended up not being exactly 50:50 because we had to exclude the gender "unknown" which removed 165 se faire and only 29 être constructions. However, this is is still much more balanced than the actual ratio.
 
--   interaction animacy x gender: *personne* (feminine) occurs frequently in the sample
-
 A limitation of our study is that the lemmas were determined based on those occurring in *se faire* constructions, which may have influenced the analysis.
 
-The "modal" category in our study only includes modal verbs. Other similar constructions that express subject responsibility, such as *avoir besoin de*, *arriver à*, *réussir à*, *envier de*, *avoir des difficultés pour*, *avoir la possibilité de*, and *avoir envie de*, etc. could also be interesting to examine in future research.
+"Both the potential insights and the problems entailed by this approach are considerable." [@bohmann_large-scale_2023: 49]
+
+-   interaction animacy x gender: *personne* (feminine) occurs frequently in the sample
 
 (Telicity seems to be another important distinction: According to @bellec_construction_2014 \[209\], the *être* passive is likely to describe a result or mark an endpoint of an action, while the *se faire* passive is used for actions in progress and verbs that are in their nature ongoing (e.g. perception verbs, @bellec_construction_2014 [209]). This could be reflected in the telicity of the verb, with telic verbs preferring the *être* passive and atelic verbs favouring the *se faire* passive.)
-
-It could be valuable to examine the cases we excluded from our analysis to understand how they differ from genuine passive constructions. This would provide insight into the gray area where passive nuances are present, but no true alternation occurs, allowing for a closer examination of varying degrees of passivity.
-
-"Both the potential insights and the problems entailed by this approach are considerable." [@bohmann_large-scale_2023: 49]
 
 -   implications for causativity debate?
 
@@ -1501,6 +1486,9 @@ final_model_unknown <- glmer(
 
 summary(final_model_unknown) # AIC: 759.3
 vif(final_model_unknown)
+```
+
+```{r final-model-unknown-tab, echo = FALSE}
 tab_model(final_model_unknown)
 ```
 

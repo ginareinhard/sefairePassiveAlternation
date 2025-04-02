@@ -990,14 +990,12 @@ The model has a high concordance index of 0.94. According this to the scale repo
 
 Additonally, we apply an overall significance test by comparing it to a model without predictors (i.e. null model) using an ANOVA [@gries_statistics_2021: 445-446].
 
-```{r model2-significance, echo = FALSE}
+```{r model2-significance, include = FALSE}
 null_model <- glmer(passive_variant ~ 1 + (1 | lemma) + (1 | speaker), data = passive_sample_clean, family = binomial)
 
-anova(final_model, null_model, test="Chisq")
-#highly significant!
-#relative likelihood
-(exp((AIC(null_model)-AIC(final_model))/2))
+anova_final_model <- anova(final_model, null_model, test="Chisq")
 
+#highly significant!
 # ### model with unknown
 # null_model <- glmer(passive_variant ~ 1 + (1|lemma), data = passive_sample_without_unknown, family = binomial)
 # 
@@ -1005,6 +1003,12 @@ anova(final_model, null_model, test="Chisq")
 # #highly significant!!
 # #relative likelihood
 # (exp((AIC(null_model)-AIC(final_model_without_unknown))/2))
+```
+
+```{r anova-tab, echo = FALSE}
+kable(anova_final_model)
+#relative likelihood
+(exp((AIC(null_model)-AIC(final_model))/2))
 ```
 
 The ANOVA shows that our model is highly significant (LR-test=181.02, $p$ \<0.0001), indicating a strong improvement over the null model. The model has a vastly higher relative likelihood compared to the null model.

@@ -682,25 +682,25 @@ mean_kappa <- mean(kappa_values)
 mean_kappa #0.8402305, very high agreement :)
 ```
 
-+--------------------+---------------+----------------------------------------------+
-| Variable           | Cohen's ϰ     | Strength of Agreement @landis1977measurement |
-+====================+===============+==============================================+
-| Subject animacy    | 0.9096219     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-| Subject gender     | 0.8746109     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-| Complément d'agent | 0.9118457     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-| Modal              | 0.9469328     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-| TAM                | 0.7702391     | substantial                                  |
-+--------------------+---------------+----------------------------------------------+
-| Cluster            | 0.8326557     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-| Adversativity      | 0.6700877     | substantial                                  |
-+--------------------+---------------+----------------------------------------------+
-| Mean               | 0.8402305     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
++--------------------+--------------+----------------------------------------------+
+| Variable           | Cohen's ϰ    | Strength of Agreement @landis1977measurement |
++====================+==============+==============================================+
+| Subject animacy    | 0.9096219    | almost perfect                               |
++--------------------+--------------+----------------------------------------------+
+| Subject gender     | 0.8746109    | almost perfect                               |
++--------------------+--------------+----------------------------------------------+
+| Complément d'agent | 0.9118457    | almost perfect                               |
++--------------------+--------------+----------------------------------------------+
+| Modal              | 0.9469328    | almost perfect                               |
++--------------------+--------------+----------------------------------------------+
+| TAM                | 0.7702391    | substantial                                  |
++--------------------+--------------+----------------------------------------------+
+| Cluster            | 0.8326557    | almost perfect                               |
++--------------------+--------------+----------------------------------------------+
+| Adversativity      | 0.6700877    | substantial                                  |
++--------------------+--------------+----------------------------------------------+
+| Mean               | 0.8402305    | almost perfect                               |
++--------------------+--------------+----------------------------------------------+
 
 We classified the ϰ-values using the influential benchmark categorisation of Landis and Koch [-@landis1977measurement: 165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". Mean inter-rater agreement was high at 0.84. Agreement was lowest for the cateogories Adversativity (0.67) and TAM (0.77).
 
@@ -1173,16 +1173,11 @@ table(passive_sample_clean$agent_pp, passive_sample_clean$passive_variant)
 
 ## Aspectuality
 
-### Cluster
+### Verb cluster
 
-Surprisingly, and contrary to our initial hypothesis, the only significant main effect in our model is the one of the semantic verb cluster, with communication verbs favouring [se faire]{.smallcaps} over [être]{.smallcaps}. We had predicted that hitting-touching verbs would favour [se faire]{.smallcaps}, given their dynamic and adversative nature, while communication verbs would be more compatible with [être]{.smallcaps}, as they typically feature an animate subject and frequently occur with object complements.
+Surprisingly, and contrary to our initial hypothesis, the only significant main effect in our model the semantic verb cluster, with communication verbs favouring [se faire]{.smallcaps} over [être]{.smallcaps}. We had predicted that hitting-touching verbs would favour [se faire]{.smallcaps}, given their dynamic and adversative nature, while communication verbs would be more compatible with [être]{.smallcaps}, as they typically feature an animate subject and frequently occur with object complements.
 
-Specifically, the odds of [se faire]{.smallcaps} occurring with communication verbs are 7.18 times higher than with other verb types (CI: 1.34–38.58, p = 0.021). Looking at the most frequent lemmas in @tbl-cluster-lemmas, we find that *insulter* (10 occurrences), *engueuler* (7 occurrences), and *représenter* (4 occurrences) appear most often with [se faire]{.smallcaps}. Notably, *insulter* and *engueuler* are adversative, which may explain their preference for [se faire]{.smallcaps},
-
-|                           |             |              |           |
-|:--------------------------|:-----------:|:------------:|:---------:|
-| Predictors                | Odds Ratios |      CI      |     p     |
-| cluster \[communication\] |    7.18     | 1.34 – 38.58 | **0.021** |
+Specifically, the odds of [se faire]{.smallcaps} occurring with communication verbs are **7.18 times higher** than with verb in the "neutral" category (CI: 1.34–38.58, p = 0.021). In contrast, hitting-touching verbs, which we expected to strongly favour [se faire]{.smallcaps}, did not show a significant effect. \[**Refer to Figure X for an overview of the model predictions.\], refer to plot & odds of hitting-touching**
 
 ```{r cluster-model-plot, echo = FALSE}
 
@@ -1190,6 +1185,8 @@ ggpredict(final_model, "cluster") |>
   plot()
 
 ```
+
+Looking at the most frequent communication verb lemmas in our data in @tbl-cluster-lemmas, we find that *insulter* (10 occurrences), *engueuler* (7 occurrences), and *représenter* (5 occurrences) appear most often with [se faire]{.smallcaps}. Notably, *insulter* and *engueuler* are adversative, which may explain their preference for [se faire]{.smallcaps}. Conversely, the most frequent lemmas with [être]{.smallcaps} are *appeler*, *inscrire*, *rappeler*, and *représenter* (each with 4 occurences). -\> **adversativity**?
 
 ```{r cluster-lemmas, include=FALSE}
 
@@ -1217,7 +1214,7 @@ freq_communication_wide |>
 Frequencies for communication lemmas
 :::
 
-**Random intercepts**
+Random intercepts...
 
 ```{r ranef-final-model, echo = FALSE}
 ranef <- as.data.frame(ranef(final_model))
@@ -1232,6 +1229,25 @@ ranef |>
        y = "Variation in intercept estimate (logit)") +
   coord_flip()
 ```
+
+Given this pattern, in line with our initial hypothesis one possible explanation is that adversativity influences the choice of [se faire]{.smallcaps} within the communication verb cluster. However, there was no significant interaction between the verb cluster and the adversativity factor (communication × non-adversative: OR = 1.13, CI: 0.12–10.86, p = 0.917).
+
+```{r interaction-adv-cluster, echo=FALSE}
+
+ggplot(passive_sample_clean, 
+       aes(x = adversativity, fill = cluster)) +
+  geom_bar(position = "dodge") +  
+  facet_wrap(~ passive_variant) +  
+  labs(title = "Verb Cluster and Adversativity in the Passive Variants",
+       x = "Adversativity",
+       y = "Number of Observations", 
+       fill = "Verb Cluster") +
+  scale_fill_manual(values = c("#FC8D62", "#8DA0CB", "lightblue")) +
+  theme_bw()
+
+```
+
+[être]{.smallcaps} is predominantly used with neutral, non-adversative verbs.
 
 ```{r, include=FALSE}
 
@@ -1363,6 +1379,8 @@ mosaicplot(subj_gender ~ passive_variant,
 # Discussion
 
 As the multifaceted and partly conflicting literature suggests, the passive is a complex and nuanced phenomenon. This entails some challenges for the systematic study of both passive alternations in general, and of [se faire]{.smallcaps} and [être]{.smallcaps} specifically. Firstly, the variable context is necessarily broad due to [se faire]{.smallcaps}'s similarity to the structurally identical causative construction. As has been shown, several borderline cases can be interpreted as either causative or passive (sometimes even both) depending on the specific context. Similarly, [être]{.smallcaps} constructions range between the stative passive and the progressive passive, with the former sometimes being indistingushable from adjectival constructions. Decisions had to be made regarding inclusion and exclusion criteria; however, a different set of choices could have been equally justified and might have yielded different results. It could be valuable to examine the cases we excluded from our analysis to understand how they differ from genuine passive constructions. This would provide insight into the gray area where passive nuances are present, but no true alternation occurs, allowing for a closer examination of varying degrees of passivity.
+
+-   **verb cluster main effect; interaction with adversativity:** One possible explanation is that certain communication verbs, particularly those with an adversative nuance like *insulter* and *engueuler*, pattern similar to hitting-touching verbs, emphasising the subject’s affectedness. Alternatively, this could reflect a more general tendency for [se faire]{.smallcaps} to appear in contexts where the subject is undergoing an action with a certain intensity, which might be more common with communication verbs than initially assumed?
 
 With regard to our hypotheses, although few significant effects were found, the strong interaction of subject animacy and adversativity clearly shows that [se faire]{.smallcaps} predominently occurs with animate subjects and in adversative contexts. Subject animacy seems to be the main mediating factor: [se faire]{.smallcaps} is very likely for animate subjects in both adversative and non-adversative contexts while its likelihood decreases significantly for inanimate subjects. This is in line with the vast previous evidence on [se faire]{.smallcaps}'s preference for animate subjects [@koenig_semantic_1992; @novakova_construction_2009; @spang-hanssen_quelques_1967; @tasmowski-de_ryck_causatif_1987; @raineri_analyse_2010: 92]. However, our analysis challenge the claim by @tasmowski-de_ryck_causatif_1987 and @spang-hanssen_quelques_1967 that [se faire]{.smallcaps} strictly requires an animate subject: Our data provide evidence of inanimate subjects occuring with [se faire]{.smallcaps} (7%). Consequently, our model predicts that while [se faire]{.smallcaps} has a high chance (55% to 85%) to occur with animate subjects, it may also be found with inanimate subjects, particularly in adversative contexts.
 

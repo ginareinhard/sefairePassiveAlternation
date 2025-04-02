@@ -26,7 +26,6 @@ p {
 }
 </style>
 ```
-
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -174,7 +173,6 @@ Some grammars distinguish between a *passif verbal*, with an event interpretatio
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward 
 -   se faire passive "typologically marked", comparison to other Romance languages @koenig_semantic_1992 \[145\]; similar constructions exist in other Romance languages but passive reading only allowed in French @labelle_anticausativizing_2013 [236] -->
 ```
-
 ### Structure and meaning
 
 The [se faire]{.smallcaps} passive construction provides an alternative way to express passive meaning in French: When constructing a passive sentence, the French speaker may choose to use [se faire]{.smallcaps} instead of the canonical [être]{.smallcaps}: The two constructions form a passive alternation. The [se faire]{.smallcaps} passive has been investigated by various scholars, such as @bellec_construction_2014, @gaatone_desagreable_1983, @koenig_semantic_1992, @kupferman_construction_1995, @labelle_anticausativizing_2013, @raineri_analyse_2010, @novakova_construction_2009, and @tasmowski-de_ryck_causatif_1987, to name a few.
@@ -272,7 +270,6 @@ We recognize this "fuzzy" [@bohmann_large-scale_2023: 50] variable context as bo
 
 -   Subjects in passive sentences are preferably animate, definite, and pronominal. In the study by @da_cunha_lalternance_2020, animate, definite, and pronominal arguments that function as the objects in active sentences were more frequently found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice) -->
 ```
-
 ### Subject responsibility
 
 As indicated above, the question whether the referent of the subject in the [se faire]{.smallcaps} construction holds any responsibility is central to the debate of the construction's passive-status (see above; @sveberg_se_2012, @bellec_construction_2014 \[212-213\]). In line with their argument that the passive reading of [se faire]{.smallcaps} is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of [se faire]{.smallcaps} is always a causer and therefore always responsible to some degree. This is contrasted to the être passive's subject referent, which is seen as more neutral. Gaatone [-@gaatone_desagreable_1983: 164] distinguishes between an "active patient" in [se faire]{.smallcaps} and a "passive patient" in the être passive [@raineri_analyse_2010: 96].
@@ -284,7 +281,6 @@ As indicated above, the question whether the referent of the subject in the [se 
 the PSF construction has a preference to mark the subject as an active participant (although according to @raineri_analyse_2010 [98] is is not "universally accepted" as some authors also name counterexamples @kupferman_construction_1995 [59].)
 In @raineri_analyse_2010 [95]'s view, the idea that the PSF expresses subject responsibility is the "most common hypothesis" ("l'hypothèse la plus répandue") in the literature. -->
 ```
-
 In contrast, Kupferman [-@kupferman_construction_1995: 59] gives [se faire]{.smallcaps} examples where the subject cannot be interpreted as responsible, one of which is repeated here:
 
 > 9.  *Elle sanglotait parce que son tout jeune bébé venait de se faire enlever les amygdales.* [@kupferman_construction_1995: 59]\
@@ -431,7 +427,6 @@ In their corpus study on the English be: get passive alternation, @hundt_be-_202
 
 -   English @bohmann_large-scale_2023, East Asian languages @washio_when_1993 and @guan_multifactorial_2024 , Swedish @cuypere_corpus-based_2014 -->
 ```
-
 # Data and Methods
 
 Prior to conducting our study, we preregistered its protocol on the platform "AsPredicted" (**Wharton Credibility Lab, University of Pennsylvania**) to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed here: <https://aspredicted.org/gp6y-dd8p.pdf>.
@@ -462,7 +457,6 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
-
 ```{r lemma-list, include=FALSE}
 
 lemmas <- sefaire_sample |> 
@@ -490,7 +484,6 @@ For the être passive constructions, we searched constructions using a CQL expre
 -   In Sketch Engine: Import Word List → lemma list extracted from se faire constructions (for comparability of the constructions, making sure that differences between être and se faire are not due to individual differences of the verb) → Filter out only verb lemmas of se faire from concordance lines → download
 -   final sample: same amount of constructions for être and se faire, same lemmas, seed set -->
 ```
-
 ### Manual filtering exclusion criteria/ Borderline Cases
 
 As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + infinitive can sometimes have a 'passive effect' even without a direct 1:1 alternation with *être*. However, for our study of *se faire* + Infinitive and *être* + past participle as a passive alternation, our main criterion was to include only those constructions that could be paraphrased with the *être* passive. Consequently, we excluded expressions that could not be rephrased with the *être* passive, either because the *être* construction was ungrammatical or the meaning was fundamentally altered.
@@ -587,7 +580,6 @@ We excluded:
     -   passé composé, plus-que-parfait, présent, futur antérieur (...) - progressiveness is hinted at by another verb in the sentence (e.g., falloir or être) and not from the "se faire" construction itself
 -->
 ```
-
 ### Inter-rater agreement
 
 As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all complément d' agents of [se faire]{.smallcaps} during inital filtering, the column `agent_pp` was renamed to `agent_pp_A`. The datasets were then combined, variables were converted from characters to factors and empty values were replaced with `NA` to ensure proper handling of missing values in statistical analysis.
@@ -1044,7 +1036,6 @@ The ANOVA shows that our model is highly significant (LR-test=181.02, $p$ \<0.00
 -   caret: train best performing model
 -   Model evaluation -->
 ```
-
 # Results
 
 Taking a look at the data:
@@ -1182,7 +1173,16 @@ table(passive_sample_clean$agent_pp, passive_sample_clean$passive_variant)
 
 ## Aspectuality
 
-Surprisingly, and contrary to our hypothesis, the only significant main effect in our model is the verb cluster, with communication verbs favouring *se faire* over *être* passive constructions.
+### Cluster
+
+Surprisingly, and contrary to our initial hypothesis, the only significant main effect in our model is the one of the semantic verb cluster, with communication verbs favouring [se faire]{.smallcaps} over [être]{.smallcaps}. We had predicted that hitting-touching verbs would favour [se faire]{.smallcaps}, given their dynamic and adversative nature, while communication verbs would be more compatible with [être]{.smallcaps}, as they typically feature an animate subject and frequently occur with object complements.
+
+Specifically, the odds of [se faire]{.smallcaps} occurring with communication verbs are 7.18 times higher than with other verb types (CI: 1.34–38.58, p = 0.021). Looking at the most frequent lemmas in @tbl-cluster-lemmas, we find that *insulter* (10 occurrences), *engueuler* (7 occurrences), and *représenter* (4 occurrences) appear most often with [se faire]{.smallcaps}. Notably, *insulter* and *engueuler* are adversative, which may explain their preference for [se faire]{.smallcaps},
+
+|                           |             |              |           |
+|:--------------------------|:-----------:|:------------:|:---------:|
+| Predictors                | Odds Ratios |      CI      |     p     |
+| cluster \[communication\] |    7.18     | 1.34 – 38.58 | **0.021** |
 
 ```{r cluster-model-plot, echo = FALSE}
 
@@ -1190,8 +1190,6 @@ ggpredict(final_model, "cluster") |>
   plot()
 
 ```
-
-@tbl-cluster-lemmas shows that the most frequent lemmas occuring with *se faire* are *insulter* (10 occurences), *engueuler* (7 occurences), and *représenter* (4 occurences). Notably, *insulter* and *engueuler* are both adversive verbs, which may explain their preference for *se faire*.
 
 ```{r cluster-lemmas, include=FALSE}
 
@@ -1234,8 +1232,6 @@ ranef |>
        y = "Variation in intercept estimate (logit)") +
   coord_flip()
 ```
-
-### Cluster
 
 ```{r, include=FALSE}
 
@@ -1370,15 +1366,13 @@ As the multifaceted and partly conflicting literature suggests, the passive is a
 
 With regard to our hypotheses, although few significant effects were found, the strong interaction of subject animacy and adversativity clearly shows that [se faire]{.smallcaps} predominently occurs with animate subjects and in adversative contexts. Subject animacy seems to be the main mediating factor: [se faire]{.smallcaps} is very likely for animate subjects in both adversative and non-adversative contexts while its likelihood decreases significantly for inanimate subjects. This is in line with the vast previous evidence on [se faire]{.smallcaps}'s preference for animate subjects [@koenig_semantic_1992; @novakova_construction_2009; @spang-hanssen_quelques_1967; @tasmowski-de_ryck_causatif_1987; @raineri_analyse_2010: 92]. However, our analysis challenge the claim by @tasmowski-de_ryck_causatif_1987 and @spang-hanssen_quelques_1967 that [se faire]{.smallcaps} strictly requires an animate subject: Our data provide evidence of inanimate subjects occuring with [se faire]{.smallcaps} (7%). Consequently, our model predicts that while [se faire]{.smallcaps} has a high chance (55% to 85%) to occur with animate subjects, it may also be found with inanimate subjects, particularly in adversative contexts.
 
-However, as @kupferman_construction_1995 argues, even a strong correlation of subject animacy, adversativity and [se faire]{.smallcaps} does not necessarily imply that the subject is responsible for the event and brings negative consequences upon themselves. Instead, the increased likelihood of [se faire]{.smallcaps} with inanimate subjects in adversative contexts compared to non-adversative contexts suggests that the construction emphasises subject affectedness more than [être]{.smallcaps}. [Note, however, that inter-rater agreement was lowest for adversativity, suggesting some ambiguity regarding this factor, although it was still considered 'substantial']. Overall, we consider these findings to support the theory of [se faire]{.smallcaps} being preferred over canoncial [être]{.smallcaps} when marking subject affectedness.
+However, as @kupferman_construction_1995 argues, even a strong correlation of subject animacy, adversativity and [se faire]{.smallcaps} does not necessarily imply that the subject is responsible for the event and brings negative consequences upon themselves. Instead, the increased likelihood of [se faire]{.smallcaps} with inanimate subjects in adversative contexts compared to non-adversative contexts suggests that the construction emphasises subject affectedness more than [être]{.smallcaps}. \[Note, however, that inter-rater agreement was lowest for adversativity, suggesting some ambiguity regarding this factor, although it was still considered 'substantial'\]. Overall, we consider these findings to support the theory of [se faire]{.smallcaps} being preferred over canoncial [être]{.smallcaps} when marking subject affectedness.
 
 The remaining factors used to test subject responsibility (subject gender, complement d'agent, modal) did not yield significant effects. This may be taken as further indication for... / this may further strenghthen an argument against subject responsibility and toward subject affectness// The absence of additional significant effects related to subject responsibility may further support this notion.
 
-
 -   problematic category gender/ unknown; no real effect of gender - maybe tendency?
 
-   -   no effects of modal: summarising tense aspect and mood in a tam category of "progressivity" with strict classification of tenses (although sometimes not fitting in context) potentially problematic (but also needed to ensure inter-rater agreement and limited by the fact that neither of the authors is a native speaker of French) - overall labeling maybe not nuanced enough?
-    The "modal" category in our study only includes modal verbs. Other similar constructions that express subject responsibility, such as *avoir besoin de*, *arriver à*, *réussir à*, *envier de*, *avoir des difficultés pour*, *avoir la possibilité de*, and *avoir envie de*, etc. could also be interesting to examine in future research.
+-   no effects of modal: summarising tense aspect and mood in a tam category of "progressivity" with strict classification of tenses (although sometimes not fitting in context) potentially problematic (but also needed to ensure inter-rater agreement and limited by the fact that neither of the authors is a native speaker of French) - overall labeling maybe not nuanced enough? The "modal" category in our study only includes modal verbs. Other similar constructions that express subject responsibility, such as *avoir besoin de*, *arriver à*, *réussir à*, *envier de*, *avoir des difficultés pour*, *avoir la possibilité de*, and *avoir envie de*, etc. could also be interesting to examine in future research.
 
 -   regarding aspectuality
 
@@ -1386,7 +1380,7 @@ The remaining factors used to test subject responsibility (subject gender, compl
 
     -   random effect of lemma accounts for a lot of the variance - agrees with Bohmann [-@bohmann_large-scale_2023: 48] who reports evidence that the English \[get\] passive, which has been shown to be similar to [se faire]{.smallcaps} in several regards, "is largely lexically conditioned"
 
-One limitation of our study is that the predictions of our model do not directly reflect real-life language use, as [être]{.smallcaps} is far more common than [se faire]{.smallcaps}, which is comparatively rare (ratio in ParlaMint: 324,836 (38.300) être: 1,254 se faire). We created a balanced data set based on [se faire]{.smallcaps} lemmas to prevent our model from being dominated by frequency effects produced by extreme data unbalance.[^5] This approach allowed us to investigate the factors influencing passive choice and their complex interplay. However, it must be kept in mind that this ratio is artificial does not reflect the reality of passive use, in which [être]{.smallcaps} is chosen as the default in most contexts, and [se faire]{.smallcaps} remains a marked exception. 
+One limitation of our study is that the predictions of our model do not directly reflect real-life language use, as [être]{.smallcaps} is far more common than [se faire]{.smallcaps}, which is comparatively rare (ratio in ParlaMint: 324,836 (38.300) être: 1,254 se faire). We created a balanced data set based on [se faire]{.smallcaps} lemmas to prevent our model from being dominated by frequency effects produced by extreme data unbalance.[^5] This approach allowed us to investigate the factors influencing passive choice and their complex interplay. However, it must be kept in mind that this ratio is artificial does not reflect the reality of passive use, in which [être]{.smallcaps} is chosen as the default in most contexts, and [se faire]{.smallcaps} remains a marked exception.
 
 [^5]: Note that the ratio ended up not being exactly 50:50 because we had to exclude the gender "unknown" which removed 165 se faire and only 29 être constructions. However, this is is still much more balanced than the actual ratio.
 

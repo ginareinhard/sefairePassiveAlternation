@@ -610,7 +610,7 @@ sefaire_sample_annotated <- sefaire_sample_annotated |>
 # remove now redundant "Reference", remove "Kommentar" column, put new "reference" column in first position
 sefaire_sample_annotated <- sefaire_sample_annotated |> 
   select(-Reference, -Kommentar) |> 
-  select(reference, everything())
+  relocate(reference, speaker)
 
 # 2. être
 # separate "Reference" column into reference and speaker
@@ -621,7 +621,7 @@ etre_sample_annotated <- etre_sample_annotated |>
 # remove now redundant "Reference" column, remove now redundant "Reference", remove "Kommentar" column, put new "reference" und "speaker" column in first position
 etre_sample_annotated <- etre_sample_annotated |> 
   select(-Reference, -Kommentar) |> 
-  select(reference, speaker, everything())
+  relocate(reference, speaker)
 
 #still some differences left: être has an "ID" column which se faire does not; être has two agent_pp columns because it was annotated by A and B while se faire only has one, since agent_pp of se faire constructions was annotated there one person (annotator A)
 
@@ -818,7 +818,9 @@ The levels are ordered alphabetically by default. We rearranged the reference le
 #passive_sample_clean$subj_animacy <- relevel(passive_sample_clean$subj_animacy, ref = "inanimate")
 passive_sample_clean$subj_gender <- relevel(passive_sample_clean$subj_gender, ref = "masculine")
 passive_sample_clean$cluster <- relevel(passive_sample_clean$cluster, ref = "neutral")
-#passive_sample_clean$adversativity <- relevel(passive_sample_clean$adversativity, ref = "non-adversative")
+passive_sample_clean$adversativity <- relevel(passive_sample_clean$adversativity, ref = "non-adversative")
+
+ftable(passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy, passive_sample_clean$adversativity)
 
 passive_sample_unknown$subj_gender <- relevel(passive_sample_unknown$subj_gender, ref = "masculine")
 #passive_sample_unknown$subj_animacy <- relevel(passive_sample_unknown$subj_animacy, ref = "inanimate")

@@ -26,7 +26,6 @@ p {
 }
 </style>
 ```
-
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -174,7 +173,6 @@ Some grammars distinguish between a *passif verbal*, with an event interpretatio
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward 
 -   se faire passive "typologically marked", comparison to other Romance languages @koenig_semantic_1992 \[145\]; similar constructions exist in other Romance languages but passive reading only allowed in French @labelle_anticausativizing_2013 [236] -->
 ```
-
 ### Structure and meaning
 
 When constructing a passive sentence, French speakers may choose to use [se faire]{.smallcaps} instead of the canonical [être]{.smallcaps}: The [se faire]{.smallcaps} passive construction, hereinafter called [se faire]{.smallcaps}, provides an alternative way to express passive meaning in French. [se faire]{.smallcaps} has been widely investigated and discussed, for example by @bellec_construction_2014, @gaatone_desagreable_1983, @koenig_semantic_1992, @kupferman_construction_1995, @labelle_anticausativizing_2013, @raineri_analyse_2010, @novakova_construction_2009, and @tasmowski-de_ryck_causatif_1987.
@@ -259,7 +257,6 @@ We recognize this "fuzzy" [@bohmann_large-scale_2023: 50] variable context as bo
 
 -   Subjects in passive sentences are preferably animate, definite, and pronominal. In the study by @da_cunha_lalternance_2020, animate, definite, and pronominal arguments that function as the objects in active sentences were more frequently found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice) -->
 ```
-
 ### Subject responsibility
 
 As indicated above, the question whether the referent of the subject in the [se faire]{.smallcaps} construction holds any responsibility is central to the debate of the construction's passive-status (see above; @sveberg_se_2012, @bellec_construction_2014 :212-213). In line with their argument that the passive reading of [se faire]{.smallcaps} is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of [se faire]{.smallcaps} is always a causer and therefore always responsible to some degree. This is contrasted to the être passive's subject referent, which is seen as more neutral. Gaatone [-@gaatone_desagreable_1983: 164] distinguishes between an "active patient" in [se faire]{.smallcaps} and a "passive patient" in the être passive [@raineri_analyse_2010: 96].
@@ -271,7 +268,6 @@ As indicated above, the question whether the referent of the subject in the [se 
 the PSF construction has a preference to mark the subject as an active participant (although according to @raineri_analyse_2010 [98] is is not "universally accepted" as some authors also name counterexamples @kupferman_construction_1995 [59].)
 In @raineri_analyse_2010 [95]'s view, the idea that the PSF expresses subject responsibility is the "most common hypothesis" ("l'hypothèse la plus répandue") in the literature. -->
 ```
-
 In contrast, Kupferman [-@kupferman_construction_1995: 59] gives [se faire]{.smallcaps} examples where the subject cannot be interpreted as responsible, one of which is repeated here:
 
 > 9.  *Elle sanglotait parce que son tout jeune bébé venait de se faire enlever les amygdales.* [@kupferman_construction_1995: 59]\
@@ -418,7 +414,6 @@ In their corpus study on the English be: get passive alternation, @hundt_be-_202
 
 -   English @bohmann_large-scale_2023, East Asian languages @washio_when_1993 and @guan_multifactorial_2024 , Swedish @cuypere_corpus-based_2014 -->
 ```
-
 # Data and Methods
 
 Prior to conducting our study, we preregistered its protocol on the platform "AsPredicted" (**Wharton Credibility Lab, University of Pennsylvania**) to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed here: <https://aspredicted.org/gp6y-dd8p.pdf>.
@@ -449,7 +444,6 @@ strategy possibilities:
     -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
     -   evaluate with precision & recall, not just accuracy (F1-score) -->
 ```
-
 ```{r lemma-list, include=FALSE}
 
 lemmas <- sefaire_sample |> 
@@ -477,7 +471,6 @@ For the être passive constructions, we searched constructions using a CQL expre
 -   In Sketch Engine: Import Word List → lemma list extracted from se faire constructions (for comparability of the constructions, making sure that differences between être and se faire are not due to individual differences of the verb) → Filter out only verb lemmas of se faire from concordance lines → download
 -   final sample: same amount of constructions for être and se faire, same lemmas, seed set -->
 ```
-
 ### Manual filtering exclusion criteria/ Borderline Cases {#sec-filtering-criteria}
 
 As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + infinitive can sometimes have a 'passive effect' even without a direct 1:1 alternation with *être*. However, for our study of *se faire* + Infinitive and *être* + past participle as a passive alternation, our main criterion was to include only those constructions that could be paraphrased with the *être* passive. Consequently, we excluded expressions that could not be rephrased with the *être* passive, either because the *être* construction was ungrammatical or the meaning was fundamentally altered.
@@ -574,7 +567,6 @@ We excluded:
     -   passé composé, plus-que-parfait, présent, futur antérieur (...) - progressiveness is hinted at by another verb in the sentence (e.g., falloir or être) and not from the "se faire" construction itself
 -->
 ```
-
 ### Inter-rater agreement
 
 As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all complément d' agents of [se faire]{.smallcaps} during inital filtering, the column `agent_pp` was renamed to `agent_pp_A`. The datasets were then combined, variables were converted from characters to factors and empty values were replaced with `NA` to ensure proper handling of missing values in statistical analysis.
@@ -718,7 +710,6 @@ kappa_table |>
 +--------------------+--------------+----------------------------------------------+
 -->
 ```
-
 We classified the ϰ-values using the influential benchmark categorisation of Landis and Koch [-@landis1977measurement: 165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". Mean inter-rater agreement was high at 0.84. Agreement was lowest for the cateogories Adversativity (0.67) and TAM (0.77).
 
 ### Data preprocessing {#sec-data-preprocessing}
@@ -1080,7 +1071,6 @@ The ANOVA shows that our model is highly significant (LR-test=181.02, $p$ \<0.00
 -   caret: train best performing model
 -   Model evaluation -->
 ```
-
 # Results {#sec-results}
 
 Taking a look at the data:
@@ -1222,6 +1212,33 @@ table(passive_sample_clean$agent_pp, passive_sample_clean$passive_variant)
 
 ### Verb cluster
 
+As can be seen from the distribution of [être]{.smallcaps} and [se faire]{.smallcaps} across different verb clusters in @tbl-cluster, neutral verbs are the most frequent category in both passive variants, making up 87% of all [être]{.smallcaps} constructions and 75% of all [se faire]{.smallcaps} constructions. [se faire]{.smallcaps} is relatively more frequent with communication verbs (11%) and hitting-touching verbs (14%) compared to [être]{.smallcaps} (5% and 8%).
+
+```{r, include=FALSE}
+
+freq_cluster <- passive_sample_clean |> 
+  count(passive_variant, cluster) |> 
+  group_by(passive_variant) |> 
+  mutate(relative = round(proportions(n), 2)) |> 
+  ungroup()
+
+freq_cluster_wide <- freq_cluster |> 
+  pivot_wider(names_from = passive_variant, values_from = c(n, relative), values_fill = list(n = 0, Relative = 0))
+
+```
+
+::: {#tbl-cluster}
+```{r, echo=FALSE}
+
+freq_cluster_wide |> 
+  kable(format = "html", digits = 2, col.names = c("Verb Cluster", "être (absolute)", "se faire (absolute)", "être (proportion)", "se faire (proportion)")) |> 
+  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+
+```
+
+Frequencies of [être]{.smallcaps} and [se faire]{.smallcaps} across the verb clusters
+:::
+
 ```{r communication-values, echo = FALSE}
 
 coefficients <- final_model_summary$coefficients  
@@ -1240,7 +1257,7 @@ communication_pvalue <- coefficients["clustercommunication", 4]
 
 ```
 
-Surprisingly, and contrary to our initial hypothesis, the only significant main effect in our model is the semantic verb cluster, with communication verbs favouring [se faire]{.smallcaps} over [être]{.smallcaps}. We had predicted that hitting-touching verbs would favour [se faire]{.smallcaps}, given their dynamic and adversative nature, while communication verbs would be more compatible with [être]{.smallcaps}, as they typically feature an animate subject and frequently occur with object complements. However, in our model, the odds of [se faire]{.smallcaps} occurring with communication verbs are `r   round(communication_odds_ratio, 2)` times higher than with verb in the "neutral" category (CI: `r   paste0(round(ci_min, 2), " - ", round(ci_max, 2))`, $p$-value = `r   round(communication_pvalue, 3)`). In contrast, hitting-touching verbs, which we expected to strongly favour [se faire]{.smallcaps}, did not show a significant effect.
+Surprisingly, and contrary to our initial hypothesis, the only significant main effect in our model is the semantic verb cluster, with communication verbs favouring [se faire]{.smallcaps} over [être]{.smallcaps}. We had predicted that hitting-touching verbs would favour [se faire]{.smallcaps}, given their dynamic and adversative nature, while communication verbs would be more compatible with [être]{.smallcaps}, as they typically feature an animate subject and frequently occur with object complements. However, in our model, the odds of [se faire]{.smallcaps} occurring with communication verbs are `r   round(communication_odds_ratio, 2)` times higher than with verbs in the "neutral" category (CI: `r   paste0(round(ci_min, 2), " - ", round(ci_max, 2))`, $p$-value = `r   round(communication_pvalue, 3)`). In contrast, hitting-touching verbs, which we expected to strongly favour [se faire]{.smallcaps}, did not show a significant effect.
 
 ```{r cluster-predict, echo = FALSE}
 
@@ -1270,7 +1287,7 @@ ggpredict(final_model, "cluster") |>
 ```
 :::
 
-Looking at the most frequent communication verb lemmas in our data in @tbl-cluster-lemmas, we find that *insulter* (10 occurrences), *engueuler* (7 occurrences), and *représenter* (5 occurrences) appear most often with [se faire]{.smallcaps}. Notably, *insulter* and *engueuler* are adversative and generally occur with an animate undergoer, which may explain their preference for [se faire]{.smallcaps}. Conversely, the most frequent lemmas with [être]{.smallcaps} are *appeler*, *inscrire*, *rappeler*, and *représenter* (each with 4 occurences). -\> **adversativity**?
+Looking at the most frequent communication verb lemmas in our data in @tbl-cluster-lemmas, we find that *insulter* (10 occurrences), *engueuler* (7 occurrences), and *représenter* (5 occurrences) appear most often with [se faire]{.smallcaps}. Notably, *insulter* and *engueuler* are adversative and generally occur with an animate undergoer, which may explain their preference for [se faire]{.smallcaps}. Conversely, the most frequent lemmas with [être]{.smallcaps} are *appeler*, *inscrire*, *rappeler*, and *représenter* (each with 4 occurences), which are annotated as non-adversative in our dataset, except for one occurence.
 
 ```{r cluster-lemmas, include=FALSE}
 
@@ -1316,6 +1333,8 @@ ranef |>
 
 Given this pattern, in line with our initial hypothesis one possible explanation is that adversativity influences the choice of [se faire]{.smallcaps} within the communication verb cluster. However, there was no significant interaction between the verb cluster and the adversativity factor.
 
+As shown by the absolute frequencies of verb clusters across adversativity levels in **Figure X**, [se faire]{.smallcaps} is used more frequently with adversative communication verbs than with non-adversative communication verbs, while the opposite pattern can be observed for [être]{.smallcaps}. However, this trend is not strong enough to be statistically significant. **Figure X** also illustrates that neutral, non-adversative verbs are predominant with [être]{.smallcaps}, which reflects that [être]{.smallcaps} is the default passive variant.
+
 ```{r interaction-adv-cluster, echo=FALSE}
 
 ggplot(passive_sample_clean, 
@@ -1328,49 +1347,6 @@ ggplot(passive_sample_clean,
        fill = "Verb Cluster") +
   scale_fill_manual(values = c("#FC8D62", "#8DA0CB", "lightblue")) +
   theme_bw()
-
-```
-
-[être]{.smallcaps} is predominantly used with neutral, non-adversative verbs.
-
-```{r, include=FALSE}
-
-freq_cluster <- passive_sample_clean |> 
-  count(passive_variant, cluster) |> 
-  group_by(passive_variant) |> 
-  mutate(relative = round(proportions(n), 2)) |> 
-  ungroup()
-
-freq_cluster_wide <- freq_cluster |> 
-  pivot_wider(names_from = passive_variant, values_from = c(n, relative), values_fill = list(n = 0, Relative = 0))
-
-```
-
-::: {#tbl-cluster}
-```{r, echo=FALSE}
-
-freq_cluster_wide |> 
-  kable(format = "html", digits = 2, col.names = c("Factor?", "être", "se faire", "être in %", "se faire in %")) |> 
-  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
-
-```
-
-Frequencies for Passive Variants Cluster
-:::
-
-As shown in @tbl-cluster ...
-
-```{r cluster-plot, echo=FALSE}
-
-ggplot(passive_sample_clean, 
-       aes(x = passive_variant, 
-           fill = cluster)) +
-  geom_bar(position = "dodge") +
-  scale_y_continuous(expand = c(0,0)) +
-  labs(title = "plot",
-       x = "passive variant cluster",
-       y = "Count") +
-  theme_classic()
 
 ```
 

@@ -810,7 +810,7 @@ In addition to conducting a descriptive analysis of the data, we employed a bino
 
 ### Levels {#sec-levels}
 
-The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (passive variant: être, complément d'agent: 0, modal: no, TAM: non-progressive, cluster: neutral). If this would negatively affect the stability of the model, the most frequent (subject animacy: animate, subject gender: masculine) or the most evenly distributed case (adversativity: adversative) was selected.
+The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (`passive_variant`: être, `subj_gender`, complément d'agent: 0, modal: no, TAM: non-progressive, cluster: neutral, subject animacy: inanimate). If this would negatively affect the stability of the model, the most frequent (subject animacy: animate, subject gender: masculine) or the most evenly distributed case (adversativity: adversative) was selected.
 
 | Variable           | Label           | Levels                                   |
 |--------------------|-----------------|------------------------------------------|
@@ -827,10 +827,10 @@ The levels are ordered alphabetically by default. We rearranged the reference le
 
 ```{r reference-levels, include = FALSE}
 #change reference levels: "animate" to "inanimate", "communication" to "neutral", "adversative" to "non-adversative"
-passive_sample_clean$subj_animacy <- relevel(passive_sample_clean$subj_animacy, ref = "inanimate")
+#passive_sample_clean$subj_animacy <- relevel(passive_sample_clean$subj_animacy, ref = "inanimate")
 passive_sample_clean$subj_gender <- relevel(passive_sample_clean$subj_gender, ref = "masculine")
 passive_sample_clean$cluster <- relevel(passive_sample_clean$cluster, ref = "neutral")
-passive_sample_clean$adversativity <- relevel(passive_sample_clean$adversativity, ref = "non-adversative")
+#passive_sample_clean$adversativity <- relevel(passive_sample_clean$adversativity, ref = "non-adversative")
 
 ftable(passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy, passive_sample_clean$adversativity)
 
@@ -992,7 +992,7 @@ As Levshina [-@levshina_how_2015: 256] describes, the concordance index measures
 predictions <- predict(final_model, type = "response", na.action = na.omit)
 outcome <- as.numeric(na.omit(passive_sample_clean)$passive_variant) - 1
 
-(Hmisc::somers2(predictions, outcome)["C"])
+Hmisc::somers2(predictions, outcome)["C"]
 ```
 
 The model has a high concordance index of 0.94. According this to the scale reported in Levshina [-@levshina_how_2015: 259], this indicates "outstanding discrimination".

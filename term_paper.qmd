@@ -598,7 +598,7 @@ colnames(sefaire_sample_annotated)
 # Differences between the two datasets mainly regard columns speaker and reference: se faire sample has a "speaker" column which includes the speaker id and the name and a "reference" column that includes the speaker ID and the date; être sample has only a "reference" column that includes speaker ID, date, name
 ```
 
-```{r data-cleaning-colnames-2, echo = TRUE}
+```{r data-cleaning-colnames-2, echo = FALSE}
 #| code-fold: true
 # Goal: two columns consistent across both datasets, one "speaker" (name), one "reference" (ID), drop date
 # 1. se faire
@@ -636,7 +636,7 @@ sefaire_sample_annotated <- sefaire_sample_annotated |>
 passive_sample_combined <- bind_rows(etre_sample_annotated, sefaire_sample_annotated) 
 ```
 
-```{r data-cleaning-2}
+```{r data-cleaning-2, include = FALSE}
 #| code-fold: true
 # check for typos/ tagging inconsistencies in combined data; convert to factor; add "NA" as value for all cases that are only annotated by one person
 #check data type
@@ -676,32 +676,53 @@ kappa_cluster #0.8326557
 kappa_adversativity <- ckappa(passive_sample_combined[c("adversativity_A", "adversativity_B")])
 kappa_adversativity #0.6700877
 
-kappa_values <- c(kappa_animacy$kappa, kappa_agent_pp$kappa, kappa_modal$kappa, kappa_tam$kappa, kappa_cluster$kappa, kappa_adversativity$kappa)
+kappa_values <- c(kappa_animacy$kappa, kappa_gender$kappa, kappa_agent_pp$kappa, kappa_modal$kappa, kappa_tam$kappa, kappa_cluster$kappa, kappa_adversativity$kappa)
 
 mean_kappa <- mean(kappa_values)
 mean_kappa #0.8402305, very high agreement :)
 ```
 
-+--------------------+---------------+----------------------------------------------+
-| Variable           | Cohen's ϰ     | Strength of Agreement @landis1977measurement |
-+====================+===============+==============================================+
-| Subject animacy    | 0.9096219     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-| Subject gender     | 0.8746109     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-| Complément d'agent | 0.9118457     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-| Modal              | 0.9469328     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-| TAM                | 0.7702391     | substantial                                  |
-+--------------------+---------------+----------------------------------------------+
-| Cluster            | 0.8326557     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
-| Adversativity      | 0.6700877     | substantial                                  |
-+--------------------+---------------+----------------------------------------------+
-| Mean               | 0.8402305     | almost perfect                               |
-+--------------------+---------------+----------------------------------------------+
+```{r cohens-kappa-table, echo = FALSE}
+kappa_values <- c(kappa_values, mean_kappa)
 
+factors_passive <- c("subject animacy", "subject gender", "agent PP/ complément d'agent", "modal", "TAM", "cluster", "adversativity", "mean")
+kappa_strength <- c("almost perfect", "almost perfect", "almost perfect", "almost perfect", "substantial", "almost perfect", "substantial", "almost perfect")
+
+kappa_table <- data.frame(
+  Factor = factors_passive,
+  Kappa = kappa_values,
+  Interpretation = kappa_strength
+)
+
+kappa_table |> 
+  kbl(format ="html", digits = 2, caption = "Cohen's ϰ values and their interpretation following Landis and Koch (1977)", col.names = c("Factor", "Cohen's ϰ", "Strength of Agreement" )) |> 
+  kable_styling(bootstrap_options = c("striped", "hover","condensed", "responsive")) |> 
+  row_spec(8, bold = T)
+```
+
+```{=html}
+<!-- 
++--------------------+--------------+----------------------------------------------+
+| Variable           | Cohen's ϰ    | Strength of Agreement @landis1977measurement |
++====================+==============+==============================================+
+| Subject animacy    | 0.9096219    | almost perfect                               |
++--------------------+--------------+----------------------------------------------+
+| Subject gender     | 0.8746109    | almost perfect                               |
++--------------------+--------------+----------------------------------------------+
+| Complément d'agent | 0.9118457    | almost perfect                               |
++--------------------+--------------+----------------------------------------------+
+| Modal              | 0.9469328    | almost perfect                               |
++--------------------+--------------+----------------------------------------------+
+| TAM                | 0.7702391    | substantial                                  |
++--------------------+--------------+----------------------------------------------+
+| Cluster            | 0.8326557    | almost perfect                               |
++--------------------+--------------+----------------------------------------------+
+| Adversativity      | 0.6700877    | substantial                                  |
++--------------------+--------------+----------------------------------------------+
+| Mean               | 0.8402305    | almost perfect                               |
++--------------------+--------------+----------------------------------------------+
+-->
+```
 We classified the ϰ-values using the influential benchmark categorisation of Landis and Koch [-@landis1977measurement: 165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". Mean inter-rater agreement was high at 0.84. Agreement was lowest for the cateogories Adversativity (0.67) and TAM (0.77).
 
 ### Data preprocessing {#sec-data-preprocessing}
@@ -791,31 +812,22 @@ In addition to conducting a descriptive analysis of the data, we employed a bino
 
 The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (passive variant: être, complément d'agent: 0, modal: no, TAM: non-progressive, cluster: neutral). If this would negatively affect the stability of the model, the most frequent (subject animacy: animate, subject gender: masculine) or the most evenly distributed case (adversativity: adversative) was selected.
 
-+--------------------+-----------------+------------------------------------------+
 | Variable           | Label           | Levels                                   |
-+====================+=================+==========================================+
+|--------------------|-----------------|------------------------------------------|
 | Passive variant    | passive_variant | être, se faire                           |
-+--------------------+-----------------+------------------------------------------+
 | Subject animacy    | subj_animacy    | animate, inanimate                       |
-+--------------------+-----------------+------------------------------------------+
 | Subject gender     | subj_gender     | masculine, feminine                      |
-+--------------------+-----------------+------------------------------------------+
 | Complément d'agent | agent_pp        | 0, par, de                               |
-+--------------------+-----------------+------------------------------------------+
 | Modal              | modal           | no, yes                                  |
-+--------------------+-----------------+------------------------------------------+
 | TAM                | tam             | non-progressive, progressive             |
-+--------------------+-----------------+------------------------------------------+
 | Cluster            | cluster         | neutral, communication, hitting-touching |
-+--------------------+-----------------+------------------------------------------+
 | Adversativity      | adversativity   | adversative, non-adversative             |
-+--------------------+-----------------+------------------------------------------+
 
 : Overview of variables for the *être: se faire* passive alternation
 
 ```{r reference-levels, include = FALSE}
 #change reference levels: "animate" to "inanimate", "communication" to "neutral", "adversative" to "non-adversative"
-#passive_sample_clean$subj_animacy <- relevel(passive_sample_clean$subj_animacy, ref = "inanimate")
+passive_sample_clean$subj_animacy <- relevel(passive_sample_clean$subj_animacy, ref = "inanimate")
 passive_sample_clean$subj_gender <- relevel(passive_sample_clean$subj_gender, ref = "masculine")
 passive_sample_clean$cluster <- relevel(passive_sample_clean$cluster, ref = "neutral")
 passive_sample_clean$adversativity <- relevel(passive_sample_clean$adversativity, ref = "non-adversative")

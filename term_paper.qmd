@@ -283,9 +283,9 @@ Corpus studies have shown that animacy significantly influences voice choice in 
 
 As implied in the debate on subject responsibility, subjects of [se faire]{.smallcaps} are predominantly active participants in the described action. Since inanimate subjects are rarely affected and even less often responsible, [se faire]{.smallcaps} is common with animate subjects. While some scholars claim that only animate subjects are possible with the [se faire]{.smallcaps}, others provide counterexamples [@labelle_anticausativizing_2013; @kokutani_sur_2005, @novakova_construction_2009: 4; @sveberg_se_2012] (@raineri_analyse_2010 [92]).
 
-However, these examples appear to be exceptions as there are both corpus [@novakova_construction_2009: 111] and experimental [@koenig_semantic_1992: 151, 153] evidence that subject animacy and [se faire]{.smallcaps} are positively correlated: In Novakova  [-@novakova_construction_2009: 111]'s corpus study, less than 3% of [se faire]{.smallcaps} sentences had inanimate subjects. In a survey by @koenig_semantic_1992, French native speakers rated the acceptability of [se faire]{.smallcaps} with animate subjects significantly higher than with inanimate subjects. Inanimate subjects were only allowed by some speakers when the subject "affects a relevant animate entity" [@koenig_semantic_1992: 151, 153]. Raineri [-@raineri_analyse_2010: 92] reflects that the preference of [se faire]{.smallcaps} to be realised with animate subjects is one of the few aspects on which scholars agree.
+However, these examples appear to be exceptions as there are both corpus [@novakova_construction_2009: 111] and experimental [@koenig_semantic_1992: 151, 153] evidence that subject animacy and [se faire]{.smallcaps} are positively correlated: In Novakova [-@novakova_construction_2009: 111]'s corpus study, less than 3% of [se faire]{.smallcaps} sentences had inanimate subjects. In a survey by @koenig_semantic_1992, French native speakers rated the acceptability of [se faire]{.smallcaps} with animate subjects significantly higher than with inanimate subjects. Inanimate subjects were only allowed by some speakers when the subject "affects a relevant animate entity" [@koenig_semantic_1992: 151, 153]. Raineri [-@raineri_analyse_2010: 92] reflects that the preference of [se faire]{.smallcaps} to be realised with animate subjects is one of the few aspects on which scholars agree.
 
-We tag animacy as binary *inanimate/ animate* although we recognize that animacy has been considered a hierarchical scale in the literature, most prominently by @zaenen_animacy_2004. Following @zaenen_animacy_2004, we understand organisations to be "collectivites of humans" and therefore annotate them as *animate*. In line with the literature, we hypothesise that both [se faire]{.smallcaps} and [être]{.smallcaps} favour animate subjects over inanimate subjects but subject animacy is a stronger predictor of [se faire]{.smallcaps} than of [être]{.smallcaps}.
+We tag animacy as binary *inanimate/ animate* although we recognize that animacy has been considered a hierarchical scale in the literature, most prominently by @zaenen_animacy_2004. Following @zaenen_animacy_2004, we understand organisations to be "collectivities of humans" and therefore annotate them as *animate*. In line with the literature, we hypothesise that both [se faire]{.smallcaps} and [être]{.smallcaps} favour animate subjects over inanimate subjects but subject animacy is a stronger predictor of [se faire]{.smallcaps} than of [être]{.smallcaps}.
 
 **Interaction**: @raineri_analyse_2010 [94] suspects that [se faire]{.smallcaps} restricts verb selection and provides an explanation for the construction's incompatibility with certain verbs. Therefore, we propose that passive choice could be influenced not only by animacy or verb cluster alone, but by the combination of these two factors: For example, animacy could have a stronger effect if the verb is from the hitting-touching category or the neutral category ([se faire]{.smallcaps} could be strongly favoured with animate subjects compared to inanimate subjects), while this effect could be weaker with communication verbs, for which [être]{.smallcaps} could be favoured regardless of animacy.
 
@@ -391,19 +391,17 @@ Our hypothesis is that progressive marking (whether through tense or periphrasis
 
 ### Adversativity
 
-The factor of adversativity is reflected in the semantics of the verb and captures the (negative) consequences of the described action for the subject. It has been found to be relevant to the choice between the English be and get passive [@chappell1980get; @hundt_be-_2024: 89, 96-97; @bohmann_large-scale_2023], with the get passive being realized more often with adversative verbs than the be passive. @spang-hanssen_quelques_1967 and @raineri_analyse_2010 draw parallels between the English get passive and French [se faire]{.smallcaps}.
+The factor of adversativity is reflected in the semantics of the verb and captures the negative consequences of the described action for the subject. This factor has been shown to influence the choice between the English [be]{.smallcaps} and [get]{.smallcaps} passives [@chappell1980get; @hundt_be-_2024: 89, 96-97; @bohmann_large-scale_2023], with [get]{.smallcaps} being realised more often with adversative verbs than [be]{.smallcaps}. Since @spang-hanssen_quelques_1967 and @raineri_analyse_2010 draw paralles between the [get]{.smallcaps} and [se faire]{.smallcaps} passive, an adversativity effect for [se faire]{.smallcaps} is likely.
 
-@gaatone_desagreable_1983 argues that [se faire]{.smallcaps} has a strong "unpleasant sense" ("sens désagreable") because it occurs mainly with verbs denoting unpleasant events [^2]. Although Kupferman [-@kupferman_construction_1995: 77] rejects the "unpleasant sense" as a characteristic of [se faire]{.smallcaps}, he agrees that it is more commonly used in unpleasant contexts than être. This is supported by corpus data: @novakova_construction_2009 \[110\] found a clear preference for [se faire]{.smallcaps} to be realised with unpleasant actions, with 30% of verbs in [se faire]{.smallcaps} denoting unpleasant events and only 5% denoting pleasant events. Also: @raineri_analyse_2010 [247].
+@gaatone_desagreable_1983 argues that [se faire]{.smallcaps} has a strong "unpleasant sense" ('sens désagreable'), as it occurs mainly with verbs denoting unpleasant events [^2]. Although Kupferman [-@kupferman_construction_1995: 77] rejects this unpleasantness as a characteristic of [se faire]{.smallcaps}, he agrees that it is more commonly used in negative contexts than [être]{.smallcaps}. This is supported by corpus data: Novakova [-@novakova_construction_2009: 110] found a clear preference for [se faire]{.smallcaps} to be realised with negative actions, with 30% of verbs in [se faire]{.smallcaps} denoting unpleasant events and only 5% denoting pleasant events. Also: @raineri_analyse_2010 [247].
 
-[^2]: According to @gaatone_desagreable_1983, unpleasant events contradict the notion of subject responsibility because subjects would not willingly bring the unpleasant event upon themselves. According to him, the reason this is the subject's involvement in se faire constructions: if the subject experiences a pleasant event and this is expressed by se faire -\> mostly the subject has initiated the action -\> causative and not passive reading (language example?)/ in contrast, it is less likely that the subject initiates an unpleasant action.
+[^2]: According to @gaatone_desagreable_1983, adversativity contradicts the notion of subject responsibility because subjects would not willingly bring such events upon themselves. According to him, the reason for this is the subject's involvement in [se faire]{.smallcaps} constructions: if the subject experiences a pleasant event and this is expressed by se faire -\> mostly the subject has initiated the action -\> causative and not passive reading/ in contrast, it is less likely that the subject initiates an unpleasant action.
 
-As @bohmann_large-scale_2023 notes in their investigation of the be/get alternation there are two hypotheses related to emotions of the verb: The adversativity hypothesis and the non-neutrality hypothesis. Both expect the *get* passive to favour verbs with negative scores; but only the non-neutrality hypothesis predicts get passive to correlate positively with positive emotion scores as well. Since positive emotion verbs have been shown to be quite rare with [se faire]{.smallcaps} (@novakova_construction_2009 [110]) we have chosen to not test them and label them as "neutral".
-
-In their corpus study on the English be: get passive alternation, @hundt_be-_2024 label this factor as binary on the verb as adversative, non-adversative/neutral. For practicality and clear statistical modelling, we follow them in our annotation: "Adversative" if event negatively affects the subject, "non-adversative" if event is neutral or positive.
+As @bohmann_large-scale_2023 note in their investigation of the [be]{.smallcaps}:[get]{.smallcaps} alternation, there are two hypotheses related to emotions of the verb: The adversativity hypothesis and the non-neutrality hypothesis. Both expect [get]{.smallcaps} to favour verbs with negative connotations, but only the non-neutrality hypothesis predicts [get]{.smallcaps} to correlate positively with positive emotion scores as well. Since positive emotion verbs have been shown to be quite rare with [se faire]{.smallcaps} [@novakova_construction_2009: 110], we have chosen to not test them. In their corpus study on the [be]{.smallcaps}:[get]{.smallcaps} alternation, @hundt_be-_2024 label this factor as binary as 'adversative' - 'non-adversative/neutral'. For practicality and clear statistical modelling, we follow them in our annotation and assign the tag 'adversative' if the event negatively affects the subject, and 'non-adversative' if the event is neutral or positive.
 
 <!-- -   \@bohmann_large-scale_2023 [38, 43] Sentiment values of verb participles extracted from SentiWordNet: positivity, negativity, objectivity scores; reversed if sentence is negated -->
 
-**Hypothesis:** [se faire]{.smallcaps} is preferred over the *être* passive for verbs that denote "unpleasant" actions (as reflected by verbs labeled as "adversative").
+**Hypothesis:** [se faire]{.smallcaps} is preferred over [être]{.smallcaps} for verbs that denote "unpleasant" actions (as reflected by verbs labeled as *adversative*).
 
 **Interaction:** Affectedness of the subject may be reflected by an interaction of subject animacy and verb adversativity: Negative consequences of actions, expressed by adversative verbs, affect animate subjects more than inanimate subjects.
 
@@ -415,7 +413,7 @@ In their corpus study on the English be: get passive alternation, @hundt_be-_202
 
 # Data and Methods
 
-Prior to conducting our study, we preregistered its protocol on the platform "AsPredicted" (**Wharton Credibility Lab, University of Pennsylvania**) to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed here: <https://aspredicted.org/gp6y-dd8p.pdf>.
+Prior to conducting our study, we preregistered its protocol on the platform AsPredicted (**Wharton Credibility Lab, University of Pennsylvania**) to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed here: <https://aspredicted.org/gp6y-dd8p.pdf>.
 
 ## Data Collection
 
@@ -461,7 +459,7 @@ We automatically extracted a sample of 1,254 *se faire* + infinitive constructio
 
 **être passive**
 
-For the être passive constructions, we searched constructions using a CQL expression in SketchEngine. We then filtered the concordances using the list of lemmas we have previously collected from the *se faire* constructions. Due to the download limit of SketchEngine, we downloaded these constructions in four subsamples of 9295-9794 concordances. All filtered instances stored in a .csv file and merged to one dataframe in R. For reproducibility, we set a seed using the function setseed( ) and used this to randomly sample the data. The seed was determined by the lottery numbers on Wednesday, 12^th^ March 2025 as provided on the Website <https://www.lotto.de/lotto-6aus49/lottozahlen>. Using this, we took a random sample from the concordance lines that is equal in size to the manually filtered amount of se faire constructions (i.e. 535 -\> 532 (e**xplain reduction**)). The constructions were then manually annotated for the features listed in sec x.
+For the être passive constructions, we searched constructions using a CQL expression in SketchEngine. We then filtered the concordances using the list of lemmas we have previously collected from the *se faire* constructions. Due to the download limit of SketchEngine, we downloaded these constructions in four subsamples of 9295-9794 concordances. All filtered instances stored in a .csv file and merged to one dataframe in R. For reproducibility, we set a seed using the function setseed( ) and used this to randomly sample the data. The seed was determined by the lottery numbers on Wednesday, 12^th^ March 2025 as provided on the Website <https://www.lotto.de/lotto-6aus49/lottozahlen>. Using this, we took a random sample from the concordance lines that was equal in size to the manually filtered amount of se faire constructions (i.e. 535 -\> 532 (e**xplain reduction**)). The constructions were then manually annotated for the features listed in sec x.
 
 -   Our final sample therefore comprises XXX sentences/constructions: XX se faire and XX être passive, ... (short summary)
 
@@ -674,7 +672,7 @@ mean_kappa #0.8402305, very high agreement :)
 ```{r cohens-kappa-table, echo = FALSE}
 kappa_values <- c(kappa_values, mean_kappa)
 
-factors_passive <- c("subject animacy", "subject gender", "agent PP/ complément d'agent", "modal", "TAM", "cluster", "adversativity", "mean")
+factors_passive <- c("subject animacy", "subject gender", "complément d'agent", "modal", "TAM", "cluster", "adversativity", "mean")
 kappa_strength <- c("almost perfect", "almost perfect", "almost perfect", "almost perfect", "substantial", "almost perfect", "substantial", "almost perfect")
 
 kappa_table <- data.frame(
@@ -713,11 +711,11 @@ kappa_table |>
 -->
 ```
 
-We classified the ϰ-values using the influential benchmark categorisation of Landis and Koch [-@landis1977measurement: 165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". Mean inter-rater agreement was high at 0.84. Agreement was lowest for the cateogories Adversativity (0.67) and TAM (0.77).
+We classified the ϰ-values using the influential benchmark categorisation of Landis and Koch [-@landis1977measurement: 165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". Mean inter-rater agreement is high at `r  mean_kappa`. Agreement is lowest for the cateogories adversativity (0.67) and TAM (0.77).
 
 ### Data preprocessing {#sec-data-preprocessing}
 
-For the main analysis, the combined data of [se faire]{.smallcaps} and [être]{.smallcaps} data were merged into one "clean" dataset where each column corresponds to one factor. This column includes the annotation of the first annotator (annotator A for half of the observations, annotator B for the other half).
+For the main analysis, the combined data of [se faire]{.smallcaps} and [être]{.smallcaps} data were merged into one data set where each column corresponds to one factor. This column includes the annotations of the first annotator (annotator A for half of the observations, annotator B for the other half).
 
 ```{r merge-to-main-dataset}
 #| code-fold: true
@@ -800,7 +798,7 @@ In addition to conducting a descriptive analysis of the data, we employed a bino
 
 ### Levels {#sec-levels}
 
-The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (`passive_variant`: être; `agent_pp`: 0; `modal`: no; `tam`: non-progressive, cluster: `neutral`, subject animacy: `inanimate`). If this would negatively affect the stability of the model, the most frequent (`subj_animacy`: animate,`subj_gender`: masculine) or the most evenly distributed case (`adversativity`: adversative) was selected.
+The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (`passive_variant`: être; `agent_pp`: 0; `modal`: no; `tam`: non-progressive, `cluster`: neutral). If this would negatively affect the stability of the model, the most frequent (`subj_animacy`: animate,`subj_gender`: masculine) or the most evenly distributed case (`adversativity`: adversative) was selected.
 
 +--------------------+-----------------+------------------------------------------+
 | Factors            | Label           | Levels                                   |

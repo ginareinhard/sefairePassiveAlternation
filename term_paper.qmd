@@ -810,7 +810,7 @@ In addition to conducting a descriptive analysis of the data, we employed a bino
 
 ### Levels {#sec-levels}
 
-The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (`passive_variant`: être, `subj_gender`, complément d'agent: 0, modal: no, TAM: non-progressive, cluster: neutral, subject animacy: inanimate). If this would negatively affect the stability of the model, the most frequent (subject animacy: animate, subject gender: masculine) or the most evenly distributed case (adversativity: adversative) was selected.
+The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (`passive_variant`: être; `agent_pp`: 0; `modal`: no; `tam`: non-progressive, cluster: `neutral`, subject animacy: `inanimate`). If this would negatively affect the stability of the model, the most frequent (`subject animacy`: animate,`subj_gender`: masculine) or the most evenly distributed case (`adversativity`: adversative) was selected.
 
 +--------------------+-----------------+------------------------------------------+
 | Variable           | Label           | Levels                                   |
@@ -821,7 +821,7 @@ The levels are ordered alphabetically by default. We rearranged the reference le
 +--------------------+-----------------+------------------------------------------+
 | Subject gender     | subj_gender     | masculine, feminine                      |
 +--------------------+-----------------+------------------------------------------+
-| Complément d'agent | agent_pp        | 0, par, de                               |
+| Complément d'agent | agent_pp        | 0, de, par                               |
 +--------------------+-----------------+------------------------------------------+
 | Modal              | modal           | no, yes                                  |
 +--------------------+-----------------+------------------------------------------+
@@ -1357,7 +1357,8 @@ table(passive_sample_clean$adversativity) |>
 
 tab_adv<- table(passive_sample_clean$adversativity, passive_sample_clean$passive_variant)
 
-prop.table(tab_adv, margin = 2) * 100
+kbl((prop.table(tab_adv, margin = 2) * 100), digits = 3, full_width = F, position = "center", col.names = c("Level", "être in %", "se faire in %")) |> 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
 ```{r adversativity-plot, echo = FALSE}

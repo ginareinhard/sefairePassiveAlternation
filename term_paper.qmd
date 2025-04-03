@@ -887,7 +887,10 @@ summary(final_model_unknown) # AIC: 759.3
 
 ```{r max-model-unknown-tab, echo = FALSE}
 tab_model(final_model_unknown, show.aic = TRUE) # Marginal R2 / Conditional R2	0.701 / NA
-vif(final_model_unknown)
+```
+**Collinearity**
+```{r collinearity-model-unknown, echo = FALSE}
+kable(vif(final_model_unknown))
 ```
 
 #### Model without "unknown"
@@ -939,7 +942,7 @@ Non-significant fixed effects are removed step by step, starting with `tam`, whi
 ```{r final-model, output = FALSE}
 #| code-fold: true
 final_model <- glmer(
-    passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:adversativity) + (1 | lemma) + (1 | speaker),
+    passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:adversativity + subj_animacy:subj_gender) + (1 | lemma) + (1 | speaker),
     family = "binomial",
     data = passive_sample_clean
   )
@@ -950,8 +953,7 @@ vif(final_model)
 ```{r final-model-tab, echo = FALSE}
 tab_model(final_model, show.aic = TRUE) #Marginal R2 / Conditional R2	0.451 / 0.662
 
-predicted_probs <- ggpredict(final_model)
-predicted_probs
+kable(ggpredict(final_model))
 ```
 :::
 
@@ -1023,7 +1025,7 @@ anova_final_model <- anova(final_model, null_model, test="Chisq")
 # (exp((AIC(null_model)-AIC(final_model_without_unknown))/2))
 ```
 
-```{r anova-tab, echo = FALSE}
+```{r anova-tab, include = FALSE}
 # kbl(anova_final_model)
 # #relative likelihood
 # (exp((AIC(null_model)-AIC(final_model))/2))
@@ -1039,7 +1041,9 @@ anova_df$`Pr(>Chisq)` <- format(anova_df$`Pr(>Chisq)`, scientific = TRUE, digits
 
 # add relative likelihood
 anova_df$`Relative Likelihood` <- c(NA, rel_likelihood)
+```
 
+```{r anova-kable-tab}
 # kable table
 kbl(anova_df, format = "html", digits = 3) |> 
   kable_styling(bootstrap_options = c("striped", "hover","condensed", "responsive")) |> 

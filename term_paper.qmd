@@ -812,16 +812,25 @@ In addition to conducting a descriptive analysis of the data, we employed a bino
 
 The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (`passive_variant`: être, `subj_gender`, complément d'agent: 0, modal: no, TAM: non-progressive, cluster: neutral, subject animacy: inanimate). If this would negatively affect the stability of the model, the most frequent (subject animacy: animate, subject gender: masculine) or the most evenly distributed case (adversativity: adversative) was selected.
 
++--------------------+-----------------+------------------------------------------+
 | Variable           | Label           | Levels                                   |
-|--------------------|-----------------|------------------------------------------|
++====================+=================+==========================================+
 | Passive variant    | passive_variant | être, se faire                           |
++--------------------+-----------------+------------------------------------------+
 | Subject animacy    | subj_animacy    | animate, inanimate                       |
++--------------------+-----------------+------------------------------------------+
 | Subject gender     | subj_gender     | masculine, feminine                      |
++--------------------+-----------------+------------------------------------------+
 | Complément d'agent | agent_pp        | 0, par, de                               |
++--------------------+-----------------+------------------------------------------+
 | Modal              | modal           | no, yes                                  |
++--------------------+-----------------+------------------------------------------+
 | TAM                | tam             | non-progressive, progressive             |
++--------------------+-----------------+------------------------------------------+
 | Cluster            | cluster         | neutral, communication, hitting-touching |
++--------------------+-----------------+------------------------------------------+
 | Adversativity      | adversativity   | adversative, non-adversative             |
++--------------------+-----------------+------------------------------------------+
 
 : Overview of variables for the *être: se faire* passive alternation
 
@@ -1211,14 +1220,22 @@ table(passive_sample_clean$agent_pp, passive_sample_clean$passive_variant)
 
 Surprisingly, and contrary to our initial hypothesis, the only significant main effect in our model the semantic verb cluster, with communication verbs favouring [se faire]{.smallcaps} over [être]{.smallcaps}. We had predicted that hitting-touching verbs would favour [se faire]{.smallcaps}, given their dynamic and adversative nature, while communication verbs would be more compatible with [être]{.smallcaps}, as they typically feature an animate subject and frequently occur with object complements.
 
-Specifically, the odds of [se faire]{.smallcaps} occurring with communication verbs are 5.98 times higher than with verb in the "neutral" category (CI: 1.95–18.33, p = 0.002). In contrast, hitting-touching verbs, which we expected to strongly favour [se faire]{.smallcaps}, did not show a significant effect. This means that no clear difference between [se faire]{.smallcaps} and [être]{.smallcaps} could be found for these verbs. **Fig X** shows the predicted probabilities of [se faire]{.smallcaps} for each verb cluster, along with the confidence intervals. Communication verbs have the highest predicted probability of [se faire,]{.smallcaps} **close to 95%**. This supports our surprising finding that [se faire]{.smallcaps} is preferred for these verbs, contrary to our hypothesis. Neutral verbs show a lower probability, **around 70%,** suggesting no strong preference for [se faire]{.smallcaps} over [être]{.smallcaps}. Hitting-touching verbs also have a probability **around 75%**, but their confidence interval overlaps significantly with that of neutral verbs, indicating no significant difference between these two categories. The wide confidence intervals for all verb cluster categories, particularly for hitting-touching verbs, suggest variability or uncertainty in the estimates, which aligns with the non-significant effect found for this category in our statistical model.
+Specifically, the odds of [se faire]{.smallcaps} occurring with communication verbs are 5.98 times higher than with verb in the "neutral" category (CI: 1.95–18.33, p = 0.002). In contrast, hitting-touching verbs, which we expected to strongly favour [se faire]{.smallcaps}, did not show a significant effect. This means that no clear difference between [se faire]{.smallcaps} and [être]{.smallcaps} could be found for these verbs. @fig-cluster-model-plot shows the predicted probabilities of [se faire]{.smallcaps} for each verb cluster, along with the confidence intervals. Communication verbs have the highest predicted probability of [se faire,]{.smallcaps} **close to 95%**. This supports our surprising finding that [se faire]{.smallcaps} is preferred for these verbs, contrary to our hypothesis. Neutral verbs show a lower probability, **around 70%,** suggesting no strong preference for [se faire]{.smallcaps} over [être]{.smallcaps}. Hitting-touching verbs also have a probability **around 75%**, but their confidence interval overlaps significantly with that of neutral verbs, indicating no significant difference between these two categories. The wide confidence intervals for all verb cluster categories, particularly for hitting-touching verbs, suggest variability or uncertainty in the estimates, which aligns with the non-significant effect found for this category in our statistical model.
 
-```{r cluster-model-plot, echo = FALSE}
+```{r cluster-predict, echo = FALSE}
+
+cluster_predicted <- ggpredict(final_model, "cluster")
+
+```
+
+::: {#fig-cluster-model-plot}
+```{r cluster-model-plot, fig.cap = "Figure X: ...", echo = FALSE}
 
 ggpredict(final_model, "cluster") |> 
   plot()
 
 ```
+:::
 
 Looking at the most frequent communication verb lemmas in our data in @tbl-cluster-lemmas, we find that *insulter* (10 occurrences), *engueuler* (7 occurrences), and *représenter* (5 occurrences) appear most often with [se faire]{.smallcaps}. Notably, *insulter* and *engueuler* are adversative, which may explain their preference for [se faire]{.smallcaps}. Conversely, the most frequent lemmas with [être]{.smallcaps} are *appeler*, *inscrire*, *rappeler*, and *représenter* (each with 4 occurences). -\> **adversativity**?
 
@@ -1264,7 +1281,7 @@ ranef |>
   coord_flip()
 ```
 
-Given this pattern, in line with our initial hypothesis one possible explanation is that adversativity influences the choice of [se faire]{.smallcaps} within the communication verb cluster. However, there was no significant interaction between the verb cluster and the adversativity factor (communication × non-adversative: OR = 1.13, CI: 0.12–10.86, p = 0.917).
+Given this pattern, in line with our initial hypothesis one possible explanation is that adversativity influences the choice of [se faire]{.smallcaps} within the communication verb cluster. However, there was no significant interaction between the verb cluster and the adversativity factor.
 
 ```{r interaction-adv-cluster, echo=FALSE}
 

@@ -940,6 +940,9 @@ vif(final_model)
 
 ```{r final-model-tab, echo = FALSE}
 tab_model(final_model, show.aic = TRUE) #Marginal R2 / Conditional R2	0.451 / 0.662
+
+predicted_probs <- ggpredict(final_model)
+predicted_probs
 ```
 :::
 
@@ -1012,10 +1015,6 @@ anova_final_model <- anova(final_model, null_model, test="Chisq")
 ```
 
 ```{r anova-tab, echo = FALSE}
-kable(anova_final_model)
-#relative likelihood
-(exp((AIC(null_model)-AIC(final_model))/2))
-
 # kbl(anova_final_model)
 # #relative likelihood
 # (exp((AIC(null_model)-AIC(final_model))/2))
@@ -1024,6 +1023,7 @@ rel_likelihood <- exp((AIC(null_model) - AIC(final_model)) / 2)
 
 # ANOVA to data frame
 anova_df <- as.data.frame(anova_final_model)
+anova_final_model
 
 # p-value
 anova_df$`Pr(>Chisq)` <- format(anova_df$`Pr(>Chisq)`, scientific = TRUE, digits = 3)

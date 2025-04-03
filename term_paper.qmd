@@ -682,25 +682,25 @@ mean_kappa <- mean(kappa_values)
 mean_kappa #0.8402305, very high agreement :)
 ```
 
-+--------------------+--------------+----------------------------------------------+
-| Variable           | Cohen's ϰ    | Strength of Agreement @landis1977measurement |
-+====================+==============+==============================================+
-| Subject animacy    | 0.9096219    | almost perfect                               |
-+--------------------+--------------+----------------------------------------------+
-| Subject gender     | 0.8746109    | almost perfect                               |
-+--------------------+--------------+----------------------------------------------+
-| Complément d'agent | 0.9118457    | almost perfect                               |
-+--------------------+--------------+----------------------------------------------+
-| Modal              | 0.9469328    | almost perfect                               |
-+--------------------+--------------+----------------------------------------------+
-| TAM                | 0.7702391    | substantial                                  |
-+--------------------+--------------+----------------------------------------------+
-| Cluster            | 0.8326557    | almost perfect                               |
-+--------------------+--------------+----------------------------------------------+
-| Adversativity      | 0.6700877    | substantial                                  |
-+--------------------+--------------+----------------------------------------------+
-| Mean               | 0.8402305    | almost perfect                               |
-+--------------------+--------------+----------------------------------------------+
++--------------------+---------------+----------------------------------------------+
+| Variable           | Cohen's ϰ     | Strength of Agreement @landis1977measurement |
++====================+===============+==============================================+
+| Subject animacy    | 0.9096219     | almost perfect                               |
++--------------------+---------------+----------------------------------------------+
+| Subject gender     | 0.8746109     | almost perfect                               |
++--------------------+---------------+----------------------------------------------+
+| Complément d'agent | 0.9118457     | almost perfect                               |
++--------------------+---------------+----------------------------------------------+
+| Modal              | 0.9469328     | almost perfect                               |
++--------------------+---------------+----------------------------------------------+
+| TAM                | 0.7702391     | substantial                                  |
++--------------------+---------------+----------------------------------------------+
+| Cluster            | 0.8326557     | almost perfect                               |
++--------------------+---------------+----------------------------------------------+
+| Adversativity      | 0.6700877     | substantial                                  |
++--------------------+---------------+----------------------------------------------+
+| Mean               | 0.8402305     | almost perfect                               |
++--------------------+---------------+----------------------------------------------+
 
 We classified the ϰ-values using the influential benchmark categorisation of Landis and Koch [-@landis1977measurement: 165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". Mean inter-rater agreement was high at 0.84. Agreement was lowest for the cateogories Adversativity (0.67) and TAM (0.77).
 
@@ -1179,7 +1179,7 @@ table(passive_sample_clean$agent_pp, passive_sample_clean$passive_variant)
 
 Surprisingly, and contrary to our initial hypothesis, the only significant main effect in our model the semantic verb cluster, with communication verbs favouring [se faire]{.smallcaps} over [être]{.smallcaps}. We had predicted that hitting-touching verbs would favour [se faire]{.smallcaps}, given their dynamic and adversative nature, while communication verbs would be more compatible with [être]{.smallcaps}, as they typically feature an animate subject and frequently occur with object complements.
 
-Specifically, the odds of [se faire]{.smallcaps} occurring with communication verbs are **7.18 times higher** than with verb in the "neutral" category (CI: 1.34–38.58, p = 0.021). In contrast, hitting-touching verbs, which we expected to strongly favour [se faire]{.smallcaps}, did not show a significant effect. \[**Refer to Figure X for an overview of the model predictions.\], refer to plot & odds of hitting-touching**
+Specifically, the odds of [se faire]{.smallcaps} occurring with communication verbs are 5.98 times higher than with verb in the "neutral" category (CI: 1.95–18.33, p = 0.002). In contrast, hitting-touching verbs, which we expected to strongly favour [se faire]{.smallcaps}, did not show a significant effect. This means that no clear difference between [se faire]{.smallcaps} and [être]{.smallcaps} could be found for these verbs. **Fig X** shows the predicted probabilities of [se faire]{.smallcaps} for each verb cluster, along with the confidence intervals. Communication verbs have the highest predicted probability of [se faire,]{.smallcaps} **close to 95%**. This supports our surprising finding that [se faire]{.smallcaps} is preferred for these verbs, contrary to our hypothesis. Neutral verbs show a lower probability, **around 70%,** suggesting no strong preference for [se faire]{.smallcaps} over [être]{.smallcaps}. Hitting-touching verbs also have a probability **around 75%**, but their confidence interval overlaps significantly with that of neutral verbs, indicating no significant difference between these two categories. The wide confidence intervals for all verb cluster categories, particularly for hitting-touching verbs, suggest variability or uncertainty in the estimates, which aligns with the non-significant effect found for this category in our statistical model.
 
 ```{r cluster-model-plot, echo = FALSE}
 

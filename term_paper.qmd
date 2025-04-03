@@ -891,7 +891,7 @@ tab_model(final_model_unknown, show.aic = TRUE) # Marginal R2 / Conditional R2	0
 kable(vif(final_model_unknown))
 ```
 
-#### Model without "unknown"
+#### Model without `unknown`
 
 After excluding `unknown`, the model's AIC improves to 732.5. The model has an R^2^ of 0.46 / 0.67. Although this is lower than the model without `unknown`, and therefore explains less variance, overall, the model seems to make better (i.e. more stable and more precise) predictions. Since the variance explained by the random effects is larger than zero, the random effects must be kept. Due to its better performance, the data without `unknown` are used in future models.
 
@@ -1379,10 +1379,10 @@ ggplot(passive_sample_clean,
 Overall, non-adversative constructions occured more frequently than adversative constructions in our data, with a ratio of 69.08% to 30.92%. However, adversative constructions were more common with [se faire]{.smallcaps} than with [être]{.smallcaps}: While only about one fifth (22.66%) of [être]{.smallcaps} were adversative, this was the case for two fifths (42.23%) of [se faire]{.smallcaps}.
 
 ```{r adversativity-tab, echo = FALSE}
-kable(table(passive_sample_clean$adversativity) |> 
-  proportions() * 100)
+table(passive_sample_clean$adversativity) |> 
+  proportions() * 100
 
-tab_adv<- table(passive_sample_clean$adversativity, passive_sample_clean$passive_variant)
+tab_adv <- table(passive_sample_clean$adversativity, passive_sample_clean$passive_variant)
 
 kbl((prop.table(tab_adv, margin = 2) * 100), digits = 3, full_width = F, position = "center", col.names = c("Level", "être in %", "se faire in %")) |> 
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
@@ -1467,9 +1467,9 @@ As the multifaceted and partly conflicting literature suggests, the passive is a
 
 -   **verb cluster main effect; interaction with adversativity:** One possible explanation is that certain communication verbs, particularly those with an adversative nuance like *insulter* and *engueuler*, pattern similar to hitting-touching verbs, emphasising the subject’s affectedness. Alternatively, this could reflect a more general tendency for [se faire]{.smallcaps} to appear in contexts where the subject is undergoing an action with a certain intensity, which might be more common with communication verbs than initially assumed?
 
-With regard to our hypotheses, although few significant effects were found, the strong interaction of subject animacy and adversativity clearly shows that [se faire]{.smallcaps} predominently occurs with animate subjects and in adversative contexts. Subject animacy seems to be the main mediating factor: [se faire]{.smallcaps} is very likely for animate subjects in both adversative and non-adversative contexts while its likelihood decreases significantly for inanimate subjects. This is in line with the vast previous evidence on [se faire]{.smallcaps}'s preference for animate subjects [@koenig_semantic_1992; @novakova_construction_2009; @spang-hanssen_quelques_1967; @tasmowski-de_ryck_causatif_1987; @raineri_analyse_2010: 92]. However, our analysis challenge the claim by @tasmowski-de_ryck_causatif_1987 and @spang-hanssen_quelques_1967 that [se faire]{.smallcaps} strictly requires an animate subject: Our data provide evidence of inanimate subjects occuring with [se faire]{.smallcaps} (7%). Consequently, our model predicts that while [se faire]{.smallcaps} has a high chance (55% to 85%) to occur with animate subjects, it may also be found with inanimate subjects, particularly in adversative contexts.
+With regard to our hypotheses, although few significant effects were found, the strong interaction of subject animacy and adversativity clearly shows that [se faire]{.smallcaps} predominently occurs with animate subjects and in adversative contexts. Subject animacy seems to be the main mediating factor: [se faire]{.smallcaps} is very likely for animate subjects in both adversative and non-adversative contexts while its likelihood decreases significantly for inanimate subjects. This is in line with the vast previous evidence on [se faire]{.smallcaps}'s preference for animate subjects [@koenig_semantic_1992; @novakova_construction_2009; @spang-hanssen_quelques_1967; @tasmowski-de_ryck_causatif_1987; @raineri_analyse_2010: 92]. However, our analysis challenge the claim by @tasmowski-de_ryck_causatif_1987 and @spang-hanssen_quelques_1967 that [se faire]{.smallcaps} strictly requires an animate subject: Our data provide evidence of inanimate subjects occuring with [se faire]{.smallcaps} (7%). Consequently, our model predicts that while [se faire]{.smallcaps} has a high chance to occur with animate subjects, it may also be found with inanimate subjects, particularly in adversative contexts.
 
-However, as @kupferman_construction_1995 argues, even a strong correlation of subject animacy, adversativity and [se faire]{.smallcaps} does not necessarily imply that the subject is responsible for the event and brings negative consequences upon themselves. Instead, the increased likelihood of [se faire]{.smallcaps} with inanimate subjects in adversative contexts compared to non-adversative contexts suggests that the construction emphasises subject affectedness more than [être]{.smallcaps}. \[Note, however, that inter-rater agreement was lowest for adversativity, suggesting some ambiguity regarding this factor, although it was still considered 'substantial'\]. Overall, we consider these findings to support the theory of [se faire]{.smallcaps} being preferred over canoncial [être]{.smallcaps} when marking subject affectedness.
+However(, as @kupferman_construction_1995 argues,) even a strong correlation of animate subjects, adversative verbs and [se faire]{.smallcaps} does not necessarily imply that the subject is responsible for the event and brings negative consequences upon themselves. Instead, the increased likelihood of [se faire]{.smallcaps} with inanimate subjects in adversative contexts compared to non-adversative contexts suggests that the construction emphasises subject affectedness more than [être]{.smallcaps}. \[Note, however, that inter-rater agreement was lowest for adversativity, suggesting some ambiguity regarding this factor, although it was still considered 'substantial'\]. Overall, we consider these findings to support the theory of [se faire]{.smallcaps} being preferred over canoncial [être]{.smallcaps} when marking subject affectedness.
 
 The remaining factors used to test subject responsibility (subject gender, complement d'agent, modal) did not yield significant effects. This may be taken as further indication for... / this may further strenghthen an argument against subject responsibility and toward subject affectness// The absence of additional significant effects related to subject responsibility may further support this notion.
 

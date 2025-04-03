@@ -1212,8 +1212,6 @@ table(passive_sample_clean$agent_pp, passive_sample_clean$passive_variant)
 
 ### Verb cluster
 
-As can be seen from the distribution of [être]{.smallcaps} and [se faire]{.smallcaps} across different verb clusters in @tbl-cluster, neutral verbs are the most frequent category in both passive variants, making up 87% of all [être]{.smallcaps} constructions and 75% of all [se faire]{.smallcaps} constructions. [se faire]{.smallcaps} is relatively more frequent with communication verbs (11%) and hitting-touching verbs (14%) compared to [être]{.smallcaps} (5% and 8%).
-
 ```{r, include=FALSE}
 
 freq_cluster <- passive_sample_clean |> 
@@ -1225,7 +1223,33 @@ freq_cluster <- passive_sample_clean |>
 freq_cluster_wide <- freq_cluster |> 
   pivot_wider(names_from = passive_variant, values_from = c(n, relative), values_fill = list(n = 0, Relative = 0))
 
+neutral_etre_rel <- freq_cluster_wide |>
+  filter(cluster == "neutral") |> 
+  pull(relative_être)
+
+neutral_sefaire_rel <- freq_cluster_wide |>
+  filter(cluster == "neutral") |> 
+  pull(`relative_se faire`)
+
+communication_etre_rel <- freq_cluster_wide |>
+  filter(cluster == "communication") |> 
+  pull(relative_être)
+
+communication_sefaire_rel <- freq_cluster_wide |>
+  filter(cluster == "communication") |> 
+  pull(`relative_se faire`)
+
+hittingtouching_etre_rel <- freq_cluster_wide |>
+  filter(cluster == "hitting-touching") |> 
+  pull(relative_être)
+
+hittingtouching_sefaire_rel <- freq_cluster_wide |>
+  filter(cluster == "hitting-touching") |> 
+  pull(`relative_se faire`)
+
 ```
+
+As can be seen from the distribution of [être]{.smallcaps} and [se faire]{.smallcaps} across different verb clusters in @tbl-cluster, neutral verbs are the most frequent category in both passive variants, making up `r   paste0(neutral_etre_rel * 100, "%")` of all [être]{.smallcaps} constructions and `r   paste0(neutral_sefaire_rel * 100, "%")` of all [se faire]{.smallcaps} constructions. [se faire]{.smallcaps} is relatively more frequent with communication verbs (`r   paste0(communication_sefaire_rel * 100, "%")`) and hitting-touching verbs (`r   paste0(hittingtouching_sefaire_rel * 100, "%")`) compared to [être]{.smallcaps} (`r   paste0(communication_etre_rel * 100, "%")` and `r   paste0(hittingtouching_etre_rel * 100, "%")`).
 
 ::: {#tbl-cluster}
 ```{r, echo=FALSE}
@@ -1236,7 +1260,7 @@ freq_cluster_wide |>
 
 ```
 
-Frequencies of [être]{.smallcaps} and [se faire]{.smallcaps} across the verb clusters
+Frequencies of [être]{.smallcaps} and [se faire]{.smallcaps} Across the Verb Clusters
 :::
 
 ```{r communication-values, echo = FALSE}
@@ -1280,11 +1304,13 @@ hittingtouching_predicted <- cluster_predicted |>
 @fig-cluster-model-plot shows the predicted probabilities of [se faire]{.smallcaps} for each verb cluster, along with the confidence intervals. Note that these predictions are based on the context of animate subjects and adversative verbs, which are the reference levels in our model. For this reason, [se faire]{.smallcaps} is favoured over [être]{.smallcaps} for all three verb cluster categories. Communication verbs have the highest predicted probability of [se faire]{.smallcaps}, (`r   paste0(round(communication_predicted * 100, 2), "%")`). This supports our surprising finding that [se faire]{.smallcaps} is preferred for communication verbs, contrary to our hypothesis. Neutral verbs show a lower probability (`r   paste0(round(neutral_predicted * 100, 2), "%")`) suggesting a weaker preference for [se faire]{.smallcaps} over [être]{.smallcaps}. Hitting-touching verbs have a probability of (`r   paste0(round(hittingtouching_predicted * 100, 2), "%")`), but their confidence interval overlaps with that of neutral verbs, indicating no significant difference between these two categories. The wide confidence intervals, particularly for hitting-touching verbs, suggest a variability or uncertainty in the estimates, which aligns with the non-significant effect found for this category in our statistical model.
 
 ::: {#fig-cluster-model-plot}
-```{r cluster-model-plot, fig.cap = "Figure X: ...", echo = FALSE}
+```{r cluster-model-plot, echo = FALSE}
 
 ggpredict(final_model, "cluster") |> 
   plot()
 ```
+
+Predicted Probabilities of [se faire]{.smallcaps} Across the Verb Clusters
 :::
 
 Looking at the most frequent communication verb lemmas in our data in @tbl-cluster-lemmas, we find that *insulter* (10 occurrences), *engueuler* (7 occurrences), and *représenter* (5 occurrences) appear most often with [se faire]{.smallcaps}. Notably, *insulter* and *engueuler* are adversative and generally occur with an animate undergoer, which may explain their preference for [se faire]{.smallcaps}. Conversely, the most frequent lemmas with [être]{.smallcaps} are *appeler*, *inscrire*, *rappeler*, and *représenter* (each with 4 occurences), which are annotated as non-adversative in our dataset, except for one occurence.
@@ -1307,12 +1333,12 @@ freq_communication_wide <- freq_communication |>
 ```{r, echo=FALSE}
 
 freq_communication_wide |> 
-  kable(format = "html", digits = 2, col.names = c("Lemma", "être", "se faire", "être in %", "se faire in %")) |> 
+  kable(format = "html", digits = 2, col.names = c("Lemma", "être (absolute)", "se faire (absolute)", "être (proportion)", "se faire (proportion)")) |> 
   kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 
 ```
 
-Frequencies for communication lemmas
+Frequencies of Lemmas in the Communication Verb Cluster for [être]{.smallcaps} and [se faire]{.smallcaps}
 :::
 
 Random intercepts...
@@ -1333,22 +1359,45 @@ ranef |>
 
 Given this pattern, in line with our initial hypothesis one possible explanation is that adversativity influences the choice of [se faire]{.smallcaps} within the communication verb cluster. However, there was no significant interaction between the verb cluster and the adversativity factor.
 
-As shown by the absolute frequencies of verb clusters across adversativity levels in **Figure X**, [se faire]{.smallcaps} is used more frequently with adversative communication verbs than with non-adversative communication verbs, while the opposite pattern can be observed for [être]{.smallcaps}. However, this trend is not strong enough to be statistically significant. **Figure X** also illustrates that neutral, non-adversative verbs are predominant with [être]{.smallcaps}, which reflects that [être]{.smallcaps} is the default passive variant.
+As shown by the absolute frequencies of verb clusters across adversativity levels in @fig-interaction-adv-cluster, [se faire]{.smallcaps} is used more frequently with adversative communication verbs than with non-adversative communication verbs, while the opposite pattern can be observed for [être]{.smallcaps}. However, this trend is not strong enough to be statistically significant. @fig-interaction-adv-cluster also illustrates that neutral, non-adversative verbs are predominant with [être]{.smallcaps}, which reflects that [être]{.smallcaps} is the default passive variant.
 
+::: {#fig-interaction-adv-cluster}
 ```{r interaction-adv-cluster, echo=FALSE}
 
 ggplot(passive_sample_clean, 
        aes(x = adversativity, fill = cluster)) +
   geom_bar(position = "dodge") +  
   facet_wrap(~ passive_variant) +  
-  labs(title = "Verb Cluster and Adversativity in the Passive Variants",
-       x = "Adversativity",
+  labs(x = "Adversativity",
        y = "Number of Observations", 
        fill = "Verb Cluster") +
   scale_fill_manual(values = c("#FC8D62", "#8DA0CB", "lightblue")) +
   theme_bw()
 
 ```
+
+Frequencies of [être]{.smallcaps} and [se faire]{.smallcaps} by Verb Cluster and Adversativity
+:::
+
+Similarly to the adversativity of the verb, the animacy of the subject could account for communication verbs like *insulter* and *engueuler*, which typically occur with an animate undergoer. @fig-interaction-anim-cluster shows the absolute Frequencies of [être]{.smallcaps} and [se faire]{.smallcaps} across verb clusters and subject animacy.
+
+::: {#fig-interaction-anim-cluster}
+```{r interaction-anim-cluster, echo=FALSE}
+
+ggplot(passive_sample_clean, 
+       aes(x = subj_animacy, fill = cluster)) +
+  geom_bar(position = "dodge") +  
+  facet_wrap(~ passive_variant) +  
+  labs(x = "Subject Animacy",
+       y = "Number of Observations", 
+       fill = "Verb Cluster") +
+  scale_fill_manual(values = c("#FC8D62", "#8DA0CB", "lightblue")) +
+  theme_bw()
+
+```
+
+Frequencies of [être]{.smallcaps} and [se faire]{.smallcaps} by Verb Cluster and Subject Animacy
+:::
 
 ## Adversativity
 

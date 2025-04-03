@@ -1015,6 +1015,26 @@ anova_final_model <- anova(final_model, null_model, test="Chisq")
 kable(anova_final_model)
 #relative likelihood
 (exp((AIC(null_model)-AIC(final_model))/2))
+
+# kbl(anova_final_model)
+# #relative likelihood
+# (exp((AIC(null_model)-AIC(final_model))/2))
+
+rel_likelihood <- exp((AIC(null_model) - AIC(final_model)) / 2)
+
+# ANOVA to data frame
+anova_df <- as.data.frame(anova_final_model)
+
+# p-value
+anova_df$`Pr(>Chisq)` <- format(anova_df$`Pr(>Chisq)`, scientific = TRUE, digits = 3)
+
+# add relative likelihood
+anova_df$`Relative Likelihood` <- c(NA, rel_likelihood)
+
+# kable table
+kbl(anova_df, format = "html", digits = 3) |> 
+  kable_styling(bootstrap_options = c("striped", "hover","condensed", "responsive")) |> 
+  row_spec(2, bold = TRUE)
 ```
 
 The ANOVA shows that our model is highly significant (LR-test=181.02, $p$ \<0.0001), indicating a strong improvement over the null model. The model has a vastly higher relative likelihood compared to the null model.

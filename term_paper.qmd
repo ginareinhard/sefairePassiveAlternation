@@ -609,7 +609,7 @@ sefaire_sample_annotated <- sefaire_sample_annotated |>
 
 # remove now redundant "Reference", remove "Kommentar" column, put new "reference" column in first position
 sefaire_sample_annotated <- sefaire_sample_annotated |> 
-  select(-Reference, -Kommentar) |> 
+  dplyr::select(-Reference, -Kommentar) |> 
   relocate(reference, speaker)
 
 # 2. être
@@ -620,7 +620,7 @@ etre_sample_annotated <- etre_sample_annotated |>
 
 # remove now redundant "Reference" column, remove now redundant "Reference", remove "Kommentar" column, put new "reference" und "speaker" column in first position
 etre_sample_annotated <- etre_sample_annotated |> 
-  select(-Reference, -Kommentar) |> 
+  dplyr::select(-Reference, -Kommentar) |> 
   relocate(reference, speaker)
 
 #still some differences left: être has an "ID" column which se faire does not; être has two agent_pp columns because it was annotated by A and B while se faire only has one, since agent_pp of se faire constructions was annotated there one person (annotator A)
@@ -648,7 +648,7 @@ passive_sample_combined <- passive_sample_combined |>
   mutate(across(where(is.factor), droplevels)) # to not include NA as a level
 # summary
 passive_sample_combined |> 
-  select(subj_animacy_A, subj_animacy_B, subj_gender_A, subj_gender_B, agent_pp_A, agent_pp_B, modal_A, modal_B, tam_A, tam_B, cluster_A, cluster_B, adversativity_A, adversativity_B) |> 
+  dplyr::select(subj_animacy_A, subj_animacy_B, subj_gender_A, subj_gender_B, agent_pp_A, agent_pp_B, modal_A, modal_B, tam_A, tam_B, cluster_A, cluster_B, adversativity_A, adversativity_B) |> 
   summary()
 ```
 
@@ -755,7 +755,7 @@ passive_sample_clean <- passive_sample_combined |>
 
 # remove now-redundant A and B columns, remove ID (irrelevant since it's only there for être)
 passive_sample_clean <- passive_sample_clean |> 
-  select(-subj_animacy_A, -subj_animacy_B, -subj_gender_A, -subj_gender_B, -agent_pp_A, -agent_pp_B, -modal_A, -modal_B, -tam_A, -tam_B, -cluster_A, -cluster_B, -adversativity_A, -adversativity_B, -ID)
+  dplyr::select(-subj_animacy_A, -subj_animacy_B, -subj_gender_A, -subj_gender_B, -agent_pp_A, -agent_pp_B, -modal_A, -modal_B, -tam_A, -tam_B, -cluster_A, -cluster_B, -adversativity_A, -adversativity_B, -ID)
 ```
 
 The sample comprised 1064 observations: 532 for [se faire]{.smallcaps} and [être]{.smallcaps} each. Taking a look at the distribution among the categories to identify scarce combinations and patterns that could be problematic for analysis: <!-- create nicer looking table -->

@@ -978,8 +978,8 @@ Looking at the log odds of the significant variables, it becomes apparent that c
 
 ```{r coefficients-log-odds, echo = FALSE}
 final_model_coef <- coefficients(summary(final_model))[,"Estimate"]
-final_model_coef
-#"a negative coefficient expressed as a logit (or log odds) shows that this outcome is less probably than the reference level"
+#"a negative coefficient expressed as a logit (or log odds) shows that this outcome is less probably than the reference level", positive -> more likely than reference level
+kable(final_model_coef)
 ```
 
 **Odds Ratios**
@@ -1043,7 +1043,7 @@ anova_df$`Pr(>Chisq)` <- format(anova_df$`Pr(>Chisq)`, scientific = TRUE, digits
 anova_df$`Relative Likelihood` <- c(NA, rel_likelihood)
 ```
 
-```{r anova-kable-tab}
+```{r anova-kable-tab, echo = FALSE}
 # kable table
 kbl(anova_df, format = "html", digits = 3) |> 
   kable_styling(bootstrap_options = c("striped", "hover","condensed", "responsive")) |> 
@@ -1127,6 +1127,8 @@ prop.table(table(passive_sample_clean$subj_animacy, passive_sample_clean$passive
 #table(passive_sample_clean$subj_animacy) |> 
 #  sort(decreasing = TRUE) |> 
 #  proportions()
+
+kable(tab_animacy)
 ```
 
 Overall, two-thirds of the constructions have animate subjects (mode: animate; 704 vs. 360 inanimate). However, in *être* passives, inanimate subjects are more frequent than animate ones (195 animate, 332 inanimate; about 39% animate, 61% inaniamte), whereas *se faire* passives show a strong preference for animate subjects (341 animate, 26 inanimate - 93% animate, 7% inanimate), as shown in these plots:

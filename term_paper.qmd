@@ -233,26 +233,24 @@ Thus, causative and passive readings of [se faire]{.smallcaps} are distinguished
 
 This debate has been central to the investigation of [se faire]{.smallcaps} and cannot be left aside. However, even if the status of [se faire]{.smallcaps} has been the subject of disagreement and discussion, the literature clearly shows that there is a passive reading associated with this construction. This is independent of whether the passive sense emerges from within the construction or from the components it occurs with, or whether it has an underlying causative meaning. By comparing [se faire]{.smallcaps} and [être]{.smallcaps} constructions, and examining the factors contributing to the choice of one or the other, we aim to shed light on this debate from a corpuslinguistic perspective. <!-- (-> exclude causative readings?). Can our findings contribute to the debate of whether se faire deserves passive-status? If not: no need to spell out the debate in detail. -->
 
-## [être]{.smallcaps} and [se faire]{.smallcaps}: Competition or Complementation?
+## [être]{.smallcaps} and [se faire]{.smallcaps}: competition or complementation?
 
 ### Defining the variable context
 
-Both [se faire]{.smallcaps} and [être]{.smallcaps} passives are available for the active diathesis [@novakova_construction_2009 : 108] and assign the role of the undergoer to the subject referent. @kupferman_construction_1995 sees the two constructions as semantically synonymous as they both convey a passive sense. Therefore, the two variants form an alternation and are expected to compete with each other in contexts where passive is to be expressed. We find that both variants may be used in one context:
+Both [se faire]{.smallcaps} and [être]{.smallcaps} passives are available for the active diathesis [@novakova_construction_2009 :108] and assign the role of the undergoer to the subject referent. Therefore, the two variants form an alternation and are expected to compete with each other in contexts where passive is expressed. We find that both variants may be used in the same context:
 
 > 8.  *Je remarque d' ailleurs que ce sont souvent ceux qui filment qui **se font éborgner** ou **sont blessés** par des tirs de LBD*. (ParlaMint)\
 >     "Incidentally, I've noticed that it's often those filming who **get their eyes poked out** or **are injured** by LBD fire."
 
-However, some scholars speak of semantic differences between the canonical être passive and [se faire]{.smallcaps}: As Novakova [-@novakova_construction_2009: 108] notes, the constructions differ in semantic nuances, as they have *un sens proche mais pas identique* ("a similar but not identical sense").
+However, some scholars speak of semantic differences between the canonical être passive and [se faire]{.smallcaps}: As Novakova [-@novakova_construction_2009: 108] notes, the constructions differ in semantic nuances, as they have *un sens proche mais pas identique* ('a similar but not identical sense').
 
-According to Raineri [-@raineri_analyse_2010: 87], the [se faire]{.smallcaps} is marked and predominantly used in informal contexts. In contrast to the canonical *être* passive, [se faire]{.smallcaps} is reported to prefer spoken language over written language. Additionally, [se faire]{.smallcaps} has a strongly figurative sense that être does not have: It is often used as part of idiomatic or lexicalised expressions [@raineri_analyse_2010: 165; @novakova_construction_2009: 117], and is associated with a "besoin d’expressivité and extravagance" ("a need of expressivity and extravagance") [@bellec_construction_2014: 206].
+According to Raineri [-@raineri_analyse_2010: 87], [se faire]{.smallcaps} is marked and predominantly used in informal contexts. In contrast to canonical [être]{.smallcaps}, [se faire]{.smallcaps} is reported to prefer spoken over written language (**source?**). Additionally, [se faire]{.smallcaps} has a strongly figurative sense that [être]{.smallcaps} is missing: It is often used as part of idiomatic or lexicalised expressions [@raineri_analyse_2010: 165; @novakova_construction_2009: 117], and is associated with a "besoin d’expressivité and extravagance" ('a need of expressivity and extravagance') [@bellec_construction_2014: 206].
 
-Previous research also suggests that se faire passive is more likely to have a causative undertone while the être passive is more neutral. As discussed in @sec-debate, it has been proposed that the constructions vary in their degree of passivity and that even within the [se faire]{.smallcaps} passive, there exists a continuum between causatity and passivity [@raineri_analyse_2010: 154-166]. This demonstrates that the two passive variants are not semantically identical but rather potentially carry different meanings. These meanings may be more or less pronounced depending on the context. This potential semantic difference introduces certain difficulties in the contrastive analysis of the alternation.
+Previous research also suggests that [se faire]{.smallcaps} is more likely to have a causative undertone while [être]{.smallcaps} is more neutral. As discussed in @sec-debate, it has been proposed that the constructions vary in their degree of passivity and that there exists a continuum between causatitivity and passivity within [se faire]{.smallcaps} [@raineri_analyse_2010: 154-166], and some constructions may be more passive than others. This demonstrates that the two passive variants are not semantically identical but rather carry subtly different meanings. These differences may be more or less pronounced depending on the context. They introduce certain challenges in the contrastive analysis of the alternation and deciding where to draw the line between passive and causative is a nuanced task. Bohmann et al. [-@bohmann_large-scale_2023: 35-36] face similar challenges when defining the variable context of the English passive alternation of [be]{.smallcaps} and [get]{.smallcaps}.
 
-The passive/causative continuum makes the definition of the variable context particularly challenging as some constructions may be more passive than others. Therefore, deciding where to draw the line between a passive and causative construction is a nuanced task. Bohmann et al. [-@bohmann_large-scale_2023: 35-36] face similar challenges when defining the variable context of the English be and get passive alternation.
+Since our aim is to investigate the passive alternation of [être]{.smallcaps} and [se faire]{.smallcaps}, we aim to to ensure that we only compare [être]{.smallcaps} passive with real passive [se faire]{.smallcaps} constructions, and not with causative constructions. We follow Raineri [-@raineri_analyse_2010: 165] in including only [se faire]{.smallcaps} constructions that have a natural paraphrase with [être]{.smallcaps} in order to investigate only constructions participating in the alternation. Agreeing with Bohmann [-@bohmann_large-scale_2023: 35] who claim that "all extracted forms should be genuine instances of the variable under investigation" and that "only cases where both variants can be used interchangeably should be considered", we aim to exclude non-contrastive constructions, such as idioms and ditransitive verbs. We explain our criteria for excluding constructions in detail in @sec-filtering-criteria.
 
-Since our aim is to investigate the passive alternation of être and [se faire]{.smallcaps}, it is important to ensure that we only compare the être passive with real passive [se faire]{.smallcaps} constructions, and not with causative constructions. We follow @raineri_analyse_2010 \[165\] in including only [se faire]{.smallcaps} constructions that have a natural paraphrase with the *être* passive in order to investigate only constructions participating in the alternation. Agreeing with @bohmann_large-scale_2023 [35] who claim that "all extracted forms should be genuine instances of the variable under investigation" and that "only cases where both variants can be used interchangeably should be considered", we aim to exclude non-contrastive constructions, such as idioms and ditransitive verbs. We explain our criteria for excluding constructions in detail in section...
-
-We recognize this "fuzzy" [@bohmann_large-scale_2023: 50] variable context as both a challenge and an opportunity: It is precisely these subtle differences that make the analysis interesting and our research valuable. Consequently, our study seeks to identify the exact factors influencing the choice between the two variants by statistically modeling real language data. Our central research question is: What factors determine the [se faire]{.smallcaps} vs. “être” passive alternation in spoken French, specifically in parliamentary debates? In other words: what factors influence speakers’ choice between these two constructions? In the following sections, we outline the factors we anticipate will shape this choice and present a hypothesis of passive preference for each.
+We recognize this "fuzzy" [@bohmann_large-scale_2023: 50] variable context as both a challenge and an opportunity: It is precisely these subtle differences that make the analysis interesting and our research valuable. Consequently, our study seeks to identify the exact factors influencing the choice between the two variants by statistically modeling real language data. Our central research question is: What factors determine the [se faire]{.smallcaps}: [être]{.smallcaps} passive alternation in spoken French, specifically in parliamentary debates? In other words: what factors influence speakers’ choice between these two constructions? In the following sections, we outline the factors we anticipate will shape this choice and present our hypotheses of passive preference.
 
 <!-- être: exclude adjectives and some participles that do not form the passive (similar to @bohmann_large-scale_2023 [36])/ "instances that allow for gradation" @hundt_be-_2024 [92];; Maybe better in Borderline cases/ filtering criteria) -->
 
@@ -480,7 +478,7 @@ For the être passive constructions, we searched constructions using a CQL expre
 -   final sample: same amount of constructions for être and se faire, same lemmas, seed set -->
 ```
 
-### Manual filtering exclusion criteria/ Borderline Cases
+### Manual filtering exclusion criteria/ Borderline Cases {#sec-filtering-criteria}
 
 As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + infinitive can sometimes have a 'passive effect' even without a direct 1:1 alternation with *être*. However, for our study of *se faire* + Infinitive and *être* + past participle as a passive alternation, our main criterion was to include only those constructions that could be paraphrased with the *être* passive. Consequently, we excluded expressions that could not be rephrased with the *être* passive, either because the *être* construction was ungrammatical or the meaning was fundamentally altered.
 
@@ -808,10 +806,10 @@ In addition to conducting a descriptive analysis of the data, we employed a bino
 
 ### Levels {#sec-levels}
 
-The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (`passive_variant`: être; `agent_pp`: 0; `modal`: no; `tam`: non-progressive, cluster: `neutral`, subject animacy: `inanimate`). If this would negatively affect the stability of the model, the most frequent (`subject animacy`: animate,`subj_gender`: masculine) or the most evenly distributed case (`adversativity`: adversative) was selected.
+The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (`passive_variant`: être; `agent_pp`: 0; `modal`: no; `tam`: non-progressive, cluster: `neutral`, subject animacy: `inanimate`). If this would negatively affect the stability of the model, the most frequent (`subj_animacy`: animate,`subj_gender`: masculine) or the most evenly distributed case (`adversativity`: adversative) was selected.
 
 +--------------------+-----------------+------------------------------------------+
-| Variable           | Label           | Levels                                   |
+| Factors            | Label           | Levels                                   |
 +====================+=================+==========================================+
 | Passive variant    | passive_variant | être, se faire                           |
 +--------------------+-----------------+------------------------------------------+
@@ -869,7 +867,7 @@ passiveVariant & \sim subjAnimacy + subjGender + agentPP + modal + tam + cluster
 \end{align*}
 $$
 
-Although the main effect of `subj_gender` cannot be interpeted due to its participation in an interaction, it is striking that the odds ratio of `subject gender[unknown]` is very high with a huge confidence interval of 10.49 – 124.99. The AIC is 771.3 with an R^2^ of 0.599 when excluding random effects and 0.748 when accounting for them. The vif-analysis reveals no high collinearity values for `subject gender` or the interaction `subject animacy:subject gender`. However, as explained in @sec-data-preprocessing, we suspect an annotated-related artifact related to "unknown". We decide to compare the model to one fitted on the data set that excludes "unknown" constructions.
+Although the main effect of `subj_gender` cannot be interpeted due to its participation in an interaction, it is striking that the odds ratio of `subj_gender[unknown]` is very high with a huge confidence interval of 10.49 – 124.99. The AIC is 771.3 with an R^2^ of 0.599 when excluding random effects and 0.748 when accounting for them. The vif-analysis reveals no high collinearity values for `subj_gender` or the interaction `subj_animacy:subj_gender`. However, as explained in @sec-data-preprocessing, we suspect an annotated-related artifact related to the level `unknown`. For that reason, we decide to compare the model to one fitted on the data set that excludes `unknown` constructions.
 
 ```{r max-model-unknown, output = FALSE}
 #| code-fold: true
@@ -895,7 +893,7 @@ kable(vif(final_model_unknown))
 
 #### Model without "unknown"
 
-After excluding "unknown", the model immediately looks more stable. The improvement is reflected in the much smaller AIC of 732.5. The model has an R^2^ of 0.46 / 0.67. Although this is lower than the model without "unknown", and therefore explains less variance, overall, the model seems to make better (i.e. more stable and more precise) predictions. Since the variance explained by the random effects is larger than zero, the random effects must be kept. Due to its better perfomrance, the data without "unknown" are used in future models.
+After excluding `unknown`, the model's AIC improves to 732.5. The model has an R^2^ of 0.46 / 0.67. Although this is lower than the model without `unknown`, and therefore explains less variance, overall, the model seems to make better (i.e. more stable and more precise) predictions. Since the variance explained by the random effects is larger than zero, the random effects must be kept. Due to its better performance, the data without `unknown` are used in future models.
 
 ```{r full-passive-glmer, output = FALSE}
 #| code-fold: true
@@ -917,7 +915,7 @@ tab_model(full_passive_glmer, show.aic = TRUE)
 
 #### Model without non-significant interactions
 
-All non-significant interactions (`cluster:adversativity`, `subjAnimacy:cluster`, `subjAnimacy:subjGender`) are removed, improving the AIC to 725.4 with an R^2^ of 0.450 / 0.664. Thus, without the interactions, model accuracy increases while the explained variance decreases slightly. With $p$-values \> 0.05, the categories `subj_gender`, `agent_pp`, `modal` and `tam` are found to be non-significant.
+All non-significant interactions (`cluster:adversativity`, `subj_animacy:cluster`, `subj_animacy:subj_gender`) are removed, improving the AIC to 725.4 with an R^2^ of 0.450 / 0.664. Thus, without the interactions, model accuracy increases while the explained variance decreases slightly. With $p$-values \> 0.05, the categories `subj_gender`, `agent_pp`, `modal` and `tam` are found to be non-significant.
 
 ```{r model-back-1, output = FALSE}
 #| code-fold: true
@@ -974,7 +972,7 @@ testDispersion(sim_res)
 
 **Log odds**
 
-Looking at the log odds of the significant variables, it becomes apparent that communication verbs boost the chance of [se faire]{.smallcaps} being used, while [être]{.smallcaps} is more likely in non-adversative contexts with inanimate subjects. Although non-significant, feminine subjects favour [se faire]{.smallcaps} over [être]{.smallcaps}.
+Looking at the log odds of the significant variables, it becomes apparent that communication verbs boost the chance of [se faire]{.smallcaps} being used, while [être]{.smallcaps} is more likely in non-adversative contexts with inanimate subjects. (Although non-significant, feminine subjects are more likely to occur with [se faire]{.smallcaps} than masculine subjects.)
 
 ```{r coefficients-log-odds, echo = FALSE}
 final_model_coef <- coefficients(summary(final_model))[,"Estimate"]
@@ -992,21 +990,20 @@ exp(final_model_coef)
 #exp(model_2_coef) / (1 + exp(model_2_coef))
 ```
 
-The intercept of the final model is 2.78. This means that in the context of the reference levels (subject is animate and masculine, the cluster of the verb is neutral and the construction has an adversative sense), the chances of [se faire]{.smallcpas} being chosen are 2.78 times greater than [être]{.smallcaps}. The exact values of odds ratios are interpreted with regard to our hypothesies in @sec-results-log-effects.
+The intercept of the final model is 2.78. This means that in the context of the reference levels (subject is animate and masculine, the cluster of the verb is neutral and the construction has an adversative sense), the chances of [se faire]{.smallcpas} being chosen are 2.78 times greater than [être]{.smallcaps}. The exact values of odds ratios are interpreted with regard to our hypothesies in @sec-results.
 
 ### Concordance Index and Significance
 
 As Levshina [-@levshina_how_2015: 256] describes, the concordance index measures the ability of the model to discriminate correctly by providing the proportion of times when the model predicts the use of the variant correctly.
 
-```{r concordance-index}
-#| code-fold: true
+```{r concordance-index, echo = FALSE}
 predictions <- predict(final_model, type = "response", na.action = na.omit)
 outcome <- as.numeric(na.omit(passive_sample_clean)$passive_variant) - 1
 
-Hmisc::somers2(predictions, outcome)["C"]
+concordance_final_model <- Hmisc::somers2(predictions, outcome)["C"]
 ```
 
-The model has a high concordance index of 0.94. According this to the scale reported in Levshina [-@levshina_how_2015: 259], this indicates "outstanding discrimination".
+The model has a high concordance index of `r   round(concordance_final_model, 2)`. According to the scale reported in Levshina [-@levshina_how_2015: 259], this indicates "outstanding discrimination".
 
 Additonally, we apply an overall significance test by comparing it to a model without predictors (i.e. null model) using an ANOVA [@gries_statistics_2021: 445-446].
 
@@ -1084,7 +1081,7 @@ The ANOVA shows that our model is highly significant (LR-test=181.02, $p$ \<0.00
 -   Model evaluation -->
 ```
 
-# Results
+# Results {#sec-results}
 
 Taking a look at the data:
 
@@ -1134,7 +1131,7 @@ kable(tab_animacy)
 
 Overall, two-thirds of the constructions have animate subjects (mode: animate; 704 vs. 360 inanimate). However, in *être* passives, inanimate subjects are more frequent than animate ones (195 animate, 332 inanimate; about 39% animate, 61% inaniamte), whereas *se faire* passives show a strong preference for animate subjects (341 animate, 26 inanimate - 93% animate, 7% inanimate), as shown in these plots:
 
-qualitative analysis: one example from our corpus of an inaniamte construction?
+qualitative analysis: one example from our corpus of an inanimate construction?
 
 ```{r animacy-descriptive-plots, echo = FALSE}
 passive_sample_clean |> 
@@ -1382,8 +1379,8 @@ ggplot(passive_sample_clean,
 Overall, non-adversative constructions occured more frequently than adversative constructions in our data, with a ratio of 69.08% to 30.92%. However, adversative constructions were more common with [se faire]{.smallcaps} than with [être]{.smallcaps}: While only about one fifth (22.66%) of [être]{.smallcaps} were adversative, this was the case for two fifths (42.23%) of [se faire]{.smallcaps}.
 
 ```{r adversativity-tab, echo = FALSE}
-table(passive_sample_clean$adversativity) |> 
-  proportions() * 100
+kable(table(passive_sample_clean$adversativity) |> 
+  proportions() * 100)
 
 tab_adv<- table(passive_sample_clean$adversativity, passive_sample_clean$passive_variant)
 

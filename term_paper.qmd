@@ -1333,22 +1333,6 @@ freq_communication_wide |>
 Frequencies of Lemmas in the Communication Verb Cluster for [être]{.smallcaps} and [se faire]{.smallcaps}
 :::
 
-Random intercepts...
-
-```{r ranef-final-model, echo = FALSE}
-ranef <- as.data.frame(ranef(final_model))
-
-ranef |> 
-  filter(grpvar == "lemma") |>
-  filter(condval < -0.8 | condval > 0.8) |> 
-  ggplot(aes(x = reorder(grp, condval), y = condval)) +
-  geom_point() +
-  geom_errorbar(aes(ymin=condval-condsd, ymax=condval+condsd)) +
-  labs(x = "Lemma", 
-       y = "Variation in intercept estimate (logit)") +
-  coord_flip()
-```
-
 Given this pattern, in line with our initial hypothesis one possible explanation is that adversativity influences the choice of [se faire]{.smallcaps} within the communication verb cluster. However, there was no significant interaction between the verb cluster and the adversativity factor.
 
 As shown by the absolute frequencies of verb clusters across adversativity levels in @fig-interaction-adv-cluster, [se faire]{.smallcaps} is used more frequently with adversative communication verbs than with non-adversative communication verbs, while the opposite pattern can be observed for [être]{.smallcaps}. However, this trend is not strong enough to be statistically significant. @fig-interaction-adv-cluster also illustrates that neutral, non-adversative verbs are predominant with [être]{.smallcaps}, which reflects that [être]{.smallcaps} is the default passive variant.
@@ -1371,7 +1355,7 @@ ggplot(passive_sample_clean,
 Frequencies of [être]{.smallcaps} and [se faire]{.smallcaps} by Verb Cluster and Adversativity
 :::
 
-Similarly to the adversativity of the verb, the animacy of the subject could account for communication verbs like *insulter* and *engueuler*, which typically occur with an animate undergoer. @fig-interaction-anim-cluster shows the absolute Frequencies of [être]{.smallcaps} and [se faire]{.smallcaps} across verb clusters and subject animacy.
+Similarly to the adversativity of the verb, the animacy of the subject could play a role in the distribution of [se faire]{.smallcaps} and [être]{.smallcaps} with communication verbs like *insulter* and *engueuler*, which typically occur with an animate undergoer. Again, a trend can be observed in the frequencies, but there is no significant interaction between the verb cluster and the animacy factors. @fig-interaction-anim-cluster shows the absolute frequencies of [être]{.smallcaps} and [se faire]{.smallcaps} across verb clusters and subject animacy. [être]{.smallcaps} is more frequent with communication verbs when the subject is inanimate, whereas [se faire]{.smallcaps} is more common with communication verbs when the subject is animate.
 
 ::: {#fig-interaction-anim-cluster}
 ```{r interaction-anim-cluster, echo=FALSE}
@@ -1482,7 +1466,9 @@ mosaicplot(subj_gender ~ passive_variant,
 
 As the multifaceted and partly conflicting literature suggests, the passive is a complex and nuanced phenomenon. This entails some challenges for the systematic study of both passive alternations in general, and of [se faire]{.smallcaps} and [être]{.smallcaps} specifically. Firstly, the variable context is necessarily broad due to [se faire]{.smallcaps}'s similarity to the structurally identical causative construction. As has been shown, several borderline cases can be interpreted as either causative or passive (sometimes even both) depending on the specific context. Similarly, [être]{.smallcaps} constructions range between the stative passive and the progressive passive, with the former sometimes being indistingushable from adjectival constructions. Decisions had to be made regarding inclusion and exclusion criteria; however, a different set of choices could have been equally justified and might have yielded different results. It could be valuable to examine the cases we excluded from our analysis to understand how they differ from genuine passive constructions. This would provide insight into the gray area where passive nuances are present, but no true alternation occurs, allowing for a closer examination of varying degrees of passivity.
 
+-   Verbs like *insulter* (and *engueuler*, which is also frequent with *se faire*) are **colloquial and adversative**, making them more prone to occur with *se faire* rather than the more neutral *être*.
 -   **verb cluster main effect; interaction with adversativity:** One possible explanation is that certain communication verbs, particularly those with an adversative nuance like *insulter* and *engueuler*, pattern similar to hitting-touching verbs, emphasising the subject’s affectedness. Alternatively, this could reflect a more general tendency for [se faire]{.smallcaps} to appear in contexts where the subject is undergoing an action with a certain intensity, which might be more common with communication verbs than initially assumed?
+-   Regarding the animacy factor, initially, we expected the animacy of the subject to have a stronger effect if the verb is from the "hitting-touching" or the "neutral" category. [se faire]{.smallcaps} would be strongly favoured with animate subjects compared to inanimate subjects, while this effect would be weaker with communication verbs, which could favour [être]{.smallcaps} regardless of animacy.
 
 With regard to our hypotheses, although few significant effects were found, the strong interaction of subject animacy and adversativity clearly shows that [se faire]{.smallcaps} predominently occurs with animate subjects and in adversative contexts. Subject animacy seems to be the main mediating factor: [se faire]{.smallcaps} is very likely for animate subjects in both adversative and non-adversative contexts while its likelihood decreases significantly for inanimate subjects. This is in line with the vast previous evidence on [se faire]{.smallcaps}'s preference for animate subjects [@koenig_semantic_1992; @novakova_construction_2009; @spang-hanssen_quelques_1967; @tasmowski-de_ryck_causatif_1987; @raineri_analyse_2010: 92]. However, our analysis challenge the claim by @tasmowski-de_ryck_causatif_1987 and @spang-hanssen_quelques_1967 that [se faire]{.smallcaps} strictly requires an animate subject: Our data provide evidence of inanimate subjects occuring with [se faire]{.smallcaps} (7%). Consequently, our model predicts that while [se faire]{.smallcaps} has a high chance to occur with animate subjects, it may also be found with inanimate subjects, particularly in adversative contexts.
 

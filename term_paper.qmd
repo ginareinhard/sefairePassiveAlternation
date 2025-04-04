@@ -203,7 +203,7 @@ Labelle [-@labelle_anticausativizing_2013: 23] adopts a syntactic approach, prop
 
 These accounts offer only a brief glimpse into the complex analysis of [se faire]{.smallcaps}. How does the passive reading emerge, and how does it differ from the syntactically identical causative reading? These questions remain controversial, and will be discussed in the following @sec-debate. The following @sec-debate will explore the controversial issues surrounding the passive reading, including its distinction from the syntactically identical causative reading.
 
-### Passive vs. Causative: The Debated Passive Status of [se faire]{.smallcaps} {#sec-debate}
+### Passive vs. causative: the debated passive status of [se faire]{.smallcaps} {#sec-debate}
 
 The above-described stance taken by @bellec_construction_2014, @labelle_anticausativizing_2013, @koenig_semantic_1992 and @kupferman_construction_1995 that [se faire]{.smallcaps} is a full-fledged passive construction and clearly separated from the causative is by no means undisputed. The opposing view - that the construction is a type of causative - is also widely represented in the literature. There is also the possibility of a multitude of readings [@kokutani_sur_2005] and of a continuum between causative and passive [-@raineri_analyse_2010: 89, 154-166].
 
@@ -227,7 +227,7 @@ Sometimes both readings are possible and the ambiguity cannot be resolved [@koen
 
 This debate has been central to the investigation of [se faire]{.smallcaps} and cannot be left aside. However, even if the status of [se faire]{.smallcaps} has been the subject of disagreement and discussion, the literature clearly shows that there is a passive reading associated with this construction. This is independent of whether the passive sense emerges from within the construction or from the components it occurs with, or whether it has an underlying causative meaning. By comparing [se faire]{.smallcaps} and [être]{.smallcaps} constructions, and examining the factors contributing to the choice of one or the other, we aim to shed light on this debate from a corpuslinguistic perspective. <!-- (-> exclude causative readings?). Can our findings contribute to the debate of whether se faire deserves passive-status? If not: no need to spell out the debate in detail. -->
 
-## [être]{.smallcaps} and [se faire]{.smallcaps}: competition or complementation?
+## [être]{.smallcaps} and [se faire]{.smallcaps}: competition or complementation? {#sec-factors}
 
 ### Defining the variable context
 
@@ -406,36 +406,24 @@ As @bohmann_large-scale_2023 note in their investigation of the [be]{.smallcaps}
 
 -   English @bohmann_large-scale_2023, East Asian languages @washio_when_1993 and @guan_multifactorial_2024 , Swedish @cuypere_corpus-based_2014 -->
 ```
-# Data and Methods
+# Data and methods
 
 Prior to conducting our study, we preregistered its protocol on the platform AsPredicted (**Wharton Credibility Lab, University of Pennsylvania**) to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed here: <https://aspredicted.org/gp6y-dd8p.pdf>.
 
-## Data Collection
+## Data collection
 
 ### Corpus
 
 In our investigation of spoken French language, we aimed to select a corpus that represents authentic French spoken language. After thorough consideration and exploration of our options, we decided for the French ParlaMint corpus 2.1 [@11356/1431] **(explain why different version than specified in preregistration)**. ParlaMint consists of French parliamentary debates from 2017 to 2020 and contains 38,702,395 tokens (32,214,147 words). We chose this corpus because it is well-documented, POS-tagged and contains rich meta data.
 
-We recognize that the genre of parliamentary debates is quite specialised and our results therefore cannot be generalized to all French spoken language. However, the language of parliamentary debates is a fascinating genre in itself (studied before: references) and is expected to reflect a wide range of topics, thus providing a cross-section of language varieties as they occur in French speech.
+We recognise that the genre of parliamentary debates is quite specialised and our results therefore cannot be generalized to all French spoken language. However, the language of parliamentary debates is a fascinating genre in itself (studied before: references) and is expected to reflect a wide range of topics, thus providing a cross-section of language varieties as they occur in French speech.
 
-We extracted the concordances from the French ParlaMint corpus [@11356/1431] using a CQL expression in SketchEngine. To extract the data we chose a semi-automatic approach that included manual filtering.
+### Semi-automated approach
 
--   We selected an equal number of occurrences of *être* passive and *se faire* passive.
-    -   We made a list of the lemmas in the se faire constructions → used these lemmas to filter the être constructions
+To **extract** our sample we chose a semi-automatic approach that included extraction via CQL expression as well as manual filtering. Our aim was to select an equal number of occurrences of [être]{.smallcaps} and [se faire]{.smallcaps} constructions.
 
-    -   Exclusion of causative reading of se faire constructions: the same verbs have been used with être passive in the same corpus (find/extract the constructions) → depends on how many constructions we have left
--   We have not taken into account impersonal passives (*example from corpus*)
--   être passive: In their active/passive alternation study @da_cunha_lalternance_2020 only chose passive sentences in the compound past tense "NP a été VP" in order to favour verbal passives over adjectival passives (*La porte est ouverte*). However, we chose to include the present tense/all tenses. This decision was based on previous literature suggesting that the present tense favors *se faire* passive over *être* passive, making tense an important factor in our study.
--   In line with @da_cunha_lalternance_2020 we chose complément d'agents introduced by the preposition *par*, avoiding additional variation caused by *de*.
+For this, we first automatically extracted a sample of 1,254 [se faire]{.smallcaps} constructions from the French ParlaMint corpus [@11356/1431] using a CQL expression. After this automatic extraction, we manually filtered the data to exclude false-positive constructions, i.e. constructions that did not fulfil our predefined criteria for [se faire]{.smallcaps} passives (see @sec-filtering-criteria). After manual filtering, the sample comprised 535 [se faire]{.smallcaps} constructions. We annotated the lemmas of these constructions and made a list of them.
 
-```{=html}
-<!-- problem: data are extremely unbalanced (ratio in ParlaMint être vs. se faire: ) -\> making the ratio 50: 50 would distort the reality significantly but if the ratio is kept the model will almost always predict être
-strategy possibilities:
-    -   build a corpus where être is presented more than se faire but not as extreme (approximation, e.g. 40% se faire - 60% etre) ("over/undersampling within limits")
-    -   assign more weight to se faire constructions by "weights=" variable of glm function
-    -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)
-    -   evaluate with precision & recall, not just accuracy (F1-score) -->
-```
 ```{r lemma-list, include=FALSE}
 
 lemmas <- sefaire_sample |> 
@@ -443,19 +431,7 @@ lemmas <- sefaire_sample |>
 
 ```
 
-### Semi-automated approach
-
-As the data are very unbalanced, we took some steps in the data collection process to minimise bias and ensure reproducibility:
-
-**se faire passive**
-
-We automatically extracted a sample of 1,254 *se faire* + infinitive constructions from the ParlaMint 2.0 corpus on Sketch Engine \[source?\] using a CQL expression. After extraction, we manually filtered the data to exclude false-positive constructions (i.e. constructions that were not *se faire* + infinitive constructions) and those that did not fulfil our predefined criteria for *se faire* passives (see below). The final sample comprised 535 \[count with inline code\] *se faire* passives. We then annotated the lemmas of these constructions and relevant linguistic features, such as verb form, subject animacy and grammatical gender, in order to prepare the data for statistical modelling.
-
-**être passive**
-
-For the être passive constructions, we searched constructions using a CQL expression in SketchEngine. We then filtered the concordances using the list of lemmas we have previously collected from the *se faire* constructions. Due to the download limit of SketchEngine, we downloaded these constructions in four subsamples of 9295-9794 concordances. All filtered instances stored in a .csv file and merged to one dataframe in R. For reproducibility, we set a seed using the function setseed( ) and used this to randomly sample the data. The seed was determined by the lottery numbers on Wednesday, 12^th^ March 2025 as provided on the Website <https://www.lotto.de/lotto-6aus49/lottozahlen>. Using this, we took a random sample from the concordance lines that was equal in size to the manually filtered amount of se faire constructions (i.e. 535 -\> 532 (e**xplain reduction**)). The constructions were then manually annotated for the features listed in sec x.
-
--   Our final sample therefore comprises XXX sentences/constructions: XX se faire and XX être passive, ... (short summary)
+We also extracted the [être]{.smallcaps} constructions by using a CQL expression in SketchEngine. We then filtered the concordances using the list of lemmas we had previously collected from the [se faire]{.smallcaps} sample. Due to the download limit of SketchEngine, we downloaded these constructions in four subsamples of 9295-9794 concordances. All filtered instances stored in a .csv file and merged to one dataframe in R. To ensure reproducibility, we set a seed using the function `setseed( )` to randomly sample the data. The seed was determined by the lottery numbers on Wednesday, 12^th^ March 2025 as provided on the Website <https://www.lotto.de/lotto-6aus49/lottozahlen> (removing one digit because they were too long). We then took a random sample from the concordance lines that was equal in size to the manually filtered amount of [se faire]{.smallcaps} constructions (i.e. **535 -\> 532 (**e**xplain reduction**)). The constructions were then manually annotated for the features listed in @sec-factors, in order to prepare the data for statistical modelling.
 
 ```{=html}
 <!--
@@ -463,7 +439,17 @@ For the être passive constructions, we searched constructions using a CQL expre
 -   In Sketch Engine: Import Word List → lemma list extracted from se faire constructions (for comparability of the constructions, making sure that differences between être and se faire are not due to individual differences of the verb) → Filter out only verb lemmas of se faire from concordance lines → download
 -   final sample: same amount of constructions for être and se faire, same lemmas, seed set -->
 ```
-### Manual filtering exclusion criteria/ Borderline Cases {#sec-filtering-criteria}
+<!-- problem: data are extremely unbalanced (ratio in ParlaMint être vs. se faire: ) -\> making the ratio 50: 50 would distort the reality significantly but if the ratio is kept the model will almost always predict êtrestrategy possibilities:    -   build a corpus where être is presented more than se faire but not as extreme (approximation, e.g. 40% se faire - 60% etre) ("over/undersampling within limits")    -   assign more weight to se faire constructions by "weights=" variable of glm function    -   @bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive)    -   evaluate with precision & recall, not just accuracy (F1-score) -->
+
+### Manual filtering exclusion criteria {#sec-filtering-criteria}
+
+-   Exclusion of causative reading of se faire constructions: the same verbs have been used with être passive in the same corpus (find/extract the constructions) → depends on how many constructions we have left
+
+-   We have not taken into account impersonal passives (*example from corpus*)
+
+-   être passive: In their active/passive alternation study @da_cunha_lalternance_2020 only chose passive sentences in the compound past tense "NP a été VP" in order to favour verbal passives over adjectival passives (*La porte est ouverte*). However, we chose to include the present tense/all tenses. This decision was based on previous literature suggesting that the present tense favors *se faire* passive over *être* passive, making tense an important factor in our study.
+
+-   In line with @da_cunha_lalternance_2020 we chose complément d'agents introduced by the preposition *par*, avoiding additional variation caused by *de*.
 
 As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + infinitive can sometimes have a 'passive effect' even without a direct 1:1 alternation with *être*. However, for our study of *se faire* + Infinitive and *être* + past participle as a passive alternation, our main criterion was to include only those constructions that could be paraphrased with the *être* passive. Consequently, we excluded expressions that could not be rephrased with the *être* passive, either because the *être* construction was ungrammatical or the meaning was fundamentally altered.
 
@@ -515,7 +501,7 @@ We excluded:
 
 [^3]: These verbs mainly occur with inanimate subjects (effects, consequences, discontent). @raineri_analyse_2010 [163-164] proposes that the causative meaning is not available for these verbs since the subject is not causing the event. There is also no passive meaning since they cannot cannot occur with a complément d’agent and do not have a paraphrase with être.
 
--\> summary of the sample?
+-\> summary of the sample? Our final sample therefore comprises XXX sentences/constructions: XX se faire and XX être passive, ... (short summary)
 
 ```{=html}
 <!-- ### Annotation Guidelines
@@ -839,7 +825,7 @@ We fit a mixed-effects binomial logistic regression model in `R` following Levsh
 We set a significance threshold p-value of 0.05 and apply backward stepwise selection [@gries_statistics_2021: 366]. Model quality was monitored and compared using the Aikaike Information Criterion (AIC), with preference given to the model with the lower AIC value [@gries_statistics_2021: 366]. Non-significant factors were removed one-by-one, starting with the one with the highest non-significant p-value [@gries_statistics_2021: 366]. Additionally, we evaluated model fit using R^2^, aiming to find the model with the highest possible value and therefore explains most of the variance. Note, however, that Levshina [-@levshina_how_2015] raises concern about the meaningfulness of R^2^ in logistic regression.
 
 ::: panel-tabset
-#### Maximal Model
+#### Maximal model
 
 First, we construct a model that included all the factors described in @sec-levels, the interactions we hypothesise to be significant, and the random effects of speaker and lemma. While the model does not include all theoretically possible interactions, it is considered maximal in the sense that it encompasses all factors and interactions identified in the literature review as potentially meaningful and contributing to passive choice.
 
@@ -916,7 +902,7 @@ summary(model_back_1) #AIC: 725.4
 tab_model(model_back_1, show.aic = TRUE)
 ```
 
-#### Final Model
+#### Final model
 
 Non-significant fixed effects are removed step by step, starting with `tam`, which has the highest $p$-value. At each step, the main effect with the highest $p$-value is eliminated. The final model is reported here. Although `subj_gender` remains non-significant ($p$ \> 0.05), we retain it for theoretical and interpretative reasons. The AIC of 719.2 indicates that removing `agent_pp`, `modal` and `tam` improved the model quality while R^2^ stayed constant at 0.451 / 0.662.
 
@@ -938,7 +924,7 @@ kable(ggpredict(final_model))
 ```
 :::
 
-### Residuals and Coefficients
+### Residuals and coefficients
 
 checking residuals (problematic???) https://cran.r-project.org/web/packages/DHARMa/vignettes/DHARMa.html (recommended in @gries_statistics_2021 [445])
 
@@ -975,7 +961,7 @@ exp(final_model_coef)
 
 The intercept of the final model is 2.78. This means that in the context of the reference levels (subject is animate and masculine, the cluster of the verb is neutral and the construction has an adversative sense), the chances of [se faire]{.smallcpas} being chosen are 2.78 times greater than [être]{.smallcaps}. The exact values of odds ratios are interpreted with regard to our hypothesies in @sec-results.
 
-### Concordance Index and Significance
+### Concordance index and significance
 
 As Levshina [-@levshina_how_2015: 256] describes, the concordance index measures the ability of the model to discriminate correctly by providing the proportion of times when the model predicts the use of the variant correctly.
 
@@ -1088,7 +1074,7 @@ We only have categorical data; therefore mean and standard deviation are not mea
 
 <!-- We found no significant effect of subject gender, complément d'agent, and modal verbs. The significant main effect of subject animacy cannot be interpreted because it is being distorted by its interaction with adversativity. Interpret subject gender nevertheless as a tendency/ possibility? -->
 
-### Subject Animacy
+### Subject animacy
 
 ```{r animacy-descriptive-tables, echo = FALSE}
 table(passive_sample_clean$subj_animacy) |> 
@@ -1131,7 +1117,7 @@ mosaicplot(passive_variant ~ subj_animacy,
 
 The plot shows clearly that in *se faire* passives, the subject is animate in the great majority of cases. In contrast, for *être*, subject animacy is more evenly distributed, with a slight preference for inanimate subjects.
 
-### Subject Gender
+### Subject gender
 
 ```{r gender-descriptive}
 table(passive_sample_unknown$subj_gender) |> 
@@ -1500,7 +1486,7 @@ A limitation of our study is that the lemmas were determined based on those occu
 
 -   implications for causativity debate?
 
-# Conclusion/Outlook
+# Conclusion
 
 -   Future studies: modality (spoken/written) as a factor (compare modalities), analyses on other modalities/varieties/registers
 

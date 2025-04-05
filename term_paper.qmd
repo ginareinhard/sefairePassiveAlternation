@@ -414,9 +414,11 @@ Prior to conducting our study, we preregistered its protocol on the platform AsP
 
 ### Corpus
 
-In our investigation of spoken French language, we aimed to select a corpus that represents authentic French spoken language. After thorough consideration and exploration of our options, we decided for the French ParlaMint corpus 2.1 [@11356/1431] **(explain why different version than specified in preregistration)**. ParlaMint consists of French parliamentary debates from 2017 to 2020 and contains 38,702,395 tokens (32,214,147 words). We chose this corpus because it is well-documented, POS-tagged and contains rich meta data.
+In our investigation of spoken French language, we aimed to select a corpus that authentically reflects natural language use. After careful consideration of available resources, we chose the French ParlaMint corpus version 2.1 [@11356/1431]. Although our preregistration document refers to version 2.0, this was a typographical error. Version 2.1 was the intended and only version available on Sketch Engine at the time of data collection. As such, this does not represent a deviation from our planned methodology.
 
-We recognise that the genre of parliamentary debates is quite specialised and our results therefore cannot be generalized to all French spoken language. However, the language of parliamentary debates is a fascinating genre in itself (studied before: references) and is expected to reflect a wide range of topics, thus providing a cross-section of language varieties as they occur in French speech.
+ParlaMint comprises French parliamentary debates from 2017 to 2020 and contains 38,702,395 tokens (32,214,147 words). We selected this corpus not only for its size and accessibility but also because it is well-documented, POS-tagged, and contains detailed metadata. We specifically chose a spoken-language corpus because [se faire]{.smallcaps} is known to occur more frequently in speech than in writing (**reference**).
+
+The genre of parliamentary debates is somewhat specialised and our results may not fully generalise to all French spoken language. However, it still offers a wide topical range and a high level of linguistic diversity. **It has also been the subject of previous linguistic research (e.g., references).** As such, the ParlaMint corpus provides a valuable and representative cross-section of contemporary spoken French.
 
 ### Semi-automated approach
 

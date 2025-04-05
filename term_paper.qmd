@@ -132,11 +132,11 @@ cat(paste(lemma_list, collapse = " | "))
 
 # Introduction
 
-The French construction *se faire* + infinitive has evolved through analogy with the passive voice. Initially, it carried a causative meaning, where the subject had an active influence. However, in certain contexts, it can take on a purely passive interpretation, functioning as an alternative to the *être* passive construction.
+The French construction *se faire* followed by an infinitive has evolved through analogy with the passive voice. Originally, it had a causative meaning, where the subject played an active role in the action. However, in some contexts, it can also be interpreted as passive, alternating with the *être* passive construction.
 
-What factors influence the "se faire" vs. "être" passive alternation in spoken French (specifically: parliamentary debates)? In other words: what factors influence speakers' choice between the "se faire" and the "être" passive construction?
+This study investigates the factors that influence the choice between *se faire* and *être* in the passive alternation in spoken French, with a particular focus on parliamentary debates. Specifically, we aim to understand what factors contribute to speakers’ preference for one construction over the other.
 
-In this study, we apply a quantitative, multivariate, probabilistic approach to statistically model corpus data.
+To address this question, we use a quantitative, multivariate, probabilistic approach to model corpus data. Our results show a main effect of semantic verb clusters, with communication verbs tending to favour *se faire* over *être* in passive constructions.
 
 # The French passive alternation of *être* and *se faire*
 
@@ -889,8 +889,7 @@ binnedplot(predictions, residuals(final_model, type = "response"))
 
 <!-- Binned plot: "The grey lines represent +- SE bands, which we would expect to contain about 95% of the observations. Desired: majority of the fitted values fall within the SE bands. -->
 
-Following the recommendations of Gries [-@gries_statistics_2021: 445], we additionally use functions of the `DHARMa` package to create more detailed residuals plots/ to gain more detailed insight into the residuals structure.
-(https://cran.r-project.org/web/packages/DHARMa/vignettes/DHARMa.html)
+Following the recommendations of Gries [-@gries_statistics_2021: 445], we additionally use functions of the `DHARMa` package to create more detailed residuals plots/ to gain more detailed insight into the residuals structure. (https://cran.r-project.org/web/packages/DHARMa/vignettes/DHARMa.html)
 
 ```{r residuals-diagnostics-DHARMa, include = FALSE}
 #install.packages("DHARMa")

@@ -476,12 +476,12 @@ The corresponding [être]{.smallcaps} paraphrase would be:
 In contrast, expressions such as *se faire connaître* were excluded. For example:
 
 > (1) *Cette baisse est ensuite une conséquence de la crise économique de 2018 dont les effets se font connaître aujourd'hui.\
->     *'This decline is a consequence of the 2018 economic crisis, the effects of which are becoming known today.'
+>     *'This decline is then a consequence of the 2018 economic crisis, the effects of which are becoming known today.'
 
 When paraphrased with [être]{.smallcaps}, the participle *connus* takes on an adjectival function:
 
-> (1) *Les effets de la crise économique de* 2018 sont connus aujourd'hui.\
->     'The effects of the 2018 economic crisis are known today.'
+> (1) *Cette baisse est ensuite une conséquence de la crise économique de 2018 dont les effets sont connus aujourd'hui.*\
+>     'This decline is then a consequence of the 2018 economic crisis, the effects of which are known today.'
 
 However, our somewhat “fuzzy” definition of what constitutes a passive alternation, similar to the approach taken by [@bohmann_large-scale_2023], presented some challenges. While we excluded purely causative constructions, the distinction between causative and passive constructions was not always clear. The question arose: when is a construction semantically close enough to a passive alternation, and when does its meaning lean too much toward a causative interpretation? As expected, given the ongoing debate about the passive status of [se faire]{.smallcaps} (see @sec-debate) and the difficulties noted by [@bohmann_large-scale_2023] in their study of the English [be]{.smallcaps}/[get]{.smallcaps} passive alternation, we encountered a number of “unclear” cases during the manual filtering of constructions. We acknowledge that, similar to their study, there is no straightforward distinction between causative and passive readings, and some degree of subjectivity in categorization is unavoidable.
 

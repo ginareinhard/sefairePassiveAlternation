@@ -869,11 +869,10 @@ kable(ggpredict(final_model))
 
 We check the residuals of the model using the `binnedplot()` function.
 
-```{r residuals-diagnostics, echo = FALSE}
+```{r residuals-diagnostics, include = FALSE}
 predictions <- predict(final_model, type = "response", na.action = na.omit)
 # plot(residuals(final_model) ~ predict(final_model))
 library(arm)
-binnedplot(predictions, residuals(final_model, type = "response"))
 # #Hosmer Leweshow Test
 # install.packages("ResourceSelection")
 # library(ResourceSelection)
@@ -887,6 +886,10 @@ binnedplot(predictions, residuals(final_model, type = "response"))
 # 
 # # Hosmer-Lemeshow-Test with 10 groups
 # hoslem.test(model_data$passive_binary, model_data$predicted_probs, g = 10)
+```
+
+```{r residuals-diagnostics-binned, echo = FALSE}
+binnedplot(predictions, residuals(final_model, type = "response"))
 ```
 
 <!-- Binned plot: "The grey lines represent +- SE bands, which we would expect to contain about 95% of the observations. Desired: majority of the fitted values fall within the SE bands. -->

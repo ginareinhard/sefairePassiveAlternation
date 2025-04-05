@@ -451,7 +451,7 @@ We defined the following additional criteria, which follow from our main criteri
 
 -   **Transitivity of the verb**: the verb is a transitive verb (the direct object of the active sentence is the subject of the passive sentence). As described in @sec-etre, [être]{.smallcaps} requires a direct object in the active equivalent which becomes the subject in the passive voice. For reflexive and ditransitive verbs, [être]{.smallcaps} is not available and does not compete with [se faire]{.smallcaps}, which is why we excluded such constructions from our analysis. Additionally, we excluded impersonal passive constructions (*passif impersonnel*) due to the lack of a subject referent.
 
--   **Exclusion of fixed idiomatic expressions**: the [se faire]{.smallcaps} construction is not a fixed idiomatic expression with a figurative meaning. We speficically excluded constructions classified as "idiomes lexicalisés" (lexicalized idioms) according to @raineri_analyse_2010\[163\]. These constructions neither carry a true causative nor passive meaning[^3] and cannot occur with a complément d'agent: *se faire entendre*, *se faire sentir*, *se faire attendre*, and *se faire désirer* [@raineri_analyse_2010163]. Examples of additional fixed idiomatic expressions that we filtered out include: *se faire passer pour* 'to impersonate sb.', *se faire avoir* 'to be fooled', *se faire mousser* 'to boast/brag', *se faire taper sur les doigts* 'to get a slap on the fingers, to be scolded'.
+-   **Exclusion of fixed idiomatic expressions**: the [se faire]{.smallcaps} construction is not a fixed idiomatic expression with a figurative meaning. We speficically excluded constructions classified as "idiomes lexicalisés" (lexicalized idioms) according to @raineri_analyse_2010\[163\]. These constructions neither carry a true causative nor passive meaning[^3] and cannot occur with a complément d'agent: *se faire entendre*, *se faire sentir*, *se faire attendre*, and *se faire désirer* [@raineri_analyse_2010: 163]. Examples of additional fixed idiomatic expressions that we filtered out include: *se faire passer pour* 'to impersonate sb.', *se faire avoir* 'to be fooled', *se faire mousser* 'to boast/brag', *se faire taper sur les doigts* 'to get a slap on the fingers, to be scolded'.
 
 -   **Exclusion of adjectival constructions**: we excluded [être]{.smallcaps} constructions that are essentially adjectival constructions, such as *elle est connue* 'she is known'. Accordingly, [se faire]{.smallcaps} constructions that would typically be rephrased with an adjectival [être]{.smallcaps} construction were also excluded.
 
@@ -721,7 +721,7 @@ In addition to conducting a descriptive analysis of the data, we employed a bino
 
 ### Levels {#sec-levels}
 
-The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (`passive_variant`: être; `agent_pp`: 0; `modal`: no; `tam`: non-progressive, `cluster`: neutral). If this would negatively affect the stability of the model, the most frequent (`subj_animacy`: animate,`subj_gender`: masculine) or the most evenly distributed case (`adversativity`: adversative) was selected.
+The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (passive variant: être; complément d' agent: 0; modal: no; TAM: non-progressive, cluster: neutral). If this would negatively affect the stability of the model, the most frequent (subject animacy: animate, subject gender: masculine) or the most evenly distributed case (adversativity: adversative)
 
 | Factors            | Label           | Levels                                   |
 |-------------------|-------------------|----------------------------------|
@@ -863,19 +863,34 @@ kable(ggpredict(final_model))
 
 ### Model diagnostics
 
-#### Residuals
+**Residuals**
 
-We check the residuals of the model using the `plot()` function.
+We check the residuals of the model using the `binnedplot()` function.
 
-```{r residuals-diagnostics, include = FALSE}
-plot(residuals(final_model) ~ predict(final_model))
+```{r residuals-diagnostics, echo = FALSE}
+predictions <- predict(final_model, type = "response", na.action = na.omit)
+# plot(residuals(final_model) ~ predict(final_model))
+library(arm)
+binnedplot(predictions, residuals(final_model, type = "response"))
+# #Hosmer Leweshow Test
+# install.packages("ResourceSelection")
+# library(ResourceSelection)
+# model_data <- model.frame(final_model)
+# 
+# # add predicted_probs hinzu
+# model_data$predicted_probs <- fitted(final_model)
+# 
+# # create binary passive variant variable
+# model_data$passive_binary <- ifelse(model_data$passive_variant == "se faire", 1, 0)
+# 
+# # Hosmer-Lemeshow-Test with 10 groups
+# hoslem.test(model_data$passive_binary, model_data$predicted_probs, g = 10)
 ```
 
-The residuals form which slightly curve away from each other.
+<!-- Binned plot: "The grey lines represent +- SE bands, which we would expect to contain about 95% of the observations. Desired: majority of the fitted values fall within the SE bands. -->
 
-Following the recommendations of @gries_statistics_2021 [445], we additionally use functions of the `DHARMa` package to create more detailed residuals plots/ to gain more detailed insight into the residuals structure.
-
-checking residuals (problematic???) https://cran.r-project.org/web/packages/DHARMa/vignettes/DHARMa.html (recommended in @gries_statistics_2021 [445])
+Following the recommendations of Gries [-@gries_statistics_2021: 445], we additionally use functions of the `DHARMa` package to create more detailed residuals plots/ to gain more detailed insight into the residuals structure.
+(https://cran.r-project.org/web/packages/DHARMa/vignettes/DHARMa.html)
 
 ```{r residuals-diagnostics-DHARMa, include = FALSE}
 #install.packages("DHARMa")
@@ -887,18 +902,19 @@ plot(sim_res)
 testDispersion(sim_res)
 ```
 
-#### Concordance index and significance
+**Concordance index**
 
 As Levshina [-@levshina_how_2015: 256] describes, the concordance index measures the ability of the model to discriminate correctly by providing the proportion of times when the model predicts the use of the variant correctly.
 
 ```{r concordance-index, echo = FALSE}
-predictions <- predict(final_model, type = "response", na.action = na.omit)
 outcome <- as.numeric(na.omit(passive_sample_clean)$passive_variant) - 1
 
 concordance_final_model <- Hmisc::somers2(predictions, outcome)["C"]
 ```
 
 The model has a high concordance index of `r   round(concordance_final_model, 2)`. According to the scale reported in Levshina [-@levshina_how_2015: 259], this indicates "outstanding discrimination".
+
+**Significance**
 
 Additonally, we apply an overall significance test by comparing it to a model without predictors (i.e. null model) using an ANOVA [@gries_statistics_2021: 445-446].
 
@@ -975,9 +991,7 @@ The ANOVA shows that our model is highly significant (LR-test=181.02, $p$ \<0.00
 -   caret: train best performing model
 -   Model evaluation -->
 ```
-#### Coefficients
-
-**Log odds**
+**Coefficients**
 
 Looking at the log odds of the significant variables, it becomes apparent that communication verbs boost the chance of [se faire]{.smallcaps} being used, while [être]{.smallcaps} is more likely in non-adversative contexts with inanimate subjects. (Although non-significant, feminine subjects are more likely to occur with [se faire]{.smallcaps} than masculine subjects.)
 
@@ -987,7 +1001,7 @@ final_model_coef <- coefficients(summary(final_model))[,"Estimate"]
 kable(final_model_coef)
 ```
 
-**Odds Ratios**
+Odds Ratios:
 
 ```{r coefficients-odds, include=FALSE}
 #convert from log odds to odds:

@@ -478,7 +478,7 @@ In contrast, expressions such as *se faire connaître* were excluded. For exampl
 > (1) *Cette baisse est ensuite une conséquence de la crise économique de 2018 dont les effets se font connaître aujourd'hui.\
 >     *'This decline is then a consequence of the 2018 economic crisis, the effects of which are becoming known today.'
 
-When paraphrased with [être]{.smallcaps}, the participle *connus* takes on an adjectival function:
+When paraphrased with [être]{.smallcaps}, *connus* takes on an adjectival function:
 
 > (1) *Cette baisse est ensuite une conséquence de la crise économique de 2018 dont les effets sont connus aujourd'hui.*\
 >     'This decline is then a consequence of the 2018 economic crisis, the effects of which are known today.'

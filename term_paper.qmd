@@ -157,9 +157,11 @@ For example, in the following sentences from our sample from the French ParlaMin
 >     (b) *Les députés sont élus pour contrôler votre action.*\
 >         "The members of parliament are elected to monitor your actions."
 
-An impersonal passive (*passif impersonnel*) is also possible in French. With impersonal passives, the direct object can remain as a complement, as in *Il sera acheté un livre* (‘A book will be bought’) [@abeille2021grande 210].
+An **impersonal passive** (*passif impersonnel*) is also possible in French. With impersonal passives, the direct object can remain as a complement, as in *Il sera acheté un livre* (‘A book will be bought’) [@abeille2021grande 210].
 
 Some grammars distinguish between a *passif verbal*, with an event interpretation, and an *passif adjectival*, with a resultative interpretation. According to *La grande grammaire du français* [@abeille2021grande], this is about semantic differences, concerning the aspect of the situation. With a state verb, active and passive sentences are generally semantically equivalent (Tout le monde aime Marie. / Marie est aimée de tout de monde.). With an event verb, expressing a change of state or place, the passive describes a change in the initial situation or the result of this change. In the passé composé, the sentences *On a servi la biere* and *La bière a été servi* appear to be equivalent. In the present tense, on the other hand, or in the imperfect tense, the active phrase (On sert la bière) may describe a situation in progress, and the passive phrase a resulting state (La bière est servi). In the passive, the presence of an agent complement can favour the interpretation of an event, with a present tense of habit (La bière est servi par le patron). The passive court without an agent generally has the effect of presenting the situation without specifying the cause or the individual who is responsible. Its semantic focus lies on the action or the result of the action. [@abeille2021grande 219].
+
+**vs. adjectives**
 
 (The passive voice is relatively rare in French, accounting for only 5% of verbs in the French Treebank (FTB) (\@da_cunha_lalternance_2020), compared to 9% in English for the same text type (\@roland2007frequency). Overall, the passive voice is more frequently used in written French than in spoken French (\@da2022alternance). Approximately a quarter of passive constructions in the FTB are *passif long* (\@da_cunha_lalternance_2020), while in spoken French, this proportion drops to about 10% (source: Hamma). **-\> frequency in our corpus?**)
 
@@ -231,7 +233,7 @@ This debate has been central to the investigation of [se faire]{.smallcaps} and 
 
 ## [être]{.smallcaps} and [se faire]{.smallcaps}: competition or complementation? {#sec-factors}
 
-### Defining the variable context
+### Defining the variable context {#sec-sefaire-context}
 
 Both [se faire]{.smallcaps} and [être]{.smallcaps} passives are available for the active diathesis [@novakova_construction_2009 :108] and assign the role of the undergoer to the subject referent. Therefore, the two variants form an alternation and are expected to compete with each other in contexts where passive is expressed. We find that both variants may be used in the same context:
 
@@ -317,7 +319,7 @@ such as "devoir", "savoir", "pouvoir", "falloir", "vouloir" very frequent with s
 
 Volitional verbs align well with [se faire]{.smallcaps} because they involve an intentional action that results in a change of mental state, whereas non-volitional verbs do not (source?).
 
-### Aspectuality
+### Aspectuality {#sec-aspectuality}
 
 Regarding the factor of aspectuality, @keenan_passive_2007 [340] propose the following generalisation: "If a language has two or more basic passives they are likely to differ semantically with respect to the aspect ranges they cover." If we assume that [se faire]{.smallcaps} is a "basic passive", this suggests that the *être* and [se faire]{.smallcaps} have different aspectual preferences. Aspectuality is expressed through the verb, either via inherent lexical semantics ("Aktionsart") or grammatical marking, such as tense, aspect, and mood [^1] [@kortmann_triad_1991 : 13].
 
@@ -387,6 +389,8 @@ Non-progressive category: completed actions, includes the passé composé, plus-
 
 Our hypothesis is that progressive marking (whether through tense or periphrasis) favours the *se faire* passive, while non-progressive marking (e.g., passé composé, plus-que-parfait) favours the *être* passive.
 
+<!-- ### Annotation Guidelines**Gender (masculin/ feminin/ mixed/ unknown)**-   Assign masculin or féminin if the gender is clearly marked grammatically:    -   Through a pronoun (il(s), elle(s))    -   Through an adjective or participle that marks gender (heureux/heureuse, content/contente)-   Use mixed only if:    -   The context clearly refers to a mixed-gender group (un groupe d’hommes et de femmes)    -   The grammatical form is not gendered, but the semantic context indicates mixed gender (nous referring explicitly to men and women)-   Assign unknown if:    -   No grammatical gender marking is present    -   For on, vous, je, and nous (if no grammatical marking appears)    -   For expletive subjects (il faut)**Progressivity (progressive/ non-progressive)**-   Assign "progressive" if:    -   The "se faire" construction is directly in the imparfait or future (except for futur antérieur) → indicates an ongoing or habitual action    -   The "se faire" construction is linked to an ongoing action, indicated by: A participe présent → Example: Ils acceptent de se faire endoctriner. → progressive/ gerondif + participe présent (en courant - while running)    -   periphrases e.g., être en train de (present continuous), aller + inf (futur proche), continuer à + Infinitif    -   adverbs/ Adverbial Phrases Indicating Ongoing Action: Temporal adverbs that imply duration or repetition: En ce moment (at the moment), Actuellement (currently), Toujours (always), Depuis (since), Encore (still)-   Assign "non-progressive" if:    -   passé composé, plus-que-parfait, présent, futur antérieur (...) - progressiveness is hinted at by another verb in the sentence (e.g., falloir or être) and not from the "se faire" construction itself-->
+
 ### Adversativity
 
 The factor of adversativity is reflected in the semantics of the verb and captures the negative consequences of the described action for the subject. This factor has been shown to influence the choice between the English [be]{.smallcaps} and [get]{.smallcaps} passives [@chappell1980get; @hundt_be-_2024: 89, 96-97; @bohmann_large-scale_2023], with [get]{.smallcaps} being realised more often with adversative verbs than [be]{.smallcaps}. Since @spang-hanssen_quelques_1967 and @raineri_analyse_2010 draw paralles between the [get]{.smallcaps} and [se faire]{.smallcaps} passive, an adversativity effect for [se faire]{.smallcaps} is likely.
@@ -445,13 +449,15 @@ For our study of [être]{.smallcaps} and [se faire]{.smallcaps} as a passive alt
 
 We defined the following additional criteria, which follow from our main criterion:
 
--   **Transitivity of the verb**: the verb is a transitive verb (the direct object of the active sentence is the subject of the passive sentence). <!-- As described above, the canonical passive with être requires a direct object in the active equivalent which becomes the new subject [@koenig_semantic_1992: 144; @washio_when_1993, @labelle_anticausativizing_2013: 16]. Thus, for reflexive and ditransitive verbs, the être passive is not available and does not compete with se faire. These constructions will be excluded and only transitive verbs will be studied. Similarly, some verb participles and adjectives in French are structurally identical.-->
+-   **Transitivity of the verb**: the verb is a transitive verb (the direct object of the active sentence is the subject of the passive sentence). As described in @sec-etre, [être]{.smallcaps} requires a direct object in the active equivalent which becomes the subject in the passive voice. For reflexive and ditransitive verbs, [être]{.smallcaps} is not available and does not compete with [se faire]{.smallcaps}, which is why we excluded such constructions from our analysis. Additionally, we excluded impersonal passive constructions (*passif impersonnel*) due to the lack of a subject referent.
 
--   **Exclusion of fixed idiomatic expressions**: the [se faire]{.smallcaps} construction is not a fixed idiomatic expression with a figurative meaning. We speficically excluded constructions classified as "idiomes lexicalisés" (lexicalized idioms) according to @raineri_analyse_2010\[163\]. These constructions neither carry a true causative nor passive meaning and cannot occur with a complément d'agent: *se faire entendre*, *se faire sentir*, *se faire attendre*, and *se faire désirer* [@raineri_analyse_2010163].
+-   **Exclusion of fixed idiomatic expressions**: the [se faire]{.smallcaps} construction is not a fixed idiomatic expression with a figurative meaning. We speficically excluded constructions classified as "idiomes lexicalisés" (lexicalized idioms) according to @raineri_analyse_2010\[163\]. These constructions neither carry a true causative nor passive meaning[^3] and cannot occur with a complément d'agent: *se faire entendre*, *se faire sentir*, *se faire attendre*, and *se faire désirer* [@raineri_analyse_2010163]. Examples of additional fixed idiomatic expressions that we filtered out include: *se faire passer pour* 'to impersonate sb.', *se faire avoir* 'to be fooled', *se faire mousser* 'to boast/brag', *se faire taper sur les doigts* 'to get a slap on the fingers, to be scolded'.
 
 -   **Exclusion of adjectival constructions**: we excluded [être]{.smallcaps} constructions that are essentially adjectival constructions, such as *elle est connue* 'she is known'. Accordingly, [se faire]{.smallcaps} constructions that would typically be rephrased with an adjectival [être]{.smallcaps} construction were also excluded.
 
-To ensure consistency and practicality, we decided to include or exclude verbs based on their lemma, rather than on individual occurrences. After manually evaluating all occurrences, the following lemmas were excluded from our sample: *entendre*, *sentir*, *ressentir*, *attendre*, *désirer*, *voir*, *connaître*, *passer (pour)*, *mousser*, *avoir*.
+[^3]: These verbs mainly occur with inanimate subjects (effects, consequences, discontent). @raineri_analyse_2010 [163-164] proposes that the causative meaning is not available for these verbs since the subject is not causing the event. There is also no passive meaning since they cannot cannot occur with a complément d’agent and do not have a paraphrase with être.
+
+To ensure consistency and practicality, we decided to include or exclude verbs based on their lemma, rather than on individual occurrences. After manually evaluating all occurrences, the following lemmas were excluded from our sample: *entendre*, *sentir*, *ressentir*, *attendre*, *désirer*, *voir*, *connaître*, *passer (pour)*, *mousser*, *avoir*, *rouler (se faire rouler dans la farine)*, *mener (se faire mener par le bout du nez)*.
 
 We also excluded imperative constructions because of their rarity in the passive and because of the semantic contradiction. While the passive focuses on the undergoer of an action, the imperative demands the performance of an action. We anticipated that imperatives would be unevenly distributed, potentially leading to statistical distortions.
 
@@ -467,96 +473,22 @@ The corresponding [être]{.smallcaps} paraphrase would be:
 
 In contrast, expressions such as *se faire connaître* were excluded. For example:
 
-> (1) 
->
->     (a) *Cette baisse est ensuite une conséquence de la crise économique de 2018 dont les effets se font connaître aujourd'hui.\
->         *'This decline is a consequence of the 2018 economic crisis, the effects of which are becoming known today.'
->
->     (b) *Les effets de la crise économique de 2*018 sont connus aujourd'hui.\
->         'The effects of the 2018 economic crisis are known today.'
+> (1) *Cette baisse est ensuite une conséquence de la crise économique de 2018 dont les effets se font connaître aujourd'hui.\
+>     *'This decline is a consequence of the 2018 economic crisis, the effects of which are becoming known today.'
 
-However, our somewhat “fuzzy” definition of what constitutes a passive alternation, similar to the approach taken by [@bohmann_large-scale_2023], presented some challenges. While we excluded purely causative constructions, the distinction between causative and passive constructions was not always clear. The question arose: when is a construction semantically close enough to a passive alternation, and when does its meaning lean too much toward a causative interpretation? As expected, given the ongoing debate about the passive status of [se faire]{.smallcaps} (@sec-debate) and the difficulties noted by [@bohmann_large-scale_2023] in their study of the English [be]{.smallcaps}/[get]{.smallcaps} passive alternation, we encountered a number of “unclear” cases during the manual filtering of constructions. We acknowledge that, similar to their study, there is no straightforward distinction between causative and passive readings, and some degree of subjectivity in categorization is unavoidable.
+When paraphrased with [être]{.smallcaps}, the participle *connus* takes on an adjectival function:
 
-This approach is also supported by linguistic analyses that suggest a continuum between causative and passive meanings in constructions with *se faire*. That is, they can switch between passive and causative interpretations depending on the context. The flexibility of this construction suggests that a strict binary classification is inappropriate and reinforces the idea of a causative-passive continuum - at one pole a reduced agentivity of the subject's referent - rather than a rigid distinction @raineri_analyse_2010 **pp. 154ff.** If the action of the subject is reduced to mere initiation (\[+ déclenchement\]), the construction can be completely paraphrased with [être]{.smallcaps} without changing the content of the sentence. For example, *Il se fait remarquer par une patrouille de police* (“He is noticed by a police patrol”) and Il est remarqué par une patrouille de police (“He is noticed by a police patrol”) show an extensive equivalence between se faire and être. Similarly, the other elements in the co-text of *élire* examples weakens the causative strength and strengthens the passive effect. -\> agentivité **variable** / passive-causative continuum with *élire* depending on context @raineri_analyse_2010 p. 160.
+> (1) *Les effets de la crise économique de* 2018 sont connus aujourd'hui.\
+>     'The effects of the 2018 economic crisis are known today.'
 
-We have found many examples of se faire constructions cases where a clear binary distinction between passive and causative was not possible, for example because when the subject is both the undergoer and the causer of the action.
+However, our somewhat “fuzzy” definition of what constitutes a passive alternation, similar to the approach taken by [@bohmann_large-scale_2023], presented some challenges. While we excluded purely causative constructions, the distinction between causative and passive constructions was not always clear. The question arose: when is a construction semantically close enough to a passive alternation, and when does its meaning lean too much toward a causative interpretation? As expected, given the ongoing debate about the passive status of [se faire]{.smallcaps} (see @sec-debate) and the difficulties noted by [@bohmann_large-scale_2023] in their study of the English [be]{.smallcaps}/[get]{.smallcaps} passive alternation, we encountered a number of “unclear” cases during the manual filtering of constructions. We acknowledge that, similar to their study, there is no straightforward distinction between causative and passive readings, and some degree of subjectivity in categorization is unavoidable.
 
-In general, we opted for a broad approach, including as many constructions as possible. This means that even when the causative reading is more natural (because the subject triggers the event), we included the construction as long as a passive understanding was also plausible (since the subject is also undergoing an action). In doing so, we deviate from the first criterion established by @bellec_construction_2014. Examples of such constructions include *se faire vacciner* "to (go) be/get vaccinated" and *se faire élire* "to be/get elected" or "to stand for election".
+This approach is also supported by linguistic analyses that suggest a continuum between causative and passive meanings in constructions with *se faire* (see @sec-sefaire-context). The constructions may shift between passive and causative interpretations depending on the surrounding context. Their inherent flexibility suggests that a strict binary classification is inadequate, reinforcing the idea of a passive–causative continuum. This continuum can be understood in terms of the degree of agentivity of the subject referent. When its role is reduced to mere initiation of the event, the construction can be fully paraphrased with [être]{.smallcaps} without altering the overall meaning of the sentence. For example, *Il se fait remarquer par une patrouille de police* 'He is noticed by a police patrol' and *Il est remarqué par une patrouille de police* 'He is noticed by a police patrol' show an extensive equivalence between [se faire]{.smallcaps} and [être]{.smallcaps}. Moreover, other elements in the co-text can weaken the causative strength and strengthen the passive effect, reflecting variable agentivity depending on the specific discourse context\[ @raineri_analyse_2010 154-160\].
 
-Some verbs can have a passive and a causative meaning, depending on the context. For example, *se faire remarquer* can mean both "to get noticed" and "to draw attention to oneself". To ensure consistency and practicality, we decided to include or exclude verbs on the basis of their lemma, rather than on individual occurrences. Below, we outline below some high-frequency ambiguous cases and provide our reasoning for the decidions to include or exclude them.
+We identified numerous cases where a clear binary distinction between passive and causative was not possible, for example when the subject is both the undergoer and the causer of the action. In general, we opted for a broad approach, including as many constructions as possible. This means that even when the causative reading appeared more natural (because the subject initiates the event), we included the construction as long as a passive understanding was also plausible (since the subject also undergoes the action). In doing so, we deviate from the more restrictive first criterion proposed by @bellec_construction_2014. Representative examples of such constructions in our sample include *se faire vacciner* 'to be/get vaccinated', *se faire élire* 'to be/get elected' or 'to stand for election', *se faire remarquer* 'to be/get noticed' or 'to draw attention to oneself'.
 
-We excluded:
+Regarding tense, we chose to include all tenses in our analysis, including the present tense, based on previous literature suggesting that the present tense favours [se faire]{.smallcaps} over [être]{.smallcaps} (see @sec-aspectuality). Tense is an important factor in our study, as part of the TAM factor. This approach contrasts with @da_cunha_lalternance_2020 and @da2022alternance, who focused exclusively on passive constructions in the compound past tense (*NP a été VP*) to prioritise verbal passives over adjectival passives, such as *La porte est ouverte* 'The door is open'. By including all tenses, we ensured that we did not exclude too many [se faire]{.smallcaps} constructions and obtained a sufficient number of occurences for the analysis. This decision was therefore motivated both by the aim to capture the overall syntactic range of the passive alternation and by the importance of tense within the TAM factor. While we recognise that this approach increases complexity, we believe that it allows for a more comprehensive analysis of the [être]{.smallcaps}/[se faire]{.smallcaps} alternation.
 
--   Fixed idiomatic expressions with a figurative meaning: "se faire passer pour" *to impersonate sb.*, "se faire avoir" *to be fooled*, "se faire mousser" *to boast/ to brag, "se faire taper sur les doigts" lit. to get a slap on the fingers, to be scolded* ; example: "Dites donc, vous savez vous faire mousser!" *My, you know how to make a fuss!/ You know how to blow your own trumpet!*
-
-    -   \+ *se faire **rouler** dans la farine + se faire **mener** par le bout du nez*
-
--   Expressions that cannot be converted into a correct active sentence (i.e., the direct object of the active sentence is not the subject of the passive sentence). (ditransitive, intransitive verbs ?), example: "mais se faire expliquer des elements de justice n'est pas la même chose que d'acheter en ligne des produits bio ou une paire de chaussures." *but getting an explanation of legal matters is not the same as buying organic products or a pair of shoes online*
-
--   Expressions containing verbs classified as "idiomes lexicalisés" (lexicalised idioms) according to Raineri (2010: 163). These verbs neither carry a true causative nor passive meaning [^3]: entendre, sentir, attendre, désirer (Raineri 2010: 164); example: "Partout le mécontentement populaire se faire entendre sans qu'' on ait besoin de souffler sur les braises." *Everywhere, popular discontent is making itself heard without the need to fan the flames.*
-
--   (Expressions with a transparent causative meaning - maybe not necessary if covered by the other criteria)
-
--   (Expressions where an être passive has a very different meaning)
-
--   impersonal être passive constructions (passif impersonnel)#
-
-[^3]: These verbs mainly occur with inanimate subjects (effects, consequences, discontent). @raineri_analyse_2010 [163-164] proposes that the causative meaning is not available for these verbs since the subject is not causing the event. There is also no passive meaning since they cannot cannot occur with a complément d’agent and do not have a paraphrase with être.
-
-<!-- -->
-
--   Exclusion of causative reading of se faire constructions: the same verbs have been used with être passive in the same corpus (find/extract the constructions) → depends on how many constructions we have left
-
--   We have not taken into account impersonal passives (*example from corpus*)
-
--   être passive: In their active/passive alternation study @da_cunha_lalternance_2020 only chose passive sentences in the compound past tense "NP a été VP" in order to favour verbal passives over adjectival passives (*La porte est ouverte*). However, we chose to include the present tense/all tenses. This decision was based on previous literature suggesting that the present tense favors *se faire* passive over *être* passive, making tense an important factor in our study.
-
--   In line with @da_cunha_lalternance_2020 we chose complément d'agents introduced by the preposition *par*, avoiding additional variation caused by *de*.
-
--\> summary of the sample? Our final sample therefore comprises XXX sentences/constructions: XX se faire and XX être passive, ... (short summary)
-
-```{=html}
-<!-- ### Annotation Guidelines
-
-**Gender (masculin/ feminin/ mixed/ unknown)**
-
--   Assign masculin or féminin if the gender is clearly marked grammatically:
-
-    -   Through a pronoun (il(s), elle(s))
-
-    -   Through an adjective or participle that marks gender (heureux/heureuse, content/contente)
-
--   Use mixed only if:
-
-    -   The context clearly refers to a mixed-gender group (un groupe d’hommes et de femmes)
-
-    -   The grammatical form is not gendered, but the semantic context indicates mixed gender (nous referring explicitly to men and women)
-
--   Assign unknown if:
-
-    -   No grammatical gender marking is present
-
-    -   For on, vous, je, and nous (if no grammatical marking appears)
-
-    -   For expletive subjects (il faut)
-
-**Progressivity (progressive/ non-progressive)**
-
--   Assign "progressive" if:
-
-    -   The "se faire" construction is directly in the imparfait or future (except for futur antérieur) → indicates an ongoing or habitual action
-
-    -   The "se faire" construction is linked to an ongoing action, indicated by: A participe présent → Example: Ils acceptent de se faire endoctriner. → progressive/ gerondif + participe présent (en courant - while running)
-
-    -   periphrases e.g., être en train de (present continuous), aller + inf (futur proche), continuer à + Infinitif
-
-    -   adverbs/ Adverbial Phrases Indicating Ongoing Action: Temporal adverbs that imply duration or repetition: En ce moment (at the moment), Actuellement (currently), Toujours (always), Depuis (since), Encore (still)
-
--   Assign "non-progressive" if:
-
-    -   passé composé, plus-que-parfait, présent, futur antérieur (...) - progressiveness is hinted at by another verb in the sentence (e.g., falloir or être) and not from the "se faire" construction itself
--->
-```
 ### Inter-rater agreement
 
 As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all complément d' agents of [se faire]{.smallcaps} during inital filtering, the column `agent_pp` was renamed to `agent_pp_A`. The datasets were then combined, variables were converted from characters to factors and empty values were replaced with `NA` to ensure proper handling of missing values in statistical analysis.
@@ -790,7 +722,7 @@ In addition to conducting a descriptive analysis of the data, we employed a bino
 The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (`passive_variant`: être; `agent_pp`: 0; `modal`: no; `tam`: non-progressive, `cluster`: neutral). If this would negatively affect the stability of the model, the most frequent (`subj_animacy`: animate,`subj_gender`: masculine) or the most evenly distributed case (`adversativity`: adversative) was selected.
 
 | Factors            | Label           | Levels                                   |
-|------------------|------------------|------------------------------------|
+|-------------------|-------------------|------------------------------------|
 | Passive variant    | passive_variant | être, se faire                           |
 | Subject animacy    | subj_animacy    | animate, inanimate                       |
 | Subject gender     | subj_gender     | masculine, feminine                      |
@@ -1508,7 +1440,7 @@ As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + i
 ## Verb cluster categorisation with example verbs {.appendix}
 
 | Verb clusters [@francois_presentation_2007, 4]                    | Grouped Verb Clusters (Our Study) | Example Verbs                                                                                                                                                                                                 |
-|--------------|--------------|--------------------------------------------|
+|----------------|----------------|----------------------------------------|
 | giving, depriving (don, privation)                                | neutral                           | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*)      |
 | entering, leaving (entrée, sortie)                                | neutral                           | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*)                    |
 | hitting, touching (frapper, toucher)                              | hitting-touching                  | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*)                                                  |

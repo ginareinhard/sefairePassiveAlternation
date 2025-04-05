@@ -416,6 +416,8 @@ As @bohmann_large-scale_2023 note in their investigation of the [be]{.smallcaps}
 
 Prior to conducting our study, we preregistered its protocol on the platform AsPredicted (**Wharton Credibility Lab, University of Pennsylvania**) to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed here: <https://aspredicted.org/gp6y-dd8p.pdf>.
 
+To maintain anonymity while ensuring transparency and consistency, we refer to ourselves as Annotator A and Annotator B when describing the manual steps.
+
 ## Data collection {#sec-data-collection}
 
 ### Corpus {#sec-corpus}
@@ -428,9 +430,7 @@ The genre of parliamentary debates is somewhat specialised and our results may n
 
 ### Semi-automated approach {#sec-semi-automatic-approach}
 
-To extract our sample, we used a semi-automatic approach combining CQL expression-based extraction and manual filtering. Our aim was to obtain an equal number of occurrences of [être]{.smallcaps} and [se faire]{.smallcaps} constructions.
-
-First, we used a CQL expression to automatically extract a sample of 1,254 [se faire]{.smallcaps} constructions from the French ParlaMint corpus [@11356/1431]. Following this automatic extraction, we manually filtered the data to remove false positives, i.e. constructions that did not meet our predefined criteria for [se faire]{.smallcaps} passives (see @sec-filtering-criteria). After filtering, the final sample consisted of 535 valid [se faire]{.smallcaps} constructions. We then annotated the lemmas of these constructions and compiled a list of them.
+To extract our sample, we used a semi-automatic approach combining CQL expression-based extraction and manual filtering. Our aim was to obtain an equal number of occurrences of [être]{.smallcaps} and [se faire]{.smallcaps} constructions. First, we used a CQL expression to automatically extract a sample of 1,254 [se faire]{.smallcaps} constructions from the French ParlaMint corpus [@11356/1431]. After this, Annotator A manually filtered the data to exclude false-positives, i.e. constructions that did not meet our predefined criteria for [se faire]{.smallcaps} passives (see @sec-filtering-criteria). During the filtering process, Annotator A also annotated the lemmas of the constructions and compiled a list. After filtering, the final sample consisted of 535 valid [se faire]{.smallcaps} constructions.
 
 ```{r lemma-list, include=FALSE}
 
@@ -440,8 +440,6 @@ lemmas <- sefaire_sample |>
 ```
 
 Next, we extracted the [être]{.smallcaps} constructions using a CQL expression in SketchEngine. To filter the concordances, we used the list of lemmas derived from the [se faire]{.smallcaps} sample, ensuring comparability between the two construction types by controlling for verb-specific differences that might influence the results. Due to SketchEngine’s download limit, we retrieved the [être]{.smallcaps} constructions in four subsamples, each containing between 9,295 and 9,794 concordances. After downloading, all filtered instances were stored in a .csv file and merged into a single dataframe in R. To ensure reproducibility, we set a random seed using the function `set.seed()`, with the seed value derived from the lottery numbers on Wednesday, 12th March 2025, as listed on the official Lotto website ([https://www.lotto.de/lotto-6aus49/lottozahlen](#0)), with one digit removed to match the required length. We then randomly sampled a subset of concordance lines that was equal in size to the manually filtered [se faire]{.smallcaps} sample (i.e., 535 instances**, reduced to 532)**.
-
-The constructions were then manually annotated for the features outlined in @sec-factors, in preparation for statistical modelling.
 
 ### Manual filtering exclusion criteria and borderline cases {#sec-filtering-criteria}
 
@@ -461,7 +459,7 @@ To ensure consistency and practicality, we decided to include or exclude verbs b
 
 We also excluded imperative constructions because of their rarity in the passive and because of the semantic contradiction. While the passive focuses on the undergoer of an action, the imperative demands the performance of an action. We anticipated that imperatives would be unevenly distributed, potentially leading to statistical distortions.
 
-Regarding tense, we chose to include all tenses in our analysis, including the present tense, based on previous literature suggesting that the present tense favours [se faire]{.smallcaps} over [être]{.smallcaps} (see @sec-aspectuality). Tense is an important factor in our study, as part of the TAM factor. This approach contrasts with @da_cunha_lalternance_2020 and @da2022alternance, who focused exclusively on passive constructions in the compound past tense (*NP a été VP*) to prioritise verbal passives over adjectival passives, such as *La porte est ouverte* 'The door is open'. By including all tenses, we ensured that we did not exclude too many [se faire]{.smallcaps} constructions and obtained a sufficient number of occurences for the analysis. This decision was therefore motivated both by the aim to capture the overall syntactic range of the passive alternation and by the importance of tense within the TAM factor. While we recognise that this approach increases complexity, we believe that it allows for a more comprehensive analysis of the [être]{.smallcaps}/[se faire]{.smallcaps} alternation.
+Regarding tense, we chose to include all tenses in our analysis, including the present tense, based on previous literature suggesting that the present tense favours [se faire]{.smallcaps} over [être]{.smallcaps} (see @sec-aspectuality). Tense is an important feature in our study, as part of the TAM factor. This approach contrasts with @da_cunha_lalternance_2020 and @da2022alternance, who focused exclusively on passive constructions in the compound past tense (*NP a été VP*) to prioritise verbal passives over adjectival passives, such as *La porte est ouverte* 'The door is open'. By including all tenses, we ensured that we did not exclude too many [se faire]{.smallcaps} constructions and obtained a sufficient number of occurences for the analysis. This decision was therefore motivated both by the aim to capture the overall syntactic range of the passive alternation and by the importance of tense within the TAM factor. While we recognise that this approach increases complexity, we believe that it allows for a more comprehensive analysis of the [être]{.smallcaps}/[se faire]{.smallcaps} alternation.
 
 A typical example of a [se faire]{.smallcaps} construcion that met our criteria is:
 
@@ -490,6 +488,8 @@ This approach is also supported by linguistic analyses that suggest a continuum 
 We identified numerous cases where a clear binary distinction between passive and causative was not possible, for example when the subject is both the undergoer and the causer of the action. In general, we opted for a broad approach, including as many constructions as possible. This means that even when the causative reading appeared more natural (because the subject initiates the event), we included the construction as long as a passive understanding was also plausible (since the subject also undergoes the action). In doing so, we deviate from the more restrictive first criterion proposed by @bellec_construction_2014. Representative examples of such constructions in our sample include *se faire vacciner* 'to be/get vaccinated', *se faire élire* 'to be/get elected' or 'to stand for election', *se faire remarquer* 'to be/get noticed' or 'to draw attention to oneself'.
 
 ### Inter-rater agreement
+
+We annotated the filtered sample for the features outlined in @sec-factors, in preparation for statistical modelling. A blind annotation process was used, where Annotator A and Annotator B were unaware of each other’s annotations. The inter-rater agreement was then calculated, as described in the following section.
 
 As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all complément d' agents of [se faire]{.smallcaps} during inital filtering, the column `agent_pp` was renamed to `agent_pp_A`. The datasets were then combined, variables were converted from characters to factors and empty values were replaced with `NA` to ensure proper handling of missing values in statistical analysis.
 

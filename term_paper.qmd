@@ -132,11 +132,11 @@ cat(paste(lemma_list, collapse = " | "))
 
 # Introduction
 
-The French construction *se faire* + infinitive has evolved through analogy with the passive voice. Initially, it carried a causative meaning, where the subject had an active influence. However, in certain contexts, it can take on a purely passive interpretation, functioning as an alternative to the *être* passive construction.
+The French construction *se faire* followed by an infinitive has evolved through analogy with the passive voice. Originally, it had a causative meaning, where the subject played an active role in the action. However, in some contexts, it can also be interpreted as passive, alternating with the *être* passive construction.
 
-What factors influence the "se faire" vs. "être" passive alternation in spoken French (specifically: parliamentary debates)? In other words: what factors influence speakers' choice between the "se faire" and the "être" passive construction?
+This study investigates the factors that influence the choice between *se faire* and *être* in the passive alternation in spoken French, with a particular focus on parliamentary debates. Specifically, we aim to understand what factors contribute to speakers’ preference for one construction over the other.
 
-In this study, we apply a quantitative, multivariate, probabilistic approach to statistically model corpus data.
+To address this question, we use a quantitative, multivariate, probabilistic approach to model corpus data. Our results show a main effect of semantic verb clusters, with communication verbs tending to favour *se faire* over *être* in passive constructions.
 
 # The French passive alternation of *être* and *se faire*
 
@@ -331,8 +331,6 @@ Our overall predictions regarding aspectuality is a preponderance of [se faire]{
 
 **Semantic verb clusters**
 
-@dubois1997verbes
-
 [se faire]{.smallcaps} tends to occur with dynamic processes, particularly in contexts where the source role is agentive and the target role is affected, which is the typical case of semantic transitivity [@raineri_analyse_2010 90, 238]. Several hypotheses in the literature attempt to explain the compatibility of certain verbs with [se faire]{.smallcaps}. For example, @kupferman_construction_1995 \[67\] and @raineri_analyse_2010 [90] argue that [se faire]{.smallcaps} is compatible with dynamic verbs but not with state verbs or verbs of state change with an external "cause" argument. However, exceptions to this pattern are noted by @novakova_construction_2009 **pages?**, @martin_construction_2002 **pages?** and @raineri_analyse_2010 [100-103].
 
 @martin_construction_2002 [14] challenges the notion that an external source always implies agency. She argues that a source can induce a change of state without intentionality and should therefore be classified as an "effector" rather than an agent. To support this claim, she contrasts two examples:
@@ -357,7 +355,7 @@ As shown in @fig-clusters, some verb clusters in the study by @da2022alternance 
 
 Hitting-touching verbs are dynamic and adversative, making them more likely to appear in passive constructions. Since these verbs emphasise the subject’s affectedness, they may be particularly compatible with [se faire,]{.smallcaps} where the subject typically is an affected undergoer. In contrast, with communication verbs, the subject is not necessarily affected in the same way. While the subject is involved in the communication event, it does not imply a significant change or affectivity, possibly making [se faire]{.smallcaps} less compatible with these verbs. communication verbs tend to favour the active voice due to their syntactic properties, particularly their frequent use of object complements. Additionally, as they typically feature a salient animate or human subject in the corresponding active construction, they may be less likely to occur with [se faire]{.smallcaps}. We therefore hypothesise that hitting-touching verbs favour [se faire,]{.smallcaps} while communication verbs favour [être]{.smallcaps}. We expect all other classes to not have a preference for either passive variant and group them together as "neutral". These include psychological, behavioral, movement, and transfer verbs. Their distribution between [être]{.smallcaps} and [se faire]{.smallcaps} may depend on additional contextual factors.
 
-To test this hypothesis, we categorised the verbs based on their lexical class, using the verb cluster categories from the lexicon "Les Verbes Français - LVF" [@lvf], following @da2022alternance. **TableX** in the @appendix presents the French verb clusters defined by @francois_presentation_2007, on which this dictionary is based, along with language examples from our dataset. If there was no exact match, we used the closest similar class. In one case, *caillasser*, there was no entry in the lexicon: here we classified it as a hitting-touching verb, given its similarity to verbs like *attaquer*, *frapper*, or *bombarder*.
+To test this hypothesis, we categorized the verbs according to their lexical class. Following @da2022alternance we used the verb cluster categories from the online version of the lexicon "Les Verbes Français" [@lvf], based on the work by @dubois1997verbes. @tbl-clusters in the appendix presents the French verb clusters defined by @francois_presentation_2007, on which this dictionary is based, along with language examples from our dataset. If there was no exact match, we used the closest similar class. In one case, *caillasser*, there was no entry in the lexicon: here we classified it as a hitting-touching verb, given its similarity to verbs like *attaquer*, *frapper*, or *bombarder*.
 
 However, the effect of the verb cluster may interact with other factors, particularly animacy and adversativity. We also tested the interactions with these factors. We expect the animacy of the subject to have a stronger effect if the verb is from the "hitting-touching" or the "neutral" category. [se faire]{.smallcaps} could be strongly favoured with animate subjects compared to inanimate subjects, while this effect could be weaker with communication verbs, which could favour [être]{.smallcaps} regardless of animacy. The adversativity of the verb could favour [se faire]{.smallcaps} more in communication and neutral verbs than in hitting-touching verbs. While communication verbs may favour [être]{.smallcaps} and neutral verbs may not have a strong preference, adversative constructions may shift both toward [se faire]{.smallcaps}. Since hitting-touching verbs are inherently highly adversative, this factor is unlikely to strongly affect their passive preference.
 
@@ -894,8 +892,7 @@ binnedplot(predictions, residuals(final_model, type = "response"))
 
 <!-- Binned plot: "The grey lines represent +- SE bands, which we would expect to contain about 95% of the observations. Desired: majority of the fitted values fall within the SE bands. -->
 
-Following the recommendations of Gries [-@gries_statistics_2021: 445], we additionally use functions of the `DHARMa` package to create more detailed residuals plots/ to gain more detailed insight into the residuals structure.
-(https://cran.r-project.org/web/packages/DHARMa/vignettes/DHARMa.html)
+Following the recommendations of Gries [-@gries_statistics_2021: 445], we additionally use functions of the `DHARMa` package to create more detailed residuals plots/ to gain more detailed insight into the residuals structure. (https://cran.r-project.org/web/packages/DHARMa/vignettes/DHARMa.html)
 
 ```{r residuals-diagnostics-DHARMa, include = FALSE}
 #install.packages("DHARMa")
@@ -1469,10 +1466,11 @@ As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + i
 
 # Appendix {.appendix}
 
-## Verb cluster categorisation with example verbs {.appendix}
+## Verb cluster categorisation with example verbs {#appendix-a .appendix}
 
+::: {#tbl-clusters}
 | Verb clusters [@francois_presentation_2007, 4]                    | Grouped Verb Clusters (Our Study) | Example Verbs                                                                                                                                                                                                 |
-|------------------|------------------|-------------------------------------|
+|-------------------|-------------------|----------------------------------|
 | giving, depriving (don, privation)                                | neutral                           | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*)      |
 | entering, leaving (entrée, sortie)                                | neutral                           | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*)                    |
 | hitting, touching (frapper, toucher)                              | hitting-touching                  | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*)                                                  |
@@ -1488,7 +1486,8 @@ As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + i
 | communication                                                     | communication                     | accuser (*\[...\] il est devenu impossible de l'exprimer dans le débat public sans se faire accuser de haïr les policiers \[...\]*)                                                                           |
 | auxiliary verbs                                                   | \-                                | \-                                                                                                                                                                                                            |
 
-: Verb cluster categorisation with example verbs based on the classes by @francois_presentation_2007 [4]
+Verb cluster categorisation with example verbs based on the classes by @francois_presentation_2007 [4]
+:::
 
 ## Alternative models {.appendix}
 

@@ -430,7 +430,9 @@ The genre of parliamentary debates is somewhat specialised and our results may n
 
 ### Semi-automated approach {#sec-semi-automatic-approach}
 
-To extract our sample, we used a semi-automatic approach combining CQL expression-based extraction and manual filtering. Our aim was to obtain an equal number of occurrences of [être]{.smallcaps} and [se faire]{.smallcaps} constructions. First, we used a CQL expression to automatically extract a sample of 1,254 [se faire]{.smallcaps} constructions from the French ParlaMint corpus [@11356/1431]. After this, Annotator A manually filtered the data to exclude false-positives, i.e. constructions that did not meet our predefined criteria for [se faire]{.smallcaps} passives (see @sec-filtering-criteria). During the filtering process, Annotator A also annotated the lemmas of the constructions and compiled a list. After filtering, the final sample consisted of 535 valid [se faire]{.smallcaps} constructions.
+To extract our sample, we used a semi-automatic approach combining CQL expression-based extraction and manual filtering. Our aim was to obtain an equal number of occurrences of [être]{.smallcaps} and [se faire]{.smallcaps} constructions.
+
+First, we used a CQL expression to automatically extract a sample of 1,254 [se faire]{.smallcaps} constructions from the French ParlaMint corpus [@11356/1431]. After this, Annotator A manually filtered the data to exclude false-positives, i.e. constructions that did not meet our predefined criteria for [se faire]{.smallcaps} passives (see @sec-filtering-criteria). During the filtering process, Annotator A also annotated the lemmas of the constructions and compiled a list. After filtering, the final sample consisted of 535 valid [se faire]{.smallcaps} constructions.
 
 ```{r lemma-list, include=FALSE}
 

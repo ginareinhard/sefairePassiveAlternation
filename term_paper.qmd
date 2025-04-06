@@ -724,7 +724,7 @@ In addition to conducting a descriptive analysis of the data, we employed a bino
 The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (passive variant: être; complément d' agent: 0; modal: no; TAM: non-progressive, cluster: neutral). If this would negatively affect the stability of the model, the most frequent (subject animacy: animate, subject gender: masculine) or the most evenly distributed case (adversativity: adversative)
 
 | Factors            | Label           | Levels                                   |
-|-------------------|-------------------|----------------------------------|
+|------------------|------------------|------------------------------------|
 | Passive variant    | passive_variant | être, se faire                           |
 | Subject animacy    | subj_animacy    | animate, inanimate                       |
 | Subject gender     | subj_gender     | masculine, feminine                      |
@@ -913,9 +913,9 @@ testDispersion(sim_res)
 As Levshina [-@levshina_how_2015: 256] describes, the concordance index measures the ability of the model to discriminate correctly by providing the proportion of times when the model predicts the use of the variant correctly.
 
 ```{r concordance-index, echo = FALSE}
-outcome <- as.numeric(na.omit(passive_sample_clean)$passive_variant) - 1
+#outcome <- as.numeric(na.omit(passive_sample_clean)$passive_variant) - 1
 
-concordance_final_model <- Hmisc::somers2(predictions, outcome)["C"]
+#concordance_final_model <- Hmisc::somers2(predictions, outcome)["C"]
 ```
 
 The model has a high concordance index of `r   round(concordance_final_model, 2)`. According to the scale reported in Levshina [-@levshina_how_2015: 259], this indicates "outstanding discrimination".
@@ -925,9 +925,9 @@ The model has a high concordance index of `r   round(concordance_final_model, 2)
 Additonally, we apply an overall significance test by comparing it to a model without predictors (i.e. null model) using an ANOVA [@gries_statistics_2021: 445-446].
 
 ```{r model2-significance, include = FALSE}
-null_model <- glmer(passive_variant ~ 1 + (1 | lemma) + (1 | speaker), data = passive_sample_clean, family = binomial)
+#null_model <- glmer(passive_variant ~ 1 + (1 | lemma) + (1 | speaker), data = passive_sample_clean, family = binomial)
 
-anova_final_model <- anova(final_model, null_model, test="Chisq")
+#anova_final_model <- anova(final_model, null_model, test="Chisq")
 
 #highly significant!
 # ### model with unknown
@@ -944,24 +944,24 @@ anova_final_model <- anova(final_model, null_model, test="Chisq")
 # #relative likelihood
 # (exp((AIC(null_model)-AIC(final_model))/2))
 
-rel_likelihood <- exp((AIC(null_model) - AIC(final_model)) / 2)
+#rel_likelihood <- exp((AIC(null_model) - AIC(final_model)) / 2)
 
 # ANOVA to data frame
-anova_df <- as.data.frame(anova_final_model)
-anova_final_model
+#anova_df <- as.data.frame(anova_final_model)
+#anova_final_model
 
 # p-value
-anova_df$`Pr(>Chisq)` <- format(anova_df$`Pr(>Chisq)`, scientific = TRUE, digits = 3)
+#anova_df$`Pr(>Chisq)` <- format(anova_df$`Pr(>Chisq)`, scientific = TRUE, digits = 3)
 
 # add relative likelihood
-anova_df$`Relative Likelihood` <- c(NA, rel_likelihood)
+#anova_df$`Relative Likelihood` <- c(NA, rel_likelihood)
 ```
 
 ```{r anova-kable-tab, echo = FALSE}
 # kable table
-kbl(anova_df, format = "html", digits = 3) |> 
-  kable_styling(bootstrap_options = c("striped", "hover","condensed", "responsive")) |> 
-  row_spec(2, bold = TRUE)
+#kbl(anova_df, format = "html", digits = 3) |> 
+#  kable_styling(bootstrap_options = c("striped", "hover","condensed", "responsive")) |> 
+#  row_spec(2, bold = TRUE)
 ```
 
 The ANOVA shows that our model is highly significant (LR-test=181.02, $p$ \<0.0001), indicating a strong improvement over the null model. The model has a vastly higher relative likelihood compared to the null model.
@@ -1040,24 +1040,24 @@ We only have categorical data; therefore mean and standard deviation are not mea
 
 **Bootstrap Validation**
 
-We used bootstrapping to validate the stability and uncertainty (CIs) of our model's coefficients, focusing on statistical inferences about our predictors rather than prediction. Bootstrapping involves random resampling from the original dataset with replacement, performing analysis on each sample, and comparing results to the original one. It allows for internal model validation without requiring new test data [@levshina_how_2015: 166]. We used the `bootMer()` function for mixed models.
+We used bootstrapping to validate the stability of our model's coefficients. This method involves random resampling with replacement from the original dataset, analysing each resample, and comparing the resulting estimates to the original. It allows for internal model validation without the need for new external test data [@levshina_how_2015: 166].
+
+We used the `bootMer()` function from the `lme4` package to perform bootstrapping on our mixed-effects model, using the same random seed that we used during data sampling for reproducibility.
 
 ```{r boot-validation}
 
-#Running bootMer() takes a long time
 boot_final_model <- bootMer(
   final_model, 
   FUN = fixef,     
-  nsim = 50,     # Number of bootstrap replicates reduced to 50, change to 1000 (time consumuing)
+  nsim = 1000,
   seed = 2142637384,
-  type = "parametric",  # Or "semiparametric"?
-  verbose = TRUE # shows progress / warning messages
+  type = "parametric",
+  verbose = TRUE
 )
 
-boot_df <- as.data.frame(boot_model$t)
-colnames(boot_df) <- names(fixef(final_model))
-
 ```
+
+Bootstrap statistics:
 
 ```{r boot-summary}
 
@@ -1065,11 +1065,26 @@ boot_summary <- summary(boot_final_model)
 
 ```
 
+According to @levshina_how_2015:167, large optimism values (i.e. the differences between the training and test statistics) indicate overfitting.
+
+-   "a model will perform better on the data it was built on – or trained on, to use machine-learning lan- guage – if only because, I am still anthropomorphizing, it found things in the data set it was trained on that it could use for good predictions but that wouldn’t exist in any other sample; this is often called **overfitting" @gries_statistics_2021:385**
+
+In our bootstrap summary, this difference can be seen in the bootstrap bias, which is very small (\< 0.05) for most predictors. However, the variable clustercommunication shows a slightly higher bias (0.059), suggesting it might be overfitting to some extent. This means that clustercommunication may be a less robust predictor and may require further investigation or could be removed from the model.
+
 ```{r}
 
-ggplot(boot_df, aes(x = subj_animacyinanimate)) +
+boot_df <- as.data.frame(boot_final_model$t)
+colnames(boot_df) <- names(fixef(final_model))
+
+```
+
+The density plot of the bootstrapped estimates for the clustercommunication fixed effect visualises the distribution of the coefficient estimates across the 1000 bootstrap samples. It is approximately bell-shaped and only slightly skewed. Most of the bootstrapped coefficient estimates lie well above 0, supporting the significance and positive effect.
+
+```{r}
+
+ggplot(boot_df, aes(x = clustercommunication)) +
   geom_density(fill = "lightblue") +
-  labs(title = "Bootstrapped Distribution: subj_animacyinanimate",
+  labs(title = "Bootstrapped Distribution: clustercommunication",
        x = "Coefficient Estimate", y = "Density") +
   theme_minimal()
 
@@ -1531,7 +1546,7 @@ As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + i
 
 ::: {#tbl-clusters}
 | Verb clusters [@francois_presentation_2007, 4]                    | Grouped Verb Clusters (Our Study) | Example Verbs                                                                                                                                                                                                 |
-|-------------------|-------------------|----------------------------------|
+|----------------|----------------|---------------------------------------|
 | giving, depriving (don, privation)                                | neutral                           | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*)      |
 | entering, leaving (entrée, sortie)                                | neutral                           | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*)                    |
 | hitting, touching (frapper, toucher)                              | hitting-touching                  | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*)                                                  |

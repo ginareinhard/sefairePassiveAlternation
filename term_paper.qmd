@@ -848,8 +848,8 @@ After encountering singularity issues during the bootstrap validation of the sta
 ```{r final-model, output = FALSE}
 #| code-fold: true
 final_model <- glmer(
-  passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:adversativity + subj_animacy:subj_gender) + 
-                    (1 | lemma),
+  passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:adversativity) + 
+                    (1 | lemma) + (1 | speaker),
   family = "binomial",
   data = passive_sample_clean,
   control = glmerControl(optimizer = "bobyqa")
@@ -870,28 +870,15 @@ kable(ggpredict(final_model))
 
 **Residuals**
 
-We check the residuals of the model using the `binnedplot()` function.
+We have proceeded with visual examination of the residuals. We check the residuals of the model using the `binnedplot()` function.
+<!-- Elen: residual patterns are important but they don't prove that the model is correct/ incorrect/ unusable; once residual effect is significant -> look at the magnitude; p-values are among other things dependent on the sample size (data size); indicates that model may not be the best fit and that some of the inferential measures may not be reliable BUT no model is perfect -->
 
 ```{r residuals-diagnostics, include = FALSE}
-predictions <- predict(final_model, type = "response")
-
-# predictions <- predict(final_model, type = "response", na.action = na.omit)
+library(arm)
+# predictions <- predict(final_model, type = "response")
+predictions <- predict(final_model, type = "response", na.action = na.omit)
 
 # plot(residuals(final_model) ~ predict(final_model))
-library(arm)
-# #Hosmer Leweshow Test
-# install.packages("ResourceSelection")
-# library(ResourceSelection)
-# model_data <- model.frame(final_model)
-# 
-# # add predicted_probs hinzu
-# model_data$predicted_probs <- fitted(final_model)
-# 
-# # create binary passive variant variable
-# model_data$passive_binary <- ifelse(model_data$passive_variant == "se faire", 1, 0)
-# 
-# # Hosmer-Lemeshow-Test with 10 groups
-# hoslem.test(model_data$passive_binary, model_data$predicted_probs, g = 10)
 ```
 
 ```{r residuals-diagnostics-binned, echo = FALSE}
@@ -915,9 +902,9 @@ testDispersion(sim_res)
 As Levshina [-@levshina_how_2015: 256] describes, the concordance index measures the ability of the model to discriminate correctly by providing the proportion of times when the model predicts the use of the variant correctly.
 
 ```{r concordance-index, echo = FALSE}
-outcome <- as.numeric((passive_sample_clean)$passive_variant) - 1
+# outcome <- as.numeric((passive_sample_clean)$passive_variant) - 1
 
-# outcome <- as.numeric(na.omit(passive_sample_clean)$passive_variant) - 1
+outcome <- as.numeric(na.omit(passive_sample_clean)$passive_variant) - 1
 
 concordance_final_model <- Hmisc::somers2(predictions, outcome)["C"]
 ```
@@ -929,9 +916,9 @@ The model has a high concordance index of `r   round(concordance_final_model, 2)
 Additonally, we apply an overall significance test by comparing it to a model without predictors (i.e. null model) using an ANOVA [@gries_statistics_2021: 445-446].
 
 ```{r model2-significance, include = FALSE}
-# null_model <- glmer(passive_variant ~ 1 + (1 | lemma) + (1 | speaker), data = passive_sample_clean, family = binomial)
+null_model <- glmer(passive_variant ~ 1 + (1 | lemma) + (1 | speaker), data = passive_sample_clean, family = binomial)
 
-null_model <- glmer(passive_variant ~ 1 + (1 | lemma), data = passive_sample_clean, family = binomial)
+# null_model <- glmer(passive_variant ~ 1 + (1 | lemma), data = passive_sample_clean, family = binomial)
 
 anova_final_model <- anova(final_model, null_model, test="Chisq")
 
@@ -1050,7 +1037,7 @@ We used bootstrapping to validate the stability of our model's coefficients. Thi
 
 We used the `bootMer()` function from the `lme4` package to perform bootstrapping on our mixed-effects model, using the same random seed that we used during data sampling for reproducibility.
 
-```{r boot-validation}
+```{r boot-validation, echo = FALSE}
 
 boot_final_model <- bootMer(
   final_model, 

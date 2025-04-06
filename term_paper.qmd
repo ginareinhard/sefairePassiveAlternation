@@ -843,13 +843,17 @@ tab_model(model_back_1, show.aic = TRUE)
 
 Non-significant fixed effects are removed step by step, starting with `tam`, which has the highest $p$-value. At each step, the main effect with the highest $p$-value is eliminated. The final model is reported here. Although `subj_gender` remains non-significant ($p$ \> 0.05), we retain it for theoretical and interpretative reasons. The AIC of 719.2 indicates that removing `agent_pp`, `modal` and `tam` improved the model quality while R^2^ stayed constant at 0.451 / 0.662.
 
+After encountering singularity issues during the bootstrap validation of the stability and uncertainty of the coefficients (see @sec-model-diagnostics), we decided to remove the random effect of the speaker due to a lack of variance, which contributed to the model's instability.
+
 ```{r final-model, output = FALSE}
 #| code-fold: true
 final_model <- glmer(
-    passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:adversativity + subj_animacy:subj_gender) + (1 | lemma) + (1 | speaker),
-    family = "binomial",
-    data = passive_sample_clean
-  )
+  passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:adversativity + subj_animacy:subj_gender) + 
+                    (1 | lemma),
+  family = "binomial",
+  data = passive_sample_clean,
+  control = glmerControl(optimizer = "bobyqa")
+)
 final_model_summary <- summary(final_model) # AIC: 719.2
 vif(final_model)
 ```
@@ -861,7 +865,7 @@ kable(ggpredict(final_model))
 ```
 :::
 
-### Model diagnostics
+### Model diagnostics {#sec-model-diagnostics}
 
 **Residuals**
 
@@ -1033,6 +1037,63 @@ We only have categorical data; therefore mean and standard deviation are not mea
 -   proportions
 
 -   bar plots, mosaic plots
+
+**Bootstrap Validation**
+
+We used bootstrapping to validate the stability and uncertainty (CIs) of our model's coefficients, focusing on statistical inferences about our predictors rather than prediction. Bootstrapping involves random resampling from the original dataset with replacement, performing analysis on each sample, and comparing results to the original one. It allows for internal model validation without requiring new test data [@levshina_how_2015: 166]. We used the `bootMer()` function for mixed models.
+
+```{r boot-validation}
+
+#Running bootMer() takes a long time
+boot_final_model <- bootMer(
+  final_model, 
+  FUN = fixef,     
+  nsim = 50,     # Number of bootstrap replicates reduced to 50, change to 1000 (time consumuing)
+  seed = 2142637384,
+  type = "parametric",  # Or "semiparametric"?
+  verbose = TRUE # shows progress / warning messages
+)
+
+boot_df <- as.data.frame(boot_model$t)
+colnames(boot_df) <- names(fixef(final_model))
+
+```
+
+```{r boot-summary}
+
+boot_summary <- summary(boot_final_model)
+
+```
+
+```{r}
+
+ggplot(boot_df, aes(x = subj_animacyinanimate)) +
+  geom_density(fill = "lightblue") +
+  labs(title = "Bootstrapped Distribution: subj_animacyinanimate",
+       x = "Coefficient Estimate", y = "Density") +
+  theme_minimal()
+
+```
+
+When running `bootMer()` with random effects lemma and speaker, we ran into convergence issues - + isSingular-warning
+
+Checking for collinearity:
+
+```{r}
+
+vif(final_model_bobqa)
+
+```
+
+-\> OK
+
+```{r}
+
+isSingular(final_model)
+
+```
+
+-\> isSingular(final_model_unknown)\[1\] FALSE (variance was OK)
 
 ## Subject responsibility
 

@@ -855,6 +855,7 @@ final_model <- glmer(
   control = glmerControl(optimizer = "bobyqa")
 )
 final_model_summary <- summary(final_model) # AIC: 719.2
+final_model_summary
 vif(final_model)
 ```
 
@@ -872,7 +873,10 @@ kable(ggpredict(final_model))
 We check the residuals of the model using the `binnedplot()` function.
 
 ```{r residuals-diagnostics, include = FALSE}
-predictions <- predict(final_model, type = "response", na.action = na.omit)
+predictions <- predict(final_model, type = "response")
+
+# predictions <- predict(final_model, type = "response", na.action = na.omit)
+
 # plot(residuals(final_model) ~ predict(final_model))
 library(arm)
 # #Hosmer Leweshow Test
@@ -901,8 +905,6 @@ Following the recommendations of Gries [-@gries_statistics_2021: 445], we additi
 ```{r residuals-diagnostics-DHARMa, include = FALSE}
 #install.packages("DHARMa")
 library(DHARMa)
-library(arm)
-binnedplot(predict(final_model), residuals(final_model))
 sim_res <- simulateResiduals(final_model)
 plot(sim_res)
 testDispersion(sim_res)
@@ -913,9 +915,11 @@ testDispersion(sim_res)
 As Levshina [-@levshina_how_2015: 256] describes, the concordance index measures the ability of the model to discriminate correctly by providing the proportion of times when the model predicts the use of the variant correctly.
 
 ```{r concordance-index, echo = FALSE}
-#outcome <- as.numeric(na.omit(passive_sample_clean)$passive_variant) - 1
+outcome <- as.numeric((passive_sample_clean)$passive_variant) - 1
 
-#concordance_final_model <- Hmisc::somers2(predictions, outcome)["C"]
+# outcome <- as.numeric(na.omit(passive_sample_clean)$passive_variant) - 1
+
+concordance_final_model <- Hmisc::somers2(predictions, outcome)["C"]
 ```
 
 The model has a high concordance index of `r   round(concordance_final_model, 2)`. According to the scale reported in Levshina [-@levshina_how_2015: 259], this indicates "outstanding discrimination".
@@ -925,9 +929,11 @@ The model has a high concordance index of `r   round(concordance_final_model, 2)
 Additonally, we apply an overall significance test by comparing it to a model without predictors (i.e. null model) using an ANOVA [@gries_statistics_2021: 445-446].
 
 ```{r model2-significance, include = FALSE}
-#null_model <- glmer(passive_variant ~ 1 + (1 | lemma) + (1 | speaker), data = passive_sample_clean, family = binomial)
+# null_model <- glmer(passive_variant ~ 1 + (1 | lemma) + (1 | speaker), data = passive_sample_clean, family = binomial)
 
-#anova_final_model <- anova(final_model, null_model, test="Chisq")
+null_model <- glmer(passive_variant ~ 1 + (1 | lemma), data = passive_sample_clean, family = binomial)
+
+anova_final_model <- anova(final_model, null_model, test="Chisq")
 
 #highly significant!
 # ### model with unknown
@@ -940,28 +946,28 @@ Additonally, we apply an overall significance test by comparing it to a model wi
 ```
 
 ```{r anova-tab, include = FALSE}
-# kbl(anova_final_model)
-# #relative likelihood
-# (exp((AIC(null_model)-AIC(final_model))/2))
+kbl(anova_final_model)
+ #relative likelihood
+(exp((AIC(null_model)-AIC(final_model))/2))
 
-#rel_likelihood <- exp((AIC(null_model) - AIC(final_model)) / 2)
+rel_likelihood <- exp((AIC(null_model) - AIC(final_model)) / 2)
 
 # ANOVA to data frame
-#anova_df <- as.data.frame(anova_final_model)
-#anova_final_model
+anova_df <- as.data.frame(anova_final_model)
+anova_final_model
 
 # p-value
-#anova_df$`Pr(>Chisq)` <- format(anova_df$`Pr(>Chisq)`, scientific = TRUE, digits = 3)
+anova_df$`Pr(>Chisq)` <- format(anova_df$`Pr(>Chisq)`, scientific = TRUE, digits = 3)
 
 # add relative likelihood
-#anova_df$`Relative Likelihood` <- c(NA, rel_likelihood)
+anova_df$`Relative Likelihood` <- c(NA, rel_likelihood)
 ```
 
 ```{r anova-kable-tab, echo = FALSE}
 # kable table
-#kbl(anova_df, format = "html", digits = 3) |> 
-#  kable_styling(bootstrap_options = c("striped", "hover","condensed", "responsive")) |> 
-#  row_spec(2, bold = TRUE)
+kbl(anova_df, format = "html", digits = 3) |> 
+  kable_styling(bootstrap_options = c("striped", "hover","condensed", "responsive")) |> 
+  row_spec(2, bold = TRUE)
 ```
 
 The ANOVA shows that our model is highly significant (LR-test=181.02, $p$ \<0.0001), indicating a strong improvement over the null model. The model has a vastly higher relative likelihood compared to the null model.
@@ -1096,7 +1102,7 @@ Checking for collinearity:
 
 ```{r}
 
-vif(final_model_bobqa)
+vif(final_model)
 
 ```
 

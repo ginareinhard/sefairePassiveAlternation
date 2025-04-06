@@ -1037,7 +1037,7 @@ We used bootstrapping to validate the stability of our model's coefficients. Thi
 
 We used the `bootMer()` function from the `lme4` package to perform bootstrapping on our mixed-effects model, using the same random seed that we used during data sampling for reproducibility.
 
-```{r boot-validation, echo = FALSE}
+```{r boot-validation, output = FALSE}
 
 boot_final_model <- bootMer(
   final_model, 
@@ -1055,7 +1055,7 @@ Bootstrap statistics:
 ```{r boot-summary}
 
 boot_summary <- summary(boot_final_model)
-
+boot_summary
 ```
 
 According to @levshina_how_2015:167, large optimism values (i.e. the differences between the training and test statistics) indicate overfitting.

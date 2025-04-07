@@ -779,6 +779,8 @@ passiveVariant & \sim subjAnimacy + subjGender + agentPP + modal + tam + cluster
 \end{align*}
 $$
 
+`passive_variant ~ subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:gender + subj_animacy:cluster + subj_animacy:adversativity + cluster: adversativity + (1|lemma) + 1|speaker)`
+
 Although the main effect of `subj_gender` cannot be interpeted due to its participation in an interaction, it is striking that the odds ratio of `subj_gender[unknown]` is very high with a huge confidence interval of 10.49 – 124.99. The AIC is 771.3 with an R^2^ of 0.599 when excluding random effects and 0.748 when accounting for them. The vif-analysis reveals no high collinearity values for `subj_gender` or the interaction `subj_animacy:subj_gender`. However, as explained in @sec-data-preprocessing, we suspect an annotated-related artifact related to the level `unknown`. For that reason, we decide to compare the model to one fitted on the data set that excludes `unknown` constructions.
 
 ```{r max-model-unknown, output = FALSE}
@@ -876,7 +878,7 @@ kable(ggpredict(final_model))
 
 **Residuals**
 
-To check goodness of fit and usability of the final model, we proceeded with visual examination of the residuals. Gelman and Hill [-@Gelman_Hill_2006: 97] state that due to to the discreteness of the data, "plots of raw residuals from logistic regression are generally not useful". Instead, they recommend plotting binned residuals for logistic regressions. Following this suggestion, we checked the residuals of the model using the `binnedplot()` function from the `arm` package. <!-- Elen: residual patterns are important but they don't prove that the model is correct/ incorrect/ unusable; once residual effect is significant -> look at the magnitude; p-values are among other things dependent on the sample size (data size); indicates that model may not be the best fit and that some of the inferential measures may not be reliable BUT no model is perfect -->
+To check goodness of fit and usability of the final model, we proceeded with a visual examination of the residuals. Gelman and Hill [-@Gelman_Hill_2006: 97] state that due to to the discreteness of the data, "plots of raw residuals from logistic regression are generally not useful". Instead, they recommend plotting binned residuals for logistic regressions. Following this suggestion, we checked the residuals of the model using the `binnedplot()` function from the `arm` package. <!-- Elen: residual patterns are important but they don't prove that the model is correct/ incorrect/ unusable; once residual effect is significant -> look at the magnitude; p-values are among other things dependent on the sample size (data size); indicates that model may not be the best fit and that some of the inferential measures may not be reliable BUT no model is perfect -->
 
 ```{r residuals-diagnostics-binned, include = FALSE}
 library(arm)

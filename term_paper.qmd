@@ -26,6 +26,7 @@ p {
 }
 </style>
 ```
+
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -177,6 +178,7 @@ We will refer to this with [être.]{.smallcaps}
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward 
 -   se faire passive "typologically marked", comparison to other Romance languages @koenig_semantic_1992 \[145\]; similar constructions exist in other Romance languages but passive reading only allowed in French @labelle_anticausativizing_2013 [236] -->
 ```
+
 ### Structure and meaning
 
 When constructing a passive sentence, French speakers may choose to use [se faire]{.smallcaps} instead of the canonical [être]{.smallcaps}: The [se faire]{.smallcaps} passive construction, hereinafter called [se faire]{.smallcaps}, provides an alternative way to express passive meaning in French. [se faire]{.smallcaps} has been widely investigated and discussed, for example by @bellec_construction_2014, @gaatone_desagreable_1983, @koenig_semantic_1992, @kupferman_construction_1995, @labelle_anticausativizing_2013, @raineri_analyse_2010, @novakova_construction_2009, and @tasmowski-de_ryck_causatif_1987.
@@ -257,6 +259,7 @@ We recognize this "fuzzy" [@bohmann_large-scale_2023: 50] variable context as bo
 
 -   Subjects in passive sentences are preferably animate, definite, and pronominal. In the study by @da_cunha_lalternance_2020, animate, definite, and pronominal arguments that function as the objects in active sentences were more frequently found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice) -->
 ```
+
 ### Subject responsibility
 
 As indicated above, the question whether the referent of the subject in the [se faire]{.smallcaps} construction holds any responsibility is central to the debate of the construction's passive-status (see above; @sveberg_se_2012, @bellec_construction_2014 :212-213). In line with their argument that the passive reading of [se faire]{.smallcaps} is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of [se faire]{.smallcaps} is always a causer and therefore always responsible to some degree. This is contrasted to the être passive's subject referent, which is seen as more neutral. Gaatone [-@gaatone_desagreable_1983: 164] distinguishes between an "active patient" in [se faire]{.smallcaps} and a "passive patient" in the être passive [@raineri_analyse_2010: 96].
@@ -268,6 +271,7 @@ As indicated above, the question whether the referent of the subject in the [se 
 the PSF construction has a preference to mark the subject as an active participant (although according to @raineri_analyse_2010 [98] is is not "universally accepted" as some authors also name counterexamples @kupferman_construction_1995 [59].)
 In @raineri_analyse_2010 [95]'s view, the idea that the PSF expresses subject responsibility is the "most common hypothesis" ("l'hypothèse la plus répandue") in the literature. -->
 ```
+
 In contrast, Kupferman [-@kupferman_construction_1995: 59] gives [se faire]{.smallcaps} examples where the subject cannot possibly be interpreted as responsible, one of which is repeated here:
 
 > 9.  *Elle sanglotait parce que son tout jeune bébé venait de se faire enlever les amygdales.* [@kupferman_construction_1995: 59]\
@@ -412,6 +416,7 @@ As @bohmann_large-scale_2023 note in their investigation of the [be]{.smallcaps}
 
 -   English @bohmann_large-scale_2023, East Asian languages @washio_when_1993 and @guan_multifactorial_2024 , Swedish @cuypere_corpus-based_2014 -->
 ```
+
 # Data and methods {#sec-data-and-methods}
 
 Prior to conducting our study, we preregistered its protocol on the platform AsPredicted (**Wharton Credibility Lab, University of Pennsylvania**) to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed here: <https://aspredicted.org/gp6y-dd8p.pdf>.
@@ -634,6 +639,7 @@ kappa_table |>
 +--------------------+--------------+----------------------------------------------+
 -->
 ```
+
 We classified the ϰ-values using the influential benchmark categorisation of Landis and Koch [-@landis1977measurement: 165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". Mean inter-rater agreement is high at `r  mean_kappa`. Agreement is lowest for the cateogories adversativity (0.67) and TAM (0.77).
 
 ### Data preprocessing {#sec-data-preprocessing}
@@ -723,16 +729,16 @@ In addition to conducting a descriptive analysis of the data, we employed a bino
 
 The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (passive variant: être; complément d' agent: 0; modal: no; TAM: non-progressive, cluster: neutral). If this would negatively affect the stability of the model, the most frequent (subject animacy: animate, subject gender: masculine) or the most evenly distributed case (adversativity: adversative)
 
-| Factors            | Label           | Levels                                   |
+| Factors | Label | Levels |
 |------------------|------------------|------------------------------------|
-| Passive variant    | passive_variant | être, se faire                           |
-| Subject animacy    | subj_animacy    | animate, inanimate                       |
-| Subject gender     | subj_gender     | masculine, feminine                      |
-| Complément d'agent | agent_pp        | 0, de, par                               |
-| Modal              | modal           | no, yes                                  |
-| TAM                | tam             | non-progressive, progressive             |
-| Cluster            | cluster         | neutral, communication, hitting-touching |
-| Adversativity      | adversativity   | adversative, non-adversative             |
+| Passive variant | passive_variant | être, se faire |
+| Subject animacy | subj_animacy | animate, inanimate |
+| Subject gender | subj_gender | masculine, feminine |
+| Complément d'agent | agent_pp | 0, de, par |
+| Modal | modal | no, yes |
+| TAM | tam | non-progressive, progressive |
+| Cluster | cluster | neutral, communication, hitting-touching |
+| Adversativity | adversativity | adversative, non-adversative |
 
 : Overview of variables for the *être: se faire* passive alternation
 
@@ -870,32 +876,38 @@ kable(ggpredict(final_model))
 
 **Residuals**
 
-We have proceeded with visual examination of the residuals. We check the residuals of the model using the `binnedplot()` function.
-<!-- Elen: residual patterns are important but they don't prove that the model is correct/ incorrect/ unusable; once residual effect is significant -> look at the magnitude; p-values are among other things dependent on the sample size (data size); indicates that model may not be the best fit and that some of the inferential measures may not be reliable BUT no model is perfect -->
+To check goodness of fit and usability of the final model, we proceeded with visual examination of the residuals. Gelman and Hill [-@Gelman_Hill_2006: 97] state that due to to the discreteness of the data, "plots of raw residuals from logistic regression are generally not useful". Instead, they recommend plotting binned residuals for logistic regressions. Following this suggestion, we checked the residuals of the model using the `binnedplot()` function from the `arm` package. <!-- Elen: residual patterns are important but they don't prove that the model is correct/ incorrect/ unusable; once residual effect is significant -> look at the magnitude; p-values are among other things dependent on the sample size (data size); indicates that model may not be the best fit and that some of the inferential measures may not be reliable BUT no model is perfect -->
 
-```{r residuals-diagnostics, include = FALSE}
+```{r residuals-diagnostics-binned, include = FALSE}
 library(arm)
-# predictions <- predict(final_model, type = "response")
 predictions <- predict(final_model, type = "response", na.action = na.omit)
+binnedplot(predictions, residuals(final_model, type = "response"), nclass = 50)
 
-# plot(residuals(final_model) ~ predict(final_model))
+sqrt(length(resid(final_model))) #29 bins
 ```
 
-```{r residuals-diagnostics-binned, echo = FALSE}
-binnedplot(predictions, residuals(final_model, type = "response"))
-```
+The pattern of the residuals is random without any obvious patterns, indicating that the model does not make systematic errors. The grey lines mark the bounds of the Standard Error. Ideally, 95% of the binned residuals should fall within these bounds if the model were true [@Gelman_Hill_2006: 97]. Indeed, the majority of the residuals is included in the SE bounds, and the shape of the residuals is is overall well/ fittingly captured. However, a few aspects deviate from the optimal/ ideal/ desired picture/ are not ideal:
 
-<!-- Binned plot: "The grey lines represent +- SE bands, which we would expect to contain about 95% of the observations. Desired: majority of the fitted values fall within the SE bands. -->
+-   More than 5% of residuals fall outside the bounds, especially on the left and right end (cluster on the left, more widely distributed in the right)
 
-Following the recommendations of Gries [-@gries_statistics_2021: 445], we additionally use functions of the `DHARMa` package to create more detailed residuals plots/ to gain more detailed insight into the residuals structure. (https://cran.r-project.org/web/packages/DHARMa/vignettes/DHARMa.html)
+-   slight Tendency of residuals to be more often negative in the middle area (for low to medium expectations) and more positive for high expected values (where they then fall out of the SE bands)
 
-```{r residuals-diagnostics-DHARMa, include = FALSE}
+These potentially problematic characteristics induce us to conduct additional residuals tests/ investigate the structure of residuals further to potentially detect any/the specific issues the model might have. Following the recommendations of Gries [-@gries_statistics_2021: 445], we use functions from the `DHARMa` package to to gain more detailed insight into the residuals structure: The `DHARMa` dispersion plot shows that the residuals are approximately normally distributed, the dispersion test indicated no evidence of over- or underdispersion (dispersion = 0.97, $p$ = 0.632), suggesting that the variance of the residuals is consistent with model expectations. The outlier test is negative, showing no significant deviations from the expected distribution.
+
+The QQ-Plot reveals a significant deviation ($p$ = 0.02965) as tested by the Kolmogorov-Smirnov test, which may point to unreliable inferential measures. However, $p$-values depend (among other factors) and the KS test is reportedly highly sensitive to minor deviations **(reference),** many of which naturally occur in large data sets such as ours. Based on the overall distribution of residuals, we assess the magnitude of this deviation to be minor. Since all other diagnostic plots show no indications of misfit, we do not interpret the significant KS result as evidence of poor model performance.<!-- https://cran.r-project.org/web/packages/DHARMa/vignettes/DHARMa.html -->
+
+```{r residuals-diagnostics-DHARMa, echo = FALSE}
 #install.packages("DHARMa")
 library(DHARMa)
 sim_res <- simulateResiduals(final_model)
-plot(sim_res)
 testDispersion(sim_res)
+#plot(sim_res)
+testOutliers(sim_res)
+testUniformity(sim_res)
+#testQuantiles(sim_res)
 ```
+
+Overall, the residuals tests indicate that the model may not be optimally calibrated and potentially mispredicts ..., however, considering all tests results, overall, the results of tests point toward a stable model structure which makes reliable predictions.
 
 **Concordance index**
 
@@ -990,6 +1002,7 @@ The ANOVA shows that our model is highly significant (LR-test=181.02, $p$ \<0.00
 -   caret: train best performing model
 -   Model evaluation -->
 ```
+
 **Coefficients**
 
 Looking at the log odds of the significant variables, it becomes apparent that communication verbs boost the chance of [se faire]{.smallcaps} being used, while [être]{.smallcaps} is more likely in non-adversative contexts with inanimate subjects. (Although non-significant, feminine subjects are more likely to occur with [se faire]{.smallcaps} than masculine subjects.)
@@ -1040,8 +1053,8 @@ We used the `bootMer()` function from the `lme4` package to perform bootstrappin
 ```{r boot-validation, output = FALSE}
 
 boot_final_model <- bootMer(
-  final_model, 
-  FUN = fixef,     
+  final_model,
+  FUN = fixef,
   nsim = 1000,
   seed = 2142637384,
   type = "parametric",
@@ -1538,22 +1551,22 @@ As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + i
 ## Verb cluster categorisation with example verbs {#appendix-a .appendix}
 
 ::: {#tbl-clusters}
-| Verb clusters [@francois_presentation_2007, 4]                    | Grouped Verb Clusters (Our Study) | Example Verbs                                                                                                                                                                                                 |
-|----------------|----------------|---------------------------------------|
-| giving, depriving (don, privation)                                | neutral                           | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*)      |
-| entering, leaving (entrée, sortie)                                | neutral                           | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*)                    |
-| hitting, touching (frapper, toucher)                              | hitting-touching                  | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*)                                                  |
-| movement in place (mouvement sur place)                           | neutral                           | \-                                                                                                                                                                                                            |
-| equipping, disarming (munir, démunir)                             | neutral                           | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie \[...\]*)                                                                                                            |
-| transformation, change (transformation, changement)               | neutral                           | remplacer (*\[...\] afin que le premier puisse se faire remplacer par le second \[...\]*)                                                                                                                     |
-| realisation, preparation (réalisation, mise en état)              | neutral                           | photographier (*J'ajoute la diminution du nombre de points où l'on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'identité ou son passeport*.) |
-| physical states and behaviours (états physiques et comportements) | neutral                           | aider (*\[...\] afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'en sont pas informés.*)                                                                    |
-| locative (locatif)                                                | neutral                           | domicilier (*Beaucoup trichent en se faisant domicilier chez un parent \[...\]*)                                                                                                                              |
-| union, reunion (union, réunion)                                   | neutral                           | \-                                                                                                                                                                                                            |
-| psychological verbs (verbes psychologiques)                       | neutral                           | écouter (*Le problème, on l'a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*)                                                          |
-| seizing, clasping, possessing (saisir, serrer, posséder)          | neutral                           | élire (*\[...\] avant que M. Hollande ne se fasse élire en affirmant qu'il ne signerait pas le TSCG en l'état.*)                                                                                              |
-| communication                                                     | communication                     | accuser (*\[...\] il est devenu impossible de l'exprimer dans le débat public sans se faire accuser de haïr les policiers \[...\]*)                                                                           |
-| auxiliary verbs                                                   | \-                                | \-                                                                                                                                                                                                            |
+| Verb clusters [@francois_presentation_2007, 4] | Grouped Verb Clusters (Our Study) | Example Verbs |
+|-----------------|-----------------|--------------------------------------|
+| giving, depriving (don, privation) | neutral | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*) |
+| entering, leaving (entrée, sortie) | neutral | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*) |
+| hitting, touching (frapper, toucher) | hitting-touching | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*) |
+| movement in place (mouvement sur place) | neutral | \- |
+| equipping, disarming (munir, démunir) | neutral | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie \[...\]*) |
+| transformation, change (transformation, changement) | neutral | remplacer (*\[...\] afin que le premier puisse se faire remplacer par le second \[...\]*) |
+| realisation, preparation (réalisation, mise en état) | neutral | photographier (*J'ajoute la diminution du nombre de points où l'on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'identité ou son passeport*.) |
+| physical states and behaviours (états physiques et comportements) | neutral | aider (*\[...\] afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'en sont pas informés.*) |
+| locative (locatif) | neutral | domicilier (*Beaucoup trichent en se faisant domicilier chez un parent \[...\]*) |
+| union, reunion (union, réunion) | neutral | \- |
+| psychological verbs (verbes psychologiques) | neutral | écouter (*Le problème, on l'a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*) |
+| seizing, clasping, possessing (saisir, serrer, posséder) | neutral | élire (*\[...\] avant que M. Hollande ne se fasse élire en affirmant qu'il ne signerait pas le TSCG en l'état.*) |
+| communication | communication | accuser (*\[...\] il est devenu impossible de l'exprimer dans le débat public sans se faire accuser de haïr les policiers \[...\]*) |
+| auxiliary verbs | \- | \- |
 
 Verb cluster categorisation with example verbs based on the classes by @francois_presentation_2007 [4]
 :::

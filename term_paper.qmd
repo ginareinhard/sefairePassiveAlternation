@@ -920,7 +920,6 @@ sim_res <- simulateResiduals(final_model)
 testDispersion(sim_res)
 #plot(sim_res)
 testOutliers(sim_res)
-testUniformity(sim_res)
 #testQuantiles(sim_res)
 ```
 

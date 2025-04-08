@@ -856,7 +856,7 @@ After encountering singularity issues during the bootstrap validation of the sta
 ```{r final-model, output = FALSE}
 #| code-fold: true
 final_model <- glmer(
-  passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:adversativity) + 
+  passive_variant ~ (subj_animacy + + subj_gender + cluster + adversativity + subj_animacy:adversativity) + 
                     (1 | lemma) + (1 | speaker),
   family = "binomial",
   data = passive_sample_clean,
@@ -880,19 +880,29 @@ kable(ggpredict(final_model))
 
 To check goodness of fit and usability of the final model, we proceeded with a visual examination of the residuals. Gelman and Hill [-@Gelman_Hill_2006: 97] state that due to to the discreteness of the data, "plots of raw residuals from logistic regression are generally not useful". Instead, they recommend plotting binned residuals. Following this suggestion, we checked the residuals of the model using the `binnedplot()` function from the `arm` package. <!-- Elen: residual patterns are important but they don't prove that the model is correct/ incorrect/ unusable; once residual effect is significant -> look at the magnitude; p-values are among other things dependent on the sample size (data size); indicates that model may not be the best fit and that some of the inferential measures may not be reliable BUT no model is perfect -->
 
-```{r residuals-diagnostics-binned, include = FALSE}
+```{r residuals-diagnostics-binned, echo = FALSE}
 library(arm)
 predictions <- predict(final_model, type = "response", na.action = na.omit)
 binnedplot(predictions, residuals(final_model, type = "response"))
 
-sqrt(length(resid(final_model))) #29 bins
+# sqrt(length(resid(final_model))) #29 bins
 ```
 
-The pattern of the residuals is random without any obvious patterns, indicating that the model does not make systematic errors. The grey lines mark the bounds of the standard error; ideally, these bounds should comprise 95% of the binned residuals if the model were true [@Gelman_Hill_2006: 97]. Indeed, the majority of the residuals falls within the SE bounds, and in general, the shape of the residuals seems captured. However, a few aspects deviate from the optimal/ desired picture:
+On first glance, the pattern of the residuals seems fairly random without any obvious patterns and most residuals around 0 (y=0 indicates realistic predictions) The grey lines mark the bounds of the standard error; ideally, these bounds should comprise 95% of the binned residuals if the model were true [@Gelman_Hill_2006: 97]. Indeed, the majority of the residuals falls within the SE bounds, and they seem to essentially capture the shape of the residuals. However, a mpre thourough investigation reveals some aspects that deviate from the optimal/ desired picture: Firstly, significantly more than 5% of residuals fall outside the bounds. Related to that, a slight pattern can be observed: Negative deviations are more common for low to medium expected values (low predicted probability of se faire) , while positive devaitions occur more oftenly for high expected values (high predicted probability of se faire). In the medium range (0.3-0.7), where être and se faire are about equally likely (model is not sure), the binned residuals are negative, this means the model more often predicted a higher likelihood of être when the correct level was être, but probability for se faire were still estimated to high (but residuals close to 0, inside SE bounds).
 
--   More than 5% of residuals fall outside the bounds. Deviations are especially common on the left and right end (cluster on the left, more widely distributed in the right)
+-   negative residuals for x\<0.5: model is confident that the correct level is être and with that, it is correct but estimated the probability of se faire to be too high
 
--   slight Tendency of residuals to be more often negative in the middle area (for low to medium expectations) and more positive for high expected probabilities (where they then fall out of the SE bands) potential reason: imbalanced data (fewer 1 than 0) or non optimal calibration ?; positive deviations: model is "overly optimistic"/ overconfident in its prediction
+-   positive residuals for x\>0.5: model is confident that the correct level is se faire and is correct but underestimated probability of se faire (could have been even more confident)
+
+-   The accumulation of positive bins at x \>0.8 means that if the model was quite sure that the correct level was se faire (high probabilities of se faire). Slightly overcalibrated for low probabilites of se faire and undercalibrated for high probabilities of se faire;
+
+-   negative residuals: model overestimates probability of se faire; positive residuals: model underestimates probability of se faire
+
+-   in regions where être would be correct the model mostly makes correct predictions but is still too optimistic for se faire; in regions where se faire would be correct the model makes mostly correct predictions but is still not optimistic enough for se faire
+
+-   Cluster of binned residuals around x=0, y=0 with a diagonally falling pattern
+
+-   potential reasons: Imbalanced data, non-optimal calibration. There is cluster of binned resiuduals Deviations are especially common on the left and right end (cluster on the left, more widely distributed in the right)
 
 These potentially problematic characteristics induce us to conduct additional residual tests/ investigate the structure of residuals further to potentially detect any/the specific issues the model might have. Following the recommendations of Gries [-@gries_statistics_2021: 445], we use functions from the `DHARMa` package to to gain more detailed insight into the residuals structure: The `DHARMa` dispersion plot shows that the residuals are approximately normally distributed, the dispersion test indicated no evidence of over- or underdispersion (dispersion = 0.97, $p$ = 0.632), suggesting that the variance of the residuals is consistent with model expectations. The outlier test is negative, showing no significant deviations from the expected distribution.
 

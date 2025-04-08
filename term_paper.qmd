@@ -48,6 +48,8 @@ library(sjPlot)
 library(rms)
 library(visreg)
 library(car)
+library(arm)
+library(DHARMa)
 ```
 
 ```{r styling, include=FALSE}
@@ -730,7 +732,7 @@ In addition to conducting a descriptive analysis of the data, we employed a bino
 The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (passive variant: être; complément d' agent: 0; modal: no; TAM: non-progressive, cluster: neutral). If this would negatively affect the stability of the model, the most frequent (subject animacy: animate, subject gender: masculine) or the most evenly distributed case (adversativity: adversative)
 
 | Factors | Label | Levels |
-|------------------|------------------|------------------------------------|
+|-------------------|-------------------|------------------------------------|
 | Passive variant | passive_variant | être, se faire |
 | Subject animacy | subj_animacy | animate, inanimate |
 | Subject gender | subj_gender | masculine, feminine |
@@ -878,41 +880,42 @@ kable(ggpredict(final_model))
 
 **Residuals**
 
-To check goodness of fit and usability of the final model, we proceeded with a visual examination of the residuals. Gelman and Hill [-@Gelman_Hill_2006: 97] state that due to to the discreteness of the data, "plots of raw residuals from logistic regression are generally not useful". Instead, they recommend plotting binned residuals. Following this suggestion, we checked the residuals of the model using the `binnedplot()` function from the `arm` package. <!-- Elen: residual patterns are important but they don't prove that the model is correct/ incorrect/ unusable; once residual effect is significant -> look at the magnitude; p-values are among other things dependent on the sample size (data size); indicates that model may not be the best fit and that some of the inferential measures may not be reliable BUT no model is perfect -->
+To check goodness of fit and usability of the final model, we examined the resiudals visually. Gelman and Hill [-@Gelman_Hill_2006: 97] state that due to to the discreteness of data in logistic regression, "plots of raw residuals from logistic regression are generally not useful". Instead, they recommend plotting binned residuals. Following this suggestion, we checked the residuals of the model using the `binnedplot()` function from the `arm` package, which sorts residuals into categories ("bins"). By default, the number of bins equals the (rounded) squareroot of the total number of data points (for our model: `floor(sqrt(848)) == 29`). <!-- Elen: residual patterns are important but they don't prove that the model is correct/ incorrect/ unusable; once residual effect is significant -> look at the magnitude; p-values are among other things dependent on the sample size (data size); indicates that model may not be the best fit and that some of the inferential measures may not be reliable BUT no model is perfect -->
 
 ```{r residuals-diagnostics-binned, echo = FALSE}
-library(arm)
+# residuals: actual - predicted values
 predictions <- predict(final_model, type = "response", na.action = na.omit)
 binnedplot(predictions, residuals(final_model, type = "response"))
-
-# sqrt(length(resid(final_model))) #29 bins
 ```
 
-On first glance, the pattern of the residuals seems fairly random without any obvious patterns and most residuals around 0 (y=0 indicates realistic predictions) The grey lines mark the bounds of the standard error; ideally, these bounds should comprise 95% of the binned residuals if the model were true [@Gelman_Hill_2006: 97]. Indeed, the majority of the residuals falls within the SE bounds, and they seem to essentially capture the shape of the residuals. However, a mpre thourough investigation reveals some aspects that deviate from the optimal/ desired picture: Firstly, significantly more than 5% of residuals fall outside the bounds. Related to that, a slight pattern can be observed: Negative deviations are more common for low to medium expected values (low predicted probability of se faire) , while positive devaitions occur more oftenly for high expected values (high predicted probability of se faire). In the medium range (0.3-0.7), where être and se faire are about equally likely (model is not sure), the binned residuals are negative, this means the model more often predicted a higher likelihood of être when the correct level was être, but probability for se faire were still estimated to high (but residuals close to 0, inside SE bounds).
+At first glance, the residuals appear to be quite random with no obvious patterns and with most residuals around 0 (y axis shows errors, 0 indicates correct predictions, <0 se faire predicted when être was correct; > 0 être predicted when se faire was correct). The grey lines mark the bounds of the standard error; ideally, these bounds should emcompass 95% of the binned residuals [@Gelman_Hill_2006: 97] (as in: these bounds would include 95% of the binned residuals if the model were true). Although the SE bounds essentially capture the shape of the residuals and the majority of the residuals fall within them, a considerable proportion fall outside the desired area: 11 out of 29 (`r paste0(round(11/29, 2) * 100, "%")`), which is well above the desired 5%.
 
--   negative residuals for x\<0.5: model is confident that the correct level is être and with that, it is correct but estimated the probability of se faire to be too high
+In this context, a slight pattern emerges: Negative deviations are more common for low to medium expected values (i.e. low predicted probability of [se faire]{.smallcaps}), while positive deviations occur more often for high expected values (high predicted probability of [se faire]{.smallcaps}). In the mid-range (0.3-0.7), where [être]{.smallcaps} and [se faire]{.smallcaps} are predicted to be about equally likely, the binned residuals are exclusively negative. Thus, when the correct level was [être]{.smallcaps}, the model often predicted a higher probability of [se faire]{.smallcaps}. This pattern is reversed for predicted probabilities of `x > 0.7`. The deviations are all positive (`y > 0`), indicating that when [se faire]{.smallcaps} was the correct variant, the model slightly underestimated the probabilities of [se faire]{.smallcaps} occurring and could have been even more confident.
 
--   positive residuals for x\>0.5: model is confident that the correct level is se faire and is correct but underestimated probability of se faire (could have been even more confident)
+In addition, there is one extremely negative bin between `x = 0.4` and `x = 0.5`, indicating that the model drastically overestimated [se faire]{.smallcaps} in this range.
 
--   The accumulation of positive bins at x \>0.8 means that if the model was quite sure that the correct level was se faire (high probabilities of se faire). Slightly overcalibrated for low probabilites of se faire and undercalibrated for high probabilities of se faire;
+```{r outlier-bin, include=FALSE}
+outlier_bin <- subset(passive_sample_clean, predictions >= 0.4 & predictions < 0.5)
+summary(outlier_bin)
+table(outlier_bin$passive_variant, outlier_bin$subj_animacy, outlier_bin$adversativity)
+```
 
--   negative residuals: model overestimates probability of se faire; positive residuals: model underestimates probability of se faire
+<!-- Looking at the data from this bin, it is striking that it contains more occurrences of the rather atypical (compared to se faire) combination of être + animate subject [+ adversative] than se faire (but only 6), since the combination of subject animacy and strongly predicts se faire -> the model is likely to make incorrect predictions for all these cases, predicting se faire and incorrectly classifying être passives as se faire? overgeneralisations for animacy and adversativity? > This suggests that the model overestimates the predictive power of animacy and generalises too much from the frequent co-occurrence of se faire and animate subjects, misclassifying atypical être+animate cases.-->
 
--   in regions where être would be correct the model mostly makes correct predictions but is still too optimistic for se faire; in regions where se faire would be correct the model makes mostly correct predictions but is still not optimistic enough for se faire
+Except for this one bin, the residuals in the mid-range are close to 0 and within SE limits. Overall, the main problem is an overoptimism of the model that a construction is se faire when it is actually être. On the other hand, it is also not optimistic enough for very high probabilities of se faire.
+Possible reasons for these non-optimal binned residuals are unbalanced data and non-optimal calibration (slightly overcalibrated for low probabilities of se faire and undercalibrated for high probabilities of se faire).
 
--   Cluster of binned residuals around x=0, y=0 with a diagonally falling pattern
+<!-- Another thing that catches the eye is the accumulation of points around x= 0 y = 0 that have a diagonally falling pattern and fall just outside the SE bounds. For these, a low probability of [se faire]{.smallcaps} was correctly predicted. -->
 
--   potential reasons: Imbalanced data, non-optimal calibration. There is cluster of binned resiuduals Deviations are especially common on the left and right end (cluster on the left, more widely distributed in the right)
+<!-- negative residuals for x\<0.5: model is confident that the correct level is être and with that, it is correct but estimated the probability of se faire to be too high
 
-These potentially problematic characteristics induce us to conduct additional residual tests/ investigate the structure of residuals further to potentially detect any/the specific issues the model might have. Following the recommendations of Gries [-@gries_statistics_2021: 445], we use functions from the `DHARMa` package to to gain more detailed insight into the residuals structure: The `DHARMa` dispersion plot shows that the residuals are approximately normally distributed, the dispersion test indicated no evidence of over- or underdispersion (dispersion = 0.97, $p$ = 0.632), suggesting that the variance of the residuals is consistent with model expectations. The outlier test is negative, showing no significant deviations from the expected distribution.
+-   positive residuals for x\>0.5: model is confident that the correct level is se faire and is correct but underestimated probability of se faire (could have been even more confident) -->
 
+To investigate these potentially problematic characteristics further and determine whether these indicate systematically erroneous model, we conducted additional residuals tests. Following the recommendations of Gries [-@gries_statistics_2021: 445], we use functions from the `DHARMa` package to to gain more detailed insight into the residuals structure: 
 <!-- If p-value is > 0.05, the "null hypothesis of normality cannot be rejected" [@levshina_how_2015: 162] -->
 
-The QQ-Plot reveals a significant deviation ($p$ = 0.02965) as tested by the Kolmogorov-Smirnov test, which may point to unreliable inferential measures. However, $p$-values depend (among other factors) and the KS test is reportedly highly sensitive to minor deviations **(reference),** many of which naturally occur in large data sets such as ours. Based on the overall distribution of residuals, we assess the magnitude of this deviation to be minor. Since all other diagnostic plots show no indications of misfit, we do not interpret the significant KS result as evidence of poor model performance.<!-- https://cran.r-project.org/web/packages/DHARMa/vignettes/DHARMa.html -->
-
-```{r residuals-diagnostics-DHARMa, echo = FALSE}
+```{r residuals-diagnostics-DHARMa-dispersion, echo = FALSE}
 #install.packages("DHARMa")
-library(DHARMa)
 sim_res <- simulateResiduals(final_model)
 testDispersion(sim_res)
 #plot(sim_res)
@@ -921,7 +924,17 @@ testUniformity(sim_res)
 #testQuantiles(sim_res)
 ```
 
-Overall, the residuals tests indicate that the model may not be optimally calibrated and potentially mispredicts ..., however, considering all tests results, overall, the results of tests point toward a stable model structure which makes reliable predictions.
+The `DHARMa` dispersion plot shows that the residuals are approximately normally distributed, the dispersion test indicated no evidence of over- or underdispersion (dispersion = 0.97, $p$ = 0.632), suggesting that the variance of the residuals is consistent with model expectations. The outlier test is negative, showing no significant deviations from the expected distribution.
+
+```{r residuals-diagnostics-DHARMa-qq, echo = FALSE}
+#install.packages("DHARMa")
+testUniformity(sim_res)
+#testQuantiles(sim_res)
+```
+
+The QQ-Plot reveals a significant deviation ($p$ = 0.02965) as tested by the Kolmogorov-Smirnov test, which may point to unreliable inferential measures. However, $p$-values depend (among other factors) and the KS test is reportedly highly sensitive to minor deviations **(reference),** many of which naturally occur in large data sets such as ours. Based on the overall distribution of residuals, we assess the magnitude of this deviation to be minor. Since all other diagnostic plots show no indications of misfit, we do not interpret the significant KS result as evidence of poor model performance.<!-- https://cran.r-project.org/web/packages/DHARMa/vignettes/DHARMa.html -->
+
+Overall, we interpret that the `DHARMa` plots do not indicate poor model fit. The most "worrying" result are therefore the non-optimal binned residuals. Except for the one outlier bin (that was potentially? maybe? caused by the unusually large number of être + animate combinations in that specific data), the bins that fall outside the SE bands is likely an issue of calibration. Considering all tests results, overall, we understand the results of tests to point toward a stable model structure which makes reliable predictions but we recognize that the model, as every model, is by no means perfect and there is room for improvement.
 
 **Concordance index**
 
@@ -1066,14 +1079,14 @@ We used the `bootMer()` function from the `lme4` package to perform bootstrappin
 
 ```{r boot-validation, output = FALSE}
 
-boot_final_model <- bootMer(
-  final_model,
-  FUN = fixef,
-  nsim = 1000,
-  seed = 2142637384,
-  type = "parametric",
-  verbose = TRUE
-)
+# boot_final_model <- bootMer(
+#   final_model,
+#   FUN = fixef,
+#   nsim = 1000,
+#   seed = 2142637384,
+#   type = "parametric",
+#   verbose = TRUE
+# )
 
 ```
 
@@ -1081,8 +1094,8 @@ Bootstrap statistics:
 
 ```{r boot-summary}
 
-boot_summary <- summary(boot_final_model)
-boot_summary
+# boot_summary <- summary(boot_final_model)
+# boot_summary
 ```
 
 According to @levshina_how_2015:167, large optimism values (i.e. the differences between the training and test statistics) indicate overfitting.
@@ -1093,8 +1106,8 @@ In our bootstrap summary, this difference can be seen in the bootstrap bias, whi
 
 ```{r}
 
-boot_df <- as.data.frame(boot_final_model$t)
-colnames(boot_df) <- names(fixef(final_model))
+# boot_df <- as.data.frame(boot_final_model$t)
+# colnames(boot_df) <- names(fixef(final_model))
 
 ```
 
@@ -1102,11 +1115,11 @@ The density plot of the bootstrapped estimates for the clustercommunication fixe
 
 ```{r}
 
-ggplot(boot_df, aes(x = clustercommunication)) +
-  geom_density(fill = "lightblue") +
-  labs(title = "Bootstrapped Distribution: clustercommunication",
-       x = "Coefficient Estimate", y = "Density") +
-  theme_minimal()
+# ggplot(boot_df, aes(x = clustercommunication)) +
+#   geom_density(fill = "lightblue") +
+#   labs(title = "Bootstrapped Distribution: clustercommunication",
+#        x = "Coefficient Estimate", y = "Density") +
+#   theme_minimal()
 
 ```
 
@@ -1566,7 +1579,7 @@ As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + i
 
 ::: {#tbl-clusters}
 | Verb clusters [@francois_presentation_2007, 4] | Grouped Verb Clusters (Our Study) | Example Verbs |
-|------------------|------------------|-------------------------------------|
+|------------------|------------------|------------------------------------|
 | giving, depriving (don, privation) | neutral | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*) |
 | entering, leaving (entrée, sortie) | neutral | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*) |
 | hitting, touching (frapper, toucher) | hitting-touching | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*) |

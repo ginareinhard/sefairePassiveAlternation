@@ -305,19 +305,19 @@ We are aware that introducing the *complément d'agent* as a predictor in our an
 
 We hypothesise that the *complément d'agent* influences the choice between *se faire* and *être* passives. The presence of a *complément d'agent* should favour *être* passives, as it introduces a responsible external argument and shifts responsibility away from the subject. In contrast, the absence of a *complément d'agent* is expected to favour *se faire* passives, which imply some degree of subject responsibility. **We expect phrases with de to have an even stronger effect than phrases with par, as they typically refer to less agentive or abstract sources, contradicting the dynamic nature of the se faire passive construction, which typically occurs with adversative or strongly agentive actions. To examine this, we will test the interaction between the complément d'agent and the verb cluster??, as we expect the se faire passive to be favoured by dynamic (and adversative) verbs (see \@seq-XXX).**
 
-**Modal verbs** (auxiliary)
+**Modal verbs**
 
-such as "devoir", "savoir", "pouvoir", "falloir", "vouloir" very frequent with se faire passive @novakova_construction_2009 116-117 "le dégre d'adhèsion du S è son discours se font naturellement suivre de se faire + Vinf" (in @raineri_analyse_2010 [97], reason: they denote "control" to the subject)
+Novakova [-@novakova_construction_2009: 116-117] notes that modal verbs frequently occur with [se faire]{.smallcaps}. According to Raineri [-@raineri_analyse_2010: 97, 162], modals contribute to subject involvement by expressing agentivity. Raineri [-@raineri_analyse_2010: 97] presents @martin_construction_2002 's observation [^1] that volitional verbs fit well with [se faire]{.smallcaps} because they involve an intentional action that results in a change of mental state. Since modals usually convey some kind of subject intention or involvement, we expect [se faire]{.smallcaps} to appear more often with modal verbs than [être]{.smallcaps}.
 
--   modal category limited to/ only comprises modal verbs for the scope of our study, not other similar constructions denoting subject responsibility (e.g. avoir besoin de, arriver à, réussir à, envier de, avoir des difficultés pour, avoir la possibilité de, avoir envie de, ...)
+[^1]: Note that the ratio ended up not being exactly 50:50 because we had to exclude the gender "unknown" which removed 165 se faire and only 29 être constructions. However, this is is still much more balanced than the actual ratio.
 
-Volitional verbs align well with [se faire]{.smallcaps} because they involve an intentional action that results in a change of mental state, whereas non-volitional verbs do not (source?).
+We mark a sentence as modal if a form of one of the modals *devoir*, *vouloir* or *pouvoir* has scope on [se faire]{.smallcaps}. We limit the modal category to these three modal verbs to ensure consitent annotation; verbs that could have a modal sense in some contexts (e.g. *savoir*) and paraphrasal constructions indicating subject responsibility (e.g. *avoir besoin de, arriver à, réussir à, avoir des difficultés pour, avoir la possibilité de, avoir envie de*) are not assigned modal status.
 
 ### Aspectuality {#sec-aspectuality}
 
-Regarding the factor of aspectuality, @keenan_passive_2007 [340] propose that "If a language has two or more basic passives they are likely to differ semantically with respect to the aspect ranges they cover." If we assume that [se faire]{.smallcaps} is a "basic passive", this suggests that [être]{.smallcaps} and [se faire]{.smallcaps} have different aspectual preferences. Aspectuality is expressed through the verb, either via inherent lexical semantics ("Aktionsart") or grammatical marking (TAM: tense, aspect, mood) [^1] [@kortmann_triad_1991 : 13]. Overall, we predict a preponderance of [se faire]{.smallcaps} for hitting-touching verbs and progressive aspect. <!-- We do not examine mood in this study.-->
+Regarding the factor of aspectuality, @keenan_passive_2007 [340] propose that "If a language has two or more basic passives they are likely to differ semantically with respect to the aspect ranges they cover." If we assume that [se faire]{.smallcaps} is a "basic passive", this suggests that [être]{.smallcaps} and [se faire]{.smallcaps} have different aspectual preferences. Aspectuality is expressed through the verb, either via inherent lexical semantics ("Aktionsart") or grammatical marking (TAM: tense, aspect, mood) [^2] [@kortmann_triad_1991 : 13]. Overall, we predict a preponderance of [se faire]{.smallcaps} for hitting-touching verbs and progressive aspect. <!-- We do not examine mood in this study.-->
 
-[^1]: The general consensus in the literature is that aspect marks progressivity grammatically and Aktionsart marks it semantically/ lexically. However, this clear distinction between aspect and Aktionart has been doubted, and some theories see Aktionsart und Aspect as two instantiations of Aspectuality [@Dik+1997+217+246: 221].
+[^2]: The general consensus in the literature is that aspect marks progressivity grammatically and Aktionsart marks it semantically/ lexically. However, this clear distinction between aspect and Aktionart has been doubted, and some theories see Aktionsart und Aspect as two instantiations of Aspectuality [@Dik+1997+217+246: 221].
 
 **Semantic verb clusters**
 
@@ -438,11 +438,11 @@ We defined the following additional criteria, which follow from our main criteri
 
 -   **Transitivity of the verb**: the verb is a transitive verb (the direct object of the active sentence is the subject of the passive sentence). As described in @sec-etre, [être]{.smallcaps} requires a direct object in the active equivalent which becomes the subject in the passive voice. For reflexive and ditransitive verbs, [être]{.smallcaps} is not available and does not compete with [se faire]{.smallcaps}, which is why we excluded such constructions from our analysis. Additionally, we excluded impersonal passive constructions (*passif impersonnel*) due to the lack of a subject referent.
 
--   **Exclusion of fixed idiomatic expressions**: the [se faire]{.smallcaps} construction is not a fixed idiomatic expression with a figurative meaning. We speficically excluded constructions classified as "idiomes lexicalisés" (lexicalized idioms) according to @raineri_analyse_2010\[163\]. These constructions neither carry a true causative nor passive meaning[^2] and cannot occur with a complément d'agent: *se faire entendre*, *se faire sentir*, *se faire attendre*, and *se faire désirer* [@raineri_analyse_2010: 163]. Examples of additional fixed idiomatic expressions that we filtered out include: *se faire passer pour* 'to impersonate sb.', *se faire avoir* 'to be fooled', *se faire mousser* 'to boast/brag', *se faire taper sur les doigts* 'to get a slap on the fingers, to be scolded'.
+-   **Exclusion of fixed idiomatic expressions**: the [se faire]{.smallcaps} construction is not a fixed idiomatic expression with a figurative meaning. We speficically excluded constructions classified as "idiomes lexicalisés" (lexicalized idioms) according to @raineri_analyse_2010\[163\]. These constructions neither carry a true causative nor passive meaning[^3] and cannot occur with a complément d'agent: *se faire entendre*, *se faire sentir*, *se faire attendre*, and *se faire désirer* [@raineri_analyse_2010: 163]. Examples of additional fixed idiomatic expressions that we filtered out include: *se faire passer pour* 'to impersonate sb.', *se faire avoir* 'to be fooled', *se faire mousser* 'to boast/brag', *se faire taper sur les doigts* 'to get a slap on the fingers, to be scolded'.
 
 -   **Exclusion of adjectival constructions**: we excluded [être]{.smallcaps} constructions that are essentially adjectival constructions, such as *elle est connue* 'she is known'. Accordingly, [se faire]{.smallcaps} constructions that would typically be rephrased with an adjectival [être]{.smallcaps} construction were also excluded.
 
-[^2]: These verbs mainly occur with inanimate subjects (effects, consequences, discontent). @raineri_analyse_2010 [163-164] proposes that the causative meaning is not available for these verbs since the subject is not causing the event. There is also no passive meaning since they cannot cannot occur with a complément d’agent and do not have a paraphrase with être.
+[^3]: These verbs mainly occur with inanimate subjects (effects, consequences, discontent). @raineri_analyse_2010 [163-164] proposes that the causative meaning is not available for these verbs since the subject is not causing the event. There is also no passive meaning since they cannot cannot occur with a complément d’agent and do not have a paraphrase with être.
 
 To ensure consistency and practicality, we decided to include or exclude verbs based on their lemma, rather than on individual occurrences. After manually evaluating all occurrences, the following lemmas were excluded from our sample: *entendre*, *sentir*, *ressentir*, *attendre*, *désirer*, *voir*, *connaître*, *passer (pour)*, *mousser*, *avoir*, *rouler (se faire rouler dans la farine)*, *mener (se faire mener par le bout du nez)*.
 
@@ -712,7 +712,7 @@ In addition to conducting a descriptive analysis of the data, we employed a bino
 The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (passive variant: être; complément d' agent: 0; modal: no; TAM: non-progressive, cluster: neutral). If this would negatively affect the stability of the model, the most frequent (subject animacy: animate, subject gender: masculine) or the most evenly distributed case (adversativity: adversative)
 
 | Factors | Label | Levels |
-|----|----|----|
+|-------------------|-------------------|----------------------------------|
 | Passive variant | passive_variant | être, se faire |
 | Subject animacy | subj_animacy | animate, inanimate |
 | Subject gender | subj_gender | masculine, feminine |
@@ -833,13 +833,13 @@ tab_model(model_back_1, show.aic = TRUE)
 
 Non-significant fixed effects are removed step by step, starting with `tam`, which has the highest $p$-value. At each step, the main effect with the highest $p$-value is eliminated. The final model is reported here. Although `subj_gender` remains non-significant ($p$ \> 0.05), we retain it for theoretical and interpretative reasons. The AIC of 719.2 indicates that removing `agent_pp`, `modal` and `tam` improved the model quality while R^2^ stayed constant at 0.451 / 0.662.
 
-After encountering singularity issues during the bootstrap validation of the stability and uncertainty of the coefficients (see @sec-model-diagnostics), we decided to remove the random effect of the speaker due to a lack of variance, which contributed to the model's instability.
+<!-- After encountering singularity issues during the bootstrap validation of the stability and uncertainty of the coefficients (see @sec-model-diagnostics), we decided to remove the random effect of the speaker due to a lack of variance, which contributed to the model's instability. -->
 
 ```{r final-model, output = FALSE}
 #| code-fold: true
 final_model <- glmer(
   passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:adversativity) + 
-                    (1 | lemma) + (1 | speaker),
+                    (1 | lemma),
   family = "binomial",
   data = passive_sample_clean,
   control = glmerControl(optimizer = "bobyqa")
@@ -1047,7 +1047,20 @@ The density plot of the bootstrapped estimates for the clustercommunication fixe
 
 ```
 
-When running `bootMer()` with the random effects lemma and speaker, we encounter singularity problems and uncertainty in the coefficients (convergence problems - + isSingular-warning.) This can only be resolved by removing the speaker effect, suggesting a lack of variation between speakers (hindering stable estimation). However, this results in an increase in the AIC from 719.2 to 732, indicating an overall poorer fit. In addition, the removal of the speaker fundamentally changes the structure of the model, requiring a complete re-optimisation of the model from scratch, as well as the investigation of model diagnostics, which is beyond the scope of this paper. For interpretation, we therefore stick to our original final model, but recognise its instability as a potential weakness, which will be discussed in the @sec-discussion. However, we acknowledge that the model without random effect of speaker may be a viable, more robust option that would be worth exploring in depth in future work.
+```{r final-model-no-speaker, include = FALSE}
+#| code-fold: true
+final_model_no_speaker <- glmer(
+  passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:adversativity) + 
+                    (1 | lemma),
+  family = "binomial",
+  data = passive_sample_clean,
+  control = glmerControl(optimizer = "bobyqa")
+)
+
+tab_model(final_model_no_speaker, show.aic = TRUE) 
+```
+
+When running `bootMer()` with the random effects lemma and speaker, we encounter singularity problems and uncertainty in the coefficients (convergence problems - + isSingular-warning.) This can only be resolved by removing the speaker effect, suggesting that a lack of variation between speaker hindered stable estimations. However, this results in an increase in the AIC from 719.2 to 732, indicating an overall poorer fit. Furthermore, the removal of the speaker fundamentally changes the structure of the model, requiring a complete re-optimisation of the model, as well as the investigation of model diagnostics, which is beyond the scope of this paper. For interpretation, we therefore stick to our original final model, but recognise its instability as a potential weakness that will be discussed in @sec-discussion. However, we acknowledge that the model without random effect of speaker may be a viable, more robust option that would be worth exploring in depth in future work.
 
 Checking for collinearity:
 
@@ -1490,9 +1503,9 @@ The remaining factors used to test subject responsibility (subject gender, compl
 
     -   random effect of lemma accounts for a lot of the variance - agrees with Bohmann [-@bohmann_large-scale_2023: 48] who reports evidence that the English \[get\] passive, which has been shown to be similar to [se faire]{.smallcaps} in several regards, "is largely lexically conditioned"
 
-One limitation of our study is that the predictions of our model do not directly reflect real-life language use, as [être]{.smallcaps} is far more common than [se faire]{.smallcaps}, which is comparatively rare (ratio in ParlaMint: 324,836 (38.300) être: 1,254 se faire). We created a balanced data set based on [se faire]{.smallcaps} lemmas to prevent our model from being dominated by frequency effects produced by extreme data unbalance.[^3] This approach allowed us to investigate the factors influencing passive choice and their complex interplay. However, it must be kept in mind that this ratio is artificial does not reflect the reality of passive use, in which [être]{.smallcaps} is chosen as the default in most contexts, and [se faire]{.smallcaps} remains a marked exception.
+One limitation of our study is that the predictions of our model do not directly reflect real-life language use, as [être]{.smallcaps} is far more common than [se faire]{.smallcaps}, which is comparatively rare (ratio in ParlaMint: 324,836 (38.300) être: 1,254 se faire). We created a balanced data set based on [se faire]{.smallcaps} lemmas to prevent our model from being dominated by frequency effects produced by extreme data unbalance.[^4] This approach allowed us to investigate the factors influencing passive choice and their complex interplay. However, it must be kept in mind that this ratio is artificial does not reflect the reality of passive use, in which [être]{.smallcaps} is chosen as the default in most contexts, and [se faire]{.smallcaps} remains a marked exception.
 
-[^3]: Note that the ratio ended up not being exactly 50:50 because we had to exclude the gender "unknown" which removed 165 se faire and only 29 être constructions. However, this is is still much more balanced than the actual ratio.
+[^4]: Note that the ratio ended up not being exactly 50:50 because we had to exclude the gender "unknown" which removed 165 se faire and only 29 être constructions. However, this is is still much more balanced than the actual ratio.
 
 A limitation of our study is that the lemmas were determined based on those occurring in *se faire* constructions, which may have influenced the analysis.
 
@@ -1524,7 +1537,7 @@ As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + i
 
 ::: {#tbl-clusters}
 | Verb clusters [@francois_presentation_2007, 4] | Grouped Verb Clusters (Our Study) | Example Verbs |
-|----|----|----|
+|-------------------|-------------------|----------------------------------|
 | giving, depriving (don, privation) | neutral | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*) |
 | entering, leaving (entrée, sortie) | neutral | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*) |
 | hitting, touching (frapper, toucher) | hitting-touching | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*) |

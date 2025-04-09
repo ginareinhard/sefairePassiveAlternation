@@ -26,6 +26,7 @@ p {
 }
 </style>
 ```
+
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -179,6 +180,7 @@ We will refer to this with [être.]{.smallcaps}
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward 
 -   se faire passive "typologically marked", comparison to other Romance languages @koenig_semantic_1992 \[145\]; similar constructions exist in other Romance languages but passive reading only allowed in French @labelle_anticausativizing_2013 [236] -->
 ```
+
 ### Structure and meaning
 
 When constructing a passive sentence, French speakers may choose to use [se faire]{.smallcaps} instead of the canonical [être]{.smallcaps}: The [se faire]{.smallcaps} passive construction, hereinafter called [se faire]{.smallcaps}, provides an alternative way to express passive meaning in French. [se faire]{.smallcaps} has been widely investigated and discussed, for example by @bellec_construction_2014, @gaatone_desagreable_1983, @koenig_semantic_1992, @kupferman_construction_1995, @labelle_anticausativizing_2013, @raineri_analyse_2010, @novakova_construction_2009, and @tasmowski-de_ryck_causatif_1987.
@@ -305,6 +307,18 @@ Novakova [-@novakova_construction_2009: 116-117] notes that modal verbs frequent
 
 We mark a sentence as modal if a form of one of the modals *devoir*, *vouloir* or *pouvoir* has scope on [se faire]{.smallcaps}. We limit the modal category to these three modal verbs to ensure consitent annotation; verbs that could have a modal sense in some contexts (e.g. *savoir*) and paraphrasal constructions indicating subject responsibility (e.g. *avoir besoin de, arriver à, réussir à, avoir des difficultés pour, avoir la possibilité de, avoir envie de*) are not assigned modal status.
 
+### Adversativity
+
+The factor of adversativity is reflected in the semantics of the verb and captures the negative consequences of the described action for the subject. This factor has been shown to influence the choice between the English [be]{.smallcaps} and [get]{.smallcaps} passives [@chappell1980get; @hundt_be-_2024: 89, 96-97; @bohmann_large-scale_2023], with [get]{.smallcaps} being realised more often with adversative verbs than [be]{.smallcaps}. Since @spang-hanssen_quelques_1967 and @raineri_analyse_2010 draw paralles between the [get]{.smallcaps} and [se faire]{.smallcaps} passive, we see an adversativity effect for [se faire]{.smallcaps} as likely.
+
+@gaatone_desagreable_1983 argues that [se faire]{.smallcaps} has a strong *sens désagreable* ('unpleasant sense'), as it occurs mainly with verbs that have a negative connotation. Although Kupferman [-@kupferman_construction_1995: 77] rejects this unpleasantness as a characteristic of [se faire]{.smallcaps}, he agrees that it is more commonly used in negative contexts than [être]{.smallcaps}. This is supported by corpus data: Novakova [-@novakova_construction_2009: 110] found a clear preference for [se faire]{.smallcaps} to be realised with negative actions, with 30% of verbs in [se faire]{.smallcaps} denoting unpleasant events and only 5% denoting pleasant events. <!-- Also: @raineri_analyse_2010 [247].-->
+
+As @bohmann_large-scale_2023 note in their investigation of the [be]{.smallcaps}:[get]{.smallcaps} alternation, two hypotheses relate to emotions of the verb: The adversativity hypothesis and the non-neutrality hypothesis. Both expect [get]{.smallcaps} to favour verbs with negative connotations, but only the non-neutrality hypothesis predicts [get]{.smallcaps} to correlate positively with positive emotion scores as well. Since positive emotion verbs have been shown to be quite rare with [se faire]{.smallcaps} [@novakova_construction_2009: 110], we have chosen to not test them. In their corpus study on the [be]{.smallcaps}:[get]{.smallcaps} alternation, @hundt_be-_2024 label this factor as binary as 'adversative' - 'non-adversative/neutral'. For practicality and clear statistical modelling, we follow them in our annotation and assign the tag 'adversative' if the event negatively affects the subject, and 'non-adversative' if the event is neutral or positive. In line with the previous findings, we hypothesise that [se faire]{.smallcaps} will be preferred over [être]{.smallcaps} for verbs that denote "unpleasant" actions (as reflected by verbs labeled as 'adversative').
+
+<!-- -   \@bohmann_large-scale_2023 [38, 43] Sentiment values of verb participles extracted from SentiWordNet: positivity, negativity, objectivity scores; reversed if sentence is negated -->
+
+According to @gaatone_desagreable_1983: 170, adversativity conflicts with the notion of subject responsibility in [se faire]{.smallcaps} because subjects would not willingly bring such events upon themselves. He argues that unpleasant actions expressed with [se faire]{.smallcaps} tend to receive a purely passive interpretation, whereas pleasant actions are more likely to have been initiated by the subject, resulting in a causative reading. This contrast suggests a potential interaction between subject animacy and adversativity that reflects the affectness of the subject: Animate subjects are more likely to be negatively impacted by adversative actions than inanimate subjects. We predict that the levels 'animate' and 'adversative' will often occur together, while 'inanimate' and 'adversative' will be a less likely combination.
+
 ### Aspectuality {#sec-aspectuality}
 
 Regarding the factor of aspectuality, @keenan_passive_2007 [340] propose that "If a language has two or more basic passives they are likely to differ semantically with respect to the aspect ranges they cover." If we assume that [se faire]{.smallcaps} is a "basic passive", this suggests that [être]{.smallcaps} and [se faire]{.smallcaps} have different aspectual preferences. Aspectuality is expressed through the verb, either via inherent lexical semantics ("Aktionsart") or grammatical marking (TAM: tense, aspect, mood) [^2] [@kortmann_triad_1991 : 13]. Overall, we predict a preponderance of [se faire]{.smallcaps} for hitting-touching verbs and progressive aspect. <!-- We do not examine mood in this study.-->
@@ -345,7 +359,8 @@ However, the effect of the verb cluster may interact with other factors, particu
 
 The tense and aspect markings French cannot be clearly distinguished from each other because they heavily influence each other and depend on each other.
 
-According to @raineri_analyse_2010 [365], the "type of process denoted by the verb" is a "necessary condition". inchoative/ durative aspect: "get passive and se faire passive focus on onset of the process that affects the subject referent, whereas be and être passive present the process in its entirety, without offering an internal perspective." ?
+According to @raineri_analyse_2010 [365], the "type of process denoted by the verb" is a "necessary condition". inchoative/ durative aspect: "get passive and se faire passive focus on onset of the process that affects the subject referent, whereas be and être passive present the process in its entirety, without offering an internal perspective." ? 
+According to @bellec_construction_2014 \[209\], the *être* passive is likely to describe a result or mark an endpoint of an action, while the *se faire* passive is used for actions in progress and verbs that are in their nature ongoing (e.g. perception verbs, @bellec_construction_2014 [209])
 
 Tense, aspect, and mood are not entirely separable categories but are functionally interdependent. Tense can serve as an indicator of aspect in terms of how it sets the temporal focus of a sentence. Constructions in the passé composé tend to focus on the completed event, which could increase the likelihood of the *être* passive over the [se faire]{.smallcaps} passive. In contrast, the imparfait, which emphasises the ongoing process, might favour the [se faire]{.smallcaps} passive. In the present tense, we expect both passives to be evenly distributed, as the present tense emphasises neither the end point nor the process. Descriptions of future events tend to emphasise the beginning and ongoing process of an action rather than its end point (@bellec_construction_2014 [210]). We therefore expect that in the future tense, [se faire]{.smallcaps} is favoured over the *être* passive.
 
@@ -356,6 +371,7 @@ We decide against coding tense, aspect and mood as separate factors, but conside
 (sentence for conditional marking: Subjonctif and conditional forms excluded because of CQL? Or: We mark them according to the tense they occur with)
 
 Movement verbs also frequently occur with [se faire]{.smallcaps}, as noted by @raineri_analyse_2010 [90], who highlights the verbs *aller* and *venir* as examples. These verbs emphasize the initial phase of the process (*Spang-Hanssen 1967: 143*). Additionally, perception verbs, which imply a durative process, are also attested in *se faire* constructions [@novakova_construction_2009: 117].
+
 
 **levels**:
 
@@ -373,23 +389,12 @@ Our hypothesis is that progressive marking (whether through tense or periphrasis
 
 <!-- ### Annotation Guidelines**Gender (masculin/ feminin/ mixed/ unknown)**-   Assign masculin or féminin if the gender is clearly marked grammatically:    -   Through a pronoun (il(s), elle(s))    -   Through an adjective or participle that marks gender (heureux/heureuse, content/contente)-   Use mixed only if:    -   The context clearly refers to a mixed-gender group (un groupe d’hommes et de femmes)    -   The grammatical form is not gendered, but the semantic context indicates mixed gender (nous referring explicitly to men and women)-   Assign unknown if:    -   No grammatical gender marking is present    -   For on, vous, je, and nous (if no grammatical marking appears)    -   For expletive subjects (il faut)**Progressivity (progressive/ non-progressive)**-   Assign "progressive" if:    -   The "se faire" construction is directly in the imparfait or future (except for futur antérieur) → indicates an ongoing or habitual action    -   The "se faire" construction is linked to an ongoing action, indicated by: A participe présent → Example: Ils acceptent de se faire endoctriner. → progressive/ gerondif + participe présent (en courant - while running)    -   periphrases e.g., être en train de (present continuous), aller + inf (futur proche), continuer à + Infinitif    -   adverbs/ Adverbial Phrases Indicating Ongoing Action: Temporal adverbs that imply duration or repetition: En ce moment (at the moment), Actuellement (currently), Toujours (always), Depuis (since), Encore (still)-   Assign "non-progressive" if:    -   passé composé, plus-que-parfait, présent, futur antérieur (...) - progressiveness is hinted at by another verb in the sentence (e.g., falloir or être) and not from the "se faire" construction itself-->
 
-### Adversativity
-
-The factor of adversativity is reflected in the semantics of the verb and captures the negative consequences of the described action for the subject. This factor has been shown to influence the choice between the English [be]{.smallcaps} and [get]{.smallcaps} passives [@chappell1980get; @hundt_be-_2024: 89, 96-97; @bohmann_large-scale_2023], with [get]{.smallcaps} being realised more often with adversative verbs than [be]{.smallcaps}. Since @spang-hanssen_quelques_1967 and @raineri_analyse_2010 draw paralles between the [get]{.smallcaps} and [se faire]{.smallcaps} passive, we see an adversativity effect for [se faire]{.smallcaps} as likely.
-
-@gaatone_desagreable_1983 argues that [se faire]{.smallcaps} has a strong *sens désagreable* ('unpleasant sense'), as it occurs mainly with verbs that have a negative connotation. Although Kupferman [-@kupferman_construction_1995: 77] rejects this unpleasantness as a characteristic of [se faire]{.smallcaps}, he agrees that it is more commonly used in negative contexts than [être]{.smallcaps}. This is supported by corpus data: Novakova [-@novakova_construction_2009: 110] found a clear preference for [se faire]{.smallcaps} to be realised with negative actions, with 30% of verbs in [se faire]{.smallcaps} denoting unpleasant events and only 5% denoting pleasant events. <!-- Also: @raineri_analyse_2010 [247].-->
-
-As @bohmann_large-scale_2023 note in their investigation of the [be]{.smallcaps}:[get]{.smallcaps} alternation, two hypotheses relate to emotions of the verb: The adversativity hypothesis and the non-neutrality hypothesis. Both expect [get]{.smallcaps} to favour verbs with negative connotations, but only the non-neutrality hypothesis predicts [get]{.smallcaps} to correlate positively with positive emotion scores as well. Since positive emotion verbs have been shown to be quite rare with [se faire]{.smallcaps} [@novakova_construction_2009: 110], we have chosen to not test them. In their corpus study on the [be]{.smallcaps}:[get]{.smallcaps} alternation, @hundt_be-_2024 label this factor as binary as 'adversative' - 'non-adversative/neutral'. For practicality and clear statistical modelling, we follow them in our annotation and assign the tag 'adversative' if the event negatively affects the subject, and 'non-adversative' if the event is neutral or positive. In line with the previous findings, we hypothesise that [se faire]{.smallcaps} will be preferred over [être]{.smallcaps} for verbs that denote "unpleasant" actions (as reflected by verbs labeled as 'adversative').
-
-<!-- -   \@bohmann_large-scale_2023 [38, 43] Sentiment values of verb participles extracted from SentiWordNet: positivity, negativity, objectivity scores; reversed if sentence is negated -->
-
-According to @gaatone_desagreable_1983: 170, adversativity conflicts with the notion of subject responsibility in [se faire]{.smallcaps} because subjects would not willingly bring such events upon themselves. He argues that unpleasant actions expressed with [se faire]{.smallcaps} tend to receive a purely passive interpretation, whereas pleasant actions are more likely to have been initiated by the subject, resulting in a causative reading. This contrast suggests a potential interaction between subject animacy and adversativity that reflects the affectness of the subject: Animate subjects are more likely to be negatively impacted by adversative actions than inanimate subjects. We predict that the levels 'animate' and 'adversative' will often occur together, while 'inanimate' and 'adversative' will be a less likely combination.
-
 ```{=html}
 <!-- ### Maybe: Comparison to similar alternations in other languages
 
 -   English @bohmann_large-scale_2023, East Asian languages @washio_when_1993 and @guan_multifactorial_2024 , Swedish @cuypere_corpus-based_2014 -->
 ```
+
 # Data and methods {#sec-data-and-methods}
 
 Prior to conducting our study, we preregistered its protocol on the platform [AsPredicted](https://aspredicted.org) [@AsPredictedWharton] to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed [here](https://aspredicted.org/gp6y-dd8p.pdf).
@@ -402,9 +407,9 @@ To maintain anonymity while ensuring transparency and consistency, we refer to o
 
 In our investigation of spoken French language, we aimed to select a corpus that authentically reflects natural language use. After careful consideration of available resources, we chose the French ParlaMint corpus version 2.1 [@11356/1431]. Although our preregistration document refers to version 2.0, this was a typographical error. Version 2.1 was the intended and only version available on [SketchEngine](http://www.sketchengine.eu) [@kilgarriff2014sketch] at the time of data collection. As such, this does not represent a deviation from our planned methodology.
 
-ParlaMint comprises French parliamentary debates from 2017 to 2020 and contains 38,702,395 tokens (32,214,147 words). We selected this corpus not only for its size and accessibility but also because it is well-documented, POS-tagged, and contains detailed metadata. We specifically chose a spoken-language corpus because [se faire]{.smallcaps} is known to occur more frequently in speech than in writing [@raineri_analyse_2010 : 105].
+ParlaMint comprises French parliamentary debates from 2017 to 2020 and contains 38,702,395 tokens (32,214,147 words). We selected this corpus not only for its size and accessibility but also because it is well-documented, POS-tagged, and contains detailed metadata. We specifically chose a spoken-language corpus because [se faire]{.smallcaps} is known to occur more frequently in speech than in writing [@raineri_analyse_2010: 105].
 
-The genre of parliamentary debates is somewhat specialised and our results may not fully generalise to all French spoken language. However, it still offers a wide topical range and a high level of linguistic diversity. It has also been the subject of previous linguistic research (e.g. @skubic2022networks)**.** As such, the ParlaMint corpus provides a valuable and representative cross-section of contemporary spoken French.
+The genre of parliamentary debates is somewhat specialised and our results may not fully generalise to all French spoken language. However, it still offers a wide topical range and a high level of linguistic diversity. It has also been the subject of previous linguistic research [e.g. @skubic2022networks]. As such, the ParlaMint corpus provides a valuable and representative cross-section of contemporary spoken French.
 
 ### Semi-automated approach {#sec-semi-automatic-approach}
 
@@ -419,7 +424,7 @@ lemmas <- sefaire_sample |>
 
 ```
 
-Next, we extracted the [être]{.smallcaps} constructions using a CQL expression in SketchEngine. To filter the concordances, we used the list of lemmas derived from the [se faire]{.smallcaps} sample, ensuring comparability between the two construction types by controlling for verb-specific differences that might influence the results. Due to SketchEngine’s download limit, we retrieved the [être]{.smallcaps} constructions in four subsamples, each containing between 9,295 and 9,794 concordances. After downloading, all filtered instances were stored in a .csv file and merged into a single dataframe in `R`. To ensure reproducibility, we set a random seed using the function `set.seed()`, with the seed value derived from the lottery numbers on Wednesday, 12th March 2025, as listed on the official Lotto website ([https://www.lotto.de/lotto-6aus49/lottozahlen](#0)). The last digit had to be removed to match the required length. We then randomly sampled a subset of concordance lines that was equal in size to the manually filtered [se faire]{.smallcaps} sample (i.e., 535 instances**, reduced to 532)**.
+Next, we extracted the [être]{.smallcaps} constructions using a CQL expression in SketchEngine. To filter the concordances, we used the list of lemmas derived from the [se faire]{.smallcaps} sample, ensuring comparability between the two construction types by controlling for verb-specific differences that might influence the results. Due to SketchEngine’s download limit, we retrieved the [être]{.smallcaps} constructions in four subsamples, each containing between 9,295 and 9,794 concordances. After downloading, all filtered instances were stored in a .csv file and merged into a single dataframe in `R`. To ensure reproducibility, we set a random seed using the function `set.seed()`, with the seed value derived from the lottery numbers on Wednesday, 12th March 2025, as listed on the official [Lotto website](https://www.lotto.de/lotto-6aus49/lottozahlen). The last digit had to be removed to match the required length. We then randomly sampled a subset of concordance lines that was equal in size to the manually filtered [se faire]{.smallcaps} sample (i.e., 535 instances**, reduced to 532)**.
 
 ### Manual filtering exclusion criteria and borderline cases {#sec-filtering-criteria}
 
@@ -469,9 +474,7 @@ We identified numerous cases where a clear binary distinction between passive an
 
 ### Inter-rater agreement
 
-We annotated the filtered sample for the features outlined in @sec-factors, in preparation for statistical modelling. A blind annotation process was used, where Annotator A and Annotator B were unaware of each other’s annotations. The inter-rater agreement was then calculated, as described in the following section.
-
-As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all complément d' agents of [se faire]{.smallcaps} during inital filtering, the column `agent_pp` was renamed to `agent_pp_A`. The datasets were then combined, variables were converted from characters to factors and empty values were replaced with `NA` to ensure proper handling of missing values in statistical analysis.
+In preparation for statistical modelling, we annotated the filtered sample for the features outlined in @sec-factors. A blind annotation process was used, where Annotator A and Annotator B were unaware of each other’s annotations. As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all complément d' agents of [se faire]{.smallcaps} during initial filtering, the column `agent_pp` was renamed to `agent_pp_A`. The datasets were then combined, variables were converted from characters to factors and empty values were replaced with `NA` to ensure proper handling of missing values in statistical analysis.
 
 ```{r read-annotated-data, include = FALSE}
 sefaire_sample_annotated <- read.csv(file = here("data", "sefaire_sample_annotated.csv"))
@@ -541,7 +544,7 @@ passive_sample_combined |>
   summary()
 ```
 
-Since the analysis required detailed (and time consuming) manual annotation, we decided to split the annotation work between us. However, to ensure consistent annotation, a representative sample of one third of all instances (320; 33,25%) were double annotated, i.e. by both of us. For these instances, we calculated Cohen's ϰ (Kappa) as a measure of inter-rater agreement, following Levshina [-@levshina_how_2015: 201] and the documentation in the psy package documentation (<https://cran.r-project.org/web/packages/psy/psy.pdf>).)
+Since the analysis required detailed (and time consuming) manual annotation, we decided to split the annotation work between us. However, to ensure consistent annotation, a representative sample of one third of all instances (320; 33,25%) were double-annotated, i.e. by both of us. For these instances, we calculated Cohen's ϰ (Kappa) as a measure of inter-rater agreement, following Levshina [-@levshina_how_2015: 201].
 
 ```{r cohens-kappa, include = FALSE}
 kappa_animacy <- ckappa(passive_sample_combined[c("subj_animacy_A", "subj_animacy_B")]) 
@@ -612,6 +615,7 @@ kappa_table |>
 +--------------------+--------------+----------------------------------------------+
 -->
 ```
+
 We classified the ϰ-values using the influential benchmark categorisation of Landis and Koch [-@landis1977measurement: 165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". Mean inter-rater agreement is high at `r  mean_kappa`. Agreement is lowest for the cateogories adversativity (0.67) and TAM (0.77).
 
 ### Data preprocessing {#sec-data-preprocessing}
@@ -701,16 +705,16 @@ In addition to conducting a descriptive analysis of the data, we employed a bino
 
 The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (passive variant: être; complément d' agent: 0; modal: no; TAM: non-progressive, cluster: neutral). If this would negatively affect the stability of the model, the most frequent (subject animacy: animate, subject gender: masculine) or the most evenly distributed case (adversativity: adversative)
 
-| Factors            | Label           | Levels                                   |
+| Factors | Label | Levels |
 |-------------------|-------------------|----------------------------------|
-| Passive variant    | passive_variant | être, se faire                           |
-| Subject animacy    | subj_animacy    | animate, inanimate                       |
-| Subject gender     | subj_gender     | masculine, feminine                      |
-| Complément d'agent | agent_pp        | 0, de, par                               |
-| Modal              | modal           | no, yes                                  |
-| TAM                | tam             | non-progressive, progressive             |
-| Cluster            | cluster         | neutral, communication, hitting-touching |
-| Adversativity      | adversativity   | adversative, non-adversative             |
+| Passive variant | passive_variant | être, se faire |
+| Subject animacy | subj_animacy | animate, inanimate |
+| Subject gender | subj_gender | masculine, feminine |
+| Complément d'agent | agent_pp | 0, de, par |
+| Modal | modal | no, yes |
+| TAM | tam | non-progressive, progressive |
+| Cluster | cluster | neutral, communication, hitting-touching |
+| Adversativity | adversativity | adversative, non-adversative |
 
 : Overview of variables for the *être: se faire* passive alternation
 
@@ -735,25 +739,18 @@ levels(passive_sample_unknown$subj_gender)
 
 ### Model selection
 
-We fit a mixed-effects binomial logistic regression model in `R` following Levshina [-@levshina_how_2015: 253-276] and Gries [-@gries_statistics_2021: 393-452]. The model estimates the log of the odds that a given construction is realized with [se faire]{.smallcaps}. To account for individual variation, we include the verb `lemma` and the `speaker` (as indicated in the meta data of ParlaMint 2.1) as random effects.
+We fit a mixed-effects binomial logistic regression model in `R` following Levshina [-@levshina_how_2015: 253-276] and Gries [-@gries_statistics_2021: 393-452]. The model estimates the log of the odds that a given construction is realized with [se faire]{.smallcaps}. To account for individual variation, we included the verb `lemma` and the `speaker` (as indicated in the meta data of ParlaMint 2.1) as random effects.
 
-We set a significance threshold p-value of 0.05 and apply backward stepwise selection [@gries_statistics_2021: 366]. Model quality was monitored and compared using the Aikaike Information Criterion (AIC), with preference given to the model with the lower AIC value [@gries_statistics_2021: 366]. Non-significant factors were removed one-by-one, starting with the one with the highest non-significant p-value [@gries_statistics_2021: 366]. Additionally, we evaluated model fit using R^2^, aiming to find the model with the highest possible value and therefore explains most of the variance. Note, however, that Levshina [-@levshina_how_2015] raises concern about the meaningfulness of R^2^ in logistic regression.
+We set a significance threshold p-value of 0.05 and applied backward stepwise selection [@gries_statistics_2021: 366]. Model quality was monitored and compared using the Aikaike Information Criterion (AIC), with preference given to the model with the lower AIC value [@gries_statistics_2021: 366]. Non-significant factors were removed one-by-one, starting with the one with the highest non-significant p-value [@gries_statistics_2021: 366]. Additionally, we evaluated model fit using R^2^, aiming to find the model with the highest possible value and therefore explains most of the variance. Note, however, that Levshina [-@levshina_how_2015] raises concern about the meaningfulness of R^2^ in logistic regression.
 
 ::: panel-tabset
 #### Maximal model
 
-First, we construct a model that included all the factors described in @sec-levels, the interactions we hypothesise to be significant, and the random effects of speaker and lemma. While the model does not include all theoretically possible interactions, it is considered maximal in the sense that it encompasses all factors and interactions identified in the literature review as potentially meaningful and contributing to passive choice.
-
-$$
-\begin{align*}
-passiveVariant & \sim subjAnimacy + subjGender + agentPP + modal + tam + cluster \: + \\ & \qquad adversativity + subjAnimacy:gender + subjAnimacy:cluster \: + \\ & \qquad subjAnimacy:adversativity + cluster:adversativity \: + \\ 
-& \qquad (1|lemma) + (1|speaker)
-\end{align*}
-$$
+First, we constructed a model that included all the factors described in @sec-levels, the interactions we hypothesised to be significant, and the random effects of speaker and lemma. While the model did not include all theoretically possible interactions, we considered it maximal in the sense that it encompassed all factors and interactions identified in the literature review as potentially meaningful and contributing to passive choice.
 
 `passive_variant ~ subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:gender + subj_animacy:cluster + subj_animacy:adversativity + cluster: adversativity + (1|lemma) + 1|speaker)`
 
-Although the main effect of `subj_gender` cannot be interpeted due to its participation in an interaction, it is striking that the odds ratio of `subj_gender[unknown]` is very high with a huge confidence interval of 10.49 – 124.99. The AIC is 771.3 with an R^2^ of 0.599 when excluding random effects and 0.748 when accounting for them. The vif-analysis reveals no high collinearity values for `subj_gender` or the interaction `subj_animacy:subj_gender`. However, as explained in @sec-data-preprocessing, we suspect an annotated-related artifact related to the level `unknown`. For that reason, we decide to compare the model to one fitted on the data set that excludes `unknown` constructions.
+Although the main effect of `subj_gender` could not be interpeted due to its participation in an interaction, it is striking that the odds ratio of `subj_gender[unknown]` is very high with a huge confidence interval of 10.49 – 124.99. The AIC is 771.3 with an R^2^ of 0.599 when excluding random effects and 0.748 when accounting for them. The vif-analysis revealed no high collinearity values for `subj_gender` or the interaction `subj_animacy:subj_gender`. However, as explained in @sec-data-preprocessing, we suspected an annotated-related artifact related to the level `unknown`. For that reason, we decided to compare the model to one fitted on the data set that excludes `unknown` constructions.
 
 ```{r max-model-unknown, output = FALSE}
 #| code-fold: true
@@ -779,7 +776,7 @@ kable(vif(final_model_unknown))
 
 #### Model without `unknown`
 
-After excluding `unknown`, the model's AIC improves to 732.5. The model has an R^2^ of 0.46 / 0.67. Although this is lower than the model without `unknown`, and therefore explains less variance, overall, the model seems to make better (i.e. more stable and more precise) predictions. Since the variance explained by the random effects is larger than zero, the random effects must be kept. Due to its better performance, the data without `unknown` are used in future models.
+After excluding `unknown`, the model's AIC improved to 732.5. The model has an R^2^ of 0.46 / 0.67. Although this is lower than the model without `unknown`, and therefore explains less variance, overall, the model seems to make better (i.e. more stable and more precise) predictions. Since the variance explained by the random effects is larger than zero, the random effects had to be kept. Due to its better performance, the data without `unknown` were used in future models.
 
 ```{r full-passive-glmer, output = FALSE}
 #| code-fold: true
@@ -801,7 +798,7 @@ tab_model(full_passive_glmer, show.aic = TRUE)
 
 #### Model without non-significant interactions
 
-All non-significant interactions (`cluster:adversativity`, `subj_animacy:cluster`, `subj_animacy:subj_gender`) are removed, improving the AIC to 725.4 with an R^2^ of 0.450 / 0.664. Thus, without the interactions, model accuracy increases while the explained variance decreases slightly. With $p$-values \> 0.05, the categories `subj_gender`, `agent_pp`, `modal` and `tam` are found to be non-significant.
+All non-significant interactions (`cluster:adversativity`, `subj_animacy:cluster`, `subj_animacy:subj_gender`) were removed, improving the AIC to 725.4 with an R^2^ of 0.450 / 0.664. Thus, without the interactions, model accuracy increased while the explained variance decreased slightly. With $p$-values \> 0.05, the categories `subj_gender`, `agent_pp`, `modal` and `tam` were found to be non-significant.
 
 ```{r model-back-1, output = FALSE}
 #| code-fold: true
@@ -821,7 +818,7 @@ tab_model(model_back_1, show.aic = TRUE)
 
 #### Final model
 
-Non-significant fixed effects are removed step by step, starting with `tam`, which has the highest $p$-value. At each step, the main effect with the highest $p$-value is eliminated. The final model is reported here. Although `subj_gender` remains non-significant ($p$ \> 0.05), we retain it for theoretical and interpretative reasons. The AIC of 719.2 indicates that removing `agent_pp`, `modal` and `tam` improved the model quality while R^2^ stayed constant at 0.451 / 0.662.
+Non-significant fixed effects were removed step by step, starting with `tam`, which has the highest $p$-value. At each step, the main effect with the highest $p$-value was eliminated. The final model is reported here. Although `subj_gender` remained non-significant ($p$ \> 0.05), we retained it for theoretical and interpretative reasons. The AIC of 719.2 indicates that removing `agent_pp`, `modal` and `tam` improved the model quality while R^2^ stayed constant at 0.451 / 0.662.
 
 <!-- After encountering singularity issues during the bootstrap validation of the stability and uncertainty of the coefficients (see @sec-model-diagnostics), we decided to remove the random effect of the speaker due to a lack of variance, which contributed to the model's instability. -->
 
@@ -834,7 +831,7 @@ final_model <- glmer(
   data = passive_sample_clean,
   control = glmerControl(optimizer = "bobyqa")
 )
-final_model_summary <- summary(final_model) # AIC: 719.2
+final_model_summary <- summary(final_model) # AIC: 719.1
 final_model_summary
 vif(final_model)
 ```
@@ -860,7 +857,7 @@ binnedplot(predictions, residuals(final_model, type = "response"))
 
 At first glance, the residuals appear to be quite random with no obvious patterns and with most residuals around 0. The grey lines mark the bounds of the standard error; ideally, these bounds should emcompass 95% of the binned residuals [@Gelman_Hill_2006: 97]. Although the SE bounds essentially capture the shape of the residuals and the majority of the residuals fall within them, a considerable proportion fall outside the desired area: 11 out of 29 (`r paste0(round(11/29, 2) * 100, "%")`), which is well above the desired 5%.
 
-In this context, a slight pattern emerges: Negative deviations are more common for low to medium expected values (i.e. low predicted probability of [se faire]{.smallcaps}), while positive deviations occur more often for high expected values (high predicted probability of [se faire]{.smallcaps}). In the mid-range (0.3-0.7), where [être]{.smallcaps} and [se faire]{.smallcaps} are predicted to be about equally likely, the binned residuals are exclusively negative (`y < 0`). Thus, when the correct level was [être]{.smallcaps}, the model often predicted a higher probability of [se faire]{.smallcaps}. This pattern is reversed for predicted probabilities of `x > 0.7`: All deviations are all positive (`y > 0`), indicating that when [se faire]{.smallcaps} was the correct variant, the model slightly underestimated the probabilities of [se faire]{.smallcaps} occurring and could have been even more confident. In addition, there is one extremely negative bin between `x = 0.4` and `x = 0.5`, indicating that the model drastically overestimated [se faire]{.smallcaps} in this range.
+In this context, a slight pattern emerges: Negative deviations are more common for low to medium expected values (i.e. low predicted probability of [se faire]{.smallcaps}), while positive deviations occur more often for high expected values (high predicted probability of [se faire]{.smallcaps}). In the mid-range (0.3-0.7), where [être]{.smallcaps} and [se faire]{.smallcaps} are predicted to be about equally likely, the binned residuals are exclusively negative (`y < 0`). Thus, when the correct level was [être]{.smallcaps}, the model often predicted a higher probability of [se faire]{.smallcaps}. This pattern is reversed for predicted probabilities of `x > 0.7`: All deviations are all positive (`y > 0`), indicating that when [se faire]{.smallcaps} was the correct variant, the model slightly underestimated the probabilities of [se faire]{.smallcaps} occurring and could have been even more confident. In addition, there is one extremely negative bin between `x = 0.4` and `x = 0.5`, indicating that the model drastically overestimated [se faire]{.smallcaps} in this range.  xcept for this one bin, the residuals in the mid-range are close to 0 and within SE limits.
 
 ```{r outlier-bin, include=FALSE}
 outlier_bin <- subset(passive_sample_clean, predictions >= 0.4 & predictions < 0.5)
@@ -870,7 +867,7 @@ table(outlier_bin$passive_variant, outlier_bin$subj_animacy, outlier_bin$adversa
 
 <!-- Looking at the data from this bin, it is striking that it contains more occurrences of the rather atypical (compared to se faire) combination of être + animate subject [+ adversative] than se faire (but only 6), since the combination of subject animacy and strongly predicts se faire -> the model is likely to make incorrect predictions for all these cases, predicting se faire and incorrectly classifying être passives as se faire? overgeneralisations for animacy and adversativity? > This suggests that the model overestimates the predictive power of animacy and generalises too much from the frequent co-occurrence of se faire and animate subjects, misclassifying atypical être+animate cases.-->
 
-Except for this one bin, the residuals in the mid-range are close to 0 and within SE limits. Overall, the main problem is an overoptimism of the model that a construction is se faire when it is actually [être]{.smallcaps}. On the other hand, it is also not optimistic enough for very high probabilities of [se faire]{.smallcaps}. To investigate these potentially problematic characteristics further and determine whether these indicate systematically erroneous model, we conducted additional residuals tests. Following the recommendations of Gries [-@gries_statistics_2021: 445], we use functions from the `DHARMa` package to to gain more detailed insight into the residuals structure: <!-- If p-value is > 0.05, the "null hypothesis of normality cannot be rejected" [@levshina_how_2015: 162] -->
+To investigate these potentially problematic characteristics further and determine whether these indicate systematically erroneous model, we conducted additional residuals tests. Following the recommendations of Gries [-@gries_statistics_2021: 445], we use functions from the `DHARMa` package to to gain more detailed insight into the residuals structure: <!-- If p-value is > 0.05, the "null hypothesis of normality cannot be rejected" [@levshina_how_2015: 162] -->
 
 <!-- Another thing that catches the eye is the accumulation of points around x= 0 y = 0 that have a diagonally falling pattern and fall just outside the SE bounds. For these, a low probability of [se faire]{.smallcaps} was correctly predicted. -->
 
@@ -879,6 +876,7 @@ Except for this one bin, the residuals in the mid-range are close to 0 and withi
 
 -   positive residuals for x\>0.5: model is confident that the correct level is se faire and is correct but underestimated probability of se faire (could have been even more confident) -->
 ```
+
 ```{r residuals-diagnostics-DHARMa-dispersion, echo = FALSE}
 #install.packages("DHARMa")
 sim_res <- simulateResiduals(final_model)
@@ -896,9 +894,9 @@ testUniformity(sim_res)
 #testQuantiles(sim_res)
 ```
 
-The QQ-Plot reveals a significant deviation ($p$ = 0.02965) as tested by the Kolmogorov-Smirnov test, which may point to unreliable inferential measures. However, $p$-values depend (among other factors) on sample size and the KS test is reportedly highly sensitive to minor deviations **(reference),** many of which naturally occur in large data sets such as ours. Based on the overall distribution of residuals, we assess the magnitude of this deviation to be minor. Since all other diagnostic plots show no indications of misfit, we do not interpret the significant KS result as evidence of poor model performance.<!-- https://cran.r-project.org/web/packages/DHARMa/vignettes/DHARMa.html -->
+The QQ-Plot reveals a significant deviation ($p$ = 0.02965) as tested by the Kolmogorov-Smirnov test, which may point to unreliable inferential measures. However, $p$-values depend (among other factors) on sample size and the KS test is reportedly highly sensitive to minor deviations **(reference),** many of which naturally occur in large data sets such as ours. Based on the overall distribution of residuals, we assess the magnitude of this deviation to be minor. <!-- https://cran.r-project.org/web/packages/DHARMa/vignettes/DHARMa.html -->
 
-Overall, we interpret that the `DHARMa` plots do not indicate poor model fit. The most "worrying" result of residual testing are therefore the non-optimal binned residuals. Except for the one outlier bin, the bins that fall outside the SE bands is likely an issue of calibration. Considering all tests results, overall, we understand the results of tests to point toward a stable model structure which makes reliable predictions but we recognize that the model, as every model, is by no means perfect and there is room for improvement.
+Overall, we did not interpret the `DHARMa` plots as evidence of poor model performance. The most 'worrying' result of the residual tests were therefore the non-optimal binned residuals that revealed the model's overoptimism that a construction is [se faire]{.smallcaps} when it is actually [être]{.smallcaps}. On the other hand, the model is not optimistic enough for very high probabilities of [se faire]{.smallcaps}. Taking all residual diagnostics together, we understand them to indicate a stable model structure that makes reliable predictions, but we acknowledge that the model is by no means perfect and could be further improved.
 
 **Concordance index**
 
@@ -972,7 +970,7 @@ final_model_coef <- coefficients(summary(final_model))[,"Estimate"]
 kbl(final_model_coef)
 ```
 
-Odds Ratios:
+We convert the coeffients to odds ratios for better interpretability.
 
 ```{r coefficients-odds, include=FALSE}
 #convert from log odds to odds:
@@ -982,7 +980,7 @@ exp(final_model_coef)
 #exp(model_2_coef) / (1 + exp(model_2_coef))
 ```
 
-The intercept of the final model is 2.78. This means that in the context of the reference levels (subject is animate and masculine, the cluster of the verb is neutral and the construction has an adversative sense), the chances of [se faire]{.smallcpas} being chosen are 2.78 times greater than [être]{.smallcaps}. The exact values of odds ratios are interpreted with regard to our hypothesies in @sec-results.
+The intercept of the final model is 2.76. This means that in the context of the reference levels (subject is animate and masculine, the cluster of the verb is neutral and the construction has an adversative sense), the chances of [se faire]{.smallcpas} being chosen are 2.76 times greater than [être]{.smallcaps}. The exact values of odds ratios are interpreted with regard to our hypotheses in @sec-results.
 
 **Bootstrap Validation**
 
@@ -1012,9 +1010,9 @@ isSingular(final_model)
 When running `bootMer()` to validate the stability of the fixed effects in our model, we encountered singularity warnings in most of the bootstrap iterations. Although `isSingular()` returned `FALSE` for the final model, the instability across resamples indicates limited reliability. Removing the `speaker` effect resolved the singularity issues. This suggests that there may be too little variance between speakers to reliably estimate this random effect. However, removing `speaker` also increases the model’s AIC from 719.2 to 732, indicating a poorer overall fit. Additionally, excluding the random effect would change the model’s structure and require re-specification and re-evaluation, which exceeds the scope of this term paper. For interpretation, we therefore rely on our original model, while acknowledging its limitations in terms of robustness. We consider the simplified model without `speaker` (see @fig-model-without-speaker) a potentially more stable alternative, which could be explored more in depth in future work.
 
 ::: {#fig-model-without-speaker}
-```{r final-model-no-speaker}
-
+```{r final-model-no-speaker, output = FALSE}
 #| code-fold: true
+
 final_model_no_speaker <- glmer(
   passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:adversativity) + 
                     (1 | lemma),
@@ -1028,24 +1026,24 @@ tab_model(final_model_no_speaker, show.aic = TRUE)
 ```
 :::
 
-@fig-bootstrap-summary shows the summary of our bootstrap statistics for our final model. As noted by @gries_statistics_2021, models often perform better on the data they were trained on because they capture patterns that may not generalise beyond the sample, which is called overfitting. According to @levshina_how_2015:167, large differences between training and test performance, referred to as optimism, can indicate overfitting. In the summary of our bootstrap statistics in @fig-bootstrap-summary, this difference can be seen in the bootstrap bias, which is very small (\<0.05) for most predictors. **However, the variable clustercommunication shows a slightly higher bias (0.059), suggesting it might be overfitting to some extent. This means that clustercommunication may be a less robust predictor and may require further investigation or could be removed from the model.**
+@fig-bootstrap-summary shows the summary of our bootstrap statistics for our final model. As noted by @gries_statistics_2021, models often perform better on the data they were trained on because they capture patterns that may not generalise beyond the sample, which is called overfitting. According to @levshina_how_2015: 167, large differences between training and test performance, referred to as optimism, can indicate overfitting. In the summary of our bootstrap statistics in @fig-bootstrap-summary, this difference can be seen in the bootstrap bias, which is very small (\<0.05) for most predictors. **However, the variable clustercommunication shows a slightly higher bias (0.059), suggesting it might be overfitting to some extent. This means that clustercommunication may be a less robust predictor and may require further investigation or could be removed from the model.**
 
-The bias for subj_animacyinanimate is relatively small but indicates some instability across bootstrap samples. This instability likely affects the subj_animacyinanimate:adversativitynon-adversative interaction term, as it depends on the reliability of the subj_animacyinanimate predictor. The instability of subj_animacyinanimate suggests that the interaction effect may also be less robust, and further investigation might be needed.
+The bias for subj_animacyinanimate is just over 0.05, it is relatively small but indicates some instability across bootstrap samples. This instability likely affects the subj_animacyinanimate:adversativitynon-adversative interaction term, as it depends on the reliability of the subj_animacyinanimate predictor. The instability of subj_animacyinanimate suggests that the interaction effect may also be less robust, and further investigation might be needed.
 
 ::: {#fig-bootstrap-summary}
 ```{r boot-summary, echo = FALSE}
 
-bootstrap_summary <- summary(bootstrap_final_model)
-
-kable(bootstrap_summary)
+# bootstrap_summary <- summary(bootstrap_final_model)
+# 
+# kable(bootstrap_summary)
 ```
 :::
 
 ```{r}
 
-bootstrap_df <- as.data.frame(bootstrap_final_model$t)
-
-colnames(bootstrap_df) <- names(fixef(final_model))
+# bootstrap_df <- as.data.frame(bootstrap_final_model$t)
+# 
+# colnames(bootstrap_df) <- names(fixef(final_model))
 
 ```
 
@@ -1053,11 +1051,17 @@ colnames(bootstrap_df) <- names(fixef(final_model))
 
 ```{r}
 
-ggplot(bootstrap_df, aes(x = clustercommunication)) +
- geom_density(fill = "lightblue") +
- labs(title = "Bootstrapped Distribution of the clustercommunication Variable",
-      x = "Coefficient Estimate", y = "Density") +
- theme_minimal()
+# ggplot(bootstrap_df, aes(x = clustercommunication)) +
+#  geom_density(fill = "lightblue") +
+#  labs(title = "Bootstrapped Distribution of the clustercommunication Variable",
+#       x = "Coefficient Estimate", y = "Density") +
+#  theme_minimal()
+# 
+# ggplot(bootstrap_df, aes(x = subj_animacyinanimate)) +
+#  geom_density(fill = "lightblue") +
+#  labs(title = "Bootstrapped Distribution of the subj_animacyinanimate Variable",
+#       x = "Coefficient Estimate", y = "Density") +
+#  theme_minimal()
 
 ```
 
@@ -1088,7 +1092,7 @@ We only have categorical data; therefore mean and standard deviation are not mea
 
 ### Subject animacy
 
-As outlined in @sec-subj-resp, subject animacy may indicate subject responsibility or, at the very least, subject affectedness. In our data, inanimate subjects were more frequent than animate ones with [être]{.smallcaps} (38% animate, 62% inanimate), whereas [se faire]{.smallcaps} showed a strong preference for animate subjects (93% animate, 7% inanimate).
+As outlined in @sec-subj-resp, subject animacy may indicate subject responsibility or subject affectedness. In our data, inanimate subjects were more frequent than animate ones with [être]{.smallcaps} (38% animate, 62% inanimate), whereas [se faire]{.smallcaps} showed a strong preference for animate subjects (93% animate, 7% inanimate).
 
 ```{r animacy-descriptive-tables, echo = FALSE}
 table(passive_sample_clean$subj_animacy) |> 
@@ -1127,7 +1131,9 @@ ggplot(mapping = aes(x = subj_animacy, fill = subj_animacy)) +
 #            data = passive_sample_clean)
 ```
 
-@fig-animacy-freq-plot illustrates the strong predominancy of animate subjects in [se faire]{.smallcaps}. In contrast, for [être,]{.smallcaps} subject animacy is more evenly distributed, with a preference for inanimate subjects. Although this pattern is overall consistent with our expectations, the latter finding contradicts our hypothesis that [être]{.smallcaps} would favour animate subjects. The distribution of subject animacy in [se faire]{.smallcaps} replicates previous findings [e.g. @novakova_construction_2009] and supports the consensus that [se faire]{.smallcaps} strongly prefers animate subjects (@sec-subj-resp). While not conclusive on its own, this may suggest that subjects of [se faire]{.smallcaps} are more likely to be assigned a sense of responsibility: It does not prove that they must be responsible, but if animacy is taken as an indicator of affectedness, it suggests that subjects of [se faire]{.smallcaps} are predominantly and often more directly affected by the event than subjects of [être]{.smallcaps}. For further investigation, we turn to the results of the logistic regression, where we modeled animacy in interaction with adversativity: 
+@fig-animacy-freq-plot illustrates the strong predominancy of animate subjects in [se faire]{.smallcaps}. In contrast, subject animacy is more evenly distributed for [être]{.smallcaps}, with a preference for inanimate subjects. Although this pattern is overall consistent with our expectations, the latter finding contradicts our hypothesis that [être]{.smallcaps} would favour animate subjects. The distribution of subject animacy in [se faire]{.smallcaps} replicates previous findings [e.g. @novakova_construction_2009] and supports the consensus that [se faire]{.smallcaps} strongly prefers animate subjects (@sec-subj-resp). While not conclusive on its own, this may hint to a stronger sense of subject responsibility or affectness: If subject animacy is taken as an indicator of affectedness, the distribution suggests that subjects of [se faire]{.smallcaps} are predominantly and often more directly affected by the event than subjects of [être]{.smallcaps}.
+
+The main effect of subject animacy in the logistic regression cannot be interpreted in isolation as it is distorted by the significant interaction with adversativity. The interplay of these two factors and their predictions for the choice between [se faire]{.smallcaps} and [être]{.smallcaps} are described in @sec-results-adversativity, while their implications for subject responsibility is discussed in @sec-discussion.
 
 ### Subject gender
 
@@ -1192,11 +1198,81 @@ For both passive variants, animate subjects are predominantly masculine, while i
 
 For inanimate subjects, the difference in frequency between masculine and feminine gender is smaller compared to animate subjects, suggesting that the influence of gender on the choice of passive variant could be less strong for inanimate subjects than for animate ones.
 
-### Complément d'agent
+<!-- ### Complément d'agent
 
 ```{r}
 table(passive_sample_clean$agent_pp, passive_sample_clean$passive_variant)
 ```
+-->
+## Adversativity {#sec-results-adversativity}
+
+Overall, non-adversative constructions occured more frequently than adversative constructions in our data, with a ratio of 69.08% to 30.92%. However, adversative constructions were more common with [se faire]{.smallcaps} than with [être]{.smallcaps}: While only about one fifth (22.66%) of [être]{.smallcaps} were adversative, this was the case for two fifths (42.23%) of [se faire]{.smallcaps}.
+
+```{r adversativity-tab, echo = FALSE}
+table(passive_sample_clean$adversativity) |> 
+  proportions() * 100
+
+tab_adv <- table(passive_sample_clean$adversativity, passive_sample_clean$passive_variant)
+
+kbl((prop.table(tab_adv, margin = 2) * 100), digits = 3, full_width = F, position = "center", col.names = c("Level", "être in %", "se faire in %")) |> 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+```{r adversativity-plot, echo = FALSE}
+# passive_sample_clean |> 
+# ggplot(mapping = aes(x = adversativity, fill = adversativity)) +
+#   geom_bar(position = "dodge") +
+#   facet_wrap(~ passive_variant) +
+#   #scale_y_continuous(expand = c(0,0)) + 
+#   theme_bw() +
+#   theme(legend.position = "none") +
+#   labs(x = "Subject Animacy",
+#        y = "Number of Observations")
+
+mosaicplot(passive_variant ~ adversativity,
+           data = passive_sample_clean,
+           main = "Ratio of passive variant and adversativity",
+           xlab = "adversativity",
+           ylab = "passive variant",
+           col = c("lightblue", "orange"))
+```
+
+Regarding the interaction between subject animacy and adversativity, both adversative and non-adversative constructions with [se faire]{.smallcaps} were used more frequently with animate subjects, while [être]{.smallcaps} constructions were more common with inanimate subjects in non-adversative contexts.
+
+```{r animacy-adversativity-plots, include = FALSE}
+#| label: fig-animacy-adversativity
+#Interaction Animacy: Adversativity:
+ftable(passive_sample_clean$adversativity, passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy)
+
+passive_sample_clean |> 
+ggplot(mapping = aes(x = subj_animacy, fill = adversativity)) +
+  geom_bar(position="dodge") +
+  facet_wrap(~ passive_variant) +
+  scale_y_continuous(expand = c(0,0)) + 
+  labs(x = "Subject Animacy",
+       y = "Number of Observations", 
+       fill = "Adversativity" ) +
+  theme_bw()
+```
+
+The logistic regression model revealed a significant interaction between subject animacy and adversativity with an odds ratio of 0.06 and a confidence interval of 0.02-0.2. This means that [se faire]{.smallcaps} is 0.06 times as likely as [être]{.smallcaps} when the subject is inanimate and the context is in non-adversative. In other words, in these contexts, [se faire]{.smallcaps} is used significantly less frequently than [être]{.smallcaps}. Conversely, since the categories are binary, this also implies that [se faire]{.smallcaps} is much more common in adversative contexts and with animate subjects than [être]{.smallcaps}.
+
+```{r interaction-model-plot, echo=FALSE, warning=FALSE}
+#| label: fig-animacy-adversativity-log
+
+ggpredict(final_model, c("subj_animacy", "adversativity")) |> 
+  plot() +
+  scale_color_manual(values = c("lightblue", "orange")) +
+  theme_bw()
+
+# ggpredict(final_model, c("adversativity", "subj_animacy")) |> 
+#   plot() +
+#   theme_bw()
+```
+
+As @fig-animacy-adversativity-log illustrates, animate subjects strongly favor [se faire]{.smallcaps} regardless of adversativity, with only a slight additional increase in its likelihood in adversative contexts. In contrast, the likelihood of [se faire]{.smallcaps} being used with inanimate subjects increases significantly when the construction has an adversative meaning: [se faire]{.smallcaps} and [être]{.smallcaps} are almost equally likely for inanimate subjects in adversative contexts (40% likelihood of [se faire]{.smallcaps}) whereas in non-adversative contexts, [être]{.smallcaps} is almost exclusively used.
+
+Even though an analysis of the most frequent lemmas shows that [se faire]{.smallcaps} most frequent verbs *insulter* and *engueuler* are adversative, there was no significant interaction effect of adversativity and cluster.
 
 ## Aspectuality
 
@@ -1373,76 +1449,6 @@ ggplot(passive_sample_clean,
 Frequencies of [être]{.smallcaps} and [se faire]{.smallcaps} by Verb Cluster and Subject Animacy
 :::
 
-## Adversativity
-
-Overall, non-adversative constructions occured more frequently than adversative constructions in our data, with a ratio of 69.08% to 30.92%. However, adversative constructions were more common with [se faire]{.smallcaps} than with [être]{.smallcaps}: While only about one fifth (22.66%) of [être]{.smallcaps} were adversative, this was the case for two fifths (42.23%) of [se faire]{.smallcaps}.
-
-```{r adversativity-tab, echo = FALSE}
-table(passive_sample_clean$adversativity) |> 
-  proportions() * 100
-
-tab_adv <- table(passive_sample_clean$adversativity, passive_sample_clean$passive_variant)
-
-kbl((prop.table(tab_adv, margin = 2) * 100), digits = 3, full_width = F, position = "center", col.names = c("Level", "être in %", "se faire in %")) |> 
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
-```
-
-```{r adversativity-plot, echo = FALSE}
-# passive_sample_clean |> 
-# ggplot(mapping = aes(x = adversativity, fill = adversativity)) +
-#   geom_bar(position = "dodge") +
-#   facet_wrap(~ passive_variant) +
-#   #scale_y_continuous(expand = c(0,0)) + 
-#   theme_bw() +
-#   theme(legend.position = "none") +
-#   labs(x = "Subject Animacy",
-#        y = "Number of Observations")
-
-mosaicplot(passive_variant ~ adversativity,
-           data = passive_sample_clean,
-           main = "Ratio of passive variant and adversativity",
-           xlab = "adversativity",
-           ylab = "passive variant",
-           col = c("lightblue", "orange"))
-```
-
-Regarding the interaction between subject animacy and adversativity, both adversative and non-adversative constructions with [se faire]{.smallcaps} were used more frequently with animate subjects, while [être]{.smallcaps} constructions were more common with inanimate subjects in non-adversative contexts.
-
-```{r animacy-adversativity-plots, include = FALSE}
-#| label: fig-animacy-adversativity
-#Interaction Animacy: Adversativity:
-ftable(passive_sample_clean$adversativity, passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy)
-
-passive_sample_clean |> 
-ggplot(mapping = aes(x = subj_animacy, fill = adversativity)) +
-  geom_bar(position="dodge") +
-  facet_wrap(~ passive_variant) +
-  scale_y_continuous(expand = c(0,0)) + 
-  labs(x = "Subject Animacy",
-       y = "Number of Observations", 
-       fill = "Adversativity" ) +
-  theme_bw()
-```
-
-The logistic regression model revealed a significant interaction between subject animacy and adversativity with an odds ratio of 0.06 and a confidence interval of 0.02-0.2. This means that [se faire]{.smallcaps} is 0.06 times as likely as [être]{.smallcaps} when the subject is inanimate and the context is in non-adversative. In other words, in these contexts, [se faire]{.smallcaps} is used significantly less frequently than [être]{.smallcaps}. Conversely, since the categories are binary, this also implies that [se faire]{.smallcaps} is much more common in adversative contexts and with animate subjects than [être]{.smallcaps}.
-
-```{r interaction-model-plot, echo=FALSE, warning=FALSE}
-#| label: fig-animacy-adversativity-log
-
-ggpredict(final_model, c("subj_animacy", "adversativity")) |> 
-  plot() +
-  scale_color_manual(values = c("lightblue", "orange")) +
-  theme_bw()
-
-ggpredict(final_model, c("adversativity", "subj_animacy")) |> 
-  plot() +
-  theme_bw()
-```
-
-As @fig-animacy-adversativity-log illustrates, animate subjects strongly favor [se faire]{.smallcaps} regardless of adversativity, with only a slight additional increase in its likelihood in adversative contexts. In contrast, the likelihood of [se faire]{.smallcaps} being used with inanimate subjects increases significantly when the construction has an adversative meaning: [se faire]{.smallcaps} and [être]{.smallcaps} are almost equally likely for inanimate subjects in adversative contexts (40% likelihood of [se faire]{.smallcaps}) whereas in non-adversative contexts, [être]{.smallcaps} is almost exclusively used.
-
-Even though an analysis of the most frequent lemmas shows that [se faire]{.smallcaps} most frequent verbs *insulter* and *engueuler* are adversative, there was no significant interaction effect of adversativity and cluster.
-
 <!-- Some mosaic plots for exploration:-->
 
 ```{r data-exploration-plots, include = FALSE}
@@ -1502,6 +1508,8 @@ Dataset/sample: problem: data are extremely unbalanced (ratio in ParlaMint être
 
 As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + infinitive can sometimes have a 'passive effect' even without a direct 1:1 alternation with *être*.
 
+potential problems revealed in diagnostics: suboptimal fit for some data (binned residuals) and bootstrap validation (convergence issues & minimal bias)
+
 # Conclusion
 
 -   Future studies: modality (spoken/written) as a factor (compare modalities), analyses on other modalities/varieties/registers
@@ -1517,22 +1525,22 @@ As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + i
 ## Verb cluster categorisation with example verbs {#appendix-a .appendix}
 
 ::: {#tbl-clusters}
-| Verb clusters [@francois_presentation_2007, 4]                    | Grouped Verb Clusters (Our Study) | Example Verbs                                                                                                                                                                                                 |
+| Verb clusters [@francois_presentation_2007, 4] | Grouped Verb Clusters (Our Study) | Example Verbs |
 |-------------------|-------------------|----------------------------------|
-| giving, depriving (don, privation)                                | neutral                           | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*)      |
-| entering, leaving (entrée, sortie)                                | neutral                           | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*)                    |
-| hitting, touching (frapper, toucher)                              | hitting-touching                  | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*)                                                  |
-| movement in place (mouvement sur place)                           | neutral                           | \-                                                                                                                                                                                                            |
-| equipping, disarming (munir, démunir)                             | neutral                           | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie \[...\]*)                                                                                                            |
-| transformation, change (transformation, changement)               | neutral                           | remplacer (*\[...\] afin que le premier puisse se faire remplacer par le second \[...\]*)                                                                                                                     |
-| realisation, preparation (réalisation, mise en état)              | neutral                           | photographier (*J'ajoute la diminution du nombre de points où l'on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'identité ou son passeport*.) |
-| physical states and behaviours (états physiques et comportements) | neutral                           | aider (*\[...\] afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'en sont pas informés.*)                                                                    |
-| locative (locatif)                                                | neutral                           | domicilier (*Beaucoup trichent en se faisant domicilier chez un parent \[...\]*)                                                                                                                              |
-| union, reunion (union, réunion)                                   | neutral                           | \-                                                                                                                                                                                                            |
-| psychological verbs (verbes psychologiques)                       | neutral                           | écouter (*Le problème, on l'a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*)                                                          |
-| seizing, clasping, possessing (saisir, serrer, posséder)          | neutral                           | élire (*\[...\] avant que M. Hollande ne se fasse élire en affirmant qu'il ne signerait pas le TSCG en l'état.*)                                                                                              |
-| communication                                                     | communication                     | accuser (*\[...\] il est devenu impossible de l'exprimer dans le débat public sans se faire accuser de haïr les policiers \[...\]*)                                                                           |
-| auxiliary verbs                                                   | \-                                | \-                                                                                                                                                                                                            |
+| giving, depriving (don, privation) | neutral | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*) |
+| entering, leaving (entrée, sortie) | neutral | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*) |
+| hitting, touching (frapper, toucher) | hitting-touching | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*) |
+| movement in place (mouvement sur place) | neutral | \- |
+| equipping, disarming (munir, démunir) | neutral | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie \[...\]*) |
+| transformation, change (transformation, changement) | neutral | remplacer (*\[...\] afin que le premier puisse se faire remplacer par le second \[...\]*) |
+| realisation, preparation (réalisation, mise en état) | neutral | photographier (*J'ajoute la diminution du nombre de points où l'on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'identité ou son passeport*.) |
+| physical states and behaviours (états physiques et comportements) | neutral | aider (*\[...\] afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'en sont pas informés.*) |
+| locative (locatif) | neutral | domicilier (*Beaucoup trichent en se faisant domicilier chez un parent \[...\]*) |
+| union, reunion (union, réunion) | neutral | \- |
+| psychological verbs (verbes psychologiques) | neutral | écouter (*Le problème, on l'a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*) |
+| seizing, clasping, possessing (saisir, serrer, posséder) | neutral | élire (*\[...\] avant que M. Hollande ne se fasse élire en affirmant qu'il ne signerait pas le TSCG en l'état.*) |
+| communication | communication | accuser (*\[...\] il est devenu impossible de l'exprimer dans le débat public sans se faire accuser de haïr les policiers \[...\]*) |
+| auxiliary verbs | \- | \- |
 
 Verb cluster categorisation with example verbs based on the classes by @francois_presentation_2007 [4]
 :::

@@ -309,7 +309,7 @@ We hypothesise that the *complément d'agent* influences the choice between *se 
 
 Novakova [-@novakova_construction_2009: 116-117] notes that modal verbs frequently occur with [se faire]{.smallcaps}. According to Raineri [-@raineri_analyse_2010: 97, 162], modals contribute to subject involvement by expressing agentivity. Raineri [-@raineri_analyse_2010: 97] presents @martin_construction_2002 's observation [^1] that volitional verbs fit well with [se faire]{.smallcaps} because they involve an intentional action that results in a change of mental state. Since modals usually convey some kind of subject intention or involvement, we expect [se faire]{.smallcaps} to appear more often with modal verbs than [être]{.smallcaps}.
 
-[^1]: Note that the ratio ended up not being exactly 50:50 because we had to exclude the gender "unknown" which removed 165 se faire and only 29 être constructions. However, this is is still much more balanced than the actual ratio.
+[^1]: Unfortunately, we could not get access to the original paper of @martin_construction_2002 and therefore need to rely on @raineri_analyse_2010's report.
 
 We mark a sentence as modal if a form of one of the modals *devoir*, *vouloir* or *pouvoir* has scope on [se faire]{.smallcaps}. We limit the modal category to these three modal verbs to ensure consitent annotation; verbs that could have a modal sense in some contexts (e.g. *savoir*) and paraphrasal constructions indicating subject responsibility (e.g. *avoir besoin de, arriver à, réussir à, avoir des difficultés pour, avoir la possibilité de, avoir envie de*) are not assigned modal status.
 
@@ -391,7 +391,9 @@ As @bohmann_large-scale_2023 note in their investigation of the [be]{.smallcaps}
 
 <!-- -   \@bohmann_large-scale_2023 [38, 43] Sentiment values of verb participles extracted from SentiWordNet: positivity, negativity, objectivity scores; reversed if sentence is negated -->
 
-**Interaction:** Affectedness of the subject may be reflected by an interaction of subject animacy and adversativity: Negative consequences of actions, expressed by adversative verbs, affect animate subjects more than inanimate subjects. According to @gaatone_desagreable_1983, adversativity contradicts the notion of subject responsibility because subjects would not willingly bring such events upon themselves. According to him, the reason for this is the subject's involvement in [se faire]{.smallcaps} constructions: if the subject experiences a pleasant event and this is expressed by se faire -\> mostly the subject has initiated the action -\> causative and not passive reading/ in contrast, it is less likely that the subject initiates an unpleasant action.
+According to @gaatone_desagreable_1983: 170, adversativity conflicts with the notion of subject responsibility in [se faire]{.smallcaps} because subjects would not willingly bring such events upon themselves. He argues that unpleasant actions expressed with [se faire]{.smallcaps} tend to receive a purely passive interpretation, whereas pleasant actions are more likely to have been initiated by the subject, resulting in a causative reading. This contrast suggests a potential interaction between subject animacy and adversativity that reflects the affectness of the subject:
+
+**Interaction:** Animate subjects are more likely to be negatively impacted by adversative actions than inanimate subjects. We therefore predict that the levels 'animate' and 'adversative' will often occur together, while 'inanimate' and 'adversative' will be a less likely combination.
 
 ```{=html}
 <!-- ### Maybe: Comparison to similar alternations in other languages
@@ -401,7 +403,7 @@ As @bohmann_large-scale_2023 note in their investigation of the [be]{.smallcaps}
 
 # Data and methods {#sec-data-and-methods}
 
-Prior to conducting our study, we preregistered its protocol on the platform AsPredicted (**Wharton Credibility Lab, University of Pennsylvania**) to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed here: <https://aspredicted.org/gp6y-dd8p.pdf>.
+Prior to conducting our study, we preregistered its protocol on the platform AsPredicted [@AsPredictedWharton] to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed here: <https://aspredicted.org/gp6y-dd8p.pdf>.
 
 To maintain anonymity while ensuring transparency and consistency, we refer to ourselves as Annotator A and Annotator B when describing the manual steps.
 
@@ -839,7 +841,7 @@ Non-significant fixed effects are removed step by step, starting with `tam`, whi
 #| code-fold: true
 final_model <- glmer(
   passive_variant ~ (subj_animacy + subj_gender + cluster + adversativity + subj_animacy:adversativity) + 
-                    (1 | lemma),
+                    (1 | lemma) + (1 | speaker),
   family = "binomial",
   data = passive_sample_clean,
   control = glmerControl(optimizer = "bobyqa")
@@ -895,7 +897,7 @@ Except for this one bin, the residuals in the mid-range are close to 0 and withi
 sim_res <- simulateResiduals(final_model)
 testDispersion(sim_res)
 #plot(sim_res)
-testOutliers(sim_res)
+# testOutliers(sim_res)
 #testQuantiles(sim_res)
 ```
 

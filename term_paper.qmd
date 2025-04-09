@@ -993,7 +993,7 @@ The intercept of the final model is 2.78. This means that in the context of the 
 
 We used bootstrapping to validate the stability of our model's coefficients. This method involves random resampling with replacement from the original dataset, analysing each resample, and comparing the resulting estimates to the original. It allows for internal model validation without the need for new external test data [@levshina_how_2015: 166].
 
-We used the `bootMer()` function from the `lme4` package to perform bootstrapping on our mixed-effects model, using the same random seed that we used during data sampling for reproducibility.
+We used the `bootMer()` function from the `lme4` package to perform bootstrapping on our mixed-effects model, resampling 1000 times with the same random seed that we used during data sampling for reproducibility.
 
 ```{r boot-validation, include = FALSE}
 

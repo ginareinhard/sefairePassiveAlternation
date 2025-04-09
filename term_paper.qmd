@@ -438,11 +438,11 @@ We defined the following additional criteria, which follow from our main criteri
 
 -   **Transitivity of the verb**: the verb is a transitive verb (the direct object of the active sentence is the subject of the passive sentence). As described in @sec-etre, [être]{.smallcaps} requires a direct object in the active equivalent which becomes the subject in the passive voice. For reflexive and ditransitive verbs, [être]{.smallcaps} is not available and does not compete with [se faire]{.smallcaps}, which is why we excluded such constructions from our analysis. Additionally, we excluded impersonal passive constructions (*passif impersonnel*) due to the lack of a subject referent.
 
--   **Exclusion of fixed idiomatic expressions**: the [se faire]{.smallcaps} construction is not a fixed idiomatic expression with a figurative meaning. We speficically excluded constructions classified as "idiomes lexicalisés" (lexicalized idioms) according to @raineri_analyse_2010\[163\]. These constructions neither carry a true causative nor passive meaning[^3] and cannot occur with a complément d'agent: *se faire entendre*, *se faire sentir*, *se faire attendre*, and *se faire désirer* [@raineri_analyse_2010: 163]. Examples of additional fixed idiomatic expressions that we filtered out include: *se faire passer pour* 'to impersonate sb.', *se faire avoir* 'to be fooled', *se faire mousser* 'to boast/brag', *se faire taper sur les doigts* 'to get a slap on the fingers, to be scolded'.
+-   **Exclusion of fixed idiomatic expressions**: the [se faire]{.smallcaps} construction is not a fixed idiomatic expression with a figurative meaning. We speficically excluded constructions classified as "idiomes lexicalisés" (lexicalized idioms) according to @raineri_analyse_2010\[163\]. These constructions neither carry a true causative nor passive meaning[^2] and cannot occur with a complément d'agent: *se faire entendre*, *se faire sentir*, *se faire attendre*, and *se faire désirer* [@raineri_analyse_2010: 163]. Examples of additional fixed idiomatic expressions that we filtered out include: *se faire passer pour* 'to impersonate sb.', *se faire avoir* 'to be fooled', *se faire mousser* 'to boast/brag', *se faire taper sur les doigts* 'to get a slap on the fingers, to be scolded'.
 
 -   **Exclusion of adjectival constructions**: we excluded [être]{.smallcaps} constructions that are essentially adjectival constructions, such as *elle est connue* 'she is known'. Accordingly, [se faire]{.smallcaps} constructions that would typically be rephrased with an adjectival [être]{.smallcaps} construction were also excluded.
 
-[^3]: These verbs mainly occur with inanimate subjects (effects, consequences, discontent). @raineri_analyse_2010 [163-164] proposes that the causative meaning is not available for these verbs since the subject is not causing the event. There is also no passive meaning since they cannot cannot occur with a complément d’agent and do not have a paraphrase with être.
+[^2]: These verbs mainly occur with inanimate subjects (effects, consequences, discontent). @raineri_analyse_2010 [163-164] proposes that the causative meaning is not available for these verbs since the subject is not causing the event. There is also no passive meaning since they cannot cannot occur with a complément d’agent and do not have a paraphrase with être.
 
 To ensure consistency and practicality, we decided to include or exclude verbs based on their lemma, rather than on individual occurrences. After manually evaluating all occurrences, the following lemmas were excluded from our sample: *entendre*, *sentir*, *ressentir*, *attendre*, *désirer*, *voir*, *connaître*, *passer (pour)*, *mousser*, *avoir*, *rouler (se faire rouler dans la farine)*, *mener (se faire mener par le bout du nez)*.
 
@@ -712,7 +712,7 @@ In addition to conducting a descriptive analysis of the data, we employed a bino
 The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (passive variant: être; complément d' agent: 0; modal: no; TAM: non-progressive, cluster: neutral). If this would negatively affect the stability of the model, the most frequent (subject animacy: animate, subject gender: masculine) or the most evenly distributed case (adversativity: adversative)
 
 | Factors | Label | Levels |
-|-------------------|-------------------|----------------------------------|
+|----|----|----|
 | Passive variant | passive_variant | être, se faire |
 | Subject animacy | subj_animacy | animate, inanimate |
 | Subject gender | subj_gender | masculine, feminine |
@@ -993,7 +993,7 @@ exp(final_model_coef)
 #exp(model_2_coef) / (1 + exp(model_2_coef))
 ```
 
-The intercept of the final model is 2.78. This means that in the context of the reference levels (subject is animate and masculine, the cluster of the verb is neutral and the construction has an adversative sense), the chances of [se faire]{.smallcpas} being chosen are 2.78 times greater than [être]{.smallcaps}. The exact values of odds ratios are interpreted with regard to our hypothesies in @sec-results. 
+The intercept of the final model is 2.78. This means that in the context of the reference levels (subject is animate and masculine, the cluster of the verb is neutral and the construction has an adversative sense), the chances of [se faire]{.smallcpas} being chosen are 2.78 times greater than [être]{.smallcaps}. The exact values of odds ratios are interpreted with regard to our hypothesies in @sec-results.
 
 **Bootstrap Validation**
 
@@ -1047,7 +1047,7 @@ The density plot of the bootstrapped estimates for the clustercommunication fixe
 
 ```
 
-When running `bootMer()` with random effects lemma and speaker, we ran into convergence issues - + isSingular-warning
+When running `bootMer()` with the random effects lemma and speaker, we encounter singularity problems and uncertainty in the coefficients (convergence problems - + isSingular-warning.) This can only be resolved by removing the speaker effect, suggesting a lack of variation between speakers (hindering stable estimation). However, this results in an increase in the AIC from 719.2 to 732, indicating an overall poorer fit. In addition, the removal of the speaker fundamentally changes the structure of the model, requiring a complete re-optimisation of the model from scratch, as well as the investigation of model diagnostics, which is beyond the scope of this paper. For interpretation, we therefore stick to our original final model, but recognise its instability as a potential weakness, which will be discussed in the @sec-discussion. However, we acknowledge that the model without random effect of speaker may be a viable, more robust option that would be worth exploring in depth in future work.
 
 Checking for collinearity:
 
@@ -1466,7 +1466,7 @@ mosaicplot(subj_gender ~ passive_variant,
 
 ```
 
-# Discussion
+# Discussion {#sec-discussion}
 
 As the multifaceted and partly conflicting literature suggests, the passive is a complex and nuanced phenomenon. This entails some challenges for the systematic study of both passive alternations in general, and of [se faire]{.smallcaps} and [être]{.smallcaps} specifically. Firstly, the variable context is necessarily broad due to [se faire]{.smallcaps}'s similarity to the structurally identical causative construction. As has been shown, several borderline cases can be interpreted as either causative or passive (sometimes even both) depending on the specific context. Similarly, [être]{.smallcaps} constructions range between the stative passive and the progressive passive, with the former sometimes being indistingushable from adjectival constructions. Decisions had to be made regarding inclusion and exclusion criteria; however, a different set of choices could have been equally justified and might have yielded different results. It could be valuable to examine the cases we excluded from our analysis to understand how they differ from genuine passive constructions. This would provide insight into the gray area where passive nuances are present, but no true alternation occurs, allowing for a closer examination of varying degrees of passivity.
 
@@ -1490,9 +1490,9 @@ The remaining factors used to test subject responsibility (subject gender, compl
 
     -   random effect of lemma accounts for a lot of the variance - agrees with Bohmann [-@bohmann_large-scale_2023: 48] who reports evidence that the English \[get\] passive, which has been shown to be similar to [se faire]{.smallcaps} in several regards, "is largely lexically conditioned"
 
-One limitation of our study is that the predictions of our model do not directly reflect real-life language use, as [être]{.smallcaps} is far more common than [se faire]{.smallcaps}, which is comparatively rare (ratio in ParlaMint: 324,836 (38.300) être: 1,254 se faire). We created a balanced data set based on [se faire]{.smallcaps} lemmas to prevent our model from being dominated by frequency effects produced by extreme data unbalance.[^4] This approach allowed us to investigate the factors influencing passive choice and their complex interplay. However, it must be kept in mind that this ratio is artificial does not reflect the reality of passive use, in which [être]{.smallcaps} is chosen as the default in most contexts, and [se faire]{.smallcaps} remains a marked exception.
+One limitation of our study is that the predictions of our model do not directly reflect real-life language use, as [être]{.smallcaps} is far more common than [se faire]{.smallcaps}, which is comparatively rare (ratio in ParlaMint: 324,836 (38.300) être: 1,254 se faire). We created a balanced data set based on [se faire]{.smallcaps} lemmas to prevent our model from being dominated by frequency effects produced by extreme data unbalance.[^3] This approach allowed us to investigate the factors influencing passive choice and their complex interplay. However, it must be kept in mind that this ratio is artificial does not reflect the reality of passive use, in which [être]{.smallcaps} is chosen as the default in most contexts, and [se faire]{.smallcaps} remains a marked exception.
 
-[^4]: Note that the ratio ended up not being exactly 50:50 because we had to exclude the gender "unknown" which removed 165 se faire and only 29 être constructions. However, this is is still much more balanced than the actual ratio.
+[^3]: Note that the ratio ended up not being exactly 50:50 because we had to exclude the gender "unknown" which removed 165 se faire and only 29 être constructions. However, this is is still much more balanced than the actual ratio.
 
 A limitation of our study is that the lemmas were determined based on those occurring in *se faire* constructions, which may have influenced the analysis.
 
@@ -1524,7 +1524,7 @@ As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + i
 
 ::: {#tbl-clusters}
 | Verb clusters [@francois_presentation_2007, 4] | Grouped Verb Clusters (Our Study) | Example Verbs |
-|-------------------|-------------------|----------------------------------|
+|----|----|----|
 | giving, depriving (don, privation) | neutral | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*) |
 | entering, leaving (entrée, sortie) | neutral | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*) |
 | hitting, touching (frapper, toucher) | hitting-touching | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*) |

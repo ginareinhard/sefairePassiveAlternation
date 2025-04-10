@@ -174,7 +174,7 @@ Some grammars distinguish between a *passif verbal* (verbal passive), with an ev
 
 Finally, distinguishing between passive constructions and adjectives in French is not always straightforward. One difference between them is that the *participe passif* can form impersonal constructions with a nominal complement, as seen in example 2. Additionally, adjectives often have antonyms with a negative prefix, such as *connu* 'known' and *inconnu* 'unknown'. In some cases, the adjective may have a meaning or construction that differs significantly from the passive participle, as in the contrast between *Ce restaurant est très couru* 'This restaurant is very popular' and \**On court beaucoup ce restaurant* [@abeille2021grande: 2012]
 
-To summarise, [être]{.smallcaps} is the canonical form of passivisation in French, providing a means of shifting the focus from the agent to the undergoer, the action, and its result. The next section examines the passive variant [se faire]{.smallcaps}, which, while sharing some functional similarities with [être]{.smallcaps}, also presents distinct structural and semantic differences.
+To summarise, [être]{.smallcaps} is the canonical form of passivisation in French, providing a means of shifting the focus from the actor to the undergoer, the action, and its result. The next section examines the passive variant [se faire]{.smallcaps}, which, while sharing some functional similarities with [être]{.smallcaps}, also presents distinct structural and semantic differences.
 
 ## [se faire]{.smallcaps} passive
 

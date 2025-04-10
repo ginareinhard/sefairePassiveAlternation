@@ -1031,7 +1031,7 @@ tab_model(final_model_no_speaker, show.aic = TRUE)
 Final Model without the `speaker` Random Effect
 :::
 
-@tbl-bootstrap-summary shows the summary of the bootstrap statistics for our final model. As noted by Gries [-@gries_statistics_2021: 385], models often perform better on the data they were trained on because they capture patterns that may not generalise beyond the sample, which is called overfitting. According to Levshina [-@levshina_how_2015: 167], large differences between training and test performance, referred to as optimism, can indicate overfitting. In the summary of our bootstrap statistics in @tbl-bootstrap-summary, the differences between our original model and the means of the boostrapped samples can be seen in the bootstrap bias.
+@tbl-bootstrap-summary shows the summary of the bootstrap statistics for our final model. As noted by Gries [-@gries_statistics_2021: 385], models often perform better on the data they were trained on because they capture patterns that may not generalise beyond the sample, which is called overfitting. According to Levshina [-@levshina_how_2015: 167], large differences between training and test performance, referred to as optimism, can indicate overfitting. In the summary of our bootstrap statistics in @tbl-bootstrap-summary, the differences between our original model and the means of the boostrapped samples can be seen in the bootstrap bias (`bootBias`).
 
 ::: {#tbl-bootstrap-summary}
 ```{r bootstrap-summary, echo = FALSE}
@@ -1044,7 +1044,7 @@ kable(bootstrap_summary)
 Bootstrap statistics for the Final Model
 :::
 
-For most predictors, the bootstrap bias is very small (at or below 0.05), indicating that they are stable. The bias for `subj_animacyinanimate`, however, stands out slightly at -0.051, which may indicate some instability across bootstrap samples. This could also affect the interaction `subj_animacyinanimate:adversativitynon-adversative`, as it is based on the same predictor. As can be seen in @fig-density-animacy, the distribution for `subj_animacyinanimate` deviates somewhat from a bell shape, centering around the bootstrap median -1.46 (`bootMed`), which supports the interpretation of reduced robustness.
+For most predictors, the bootstrap bias is very small (at or below 0.05), indicating that they are stable. The bias for `subj_animacyinanimate`, however, stands out slightly at -0.051, which may indicate some instability across bootstrap samples. This could also affect the interaction `subj_animacyinanimate:adversativitynon-adversative`, because it is based on the same predictor. As can be seen in @fig-density-animacy, the distribution for `subj_animacyinanimate` deviates somewhat from a bell shape, centering around the bootstrap median -1.46 (`bootMed`), which supports the interpretation of reduced robustness.
 
 ```{r bootstrap-df, include = FALSE}
 
@@ -1067,7 +1067,7 @@ ggplot(bootstrap_df, aes(x = subj_animacyinanimate)) +
 Bootstrapped Distribution of the `subj_animacyinanimate` Variable
 :::
 
-In contrast, the distribution for the significant main effect `clustercommunication` in @fig-density-cluster is approximately bell-shaped and centers around the original value of 1.80, which confirms its stability and positive effect. However, both verb cluster predictors, `clustercommunication` and `clusterhitting-touching`, have higher standard errors in the bootstrap statistics compared to the other fixed effects, indicating greater uncertainty.
+In contrast, the distribution for the significant main effect `clustercommunication` in @fig-density-cluster is approximately bell-shaped and centers closely around the original value of 1.80, which confirms its stability and positive effect. However, both verb cluster predictors, `clustercommunication` and `clusterhitting-touching`, have higher standard errors in the bootstrap statistics compared to the other fixed effects, which indicates greater uncertainty.
 
 ::: {#fig-density-cluster}
 ```{r density-cluster, echo = FALSE}

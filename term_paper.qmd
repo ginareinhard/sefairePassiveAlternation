@@ -1519,19 +1519,18 @@ potential problems revealed in diagnostics: suboptimal fit for some data (binned
 
 -   memory-based learning
 
-# References {.unnumbered}
+# References
 
 ::: {#refs}
 :::
 
-## Packages used in this chapter {.unnumbered}
+## Packages used
 
 ```{r package-versions, echo=FALSE}
 sessionInfo()
 ```
 
-## Package references {.unnumbered}
-
+## Package references
 *package references to be added*
 
 ```{r generateBibliography, results="asis", echo=FALSE}

@@ -1008,7 +1008,7 @@ isSingular(final_model) #returns FALSE
 
 <div>
 
-```{r final-model-no-speaker, include = FALSE}
+```{r final-model-no-speaker, include = TRUE}
 #| code-fold: true
 
 final_model_no_speaker <- glmer(

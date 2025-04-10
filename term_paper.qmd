@@ -1041,10 +1041,10 @@ bootstrap_summary <- summary(bootstrap_final_model)
 kable(bootstrap_summary)
 ```
 
-Bootstrap statistics for the Final Model
+Bootstrap Statistics for the Final Model
 :::
 
-For most predictors, the bootstrap bias is very small (at or below 0.05), indicating that they are stable. The bias for `subj_animacyinanimate`, however, stands out slightly at -0.051, which may indicate some instability across bootstrap samples. This could also affect the interaction `subj_animacyinanimate:adversativitynon-adversative`, because it is based on the same predictor. As can be seen in @fig-density-animacy, the distribution for `subj_animacyinanimate` deviates somewhat from a bell shape, centering around the bootstrap median -1.46 (`bootMed`), which supports the interpretation of reduced robustness.
+For most predictors, the bootstrap bias is very small (at or below 0.05), indicating that they are stable. The bias for `subj_animacyinanimate`, however, stands out slightly at -0.051, which may indicate some instability across bootstrap samples. This could also affect the interaction `subj_animacyinanimate:adversativitynon-adversative`, which is based on the same predictor. As can be seen in @fig-density-animacy, the distribution for `subj_animacyinanimate` deviates somewhat from a bell shape, centering around the bootstrap median -1.46 (`bootMed`), which supports the interpretation of reduced robustness.
 
 ```{r bootstrap-df, include = FALSE}
 

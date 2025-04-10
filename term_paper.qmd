@@ -150,28 +150,31 @@ In this study, we use [être]{.smallcaps} and [se faire]{.smallcaps} in small ca
 
 ### Structure and meaning
 
-The canonical passive with *être* in French inverts the syntactic functions of the arguments within a clause. The object of the active sentence, i.e. the undergoer, becomes the subject in the passive voice - a phenomenon known as diathesis. In French, the subject typically occupies the first position in a sentence. In the *être* passive construction, the undergoer is placed in this initial position, which results in topicalisation. This syntactic shift directs the focus away from the actor and onto the undergoer.
+The passive in French inverts the syntactic functions of the arguments within a clause. The object of the active sentence, i.e. the undergoer, becomes the subject in the passive voice - a phenomenon known as diathesis. In French, the subject is typically encoded in the first position in a sentence. In the [être]{.smallcaps} passive construction, the undergoer is promoted to this position. This syntactic shift results in topicalisation, shifting the focus away from the actor and onto the undergoer, emphasising the referent affected by the action and the action itself, rather than the referent performing it.
 
-The French *être* passive construction consists of a form of the attributive verb *être* and the *participe passif* (passive participle), which is identical in form to the *participe passé* (past participle). Although other attributive verbs, such as *rester* and *sembler*, can also be used in passive constructions, they are less common. This term paper will focus specifically on the passive formed with *être*. In the passive construction, the subject of the active sentence becomes an adjunct phrase (*complément d'agent*), introduced by *par* or *de*, which can be omitted. The construction is referred to as *passif long* when a *complément d'agent* is present, and *passif court* when the agent is omitted [@abeille2021grande 210-211].
+The French [être]{.smallcaps} passive construction consists of a form of the attributive verb *être* 'to be' and the *participe passif* (passive participle), which is identical in form to the *participe passé* (past participle), e.g. *élus* 'elected'. Although other attributive verbs, such as *rester* 'to stay' and *sembler* 'to seem', can also be used in passive constructions, they are less common. This term paper will focus specifically on the passive formed with *être*. In the passive construction, the subject of the active sentence becomes an adjunct phrase, which is called *complément d'agent*, introduced by the preposition *par* or *de*. When the *complément d'agent* is present, the construction is referred to as *passif long*; when the agent is omitted, it is called *passif court* [@abeille2021grande: 210-211].
 
 For example, in the following sentences from our sample from the French ParlaMint 2.1 corpus [@11356/1431], in 1.a the agent *nos concitoyens* appears in the *complément d'agent* introduced by *par*, while in 1.b the agent is omitted:
 
 > (1) 
 >
 >     (a) *\[...\] ils sont élus par nos concitoyens au suffrage universel.*\
->         "\[...\] they are elected by our fellow citizens through universal suffrage."
+>         '\[...\] they are elected by our fellow citizens through universal suffrage.'
 >     (b) *Les députés sont élus pour contrôler votre action.*\
->         "The members of parliament are elected to monitor your actions."
+>         'The members of parliament are elected to monitor your actions.'
 
-An **impersonal passive** (*passif impersonnel*) is also possible in French. With impersonal passives, the direct object can remain as a complement, as in *Il sera acheté un livre* (‘A book will be bought’) [@abeille2021grande 210].
+The *passif long* can favour the interpretation of a habitual process, as in *La bière est servie par le patron* 'The beer is served by the owner'. In contrast, the *passif court* focuses on the action or its result, without specifying who performed it [@abeille2021grande: 219].
 
-Some grammars distinguish between a *passif verbal*, with an event interpretation, and an *passif adjectival*, with a resultative interpretation. According to *La grande grammaire du français* [@abeille2021grande], this is about semantic differences, concerning the aspect of the situation. With a state verb, active and passive sentences are generally semantically equivalent (Tout le monde aime Marie. / Marie est aimée de tout de monde.). With an event verb, expressing a change of state or place, the passive describes a change in the initial situation or the result of this change. In the passé composé, the sentences *On a servi la biere* and *La bière a été servi* appear to be equivalent. In the present tense, on the other hand, or in the imperfect tense, the active phrase (On sert la bière) may describe a situation in progress, and the passive phrase a resulting state (La bière est servi). In the passive, the presence of an agent complement can favour the interpretation of an event, with a present tense of habit (La bière est servi par le patron). The passive court without an agent generally has the effect of presenting the situation without specifying the cause or the individual who is responsible. Its semantic focus lies on the action or the result of the action. [@abeille2021grande 219].
+An impersonal passive (*passif impersonnel*) is also possible in French. In impersonal passives, the subject position is occupied by the expletive *il* 'it'. In this construction, the direct object can remain in the complement position [@abeille2021grande: 210-211]. An example of an impersonal passive from our sample is:
 
-**vs. adjectives**
+> 2.  *Il est prévu un suivi des progrès accomplis d'ici à fin juillet* *2018 \[...\]*\
+>     'A follow-up of the progress made is planned by the end of July 2018 \[...\]'
+
+Some grammars distinguish between a *passif verbal* (verbal passive), with an event interpretation, and *passif adjectival* (adjectival passive), with a resultative interpretation. According to *La grande grammaire du français* [@abeille2021grande], this distinction reflects semantic differences concerning the aspect of the event. With stative verbs, active and passive sentences are generally semantically equivalent, as seen in the examples *Tout le monde aime Marie* 'Everyone loves Marie' vs. *Marie est aimée de tout le monde* 'Marie is loved by everyone'. However, with event verbs, which involve a change in state or location, the passive form often emphasises the result or outcome of the change. For example, in the *passé composé* (compound past tense), *On a servi la bière* 'They served the beer' describes the event, while *La bière a été servie* 'The beer has been served' emphasises the result of the action [@abeille2021grande: 219].
+
+Finally, distinguishing between passive constructions and adjectives in French is not always straightforward. The *participe passif* can form impersonal constructions with a nominal complement, as seen in example 2. Additionally, adjectives often have antonyms with a negative prefix, such as *connu* 'known' and *inconnu* 'unknown'. In some cases, the adjective may have a meaning or construction that differs significantly from the passive participle, as in the contrast between *Ce restaurant est très couru* 'This restaurant is very popular' and \**On court beaucoup ce restaurant* [@abeille2021grande: 2012]
 
 (The passive voice is relatively rare in French, accounting for only 5% of verbs in the French Treebank (FTB) (\@da_cunha_lalternance_2020), compared to 9% in English for the same text type (\@roland2007frequency). Overall, the passive voice is more frequently used in written French than in spoken French (\@da2022alternance). Approximately a quarter of passive constructions in the FTB are *passif long* (\@da_cunha_lalternance_2020), while in spoken French, this proportion drops to about 10% (source: Hamma). **-\> frequency in our corpus?**)
-
-We will refer to this with [être.]{.smallcaps}
 
 ## [se faire]{.smallcaps} passive
 
@@ -1025,17 +1028,17 @@ tab_model(final_model_no_speaker, show.aic = TRUE)
 ::: {#fig-bootstrap-summary}
 ```{r bootstrap-summary, echo = FALSE}
 
-bootstrap_summary <- summary(bootstrap_final_model)
+#bootstrap_summary <- summary(bootstrap_final_model)
 
-kable(bootstrap_summary)
+#kable(bootstrap_summary)
 ```
 :::
 
 ```{r}
 
-bootstrap_df <- as.data.frame(bootstrap_final_model$t)
+#bootstrap_df <- as.data.frame(bootstrap_final_model$t)
 
-colnames(bootstrap_df) <- names(fixef(final_model))
+#colnames(bootstrap_df) <- names(fixef(final_model))
 
 ```
 
@@ -1045,17 +1048,17 @@ colnames(bootstrap_df) <- names(fixef(final_model))
 
 ```{r}
 
-ggplot(bootstrap_df, aes(x = clustercommunication)) +
- geom_density(fill = "lightblue") +
- labs(title = "Bootstrapped Distribution of the clustercommunication Variable",
-      x = "Coefficient Estimate", y = "Density") +
- theme_minimal()
+#ggplot(bootstrap_df, aes(x = clustercommunication)) +
+# geom_density(fill = "lightblue") +
+# labs(title = "Bootstrapped Distribution of the clustercommunication Variable",
+#      x = "Coefficient Estimate", y = "Density") +
+# theme_minimal()
 
-ggplot(bootstrap_df, aes(x = subj_animacyinanimate)) +
- geom_density(fill = "lightblue") +
- labs(title = "Bootstrapped Distribution of the subj_animacyinanimate Variable",
-      x = "Coefficient Estimate", y = "Density") +
- theme_minimal()
+#ggplot(bootstrap_df, aes(x = subj_animacyinanimate)) +
+# geom_density(fill = "lightblue") +
+# labs(title = "Bootstrapped Distribution of the subj_animacyinanimate Variable",
+#      x = "Coefficient Estimate", y = "Density") +
+# theme_minimal()
 
 ```
 
@@ -1531,6 +1534,7 @@ sessionInfo()
 ```
 
 ## Package references
+
 *package references to be added*
 
 ```{r generateBibliography, results="asis", echo=FALSE}

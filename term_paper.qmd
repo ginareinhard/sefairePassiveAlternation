@@ -152,6 +152,10 @@ In this study, we use [être]{.smallcaps} and [se faire]{.smallcaps} in small ca
 
 The passive in French inverts the syntactic functions of the arguments within a clause. The object of the active sentence, i.e. the undergoer, becomes the subject in the passive voice - a phenomenon known as diathesis. In French, the subject is typically encoded in the first position in a sentence. In the [être]{.smallcaps} passive construction, the undergoer is promoted to this position. This syntactic shift results in topicalisation, shifting the focus away from the actor and onto the undergoer, emphasising the referent affected by the action and the action itself, rather than the referent performing it.
 
+**While the passive voice is a common grammatical construction in French, the frequency of** [être]{.smallcaps} **in spoken and written French varies depending on the context. Studies show that the use of the passive is more frequent in formal, academic, or written contexts, where the focus is more on actions and outcomes rather than the agent performing them. In contrast, the active voice is typically preferred in informal speech and in constructions where the agent is important to the meaning.**
+
+(The passive voice is relatively rare in French, accounting for only 5% of verbs in the French Treebank (FTB) (\@da_cunha_lalternance_2020), compared to 9% in English for the same text type (\@roland2007frequency). Overall, the passive voice is more frequently used in written French than in spoken French (\@da2022alternance). Approximately a quarter of passive constructions in the FTB are *passif long* (\@da_cunha_lalternance_2020), while in spoken French, this proportion drops to about 10% (source: Hamma). **-\> frequency in our corpus?**)
+
 The French [être]{.smallcaps} passive construction consists of a form of the attributive verb *être* 'to be' and the *participe passif* (passive participle), which is identical in form to the *participe passé* (past participle), e.g. *élus* 'elected'. Although other attributive verbs, such as *rester* 'to stay' and *sembler* 'to seem', can also be used in passive constructions, they are less common. This term paper will focus specifically on the passive formed with *être*. In the passive construction, the subject of the active sentence becomes an adjunct phrase, which is called *complément d'agent*, introduced by the preposition *par* or *de*. When the *complément d'agent* is present, the construction is referred to as *passif long*; when the agent is omitted, it is called *passif court* [@abeille2021grande: 210-211].
 
 For example, in the following sentences from our sample from the French ParlaMint 2.1 corpus [@11356/1431], in 1.a the agent *nos concitoyens* appears in the *complément d'agent* introduced by *par*, while in 1.b the agent is omitted:
@@ -173,8 +177,6 @@ An impersonal passive (*passif impersonnel*) is also possible in French. In impe
 Some grammars distinguish between a *passif verbal* (verbal passive), with an event interpretation, and *passif adjectival* (adjectival passive), with a resultative interpretation. According to *La grande grammaire du français* [@abeille2021grande], this distinction reflects semantic differences concerning the aspect of the event. With stative verbs, active and passive sentences are generally semantically equivalent, as seen in the examples *Tout le monde aime Marie* 'Everyone loves Marie' vs. *Marie est aimée de tout le monde* 'Marie is loved by everyone'. However, with event verbs, which involve a change in state or location, the passive form often emphasises the result or outcome of the change. For example, in the *passé composé* (compound past tense), *On a servi la bière* 'They served the beer' describes the event, while *La bière a été servie* 'The beer has been served' emphasises the result of the action [@abeille2021grande: 219].
 
 Finally, distinguishing between passive constructions and adjectives in French is not always straightforward. The *participe passif* can form impersonal constructions with a nominal complement, as seen in example 2. Additionally, adjectives often have antonyms with a negative prefix, such as *connu* 'known' and *inconnu* 'unknown'. In some cases, the adjective may have a meaning or construction that differs significantly from the passive participle, as in the contrast between *Ce restaurant est très couru* 'This restaurant is very popular' and \**On court beaucoup ce restaurant* [@abeille2021grande: 2012]
-
-(The passive voice is relatively rare in French, accounting for only 5% of verbs in the French Treebank (FTB) (\@da_cunha_lalternance_2020), compared to 9% in English for the same text type (\@roland2007frequency). Overall, the passive voice is more frequently used in written French than in spoken French (\@da2022alternance). Approximately a quarter of passive constructions in the FTB are *passif long* (\@da_cunha_lalternance_2020), while in spoken French, this proportion drops to about 10% (source: Hamma). **-\> frequency in our corpus?**)
 
 ## [se faire]{.smallcaps} passive
 
@@ -1023,7 +1025,7 @@ tab_model(final_model_no_speaker, show.aic = TRUE)
 ```
 :::
 
-@fig-bootstrap-summary shows the summary of the bootstrap statistics for our final model. As noted by @gries_statistics_2021, models often perform better on the data they were trained on because they capture patterns that may not generalise beyond the sample, which is called overfitting. According to @levshina_how_2015: 167, large differences between training and test performance, referred to as optimism, can indicate overfitting. In the summary of our bootstrap statistics in @fig-bootstrap-summary, the differences between our original model and the means of the boostrapped samples can be seen in the bootstrap bias. For most predictors, this bias is very small (around 0.05 or smaller), which suggests that they are stable.
+@fig-bootstrap-summary shows the summary of the bootstrap statistics for our final model. As noted by @gries_statistics_2021, models often perform better on the data they were trained on because they capture patterns that may not generalise beyond the sample, which is called overfitting. According to @levshina_how_2015: 167, large differences between training and test performance, referred to as optimism, can indicate overfitting. In the summary of our bootstrap statistics in @fig-bootstrap-summary, the differences between our original model and the means of the boostrapped samples can be seen in the bootstrap bias.
 
 ::: {#fig-bootstrap-summary}
 ```{r bootstrap-summary, echo = FALSE}
@@ -1034,6 +1036,8 @@ tab_model(final_model_no_speaker, show.aic = TRUE)
 ```
 :::
 
+For most predictors, the bootstrap bias is minimal (\<0.05), indicating stability. However, the bias for `subj_animacyinanimate` slightly exceeds this threshold at -0.051, which may signal some instability across bootstrap samples. This could also impact the interaction `subj_animacyinanimate:adversativitynon-adversative`, which relies on the same predictor. As shown in \@fig-bootstrap-distributions, the distribution for `subj_animacyinanimate` deviates slightly from a bell shape, centering around -1.46 with a bias of -0.051, suggesting slightly lower robustness.
+
 ```{r}
 
 #bootstrap_df <- as.data.frame(bootstrap_final_model$t)
@@ -1042,17 +1046,7 @@ tab_model(final_model_no_speaker, show.aic = TRUE)
 
 ```
 
-**The bias for `subj_animacyinanimate` is slightly over 0.05, which may indicate some instability across bootstrap samples. This instability could also impact the `subj_animacyinanimate:adversativitynon-adversative` interaction, which depends on the reliability of the `subj_animacyinanimate` predictor. The verb cluster predictors `clustercommunication` and `clusterhitting-touching` show larger standard errors and therefore greater uncertainties.**
-
-**The density plot of the bootstrapped estimates for the clustercommunication fixed effect visualises the distribution of the coefficient estimates across the 1000 bootstrap samples. It is approximately bell-shaped and only slightly skewed. Most of the bootstrapped coefficient estimates lie well above 0, supporting the significance and positive effect.**
-
 ```{r}
-
-#ggplot(bootstrap_df, aes(x = clustercommunication)) +
-# geom_density(fill = "lightblue") +
-# labs(title = "Bootstrapped Distribution of the clustercommunication Variable",
-#      x = "Coefficient Estimate", y = "Density") +
-# theme_minimal()
 
 #ggplot(bootstrap_df, aes(x = subj_animacyinanimate)) +
 # geom_density(fill = "lightblue") +
@@ -1062,7 +1056,17 @@ tab_model(final_model_no_speaker, show.aic = TRUE)
 
 ```
 
-Overall, the bootstrap values are close to the original model's values.
+In contrast, the distribution for the significant main effect `clustercommunication` in \@fig-X is approximately bell-shaped and centers closely around the original value of 1.80, which confirms its stability and positive effect. However, both `clustercommunication` and `clusterhitting-touching` have higher standard errors compared to the other fixed effects, indicating greater uncertainty.
+
+```{r}
+
+#ggplot(bootstrap_df, aes(x = clustercommunication)) +
+# geom_density(fill = "lightblue") +
+# labs(title = "Bootstrapped Distribution of the clustercommunication Variable",
+#      x = "Coefficient Estimate", y = "Density") +
+# theme_minimal()
+
+```
 
 # Results {#sec-results}
 

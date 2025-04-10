@@ -1033,17 +1033,17 @@ The bias for subj_animacyinanimate is just over 0.05, it is relatively small but
 ::: {#fig-bootstrap-summary}
 ```{r boot-summary, echo = FALSE}
 
-# bootstrap_summary <- summary(bootstrap_final_model)
-# 
-# kable(bootstrap_summary)
+bootstrap_summary <- summary(bootstrap_final_model)
+
+kable(bootstrap_summary)
 ```
 :::
 
 ```{r}
 
-# bootstrap_df <- as.data.frame(bootstrap_final_model$t)
-# 
-# colnames(bootstrap_df) <- names(fixef(final_model))
+bootstrap_df <- as.data.frame(bootstrap_final_model$t)
+
+colnames(bootstrap_df) <- names(fixef(final_model))
 
 ```
 
@@ -1051,17 +1051,17 @@ The bias for subj_animacyinanimate is just over 0.05, it is relatively small but
 
 ```{r}
 
-# ggplot(bootstrap_df, aes(x = clustercommunication)) +
-#  geom_density(fill = "lightblue") +
-#  labs(title = "Bootstrapped Distribution of the clustercommunication Variable",
-#       x = "Coefficient Estimate", y = "Density") +
-#  theme_minimal()
-# 
-# ggplot(bootstrap_df, aes(x = subj_animacyinanimate)) +
-#  geom_density(fill = "lightblue") +
-#  labs(title = "Bootstrapped Distribution of the subj_animacyinanimate Variable",
-#       x = "Coefficient Estimate", y = "Density") +
-#  theme_minimal()
+ggplot(bootstrap_df, aes(x = clustercommunication)) +
+ geom_density(fill = "lightblue") +
+ labs(title = "Bootstrapped Distribution of the clustercommunication Variable",
+      x = "Coefficient Estimate", y = "Density") +
+ theme_minimal()
+
+ggplot(bootstrap_df, aes(x = subj_animacyinanimate)) +
+ geom_density(fill = "lightblue") +
+ labs(title = "Bootstrapped Distribution of the subj_animacyinanimate Variable",
+      x = "Coefficient Estimate", y = "Density") +
+ theme_minimal()
 
 ```
 
@@ -1520,9 +1520,35 @@ potential problems revealed in diagnostics: suboptimal fit for some data (binned
 
 -   memory-based learning
 
+# References {.unnumbered}
+
+::: {#refs}
+:::
+
+## Packages used in this chapter {.unnumbered}
+
+```{r package-versions, echo=FALSE}
+sessionInfo()
+```
+
+## Package references {.unnumbered}
+*package references to be added*
+
+```{r generateBibliography, results="asis", echo=FALSE}
+
+# packages.bib <- sapply(1:length(loadedNamespaces()), function(i) toBibtex(citation(loadedNamespaces()[i])))
+# 
+# #knitr::write_bib(c(.packages(), "knitr"), "CS_RoseGina_packages.bib")
+# 
+# require("knitcitations")
+# cleanbib()
+# options("citation_format" = "pandoc")
+# read.bibtex(file = "packages.bib")
+```
+
 # Appendix {.appendix}
 
-## Verb cluster categorisation with example verbs {#appendix-a .appendix}
+## Verb cluster categorisation with example verbs {.appendix}
 
 ::: {#tbl-clusters}
 | Verb clusters [@francois_presentation_2007, 4] | Grouped Verb Clusters (Our Study) | Example Verbs |

@@ -26,7 +26,6 @@ p {
 }
 </style>
 ```
-
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -141,9 +140,13 @@ This study investigates the factors that influence the choice between *se faire*
 
 To address this question, we use a quantitative, multivariate, probabilistic approach to model corpus data. Our results show a main effect of semantic verb clusters, with communication verbs tending to favour *se faire* over *être* in passive constructions.
 
-# The French passive alternation of *être* and *se faire*
+# The French passive alternation of [être]{.smallcaps} and [se faire]{.smallcaps}
 
-## Canonical passive with *être* {#sec-etre}
+This section introduces the French passive variants [être]{.smallcaps} and [se faire]{.smallcaps}, focusing on their structure and meaning in the context of passive alternation. While [être]{.smallcaps} is the standard passive construction in French, [se faire]{.smallcaps} can also function as a passive variant in certain contexts. We outline the factors used as predictors in our mixed-effects logistic regression model of the [être/se faire]{.smallcaps} alternation.
+
+In this study, we use [être]{.smallcaps} and [se faire]{.smallcaps} in small caps to specifically refer to the passive variants and distinguish these forms from other uses of the verbs *être* and *se faire*.
+
+## Canonical passive: [être]{.smallcaps} {#sec-etre}
 
 ### Structure and meaning
 
@@ -180,7 +183,6 @@ We will refer to this with [être.]{.smallcaps}
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward 
 -   se faire passive "typologically marked", comparison to other Romance languages @koenig_semantic_1992 \[145\]; similar constructions exist in other Romance languages but passive reading only allowed in French @labelle_anticausativizing_2013 [236] -->
 ```
-
 ### Structure and meaning
 
 When constructing a passive sentence, French speakers may choose to use [se faire]{.smallcaps} instead of the canonical [être]{.smallcaps}: The [se faire]{.smallcaps} passive construction, hereinafter called [se faire]{.smallcaps}, provides an alternative way to express passive meaning in French. [se faire]{.smallcaps} has been widely investigated and discussed, for example by @bellec_construction_2014, @gaatone_desagreable_1983, @koenig_semantic_1992, @kupferman_construction_1995, @labelle_anticausativizing_2013, @raineri_analyse_2010, @novakova_construction_2009, and @tasmowski-de_ryck_causatif_1987.
@@ -255,7 +257,6 @@ We recognize this "fuzzy" [@bohmann_large-scale_2023: 50] variable context as bo
 
 -   Subjects in passive sentences are preferably animate, definite, and pronominal. In the study by @da_cunha_lalternance_2020, animate, definite, and pronominal arguments that function as the objects in active sentences were more frequently found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice) -->
 ```
-
 ### Subject responsibility {#sec-subj-resp}
 
 As indicated in @sec-debate, the question whether the referent of the subject in the [se faire]{.smallcaps} construction holds any responsibility is central to the debate of the construction's passive-status [@sveberg_se_2012, @bellec_construction_2014: 212-213]. In line with their argument that [se faire]{.smallcaps} is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of [se faire]{.smallcaps} is always a causer and therefore always responsible to some degree. They contrast it to [être]{.smallcaps}'s subject referent, which is seen as more neutral. Gaatone [-@gaatone_desagreable_1983: 164] distinguishes between an "active patient" in [se faire]{.smallcaps} and a "passive patient" in [être]{.smallcaps} [@raineri_analyse_2010: 96].
@@ -359,8 +360,7 @@ However, the effect of the verb cluster may interact with other factors, particu
 
 The tense and aspect markings French cannot be clearly distinguished from each other because they heavily influence each other and depend on each other.
 
-According to @raineri_analyse_2010 [365], the "type of process denoted by the verb" is a "necessary condition". inchoative/ durative aspect: "get passive and se faire passive focus on onset of the process that affects the subject referent, whereas be and être passive present the process in its entirety, without offering an internal perspective." ? 
-According to @bellec_construction_2014 \[209\], the *être* passive is likely to describe a result or mark an endpoint of an action, while the *se faire* passive is used for actions in progress and verbs that are in their nature ongoing (e.g. perception verbs, @bellec_construction_2014 [209])
+According to @raineri_analyse_2010 \[365\], the "type of process denoted by the verb" is a "necessary condition". inchoative/ durative aspect: "get passive and se faire passive focus on onset of the process that affects the subject referent, whereas be and être passive present the process in its entirety, without offering an internal perspective." ? According to @bellec_construction_2014 [209], the *être* passive is likely to describe a result or mark an endpoint of an action, while the *se faire* passive is used for actions in progress and verbs that are in their nature ongoing (e.g. perception verbs, @bellec_construction_2014 [209])
 
 Tense, aspect, and mood are not entirely separable categories but are functionally interdependent. Tense can serve as an indicator of aspect in terms of how it sets the temporal focus of a sentence. Constructions in the passé composé tend to focus on the completed event, which could increase the likelihood of the *être* passive over the [se faire]{.smallcaps} passive. In contrast, the imparfait, which emphasises the ongoing process, might favour the [se faire]{.smallcaps} passive. In the present tense, we expect both passives to be evenly distributed, as the present tense emphasises neither the end point nor the process. Descriptions of future events tend to emphasise the beginning and ongoing process of an action rather than its end point (@bellec_construction_2014 [210]). We therefore expect that in the future tense, [se faire]{.smallcaps} is favoured over the *être* passive.
 
@@ -371,7 +371,6 @@ We decide against coding tense, aspect and mood as separate factors, but conside
 (sentence for conditional marking: Subjonctif and conditional forms excluded because of CQL? Or: We mark them according to the tense they occur with)
 
 Movement verbs also frequently occur with [se faire]{.smallcaps}, as noted by @raineri_analyse_2010 [90], who highlights the verbs *aller* and *venir* as examples. These verbs emphasize the initial phase of the process (*Spang-Hanssen 1967: 143*). Additionally, perception verbs, which imply a durative process, are also attested in *se faire* constructions [@novakova_construction_2009: 117].
-
 
 **levels**:
 
@@ -394,7 +393,6 @@ Our hypothesis is that progressive marking (whether through tense or periphrasis
 
 -   English @bohmann_large-scale_2023, East Asian languages @washio_when_1993 and @guan_multifactorial_2024 , Swedish @cuypere_corpus-based_2014 -->
 ```
-
 # Data and methods {#sec-data-and-methods}
 
 Prior to conducting our study, we preregistered its protocol on the platform [AsPredicted](https://aspredicted.org) [@AsPredictedWharton] to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed [here](https://aspredicted.org/gp6y-dd8p.pdf).
@@ -615,7 +613,6 @@ kappa_table |>
 +--------------------+--------------+----------------------------------------------+
 -->
 ```
-
 We classified the ϰ-values using the influential benchmark categorisation of Landis and Koch [-@landis1977measurement: 165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". Mean inter-rater agreement is high at `r  mean_kappa`. Agreement is lowest for the cateogories adversativity (0.67) and TAM (0.77).
 
 ### Data preprocessing {#sec-data-preprocessing}
@@ -705,16 +702,16 @@ In addition to conducting a descriptive analysis of the data, we employed a bino
 
 The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (passive variant: être; complément d' agent: 0; modal: no; TAM: non-progressive, cluster: neutral). If this would negatively affect the stability of the model, the most frequent (subject animacy: animate, subject gender: masculine) or the most evenly distributed case (adversativity: adversative)
 
-| Factors | Label | Levels |
+| Factors            | Label           | Levels                                   |
 |-------------------|-------------------|----------------------------------|
-| Passive variant | passive_variant | être, se faire |
-| Subject animacy | subj_animacy | animate, inanimate |
-| Subject gender | subj_gender | masculine, feminine |
-| Complément d'agent | agent_pp | 0, de, par |
-| Modal | modal | no, yes |
-| TAM | tam | non-progressive, progressive |
-| Cluster | cluster | neutral, communication, hitting-touching |
-| Adversativity | adversativity | adversative, non-adversative |
+| Passive variant    | passive_variant | être, se faire                           |
+| Subject animacy    | subj_animacy    | animate, inanimate                       |
+| Subject gender     | subj_gender     | masculine, feminine                      |
+| Complément d'agent | agent_pp        | 0, de, par                               |
+| Modal              | modal           | no, yes                                  |
+| TAM                | tam             | non-progressive, progressive             |
+| Cluster            | cluster         | neutral, communication, hitting-touching |
+| Adversativity      | adversativity   | adversative, non-adversative             |
 
 : Overview of variables for the *être: se faire* passive alternation
 
@@ -857,7 +854,7 @@ binnedplot(predictions, residuals(final_model, type = "response"))
 
 At first glance, the residuals appear to be quite random with no obvious patterns and with most residuals around 0. The grey lines mark the bounds of the standard error; ideally, these bounds should emcompass 95% of the binned residuals [@Gelman_Hill_2006: 97]. Although the SE bounds essentially capture the shape of the residuals and the majority of the residuals fall within them, a considerable proportion fall outside the desired area: 11 out of 29 (`r paste0(round(11/29, 2) * 100, "%")`), which is well above the desired 5%.
 
-In this context, a slight pattern emerges: Negative deviations are more common for low to medium expected values (i.e. low predicted probability of [se faire]{.smallcaps}), while positive deviations occur more often for high expected values (high predicted probability of [se faire]{.smallcaps}). In the mid-range (0.3-0.7), where [être]{.smallcaps} and [se faire]{.smallcaps} are predicted to be about equally likely, the binned residuals are exclusively negative (`y < 0`). Thus, when the correct level was [être]{.smallcaps}, the model often predicted a higher probability of [se faire]{.smallcaps}. This pattern is reversed for predicted probabilities of `x > 0.7`: All deviations are all positive (`y > 0`), indicating that when [se faire]{.smallcaps} was the correct variant, the model slightly underestimated the probabilities of [se faire]{.smallcaps} occurring and could have been even more confident. In addition, there is one extremely negative bin between `x = 0.4` and `x = 0.5`, indicating that the model drastically overestimated [se faire]{.smallcaps} in this range.  xcept for this one bin, the residuals in the mid-range are close to 0 and within SE limits.
+In this context, a slight pattern emerges: Negative deviations are more common for low to medium expected values (i.e. low predicted probability of [se faire]{.smallcaps}), while positive deviations occur more often for high expected values (high predicted probability of [se faire]{.smallcaps}). In the mid-range (0.3-0.7), where [être]{.smallcaps} and [se faire]{.smallcaps} are predicted to be about equally likely, the binned residuals are exclusively negative (`y < 0`). Thus, when the correct level was [être]{.smallcaps}, the model often predicted a higher probability of [se faire]{.smallcaps}. This pattern is reversed for predicted probabilities of `x > 0.7`: All deviations are all positive (`y > 0`), indicating that when [se faire]{.smallcaps} was the correct variant, the model slightly underestimated the probabilities of [se faire]{.smallcaps} occurring and could have been even more confident. In addition, there is one extremely negative bin between `x = 0.4` and `x = 0.5`, indicating that the model drastically overestimated [se faire]{.smallcaps} in this range. xcept for this one bin, the residuals in the mid-range are close to 0 and within SE limits.
 
 ```{r outlier-bin, include=FALSE}
 outlier_bin <- subset(passive_sample_clean, predictions >= 0.4 & predictions < 0.5)
@@ -876,7 +873,6 @@ To investigate these potentially problematic characteristics further and determi
 
 -   positive residuals for x\>0.5: model is confident that the correct level is se faire and is correct but underestimated probability of se faire (could have been even more confident) -->
 ```
-
 ```{r residuals-diagnostics-DHARMa-dispersion, echo = FALSE}
 #install.packages("DHARMa")
 sim_res <- simulateResiduals(final_model)
@@ -986,28 +982,26 @@ The intercept of the final model is 2.76. This means that in the context of the 
 
 We used bootstrapping to validate the stability of our model's coefficients. This method involves random resampling with replacement from the original dataset, analysing each resample, and comparing the resulting estimates to the original. It allows for internal model validation without the need for new external test data [@levshina_how_2015: 166].
 
-We used the `bootMer()` function from the `lme4` package to perform bootstrapping on our mixed-effects model, resampling 1000 times with the same random seed that we used during data sampling for reproducibility.
+We used the `bootMer()` function from the `lme4` package to perform bootstrapping on our mixed-effects model, resampling 1000 times with the same random seed that we used during data sampling for reproducibility. When running `bootMer()` to validate the stability of the fixed effects in our model, we encountered singularity warnings in most of the bootstrap iterations. Convergence during bootstrapping was achieved only when the `bobyqa` optimiser was used. Although `isSingular()` returned `FALSE` for the final model, the instability across resamples indicates limited reliability. Removing the `speaker` effect resolved the singularity issues. This suggests that there may be too little variance between speakers to reliably estimate this random effect. However, removing `speaker` also increases the model’s AIC from 719.2 to 732.0, indicating a poorer overall fit. Additionally, excluding the random effect would change the model’s structure and require re-specification and re-evaluation, which exceeds the scope of this term paper. For interpretation, we therefore rely on our original model, while acknowledging its limitations in terms of robustness. We consider the simplified model without `speaker` (see @fig-model-without-speaker) a potentially more stable alternative, which could be explored more in depth in future work.
 
-```{r boot-validation, include = FALSE}
+```{r bootstrap-validation, include = FALSE}
 
-bootstrap_final_model <- bootMer(
- final_model,
- FUN = fixef,
- nsim = 1000,
- seed = 2142637384,
- type = "parametric",
- verbose = TRUE
-)
+#bootstrap_final_model <- bootMer(
+# final_model,
+# FUN = fixef,
+# nsim = 1000,
+# seed = 2142637384,
+# type = "parametric",
+# verbose = TRUE
+#)
 
 ```
 
 ```{r test-singularity, include = FALSE}
 
-isSingular(final_model)
+isSingular(final_model) #returns FALSE
 
 ```
-
-When running `bootMer()` to validate the stability of the fixed effects in our model, we encountered singularity warnings in most of the bootstrap iterations. Although `isSingular()` returned `FALSE` for the final model, the instability across resamples indicates limited reliability. Removing the `speaker` effect resolved the singularity issues. This suggests that there may be too little variance between speakers to reliably estimate this random effect. However, removing `speaker` also increases the model’s AIC from 719.2 to 732, indicating a poorer overall fit. Additionally, excluding the random effect would change the model’s structure and require re-specification and re-evaluation, which exceeds the scope of this term paper. For interpretation, we therefore rely on our original model, while acknowledging its limitations in terms of robustness. We consider the simplified model without `speaker` (see @fig-model-without-speaker) a potentially more stable alternative, which could be explored more in depth in future work.
 
 ::: {#fig-model-without-speaker}
 ```{r final-model-no-speaker, output = FALSE}
@@ -1026,12 +1020,10 @@ tab_model(final_model_no_speaker, show.aic = TRUE)
 ```
 :::
 
-@fig-bootstrap-summary shows the summary of our bootstrap statistics for our final model. As noted by @gries_statistics_2021, models often perform better on the data they were trained on because they capture patterns that may not generalise beyond the sample, which is called overfitting. According to @levshina_how_2015: 167, large differences between training and test performance, referred to as optimism, can indicate overfitting. In the summary of our bootstrap statistics in @fig-bootstrap-summary, this difference can be seen in the bootstrap bias, which is very small (\<0.05) for most predictors. **However, the variable clustercommunication shows a slightly higher bias (0.059), suggesting it might be overfitting to some extent. This means that clustercommunication may be a less robust predictor and may require further investigation or could be removed from the model.**
-
-The bias for subj_animacyinanimate is just over 0.05, it is relatively small but indicates some instability across bootstrap samples. This instability likely affects the subj_animacyinanimate:adversativitynon-adversative interaction term, as it depends on the reliability of the subj_animacyinanimate predictor. The instability of subj_animacyinanimate suggests that the interaction effect may also be less robust, and further investigation might be needed.
+@fig-bootstrap-summary shows the summary of the bootstrap statistics for our final model. As noted by @gries_statistics_2021, models often perform better on the data they were trained on because they capture patterns that may not generalise beyond the sample, which is called overfitting. According to @levshina_how_2015: 167, large differences between training and test performance, referred to as optimism, can indicate overfitting. In the summary of our bootstrap statistics in @fig-bootstrap-summary, the differences between our original model and the means of the boostrapped samples can be seen in the bootstrap bias. For most predictors, this bias is very small (around 0.05 or smaller), which suggests that they are stable.
 
 ::: {#fig-bootstrap-summary}
-```{r boot-summary, echo = FALSE}
+```{r bootstrap-summary, echo = FALSE}
 
 bootstrap_summary <- summary(bootstrap_final_model)
 
@@ -1046,6 +1038,8 @@ bootstrap_df <- as.data.frame(bootstrap_final_model$t)
 colnames(bootstrap_df) <- names(fixef(final_model))
 
 ```
+
+**The bias for `subj_animacyinanimate` is slightly over 0.05, which may indicate some instability across bootstrap samples. This instability could also impact the `subj_animacyinanimate:adversativitynon-adversative` interaction, which depends on the reliability of the `subj_animacyinanimate` predictor. The verb cluster predictors `clustercommunication` and `clusterhitting-touching` show larger standard errors and therefore greater uncertainties.**
 
 **The density plot of the bootstrapped estimates for the clustercommunication fixed effect visualises the distribution of the coefficient estimates across the 1000 bootstrap samples. It is approximately bell-shaped and only slightly skewed. Most of the bootstrapped coefficient estimates lie well above 0, supporting the significance and positive effect.**
 
@@ -1064,6 +1058,8 @@ ggplot(bootstrap_df, aes(x = subj_animacyinanimate)) +
  theme_minimal()
 
 ```
+
+Overall, the bootstrap values are close to the original model's values.
 
 # Results {#sec-results}
 
@@ -1198,12 +1194,15 @@ For both passive variants, animate subjects are predominantly masculine, while i
 
 For inanimate subjects, the difference in frequency between masculine and feminine gender is smaller compared to animate subjects, suggesting that the influence of gender on the choice of passive variant could be less strong for inanimate subjects than for animate ones.
 
+````{=html}
 <!-- ### Complément d'agent
 
 ```{r}
 table(passive_sample_clean$agent_pp, passive_sample_clean$passive_variant)
 ```
 -->
+````
+
 ## Adversativity {#sec-results-adversativity}
 
 Overall, non-adversative constructions occured more frequently than adversative constructions in our data, with a ratio of 69.08% to 30.92%. However, adversative constructions were more common with [se faire]{.smallcaps} than with [être]{.smallcaps}: While only about one fifth (22.66%) of [être]{.smallcaps} were adversative, this was the case for two fifths (42.23%) of [se faire]{.smallcaps}.
@@ -1532,6 +1531,7 @@ sessionInfo()
 ```
 
 ## Package references {.unnumbered}
+
 *package references to be added*
 
 ```{r generateBibliography, results="asis", echo=FALSE}
@@ -1551,22 +1551,22 @@ sessionInfo()
 ## Verb cluster categorisation with example verbs {.appendix}
 
 ::: {#tbl-clusters}
-| Verb clusters [@francois_presentation_2007, 4] | Grouped Verb Clusters (Our Study) | Example Verbs |
+| Verb clusters [@francois_presentation_2007, 4]                    | Grouped Verb Clusters (Our Study) | Example Verbs                                                                                                                                                                                                 |
 |-------------------|-------------------|----------------------------------|
-| giving, depriving (don, privation) | neutral | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*) |
-| entering, leaving (entrée, sortie) | neutral | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*) |
-| hitting, touching (frapper, toucher) | hitting-touching | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*) |
-| movement in place (mouvement sur place) | neutral | \- |
-| equipping, disarming (munir, démunir) | neutral | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie \[...\]*) |
-| transformation, change (transformation, changement) | neutral | remplacer (*\[...\] afin que le premier puisse se faire remplacer par le second \[...\]*) |
-| realisation, preparation (réalisation, mise en état) | neutral | photographier (*J'ajoute la diminution du nombre de points où l'on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'identité ou son passeport*.) |
-| physical states and behaviours (états physiques et comportements) | neutral | aider (*\[...\] afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'en sont pas informés.*) |
-| locative (locatif) | neutral | domicilier (*Beaucoup trichent en se faisant domicilier chez un parent \[...\]*) |
-| union, reunion (union, réunion) | neutral | \- |
-| psychological verbs (verbes psychologiques) | neutral | écouter (*Le problème, on l'a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*) |
-| seizing, clasping, possessing (saisir, serrer, posséder) | neutral | élire (*\[...\] avant que M. Hollande ne se fasse élire en affirmant qu'il ne signerait pas le TSCG en l'état.*) |
-| communication | communication | accuser (*\[...\] il est devenu impossible de l'exprimer dans le débat public sans se faire accuser de haïr les policiers \[...\]*) |
-| auxiliary verbs | \- | \- |
+| giving, depriving (don, privation)                                | neutral                           | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*)      |
+| entering, leaving (entrée, sortie)                                | neutral                           | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*)                    |
+| hitting, touching (frapper, toucher)                              | hitting-touching                  | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*)                                                  |
+| movement in place (mouvement sur place)                           | neutral                           | \-                                                                                                                                                                                                            |
+| equipping, disarming (munir, démunir)                             | neutral                           | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie \[...\]*)                                                                                                            |
+| transformation, change (transformation, changement)               | neutral                           | remplacer (*\[...\] afin que le premier puisse se faire remplacer par le second \[...\]*)                                                                                                                     |
+| realisation, preparation (réalisation, mise en état)              | neutral                           | photographier (*J'ajoute la diminution du nombre de points où l'on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'identité ou son passeport*.) |
+| physical states and behaviours (états physiques et comportements) | neutral                           | aider (*\[...\] afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'en sont pas informés.*)                                                                    |
+| locative (locatif)                                                | neutral                           | domicilier (*Beaucoup trichent en se faisant domicilier chez un parent \[...\]*)                                                                                                                              |
+| union, reunion (union, réunion)                                   | neutral                           | \-                                                                                                                                                                                                            |
+| psychological verbs (verbes psychologiques)                       | neutral                           | écouter (*Le problème, on l'a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*)                                                          |
+| seizing, clasping, possessing (saisir, serrer, posséder)          | neutral                           | élire (*\[...\] avant que M. Hollande ne se fasse élire en affirmant qu'il ne signerait pas le TSCG en l'état.*)                                                                                              |
+| communication                                                     | communication                     | accuser (*\[...\] il est devenu impossible de l'exprimer dans le débat public sans se faire accuser de haïr les policiers \[...\]*)                                                                           |
+| auxiliary verbs                                                   | \-                                | \-                                                                                                                                                                                                            |
 
 Verb cluster categorisation with example verbs based on the classes by @francois_presentation_2007 [4]
 :::

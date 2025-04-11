@@ -1113,7 +1113,7 @@ We only have categorical data; therefore mean and standard deviation are not mea
 
 ### Subject animacy
 
-As outlined in @sec-subj-resp, subject animacy may indicate subject responsibility or subject affectedness. In our data, inanimate subjects were more frequent than animate ones with [être]{.smallcaps} (38% animate, 62% inanimate), whereas [se faire]{.smallcaps} showed a strong preference for animate subjects (93% animate, 7% inanimate).
+As outlined in @sec-subj-resp, subject animacy is related to subject responsibility or subject affectedness. In our data, inanimate subjects were more frequent than animate ones with [être]{.smallcaps} (38% animate, 62% inanimate), whereas [se faire]{.smallcaps} showed a strong preference for animate subjects (93% animate, 7% inanimate).
 
 ```{r animacy-descriptive-tables, echo = FALSE}
 table(passive_sample_clean$subj_animacy) |> 
@@ -1135,24 +1135,7 @@ table(passive_sample_clean$subj_animacy) |>
 kable(tab_animacy)
 ```
 
-```{r animacy-descriptive-plots, echo = FALSE}
-#| label: fig-animacy-freq-plot
-#| fig-cap: "Barplot subject animacy"
-passive_sample_clean |> 
-ggplot(mapping = aes(x = subj_animacy, fill = subj_animacy)) +
-  geom_bar() +
-  facet_wrap(~ passive_variant) +
-  #scale_y_continuous(expand = c(0,0)) + 
-  labs(x = "Subject Animacy",
-       y = "Number of observations") +
-  theme_bw() +
-  theme(legend.position = "none")
-
-# mosaicplot(passive_variant ~ subj_animacy,
-#            data = passive_sample_clean)
-```
-
-@fig-animacy-freq-plot illustrates the strong predominancy of animate subjects in [se faire]{.smallcaps}. In contrast, subject animacy is more evenly distributed for [être]{.smallcaps}, with a preference for inanimate subjects. Although this pattern is overall consistent with our expectations, the latter finding contradicts our hypothesis that [être]{.smallcaps} would favour animate subjects. The distribution of subject animacy in [se faire]{.smallcaps} replicates previous findings [e.g. @novakova_construction_2009] and supports the consensus that [se faire]{.smallcaps} strongly prefers animate subjects (@sec-subj-resp). While not conclusive on its own, this may hint to a stronger sense of subject responsibility or affectness: If subject animacy is taken as an indicator of affectedness, the distribution suggests that subjects of [se faire]{.smallcaps} are predominantly and often more directly affected by the event than subjects of [être]{.smallcaps}.
+\@ X illustrates the strong predominancy of animate subjects in [se faire]{.smallcaps}. In contrast, subject animacy is more evenly distributed for [être]{.smallcaps}, with a preference for inanimate subjects. Although this pattern is overall consistent with our expectations, the latter finding contradicts our hypothesis that [être]{.smallcaps} would favour animate subjects. The distribution of subject animacy in [se faire]{.smallcaps} replicates previous findings [e.g. @novakova_construction_2009] and supports the consensus that [se faire]{.smallcaps} strongly prefers animate subjects (@sec-subj-resp). While not conclusive on its own, this may hint to a stronger sense of subject responsibility or affectness: If subject animacy is taken as an indicator of affectedness, the distribution suggests that subjects of [se faire]{.smallcaps} are predominantly and often more directly affected by the event than subjects of [être]{.smallcaps}.
 
 The main effect of subject animacy in the logistic regression cannot be interpreted in isolation as it is distorted by the significant interaction with adversativity. The interplay of these two factors and their predictions for the choice between [se faire]{.smallcaps} and [être]{.smallcaps} are described in @sec-results-adversativity, while their implications for subject responsibility is discussed in @sec-discussion.
 

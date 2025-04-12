@@ -285,9 +285,9 @@ Animacy is considered a hierarchical scale in the literature, most prominently b
 
 **Gender**
 
-Since previous research suggests that gender plays a role in voice choice, it is worth investigating whether this effect extends to the alternation between [être]{.smallcaps} and [se faire]{.smallcaps}.
+Since previous research suggests that grammatical gender plays a role in voice choice, it is worth investigating whether this effect extends to the alternation between [être]{.smallcaps} and [se faire]{.smallcaps}.
 
-@da_cunha_lalternance_2020 found that in written French, a feminine agent increased the likelihood of [être]{.smallcaps} (in the *passif court* model) over the active voice, with no interaction with animacy (human/non-human) or definiteness. This suggests that grammatical gender itself may directly influence voice choice. However, given the study’s small sample size, it is also possible that an interaction effect exists but was not statistically significant. @da2022objectifying observed a similar syntactic bias in both French and English, where female referents were less likely to appear as subjects than male referents. In French, they found that this bias interacts with animacy, as the effect of grammatical gender was only evident for human referents.
+@da_cunha_lalternance_2020 found that in written French, a feminine agent argument increased the likelihood of [être]{.smallcaps} over the active voice in their *passif court* model - i.e. where the agent is omitted - with no interaction with animacy (human/non-human) or definiteness. This suggests that grammatical gender itself may directly influence voice choice. However, given the study’s small sample size, it is also possible that an interaction effect exists but was not statistically significant. @da2022objectifying observed a similar syntactic bias in both French and English, where female referents were less likely to appear as subjects than male referents. In French, they found an interaction between the grammatical gender and animacy, as the bias was only evident for human referents.
 
 Since we do not infer the actor from context in this study, our analysis focuses solely on the gender of the subject in the passive construction. If [se faire]{.smallcaps} favours subjects with high salience, responsibility, or affectedness, the grammatical gender of the subject may influence the alternation between [se faire]{.smallcaps} and [être]{.smallcaps}. Specifically, if feminine referents are perceived as less active or agentive in certain contexts, a feminine subject may favour [être]{.smallcaps} over [se faire]{.smallcaps}.
 
@@ -1115,26 +1115,26 @@ This section examines the results for the predictors related to subject responsi
 
 ```{r freq-animacy, include=FALSE}
 
-freq_animacy_wide <- passive_sample_unknown |>
+freq_animacy <- passive_sample_clean |>
   count(passive_variant, subj_animacy) |>
   group_by(passive_variant) |>
   mutate(relative = round(n / sum(n), 2)) |>
   pivot_wider(names_from = passive_variant, values_from = c(n, relative), values_fill = list(n = 0, relative = 0)) |>
   ungroup()
 
-aninmate_etre_rel <- freq_animacy_wide |>
+aninmate_etre_rel <- freq_animacy |>
   filter(subj_animacy == "animate") |> 
   pull(relative_être)
 
-animate_sefaire_rel <- freq_animacy_wide |>
+animate_sefaire_rel <- freq_animacy |>
   filter(subj_animacy == "animate") |> 
   pull(`relative_se faire`)
 
-inaninmate_etre_rel <- freq_animacy_wide |>
+inaninmate_etre_rel <- freq_animacy |>
   filter(subj_animacy == "inanimate") |> 
   pull(relative_être)
 
-inanimate_sefaire_rel <- freq_animacy_wide |>
+inanimate_sefaire_rel <- freq_animacy |>
   filter(subj_animacy == "inanimate") |> 
   pull(`relative_se faire`)
 
@@ -1145,7 +1145,7 @@ As outlined in @sec-subj-resp, subject animacy is linked to subject responsibili
 ::: {#tbl-animacy}
 ```{r tbl-animacy, echo = FALSE}
 
-kable(freq_animacy_wide, col.names = c("Animacy", "être (absolute)", "se faire (absolute)", "être (relative)", "se faire (relative)"))
+kable(freq_animacy, col.names = c("Animacy", "être (absolute)", "se faire (absolute)", "être (relative)", "se faire (relative)"))
 
 ```
 
@@ -1156,43 +1156,35 @@ The main effect of subject animacy in the logistic regression model cannot be in
 
 ### Subject gender
 
-```{r gender-descriptive}
+```{r freq-gender, include = FALSE}
 
-table(passive_sample_unknown$subj_gender) |> 
-  sort(decreasing = TRUE)
-prop.table(table(passive_sample_unknown$subj_gender))
-
-subj_table <- table(passive_sample_unknown$subj_gender, passive_sample_unknown$passive_variant)
-
-```
-
-```{r, include=FALSE}
-
-freq_gender <- passive_sample_unknown |> 
-  count(passive_variant, subj_gender) |> 
-  group_by(passive_variant) |> 
-  mutate(relative = round(proportions(n), 2)) |> 
+freq_gender <- passive_sample_clean |>
+  count(passive_variant, subj_gender) |>
+  group_by(passive_variant) |>
+  mutate(relative = round(n / sum(n), 2)) |>
+  pivot_wider(names_from = passive_variant, values_from = c(n, relative), values_fill = list(n = 0, relative = 0)) |>
   ungroup()
 
-freq_gender_wide <- freq_gender |> 
-  pivot_wider(names_from = passive_variant, values_from = c(n, relative), values_fill = list(n = 0, Relative = 0))
+table(passive_sample_clean$subj_gender) |> 
+  sort(decreasing = TRUE)
 
+gender_table <- table(passive_sample_clean$subj_gender, passive_sample_clean$passive_variant)
+
+gender_prop <- prop.table(table(passive_sample_clean$subj_gender))
+  
 ```
 
-<div>
+In total, our sample comprises `r   sum(gender_table["masculine", ])` masculine subjects (`r   paste0(round(gender_prop["masculine"], 2) * 100, "%")`) and `r   sum(gender_table["feminine", ])` feminine subjects (`r   paste0(round(gender_prop["feminine"], 2) * 100, "%")`) across all [être]{.smallcaps} and [se faire]{.smallcaps} constructions. This distribution reflects an overall lower representation of feminine subjects compared to masculine subjects, particularly in [se faire]{.smallcaps}, as shown in @tbl-gender, in line with our hypothesis in @sec-subj-resp. While these frequencies suggest a bias towards masculine subjects, it is important to note that gender did not have a statistically significant effect in the logistic regression model. These frequencies should therefore be interpreted with caution.
 
-```{r, echo=FALSE}
+::: {#tbl-gender}
+```{r tbl-gender, echo=FALSE}
 
-freq_gender_wide |> 
-  kable(format = "html", digits = 2, col.names = c("Factor?", "être", "se faire", "être in %", "se faire in %"))
+kable(freq_gender, col.names = c("Gender", "être (absolute)", "se faire (absolute)", "être (relative)", "se faire (relative)"))
 
 ```
 
 Absolute and Relative Frequencies of the Subject Gender Levels for [être]{.smallcaps} and [se faire]{.smallcaps}
-
-</div>
-
-As shown in @tbl-gender ...
+:::
 
 ```{r, echo=FALSE}
 

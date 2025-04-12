@@ -138,7 +138,7 @@ The French construction *se faire* followed by an infinitive has evolved through
 
 This study investigates the factors that influence the choice between *se faire* and *être* in the passive alternation in spoken French, with a particular focus on parliamentary debates. Specifically, we aim to understand what factors contribute to speakers’ preference for one construction over the other.
 
-To address this question, we use a quantitative, multivariate, probabilistic approach to model corpus data. Our results show a main effect of semantic verb clusters, with communication verbs tending to favour *se faire* over *être* in passive constructions.
+To address this question, we use a quantitative, multivariate, probabilistic approach to model corpus data. Our results show a main effect of semantic verb clusters, with communication verbs favouring *se faire* over *être* in passive constructions.
 
 # The French passive alternation of [être]{.smallcaps} and [se faire]{.smallcaps}
 

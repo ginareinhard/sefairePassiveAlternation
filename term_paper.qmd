@@ -285,7 +285,7 @@ Animacy is considered a hierarchical scale in the literature, most prominently b
 
 **Gender**
 
-Since previous research suggests that grammatical gender plays a role in voice choice, it is worth investigating whether this effect extends to the alternation between [être]{.smallcaps} and [se faire]{.smallcaps}.
+Since previous research suggests that gender plays a role in voice choice, it is worth investigating whether this effect extends to the alternation between [être]{.smallcaps} and [se faire]{.smallcaps}.
 
 @da_cunha_lalternance_2020 found that in written French, a feminine agent increased the likelihood of [être]{.smallcaps} (in the *passif court* model) over the active voice, with no interaction with animacy (human/non-human) or definiteness. This suggests that grammatical gender itself may directly influence voice choice. However, given the study’s small sample size, it is also possible that an interaction effect exists but was not statistically significant. @da2022objectifying observed a similar syntactic bias in both French and English, where female referents were less likely to appear as subjects than male referents. In French, they found that this bias interacts with animacy, as the effect of grammatical gender was only evident for human referents.
 

@@ -1174,7 +1174,7 @@ gender_prop <- prop.table(table(passive_sample_clean$subj_gender))
   
 ```
 
-In total, our sample comprises `r   sum(gender_table["masculine", ])` masculine subjects (`r   paste0(round(gender_prop["masculine"], 2) * 100, "%")`) and `r   sum(gender_table["feminine", ])` feminine subjects (`r   paste0(round(gender_prop["feminine"], 2) * 100, "%")`) across all [être]{.smallcaps} and [se faire]{.smallcaps} constructions. This distribution reflects an overall lower representation of feminine subjects compared to masculine subjects, particularly in [se faire]{.smallcaps}, as shown in @tbl-gender, in line with our hypothesis in @sec-subj-resp. While these frequencies suggest a bias towards masculine subjects, it is important to note that gender did not have a statistically significant effect in the logistic regression model. These frequencies should therefore be interpreted with caution.
+In total, our sample comprises `r   sum(gender_table["masculine", ])` masculine subjects (`r   paste0(round(gender_prop["masculine"], 2) * 100, "%")`) and `r   sum(gender_table["feminine", ])` feminine subjects (`r   paste0(round(gender_prop["feminine"], 2) * 100, "%")`) across all [être]{.smallcaps} and [se faire]{.smallcaps} constructions. This distribution reflects an overall lower representation of feminine subjects compared to masculine subjects, particularly in [se faire]{.smallcaps}, as shown in @tbl-gender, in line with our hypothesis in @sec-subj-resp. While these frequencies suggest a bias towards masculine subjects, gender did not have a statistically significant effect in the logistic regression model and the frequencies should therefore be interpreted with caution.
 
 ::: {#tbl-gender}
 ```{r tbl-gender, echo=FALSE}
@@ -1186,14 +1186,16 @@ kable(freq_gender, col.names = c("Gender", "être (absolute)", "se faire (absolu
 Absolute and Relative Frequencies of the Subject Gender Levels for [être]{.smallcaps} and [se faire]{.smallcaps}
 :::
 
-```{r, echo=FALSE}
+The interaction between gender and animacy was also not significant. However, as can be seen in the barplots in @fig-gender-animacy, for both passive variants animate subjects are predominantly masculine, while inanimate subjects are more frequently feminine. [être]{.smallcaps} occurs most frequently with inanimate feminine subjects, while the [se faire]{.smallcaps} passive occurs most frequently with animate masculine subjects. This distribution supports the hypothesis that [se faire]{.smallcaps} is more frequent with animate male subjects than with animate female subjects. For inanimate subjects, the difference in frequency between masculine and feminine gender is smaller compared to animate subjects, suggesting that the influence of gender on the choice of passive variant could be less strong for inanimate subjects than for animate ones. Given the sparse data for [se faire]{.smallcaps} with inanimate subjects and the lack of statistical significance, these patterns should be interpreted with caution.
+
+::: {#fig-gender-animacy}
+```{r gender-animacy-plot, echo=FALSE}
 
 ggplot(passive_sample_clean, 
        aes(x = subj_animacy, fill = subj_gender)) +
   geom_bar(position = "dodge") +  
   facet_wrap(~ passive_variant) +  
-  labs(title = "Gender and Subject Animacy in the Passive Variants",
-       x = "Subject Animacy",
+  labs(x = "Subject Animacy",
        y = "Number of Observations", 
        fill = "Subject Gender") +
   scale_fill_manual(values = c("#FC8D62", "#8DA0CB")) +
@@ -1201,20 +1203,8 @@ ggplot(passive_sample_clean,
 
 ```
 
-The barplots show that the *être* passive occurs most frequently with inanimate feminine subjects, while the *se faire* passive occurs most frequently with animate masculine subjects. This distribution supports the hypothesis that *se faire* is more frequent with animate male subjects than with animate female subjects.
-
-For both passive variants, animate subjects are predominantly masculine, while inanimate subjects are more frequently feminine. However, the data for *se faire* with inanimate subjects is sparse.
-
-For inanimate subjects, the difference in frequency between masculine and feminine gender is smaller compared to animate subjects, suggesting that the influence of gender on the choice of passive variant could be less strong for inanimate subjects than for animate ones.
-
-````{=html}
-<!-- ### Complément d'agent
-
-```{r}
-table(passive_sample_clean$agent_pp, passive_sample_clean$passive_variant)
-```
--->
-````
+Frequencies of [être]{.smallcaps} and [se faire]{.smallcaps} by Subject Gender and Subject Animacy
+:::
 
 ## Adversativity {#sec-results-adversativity}
 

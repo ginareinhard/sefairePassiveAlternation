@@ -285,13 +285,13 @@ Animacy is considered a hierarchical scale in the literature, most prominently b
 
 **Gender**
 
-Since previous research suggests that grammatical gender plays a role in voice choice, it is worth investigating whether this effect extends to the alternation between *être* and [se faire]{.smallcaps} passives.
+Since previous research suggests that grammatical gender plays a role in voice choice, it is worth investigating whether this effect extends to the alternation between [être]{.smallcaps} and [se faire]{.smallcaps}.
 
-@da_cunha_lalternance_2020 (+2022) found that in written French, a feminine agent increased the likelihood of *être* passives (in the passif court model, i.e. when the agent is omitted) over the active voice, with no interaction with animacy (whether the argument was human or non-human) \[or definiteness\]. This suggests that gender itself may directly influence voice choice. However, given the study’s small sample size, it is also possible that an interaction effect exists but was not statistically significant \[check 2022 study\].
+@da_cunha_lalternance_2020 found that in written French, a feminine agent increased the likelihood of [être]{.smallcaps} (in the *passif court* model) over the active voice, with no interaction with animacy (whether the argument was human or non-human) or definiteness. This suggests that grammatical gender itself may directly influence voice choice. However, given the study’s small sample size, it is also possible that an interaction effect exists but was not statistically significant. @da2022objectifying observed a similar syntactic bias in both French and English, where female referents were less likely to appear as subjects than male referents. In French, they found that this bias interacts with animacy, as the effect of grammatical gender was only evident for human referents.
 
-Since we do not infer the agent from context in this study, our analysis focuses solely on the subject’s gender. If *se faire* passives favour subjects with high responsibility, salience or affectedness, the grammatical gender of the subject may influence the alternation between *se faire* and *être* passive. Specifically, if feminine referents are perceived as less active or agentive in certain contexts, a feminine subject may favour *être* passives over *se faire* passives.
+Since we do not infer the agent from context in this study, our analysis focuses solely on the subject’s gender. If [se faire]{.smallcaps} favours subjects with high salience, responsibility, or affectedness, the grammatical gender of the subject may influence the alternation between [se faire]{.smallcaps} and [être]{.smallcaps}. Specifically, if feminine referents are perceived as less active or agentive in certain contexts, a feminine subject may favour [être]{.smallcaps} over [se faire]{.smallcaps}.
 
-To test this, we categorise gender into four levels: unknown, mixed, masculine, and feminine. Our hypothesis is that a feminine subject will favour the *être* passive and disfavor the *se faire* passive. We will test the potential interaction between gender and animacy, as the effect of grammatical gender may depend on whether the subject is animate or inanimate, potentially linking to the social gender of animate subject referents. Additionally, we will examine how unknown or mixed-gender subjects behave in terms of this alternation.
+To test this, we categorise gender into four levels: unknown, mixed, masculine, and feminine. Our hypothesis is that a feminine subject will favour [être]{.smallcaps} and disfavor [se faire]{.smallcaps}. We will test the potential interaction between gender and animacy, as the effect of grammatical gender may depend on whether the subject is animate or inanimate, potentially linking to the social gender of animate subject referents. Additionally, we will examine how unknown or mixed-gender subjects behave in terms of this alternation.
 
 **Complément d'agent**
 
@@ -1514,6 +1514,8 @@ One limitation of our study is that the predictions of our model do not directly
 
 [^4]: Note that the ratio ended up not being exactly 50:50 because we had to exclude the gender "unknown" which removed 165 se faire and only 29 être constructions. However, this is is still much more balanced than the actual ratio.
 
+-   refer to Bootstrap validation results
+
 A limitation of our study is that the lemmas were determined based on those occurring in *se faire* constructions, which may have influenced the analysis.
 
 "Both the potential insights and the problems entailed by this approach are considerable." [@bohmann_large-scale_2023: 49]
@@ -1523,6 +1525,8 @@ A limitation of our study is that the lemmas were determined based on those occu
 (Telicity seems to be another important distinction: According to @bellec_construction_2014 \[209\], the *être* passive is likely to describe a result or mark an endpoint of an action, while the *se faire* passive is used for actions in progress and verbs that are in their nature ongoing (e.g. perception verbs, @bellec_construction_2014 [209]). This could be reflected in the telicity of the verb, with telic verbs preferring the *être* passive and atelic verbs favouring the *se faire* passive.)
 
 -   implications for causativity debate?
+
+-   Gender: we did not differentiate between humans/non-humans
 
 Dataset/sample: problem: data are extremely unbalanced (ratio in ParlaMint être vs. se faire: ) -\\\> making the ratio 50: 50 would distort the reality significantly but if the ratio is kept the model will almost always predict êtrestrategy possibilities: - build a corpus where être is presented more than se faire but not as extreme (approximation, e.g. 40% se faire - 60% etre) ("over/undersampling within limits") - assign more weight to se faire constructions by "weights=" variable of glm function - \@bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive) - evaluate with precision & recall, not just accuracy (F1-score)
 

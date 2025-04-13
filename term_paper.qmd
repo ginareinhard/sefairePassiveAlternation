@@ -1406,7 +1406,12 @@ hittingtouching_predicted <- cluster_predicted |>
 ```{r cluster-model-plot, echo = FALSE}
 
 ggpredict(final_model, "cluster") |> 
-  plot()
+  plot() +  labs(
+    title = "",
+    x = "Verb Cluster",
+    y = "Predicted Probability"
+  ) +
+  theme_bw()
 ```
 
 Predicted Probabilities of [se faire]{.smallcaps} Across the Verb Clusters

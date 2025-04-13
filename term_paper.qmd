@@ -1288,7 +1288,17 @@ interaction_pvalue <- coefficients["subj_animacyinanimate:adversativitynon-adver
 
 The logistic regression model revealed a highly significant interaction between subject animacy and adversativity with an odds ratio of `r   round(interaction_odds_ratio, 2)` and a confidence interval of `r   paste0(round(interaction_ci_min, 2), "-", round(interaction_ci_max, 2))` ($p$-value = `r   format(round(interaction_pvalue, 5), scientific = FALSE)`, rounded to \<0.001 in the model output). This means that [se faire]{.smallcaps} is `r   round(interaction_odds_ratio, 2)` times as likely as [être]{.smallcaps} when the subject is inanimate and the context is non-adversative, so in these contexts, [se faire]{.smallcaps} is significantly less likely than [être]{.smallcaps}. Conversely, since the categories are binary, this also implies that [se faire]{.smallcaps} is much more likely in adversative contexts and with animate subjects than [être]{.smallcaps}.
 
-As @fig-animacy-adversativity-log shows, animate subjects strongly favour [se faire]{.smallcaps} over [être]{.smallcaps} regardless of adversativity, with the probability increasing only slightly in adversative contexts. With inanimate subjects, however, [se faire]{.smallcaps} is much more likely in adversative contexts (40%) and almost never used in non-adversative contexts. For inanimate subjects, then, adversativity seems to be an important condition for [se faire]{.smallcaps} to be used at all.
+```{r interaction-pred, include = FALSE}
+
+interaction_prediction <- ggpredict(final_model, terms = c("subj_animacy", "adversativity"))
+
+inanimate_adversative_prediction <- interaction_prediction |> 
+  filter(x == "inanimate" & group == "adversative") |> 
+  pull(`predicted`)
+
+```
+
+As @fig-animacy-adversativity-log shows, animate subjects strongly favour [se faire]{.smallcaps} over [être]{.smallcaps} regardless of adversativity, with the probability increasing only slightly in adversative contexts. With inanimate subjects, however, [se faire]{.smallcaps} is much more likely in adversative contexts (`r   paste0(round(inanimate_adversative_prediction * 100, 2), "%")`) and almost never used in non-adversative contexts. For inanimate subjects, then, adversativity seems to be an important condition for [se faire]{.smallcaps} to be used at all.
 
 ::: {#fig-animacy-adversativity-log}
 ```{r interaction-model-plot, echo=FALSE}

@@ -140,6 +140,8 @@ This study investigates the factors that influence the choice between *se faire*
 
 To address this question, we use a quantitative, multivariate, probabilistic approach to model corpus data. Our results show a main effect of semantic verb clusters, with communication verbs favouring *se faire* over *être* in passive constructions.
 
+and the logistic regression model revealed a significant interaction between subject animacy and adversativity
+
 # The French passive alternation of [être]{.smallcaps} and [se faire]{.smallcaps}
 
 This section introduces the French passive variants [être]{.smallcaps} and [se faire]{.smallcaps}, focusing on their structure and meaning in the context of passive alternation. While [être]{.smallcaps} is the standard passive construction in French, [se faire]{.smallcaps} can also function as a passive variant in certain contexts. We outline the factors used as predictors in our mixed-effects logistic regression model of the [être/se faire]{.smallcaps} alternation.

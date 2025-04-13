@@ -14,6 +14,8 @@ format:
     fig-height: 6
     number-sections: true
     embed-resources: true
+execute:
+  warning: false
 link-citations: true
 csl: "apa_7th.csl"
 number-sections: true
@@ -1283,38 +1285,18 @@ interaction_pvalue <- coefficients["subj_animacyinanimate:adversativitynon-adver
 
 The logistic regression model revealed a highly significant interaction between subject animacy and adversativity with an odds ratio of `r   round(interaction_odds_ratio, 2)` and a confidence interval of `r   paste0(round(interaction_ci_min, 2), "-", round(interaction_ci_max, 2))` ($p$-value = `r   format(round(interaction_pvalue, 5), scientific = FALSE)`, rounded to 0.001 in the model output). This means that [se faire]{.smallcaps} is `r   round(interaction_odds_ratio, 2)` times as likely as [être]{.smallcaps} when the subject is inanimate and the context is non-adversative, so in these contexts, [se faire]{.smallcaps} is significantly less likely than [être]{.smallcaps}. Conversely, since the categories are binary, this also implies that [se faire]{.smallcaps} is much more likely in adversative contexts and with animate subjects than [être]{.smallcaps}.
 
-As @fig-animacy-adversativity-log illustrates, animate subjects strongly favor [se faire]{.smallcaps} regardless of adversativity, with only a slight additional increase in its likelihood in adversative contexts. In contrast, the likelihood of [se faire]{.smallcaps} being used with inanimate subjects increases significantly when the construction has an adversative meaning: [se faire]{.smallcaps} and [être]{.smallcaps} are almost equally likely for inanimate subjects in adversative contexts (40% likelihood of [se faire]{.smallcaps}) whereas in non-adversative contexts, [être]{.smallcaps} is almost exclusively used.
+As @fig-animacy-adversativity-log shows, animate subjects strongly favour [se faire]{.smallcaps} regardless of adversativity, with only a slight increase of its likelihood in adversative contexts. For inanimate subjects, however, [se faire]{.smallcaps} is much more likely in adversative contexts (40%), while [être]{.smallcaps} is almost exclusively used in non-adversative ones.
 
-```{r animacy-adversativity-plots, include = FALSE}
-
-#| label: fig-animacy-adversativity
-#Interaction Animacy: Adversativity:
-ftable(passive_sample_clean$adversativity, passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy)
-
-passive_sample_clean |> 
-ggplot(mapping = aes(x = subj_animacy, fill = adversativity)) +
-  geom_bar(position="dodge") +
-  facet_wrap(~ passive_variant) +
-  scale_y_continuous(expand = c(0,0)) + 
-  labs(x = "Subject Animacy",
-       y = "Number of Observations", 
-       fill = "Adversativity" ) +
-  theme_bw()
-```
-
+::: {#fig-animacy-adversativity-log}
 ```{r interaction-model-plot, echo=FALSE, warning=FALSE}
 
-#| label: fig-animacy-adversativity-log
-
-ggpredict(final_model, c("subj_animacy", "adversativity")) |> 
+ggpredict(final_model, c("subj_animacy", "adversativity")) |>  
   plot() +
   scale_color_manual(values = c("lightblue", "orange")) +
   theme_bw()
 
-# ggpredict(final_model, c("adversativity", "subj_animacy")) |> 
-#   plot() +
-#   theme_bw()
 ```
+:::
 
 Even though an analysis of the most frequent lemmas shows that [se faire]{.smallcaps} most frequent verbs *insulter* and *engueuler* are adversative, there was no significant interaction effect of adversativity and cluster.
 
@@ -1490,23 +1472,6 @@ ggplot(passive_sample_clean,
 
 Frequencies of [être]{.smallcaps} and [se faire]{.smallcaps} by Verb Cluster and Subject Animacy
 :::
-
-<!-- Some mosaic plots for exploration:-->
-
-```{r data-exploration-plots, include = FALSE}
-# mosaicplot(passive_variant ~ subj_gender,
-#            data = passive_sample_clean)
-
-mosaicplot(passive_variant ~ tam,
-           data = passive_sample_clean)
-
-mosaicplot(passive_variant ~ agent_pp,
-           data = passive_sample_clean)
-
-mosaicplot(subj_gender ~ passive_variant,
-           data = passive_sample_clean)
-
-```
 
 # Discussion {#sec-discussion}
 

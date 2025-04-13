@@ -1261,9 +1261,30 @@ mosaicplot(passive_variant ~ adversativity,
 Proportional Distribution of [être]{.smallcaps} and [se faire]{.smallcaps} across the Adversativity Levels
 :::
 
-Regarding the interaction between subject animacy and adversativity, both adversative and non-adversative constructions with [se faire]{.smallcaps} were used more frequently with animate subjects, while [être]{.smallcaps} constructions were more common with inanimate subjects in non-adversative contexts.
+```{r interaction-values, include = FALSE}
+
+coefficients <- final_model_summary$coefficients  
+
+interaction_odds <- coefficients["subj_animacyinanimate:adversativitynon-adversative", 1]
+interaction_odds_ratio <- exp(interaction_odds)
+
+sderror_interaction <- coefficients["subj_animacyinanimate:adversativitynon-adversative", 2]
+
+interaction_ci_min_log <- interaction_odds - 1.96 * sderror_interaction
+interaction_ci_max_log <- interaction_odds + 1.96 * sderror_interaction
+interaction_ci_min <- exp(interaction_ci_min_log)
+interaction_ci_max <- exp(interaction_ci_max_log)
+
+interaction_pvalue <- coefficients["subj_animacyinanimate:adversativitynon-adversative", 4]
+
+```
+
+The logistic regression model revealed a highly significant interaction between subject animacy and adversativity with an odds ratio of `r   round(interaction_odds_ratio, 2)` and a confidence interval of `r   paste0(round(interaction_ci_min, 2), "-", round(interaction_ci_max, 2))` ($p$-value = `r   format(round(interaction_pvalue, 5), scientific = FALSE)`, rounded to 0.001 in the model output). This means that [se faire]{.smallcaps} is `r   round(interaction_odds_ratio, 2)` times as likely as [être]{.smallcaps} when the subject is inanimate and the context is non-adversative, so in these contexts, [se faire]{.smallcaps} is significantly less likely than [être]{.smallcaps}. Conversely, since the categories are binary, this also implies that [se faire]{.smallcaps} is much more likely in adversative contexts and with animate subjects than [être]{.smallcaps}.
+
+As @fig-animacy-adversativity-log illustrates, animate subjects strongly favor [se faire]{.smallcaps} regardless of adversativity, with only a slight additional increase in its likelihood in adversative contexts. In contrast, the likelihood of [se faire]{.smallcaps} being used with inanimate subjects increases significantly when the construction has an adversative meaning: [se faire]{.smallcaps} and [être]{.smallcaps} are almost equally likely for inanimate subjects in adversative contexts (40% likelihood of [se faire]{.smallcaps}) whereas in non-adversative contexts, [être]{.smallcaps} is almost exclusively used.
 
 ```{r animacy-adversativity-plots, include = FALSE}
+
 #| label: fig-animacy-adversativity
 #Interaction Animacy: Adversativity:
 ftable(passive_sample_clean$adversativity, passive_sample_clean$passive_variant, passive_sample_clean$subj_animacy)
@@ -1279,9 +1300,8 @@ ggplot(mapping = aes(x = subj_animacy, fill = adversativity)) +
   theme_bw()
 ```
 
-The logistic regression model revealed a significant interaction between subject animacy and adversativity with an odds ratio of 0.06 and a confidence interval of 0.02-0.2. This means that [se faire]{.smallcaps} is 0.06 times as likely as [être]{.smallcaps} when the subject is inanimate and the context is in non-adversative. In other words, in these contexts, [se faire]{.smallcaps} is used significantly less frequently than [être]{.smallcaps}. Conversely, since the categories are binary, this also implies that [se faire]{.smallcaps} is much more common in adversative contexts and with animate subjects than [être]{.smallcaps}.
-
 ```{r interaction-model-plot, echo=FALSE, warning=FALSE}
+
 #| label: fig-animacy-adversativity-log
 
 ggpredict(final_model, c("subj_animacy", "adversativity")) |> 
@@ -1293,8 +1313,6 @@ ggpredict(final_model, c("subj_animacy", "adversativity")) |>
 #   plot() +
 #   theme_bw()
 ```
-
-As @fig-animacy-adversativity-log illustrates, animate subjects strongly favor [se faire]{.smallcaps} regardless of adversativity, with only a slight additional increase in its likelihood in adversative contexts. In contrast, the likelihood of [se faire]{.smallcaps} being used with inanimate subjects increases significantly when the construction has an adversative meaning: [se faire]{.smallcaps} and [être]{.smallcaps} are almost equally likely for inanimate subjects in adversative contexts (40% likelihood of [se faire]{.smallcaps}) whereas in non-adversative contexts, [être]{.smallcaps} is almost exclusively used.
 
 Even though an analysis of the most frequent lemmas shows that [se faire]{.smallcaps} most frequent verbs *insulter* and *engueuler* are adversative, there was no significant interaction effect of adversativity and cluster.
 
@@ -1355,8 +1373,6 @@ Frequencies of [être]{.smallcaps} and [se faire]{.smallcaps} Across the Verb Cl
 
 ```{r communication-values, echo = FALSE}
 
-coefficients <- final_model_summary$coefficients  
-
 communication_odds <- coefficients["clustercommunication", 1]
 communication_odds_ratio <- exp(communication_odds)
 
@@ -1371,7 +1387,7 @@ communication_pvalue <- coefficients["clustercommunication", 4]
 
 ```
 
-Surprisingly, and contrary to our initial hypothesis, the only significant main effect in our model is the semantic verb cluster, with communication verbs favouring [se faire]{.smallcaps} over [être]{.smallcaps}. We had predicted that hitting-touching verbs would favour [se faire]{.smallcaps}, given their dynamic and adversative nature, while communication verbs would be more compatible with [être]{.smallcaps}, as they typically feature an animate subject and frequently occur with object complements. However, in our model, the odds of [se faire]{.smallcaps} occurring with communication verbs are `r   round(communication_odds_ratio, 2)` times higher than with verbs in the "neutral" category (CI: `r   paste0(round(ci_min, 2), " - ", round(ci_max, 2))`, $p$-value = `r   round(communication_pvalue, 3)`). In contrast, hitting-touching verbs, which we expected to strongly favour [se faire]{.smallcaps}, did not show a significant effect.
+Surprisingly, and contrary to our initial hypothesis, the only significant main effect in our model is the semantic verb cluster, with communication verbs favouring [se faire]{.smallcaps} over [être]{.smallcaps}. We had predicted that hitting-touching verbs would favour [se faire]{.smallcaps}, given their dynamic and adversative nature, while communication verbs would be more compatible with [être]{.smallcaps}, as they typically feature an animate subject and frequently occur with object complements. However, in our model, the odds of [se faire]{.smallcaps} occurring with communication verbs are `r   round(communication_odds_ratio, 2)` times higher than with verbs in the "neutral" category (CI: `r   paste0(round(ci_min, 2), "-", round(ci_max, 2))`, $p$-value = `r   round(communication_pvalue, 3)`). In contrast, hitting-touching verbs, which we expected to strongly favour [se faire]{.smallcaps}, did not show a significant effect.
 
 ```{r cluster-predict, echo = FALSE}
 

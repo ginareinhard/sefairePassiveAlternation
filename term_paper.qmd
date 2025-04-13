@@ -1555,18 +1555,16 @@ sessionInfo()
 
 ## Package references
 
-*package references to be added*
-
 ```{r generateBibliography, results="asis", echo=FALSE}
 
-# packages.bib <- sapply(1:length(loadedNamespaces()), function(i) toBibtex(citation(loadedNamespaces()[i])))
-# 
-# #knitr::write_bib(c(.packages(), "knitr"), "CS_RoseGina_packages.bib")
-# 
-# require("knitcitations")
-# cleanbib()
-# options("citation_format" = "pandoc")
-# read.bibtex(file = "packages.bib")
+packages.bib <- sapply(1:length(loadedNamespaces()), function(i) toBibtex(citation(loadedNamespaces()[i])))
+
+knitr::write_bib(c(.packages(), "knitr"), "packages.bib")
+
+require("knitcitations")
+cleanbib()
+options("citation_format" = "pandoc")
+read.bibtex(file = "packages.bib")
 ```
 
 # Appendix {.appendix}

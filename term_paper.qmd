@@ -1105,6 +1105,10 @@ We only have categorical data; therefore mean and standard deviation are not mea
 
 -   bar plots, mosaic plots
 
+Surprisingly, and contrary to our initial hypothesis, the only significant main effect in our model is the semantic verb cluster, with communication verbs favouring [se faire]{.smallcaps} over [être]{.smallcaps}.
+
+and the logistic regression model revealed a significant interaction between subject animacy and adversativity
+
 ## Subject responsibility
 
 This section examines the results for the predictors related to subject responsibility. Although subject animacy shows a significant main effect, it cannot be interpreted in isolation, as it is shaped by its interaction with adversativity. No significant effects were found for the *complément d’agent*, or modal verbs factors, and they will therefore not be discussed further. While subject gender does not reach statistical significance, its distribution may suggest a potential tendency.
@@ -1120,7 +1124,7 @@ freq_animacy <- passive_sample_clean |>
   pivot_wider(names_from = passive_variant, values_from = c(n, relative), values_fill = list(n = 0, relative = 0)) |>
   ungroup()
 
-aninmate_etre_rel <- freq_animacy |>
+animate_etre_rel <- freq_animacy |>
   filter(subj_animacy == "animate") |> 
   pull(relative_être)
 
@@ -1138,7 +1142,7 @@ inanimate_sefaire_rel <- freq_animacy |>
 
 ```
 
-As outlined in @sec-subj-resp, subject animacy is linked to subject responsibility or affectedness. @tbl-animacy illustrates the absolute and relative frequencies of the subject animacy levels for [être]{.smallcaps} and [se faire]{.smallcaps} in our data. With [être]{.smallcaps} inanimate subjects occur more frequently than animate ones (`r   paste0(aninmate_etre_rel * 100, "%")` animate, `r   paste0(inaninmate_etre_rel * 100, "%")` inanimate), whereas [se faire]{.smallcaps} shows a strong preference for animate subjects (`r   paste0(animate_sefaire_rel * 100, "%")` animate, `r   paste0(inanimate_sefaire_rel * 100, "%")` inanimate). This distribution aligns with our expectations for [se faire]{.smallcaps}, but contradicts our hypothesis for [être]{.smallcaps}, which we also expected to occur more frequently with animate than with inanimate subjects. The findings for [se faire]{.smallcaps} replicate previous research [e.g. @novakova_construction_2009] and support the consensus that [se faire]{.smallcaps} strongly prefers animate subjects (@sec-subj-resp). If subject animacy is taken as an indicator of subject affectedness, the distribution suggests that subjects of [se faire]{.smallcaps} are likely being more affected by the event than those of [être.]{.smallcaps}
+As outlined in @sec-subj-resp, subject animacy is linked to subject responsibility or affectedness. @tbl-animacy illustrates the absolute and relative frequencies of the subject animacy levels for [être]{.smallcaps} and [se faire]{.smallcaps} in our data. With [être]{.smallcaps} inanimate subjects occur more frequently than animate ones (`r   paste0(animate_etre_rel * 100, "%")` animate, `r   paste0(inaninmate_etre_rel * 100, "%")` inanimate), whereas [se faire]{.smallcaps} shows a strong preference for animate subjects (`r   paste0(animate_sefaire_rel * 100, "%")` animate, `r   paste0(inanimate_sefaire_rel * 100, "%")` inanimate). This distribution aligns with our expectations for [se faire]{.smallcaps}, but contradicts our hypothesis for [être]{.smallcaps}, which we also expected to occur more frequently with animate than with inanimate subjects. The findings for [se faire]{.smallcaps} replicate previous research [e.g. @novakova_construction_2009] and support the consensus that [se faire]{.smallcaps} strongly prefers animate subjects (@sec-subj-resp). If subject animacy is taken as an indicator of subject affectedness, the distribution suggests that subjects of [se faire]{.smallcaps} are likely being more affected by the event than those of [être.]{.smallcaps}
 
 ::: {#tbl-animacy}
 ```{r tbl-animacy, echo = FALSE}
@@ -1206,36 +1210,56 @@ Frequencies of [être]{.smallcaps} and [se faire]{.smallcaps} by Subject Gender 
 
 ## Adversativity {#sec-results-adversativity}
 
-Overall, non-adversative constructions occured more frequently than adversative constructions in our data, with a ratio of 69.08% to 30.92%. However, adversative constructions were more common with [se faire]{.smallcaps} than with [être]{.smallcaps}: While only about one fifth (22.66%) of [être]{.smallcaps} were adversative, this was the case for two fifths (42.23%) of [se faire]{.smallcaps}.
+```{r freq-adversativity, include = FALSE}
 
-```{r adversativity-tab, echo = FALSE}
+freq_adversativity <- passive_sample_clean |>
+  count(passive_variant, adversativity) |>
+  group_by(passive_variant) |>
+  mutate(relative = round(n / sum(n), 2)) |>
+  pivot_wider(names_from = passive_variant, values_from = c(n, relative), values_fill = list(n = 0, relative = 0)) |>
+  ungroup()
+
 table(passive_sample_clean$adversativity) |> 
-  proportions() * 100
+  sort(decreasing = TRUE)
 
-tab_adv <- table(passive_sample_clean$adversativity, passive_sample_clean$passive_variant)
+adversativity_table <- table(passive_sample_clean$adversativity, passive_sample_clean$passive_variant)
 
-kbl((prop.table(tab_adv, margin = 2) * 100), digits = 3, full_width = F, position = "center", col.names = c("Level", "être in %", "se faire in %")) |> 
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+adversativity_prop <- prop.table(table(passive_sample_clean$adversativity))
+
+adversative_etre_rel <- freq_adversativity |>
+  filter(adversativity == "adversative") |> 
+  pull(relative_être)
+
+adversative_sefaire_rel <- freq_adversativity |>
+  filter(adversativity == "adversative") |> 
+  pull(`relative_se faire`)
+
+nonadversative_etre_rel <- freq_adversativity |>
+  filter(adversativity == "non-adversative") |> 
+  pull(relative_être)
+
+nonadversative_sefaire_rel <- freq_adversativity |>
+  filter(adversativity == "non-adversative") |> 
+  pull(`relative_se faire`)
+
 ```
 
+Overall, non-adversative constructions occured more frequently than adversative constructions in our data, with a ratio of `r   paste0(round(adversativity_prop["non-adversative"], 2) * 100, "%")` to `r   paste0(round(adversativity_prop["adversative"], 2) * 100, "%")`. However, adversative constructions were more common with [se faire]{.smallcaps} than with [être]{.smallcaps}: while only about one fifth (`r   paste0(adversative_etre_rel * 100, "%")`) of [être]{.smallcaps} were adversative, this was the case for two fifths (`r   paste0(adversative_sefaire_rel * 100, "%")`) of [se faire]{.smallcaps}. The mosaic plot in @fig-adversativity illustrates the distribution of [être]{.smallcaps} and [se faire]{.smallcaps} across the adversativity levels (non-adversative/adversative).
+
+::: {#fig-adversativity}
 ```{r adversativity-plot, echo = FALSE}
-# passive_sample_clean |> 
-# ggplot(mapping = aes(x = adversativity, fill = adversativity)) +
-#   geom_bar(position = "dodge") +
-#   facet_wrap(~ passive_variant) +
-#   #scale_y_continuous(expand = c(0,0)) + 
-#   theme_bw() +
-#   theme(legend.position = "none") +
-#   labs(x = "Subject Animacy",
-#        y = "Number of Observations")
 
 mosaicplot(passive_variant ~ adversativity,
            data = passive_sample_clean,
-           main = "Ratio of passive variant and adversativity",
-           xlab = "adversativity",
-           ylab = "passive variant",
+           main = "",
+           xlab = "Adversativity",
+           ylab = "Passive Variant",
            col = c("lightblue", "orange"))
+
 ```
+
+Proportional Distribution of [être]{.smallcaps} and [se faire]{.smallcaps} across the Adversativity Levels
+:::
 
 Regarding the interaction between subject animacy and adversativity, both adversative and non-adversative constructions with [se faire]{.smallcaps} were used more frequently with animate subjects, while [être]{.smallcaps} constructions were more common with inanimate subjects in non-adversative contexts.
 

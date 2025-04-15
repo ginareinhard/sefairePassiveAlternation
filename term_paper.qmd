@@ -28,6 +28,7 @@ p {
 }
 </style>
 ```
+
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -190,6 +191,7 @@ To summarise, [être]{.smallcaps} is the canonical form of passivisation in Fren
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward 
 -   se faire passive "typologically marked", comparison to other Romance languages @koenig_semantic_1992 \[145\]; similar constructions exist in other Romance languages but passive reading only allowed in French @labelle_anticausativizing_2013 [236] -->
 ```
+
 ### Structure and meaning
 
 When constructing a passive sentence, French speakers may choose to use [se faire]{.smallcaps} instead of the canonical [être]{.smallcaps}: The [se faire]{.smallcaps} passive construction, hereinafter called [se faire]{.smallcaps}, provides an alternative way to express passive meaning in French. [se faire]{.smallcaps} has been widely investigated and discussed, for example by @bellec_construction_2014, @gaatone_desagreable_1983, @koenig_semantic_1992, @kupferman_construction_1995, @labelle_anticausativizing_2013, @raineri_analyse_2010, @novakova_construction_2009, and @tasmowski-de_ryck_causatif_1987.
@@ -264,6 +266,7 @@ We recognize this "fuzzy" [@bohmann_large-scale_2023: 50] variable context as bo
 
 -   Subjects in passive sentences are preferably animate, definite, and pronominal. In the study by @da_cunha_lalternance_2020, animate, definite, and pronominal arguments that function as the objects in active sentences were more frequently found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice) -->
 ```
+
 ### Subject responsibility {#sec-subj-resp}
 
 As indicated in @sec-debate, the question whether the referent of the subject in the [se faire]{.smallcaps} construction holds any responsibility is central to the debate of the construction's passive-status [@sveberg_se_2012, @bellec_construction_2014: 212-213]. In line with their argument that [se faire]{.smallcaps} is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of [se faire]{.smallcaps} is always a causer and therefore always responsible to some degree. They contrast it to [être]{.smallcaps}'s subject referent, which is seen as more neutral. Gaatone [-@gaatone_desagreable_1983: 164] distinguishes between an "active patient" in [se faire]{.smallcaps} and a "passive patient" in [être]{.smallcaps} [@raineri_analyse_2010: 96].
@@ -398,6 +401,7 @@ Our hypothesis is that progressive marking (whether through tense or periphrasis
 
 -   English @bohmann_large-scale_2023, East Asian languages @washio_when_1993 and @guan_multifactorial_2024 , Swedish @cuypere_corpus-based_2014 -->
 ```
+
 # Data and methods {#sec-data-and-methods}
 
 Prior to conducting our study, we preregistered its protocol on the platform [AsPredicted](https://aspredicted.org) [@AsPredictedWharton] to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed [here](https://aspredicted.org/gp6y-dd8p.pdf).
@@ -513,7 +517,7 @@ etre_sample_annotated <- etre_sample_annotated |>
   mutate(reference = sapply(str_split(Reference, ",", n = 3), `[`, 1),
          speaker = sapply(str_split(Reference, ",", n = 3), `[`, 3))
 
-# remove now redundant "Reference" column, remove now redundant "Reference", remove "Kommentar" column, put new "reference" und "speaker" column in first position
+# remove now redundant "Reference" column, remove "Kommentar" column, put new "reference" und "speaker" column in first position
 etre_sample_annotated <- etre_sample_annotated |> 
   dplyr::select(-Reference, -Kommentar) |> 
   relocate(reference, speaker)
@@ -618,6 +622,7 @@ kappa_table |>
 +--------------------+--------------+----------------------------------------------+
 -->
 ```
+
 We classified the ϰ-values using the influential benchmark categorisation of Landis and Koch [-@landis1977measurement: 165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". Mean inter-rater agreement is high at `r  mean_kappa`. Agreement is lowest for the cateogories adversativity (0.67) and TAM (0.77).
 
 ### Data preprocessing {#sec-data-preprocessing}
@@ -710,16 +715,16 @@ In addition to conducting a descriptive analysis of the data, we employed a bino
 
 The levels are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard case as a reference level (passive variant: être; complément d' agent: 0; modal: no; TAM: non-progressive, cluster: neutral). If this would negatively affect the stability of the model, the most frequent (subject animacy: animate, subject gender: masculine) or the most evenly distributed case (adversativity: adversative).
 
-| Factors            | Label           | Levels                                   |
+| Factors | Label | Levels |
 |-------------------|-------------------|----------------------------------|
-| Passive variant    | passive_variant | être, se faire                           |
-| Subject animacy    | subj_animacy    | animate, inanimate                       |
-| Subject gender     | subj_gender     | masculine, feminine                      |
-| Complément d'agent | agent_pp        | 0, de, par                               |
-| Modal              | modal           | no, yes                                  |
-| TAM                | tam             | non-progressive, progressive             |
-| Cluster            | cluster         | neutral, communication, hitting-touching |
-| Adversativity      | adversativity   | adversative, non-adversative             |
+| Passive variant | passive_variant | être, se faire |
+| Subject animacy | subj_animacy | animate, inanimate |
+| Subject gender | subj_gender | masculine, feminine |
+| Complément d'agent | agent_pp | 0, de, par |
+| Modal | modal | no, yes |
+| TAM | tam | non-progressive, progressive |
+| Cluster | cluster | neutral, communication, hitting-touching |
+| Adversativity | adversativity | adversative, non-adversative |
 
 : Overview of variables for the *être: se faire* passive alternation
 
@@ -776,7 +781,7 @@ tab_model(final_model_unknown, show.aic = TRUE) # Marginal R2 / Conditional R2	0
 **Collinearity**
 
 ```{r collinearity-model-unknown, echo = FALSE}
-kable(vif(final_model_unknown))
+kbl(vif(final_model_unknown))
 ```
 
 #### Model without `unknown`
@@ -844,7 +849,7 @@ vif(final_model)
 ```{r final-model-tab, echo = FALSE}
 tab_model(final_model, show.aic = TRUE) #Marginal R2 / Conditional R2	0.451 / 0.662
 
-kable(ggpredict(final_model))
+kbl(ggpredict(final_model))
 ```
 :::
 
@@ -881,6 +886,7 @@ To investigate these potentially problematic characteristics further and determi
 
 -   positive residuals for x\>0.5: model is confident that the correct level is se faire and is correct but underestimated probability of se faire (could have been even more confident) -->
 ```
+
 ```{r residuals-diagnostics-DHARMa-dispersion, echo = FALSE}
 #install.packages("DHARMa")
 sim_res <- simulateResiduals(final_model)
@@ -1045,7 +1051,7 @@ Final Model without the `speaker` Random Effect
 
 #bootstrap_summary <- summary(bootstrap_final_model)
 
-#kable(bootstrap_summary)
+#kbl(bootstrap_summary)
 ```
 
 Bootstrap Statistics for the Final Model
@@ -1154,7 +1160,7 @@ As outlined in @sec-subj-resp, subject animacy is linked to subject responsibili
 ::: {#tbl-animacy}
 ```{r tbl-animacy, echo = FALSE}
 
-kable(freq_animacy, col.names = c("Animacy", "être (absolute)", "se faire (absolute)", "être (relative)", "se faire (relative)"))
+kbl(freq_animacy, col.names = c("Animacy", "être (absolute)", "se faire (absolute)", "être (relative)", "se faire (relative)"))
 
 ```
 
@@ -1188,7 +1194,7 @@ In total, our sample comprises `r   sum(gender_table["masculine", ])` masculine 
 ::: {#tbl-gender}
 ```{r tbl-gender, echo=FALSE}
 
-kable(freq_gender, col.names = c("Gender", "être (absolute)", "se faire (absolute)", "être (relative)", "se faire (relative)"))
+kbl(freq_gender, col.names = c("Gender", "être (absolute)", "se faire (absolute)", "être (relative)", "se faire (relative)"))
 
 ```
 
@@ -1366,7 +1372,7 @@ As can be seen from the distribution of [être]{.smallcaps} and [se faire]{.smal
 ```{r, echo=FALSE}
 
 freq_cluster_wide |> 
-  kable(format = "html", digits = 2, col.names = c("Verb Cluster", "être (absolute)", "se faire (absolute)", "être (proportion)", "se faire (proportion)")) |> 
+  kbl(format = "html", digits = 2, col.names = c("Verb Cluster", "être (absolute)", "se faire (absolute)", "être (proportion)", "se faire (proportion)")) |> 
   kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 
 ```
@@ -1447,7 +1453,7 @@ freq_communication_wide <- freq_communication |>
 ```{r, echo=FALSE}
 
 freq_communication_wide |> 
-  kable(format = "html", digits = 2, col.names = c("Lemma", "être (absolute)", "se faire (absolute)", "être (proportion)", "se faire (proportion)")) |> 
+  kbl(format = "html", digits = 2, col.names = c("Lemma", "être (absolute)", "se faire (absolute)", "être (proportion)", "se faire (proportion)")) |> 
   kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 
 ```
@@ -1588,22 +1594,22 @@ read.bibtex(file = "packages.bib")
 
 <div>
 
-| Verb clusters [@francois_presentation_2007, 4]                    | Grouped Verb Clusters (Our Study) | Example Verbs                                                                                                                                                                                                 |
+| Verb clusters [@francois_presentation_2007, 4] | Grouped Verb Clusters (Our Study) | Example Verbs |
 |-------------------|-------------------|----------------------------------|
-| giving, depriving (don, privation)                                | neutral                           | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*)      |
-| entering, leaving (entrée, sortie)                                | neutral                           | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*)                    |
-| hitting, touching (frapper, toucher)                              | hitting-touching                  | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*)                                                  |
-| movement in place (mouvement sur place)                           | neutral                           | \-                                                                                                                                                                                                            |
-| equipping, disarming (munir, démunir)                             | neutral                           | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie \[...\]*)                                                                                                            |
-| transformation, change (transformation, changement)               | neutral                           | remplacer (*\[...\] afin que le premier puisse se faire remplacer par le second \[...\]*)                                                                                                                     |
-| realisation, preparation (réalisation, mise en état)              | neutral                           | photographier (*J'ajoute la diminution du nombre de points où l'on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'identité ou son passeport*.) |
-| physical states and behaviours (états physiques et comportements) | neutral                           | aider (*\[...\] afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'en sont pas informés.*)                                                                    |
-| locative (locatif)                                                | neutral                           | domicilier (*Beaucoup trichent en se faisant domicilier chez un parent \[...\]*)                                                                                                                              |
-| union, reunion (union, réunion)                                   | neutral                           | \-                                                                                                                                                                                                            |
-| psychological verbs (verbes psychologiques)                       | neutral                           | écouter (*Le problème, on l'a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*)                                                          |
-| seizing, clasping, possessing (saisir, serrer, posséder)          | neutral                           | élire (*\[...\] avant que M. Hollande ne se fasse élire en affirmant qu'il ne signerait pas le TSCG en l'état.*)                                                                                              |
-| communication                                                     | communication                     | accuser (*\[...\] il est devenu impossible de l'exprimer dans le débat public sans se faire accuser de haïr les policiers \[...\]*)                                                                           |
-| auxiliary verbs                                                   | \-                                | \-                                                                                                                                                                                                            |
+| giving, depriving (don, privation) | neutral | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*) |
+| entering, leaving (entrée, sortie) | neutral | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*) |
+| hitting, touching (frapper, toucher) | hitting-touching | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*) |
+| movement in place (mouvement sur place) | neutral | \- |
+| equipping, disarming (munir, démunir) | neutral | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie \[...\]*) |
+| transformation, change (transformation, changement) | neutral | remplacer (*\[...\] afin que le premier puisse se faire remplacer par le second \[...\]*) |
+| realisation, preparation (réalisation, mise en état) | neutral | photographier (*J'ajoute la diminution du nombre de points où l'on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'identité ou son passeport*.) |
+| physical states and behaviours (états physiques et comportements) | neutral | aider (*\[...\] afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'en sont pas informés.*) |
+| locative (locatif) | neutral | domicilier (*Beaucoup trichent en se faisant domicilier chez un parent \[...\]*) |
+| union, reunion (union, réunion) | neutral | \- |
+| psychological verbs (verbes psychologiques) | neutral | écouter (*Le problème, on l'a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*) |
+| seizing, clasping, possessing (saisir, serrer, posséder) | neutral | élire (*\[...\] avant que M. Hollande ne se fasse élire en affirmant qu'il ne signerait pas le TSCG en l'état.*) |
+| communication | communication | accuser (*\[...\] il est devenu impossible de l'exprimer dans le débat public sans se faire accuser de haïr les policiers \[...\]*) |
+| auxiliary verbs | \- | \- |
 
 Verb cluster categorisation with example verbs based on the classes by @francois_presentation_2007 [4]
 

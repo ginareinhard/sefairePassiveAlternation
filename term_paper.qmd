@@ -137,7 +137,7 @@ cat(paste(lemma_list, collapse = " | "))
 
 # Introduction
 
-The French construction *se faire* followed by an infinitive has evolved through analogy with the passive voice. Originally, it had a causative meaning, where the subject played an active role in the action. However, in some contexts, it can also be interpreted as passive, alternating with the *être* passive construction.
+The French construction *se faire* followed by an infinitive has evolved through analogy with the passive voice. Some Originally, it had a causative meaning, where the subject played an active role in the action. However, in some contexts, it can also be interpreted as passive, alternating with the *être* passive construction.
 
 This study investigates the factors that influence the choice between *se faire* and *être* in the passive alternation in spoken French, with a particular focus on parliamentary debates. Specifically, we aim to understand what factors contribute to speakers’ preference for one construction over the other.
 
@@ -194,7 +194,7 @@ To summarise, [être]{.smallcaps} is the canonical form of passivisation in Fren
 
 ### Structure and meaning
 
-When constructing a passive sentence, French speakers may choose to use [se faire]{.smallcaps} instead of the canonical [être]{.smallcaps}: The [se faire]{.smallcaps} passive construction, hereinafter called [se faire]{.smallcaps}, provides an alternative way to express passive meaning in French. [se faire]{.smallcaps} has been widely investigated and discussed, for example by @bellec_construction_2014, @gaatone_desagreable_1983, @koenig_semantic_1992, @kupferman_construction_1995, @labelle_anticausativizing_2013, @raineri_analyse_2010, @novakova_construction_2009, and @tasmowski-de_ryck_causatif_1987.
+When constructing a passive sentence, French speakers may choose to use [se faire]{.smallcaps} instead of the canonical [être]{.smallcaps}: [se faire]{.smallcaps} provides an alternative way to express passive meaning in French. [se faire]{.smallcaps} has been widely investigated and discussed, for example by @bellec_construction_2014, @gaatone_desagreable_1983, @koenig_semantic_1992, @kupferman_construction_1995, @labelle_anticausativizing_2013, @raineri_analyse_2010, @novakova_construction_2009, and @tasmowski-de_ryck_causatif_1987.
 
 As example 3. shows, [se faire]{.smallcaps} consists of the pronoun *se* (which shows agreement with the subject), a form of the verb *faire* ('to do'), and a verb in the infinitive. In 4. the construction is used with intransitive verbs. Its semanatics are then composed of the literal meaning of its components; it does not have a passive sense:
 
@@ -222,15 +222,15 @@ Labelle [-@labelle_anticausativizing_2013: 23] adopts a syntactic approach, prop
 
 These accounts offer only a brief glimpse into the complex analysis of [se faire]{.smallcaps}. How does the passive reading emerge, and how does it differ from the syntactically identical causative reading? These questions remain controversial, and will be explored in the following @sec-debate.
 
-### Passive vs. causative: the debated passive status of [se faire]{.smallcaps} {#sec-debate}
+### Passive vs. causative: the debate {#sec-debate}
 
 The above-described stance taken by @bellec_construction_2014, @labelle_anticausativizing_2013, @koenig_semantic_1992 and @kupferman_construction_1995 that [se faire]{.smallcaps} is a full-fledged passive construction and clearly separate from the causative is by no means undisputed. The opposing view - that the construction is a type of causative - is also widely represented in the literature. It is most prominently presented by @tasmowski-de_ryck_causatif_1987 and has more recently been reworked by @sveberg_se_2012. In their view, the passive of [se faire]{.smallcaps} emerges only from the context, not from the [se faire]{.smallcaps} construction itself. They centre their argumentation around the notion that the subject of [se faire]{.smallcaps} "is always, even unconsciously, responsible for the occurrence of the embedded event."
 
 However, Koenig [-@koenig_semantic_1992: 143] points out that sentences including [se faire]{.smallcaps} can have both a passive and a causative sense. We find examples of this in the ParlaMint corpus, one of which is provided in 7.:
 
-> 7.  *\[...\] il y a \[…\] des parlementaires qui **se sont fait élire** sur la promesse de ne pas supprimer 120 000 postes.* (ParlaMint corpus)\
->     '\[...\] there are \[…\] Members of Parliament who **were elected** on the promise not to cut 120,000 jobs.'\
->     '\[...\] there are \[…\] Members of Parliament who **made themselves be elected** on the promise not to cut 120,000 jobs.'
+> 7.  *il y a \[…\] des parlementaires qui se sont fait élire sur la promesse de ne pas supprimer 120 000 postes.* (ParlaMint corpus)\
+>     'there are \[…\] Members of Parliament who were elected on the promise not to cut 120,000 jobs.'\
+>     'there are \[…\] Members of Parliament who made themselves be elected on the promise not to cut 120,000 jobs.'
 
 As Washio [-@washio_when_1993: 45] describes, the linguistic proximity of causativity and passivity is not exclusive for French but quite typical across the world's languages, as "passive and causative senses are shown to share a basic conceptual structure". Crucially, passive and causative [se faire]{.smallcaps} are structurally identical, differing only in their semantics. According to Labelle [-@labelle_anticausativizing_2013: 236] the ambiguity is resolved by the semantic nature of the three main components: subject referent, *se* and *faire*. Referring to these three components, Bellec [-@bellec_construction_2014: 207] defines the following criteria to distinguish the causative from the passive interpretation:
 
@@ -238,7 +238,7 @@ As Washio [-@washio_when_1993: 45] describes, the linguistic proximity of causat
 2.  In the causative reading, the particle *se* has a reflexive meaning whereas in the passive reading, *se* is not reflexive.
 3.  In the causative reading, *faire* has transparent causative meaning. This causative meaning is lost in the passive reading, where *faire* has no inherent meaning. <!-- add: how will we distinguish them / have we distinguished them in our study -->
 
-Sometimes both readings are possible and the ambiguity cannot be resolved [@koenig_semantic_1992: 144], especially with cognition and perception verbs [@bellec_construction_2014: 206-207]. Therefore, despite its productivity as a passive construction, Raineri [-@raineri_analyse_2010: 356-357] concludes that [se faire]{.smallcaps} is problematic because it does not fit into two distinct categories nor does it function as a single weak causative. She points to the possibility of multiple readings [@kokutani_sur_2005] or continuum between causative and passive [-@raineri_analyse_2010: 89, 154-166].
+Sometimes both readings are possible and the ambiguity cannot be resolved [@koenig_semantic_1992: 144], especially with cognition and perception verbs [@bellec_construction_2014: 206-207]. Therefore, despite its productivity as a passive construction, Raineri [-@raineri_analyse_2010: 356-357] concludes that [se faire]{.smallcaps} is problematic because it does not fit into two distinct categories nor does it function as a single weak causative. She points to the possibility of multiple readings [@kokutani_sur_2005] or of a continuum between causative and passive [-@raineri_analyse_2010: 89, 154-166].
 
 <!-- In the causative reading, "se" is understood as reflexive and "faire" as causative. In contrast, in the causative reading, if interpreted as a passive, the meanings of "se" and "faire" are not transparent. Thus, the subject referent does not necessarily cause the event and is not necessarily responsible (@koenig_semantic_1992\[143\]: "any notion of causation is absent"). -->
 
@@ -278,7 +278,7 @@ In contrast, Kupferman [-@kupferman_construction_1995: 59] gives [se faire]{.sma
 
 In 9., *son tout jeune bébé* 'her little baby' does not have any responsbility for the action happening to them. The sentence can only be interpreted as passive. According to Kupferman [@kupferman_construction_1995: 98-99], subject responsibility emerges from the context and not from inherently passive [se faire]{.smallcaps}. Further support for this idea comes from @labelle_anticausativizing_2013 and @washio_when_1993. For @martin_construction_2002, subject dynamism, but not subject intentionality, is a necessary condition [@raineri_analyse_2010: 90].
 
-Thus, although the requirement of subject responsibility in [se faire]{.smallcaps} is not "universally accepted" [@raineri_analyse_2010: 98], the analyses show some consensus in that [se faire]{.smallcaps} prefers to mark the subject as connected to the event [@raineri_analyse_2010], either through affectedness, responsibility or intentionality. We expect that this tendency is less pronounced for [être]{.smallcaps}. In our study, we model subject responsibility by the factors subject animacy, subject gender, complément d'agent, and modal verbs. Our overarching hypothesis is that [se faire]{.smallcaps} will be favoured over [être]{.smallcaps} in constructions with responsible subjects, indicated by animate, masculine subjects, the absence of complément d'agents and the presence of modal verbs.
+Thus, although the requirement of subject responsibility in [se faire]{.smallcaps} is not "universally accepted" [@raineri_analyse_2010: 98], the analyses show some consensus in that [se faire]{.smallcaps} prefers to mark the subject as connected to the event [@raineri_analyse_2010], either through affectedness, responsibility or intentionality. We expect that this tendency is less pronounced for [être]{.smallcaps}. In our study, we model subject responsibility by the factors subject animacy, subject gender, *complément d'agent*, and modal verbs. Our overarching hypothesis is that [se faire]{.smallcaps} will be favoured over [être]{.smallcaps} in constructions with responsible subjects, indicated by animate, masculine subjects, the absence of *complément d'agents* and the presence of modal verbs.
 
 **Subject Animacy**
 
@@ -404,7 +404,7 @@ Our hypothesis is that progressive marking (whether through tense or periphrasis
 
 # Data and methods {#sec-data-and-methods}
 
-Prior to conducting our study, we preregistered its protocol on the platform [AsPredicted](https://aspredicted.org) [@AsPredictedWharton] to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed [here](https://aspredicted.org/gp6y-dd8p.pdf).
+Prior to conducting our study, we preregistered its protocol on the platform [AsPredicted](https://aspredicted.org) [@AsPredictedWharton] to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed [here](https://aspredicted.org/gp6y-dd8p.pdf). 
 
 To maintain anonymity while ensuring transparency and consistency, we refer to ourselves as Annotator A and Annotator B when describing the manual steps.
 
@@ -481,7 +481,7 @@ We identified numerous cases where a clear binary distinction between passive an
 
 ### Inter-rater agreement
 
-In preparation for statistical modelling, we annotated the filtered sample for the features outlined in @sec-factors. A blind annotation process was used, where Annotator A and Annotator B were unaware of each other’s annotations. As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all complément d' agents of [se faire]{.smallcaps} during initial filtering, the column `agent_pp` was renamed to `agent_pp_A`. The datasets were then combined, variables were converted from characters to factors and empty values were replaced with `NA` to ensure proper handling of missing values in statistical analysis.
+In preparation for statistical modelling, we annotated the filtered sample for the features outlined in @sec-factors. A blind annotation process was used, where Annotator A and Annotator B were unaware of each other’s annotations. As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all *complément d' agents* of [se faire]{.smallcaps} during initial filtering, the column `agent_pp` was renamed to `agent_pp_A`. The datasets were then combined, variables were converted from characters to factors and empty values were replaced with `NA` to ensure proper handling of missing values in statistical analysis.
 
 ```{r read-annotated-data, include = FALSE}
 sefaire_sample_annotated <- read.csv(file = here("data", "sefaire_sample_annotated.csv"))
@@ -675,7 +675,7 @@ We observed certain patterns in the distribution of passive constructions across
 
 The subject gender level 'unknown' appears much more often for [se faire]{.smallcaps} than for [être]{.smallcaps}. We suspect that this may be an annotation-related effect: When annotating gender, we took grammatical gender marking into account. Since [être]{.smallcaps} is realised with a participle that always agrees in gender with the subject, gender was always identifiable, and only impersonal constructions were annotated as 'unknown'. In contrast, [se faire]{.smallcaps} is very common in infinitive constructions, which do not indicate gender. Therefore, when gender was not inferable from the context, it was labelled 'unknown'. We suspect that this created an artifact, as 'unknown' is strongly correlated with infinitive constructions, and thus with [se faire]{.smallcaps}. To test this, we created two separate datasets, one with 'unknown' and one without, which will be compared in the analysis. The dataset without 'unknown' contained 503 [être]{.smallcaps} and 367 [se faire]{.smallcaps} constructions.
 
-The complément d'agent level 'de' is also relatively rare with [se faire,]{.smallcaps} but we decided to keep it for interpretative reasons. However, we flagged it as a potential problem and kept the option open to exclude it later, if it proved to have a negative impact on the analysis.
+The *complément d'agent* level 'de' is also relatively rare with [se faire,]{.smallcaps} but we decided to keep it for interpretative reasons. However, we flagged it as a potential problem and kept the option open to exclude it later, if it proved to have a negative impact on the analysis.
 
 ```{r cleaning-main-data, include=FALSE}
 # exclude "mixed" gender because of low frequency (would likely skew the data)
@@ -713,7 +713,7 @@ In addition to conducting a descriptive analysis of the data, we employed a bino
 
 ### Levels {#sec-levels}
 
-The levels of each factors are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most unmarked case as the reference level (passive variant: être; complément d' agent: 0; modal: no; TAM: non-progressive, cluster: neutral). If this would negatively affect the stability of the model, we instead selected the most frequent level (subject animacy: animate, subject gender: masculine). In the case of adversativity, the most balanced level (adversative) was chosen to facilitate interpretation and maintain consistency with other factors.
+The levels of each factors are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most unmarked case as the reference level (passive variant: être; *complément d' agent*: 0; modal: no; TAM: non-progressive, cluster: neutral). If this would negatively affect the stability of the model, we instead selected the most frequent level (subject animacy: animate, subject gender: masculine). In the case of adversativity, the most balanced level (adversative) was chosen to facilitate interpretation and maintain consistency with other factors.
 
 | Factors | Label | Levels |
 |-------------------|-------------------|----------------------------------|
@@ -726,7 +726,7 @@ The levels of each factors are ordered alphabetically by default. We rearranged 
 | Cluster | cluster | neutral, communication, hitting-touching |
 | Adversativity | adversativity | adversative, non-adversative |
 
-: Overview of variables for the [être]{.smallcaps}: [se faire]{.smallcaps} passive alternation
+: Overview of variables for the [être]{.smallcaps}: [se faire]{.smallcaps} alternation {.striped .hover .responsive #tbl-levels}
 
 ```{r reference-levels, include = FALSE}
 #change reference levels: "animate" to "inanimate", "communication" to "neutral", "adversative" to "non-adversative"
@@ -847,9 +847,10 @@ vif(final_model)
 ```
 
 ```{r final-model-tab, echo = FALSE}
+#| label: tbl-final-model
+#| tbl-cap: Overview of predictions made by the model chosen as 'final'
 tab_model(final_model, show.aic = TRUE) #Marginal R2 / Conditional R2	0.451 / 0.662
-
-kbl(ggpredict(final_model))
+#kbl(ggpredict(final_model))
 ```
 :::
 
@@ -860,12 +861,14 @@ kbl(ggpredict(final_model))
 To check goodness of fit and usability of the final model, we examined the residuals visually. Gelman and Hill [-@Gelman_Hill_2006: 97] state that due to to the discreteness of data in logistic regression, "plots of raw residuals from logistic regression are generally not useful". Instead, they recommend plotting binned residuals. Following this suggestion, we checked the residuals of the model using the `binnedplot()` function from the `arm` package, which sorts residuals into categories, so called "bins". By default, the number of bins equals the rounded squareroot of the total amount of data points (for our model: `floor(sqrt(848)) == 29`).
 
 ```{r residuals-diagnostics-binned, echo = FALSE}
+#| label: fig-binned-residuals
+#| fig-cap: Plot of binned residuals
 # residuals: actual - predicted values
 predictions <- predict(final_model, type = "response", na.action = na.omit)
 binnedplot(predictions, residuals(final_model, type = "response"))
 ```
 
-At first glance, the residuals appear to be quite random with no obvious patterns and with most residuals around 0. The grey lines mark the bounds of the standard error; ideally, these bounds should emcompass 95% of the binned residuals [@Gelman_Hill_2006: 97]. Although the SE bounds essentially capture the shape of the residuals and the majority of the residuals fall within them, a considerable proportion fall outside the desired area: 11 out of 29 (`r paste0(round(11/29, 2) * 100, "%")`), which is well above the desired 5%.
+At first glance, the binned residuals visualised in @fig-binned-residuals appear to be quite random with no obvious patterns and with most residuals around 0. The grey lines mark the bounds of the standard error; ideally, these bounds should emcompass 95% of the binned residuals [@Gelman_Hill_2006: 97]. Although the SE bounds essentially capture the shape of the residuals and the majority of the residuals fall within them, a considerable proportion fall outside the desired area: 11 out of 29 (`r paste0(round(11/29, 2) * 100, "%")`), which is well above the desired 5%.
 
 In this context, a slight pattern emerges: Negative deviations are more common for low to medium expected values (i.e. low predicted probability of [se faire]{.smallcaps}), while positive deviations occur more often for high expected values (high predicted probability of [se faire]{.smallcaps}). In the mid-range (0.3-0.7), where [être]{.smallcaps} and [se faire]{.smallcaps} are predicted to be about equally likely, the binned residuals are exclusively negative (`y < 0`). Thus, when the correct level was [être]{.smallcaps}, the model often predicted a higher probability of [se faire]{.smallcaps}. This pattern is reversed for predicted probabilities of `x > 0.7`: All deviations are positive (`y > 0`), indicating that when [se faire]{.smallcaps} was the correct variant, the model slightly underestimated the probabilities of [se faire]{.smallcaps} occurring and could have been even more confident. In addition, there is one extremely negative bin between `x = 0.4` and `x = 0.5`, indicating that the model drastically overestimated [se faire]{.smallcaps} in this range. Except for this one bin, the residuals in the mid-range are close to 0 and within SE limits.
 
@@ -877,26 +880,32 @@ table(outlier_bin$passive_variant, outlier_bin$subj_animacy, outlier_bin$adversa
 
 <!-- Looking at the data from this bin, it is striking that it contains more occurrences of the rather atypical (compared to se faire) combination of être + animate subject [+ adversative] than se faire (but only 6), since the combination of subject animacy and strongly predicts se faire -> the model is likely to make incorrect predictions for all these cases, predicting se faire and incorrectly classifying être passives as se faire? overgeneralisations for animacy and adversativity? > This suggests that the model overestimates the predictive power of animacy and generalises too much from the frequent co-occurrence of se faire and animate subjects, misclassifying atypical être+animate cases.-->
 
-To investigate these potentially problematic characteristics further and determine whether these indicate systematic errors of the model, we conducted additional residuals tests. Following the recommendations of Gries [-@gries_statistics_2021: 445], we used functions from the `DHARMa` package to gain more detailed insight into the residuals structure:
+To investigate these potentially problematic characteristics further and determine whether these indicate systematic errors of the model, we conducted additional residuals tests. Following the recommendations of Gries [-@gries_statistics_2021: 445], we used functions from the `DHARMa` package to gain more detailed insight into the residuals structure.
 
-```{r residuals-diagnostics-DHARMa-dispersion, echo = FALSE}
-#| label: fig-dispersion
+```{r residuals-diagnostics-DHARMa, include = FALSE}
 sim_res <- simulateResiduals(final_model)
 testDispersion(sim_res)
-#plot(sim_res)
-# testOutliers(sim_res)
-#testQuantiles(sim_res)
+testUniformity(sim_res)
+testOutliers(sim_res)
+testQuantiles(sim_res)
 ```
 
-The `DHARMa` dispersion plot @fig-dispersion illustrates that the residuals are approximately normally distributed. The results of the dispersion test indicates no evidence of over- or underdispersion (dispersion = 0.97, $p$ = 0.632). Since the p-value is greater than 0.05, the "null hypothesis of normality cannot be rejected" [@levshina_how_2015: 162] suggesting that deviations are non significant.
+
+```{r residuals-diagnostics-DHARMa-dispersion, echo = FALSE}
+#| label: fig-dharma-dispersion
+#| fig-cap: DHARMa dispersion plot of residuals
+testDispersion(sim_res)
+```
+
+@fig-dharma-dispersion illustrates that the residuals are slightly right-skewed but approximately normally distributed. The results of the dispersion test indicate no evidence of over- or underdispersion (dispersion = 0.97, $p$ = 0.632). Since the $p$-value is greater than 0.05, the "null hypothesis of normality cannot be rejected" [@levshina_how_2015: 162], suggesting that deviations are non-significant.
 
 ```{r residuals-diagnostics-DHARMa-qq, echo = FALSE}
-#install.packages("DHARMa")
-testUniformity(sim_res)
-#testQuantiles(sim_res)
+#| label: fig-dharma-qq
+#| fig-cap: QQ-Plot to test deviation of residuals
+plotQQunif(sim_res)
 ```
 
-The QQ-Plot reveals a significant deviation ($p$ = 0.02965) as tested by the Kolmogorov-Smirnov test, which may point to unreliable inferential measures. However, $p$-values depend (among other factors) on sample size and the KS test is reportedly highly sensitive to minor deviations **(reference),** many of which naturally occur in large datasets such as ours. Based on the overall distribution of residuals, we assess the magnitude of this deviation to be minor. The outlier test is negative, showing no significant deviations from the expected distribution.
+The QQ-Plot (@fig-dharma-qq) reveals a significant deviation ($p$ = 0.02965) as tested by the Kolmogorov-Smirnov test, which may point to unreliable inferential measures. However, $p$-values depend (among other factors) on sample size and the KS test is reportedly highly sensitive to minor deviations **(reference),** many of which naturally occur in large datasets such as ours. Based on the overall distribution of residuals, we assess the magnitude of this deviation to be minor. The outlier test is negative, showing no significant deviations from the expected distribution.
 
 Overall, we did not interpret the `DHARMa` plots as evidence of poor model performance. The most 'worrying' result of the residual tests were therefore the non-optimal binned residuals that revealed the model's overoptimism that a construction is [se faire]{.smallcaps} when it is actually [être]{.smallcaps}. On the other hand, the model is not optimistic enough for very high probabilities of [se faire]{.smallcaps}. Taking all residual diagnostics together, we understand them to indicate a stable model structure that makes reliable predictions, but we acknowledge that the model is by no means perfect and could be further improved.
 
@@ -954,35 +963,14 @@ anova_df$`Relative Likelihood` <- c(NA, rel_likelihood)
 ```
 
 ```{r anova-kable-tab, echo = FALSE}
-# kable table
+#| label: tbl-anova
+#| tbl-cap: ANOVA of the final model
 kbl(anova_df, digits = 3) |> 
   kable_styling(bootstrap_options = c("hover","responsive")) |> 
   row_spec(2, bold = TRUE)
 ```
 
-The ANOVA shows that our model is highly significant (LR-test=181.02, $p$ \<0.0001), indicating a strong improvement over the null model. The model has a vastly higher relative likelihood compared to the null model.
-
-**Coefficients**
-
-The logistic regression outputted log odds, which were automatically converted to odds ratios through exponation by the `tab( )` function. However, we examined the log odds to identify tendencies of passive preference. Looking at the log odds of the significant variables, it becomes apparent that communication verbs boost the chance of [se faire]{.smallcaps} being used, while [être]{.smallcaps} is more likely in non-adversative contexts with inanimate subjects. (Although non-significant, feminine subjects are more likely to occur with [se faire]{.smallcaps} than masculine subjects.)
-
-```{r coefficients-log-odds, echo = FALSE}
-final_model_coef <- coefficients(summary(final_model))[,"Estimate"]
-#"a negative coefficient expressed as a logit (or log odds) shows that this outcome is less probably than the reference level", positive -> more likely than reference level
-kbl(final_model_coef)
-```
-
-Since odds ratios are easier to interpret than log odds, we only used odds ratios when analysing the effects in detail.
-
-```{r coefficients-odds, include=FALSE}
-#convert from log odds to odds:
-final_model_odds_ratios <- exp(final_model_coef)
-
-#convert odds to probabilities
-#exp(final_model_coef) / (1 + exp(final_model_coef))
-```
-
-The intercept of the final model is 2.76. This means that in the context of the reference levels (subject is animate and masculine, the cluster of the verb is neutral and the construction has an adversative sense), the chances of [se faire]{.smallcpas} being chosen are 2.76 times greater than [être]{.smallcaps}. The exact values of odds ratios are interpreted with regard to our hypotheses in @sec-results.
+The ANOVA, as captured by @tbl-anova, shows that our model is highly significant (LR-test=181.02, $p$ \<0.0001), indicating a strong improvement over the null model. The model has a vastly higher relative likelihood compared to the null model.
 
 **Bootstrap Validation**
 
@@ -1091,7 +1079,7 @@ Bootstrapped Distribution of the `clustercommunication` Variable
 
 This section presents the results of the logistic regression analysis. First, descriptive statistics are given for all predictors, followed by the main results of the model for the three main concepts: subject responsibility, adversativity, and aspectuality. Contrary to our original hypotheses, the only significant main effect is shown for the semantic verb cluster, with the communicative verbs favouring [se faire]{.smallcaps} over [être]{.smallcaps}. In addition, the model shows a significant interaction between subject animacy and adversativity.
 
-## (Descriptive Statistics)
+## (Descriptive Statistics/ Overview)
 
 ```{r data-exploration-check, include=FALSE}
 
@@ -1253,6 +1241,34 @@ We only have categorical data; therefore mean and standard deviation are not mea
 -   proportions
 
 -   mode
+
+**Coefficients**
+
+Logistic regression produced log odds, which were automatically converted to odds ratios by exponentiation during model selection using the `tab()` function. Nevertheless, we examined the log odds to identify tendencies of passive preference. 
+
+```{r coefficients-log-odds, echo = FALSE}
+final_model_coef <- coefficients(summary(final_model))[,"Estimate"]
+final_model_coef_table <- data.frame(
+  Factor = names(final_model_coef),
+  Estimate = round(unname(final_model_coef), 3)
+)
+```
+
+```{r coefficients-log-odds-tab, echo = FALSE}
+#| label: tbl-log-odds
+kbl(final_model_coef_table, caption = "Final model log odds")
+```
+
+Looking at the log odds of the significant variables in @tbl-log-odds, it becomes apparent that communication verbs increase the likelihood of [se faire]{.smallcaps} being used over [être]{.smallcaps]. [être]{.smallcaps} is more likely than [se faire]{.smallcaps} in non-adversative contexts with inanimate subjects. Feminine subjects favour [se faire]{.smallcaps} over [être]{.smallcaps], but the effect was not significant.
+
+```{r coefficients-odds, include=FALSE}
+#convert from log odds to odds:
+final_model_odds_ratios <- exp(final_model_coef)
+#convert odds to probabilities
+#exp(final_model_coef) / (1 + exp(final_model_coef))
+```
+
+Since odds ratios are easier to interpret than log odds, we only used odds ratios when analysing the effects in detail. As can be seen in @tbl-final-model, the intercept of the final model is `r round(final_model_odds_ratios[1], 2)`. This means that in the context of the reference levels (subject is animate and masculine, the cluster of the verb is neutral and the construction has an adversative sense), the chances of [se faire]{.smallcaps} being chosen are `r round(final_model_odds_ratios[1], 2)` times greater than [être]{.smallcaps}. <!-- The exact values of odds ratios are interpreted with regard to our hypotheses in @sec-results. -->
 
 ## Subject responsibility
 
@@ -1535,7 +1551,7 @@ The remaining factors used to test subject responsibility (subject gender, compl
 
 -   regarding aspectuality
 
-    -   cluster effect: communication with [se faire]{.smallcaps}; (also preferred with hitting-touching verbs but non-signficant)
+    -   cluster effect: communication with [se faire]{.smallcaps}; (also preferred with hitting-touching verbs but non-significant)
 
     -   random effect of lemma accounts for a lot of the variance - agrees with Bohmann [-@bohmann_large-scale_2023: 48] who reports evidence that the English \[get\] passive, which has been shown to be similar to [se faire]{.smallcaps} in several regards, "is largely lexically conditioned"
 
@@ -1668,6 +1684,7 @@ vif(final_model_unknown)
 ```
 
 ```{r final-model-unknown-tab, echo = FALSE}
+#| tbl-cap: Optimised model with level unknown
 tab_model(final_model_unknown)
 ```
 

@@ -1214,6 +1214,27 @@ hittingtouching_sefaire_rel <- freq_cluster |>
 
 ```
 
+```{r bind-freq, include = FALSE}
+
+freq_animacy_bind <- freq_animacy
+colnames(freq_animacy_bind)[1] <- "level"
+freq_animacy_bind$factor <- "Animacy"
+
+freq_gender_bind <- freq_gender
+colnames(freq_gender_bind)[1] <- "level"
+freq_gender_bind$factor <- "Gender"
+
+freq_table <- bind_rows(freq_animacy_bind, freq_gender_bind) |> 
+  dplyr::select(factor, everything())
+
+```
+
+```{r tbl-freq, echo = FALSE}
+
+kbl(freq_table, col.names = c("Factor", "Level", "être (absolute)", "se faire (absolute)", "être (relative)", "se faire (relative)"))
+
+```
+
 We only have categorical data; therefore mean and standard deviation are not meaningful.
 
 -   table to get an overview of distributions of values and the mode (measure of central tendency) -\> sort
@@ -1355,11 +1376,10 @@ Predicted Probabilities of [se faire]{.smallcaps} by Adversativity and Subject A
 As can be seen from the distribution of [être]{.smallcaps} and [se faire]{.smallcaps} across different verb clusters in @tbl-cluster, neutral verbs are the most frequent category in both passive variants, making up `r   paste0(neutral_etre_rel * 100, "%")` of all [être]{.smallcaps} constructions and `r   paste0(neutral_sefaire_rel * 100, "%")` of all [se faire]{.smallcaps} constructions. [se faire]{.smallcaps} is relatively more frequent with communication verbs (`r   paste0(communication_sefaire_rel * 100, "%")`) and hitting-touching verbs (`r   paste0(hittingtouching_sefaire_rel * 100, "%")`) compared to [être]{.smallcaps} (`r   paste0(communication_etre_rel * 100, "%")` and `r   paste0(hittingtouching_etre_rel * 100, "%")`).
 
 ::: {#tbl-cluster}
-```{r, echo=FALSE}
+```{r tbl-cluster, echo=FALSE}
 
 freq_cluster |> 
-  kbl(format = "html", digits = 2, col.names = c("Verb Cluster", "être (absolute)", "se faire (absolute)", "être (proportion)", "se faire (proportion)")) |> 
-  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+  kbl(format = "html", digits = 2, col.names = c("Verb Cluster", "être (absolute)", "se faire (absolute)", "être (proportion)", "se faire (proportion)"))
 
 ```
 
@@ -1434,11 +1454,10 @@ freq_communication <- passive_sample_clean |>
 ```
 
 ::: {#tbl-cluster-lemmas}
-```{r, echo=FALSE}
+```{r tbl-cluster-lemmas, echo=FALSE}
 
 freq_communication |> 
-  kbl(format = "html", digits = 2, col.names = c("Lemma", "être (absolute)", "se faire (absolute)", "être (proportion)", "se faire (proportion)")) |> 
-  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+  kbl(format = "html", digits = 2, col.names = c("Lemma", "être (absolute)", "se faire (absolute)", "être (proportion)", "se faire (proportion)"))
 
 ```
 

@@ -713,7 +713,7 @@ In addition to conducting a descriptive analysis of the data, we employed a bino
 
 ### Levels {#sec-levels}
 
-The levels of each factors are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most standard or unmarked case as the reference level (passive variant: être; complément d' agent: 0; modal: no; TAM: non-progressive, cluster: neutral). If this would negatively affect the stability of the model, we instead selected the most frequent level (subject animacy: animate, subject gender: masculine). In the case of adversativity, the most balanced level (adversative) was chosen to facilitate interpretation and maintain consistency with other factors.
+The levels of each factors are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most unmarked case as the reference level (passive variant: être; complément d' agent: 0; modal: no; TAM: non-progressive, cluster: neutral). If this would negatively affect the stability of the model, we instead selected the most frequent level (subject animacy: animate, subject gender: masculine). In the case of adversativity, the most balanced level (adversative) was chosen to facilitate interpretation and maintain consistency with other factors.
 
 | Factors | Label | Levels |
 |-------------------|-------------------|----------------------------------|
@@ -749,9 +749,9 @@ levels(passive_sample_unknown$subj_gender)
 
 ### Model selection
 
-We fit a mixed-effects binomial logistic regression model in `R` following Levshina [-@levshina_how_2015: 253-276] and Gries [-@gries_statistics_2021: 393-452]. The model estimates the log of the odds that a given construction is realized with [se faire]{.smallcaps}. To account for individual variation, we included the verb `lemma` and the `speaker` (as indicated in the meta data of ParlaMint 2.1) as random effects.
+We fit a mixed-effects binomial logistic regression model in `R` following Levshina [-@levshina_how_2015: 253-276] and Gries [-@gries_statistics_2021: 393-452]. The model estimates the log of the odds that a given construction is realized with [se faire]{.smallcaps}. To account for individual variation, we included the verb lemma and the speaker (as indicated in the meta data of ParlaMint 2.1) as random effects.
 
-We set a significance threshold p-value of 0.05 and applied backward stepwise selection [@gries_statistics_2021: 366]. Model quality was monitored and compared using the Aikaike Information Criterion (AIC), with preference given to the model with the lower AIC value [@gries_statistics_2021: 366]. Non-significant factors were removed one-by-one, starting with the one with the highest non-significant p-value [@gries_statistics_2021: 366]. Additionally, we evaluated model fit using R^2^, aiming to find the model with the highest possible value and therefore explains most of the variance. Note, however, that Levshina [-@levshina_how_2015] raises concern about the meaningfulness of R^2^ in logistic regression.
+We set a significance threshold $p$-value of 0.05 and applied backward stepwise selection [@gries_statistics_2021: 366]. Model quality was monitored and compared using the Aikaike Information Criterion (AIC), with preference given to the model with the lower AIC value [@gries_statistics_2021: 366]. Non-significant factors were removed one-by-one, starting with the one with the highest non-significant $p$-value [@gries_statistics_2021: 366]. Additionally, we evaluated model fit using R^2^, aiming to find the model with the highest possible R^2^, that therefore explains most of the variance. Note, however, that Levshina [-@levshina_how_2015] raises concern about the meaningfulness of R^2^ in logistic regression.
 
 ::: panel-tabset
 #### Maximal model
@@ -759,8 +759,6 @@ We set a significance threshold p-value of 0.05 and applied backward stepwise se
 First, we constructed a model that included all the factors described in @sec-levels, the interactions we hypothesised to be significant, and the random effects of speaker and lemma. While the model did not include all theoretically possible interactions, we considered it maximal in the sense that it encompassed all factors and interactions identified in the literature review as potentially meaningful and contributing to passive choice.
 
 `passive_variant ~ subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:gender + subj_animacy:cluster + subj_animacy:adversativity + cluster: adversativity + (1|lemma) + 1|speaker)`
-
-Although the main effect of `subj_gender` could not be interpeted due to its participation in an interaction, it is striking that the odds ratio of `subj_gender[unknown]` is very high with a huge confidence interval of 10.49 – 124.99. The AIC is 771.3 with an R^2^ of 0.599 when excluding random effects and 0.748 when accounting for them. The vif-analysis revealed no high collinearity values for `subj_gender` or the interaction `subj_animacy:subj_gender`. However, as explained in @sec-data-preprocessing, we suspected an annotated-related artifact related to the level `unknown`. For that reason, we decided to compare the model to one fitted on the dataset that excludes `unknown` constructions.
 
 ```{r max-model-unknown, output = FALSE}
 #| code-fold: true
@@ -773,6 +771,8 @@ final_model_unknown <- glmer(
 
 summary(final_model_unknown) # AIC: 759.3
 ```
+
+Although the main effect of `subj_gender` could not be interpreted due to its participation in an interaction, it is striking that the odds ratio of `subj_gender[unknown]` is very high with a huge confidence interval of 10.49 – 124.99. The AIC is 771.3 with an R^2^ of 0.599 when excluding random effects and 0.748 when accounting for them. The vif-analysis revealed no high collinearity values for `subj_gender` or the interaction `subj_animacy:subj_gender`. However, as explained in @sec-data-preprocessing, we suspected an annotated-related artifact related to the level `unknown`. For that reason, we decided to compare the model to one fitted on the dataset without `unknown` constructions.
 
 ```{r max-model-unknown-tab, echo = FALSE}
 tab_model(final_model_unknown, show.aic = TRUE) # Marginal R2 / Conditional R2	0.701 / NA

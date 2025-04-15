@@ -1091,12 +1091,16 @@ Bootstrapped Distribution of the `clustercommunication` Variable
 
 # Results {#sec-results}
 
+This section presents the results of the logistic regression analysis. First, descriptive statistics are given for all predictors, followed by the main results of the model for the three main concepts: subject responsibility, adversativity, and aspectuality. Contrary to our original hypotheses, the only significant main effect is shown for the semantic verb cluster, with the communicative verbs favouring [se faire]{.smallcaps} over [être]{.smallcaps}. In addition, the model shows a significant interaction between subject animacy and adversativity.
+
+## Descriptive Statistics
+
 **-\> overall frequency in the corpus? ?**
 
-Taking a look at the data:
-
 ```{r data-exploration-check, include=FALSE}
+
 str(passive_sample_clean)
+
 head(passive_sample_clean)
 
 table(passive_sample_clean$passive_variant)
@@ -1112,13 +1116,9 @@ We only have categorical data; therefore mean and standard deviation are not mea
 
 -   bar plots, mosaic plots
 
-Surprisingly, and contrary to our initial hypothesis, the only significant main effect in our model is the semantic verb cluster, with communication verbs favouring [se faire]{.smallcaps} over [être]{.smallcaps}.
-
-and the logistic regression model revealed a significant interaction between subject animacy and adversativity
-
 ## Subject responsibility
 
-This section examines the results for the predictors related to subject responsibility. Although subject animacy shows a significant main effect, it cannot be interpreted in isolation, as it is shaped by its interaction with adversativity. No significant effects were found for the *complément d’agent*, or modal verbs factors, and they will therefore not be discussed further. While subject gender does not reach statistical significance, its distribution may suggest a potential tendency.
+While several predictors were tested in relation to subject responsibility, only subject animacy showed a significant effect, though this is influenced by its interaction with adversativity. No significant effects were found for the *complément d’agent*, or modal verbs factors, and they are therefore not discussed further. While subject gender does not reach statistical significance, its distribution may suggest a potential tendency.
 
 ### Subject animacy
 

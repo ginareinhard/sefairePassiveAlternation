@@ -756,7 +756,7 @@ We set a significance threshold $p$-value of 0.05 and applied backward stepwise 
 ::: panel-tabset
 #### Maximal model
 
-First, we constructed a model that included all the factors described in @sec-levels, the interactions we hypothesised to be significant, and the random effects of speaker and lemma. While the model did not include all theoretically possible interactions, we considered it maximal in the sense that it encompassed all factors and interactions identified in the literature review as potentially meaningful and contributing to passive choice.
+First, we constructed a model that includes all the factors described in @sec-levels, the interactions we hypothesised to be significant, and the random effects of speaker and lemma. While the model does not include all theoretically possible interactions, we considered it maximal in the sense that it encompasses all factors and interactions identified in the literature review as potentially meaningful and contributing to passive choice.
 
 `passive_variant ~ subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:gender + subj_animacy:cluster + subj_animacy:adversativity + cluster: adversativity + (1|lemma) + 1|speaker)`
 
@@ -857,7 +857,7 @@ kbl(ggpredict(final_model))
 
 **Residuals**
 
-To check goodness of fit and usability of the final model, we examined the residuals visually. Gelman and Hill [-@Gelman_Hill_2006: 97] state that due to to the discreteness of data in logistic regression, "plots of raw residuals from logistic regression are generally not useful". Instead, they recommend plotting binned residuals. Following this suggestion, we checked the residuals of the model using the `binnedplot()` function from the `arm` package, which sorts residuals into categories, so called "bins". By default, the number of bins equals the rounded squareroot of the total amount of data points (for our model: `floor(sqrt(848)) == 29`). <!-- Elen: residual patterns are important but they don't prove that the model is correct/ incorrect/ unusable; once residual effect is significant -> look at the magnitude; p-values are among other things dependent on the sample size (data size); indicates that model may not be the best fit and that some of the inferential measures may not be reliable BUT no model is perfect -->
+To check goodness of fit and usability of the final model, we examined the residuals visually. Gelman and Hill [-@Gelman_Hill_2006: 97] state that due to to the discreteness of data in logistic regression, "plots of raw residuals from logistic regression are generally not useful". Instead, they recommend plotting binned residuals. Following this suggestion, we checked the residuals of the model using the `binnedplot()` function from the `arm` package, which sorts residuals into categories, so called "bins". By default, the number of bins equals the rounded squareroot of the total amount of data points (for our model: `floor(sqrt(848)) == 29`).
 
 ```{r residuals-diagnostics-binned, echo = FALSE}
 # residuals: actual - predicted values
@@ -877,18 +877,10 @@ table(outlier_bin$passive_variant, outlier_bin$subj_animacy, outlier_bin$adversa
 
 <!-- Looking at the data from this bin, it is striking that it contains more occurrences of the rather atypical (compared to se faire) combination of être + animate subject [+ adversative] than se faire (but only 6), since the combination of subject animacy and strongly predicts se faire -> the model is likely to make incorrect predictions for all these cases, predicting se faire and incorrectly classifying être passives as se faire? overgeneralisations for animacy and adversativity? > This suggests that the model overestimates the predictive power of animacy and generalises too much from the frequent co-occurrence of se faire and animate subjects, misclassifying atypical être+animate cases.-->
 
-To investigate these potentially problematic characteristics further and determine whether these indicate systematic errors of the model, we conducted additional residuals tests. Following the recommendations of Gries [-@gries_statistics_2021: 445], we used functions from the `DHARMa` package to gain more detailed insight into the residuals structure: <!-- If p-value is > 0.05, the "null hypothesis of normality cannot be rejected" [@levshina_how_2015: 162] -->
-
-<!-- Another thing that catches the eye is the accumulation of points around x= 0 y = 0 that have a diagonally falling pattern and fall just outside the SE bounds. For these, a low probability of [se faire]{.smallcaps} was correctly predicted. -->
-
-```{=html}
-<!-- negative residuals for x\<0.5: model is confident that the correct level is être and with that, it is correct but estimated the probability of se faire to be too high
-
--   positive residuals for x\>0.5: model is confident that the correct level is se faire and is correct but underestimated probability of se faire (could have been even more confident) -->
-```
+To investigate these potentially problematic characteristics further and determine whether these indicate systematic errors of the model, we conducted additional residuals tests. Following the recommendations of Gries [-@gries_statistics_2021: 445], we used functions from the `DHARMa` package to gain more detailed insight into the residuals structure:
 
 ```{r residuals-diagnostics-DHARMa-dispersion, echo = FALSE}
-#install.packages("DHARMa")
+#| label: fig-dispersion
 sim_res <- simulateResiduals(final_model)
 testDispersion(sim_res)
 #plot(sim_res)
@@ -896,7 +888,7 @@ testDispersion(sim_res)
 #testQuantiles(sim_res)
 ```
 
-The `DHARMa` dispersion plot shows that the residuals are approximately normally distributed, the dispersion test indicates no evidence of over- or underdispersion (dispersion = 0.97, $p$ = 0.632), suggesting that the variance of the residuals is consistent with model expectations. The outlier test is negative, showing no significant deviations from the expected distribution.
+The `DHARMa` dispersion plot @fig-dispersion illustrates that the residuals are approximately normally distributed. The results of the dispersion test indicates no evidence of over- or underdispersion (dispersion = 0.97, $p$ = 0.632). Since the p-value is greater than 0.05, the "null hypothesis of normality cannot be rejected" [@levshina_how_2015: 162] suggesting that deviations are non significant.
 
 ```{r residuals-diagnostics-DHARMa-qq, echo = FALSE}
 #install.packages("DHARMa")
@@ -904,7 +896,7 @@ testUniformity(sim_res)
 #testQuantiles(sim_res)
 ```
 
-The QQ-Plot reveals a significant deviation ($p$ = 0.02965) as tested by the Kolmogorov-Smirnov test, which may point to unreliable inferential measures. However, $p$-values depend (among other factors) on sample size and the KS test is reportedly highly sensitive to minor deviations **(reference),** many of which naturally occur in large datasets such as ours. Based on the overall distribution of residuals, we assess the magnitude of this deviation to be minor. <!-- https://cran.r-project.org/web/packages/DHARMa/vignettes/DHARMa.html -->
+The QQ-Plot reveals a significant deviation ($p$ = 0.02965) as tested by the Kolmogorov-Smirnov test, which may point to unreliable inferential measures. However, $p$-values depend (among other factors) on sample size and the KS test is reportedly highly sensitive to minor deviations **(reference),** many of which naturally occur in large datasets such as ours. Based on the overall distribution of residuals, we assess the magnitude of this deviation to be minor. The outlier test is negative, showing no significant deviations from the expected distribution.
 
 Overall, we did not interpret the `DHARMa` plots as evidence of poor model performance. The most 'worrying' result of the residual tests were therefore the non-optimal binned residuals that revealed the model's overoptimism that a construction is [se faire]{.smallcaps} when it is actually [être]{.smallcaps}. On the other hand, the model is not optimistic enough for very high probabilities of [se faire]{.smallcaps}. Taking all residual diagnostics together, we understand them to indicate a stable model structure that makes reliable predictions, but we acknowledge that the model is by no means perfect and could be further improved.
 

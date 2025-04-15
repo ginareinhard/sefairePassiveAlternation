@@ -36,7 +36,7 @@ library(here)
 library(glossr)
 library(kableExtra)
 library(tidyverse)
-# install.packages("psy")
+#install.packages("psy")
 library(psy)
 ```
 
@@ -594,7 +594,7 @@ kappa_table <- data.frame(
 )
 
 kappa_table |> 
-  kbl(format ="html", digits = 2, caption = "Cohen's ϰ values and their interpretation following Landis and Koch (1977)", col.names = c("Factor", "Cohen's ϰ", "Strength of Agreement" )) |> 
+  kbl(digits = 2, caption = "Cohen's ϰ values and their interpretation following Landis and Koch (1977)", col.names = c("Factor", "Cohen's ϰ", "Strength of Agreement" )) |> 
   kable_styling(bootstrap_options = c("striped", "hover","condensed", "responsive")) |> 
   row_spec(8, bold = T)
 ```
@@ -955,8 +955,8 @@ anova_df$`Relative Likelihood` <- c(NA, rel_likelihood)
 
 ```{r anova-kable-tab, echo = FALSE}
 # kable table
-kbl(anova_df, format = "html", digits = 3) |> 
-  kable_styling(bootstrap_options = c("striped", "hover","condensed", "responsive")) |> 
+kbl(anova_df, digits = 3) |> 
+  kable_styling(bootstrap_options = c("hover","responsive")) |> 
   row_spec(2, bold = TRUE)
 ```
 
@@ -964,7 +964,7 @@ The ANOVA shows that our model is highly significant (LR-test=181.02, $p$ \<0.00
 
 **Coefficients**
 
-The logistic regression outputted log odds, which were automatically converted to odds ratios by exponation in the `tab( )` function. However, we examined the log odds to identify tendencies of passive preference. Looking at the log odds of the significant variables, it becomes apparent that communication verbs boost the chance of [se faire]{.smallcaps} being used, while [être]{.smallcaps} is more likely in non-adversative contexts with inanimate subjects. (Although non-significant, feminine subjects are more likely to occur with [se faire]{.smallcaps} than masculine subjects.)
+The logistic regression outputted log odds, which were automatically converted to odds ratios through exponation by the `tab( )` function. However, we examined the log odds to identify tendencies of passive preference. Looking at the log odds of the significant variables, it becomes apparent that communication verbs boost the chance of [se faire]{.smallcaps} being used, while [être]{.smallcaps} is more likely in non-adversative contexts with inanimate subjects. (Although non-significant, feminine subjects are more likely to occur with [se faire]{.smallcaps} than masculine subjects.)
 
 ```{r coefficients-log-odds, echo = FALSE}
 final_model_coef <- coefficients(summary(final_model))[,"Estimate"]
@@ -1112,7 +1112,8 @@ freq_animacy <- passive_sample_clean |>
   group_by(passive_variant) |>
   mutate(relative = round(n / sum(n), 2)) |>
   pivot_wider(names_from = passive_variant, values_from = c(n, relative), values_fill = list(n = 0, relative = 0)) |>
-  ungroup()
+  ungroup() |> 
+  dplyr::select(subj_animacy, n_être, relative_être, `n_se faire`, `relative_se faire`)
 
 animate_etre_rel <- freq_animacy |>
   filter(subj_animacy == "animate") |> 
@@ -1220,7 +1221,6 @@ hittingtouching_sefaire_rel <- freq_cluster |>
 ```
 
 ```{r bind-freq, include = FALSE}
-
 freq_animacy_bind <- freq_animacy
 colnames(freq_animacy_bind)[1] <- "level"
 freq_animacy_bind$factor <- "Animacy"
@@ -1235,8 +1235,12 @@ freq_table <- bind_rows(freq_animacy_bind, freq_gender_bind) |>
 ```
 
 ```{r tbl-freq, echo = FALSE}
-
-kbl(freq_table, col.names = c("Factor", "Level", "être (absolute)", "se faire (absolute)", "être (relative)", "se faire (relative)"))
+kbl(freq_table, col.names = c("Factor", "Level", "absolute", "relative", "absolute", "relative")) |> 
+  add_header_above(c(" " = 1, " " =1, "être" = 2, "se faire" = 2)) |> 
+  kable_styling(bootstrap_options = c("hover", "responsive")) |> 
+  scroll_box(height = "200px") 
+  # row_spec(1:2, background = "#F2F0EF") |> 
+  # row_spec(3:4, background = "white")
 
 ```
 

@@ -153,8 +153,6 @@ In this study, we use [être]{.smallcaps} and [se faire]{.smallcaps} in small ca
 
 ## Canonical passive: [être]{.smallcaps} {#sec-etre}
 
-### Structure and meaning
-
 The passive in French inverts the syntactic functions of the arguments within a clause. The object of the active sentence, i.e. the undergoer, becomes the subject in the passive voice - a phenomenon known as diathesis. In French, the subject is typically encoded in the first position in a sentence. In the [être]{.smallcaps} passive construction, the undergoer is promoted to this position. This syntactic shift leads to topicalisation, shifting the focus away from the actor and onto the undergoer, emphasising the referent affected by the action and the action itself, rather than the referent performing it.
 
 [être]{.smallcaps} consists of a form of the attributive verb *être* 'to be' and the *participe passif* (passive participle), which is identical in form to the *participe passé* (past participle), e.g. *élus* 'elected'. Although other attributive verbs, such as *rester* 'to stay' and *sembler* 'to seem', can also be used in passive constructions, they are less common. This term paper will focus specifically on the passive formed with *être*. In the [être]{.smallcaps} construction, the subject of the active sentence becomes an adjunct phrase, which is called *complément d'agent*, introduced by the preposition *par* or *de*. When the *complément d'agent* is present, the construction is referred to as *passif long*; when the agent is omitted, it is called *passif court* [@abeille2021grande: 210-211].
@@ -404,7 +402,7 @@ Our hypothesis is that progressive marking (whether through tense or periphrasis
 
 # Data and methods {#sec-data-and-methods}
 
-Prior to conducting our study, we preregistered its protocol on the platform [AsPredicted](https://aspredicted.org) [@AsPredictedWharton] to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed [here](https://aspredicted.org/gp6y-dd8p.pdf). 
+Prior to conducting our study, we preregistered its protocol on the platform [AsPredicted](https://aspredicted.org) [@AsPredictedWharton] to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed [here](https://aspredicted.org/gp6y-dd8p.pdf).
 
 To maintain anonymity while ensuring transparency and consistency, we refer to ourselves as Annotator A and Annotator B when describing the manual steps.
 
@@ -762,35 +760,33 @@ First, we constructed a model that includes all the factors described in @sec-le
 
 ```{r max-model-unknown, output = FALSE}
 #| code-fold: true
-final_model_unknown <- glmer(
+model_max_unknown <- glmer(
     passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:cluster + subj_animacy:adversativity + cluster:adversativity) + (1|speaker) + (1 | lemma),
     family = "binomial", 
     data = passive_sample_unknown,
     control = glmerControl(optimizer = "bobyqa")
   )
 
-summary(final_model_unknown) # AIC: 759.3
+summary(model_max_unknown) #AIC: 771.3 
 ```
 
-Although the main effect of `subj_gender` could not be interpreted due to its participation in an interaction, it is striking that the odds ratio of `subj_gender[unknown]` is very high with a huge confidence interval of 10.49 – 124.99. The AIC is 771.3 with an R^2^ of 0.599 when excluding random effects and 0.748 when accounting for them. The vif-analysis revealed no high collinearity values for `subj_gender` or the interaction `subj_animacy:subj_gender`. However, as explained in @sec-data-preprocessing, we suspected an annotated-related artifact related to the level `unknown`. For that reason, we decided to compare the model to one fitted on the dataset without `unknown` constructions.
+Although the main effect of `subj_gender` could not be interpreted due to its participation in an interaction, it is striking that the odds ratio of `subj_gender[unknown]` is very high with a huge confidence interval of 10.49 – 124.99. The AIC is `r round(AIC(model_max_unknown), 2)` with an R^2^ of 0.599 when excluding random effects and 0.748 when accounting for them. The vif-analysis revealed no high collinearity values for `subj_gender` or the interaction `subj_animacy:subj_gender`. However, as explained in @sec-data-preprocessing, we suspected an annotated-related artifact related to the level `unknown`. For that reason, we decided to compare the model to one fitted on the dataset without `unknown` constructions.
 
 ```{r max-model-unknown-tab, echo = FALSE}
-tab_model(final_model_unknown, show.aic = TRUE) # Marginal R2 / Conditional R2	0.701 / NA
+tab_model(model_max_unknown, show.aic = TRUE) # Marginal R2 / Conditional R2: 0.599 / 0.748
 ```
 
 **Collinearity**
 
 ```{r collinearity-model-unknown, echo = FALSE}
-kbl(vif(final_model_unknown))
+kbl(vif(model_max_unknown))
 ```
 
 #### Model without `unknown`
 
-After excluding `unknown`, the model's AIC improved to 732.5. The model has an R^2^ of 0.46 / 0.67. Although this is lower than the model without `unknown`, and therefore explains less variance, overall, the model seems to make better (i.e. more stable and more precise) predictions. Since the variance explained by the random effects is larger than zero, the random effects had to be kept. Due to its better performance, the data without `unknown` were used in future models.
-
 ```{r full-passive-glmer, output = FALSE}
 #| code-fold: true
-full_passive_glmer <- glmer(
+model_max <- glmer(
     passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:cluster + subj_animacy:adversativity + cluster:adversativity) +
                (1 | lemma) + (1 | speaker),
     family = "binomial",
@@ -798,17 +794,17 @@ full_passive_glmer <- glmer(
     control = glmerControl(optimizer = "bobyqa")
   )
 
-summary(full_passive_glmer) #AIC: 732.5
-vif(full_passive_glmer)
+summary(model_max) #AIC: 732.5
+vif(model_max)
 ```
 
+After excluding `unknown`, the model's AIC improved to `r round(AIC(model_max), 2)`. The model has an R^2^ of 0.46 / 0.67. Although this is lower than the model without `unknown`, and therefore explains less variance, overall, the model seems to make better (i.e. more stable and more precise) predictions. Since the variance explained by the random effects is larger than zero, the random effects had to be kept. Due to its better performance, the data without `unknown` were used in future models.
+
 ```{r full-passive-glmer-tab, echo = FALSE}
-tab_model(full_passive_glmer, show.aic = TRUE)
+tab_model(model_max, show.aic = TRUE) #Marginal R2 / Conditional R2:	0.460 / 0.670
 ```
 
 #### Model without non-significant interactions
-
-All non-significant interactions (`cluster:adversativity`, `subj_animacy:cluster`, `subj_animacy:subj_gender`) were removed, improving the AIC to 725.4 with an R^2^ of 0.450 / 0.664. Thus, without the interactions, model accuracy increased while the explained variance decreased slightly. With $p$-values \> 0.05, the categories `subj_gender`, `agent_pp`, `modal` and `tam` were found to be non-significant.
 
 ```{r model-back-1, output = FALSE}
 #| code-fold: true
@@ -820,17 +816,16 @@ model_back_1 <- glmer(
   )
 
 summary(model_back_1) #AIC: 725.4
+vif(model_back_1)
 ```
 
+All non-significant interactions (`cluster:adversativity`, `subj_animacy:cluster`, `subj_animacy:subj_gender`) were removed, improving the AIC to `r round(AIC(model_back_1), 2)` with an R^2^ of 0.450 / 0.664. Thus, without the interactions, model accuracy increased while the explained variance decreased slightly. With $p$-values \> 0.05, the categories `subj_gender`, `agent_pp`, `modal` and `tam` were found to be non-significant.
+
 ```{r model-back-1-tab, echo = FALSE}
-tab_model(model_back_1, show.aic = TRUE)
+tab_model(model_back_1, show.aic = TRUE) #	0.450 / 0.664 
 ```
 
 #### Final model
-
-Non-significant fixed effects were removed step by step, starting with `tam`, which has the highest $p$-value. At each step, the main effect with the highest $p$-value was eliminated. The final model is reported here. Although `subj_gender` remained non-significant ($p$ \> 0.05), we retained it for theoretical and interpretative reasons. The AIC of 719.2 indicates that removing `agent_pp`, `modal` and `tam` improved the model quality while R^2^ stayed constant at 0.451 / 0.662.
-
-<!-- After encountering singularity issues during the bootstrap validation of the stability and uncertainty of the coefficients (see @sec-model-diagnostics), we decided to remove the random effect of the speaker due to a lack of variance, which contributed to the model's instability. -->
 
 ```{r final-model, output = FALSE}
 #| code-fold: true
@@ -842,9 +837,10 @@ final_model <- glmer(
   control = glmerControl(optimizer = "bobyqa")
 )
 final_model_summary <- summary(final_model) # AIC: 719.1
-final_model_summary
 vif(final_model)
 ```
+
+Non-significant fixed effects were removed step by step, starting with `tam`, which has the highest $p$-value. At each step, the main effect with the highest $p$-value was eliminated. The final model is reported here. Although `subj_gender` remained non-significant ($p$ \> 0.05), we retained it for theoretical and interpretative reasons. The AIC of `r round(AIC(final_model), 2)` indicates that removing `agent_pp`, `modal` and `tam` improved the model quality while R^2^ stayed constant at 0.451 / 0.662.
 
 ```{r final-model-tab, echo = FALSE}
 #| label: tbl-final-model
@@ -852,13 +848,14 @@ vif(final_model)
 tab_model(final_model, show.aic = TRUE) #Marginal R2 / Conditional R2	0.451 / 0.662
 #kbl(ggpredict(final_model))
 ```
+
 :::
 
 ### Model diagnostics {#sec-model-diagnostics}
 
 **Residuals**
 
-To check goodness of fit and usability of the final model, we examined the residuals visually. Gelman and Hill [-@Gelman_Hill_2006: 97] state that due to to the discreteness of data in logistic regression, "plots of raw residuals from logistic regression are generally not useful". Instead, they recommend plotting binned residuals. Following this suggestion, we checked the residuals of the model using the `binnedplot()` function from the `arm` package, which sorts residuals into categories, so called "bins". By default, the number of bins equals the rounded squareroot of the total amount of data points (for our model: `floor(sqrt(848)) == 29`).
+To check goodness of fit and usability of the final model, we examined the residuals visually. Gelman and Hill [-@Gelman_Hill_2006: 97] state that due to to the discreteness of data in logistic regression, "plots of raw residuals from logistic regression are generally not useful". Instead, they recommend plotting binned residuals. Following this suggestion, we checked the residuals of the model using the `binnedplot()` function from the `arm` package [@R-arm], which sorts residuals into categories, so called "bins". By default, the number of bins equals the rounded squareroot of the total amount of data points (for our model: `floor(sqrt(848)) == 29`).
 
 ```{r residuals-diagnostics-binned, echo = FALSE}
 #| label: fig-binned-residuals
@@ -880,7 +877,7 @@ table(outlier_bin$passive_variant, outlier_bin$subj_animacy, outlier_bin$adversa
 
 <!-- Looking at the data from this bin, it is striking that it contains more occurrences of the rather atypical (compared to se faire) combination of être + animate subject [+ adversative] than se faire (but only 6), since the combination of subject animacy and strongly predicts se faire -> the model is likely to make incorrect predictions for all these cases, predicting se faire and incorrectly classifying être passives as se faire? overgeneralisations for animacy and adversativity? > This suggests that the model overestimates the predictive power of animacy and generalises too much from the frequent co-occurrence of se faire and animate subjects, misclassifying atypical être+animate cases.-->
 
-To investigate these potentially problematic characteristics further and determine whether these indicate systematic errors of the model, we conducted additional residuals tests. Following the recommendations of Gries [-@gries_statistics_2021: 445], we used functions from the `DHARMa` package to gain more detailed insight into the residuals structure.
+To investigate these potentially problematic characteristics further and determine whether these indicate systematic errors of the model, we conducted additional residuals tests. Following the recommendations of Gries [-@gries_statistics_2021: 445], we used functions from the `DHARMa` package [@R-DHARMa] to gain more detailed insight into the residuals structure.
 
 ```{r residuals-diagnostics-DHARMa, include = FALSE}
 sim_res <- simulateResiduals(final_model)
@@ -890,14 +887,13 @@ testOutliers(sim_res)
 testQuantiles(sim_res)
 ```
 
-
 ```{r residuals-diagnostics-DHARMa-dispersion, echo = FALSE}
 #| label: fig-dharma-dispersion
 #| fig-cap: DHARMa dispersion plot of residuals
 testDispersion(sim_res)
 ```
 
-@fig-dharma-dispersion illustrates that the residuals are slightly right-skewed but approximately normally distributed. The results of the dispersion test indicate no evidence of over- or underdispersion (dispersion = 0.97, $p$ = 0.632). Since the $p$-value is greater than 0.05, the "null hypothesis of normality cannot be rejected" [@levshina_how_2015: 162], suggesting that deviations are non-significant.
+@fig-dharma-dispersion illustrates that the residuals are slightly right-skewed but approximately normally distributed. The results of the dispersion test indicate no evidence of over- or underdispersion (dispersion = `r round(testDispersion(sim_res)$statistic[[1]], 3)`, $p$ = `r round(testDispersion(sim_res)$p.value, 3)`). Since $p$ is greater than 0.05, the "null hypothesis of normality cannot be rejected" [@levshina_how_2015: 162], suggesting that deviations are non-significant.
 
 ```{r residuals-diagnostics-DHARMa-qq, echo = FALSE}
 #| label: fig-dharma-qq
@@ -905,9 +901,9 @@ testDispersion(sim_res)
 plotQQunif(sim_res)
 ```
 
-The QQ-Plot (@fig-dharma-qq) reveals a significant deviation ($p$ = 0.02965) as tested by the Kolmogorov-Smirnov test, which may point to unreliable inferential measures. However, $p$-values depend (among other factors) on sample size and the KS test is reportedly highly sensitive to minor deviations **(reference),** many of which naturally occur in large datasets such as ours. Based on the overall distribution of residuals, we assess the magnitude of this deviation to be minor. The outlier test is negative, showing no significant deviations from the expected distribution.
+The QQ-Plot (@fig-dharma-qq) reveals a significant deviation ($p$ = `r testUniformity(sim_res)$p.value`) as tested by the Kolmogorov-Smirnov test, which may point to unreliable inferential measures. However, $p$-values depend (among other factors) on sample size and the KS test is reportedly highly sensitive to minor deviations **(reference),** many of which naturally occur in large datasets such as ours. Based on the overall distribution of residuals, we assess the magnitude of this deviation to be minor. The outlier test is negative, showing no significant deviations from the expected distribution.
 
-Overall, we did not interpret the `DHARMa` plots as evidence of poor model performance. The most 'worrying' result of the residual tests were therefore the non-optimal binned residuals that revealed the model's overoptimism that a construction is [se faire]{.smallcaps} when it is actually [être]{.smallcaps}. On the other hand, the model is not optimistic enough for very high probabilities of [se faire]{.smallcaps}. Taking all residual diagnostics together, we understand them to indicate a stable model structure that makes reliable predictions, but we acknowledge that the model is by no means perfect and could be further improved.
+Overall, we did not understand the `DHARMa` plots to evidence poor model performance. The most 'worrying' result of the residual tests were therefore the non-optimal binned residuals that revealed the model's overoptimism that a construction is [se faire]{.smallcaps} when it is actually [être]{.smallcaps}. On the other hand, the model is not optimistic enough for very high probabilities of [se faire]{.smallcaps}. Taking all residual diagnostics together, we understand them to indicate a stable model structure that makes reliable predictions, but we acknowledge that the model is by no means perfect and could be further improved.
 
 **Concordance index**
 
@@ -976,7 +972,7 @@ The ANOVA, as captured by @tbl-anova, shows that our model is highly significant
 
 We used bootstrapping to validate the stability of our model's coefficients. This method involves random resampling with replacement from the original dataset, analysing each resample, and comparing the resulting estimates to the original. It allows for internal model validation without the need for new external test data [@levshina_how_2015: 166].
 
-Fot this, this, the `bootMer()` function from the `lme4` package was applied to our mixed-effects model, resampling 1000 times with the same random seed that we used during data sampling for reproducibility. When running `bootMer()` to validate the stability of the fixed effects in our model, we encountered singularity warnings in most of the bootstrap iterations. Convergence during bootstrapping was achieved only when the `bobyqa` optimiser was used. Although `isSingular()` returned `FALSE` for the final model, the instability across resamples indicates limited reliability. Removing the `speaker` effect resolved the singularity issues. This suggests that there may be too little variance between speakers to reliably estimate this random effect. However, removing `speaker` also increases the model’s AIC from 719.2 to 732.0, indicating a poorer overall fit. Additionally, excluding the random effect would change the model’s structure and require re-specification and re-evaluation, which exceeds the scope of this term paper. For interpretation, we therefore rely on our original model, while acknowledging its limitations in terms of robustness. We consider the simplified model without `speaker` (see @fig-model-without-speaker) a potentially more stable alternative, which could be explored more in depth in future work.
+Fot this, this, the `bootMer()` function from the `lme4` package [@R-lme4] was applied to our mixed-effects model, resampling 1000 times with the same random seed that we used during data sampling for reproducibility. When running `bootMer()` to validate the stability of the fixed effects in our model, we encountered singularity warnings in most of the bootstrap iterations. Convergence during bootstrapping was achieved only when the `bobyqa` optimiser was used. Although `isSingular()` returned `FALSE` for the final model, the instability across resamples indicates limited reliability. Removing the `speaker` effect resolved the singularity issues. This suggests that there may be too little variance between speakers to reliably estimate this random effect. However, removing `speaker` also increases the model’s AIC from 719.2 to 732.0, indicating a poorer overall fit. Additionally, excluding the random effect would change the model’s structure and require re-specification and re-evaluation, which exceeds the scope of this term paper. For interpretation, we therefore rely on our original model, while acknowledging its limitations in terms of robustness. We consider the simplified model without `speaker` (see @fig-model-without-speaker) a potentially more stable alternative, which could be explored more in depth in future work.
 
 ```{r bootstrap-validation, include = FALSE}
 
@@ -1223,9 +1219,10 @@ freq_table <- bind_rows(freq_animacy_bind, freq_gender_bind) |>
 ```
 
 ```{r tbl-freq, echo = FALSE}
+
 kbl(freq_table, col.names = c("Factor", "Level", "absolute", "relative", "absolute", "relative")) |> 
   add_header_above(c(" " = 1, " " =1, "être" = 2, "se faire" = 2)) |> 
-  kable_styling(bootstrap_options = c("hover", "responsive")) |> 
+  kable_styling(bootstrap_options = c("hover", "responsive", fixed_thead = T)) |> 
   scroll_box(height = "200px") 
   # row_spec(1:2, background = "#F2F0EF") |> 
   # row_spec(3:4, background = "white")
@@ -1244,22 +1241,24 @@ We only have categorical data; therefore mean and standard deviation are not mea
 
 **Coefficients**
 
-Logistic regression produced log odds, which were automatically converted to odds ratios by exponentiation during model selection using the `tab()` function. Nevertheless, we examined the log odds to identify tendencies of passive preference. 
+Logistic regression produced log odds, which were automatically converted to odds ratios by exponentiation during model selection using the `tab()` function. Nevertheless, we examined the log odds to identify tendencies of passive preference.
 
 ```{r coefficients-log-odds, echo = FALSE}
 final_model_coef <- coefficients(summary(final_model))[,"Estimate"]
-final_model_coef_table <- data.frame(
+final_model_coef_table <- tibble(
   Factor = names(final_model_coef),
   Estimate = round(unname(final_model_coef), 3)
 )
+
 ```
 
 ```{r coefficients-log-odds-tab, echo = FALSE}
 #| label: tbl-log-odds
 kbl(final_model_coef_table, caption = "Final model log odds")
+
 ```
 
-Looking at the log odds of the significant variables in @tbl-log-odds, it becomes apparent that communication verbs increase the likelihood of [se faire]{.smallcaps} being used over [être]{.smallcaps]. [être]{.smallcaps} is more likely than [se faire]{.smallcaps} in non-adversative contexts with inanimate subjects. Feminine subjects favour [se faire]{.smallcaps} over [être]{.smallcaps], but the effect was not significant.
+Looking at the log odds of the significant variables in @tbl-log-odds, it becomes apparent that communication verbs increase the likelihood of [se faire]{.smallcaps} being used over [être]{.smallcaps}. [être]{.smallcaps} is more likely than [se faire]{.smallcaps} in non-adversative contexts with inanimate subjects. Feminine subjects favour [se faire]{.smallcaps} over [être]{.smallcaps}, but the effect was not significant.
 
 ```{r coefficients-odds, include=FALSE}
 #convert from log odds to odds:
@@ -1268,7 +1267,7 @@ final_model_odds_ratios <- exp(final_model_coef)
 #exp(final_model_coef) / (1 + exp(final_model_coef))
 ```
 
-Since odds ratios are easier to interpret than log odds, we only used odds ratios when analysing the effects in detail. As can be seen in @tbl-final-model, the intercept of the final model is `r round(final_model_odds_ratios[1], 2)`. This means that in the context of the reference levels (subject is animate and masculine, the cluster of the verb is neutral and the construction has an adversative sense), the chances of [se faire]{.smallcaps} being chosen are `r round(final_model_odds_ratios[1], 2)` times greater than [être]{.smallcaps}. <!-- The exact values of odds ratios are interpreted with regard to our hypotheses in @sec-results. -->
+Since odds ratios are easier to interpret than log odds, we only used odds ratios when analysing the effects in detail. As can be seen in @tbl-final-model, the intercept of the final model is `r round(final_model_odds_ratios[1], 2)`. This means that in the context of the reference levels (subject is animate and masculine, the cluster of the verb is neutral and the construction has an adversative sense), the chances of [se faire]{.smallcaps} being used are `r round(final_model_odds_ratios[1], 2)` times greater than [être]{.smallcaps}. <!-- The exact values of odds ratios are interpreted with regard to our hypotheses in @sec-results. -->
 
 ## Subject responsibility
 
@@ -1394,9 +1393,7 @@ ggpredict(final_model, c("subj_animacy", "adversativity")) |>
 Predicted Probabilities of [se faire]{.smallcaps} by Adversativity and Subject Animacy
 :::
 
-## Aspectuality
-
-### Verb cluster
+## Aspectuality: Verb Cluster
 
 As can be seen from the distribution of [être]{.smallcaps} and [se faire]{.smallcaps} across different verb clusters in @tbl-cluster, neutral verbs are the most frequent category in both passive variants, making up `r   paste0(neutral_etre_rel * 100, "%")` of all [être]{.smallcaps} constructions and `r   paste0(neutral_sefaire_rel * 100, "%")` of all [se faire]{.smallcaps} constructions. [se faire]{.smallcaps} is relatively more frequent with communication verbs (`r   paste0(communication_sefaire_rel * 100, "%")`) and hitting-touching verbs (`r   paste0(hittingtouching_sefaire_rel * 100, "%")`) compared to [être]{.smallcaps} (`r   paste0(communication_etre_rel * 100, "%")` and `r   paste0(hittingtouching_etre_rel * 100, "%")`).
 

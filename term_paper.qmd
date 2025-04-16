@@ -1215,9 +1215,9 @@ We only have categorical data; therefore mean and standard deviation are not mea
 
 **Coefficients**
 
-Logistic regression produced log odds, which were automatically converted to odds ratios by exponentiation during model selection using the `tab()` function. Nevertheless, we examined the log odds to identify tendencies of passive preference.
+Logistic regression produced log odds, which were automatically converted to odds ratios by exponentiation during model selection using the `tab()` function. <!-- Nevertheless, we examined the log odds to identify tendencies of passive preference. -->
 
-```{r coefficients-log-odds, echo = FALSE}
+```{r coefficients-log-odds, include = FALSE}
 final_model_coef <- coefficients(summary(final_model))[,"Estimate"]
 final_model_coef_table <- tibble(
   Factor = names(final_model_coef),
@@ -1226,13 +1226,13 @@ final_model_coef_table <- tibble(
 
 ```
 
-```{r coefficients-log-odds-tab, echo = FALSE}
+```{r coefficients-log-odds-tab, include = FALSE}
 #| label: tbl-log-odds
 kbl(final_model_coef_table, caption = "Final model log odds")
 
 ```
 
-Looking at the log odds of the significant variables in @tbl-log-odds, it becomes apparent that communication verbs increase the likelihood of [se faire]{.smallcaps} being used over [être]{.smallcaps}. [être]{.smallcaps} is more likely than [se faire]{.smallcaps} in non-adversative contexts with inanimate subjects. Feminine subjects favour [se faire]{.smallcaps} over [être]{.smallcaps}, but the effect is not significant and therefore cannot be interpreted.
+<!-- Looking at the log odds of the significant variables in @tbl-log-odds, it becomes apparent that communication verbs increase the likelihood of [se faire]{.smallcaps} being used over [être]{.smallcaps}. [être]{.smallcaps} is more likely than [se faire]{.smallcaps} in non-adversative contexts with inanimate subjects. Feminine subjects favour [se faire]{.smallcaps} over [être]{.smallcaps}, but the effect is not significant and therefore cannot be interpreted.-->
 
 ```{r coefficients-odds, include=FALSE}
 #convert from log odds to odds:

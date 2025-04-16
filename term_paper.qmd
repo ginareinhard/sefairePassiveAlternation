@@ -169,9 +169,11 @@ Thus, there exists extensive research on the alternation and their subtle differ
 
 This study investigates the factors that influence the choice between se faire and être in the passive alternation in spoken French, with a particular focus on parliamentary debates. Specifically, we aim to understand what factors contribute to speakers’ preference for one construction over the other.
 
+------
+
 <!-- mapping out the structure of the paper -->
 
-We begin in @sec-alternation with an introduction to the French passive alternation of etre and se faire. In the following subsections (@sec-etre, @sec-se-faire), we provide detailed information about the two participants of the alternation in order to establish the background and incentive/ motivation of this study. @sec-factors concludes the theoretical background by introducing the variable context and outlining the three main factors that we hypothesise, based on the literature, to fundamentally determine the choice between se faire and etre.
+We begin by describing the French passive alternation of etre and se faire in detail in @sec-alternation. In the following subsections (@sec-etre, @sec-se-faire), we provide detailed information about the two participants of the alternation in order to establish the background and incentive/ motivation of this study. @sec-factors concludes the theoretical background by introducing the variable context and outlining the three main factors that we hypothesise, based on the literature, to fundamentally determine the choice between se faire and etre.
 
 @sec-data-and-methods details the methodology of this study: We explain the process of data collection (@sec-data-collection, including manual filtering, annotation and preprocessing steps) and the process of modelling binomial logistic regression (@sec-log-regression, including model selection and evaluation of model performance).
 

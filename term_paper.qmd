@@ -151,7 +151,7 @@ and the logistic regression model revealed a significant interaction between sub
 
 There are multiple ways of expressing passive in French: *The most common way of expressing passive in French is via être, as in: …* être, being by far the most frequent way of expressing passive…
 
-However, alternatively, one might use se faire to express passivity. But when is se faire chosen, or even preferred over the canonical passive? - what exactly determines this choice, what makes a speaker say “….” instead of “…”? As se faire is far more frequently used in spoken than in written langugage it is mostly produced spontaneously and chosen unconsciously/ without much previous thought. -\> chosen to convey a certain sense/ meaning or unconciously out emphasis on something that etre cannot capture?
+However, alternatively, one might use *se faire* to express passivity. But when is se faire chosen, or even preferred over the canonical passive? - what exactly determines this choice, what makes a speaker say “….” instead of “…”? As se faire is far more frequently used in spoken than in written language it is mostly produced spontaneously and chosen unconsciously/ without much previous thought. -\> chosen to convey a certain sense/ meaning or unconciously out emphasis on something that etre cannot capture?
 
 <!-- very briefly: research background (main ideas); subject responsibility, adversativity, aspectuality; sketch current state of research; (establish research problem)-->
 
@@ -163,13 +163,13 @@ Aspectuality: ....
 
 <!-- establish research problem -> show research gap and how our study aims to fill that (method)-->
 
-Thus, there exists extensive research on the alternation and their subtle differences. However, to our knowledge, so far no study has investigated the exacts factors predicting se faire over etre using logistic regression modelling. Logistic regression is popular in linguistic analysis due to its... and is specifically well-suited for linguistic analysis of alternations… has been successfully employed for investigation of passive variation on other languages for example by Hundt, Bohmann (English); Swedish (). Therefore, it promises to yield insightful results which will contribute to the discussion of… Our study aims to fill that research gap: by investigating the factors ...
+Thus, there exists extensive research on the alternation and their subtle differences. However, to our knowledge, no study thus far has investigated the exact factors predicting se faire over etre using logistic regression modelling. Logistic regression is popular in linguistic analysis due to its... and is specifically well-suited for linguistic analysis of alternations… has been successfully employed for investigation of passive variation in other languages, such as English [@bohmann_large-scale_2023, @hundt_be-_2024] and Swedish [@cuypere_corpus-based_2014] . Therefore, it promises to yield insightful results which will contribute to the discussion of… Our study aims to fill that research gap: by investigating the factors ...
 
 <!-- objectives: what do we intend to find out? -> i.e. research question/ hypothesis; minimally, directly clearly -->
 
 This study investigates the factors that influence the choice between se faire and être in the passive alternation in spoken French, with a particular focus on parliamentary debates. Specifically, we aim to understand what factors contribute to speakers’ preference for one construction over the other.
 
-------
+------------------------------------------------------------------------
 
 <!-- mapping out the structure of the paper -->
 

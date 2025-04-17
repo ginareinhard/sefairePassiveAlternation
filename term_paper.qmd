@@ -149,27 +149,23 @@ and the logistic regression model revealed a significant interaction between sub
 
 <!-- Introduction, "opening hook" to guide reader into the topic in an interesting way -->
 
-There are multiple ways of expressing passive in French: *The most common way of expressing passive in French is via être, as in: …* être, being by far the most frequent way of expressing passive…
+There are multiple ways of expressing passive in French: The most common way of expressing passive in French is via être, as in *Les députés sont élus* 'The members of parliament are elected'.
 
-However, alternatively, one might use *se faire* to express passivity. But when is se faire chosen, or even preferred over the canonical passive? - what exactly determines this choice, what makes a speaker say “….” instead of “…”? As se faire is far more frequently used in spoken than in written language it is mostly produced spontaneously and chosen unconsciously/ without much previous thought. -\> chosen to convey a certain sense/ meaning or unconciously out emphasis on something that etre cannot capture?
+However, alternatively, one might use *se faire* to express passivity. But when is se faire chosen, or even preferred over the canonical passive? - what exactly determines this choice, what makes a speaker say “….” instead of “…”? As se faire is far more frequently used in spoken than in written language it is mostly produced spontaneously and chosen unconsciously/ without much previous thought. -\> chosen to convey a certain sense/ meaning or unconsciously put emphasis on something that être cannot capture?
 
 <!-- very briefly: research background (main ideas); subject responsibility, adversativity, aspectuality; sketch current state of research; (establish research problem)-->
 
-This question has been studied and investigated by numerous scholars, and as usually, the answer seems to be “it’s complicated”. Clearly, there are nuances to this: One the one hand, quantitative and qualitative analysis agree that se faire heavily favours animate subjects. This, in turn, is often understood to indicate active involvement of the subject, despite the fact that the referent of the subject is undergoing the embedded action (given the nature of the passive). Some go as far as to state that subjects of se faire constructions are always responsible for the action happening to them, while others refer to subject affectedness (or subject intentionality/ subject dynamism. Connected to this is also the debate of passivity and causativity: when the subject is both the initiator and the undergoer of an action (for example …), can the construction even be considered passive at all? and where to draw the line?
+This alternation, and specifically [se faire]{.smallcaps}, has been widely investigated and discussed, for example by @bellec_construction_2014, @gaatone_desagreable_1983, @koenig_semantic_1992, @kupferman_construction_1995, @labelle_anticausativizing_2013, @novakova_construction_2009, @raineri_analyse_2010, and @tasmowski-de_ryck_causatif_1987. However, the analyses have not yielded a definitive answer and suggest that the construction is quite nuanced: One the one hand, quantitative and qualitative analysis agree that se faire heavily favours animate subjects [e.g. @novakova_construction_2009, @koenig_semantic_1992]. This, in turn, is often understood to indicate active involvement of the subject, despite the fact that the referent of the subject is undergoing the embedded action (given the nature of the passive). Some go as far as to state that subjects of se faire constructions are always responsible for the action happening to them, while others refer to subject affectedness (or subject intentionality/ subject dynamism). Connected to this is also the debate of passivity and causativity: When the subject of se faire constructions is commonly both the initiator and the undergoer (for example …), it has been disputed whether the construction should even be considered passive at all. and where to draw the line?
 
-Adversativity: Adversativity is another factor that has been suggested to influence passive choice: … claim that se faire constructions often carry a negative sense..
+Adversativity: Another factor that has been suggested to influence passive choice is adversativtiy. @gaatone_desagreable_1983 claims that passive se faire constructions often, and usually, carry a negative sense (comapred to être which is considered more neutral). Speakers may prefer se faire over être to express that the subject is negatively affected by the consequence.
 
 Aspectuality: ....
 
 <!-- establish research problem -> show research gap and how our study aims to fill that (method)-->
 
-Thus, there exists extensive research on the alternation and their subtle differences. However, to our knowledge, no study thus far has investigated the exact factors predicting se faire over etre using logistic regression modelling. Logistic regression is popular in linguistic analysis due to its... and is specifically well-suited for linguistic analysis of alternations… has been successfully employed for investigation of passive variation in other languages, such as English [@bohmann_large-scale_2023, @hundt_be-_2024] and Swedish [@cuypere_corpus-based_2014] . Therefore, it promises to yield insightful results which will contribute to the discussion of… Our study aims to fill that research gap: by investigating the factors ...
+Thus, there exists extensive research on the alternation and the subtle differences of both passive variants. However, to our knowledge, no study thus far has investigated the exact factors predicting [se faire]{.smallcaps} over [être]{.smallcaps} using logistic regression modelling. Our study aims to fill that research gap: Using a quantitative, multivariate, probabilistic approach to model corpus data, we investigate the factors that influence the choice between se faire and être in the passive alternation in spoken French. Specifically, we aim to understand what factors contribute to speakers’ preference for one construction over the other. Logistic regression is popular in linguistic analysis due to its... and is specifically well-suited for linguistic analysis of alternations… [@gries_statistics_2021]. It has been successfully employed for investigation of passive variation in other languages, such as English [@bohmann_large-scale_2023, @hundt_be-_2024] and Swedish [@cuypere_corpus-based_2014]. Therefore, such a model promises to yield insightful results which may contribute to the discussion of the passive alternation, potentially revealing new insights into the use of both [se faire]{.smallcaps} and \[être\]{smallcaps}.
 
 <!-- objectives: what do we intend to find out? -> i.e. research question/ hypothesis; minimally, directly clearly -->
-
-This study investigates the factors that influence the choice between se faire and être in the passive alternation in spoken French, with a particular focus on parliamentary debates. Specifically, we aim to understand what factors contribute to speakers’ preference for one construction over the other.
-
-------------------------------------------------------------------------
 
 <!-- mapping out the structure of the paper -->
 
@@ -177,9 +173,7 @@ We begin by describing the French passive alternation of etre and se faire in de
 
 @sec-data-and-methods details the methodology of this study: We explain the process of data collection (@sec-data-collection, including manual filtering, annotation and preprocessing steps) and the process of modelling binomial logistic regression (@sec-log-regression, including model selection and evaluation of model performance).
 
-We then report the results of our study in @sec-results, interpreting them within the same main concepts previously introduced: subject responsibility (@sec-results-subj-resp), adversativity (@sec-results-adversativity), and aspectuality (@sec-results-aspectuality). This is followed by the discussion (@sec-discussion), in which our findings are embedded with the previous literature and our results are evaluated in the light of the larger research picture. In the same vein, the limitations of our study are noted and discussed.
-
-The paper concludes with @sec-conclusion, which consisely summarises our main findings and how they relate to passive alternation research, and provides an outlook for future research.
+We then report the results of our study in @sec-results, interpreting them within the same main concepts previously introduced: subject responsibility (@sec-results-subj-resp), adversativity (@sec-results-adversativity), and aspectuality (@sec-results-aspectuality). This is followed by the discussion (@sec-discussion), in which our findings are embedded with the previous literature and our results are evaluated in the light of the larger research picture. In the same vein, the limitations of our study are noted and discussed. The paper concludes with @sec-conclusion, which consisely summarises our main findings and how they relate to passive alternation research, and provides an outlook for future research.
 
 # The passive alternation of [être]{.smallcaps} and [se faire]{.smallcaps} {#sec-alternation}
 
@@ -228,9 +222,7 @@ To summarise, [être]{.smallcaps} is the canonical form of passivisation in Fren
 
 ### Structure and meaning
 
-When constructing a passive sentence, French speakers may choose to use [se faire]{.smallcaps} instead of the canonical [être]{.smallcaps}, as [se faire]{.smallcaps} provides an alternative way to express passive meaning in French. [se faire]{.smallcaps} has been widely investigated and discussed, for example by @bellec_construction_2014, @gaatone_desagreable_1983, @koenig_semantic_1992, @kupferman_construction_1995, @labelle_anticausativizing_2013, @novakova_construction_2009, @raineri_analyse_2010, and @tasmowski-de_ryck_causatif_1987.
-
-As example 3 shows, [se faire]{.smallcaps} consists of the pronoun *se* (which shows agreement with the subject), a form of the verb *faire* ('to do'), and a verb in the infinitive.
+When constructing a passive sentence, French speakers may choose to use [se faire]{.smallcaps} instead of the canonical [être]{.smallcaps}, as [se faire]{.smallcaps} provides an alternative way to express passive meaning in French. As example 3 shows, [se faire]{.smallcaps} consists of the pronoun *se* (which shows agreement with the subject), a form of the verb *faire* ('to do'), and a verb in the infinitive.
 
 > 4.  *Elle se faire rire.* [@kupferman_construction_1995: 61]\
 >     'She made herself laugh.'
@@ -904,17 +896,17 @@ testQuantiles(sim_res)
 testDispersion(sim_res)
 ```
 
-@fig-dharma-dispersion illustrates that the residuals are slightly right-skewed but approximately normally distributed. The results of the dispersion test indicate no evidence of over- or underdispersion (dispersion = `r round(testDispersion(sim_res)$statistic[[1]], 3)`, $p$ = `r round(testDispersion(sim_res)$p.value, 3)`). Since $p$ is greater than 0.05, the "null hypothesis of normality cannot be rejected" [@levshina_how_2015: 162], suggesting that deviations are non-significant.
+@fig-dharma-dispersion illustrates that the residuals are slightly positively-skewed but approximately normally distributed. The results of the dispersion test indicate no evidence of over- or underdispersion (dispersion = `r round(testDispersion(sim_res)$statistic[[1]], 3)`, $p$ = `r round(testDispersion(sim_res)$p.value, 3)`). Since $p$ is greater than 0.05, the "null hypothesis of normality cannot be rejected" [@levshina_how_2015: 162], suggesting that the deviation is non-significant.
 
 ```{r residuals-diagnostics-DHARMa-qq, echo = FALSE}
 #| label: fig-dharma-qq
-#| fig-cap: QQ Plot to test deviation of residuals
+#| fig-cap: Q-Q Plot to test deviation of residuals
 plotQQunif(sim_res)
 ```
 
-The QQ Plot (@fig-dharma-qq) reveals a significant deviation ($p$ = `r round(testUniformity(sim_res)$p.value, 3)`) as tested by the Kolmogorov-Smirnov test, which may point to unreliable inferential measures. However, $p$-values depend (among other factors) on sample size and the KS test is reportedly highly sensitive to minor deviations **(reference),** many of which naturally occur in large datasets such as ours. Based on the overall distribution of residuals, we assessed the magnitude of this deviation to be minor. The outlier test shows no significant deviations from the expected distribution.
+The Q-Q Plot (@fig-dharma-qq) reveals a significant deviation ($p$ = `r round(testUniformity(sim_res)$p.value, 3)`) as tested by the Kolmogorov-Smirnov test, which may point to unreliable inferential measures. However, as Levshina [-@levshina_how_2015: 56] notes, deviation tests depend on sample size: In large samples, test algorithms are highly sensitive to small deviations, many of which naturally occur in large datasets such as ours. Levshina [-@levshina_how_2015: 56] therefore advises to prefer visual inspection over test results. Based on the overall distribution of the residuals, we assessed the magnitude of this deviation to be minor. The outlier test shows no significant deviations from the expected distribution.
 
-Overall, we did not interpret the `DHARMa` plots as evidence of poor model performance. The most 'worrying' result of the residual tests were therefore the non-optimal binned residuals that revealed the model's overoptimism that a construction is [se faire]{.smallcaps} when it is actually [être]{.smallcaps}. On the other hand, the model is not optimistic enough for very high probabilities of [se faire]{.smallcaps}. Taking all residual diagnostics together, we understand them to indicate a stable model structure, but we acknowledge that the model is by no means perfect and could be further improved.
+Overall, we did not interpret the `DHARMa` plots as evidence of poor model performance. The most 'worrying' result of the residual tests were therefore the non-optimal binned residuals (@fig-binned-residuals). They revealed the model's overall overoptimism toward [se faire]{.smallcaps}, meaning that it slightly overpredicts [se faire]{.smallcaps} when [être]{.smallcaps} is correct. On the other hand, for very high probabilities of [se faire,]{.smallcaps} the model could be more confident in its predictions of [se faire]{.smallcaps}. Considering all residual diagnostics, we understand them to indicate a stable model structure, but we acknowledge that the model is by no means perfect and could be further improved.
 
 **Concordance index**
 
@@ -1549,7 +1541,7 @@ With regard to our hypotheses, although few significant effects were found, the 
 
 However(, as @kupferman_construction_1995 argues,) even a strong correlation of animate subjects, adversative verbs and [se faire]{.smallcaps} does not necessarily imply that the subject is responsible for the event and brings negative consequences upon themselves. Instead, the increased likelihood of [se faire]{.smallcaps} with inanimate subjects in adversative contexts compared to non-adversative contexts suggests that the construction emphasises subject affectedness more than [être]{.smallcaps}. \[Note, however, that inter-rater agreement was lowest for adversativity, suggesting some ambiguity regarding this factor, although it was still considered 'substantial'\]. Overall, we consider these findings to support the theory of [se faire]{.smallcaps} being preferred over canoncial [être]{.smallcaps} when marking subject affectedness.
 
-The remaining factors used to test subject responsibility (subject gender, complement d'agent, modal) did not yield significant effects. This may be taken as further indication for... / this may further strengthen an argument against subject responsibility and toward subject affectness// The absence of additional significant effects related to subject responsibility may further support this notion.
+The remaining factors used to test subject responsibility (subject gender, complement d'agent, modal) did not yield significant effects. <!-- This may be taken as further indication for .../ The absence of additional significant effects related to subject responsibility may further support this notion. --> This may further strengthen an argument against subject responsibility and in faavour of subject affectness.
 
 -   problematic category gender/ unknown; no real effect of gender - maybe tendency?
 
@@ -1561,9 +1553,9 @@ The remaining factors used to test subject responsibility (subject gender, compl
 
     -   random effect of lemma accounts for a lot of the variance - agrees with Bohmann [-@bohmann_large-scale_2023: 48] who reports evidence that the English \[get\] passive, which has been shown to be similar to [se faire]{.smallcaps} in several regards, "is largely lexically conditioned"
 
-One limitation of our study is that the predictions of our model do not directly reflect real-life language use, as [être]{.smallcaps} is far more common than [se faire]{.smallcaps}, which is comparatively rare (ratio in ParlaMint: 324,836 (38.300) être: 1,254 se faire). We created a balanced dataset based on [se faire]{.smallcaps} lemmas to prevent our model from being dominated by frequency effects produced by extreme data unbalance.[^4] This approach allowed us to investigate the factors influencing passive choice and their complex interplay. However, it must be kept in mind that this ratio is artificial does not reflect the reality of passive use, in which [être]{.smallcaps} is chosen as the default in most contexts, and [se faire]{.smallcaps} remains a marked exception.
+One limitation of our study is that the predictions of our model do not directly reflect real-life language use, as [être]{.smallcaps} is far more common than [se faire]{.smallcaps}, which is comparatively rare (ratio in ParlaMint: 324,836 (38.300) être: 1,254 se faire). We created a balanced dataset based on [se faire]{.smallcaps} lemmas to prevent our model from being dominated by frequency effects produced by extreme data unbalance.[^4]. This approach allowed us to investigate the factors influencing passive choice and their complex interplay. However, it must be kept in mind that this ratio is artificial does not reflect the reality of passive use, in which [être]{.smallcaps} is chosen as the default in most contexts, and [se faire]{.smallcaps} remains a marked exception.
 
-[^4]: Note that the ratio ended up not being exactly 50:50 because we had to exclude the gender "unknown" which removed 165 se faire and only 29 être constructions. However, this is is still much more balanced than the actual ratio.
+[^4]: Note that the ratio ended up not being exactly 50:50 because we had to exclude the gender 'unknown' which removed 165 se faire and only 29 être constructions. However, this is is still much more balanced than the actual ratio.
 
 -   refer to Bootstrap validation results
 
@@ -1579,7 +1571,7 @@ A limitation of our study is that the lemmas were determined based on those occu
 
 -   Gender: we did not differentiate between humans/non-humans
 
-Dataset/sample: problem: data are extremely unbalanced (ratio in ParlaMint être vs. se faire: ) -\\\> making the ratio 50: 50 would distort the reality significantly but if the ratio is kept the model will almost always predict êtrestrategy possibilities: - build a corpus where être is presented more than se faire but not as extreme (approximation, e.g. 40% se faire - 60% etre) ("over/undersampling within limits") - assign more weight to se faire constructions by "weights=" variable of glm function - \@bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive) - evaluate with precision & recall, not just accuracy (F1-score)
+<!-- Dataset/sample: problem: data are extremely unbalanced (ratio in ParlaMint être vs. se faire: ) -\\\> making the ratio 50: 50 would distort the reality significantly but if the ratio is kept the model will almost always predict êtrestrategy possibilities: - build a corpus where être is presented more than se faire but not as extreme (approximation, e.g. 40% se faire - 60% etre) ("over/undersampling within limits") - assign more weight to se faire constructions by "weights=" variable of glm function - \@bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive) - evaluate with precision & recall, not just accuracy (F1-score) -->
 
 As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + infinitive can sometimes have a 'passive effect' even without a direct 1:1 alternation with *être*.
 

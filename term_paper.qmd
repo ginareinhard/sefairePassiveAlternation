@@ -1245,7 +1245,8 @@ As outlined in @sec-subj-resp, subject animacy is linked to subject responsibili
 ::: {#tbl-animacy}
 ```{r tbl-animacy, echo = FALSE}
 
-kbl(freq_animacy, col.names = c("Animacy", "être (absolute)", "se faire (absolute)", "être (relative)", "se faire (relative)"))
+kbl(freq_animacy, col.names = c("Animacy", "absolute", "relative", "absolute", "relative")) |>  
+  add_header_above(c(" " = 1, "être" = 2, "se faire" = 2))
 
 ```
 
@@ -1261,7 +1262,8 @@ In total, our sample comprises `r   sum(gender_table["masculine", ])` masculine 
 ::: {#tbl-gender}
 ```{r tbl-gender, echo=FALSE}
 
-kbl(freq_gender, col.names = c("Gender", "être (absolute)", "se faire (absolute)", "être (relative)", "se faire (relative)"))
+kbl(freq_gender, col.names = c("Gender", "absolute", "relative", "absolute", "relative")) |>
+  add_header_above(c(" " = 1, "être" = 2, "se faire" = 2))
 
 ```
 
@@ -1366,7 +1368,8 @@ As can be seen from the distribution of [être]{.smallcaps} and [se faire]{.smal
 ```{r tbl-cluster, echo=FALSE}
 
 freq_cluster |> 
-  kbl(format = "html", digits = 2, col.names = c("Verb Cluster", "être (absolute)", "se faire (absolute)", "être (proportion)", "se faire (proportion)"))
+  kbl(format = "html", digits = 2, col.names = c("Verb Cluster", "absolute", "relative", "absolute", "relative")) |>  
+  add_header_above(c(" " = 1, "être" = 2, "se faire" = 2))
 
 ```
 
@@ -1444,7 +1447,8 @@ freq_communication <- passive_sample_clean |>
 ```{r tbl-cluster-lemmas, echo=FALSE}
 
 freq_communication |> 
-  kbl(format = "html", digits = 2, col.names = c("Lemma", "être (absolute)", "se faire (absolute)", "être (proportion)", "se faire (proportion)"))
+  kbl(format = "html", digits = 2, col.names = c("Lemma", "absolute", "relative", "absolute", "relative")) |>  
+  add_header_above(c(" " = 1, "être" = 2, "se faire" = 2))
 
 ```
 

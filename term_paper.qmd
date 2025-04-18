@@ -613,6 +613,7 @@ mean_kappa #0.845142, very high agreement :)
 kappa_values <- c(kappa_values, mean_kappa)
 
 factors_passive <- c("Subject Animacy", "Subject Gender", "Complément d'Agent", "Modal", "Adversativity", "Cluster", "TAM","Mean")
+
 kappa_strength <- c("Almost Perfect", "Almost Perfect", "Almost Perfect", "Almost Perfect", "Substantial", "Almost Perfect", "Substantial", "Almost Perfect")
 
 kappa_table <- tibble(
@@ -628,8 +629,7 @@ kappa_table <- tibble(
 #| tbl-cap: Cohen's ϰ Values and their Interpretation, Following Landis and Koch (1977)
 
 kappa_table |> 
-  kbl(digits = 2, col.names = c("Factor", "Cohen's ϰ", "Strength of Agreement" )) |> 
-  kable_styling(bootstrap_options = c("hover","condensed", "responsive")) |> 
+  kbl(digits = 2, col.names = c("Factor", "Cohen's ϰ", "Strength of Agreement" )) |>
   row_spec(8, bold = T)
 
 ```
@@ -724,19 +724,6 @@ In addition to conducting a descriptive analysis of the data, we employed a bino
 
 The levels of each factors are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most unmarked case as the reference level (passive variant: être; *complément d' agent*: 0; modal: no; TAM: non-progressive, cluster: neutral). If this would negatively affect the stability of the model, we instead selected the most frequent level (subject animacy: animate, subject gender: masculine). In the case of adversativity, the most balanced level (adversative) was chosen to facilitate interpretation and maintain consistency with the other factors.
 
-| Factors | Label | Levels |
-|-------------------|-------------------|----------------------------------|
-| Passive variant | passive_variant | être, se faire |
-| Subject animacy | subj_animacy | animate, inanimate |
-| Subject gender | subj_gender | masculine, feminine |
-| Complément d'agent | agent_pp | 0, de, par |
-| Modal | modal | no, yes |
-| Adversativity | adversativity | adversative, non-adversative |
-| Cluster | cluster | neutral, communication, hitting-touching |
-| TAM | tam | non-progressive, progressive |
-
-: Overview of Variables and their Reference Levels {#tbl-levels .striped .hover .responsive}
-
 ```{r reference-levels, include = FALSE}
 #change reference levels: "animate" to "inanimate", "communication" to "neutral", "adversative" to "non-adversative"
 #passive_sample_clean$subj_animacy <- relevel(passive_sample_clean$subj_animacy, ref = "inanimate")
@@ -754,6 +741,28 @@ passive_sample_unknown$cluster <- relevel(passive_sample_unknown$cluster, ref = 
 levels(passive_sample_clean$subj_gender)
 levels(passive_sample_clean$agent_pp)
 levels(passive_sample_unknown$subj_gender)
+```
+
+```{r levels-table, echo = FALSE}
+factors <- c("Passive Variant", "Subject Animacy", "Subject Gender", "Complément d'Agent", "Modal", "Adversativity", "Cluster", "TAM")
+
+labels <- c("passive_variant", "subj_animacy", "subj_gender", "agent_pp", "modal", "adversativity", "cluster", "tam")
+
+levels <- c("être, se faire", "animate, inanimate", "masculine, feminine", "0, de, par", "no, yes", "adversative, non-adversative", "neutral, communication, hitting-touching", "non-progressive, progressive")
+
+levels_table <- tibble(
+  Factor = factors,
+  Labels = labels,
+  Levels = levels
+)
+```
+
+```{r tbl-levels-kable, echo = FALSE}
+#| label: tbl-levels
+#| tbl-cap: Overview of Variables and their Reference Levels
+
+kbl(levels_table)
+
 ```
 
 ### Model Selection

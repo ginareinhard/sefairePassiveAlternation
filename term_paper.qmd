@@ -1236,7 +1236,7 @@ Absolute and Relative Frequencies of the Factors Levels for [être]{.smallcaps} 
 
 ## Subject responsibility {#sec-results-subj-resp}
 
-While several predictors were tested in relation to subject responsibility, only subject animacy showed a significant effect, though this is influenced by its interaction with adversativity. No significant effects were found for the *complément d’agent*, or modal verbs factors, and they are therefore not discussed further. While subject gender does not reach statistical significance, its distribution may suggest a potential tendency.
+While several predictors were tested in relation to subject responsibility, only subject animacy showed a significant effect, though this is influenced by its interaction with adversativity. No significant effects were found for the *complément d’agent*, or modal verbs factors, and they are therefore not discussed further. While subject gender does not reach statistical significance, its distribution may suggest a potential tendency and is included here for exploratory purposes.
 
 ### Subject animacy
 
@@ -1255,7 +1255,7 @@ Absolute and Relative Frequencies of the Subject Animacy Levels for [être]{.sma
 
 The main effect of subject animacy in the logistic regression model cannot be interpreted in isolation as it is distorted by the significant interaction with adversativity. The interaction of these two factors and their predictions for the choice between [se faire]{.smallcaps} and [être]{.smallcaps} are described in @sec-results-adversativity, while their implications for subject responsibility are further explored in @sec-discussion.
 
-### Subject gender
+### Subject gender {#sec-results-gender}
 
 In total, our sample comprises `r   sum(gender_table["masculine", ])` masculine subjects (`r   paste0(round(gender_prop["masculine"], 2) * 100, "%")`) and `r   sum(gender_table["feminine", ])` feminine subjects (`r   paste0(round(gender_prop["feminine"], 2) * 100, "%")`) across all [être]{.smallcaps} and [se faire]{.smallcaps} constructions. This distribution reflects an overall lower representation of feminine subjects compared to masculine subjects, particularly in [se faire]{.smallcaps}, as shown in @tbl-gender, in line with our hypothesis in @sec-subj-resp. While these frequencies suggest a bias towards masculine subjects, gender did not have a statistically significant effect in the logistic regression model and the frequencies should therefore be interpreted with caution.
 
@@ -1462,19 +1462,19 @@ Frequencies of Lemmas in the Communication Verb Cluster for [être]{.smallcaps} 
 
 Given this pattern, in line with our initial hypothesis one possible explanation is that adversativity influences the choice of [se faire]{.smallcaps} within the communication verb cluster. However, there was no significant interaction between the verb cluster and the adversativity factor.
 
-As shown by the absolute frequencies of verb clusters across adversativity levels in @fig-interaction-adv-cluster, [se faire]{.smallcaps} is used more frequently with adversative communication verbs than with non-adversative communication verbs, while the opposite pattern can be observed for [être]{.smallcaps}. However, this trend is apparently not strong enough to be statistically significant in the logistic regression. @fig-interaction-adv-cluster also illustrates that neutral, non-adversative verbs are predominant with [être]{.smallcaps}, which reflects that [être]{.smallcaps} is the default passive variant.
+As shown by the proportions of verb clusters across adversativity levels in @fig-interaction-adv-cluster, [se faire]{.smallcaps} is used more frequently with adversative communication verbs than with non-adversative communication verbs, while the opposite pattern can be observed for [être]{.smallcaps}. Note, however, that this trend is not strong enough to be statistically significant in the logistic regression. @fig-interaction-adv-cluster also illustrates that neutral, non-adversative verbs are predominant with [être]{.smallcaps}, which reflects that [être]{.smallcaps} is the default passive variant.
 
 ::: {#fig-interaction-adv-cluster}
 ```{r interaction-adv-cluster, echo=FALSE}
 
 ggplot(passive_sample_clean, 
        aes(x = adversativity, fill = cluster)) +
-  geom_bar(position = "dodge") +  
+  geom_bar(position = "fill") +  
   facet_wrap(~ passive_variant) +  
   labs(x = "Adversativity",
-       y = "Number of Observations", 
+       y = "Proportion", 
        fill = "Verb Cluster") +
-  scale_fill_manual(values = c("#FC8D62", "#8DA0CB", "lightblue")) +
+  scale_fill_manual(values = c("lightblue", "#FC8D62", "#8DA0CB")) +
   theme_bw()
 
 ```
@@ -1482,19 +1482,19 @@ ggplot(passive_sample_clean,
 Frequencies of [être]{.smallcaps} and [se faire]{.smallcaps} by Verb Cluster and Adversativity
 :::
 
-Similarly to the adversativity of the verb, the animacy of the subject could play a role in the distribution of [se faire]{.smallcaps} and [être]{.smallcaps} with communication verbs like *insulter* and *engueuler*, which typically occur with an animate undergoer. Again, a trend can be observed in the frequencies, but there is no significant interaction between the verb cluster and the animacy factors. @fig-interaction-anim-cluster shows the absolute frequencies of [être]{.smallcaps} and [se faire]{.smallcaps} across verb clusters and subject animacy. [être]{.smallcaps} is more frequent with communication verbs when the subject is inanimate, whereas [se faire]{.smallcaps} is more common with communication verbs when the subject is animate.
+Similarly to the adversativity of the verb, the animacy of the subject could play a role in the distribution of [se faire]{.smallcaps} and [être]{.smallcaps} with communication verbs like *insulter* and *engueuler*, which typically occur with an animate undergoer. Again, a trend can be observed in the frequencies, but there is no significant interaction between the verb cluster and the animacy factors. @fig-interaction-anim-cluster shows the proportions of [être]{.smallcaps} and [se faire]{.smallcaps} across verb clusters and subject animacy. [être]{.smallcaps} is more frequent with communication verbs when the subject is inanimate, whereas [se faire]{.smallcaps} is more common with communication verbs when the subject is animate. As with the frequencies discussed in @sec-results-gender, these plots are included solely for exploratory interpretation, as neither the interaction between verb cluster and adversativity nor the interaction with animacy reached statistical significance.
 
 ::: {#fig-interaction-anim-cluster}
 ```{r interaction-anim-cluster, echo=FALSE}
 
 ggplot(passive_sample_clean, 
        aes(x = subj_animacy, fill = cluster)) +
-  geom_bar(position = "dodge") +  
+  geom_bar(position = "fill") +  
   facet_wrap(~ passive_variant) +  
   labs(x = "Subject Animacy",
-       y = "Number of Observations", 
+       y = "Proportion", 
        fill = "Verb Cluster") +
-  scale_fill_manual(values = c("#FC8D62", "#8DA0CB", "lightblue")) +
+  scale_fill_manual(values = c("lightblue", "#FC8D62", "#8DA0CB")) +
   theme_bw()
 
 ```

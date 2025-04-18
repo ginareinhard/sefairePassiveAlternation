@@ -167,7 +167,7 @@ Another factor that has been suggested to influence passive choice is adversativ
 
 Aspectuality: Thirdly, ...
 
--   se faire favoured by dynamic verbs (potentially especially by verbs describing violent actions),
+-   se faire favoured by dynamic verbs (potentially especially by verbs describing violent actions)
 
 -   favoured by actions that are in process (progressive)
 
@@ -752,7 +752,7 @@ levels <- c("être, se faire", "animate, inanimate", "masculine, feminine", "0, 
 
 levels_table <- tibble(
   Factor = factors,
-  Labels = labels,
+  Label = labels,
   Levels = levels
 )
 ```
@@ -1553,7 +1553,7 @@ The remaining factors used to test subject responsibility (subject gender, compl
 
 One limitation of our study is that the predictions of our model do not directly reflect real-life language use, as [être]{.smallcaps} is far more common than [se faire]{.smallcaps}, which is comparatively rare (ratio in ParlaMint: 324,836 (38.300) être: 1,254 se faire). We created a balanced dataset based on [se faire]{.smallcaps} lemmas to prevent our model from being dominated by frequency effects produced by extreme data unbalance.[^4]. This approach allowed us to investigate the factors influencing passive choice and their complex interplay. However, it must be kept in mind that this ratio is artificial does not reflect the reality of passive use, in which [être]{.smallcaps} is chosen as the default in most contexts, and [se faire]{.smallcaps} remains a marked exception.
 
-[^4]: Note that the ratio ended up not being exactly 50:50 because we had to exclude the gender 'unknown' which removed 165 se faire and only 29 être constructions. However, this is is still much more balanced than the actual ratio.
+[^4]: Note that the ratio ended up not being exactly 50:50 because we chose to exclude the gender 'unknown' which removed 165 se faire and only 29 être constructions. However, this is is still much more balanced than the actual ratio.
 
 -   refer to Bootstrap validation results
 
@@ -1656,15 +1656,15 @@ vif(passive_glmer_unknown)
 ```
 
 ```{r, include = FALSE}
-# model_1_unknown <- glmer(
-#     passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:adversativity) + (1 | lemma),
-#     family = "binomial",
-#     data = passive_sample_unknown,
-#     control = glmerControl(optimizer = "bobyqa")
-#   )
-# 
-# summary(model_1_unknown) # AIC: 738
-# tab_model(model_1_unknown) #Marginal R2 / Conditional R2	0.453 / 0.659
+model_1_unknown <- glmer(
+    passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:adversativity) + (1 | lemma),
+    family = "binomial",
+    data = passive_sample_unknown,
+    control = glmerControl(optimizer = "bobyqa")
+  )
+
+summary(model_1_unknown) # AIC: 738
+tab_model(model_1_unknown) #Marginal R2 / Conditional R2	0.453 / 0.659
 ```
 
 ```{r final-model-unknown, include = FALSE}

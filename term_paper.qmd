@@ -28,7 +28,6 @@ p {
 }
 </style>
 ```
-
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -223,7 +222,6 @@ To summarise, [être]{.smallcaps} is the canonical form of passivisation in Fren
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward 
 -   se faire passive "typologically marked", comparison to other Romance languages @koenig_semantic_1992 \[145\]; similar constructions exist in other Romance languages but passive reading only allowed in French @labelle_anticausativizing_2013 [236] -->
 ```
-
 ### Structure and meaning
 
 When constructing a passive sentence, French speakers may choose to use [se faire]{.smallcaps} instead of the canonical [être]{.smallcaps}, as [se faire]{.smallcaps} provides an alternative way to express passive meaning in French. As example 3 shows, [se faire]{.smallcaps} consists of the pronoun *se* (which shows agreement with the subject), a form of the verb *faire* ('to do'), and a verb in the infinitive.
@@ -296,7 +294,6 @@ We recognize this "fuzzy" [@bohmann_large-scale_2023: 50] variable context as bo
 
 -   Subjects in passive sentences are preferably animate, definite, and pronominal. In the study by @da_cunha_lalternance_2020, animate, definite, and pronominal arguments that function as the objects in active sentences were more frequently found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice) -->
 ```
-
 ### Subject responsibility {#sec-subj-resp}
 
 As indicated in @sec-debate, the question whether the referent of the subject of [se faire]{.smallcaps} holds any responsibility is central to the debate of the construction's passive-status [@sveberg_se_2012; @bellec_construction_2014: 212-213]. In line with their argument that [se faire]{.smallcaps} is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of [se faire]{.smallcaps} is always a causer and therefore always responsible to some degree. They contrast it to [être]{.smallcaps}'s subject referent, which is seen as more neutral [@gaatone_desagreable_1983: 164-166].
@@ -715,16 +712,16 @@ In addition to conducting a descriptive analysis of the data, we employed a bino
 
 The levels of each factors are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most unmarked case as the reference level (passive variant: être; *complément d' agent*: 0; modal: no; TAM: non-progressive, cluster: neutral). If this would negatively affect the stability of the model, we instead selected the most frequent level (subject animacy: animate, subject gender: masculine). In the case of adversativity, the most balanced level (adversative) was chosen to facilitate interpretation and maintain consistency with the other factors.
 
-| Factors | Label | Levels |
+| Factors            | Label           | Levels                                   |
 |-------------------|-------------------|----------------------------------|
-| Passive variant | passive_variant | être, se faire |
-| Subject animacy | subj_animacy | animate, inanimate |
-| Subject gender | subj_gender | masculine, feminine |
-| Complément d'agent | agent_pp | 0, de, par |
-| Modal | modal | no, yes |
-| TAM | tam | non-progressive, progressive |
-| Cluster | cluster | neutral, communication, hitting-touching |
-| Adversativity | adversativity | adversative, non-adversative |
+| Passive variant    | passive_variant | être, se faire                           |
+| Subject animacy    | subj_animacy    | animate, inanimate                       |
+| Subject gender     | subj_gender     | masculine, feminine                      |
+| Complément d'agent | agent_pp        | 0, de, par                               |
+| Modal              | modal           | no, yes                                  |
+| TAM                | tam             | non-progressive, progressive             |
+| Cluster            | cluster         | neutral, communication, hitting-touching |
+| Adversativity      | adversativity   | adversative, non-adversative             |
 
 : Overview of variables for the [être]{.smallcaps}: [se faire]{.smallcaps} alternation {#tbl-levels .striped .hover .responsive}
 
@@ -1086,44 +1083,45 @@ table(passive_sample_clean$passive_variant)
 
 ```
 
-**-\> overall frequency in the corpus? ?**
+```{r freq-functions, include = FALSE}
+
+# define a function to summarise the absolute and relative frequencies for each factor
+summarise_factor_freq <- function(data, factor) {
+  data |>
+    count(passive_variant, {{factor}}) |>
+    group_by(passive_variant) |>
+    mutate(relative = round(proportions(n), 2)) |>
+    pivot_wider(
+      names_from = passive_variant,
+      values_from = c(n, relative),
+      values_fill = list(n = 0, relative = 0)
+    ) |>
+    ungroup()
+}
+
+# define a function to pull the relative frequencies of individual levels (for inline code)
+count_level_relative <- function(data, factor_column, factor_level, relative_column) {
+  data |>
+    filter({{factor_column}} == factor_level) |>
+    pull({{relative_column}})
+}
+
+```
 
 ```{r freq-animacy, include=FALSE}
 
-freq_animacy <- passive_sample_clean |>
-  count(passive_variant, subj_animacy) |>
-  group_by(passive_variant) |>
-  mutate(relative = round(n / sum(n), 2)) |>
-  pivot_wider(names_from = passive_variant, values_from = c(n, relative), values_fill = list(n = 0, relative = 0)) |>
-  ungroup() |> 
-  dplyr::select(subj_animacy, n_être, relative_être, `n_se faire`, `relative_se faire`)
+freq_animacy <- summarise_factor_freq(passive_sample_clean, subj_animacy)
 
-animate_etre_rel <- freq_animacy |>
-  filter(subj_animacy == "animate") |> 
-  pull(relative_être)
-
-animate_sefaire_rel <- freq_animacy |>
-  filter(subj_animacy == "animate") |> 
-  pull(`relative_se faire`)
-
-inaninmate_etre_rel <- freq_animacy |>
-  filter(subj_animacy == "inanimate") |> 
-  pull(relative_être)
-
-inanimate_sefaire_rel <- freq_animacy |>
-  filter(subj_animacy == "inanimate") |> 
-  pull(`relative_se faire`)
+animate_etre_rel <- count_level_relative(freq_animacy, subj_animacy, "animate", relative_être)
+animate_sefaire_rel <- count_level_relative(freq_animacy, subj_animacy, "animate", `relative_se faire`)
+inaninmate_etre_rel <- count_level_relative(freq_animacy, subj_animacy, "inanimate", relative_être)
+inanimate_sefaire_rel <- count_level_relative(freq_animacy, subj_animacy, "inanimate", `relative_se faire`)
 
 ```
 
 ```{r freq-gender, include = FALSE}
 
-freq_gender <- passive_sample_clean |>
-  count(passive_variant, subj_gender) |>
-  group_by(passive_variant) |>
-  mutate(relative = round(n / sum(n), 2)) |>
-  pivot_wider(names_from = passive_variant, values_from = c(n, relative), values_fill = list(n = 0, relative = 0)) |>
-  ungroup()
+freq_gender <- summarise_factor_freq(passive_sample_clean, subj_gender)
 
 table(passive_sample_clean$subj_gender) |> 
   sort(decreasing = TRUE)
@@ -1136,12 +1134,7 @@ gender_prop <- prop.table(table(passive_sample_clean$subj_gender))
 
 ```{r freq-adversativity, include = FALSE}
 
-freq_adversativity <- passive_sample_clean |>
-  count(passive_variant, adversativity) |>
-  group_by(passive_variant) |>
-  mutate(relative = round(n / sum(n), 2)) |>
-  pivot_wider(names_from = passive_variant, values_from = c(n, relative), values_fill = list(n = 0, relative = 0)) |>
-  ungroup()
+freq_adversativity <- summarise_factor_freq(passive_sample_clean, adversativity)
 
 table(passive_sample_clean$adversativity) |> 
   sort(decreasing = TRUE)
@@ -1150,60 +1143,39 @@ adversativity_table <- table(passive_sample_clean$adversativity, passive_sample_
 
 adversativity_prop <- prop.table(table(passive_sample_clean$adversativity))
 
-adversative_etre_rel <- freq_adversativity |>
-  filter(adversativity == "adversative") |> 
-  pull(relative_être)
-
-adversative_sefaire_rel <- freq_adversativity |>
-  filter(adversativity == "adversative") |> 
-  pull(`relative_se faire`)
-
-nonadversative_etre_rel <- freq_adversativity |>
-  filter(adversativity == "non-adversative") |> 
-  pull(relative_être)
-
-nonadversative_sefaire_rel <- freq_adversativity |>
-  filter(adversativity == "non-adversative") |> 
-  pull(`relative_se faire`)
+adversative_etre_rel <- count_level_relative(freq_adversativity, adversativity, "adversative", relative_être)
+adversative_sefaire_rel <- count_level_relative(freq_adversativity, adversativity, "adversative", `relative_se faire`)
+nonadversative_etre_rel <- count_level_relative(freq_adversativity, adversativity, "non-adversative", relative_être)
+nonadversative_sefaire_rel <- count_level_relative(freq_adversativity, adversativity, "non-adversative", `relative_se faire`)
 
 ```
 
 ```{r freq-cluster, include=FALSE}
 
-freq_cluster <- passive_sample_clean |> 
-  count(passive_variant, cluster) |> 
-  group_by(passive_variant) |> 
-  mutate(relative = round(proportions(n), 2)) |>
-  pivot_wider(names_from = passive_variant, values_from = c(n, relative), values_fill = list(n = 0, relative = 0)) |>
-  ungroup()
+freq_cluster <- summarise_factor_freq(passive_sample_clean, cluster)
 
-neutral_etre_rel <- freq_cluster |>
-  filter(cluster == "neutral") |> 
-  pull(relative_être)
+neutral_etre_rel <- count_level_relative(freq_cluster, cluster, "neutral", relative_être)
+neutral_sefaire_rel <- count_level_relative(freq_cluster, cluster, "neutral", `relative_se faire`)
 
-neutral_sefaire_rel <- freq_cluster |>
-  filter(cluster == "neutral") |> 
-  pull(`relative_se faire`)
+communication_etre_rel <- count_level_relative(freq_cluster, cluster, "communication", relative_être)
+communication_sefaire_rel <- count_level_relative(freq_cluster, cluster, "communication", `relative_se faire`)
 
-communication_etre_rel <- freq_cluster |>
-  filter(cluster == "communication") |> 
-  pull(relative_être)
+hittingtouching_etre_rel <- count_level_relative(freq_cluster, cluster, "hitting-touching", relative_être)
+hittingtouching_sefaire_rel <- count_level_relative(freq_cluster, cluster, "hitting-touching", `relative_se faire`)
 
-communication_sefaire_rel <- freq_cluster |>
-  filter(cluster == "communication") |> 
-  pull(`relative_se faire`)
 
-hittingtouching_etre_rel <- freq_cluster |>
-  filter(cluster == "hitting-touching") |> 
-  pull(relative_être)
+```
 
-hittingtouching_sefaire_rel <- freq_cluster |>
-  filter(cluster == "hitting-touching") |> 
-  pull(`relative_se faire`)
+```{r freq-other-factors, include = FALSE}
+
+freq_complement <- summarise_factor_freq(passive_sample_clean, agent_pp)
+freq_modal <- summarise_factor_freq(passive_sample_clean, modal)
+freq_tam <- summarise_factor_freq(passive_sample_clean, tam)
 
 ```
 
 ```{r bind-freq, include = FALSE}
+
 freq_animacy_bind <- freq_animacy
 colnames(freq_animacy_bind)[1] <- "level"
 freq_animacy_bind$factor <- "Animacy"
@@ -1212,7 +1184,11 @@ freq_gender_bind <- freq_gender
 colnames(freq_gender_bind)[1] <- "level"
 freq_gender_bind$factor <- "Gender"
 
-freq_table <- bind_rows(freq_animacy_bind, freq_gender_bind) |> 
+freq_complement_bind <- freq_complement
+colnames(freq_complement_bind)[1] <- "level"
+freq_complement_bind$factor <- "Complément d'agent"
+
+freq_table <- bind_rows(freq_animacy_bind, freq_gender_bind, freq_complement_bind) |> 
   dplyr::select(factor, everything())
 
 ```
@@ -1618,22 +1594,22 @@ read.bibtex(file = "packages.bib")
 
 <div>
 
-| Verb clusters [@francois_presentation_2007, 4] | Grouped Verb Clusters (Our Study) | Example Verbs |
+| Verb clusters [@francois_presentation_2007, 4]                    | Grouped Verb Clusters (Our Study) | Example Verbs                                                                                                                                                                                                 |
 |-------------------|-------------------|----------------------------------|
-| giving, depriving (don, privation) | neutral | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*) |
-| entering, leaving (entrée, sortie) | neutral | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*) |
-| hitting, touching (frapper, toucher) | hitting-touching | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*) |
-| movement in place (mouvement sur place) | neutral | \- |
-| equipping, disarming (munir, démunir) | neutral | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie \[...\]*) |
-| transformation, change (transformation, changement) | neutral | remplacer (*\[...\] afin que le premier puisse se faire remplacer par le second \[...\]*) |
-| realisation, preparation (réalisation, mise en état) | neutral | photographier (*J'ajoute la diminution du nombre de points où l'on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'identité ou son passeport*.) |
-| physical states and behaviours (états physiques et comportements) | neutral | aider (*\[...\] afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'en sont pas informés.*) |
-| locative (locatif) | neutral | domicilier (*Beaucoup trichent en se faisant domicilier chez un parent \[...\]*) |
-| union, reunion (union, réunion) | neutral | \- |
-| psychological verbs (verbes psychologiques) | neutral | écouter (*Le problème, on l'a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*) |
-| seizing, clasping, possessing (saisir, serrer, posséder) | neutral | élire (*\[...\] avant que M. Hollande ne se fasse élire en affirmant qu'il ne signerait pas le TSCG en l'état.*) |
-| communication | communication | accuser (*\[...\] il est devenu impossible de l'exprimer dans le débat public sans se faire accuser de haïr les policiers \[...\]*) |
-| auxiliary verbs | \- | \- |
+| giving, depriving (don, privation)                                | neutral                           | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*)      |
+| entering, leaving (entrée, sortie)                                | neutral                           | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*)                    |
+| hitting, touching (frapper, toucher)                              | hitting-touching                  | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*)                                                  |
+| movement in place (mouvement sur place)                           | neutral                           | \-                                                                                                                                                                                                            |
+| equipping, disarming (munir, démunir)                             | neutral                           | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie \[...\]*)                                                                                                            |
+| transformation, change (transformation, changement)               | neutral                           | remplacer (*\[...\] afin que le premier puisse se faire remplacer par le second \[...\]*)                                                                                                                     |
+| realisation, preparation (réalisation, mise en état)              | neutral                           | photographier (*J'ajoute la diminution du nombre de points où l'on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'identité ou son passeport*.) |
+| physical states and behaviours (états physiques et comportements) | neutral                           | aider (*\[...\] afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'en sont pas informés.*)                                                                    |
+| locative (locatif)                                                | neutral                           | domicilier (*Beaucoup trichent en se faisant domicilier chez un parent \[...\]*)                                                                                                                              |
+| union, reunion (union, réunion)                                   | neutral                           | \-                                                                                                                                                                                                            |
+| psychological verbs (verbes psychologiques)                       | neutral                           | écouter (*Le problème, on l'a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*)                                                          |
+| seizing, clasping, possessing (saisir, serrer, posséder)          | neutral                           | élire (*\[...\] avant que M. Hollande ne se fasse élire en affirmant qu'il ne signerait pas le TSCG en l'état.*)                                                                                              |
+| communication                                                     | communication                     | accuser (*\[...\] il est devenu impossible de l'exprimer dans le débat public sans se faire accuser de haïr les policiers \[...\]*)                                                                           |
+| auxiliary verbs                                                   | \-                                | \-                                                                                                                                                                                                            |
 
 Verb cluster categorisation with example verbs based on the classes by @francois_presentation_2007 [4]
 

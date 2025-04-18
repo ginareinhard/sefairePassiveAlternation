@@ -23,9 +23,11 @@ number-sections: true
 
 ```{=html}
 <style>
+
 p {
   text-align: justify;
 }
+
 </style>
 ```
 ```{r load-libraries, include=FALSE}
@@ -1069,8 +1071,6 @@ Bootstrapped Distribution of the `clustercommunication` Variable
 
 This section presents the results of the logistic regression analysis. First, descriptive statistics are given for all predictors, followed by the main results of the model for the three main concepts: subject responsibility, adversativity, and aspectuality. Contrary to our original hypotheses, the only significant main effect is shown for the semantic verb cluster, with the communicative verbs favouring [se faire]{.smallcaps} over [être]{.smallcaps}. In addition, the model shows a significant interaction between subject animacy and adversativity.
 
-## (Descriptive Statistics/ Overview)
-
 ```{r data-exploration-check, include=FALSE}
 
 str(passive_sample_clean)
@@ -1095,6 +1095,16 @@ summarise_factor_freq <- function(data, factor) {
       values_fill = list(n = 0, relative = 0)
     ) |>
     ungroup()
+}
+
+# define a function to create separate dataframes for the individual factor frequency tables in preparation for row-binding
+prep_row_bind <- function(data, factor) {
+  data_bind <- data
+  # rename first column to "level"
+  colnames(data_bind)[1] <- "level"
+  # add a "factor" column
+  data_bind$factor <- factor
+  return(data_bind)
 }
 
 # define a function to pull the relative frequencies of individual levels (for inline code)
@@ -1154,13 +1164,10 @@ freq_cluster <- summarise_factor_freq(passive_sample_clean, cluster)
 
 neutral_etre_rel <- count_level_relative(freq_cluster, cluster, "neutral", relative_être)
 neutral_sefaire_rel <- count_level_relative(freq_cluster, cluster, "neutral", `relative_se faire`)
-
 communication_etre_rel <- count_level_relative(freq_cluster, cluster, "communication", relative_être)
 communication_sefaire_rel <- count_level_relative(freq_cluster, cluster, "communication", `relative_se faire`)
-
 hittingtouching_etre_rel <- count_level_relative(freq_cluster, cluster, "hitting-touching", relative_être)
 hittingtouching_sefaire_rel <- count_level_relative(freq_cluster, cluster, "hitting-touching", `relative_se faire`)
-
 
 ```
 
@@ -1174,37 +1181,27 @@ freq_tam <- summarise_factor_freq(passive_sample_clean, tam)
 
 ```{r bind-freq, include = FALSE}
 
-freq_animacy_bind <- freq_animacy
-colnames(freq_animacy_bind)[1] <- "level"
-freq_animacy_bind$factor <- "Animacy"
+freq_animacy_bind <- prep_row_bind(freq_animacy, "Animacy")
+freq_gender_bind <- prep_row_bind(freq_gender, "Gender")
+freq_complement_bind <- prep_row_bind(freq_complement, "Complément d'agent")
+freq_modal_bind <- prep_row_bind(freq_modal, "Modal Verb")
+freq_adversativity_bind <- prep_row_bind(freq_adversativity, "Adversativity")
+freq_cluster_bind <- prep_row_bind(freq_cluster, "Verb Cluster")
+freq_tam_bind <- prep_row_bind(freq_tam, "TAM")
 
-freq_gender_bind <- freq_gender
-colnames(freq_gender_bind)[1] <- "level"
-freq_gender_bind$factor <- "Gender"
-
-freq_complement_bind <- freq_complement
-colnames(freq_complement_bind)[1] <- "level"
-freq_complement_bind$factor <- "Complément d'agent"
-
-freq_table <- bind_rows(freq_animacy_bind, freq_gender_bind, freq_complement_bind) |> 
+freq_table <- bind_rows(freq_animacy_bind, freq_gender_bind, freq_complement_bind, freq_modal_bind, freq_adversativity_bind, freq_adversativity_bind, freq_cluster_bind, freq_tam_bind) |> 
   dplyr::select(factor, everything())
 
 ```
 
 ```{r tbl-freq, echo = FALSE}
 
-kbl(freq_table, col.names = c("Factor", "Level", "absolute", "relative", "absolute", "relative")) |> 
-  add_header_above(c(" " = 1, " " =1, "être" = 2, "se faire" = 2)) |> 
-  kable_styling(bootstrap_options = c("hover", "responsive", fixed_thead = T)) |> 
-  scroll_box(height = "200px") 
-  # row_spec(1:2, background = "#F2F0EF") |> 
-  # row_spec(3:4, background = "white")
+kbl(freq_table, col.names = c("Factor", "Level", "absolute", "relative", "absolute", "relative")) |>  
+  add_header_above(c(" " = 1, " " = 1, "être" = 2, "se faire" = 2)) |>  
+  kable_styling(bootstrap_options = c("hover", "responsive", fixed_thead = TRUE)) |> 
+  scroll_box(height = "400px")
 
 ```
-
-We only have categorical data; therefore mean and standard deviation are not meaningful.
-
--   table to get an overview of distributions of values and the mode (measure of central tendency) -\> sort
 
 -   where appropriate: cross tabulations
 

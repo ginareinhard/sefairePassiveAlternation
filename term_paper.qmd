@@ -180,13 +180,13 @@ As demonstrated, there exists extensive research on the alternation and the subt
 
 We begin by describing the French passive alternation of etre and se faire in detail in @sec-alternation. In the following subsections (@sec-etre, @sec-se-faire), we provide detailed information about the two participants of the alternation in order to establish the background and incentive/ motivation of this study. @sec-factors concludes the theoretical background by introducing the variable context and outlining the three main factors that we hypothesise, based on the literature, to fundamentally determine the choice between se faire and etre. @sec-data-and-methods details the methodology of this study: We explain the process of data collection (@sec-data-collection, including manual filtering, annotation and preprocessing steps) and the process of modelling binomial logistic regression (@sec-log-regression, including model selection and evaluation of model performance). We then report the results of our study in @sec-results, interpreting them within the same main concepts previously introduced: subject responsibility (@sec-results-subj-resp), adversativity (@sec-results-adversativity), and aspectuality (@sec-results-aspectuality). This is followed by the discussion (@sec-discussion), in which our findings are embedded with the previous literature and our results are evaluated in the light of the larger research picture. In the same vein, the limitations of our study are noted and discussed. The paper concludes with @sec-conclusion, which consisely summarises our main findings and how they relate to passive alternation research, and provides an outlook for future research.
 
-# The passive alternation of [être]{.smallcaps} and [se faire]{.smallcaps} {#sec-alternation}
+# The Passive Alternation of [être]{.smallcaps} and [se faire]{.smallcaps} {#sec-alternation}
 
 This section introduces the French passive variants *être* and *se faire*, hereinafter [être]{.smallcaps} and [se faire]{.smallcaps}, focusing on their structure and meaning in the context of passive alternation. While [être]{.smallcaps} is the unmarked passive construction in French, [se faire]{.smallcaps} can also function as a passive variant in certain contexts. We outline the factors used as predictors in our mixed-effects logistic regression model of the [être:se faire]{.smallcaps} alternation.
 
 Unless otherwise specified, all examples we provide in this study are from our sample from the French ParlaMint 2.1 corpus [@11356/1431].
 
-## Canonical passive: [être]{.smallcaps} {#sec-etre}
+## Canonical Passive: [être]{.smallcaps} {#sec-etre}
 
 The passive in French inverts the syntactic functions of the arguments within a clause. The object of the active sentence, i.e. the undergoer, becomes the subject in the passive voice - a phenomenon known as diathesis. In French, the subject is typically encoded in the first position in a sentence. In the [être]{.smallcaps} passive construction, the undergoer is promoted to this position. This syntactic shift leads to topicalisation, shifting the focus away from the actor and onto the undergoer, emphasising the referent affected by the action and the action itself, rather than the referent performing it. **references**?
 
@@ -214,7 +214,7 @@ Finally, distinguishing between passive constructions and adjectives in French i
 
 To summarise, [être]{.smallcaps} is the canonical form of passivisation in French, providing a means of shifting the focus from the actor to the undergoer, the action, and its result. The next section examines the passive variant [se faire]{.smallcaps}, which, while sharing some functional similarities with [être]{.smallcaps}, also presents distinct structural and semantic differences.
 
-## Alternative passive: [se faire]{.smallcaps} {#sec-se-faire}
+## Alternative Passive: [se faire]{.smallcaps} {#sec-se-faire}
 
 ```{=html}
 <!--  Historical background
@@ -224,7 +224,7 @@ To summarise, [être]{.smallcaps} is the canonical form of passivisation in Fren
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward 
 -   se faire passive "typologically marked", comparison to other Romance languages @koenig_semantic_1992 \[145\]; similar constructions exist in other Romance languages but passive reading only allowed in French @labelle_anticausativizing_2013 [236] -->
 ```
-### Structure and meaning
+### Structure and Meaning
 
 When constructing a passive sentence, French speakers may choose to use [se faire]{.smallcaps} instead of the canonical [être]{.smallcaps}, as [se faire]{.smallcaps} provides an alternative way to express passive meaning in French. As example 3 shows, [se faire]{.smallcaps} consists of the pronoun *se* (which shows agreement with the subject), a form of the verb *faire* ('to do'), and a verb in the infinitive.
 
@@ -256,7 +256,7 @@ The semantic tension between the fundamentally causative nature of the verb *fai
 
 These accounts offer only a brief glimpse into the complex analysis of [se faire]{.smallcaps}.The questions how the passive reading emerges, and how it differs from the syntactically identical causative reading remain controversial, and will be explored in the following @sec-debate.
 
-### Passive or causative: the debate {#sec-debate}
+### Passive or Causative: The Debate {#sec-debate}
 
 The above-described stance taken by @bellec_construction_2014, @labelle_anticausativizing_2013, @koenig_semantic_1992 and @kupferman_construction_1995 that [se faire]{.smallcaps} is a full-fledged passive construction and clearly separate from the causative is by no means undisputed. The opposing view - that the construction is a type of causative - is also widely represented in the literature. It is most prominently presented by @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 and has more recently been reworked by @sveberg_se_2012. In their view, the passive sense emerges only from the context, rather than from the construction itself. They centre their argumentation around the notion that the subject of *se faire* is inherently responsible for the described event [@sveberg_se_2012: 160]. <!-- "always, even unconsciously, responsible for the occurrence of the embedded event." (Labelle) -->
 
@@ -274,9 +274,9 @@ Sometimes both readings are possible and the ambiguity cannot be resolved [@koen
 
 This debate has been central to the investigation of *se faire* and cannot be left aside. However, even though its passive-status has been the subject of disagreement and discussion, the literature clearly shows that there is a passive reading associated with this construction. This is independent of whether the passive sense emerges from within the construction or from the components it occurs with, or whether it has an underlying causative meaning. By comparing [se faire]{.smallcaps} and [être]{.smallcaps} constructions, and examining the factors contributing to the choice of one or the other, we aim to shed light on this debate from a corpuslinguistics perspective.
 
-## [être]{.smallcaps} and [se faire]{.smallcaps}: competition or complementation? {#sec-factors}
+## [être]{.smallcaps} and [se faire]{.smallcaps}: Competition or Complementation? {#sec-factors}
 
-### Defining the variable context {#sec-sefaire-context}
+### Defining the Variable Context {#sec-sefaire-context}
 
 Both [se faire]{.smallcaps} and [être]{.smallcaps} passives are available for the active diathesis [@novakova_construction_2009: 108] and assign the role of the undergoer to the subject referent (see @sec-etre, @sec-se-faire). Therefore, the two variants form an alternation and are expected to compete with each other in contexts where passive is expressed. We find that both variants may be used in the same context, as example 8 illustrates:
 
@@ -296,7 +296,7 @@ We recognize this "fuzzy" [@bohmann_large-scale_2023: 50] variable context as bo
 
 -   Subjects in passive sentences are preferably animate, definite, and pronominal. In the study by @da_cunha_lalternance_2020, animate, definite, and pronominal arguments that function as the objects in active sentences were more frequently found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice) -->
 ```
-### Subject responsibility {#sec-subj-resp}
+### Subject Responsibility {#sec-subj-resp}
 
 As indicated in @sec-debate, the question whether the referent of the subject of [se faire]{.smallcaps} holds any responsibility is central to the debate of the construction's passive-status [@sveberg_se_2012; @bellec_construction_2014: 212-213]. In line with their argument that [se faire]{.smallcaps} is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of [se faire]{.smallcaps} is always a causer and therefore always responsible to some degree. They contrast it to [être]{.smallcaps}'s subject referent, which is seen as more neutral [@gaatone_desagreable_1983: 164-166].
 
@@ -343,7 +343,7 @@ We are aware that introducing the *complément d'agent* as a predictor in our an
 
 We hypothesise that the *complément d'agent* influences the choice between *se faire* and *être* passives. The presence of a *complément d'agent* should favour *être* passives, as it introduces a responsible external argument and shifts responsibility away from the subject. In contrast, the absence of a *complément d'agent* is expected to favour *se faire* passives, which imply some degree of subject responsibility. **We expect phrases with de to have an even stronger effect than phrases with par, as they typically refer to less agentive or abstract sources, contradicting the dynamic nature of the se faire passive construction, which typically occurs with adversative or strongly agentive actions. To examine this, we will test the interaction between the complément d'agent and the verb cluster??, as we expect the se faire passive to be favoured by dynamic (and adversative) verbs (see \@seq-XXX).**
 
-**Modal verbs**
+**Modal Verb**
 
 Novakova [-@novakova_construction_2009: 116-117] notes that modal verbs frequently occur with [se faire]{.smallcaps}. According to Raineri [-@raineri_analyse_2010: 97, 162] one possible reason is that modals contribute to subject involvement by expressing agentivity. Raineri [-@raineri_analyse_2010: 97] presents @martin_construction_2002's observation that volitional verbs fit well with [se faire]{.smallcaps} because they involve an intentional action that results in a change of mental state. Since modals usually convey some kind of subject intention or involvement, we expect [se faire]{.smallcaps} to appear more often with modal verbs than [être]{.smallcaps}.
 
@@ -365,7 +365,7 @@ Regarding the factor of aspectuality, Keenan and Dryer [-@keenan_passive_2007: 3
 
 [^2]: The general consensus in the literature is that aspect marks progressivity grammatically and Aktionsart marks it semantically. However, this clear distinction between aspect and Aktionart has been doubted, and some theories see Aktionsart und Aspect as two instantiations of Aspectuality [@Dik+1997+217+246: 221].
 
-**Semantic verb clusters**
+**Semantic Verb Clusters**
 
 [se faire]{.smallcaps} tends to occur with dynamic processes, particularly in contexts where the source role is agentive and the target role is affected, which is the typical case of semantic transitivity [@raineri_analyse_2010: 90, 238]. Several hypotheses in the literature attempt to explain the compatibility of certain verbs with [se faire]{.smallcaps}. For example, Kupferman [-@kupferman_construction_1995: 67] and Raineri [-@raineri_analyse_2010: 90] argue that [se faire]{.smallcaps} is compatible with dynamic verbs but not with state verbs or verbs of state change with an external "cause" argument. (However, exceptions to this pattern are noted by Novakova [-@novakova_construction_2009: 110], @martin_construction_2002 **pages?** and @raineri_analyse_2010 [100-103].)
 
@@ -427,13 +427,13 @@ Our hypothesis is that progressive marking (whether through tense or periphrasis
 
 <!-- ### Annotation Guidelines**Gender (masculin/ feminin/ mixed/ unknown)**-   Assign masculin or féminin if the gender is clearly marked grammatically:    -   Through a pronoun (il(s), elle(s))    -   Through an adjective or participle that marks gender (heureux/heureuse, content/contente)-   Use mixed only if:    -   The context clearly refers to a mixed-gender group (un groupe d’hommes et de femmes)    -   The grammatical form is not gendered, but the semantic context indicates mixed gender (nous referring explicitly to men and women)-   Assign unknown if:    -   No grammatical gender marking is present    -   For on, vous, je, and nous (if no grammatical marking appears)    -   For expletive subjects (il faut)**Progressivity (progressive/ non-progressive)**-   Assign "progressive" if:    -   The "se faire" construction is directly in the imparfait or future (except for futur antérieur) → indicates an ongoing or habitual action    -   The "se faire" construction is linked to an ongoing action, indicated by: A participe présent → Example: Ils acceptent de se faire endoctriner. → progressive/ gerondif + participe présent (en courant - while running)    -   periphrases e.g., être en train de (present continuous), aller + inf (futur proche), continuer à + Infinitif    -   adverbs/ Adverbial Phrases Indicating Ongoing Action: Temporal adverbs that imply duration or repetition: En ce moment (at the moment), Actuellement (currently), Toujours (always), Depuis (since), Encore (still)-   Assign "non-progressive" if:    -   passé composé, plus-que-parfait, présent, futur antérieur (...) - progressiveness is hinted at by another verb in the sentence (e.g., falloir or être) and not from the "se faire" construction itself-->
 
-# Data and methods {#sec-data-and-methods}
+# Data and Methods {#sec-data-and-methods}
 
 Prior to conducting our study, we preregistered its protocol on the platform [AsPredicted](https://aspredicted.org) [@AsPredictedWharton] to enhance transparency and accountability [@huensch2024preregistration]. The preregistered study can be accessed [here](https://aspredicted.org/gp6y-dd8p.pdf).
 
 To maintain anonymity while ensuring transparency and consistency, we refer to ourselves as Annotator A and Annotator B when describing the manual steps.
 
-## Data collection {#sec-data-collection}
+## Data Collection {#sec-data-collection}
 
 ### Corpus {#sec-corpus}
 
@@ -443,7 +443,7 @@ ParlaMint comprises French parliamentary debates from 2017 to 2020 and contains 
 
 The genre of parliamentary debates is somewhat specialised and our results may not fully generalise to all French spoken language. However, it still offers a wide topical range and a high level of linguistic diversity. It has also been the subject of previous linguistic research [e.g. @skubic2022networks]. As such, the ParlaMint corpus provides a valuable and representative cross-section of contemporary spoken French.
 
-### Semi-automated approach {#sec-semi-automatic-approach}
+### Semi-automated Approach {#sec-semi-automatic-approach}
 
 To extract our sample, we used a semi-automatic approach combining CQL expression-based extraction and manual filtering. Our aim was to obtain an equal number of occurrences of [être]{.smallcaps} and [se faire]{.smallcaps} constructions.
 
@@ -458,7 +458,7 @@ lemmas <- sefaire_sample |>
 
 Next, we extracted the [être]{.smallcaps} constructions using a CQL expression in SketchEngine. To filter the concordances, we used the list of lemmas derived from the [se faire]{.smallcaps} sample, ensuring comparability between the two construction types by controlling for verb-specific differences that might influence the results. Due to SketchEngine’s download limit, we retrieved the [être]{.smallcaps} constructions in four subsamples, each containing between 9,295 and 9,794 concordances. After downloading, all filtered instances were stored in a .csv file and merged into a single dataframe in `R`. To ensure reproducibility, we set a random seed using the function `set.seed()`, with the seed value derived from the lottery numbers on Wednesday, 12th March 2025, as listed on the official [Lotto website](https://www.lotto.de/lotto-6aus49/lottozahlen). The last digit had to be removed to match the required length. We then randomly sampled a subset of concordance lines that was equal in size to the manually filtered [se faire]{.smallcaps} sample (i.e. 532 instances). After sampling, one false positive was detected in the [être]{.smallcaps} data and was subsequently removed. At this stage, complete resampling was not feasible. However, since setting a fixed seed ensures that the order of concordance retrieval remains constant, we retrieved the 533rd concordance using the same seed and added it to the sample, thereby matching the number of 532 data points across both variants.
 
-### Manual filtering exclusion criteria and borderline cases {#sec-filtering-criteria}
+### Manual Filtering Exclusion Criteria and Borderline Cases {#sec-filtering-criteria}
 
 For our study of [être]{.smallcaps} and [se faire]{.smallcaps} as a passive alternation, our main criterion was to include only those [se faire]{.smallcaps} constructions that have a passive (and not an exclusively causative) reading, i.e. constructions that could be paraphrased with [être]{.smallcaps} (see @sec-sefaire-context). Consequently, we excluded expressions that could not be rephrased with [être]{.smallcaps}, either because the [être]{.smallcaps} construction was ungrammatical or the meaning was fundamentally altered.
 
@@ -504,7 +504,7 @@ While we excluded purely causative constructions, the distinction between causat
 
 We identified numerous cases where a clear binary distinction between passive and causative was not possible, for example when the subject is both the undergoer and the causer of the action. In general, we opted for a broad approach, including as many constructions as possible. This means that even when the causative reading appeared more natural (because the subject initiates the event), we included the construction as long as a passive understanding was also plausible (since the subject also undergoes the action). Representative examples of such constructions in our sample include *se faire vacciner* 'to be/get vaccinated', *se faire élire* 'to be/get elected' or 'to stand for election', *se faire remarquer* 'to be/get noticed' or 'to draw attention to oneself'.
 
-### Inter-rater agreement
+### Inter-Annotator Agreement
 
 In preparation for statistical modelling, we annotated the filtered sample for the features outlined in @sec-factors. A blind annotation process was used, where Annotator A and Annotator B were unaware of each other’s annotations. As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all *complément d' agents* of [se faire]{.smallcaps} during initial filtering, the column `agent_pp` was renamed to `agent_pp_A`. The datasets were then combined, variables were converted from characters to factors and empty values were replaced with `NA` to ensure proper handling of missing values in statistical analysis.
 
@@ -626,7 +626,7 @@ kappa_table |>
 
 We classified the ϰ-values using the influential benchmark categorisation of Landis and Koch [-@landis1977measurement: 165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". Mean inter-rater agreement is high at `r  round(mean_kappa, 2)`. Agreement is lowest for the cateogories adversativity (`r round(kappa_adversativity$kappa, 2)`) and TAM (`r round(kappa_tam$kappa, 2)`).
 
-### Data preprocessing {#sec-data-preprocessing}
+### Data Preprocessing {#sec-data-preprocessing}
 
 For the main analysis, the combined data of [se faire]{.smallcaps} and [être]{.smallcaps} data were merged into one dataset where each column corresponds to one factor. The columns indicating factors include the annotations of the first annotator (i.e. annotator A for half of the observations, annotator B for the other half). The sample comprises 1064 observations, 532 for [se faire]{.smallcaps} and [être]{.smallcaps} each. We looked at the data distribution among the categories and levels to identify scarce combinations and patterns that could be problematic for analysis.
 
@@ -706,7 +706,7 @@ table(passive_sample_clean$passive_variant)
 
 ```
 
-## Binomial logistic regression {#sec-log-regression}
+## Binomial Logistic Regression {#sec-log-regression}
 
 In addition to conducting a descriptive analysis of the data, we employed a binomial logistic regression model to test our hypotheses. This method provides a logit value for each variable that "represents the chances of construction A to be chosen in a particular type of context compared with the chances of construction B to be used in the same type of context" [@levshina_how_2015: 253]. The model allowed us to exactly track the influence of factors and their interactions on the chances of [se faire]{.smallcaps} being used over [être]{.smallcaps}.
 
@@ -746,14 +746,14 @@ levels(passive_sample_clean$agent_pp)
 levels(passive_sample_unknown$subj_gender)
 ```
 
-### Model selection
+### Model Selection
 
 We fit a mixed-effects binomial logistic regression model in `R` following Levshina [-@levshina_how_2015: 253-276] and Gries [-@gries_statistics_2021: 393-452]. The model estimates the log of the odds that a given construction is realized with [se faire]{.smallcaps}. To account for individual variation, we included the verb lemma and the speaker (as indicated in the meta data of ParlaMint 2.1) as random effects.
 
 We set a significance threshold $p$-value of 0.05 and applied backward stepwise selection [@gries_statistics_2021: 366]. Model quality was monitored and compared using the Aikaike Information Criterion (AIC), with preference given to the model with the lower AIC value [@gries_statistics_2021: 366]. Following Gries [-@gries_statistics_2021: 366], non-significant factors were removed one-by-one, starting with the one with the highest non-significant $p$-value. Additionally, we evaluated model fit using R^2^, aiming to find the model with the highest possible R^2^, that therefore explains most of the variance.
 
 ::: panel-tabset
-#### Maximal model
+#### Maximal Model
 
 First, we constructed a model that includes all the factors described in @sec-levels, the interactions we hypothesised to be significant, and the random effects of speaker and lemma. While the model does not include all theoretically possible interactions, we considered it maximal in the sense that it encompasses all factors and interactions identified in the literature review as potentially meaningful and contributing to passive choice.
 
@@ -805,7 +805,7 @@ After excluding `unknown`, the model's AIC improved substantially to `r round(AI
 tab_model(model_max, show.aic = TRUE) #Marginal R2 / Conditional R2:	0.460 / 0.670
 ```
 
-#### Model without non-significant interactions
+#### Model without Non-significant Interactions
 
 ```{r model-back-1, output = FALSE}
 #| code-fold: true
@@ -826,7 +826,7 @@ All non-significant interactions (`cluster:adversativity`, `subj_animacy:cluster
 tab_model(model_back_1, show.aic = TRUE) #	0.450 / 0.664 
 ```
 
-#### Final model
+#### Final Model
 
 ```{r final-model, output = FALSE}
 #| code-fold: true
@@ -851,7 +851,7 @@ tab_model(final_model, show.aic = TRUE) #Marginal R2 / Conditional R2	0.451 / 0.
 ```
 :::
 
-### Model diagnostics {#sec-model-diagnostics}
+### Model Diagnostics {#sec-model-diagnostics}
 
 **Residuals**
 
@@ -905,7 +905,7 @@ The Q-Q Plot (@fig-dharma-qq) reveals a significant deviation ($p$ = `r round(te
 
 Overall, we did not interpret the `DHARMa` plots as evidence of poor model performance. The most 'worrying' result of the residual tests were therefore the non-optimal binned residuals (@fig-binned-residuals). They revealed the model's overall overoptimism toward [se faire]{.smallcaps}, meaning that it slightly overpredicts [se faire]{.smallcaps} when [être]{.smallcaps} is correct. On the other hand, for very high probabilities of [se faire,]{.smallcaps} the model could be more confident in its predictions of [se faire]{.smallcaps}. Considering all residual diagnostics, we understand them to indicate a stable model structure, but we acknowledge that the model is by no means perfect and could be further improved.
 
-**Concordance index**
+**Concordance Index**
 
 ```{r concordance-index, echo = FALSE}
 # outcome <- as.numeric((passive_sample_clean)$passive_variant) - 1
@@ -1234,11 +1234,11 @@ kbl(freq_table, col.names = c("Factor", "Level", "Absolute", "Relative", "Absolu
 Absolute and Relative Frequencies of the Factors Levels for [être]{.smallcaps} and [se faire]{.smallcaps}
 :::
 
-## Subject responsibility {#sec-results-subj-resp}
+## Subject Responsibility {#sec-results-subj-resp}
 
 While several predictors were tested in relation to subject responsibility, only subject animacy showed a significant effect, though this is influenced by its interaction with adversativity. No significant effects were found for the *complément d’agent*, or modal verbs factors, and they are therefore not discussed further. While subject gender does not reach statistical significance, its distribution may suggest a potential tendency and is included here for exploratory purposes.
 
-### Subject animacy
+### Animacy
 
 As outlined in @sec-subj-resp, subject animacy is linked to subject responsibility or affectedness. @tbl-animacy illustrates the absolute and relative frequencies of the subject animacy levels for [être]{.smallcaps} and [se faire]{.smallcaps} in our data. With [être]{.smallcaps}, inanimate subjects occur more frequently than animate ones (`r   paste0(animate_etre_rel * 100, "%")` animate, `r   paste0(inaninmate_etre_rel * 100, "%")` inanimate), whereas [se faire]{.smallcaps} shows a strong preference for animate subjects (`r   paste0(animate_sefaire_rel * 100, "%")` animate, `r   paste0(inanimate_sefaire_rel * 100, "%")` inanimate). This distribution aligns with our expectations for [se faire]{.smallcaps}, but contradicts our hypothesis for [être]{.smallcaps}, which we also expected to occur more frequently with animate than with inanimate subjects. The findings for [se faire]{.smallcaps} replicate previous research [e.g. @novakova_construction_2009] and support the consensus that [se faire]{.smallcaps} strongly prefers animate subjects (@sec-subj-resp). If subject animacy is taken as an indicator of subject affectedness, the distribution suggests that subjects of [se faire]{.smallcaps} are likely being more affected by the event than those of [être.]{.smallcaps}
 
@@ -1255,7 +1255,7 @@ Absolute and Relative Frequencies of the Subject Animacy Levels for [être]{.sma
 
 The main effect of subject animacy in the logistic regression model cannot be interpreted in isolation as it is distorted by the significant interaction with adversativity. The interaction of these two factors and their predictions for the choice between [se faire]{.smallcaps} and [être]{.smallcaps} are described in @sec-results-adversativity, while their implications for subject responsibility are further explored in @sec-discussion.
 
-### Subject gender {#sec-results-gender}
+### Gender {#sec-results-gender}
 
 In total, our sample comprises `r   sum(gender_table["masculine", ])` masculine subjects (`r   paste0(round(gender_prop["masculine"], 2) * 100, "%")`) and `r   sum(gender_table["feminine", ])` feminine subjects (`r   paste0(round(gender_prop["feminine"], 2) * 100, "%")`) across all [être]{.smallcaps} and [se faire]{.smallcaps} constructions. This distribution reflects an overall lower representation of feminine subjects compared to masculine subjects, particularly in [se faire]{.smallcaps}, as shown in @tbl-gender, in line with our hypothesis in @sec-subj-resp. While these frequencies suggest a bias towards masculine subjects, gender did not have a statistically significant effect in the logistic regression model and the frequencies should therefore be interpreted with caution.
 
@@ -1591,7 +1591,7 @@ read.bibtex(file = "packages.bib")
 
 <div>
 
-| Verb clusters [@francois_presentation_2007, 4]                    | Grouped Verb Clusters (Our Study) | Example Verbs                                                                                                                                                                                                 |
+| Verb Clusters [@francois_presentation_2007, 4]                    | Grouped Verb Clusters (Our Study) | Example Verbs                                                                                                                                                                                                 |
 |-------------------|-------------------|----------------------------------|
 | giving, depriving (don, privation)                                | neutral                           | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*)      |
 | entering, leaving (entrée, sortie)                                | neutral                           | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*)                    |

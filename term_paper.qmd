@@ -1071,8 +1071,6 @@ Bootstrapped Distribution of the `clustercommunication` Variable
 
 # Results {#sec-results}
 
-This section presents the results of the logistic regression analysis. First, descriptive statistics are given for all predictors, followed by the main results of the model for the three main concepts: subject responsibility, adversativity, and aspectuality. Contrary to our original hypotheses, the only significant main effect is shown for the semantic verb cluster, with the communicative verbs favouring [se faire]{.smallcaps} over [être]{.smallcaps}. In addition, the model shows a significant interaction between subject animacy and adversativity.
-
 ```{r data-exploration-check, include=FALSE}
 
 str(passive_sample_clean)
@@ -1196,25 +1194,6 @@ freq_table <- bind_rows(freq_animacy_bind, freq_gender_bind, freq_complement_bin
 
 ```
 
-```{r tbl-freq, echo = FALSE}
-
-kbl(freq_table, col.names = c("Factor", "Level", "absolute", "relative", "absolute", "relative")) |>  
-  add_header_above(c(" " = 1, " " = 1, "être" = 2, "se faire" = 2)) |>  
-  kable_styling(bootstrap_options = c("hover", "responsive", fixed_thead = TRUE)) |> 
-  scroll_box(height = "400px")
-
-```
-
--   where appropriate: cross tabulations
-
--   proportions
-
--   mode
-
-**Coefficients**
-
-Logistic regression produces log odds, which were automatically converted to odds ratios by exponentiation during model selection by the `tab()` function. <!-- Nevertheless, we examined the log odds to identify tendencies of passive preference. -->
-
 ```{r coefficients-log-odds, include = FALSE}
 final_model_coef <- coefficients(summary(final_model))[,"Estimate"]
 final_model_coef_table <- tibble(
@@ -1230,8 +1209,6 @@ kbl(final_model_coef_table, caption = "Final model log odds")
 
 ```
 
-<!-- Looking at the log odds of the significant variables in @tbl-log-odds, it becomes apparent that communication verbs increase the likelihood of [se faire]{.smallcaps} being used over [être]{.smallcaps}. [être]{.smallcaps} is more likely than [se faire]{.smallcaps} in non-adversative contexts with inanimate subjects. Feminine subjects favour [se faire]{.smallcaps} over [être]{.smallcaps}, but the effect is not significant and therefore cannot be interpreted.-->
-
 ```{r coefficients-odds, include=FALSE}
 #convert from log odds to odds:
 final_model_odds_ratios <- exp(final_model_coef)
@@ -1239,7 +1216,22 @@ final_model_odds_ratios <- exp(final_model_coef)
 #exp(final_model_coef) / (1 + exp(final_model_coef))
 ```
 
-Since odds ratios are easier to interpret than log odds, we only used odds ratios when analysing the effects in detail. As @tbl-final-model indicates, the intercept of the final model is `r round(final_model_odds_ratios[1], 2)`. This means that in the context of the reference levels (subject is animate and masculine, the cluster of the verb is neutral and the construction has an adversative sense), the chances of [se faire]{.smallcaps} being used are `r round(final_model_odds_ratios[1], 2)` times greater than [être]{.smallcaps}. <!-- The exact values of odds ratios are interpreted with regard to our hypotheses in @sec-results. -->
+This section is divided into three parts, corresponding to the main concepts: subject responsibility, adversativity, and aspectuality. Contrary to our original hypotheses, the only significant main effect was found for the semantic verb cluster, with communicative verbs favouring [se faire]{.smallcaps} over [être]{.smallcaps}. In addition, the model shows a significant interaction between subject animacy and adversativity. @tbl-frequencies presents the absolute and relative frequencies for each factor level in the sample.
+
+Logistic regression produces log odds, which were automatically converted to odds ratios via exponentiation during model selection using the `tab()` function. Since odds ratios are more intuitive to interpret than log odds, all effect estimates discussed below are presented as odds ratios. As @tbl-final-model indicates, the intercept of the final model is `r round(final_model_odds_ratios[1], 2)`. This means that in the context of the reference levels (subject is animate and masculine, the cluster of the verb is neutral and the construction has an adversative sense), the chances of [se faire]{.smallcaps} being used are `r round(final_model_odds_ratios[1], 2)` times greater than [être]{.smallcaps}.
+
+::: {#tbl-frequencies}
+```{r tbl-freq, echo = FALSE}
+
+kbl(freq_table, col.names = c("Factor", "Level", "absolute", "relative", "absolute", "relative")) |>  
+  add_header_above(c(" " = 1, " " = 1, "être" = 2, "se faire" = 2)) |>  
+  kable_styling(bootstrap_options = c("hover", "responsive", fixed_thead = TRUE)) |> 
+  scroll_box(height = "400px")
+
+```
+
+Absolute and Relative Frequencies of the Factors Levels for [être]{.smallcaps} and [se faire]{.smallcaps}
+:::
 
 ## Subject responsibility {#sec-results-subj-resp}
 

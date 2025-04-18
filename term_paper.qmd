@@ -150,7 +150,7 @@ and the logistic regression model revealed a significant interaction between sub
 
 <!-- Introduction, "opening hook" to guide reader into the topic in an interesting way -->
 
-The most common way of expressing passive in French is via [être]{.smallcaps}, as in *Les députés sont élus* 'The members of parliament are elected'. However, alternatively, one may use [se faire]{.smallcaps} to express passivity: *Les députés se font élire* ('The members of parliament got elected'). We use [être]{.smallcaps} and [se faire]{.smallcaps} in small caps to specifically refer to the passive variants and distinguish these forms from other uses of the verbs *être* and *se faire*. Previous research suggest that the choice between these two variants is not arbitrary: [se faire]{.smallcaps} may be chosen to convey a certain meaning or put emphasis on something that [être]{.smallcaps} cannot capture [@kupferman_construction_1995: 57-62]. But what exactly determines whether the alternative passive is chosen, or even preferred, over the canonical one? 
+The most common way of expressing passive in French is via [être]{.smallcaps}, as in *Les députés sont élus* 'The members of parliament are elected'. However, alternatively, one may use [se faire]{.smallcaps} to express passivity: *Les députés se font élire* ('The members of parliament got elected'). We use [être]{.smallcaps} and [se faire]{.smallcaps} in small caps to specifically refer to the passive variants and distinguish these forms from other uses of the verbs *être* and *se faire*. Previous research suggest that the choice between these two variants is not arbitrary: [se faire]{.smallcaps} may be chosen to convey a certain meaning or put emphasis on something that [être]{.smallcaps} cannot capture [@kupferman_construction_1995: 57-62]. But what exactly determines whether the alternative passive is chosen, or even preferred, over the canonical one?
 
 <!-- So far, analyses have not yielded definitive answers to this question. -->
 
@@ -1191,7 +1191,7 @@ freq_adversativity_bind <- prep_row_bind(freq_adversativity, "Adversativity")
 freq_cluster_bind <- prep_row_bind(freq_cluster, "Verb Cluster")
 freq_tam_bind <- prep_row_bind(freq_tam, "TAM")
 
-freq_table <- bind_rows(freq_animacy_bind, freq_gender_bind, freq_complement_bind, freq_modal_bind, freq_adversativity_bind, freq_adversativity_bind, freq_cluster_bind, freq_tam_bind) |> 
+freq_table <- bind_rows(freq_animacy_bind, freq_gender_bind, freq_complement_bind, freq_modal_bind, freq_adversativity_bind, freq_cluster_bind, freq_tam_bind) |> 
   dplyr::select(factor, everything())
 
 ```

@@ -30,6 +30,7 @@ p {
 
 </style>
 ```
+
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -224,6 +225,7 @@ To summarise, [être]{.smallcaps} is the canonical form of passivisation in Fren
 -   In contrast, @raineri_analyse_2010 [280-305] based on corpus data: sees origin much earlier, exists since origin of Middle French (14-17th century); NOT derived from causative reading, increased productivity from 19th century onward 
 -   se faire passive "typologically marked", comparison to other Romance languages @koenig_semantic_1992 \[145\]; similar constructions exist in other Romance languages but passive reading only allowed in French @labelle_anticausativizing_2013 [236] -->
 ```
+
 ### Structure and Meaning
 
 When constructing a passive sentence, French speakers may choose to use [se faire]{.smallcaps} instead of the canonical [être]{.smallcaps}, as [se faire]{.smallcaps} provides an alternative way to express passive meaning in French. As example 3 shows, [se faire]{.smallcaps} consists of the pronoun *se* (which shows agreement with the subject), a form of the verb *faire* ('to do'), and a verb in the infinitive.
@@ -296,6 +298,7 @@ We recognize this "fuzzy" [@bohmann_large-scale_2023: 50] variable context as bo
 
 -   Subjects in passive sentences are preferably animate, definite, and pronominal. In the study by @da_cunha_lalternance_2020, animate, definite, and pronominal arguments that function as the objects in active sentences were more frequently found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice) -->
 ```
+
 ### Subject Responsibility {#sec-subj-resp}
 
 As indicated in @sec-debate, the question whether the referent of the subject of [se faire]{.smallcaps} holds any responsibility is central to the debate of the construction's passive-status [@sveberg_se_2012; @bellec_construction_2014: 212-213]. In line with their argument that [se faire]{.smallcaps} is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of [se faire]{.smallcaps} is always a causer and therefore always responsible to some degree. They contrast it to [être]{.smallcaps}'s subject referent, which is seen as more neutral [@gaatone_desagreable_1983: 164-166].
@@ -576,7 +579,7 @@ passive_sample_combined |>
   summary()
 ```
 
-Since the analysis required detailed (and time-consuming) manual annotation, we decided to split the annotation work between us. However, to ensure consistent annotation, a representative sample of 320 observations (`r 320/1064*100` of all instances) were annotated by both of us. For these instances, we calculated Cohen's ϰ (Kappa) as a measure of inter-rater agreement, following Levshina [-@levshina_how_2015: 201].
+Since the analysis required detailed (and time-consuming) manual annotation, we decided to split the annotation work between us. However, to ensure consistent annotation, a representative sample of 320 observations (`r 320/1064*100` of all instances) were annotated by both of us. For these instances, we calculated Cohen's ϰ (Kappa) as a measure of inter-annotator agreement, following Levshina [-@levshina_how_2015: 201].
 
 ```{r cohens-kappa, include = FALSE}
 kappa_animacy <- ckappa(passive_sample_combined[c("subj_animacy_A", "subj_animacy_B")]) 
@@ -591,16 +594,16 @@ kappa_agent_pp #0.9118457
 kappa_modal <- ckappa(passive_sample_combined[c("modal_A", "modal_B")])
 kappa_modal #0.9469328
 
-kappa_tam <- ckappa(passive_sample_combined[c("tam_A", "tam_B")])
-kappa_tam  #0.7702391
+kappa_adversativity <- ckappa(passive_sample_combined[c("adversativity_A", "adversativity_B")])
+kappa_adversativity #0.6700877
 
 kappa_cluster <- ckappa(passive_sample_combined[c("cluster_A", "cluster_B")])
 kappa_cluster #0.8326557
 
-kappa_adversativity <- ckappa(passive_sample_combined[c("adversativity_A", "adversativity_B")])
-kappa_adversativity #0.6700877
+kappa_tam <- ckappa(passive_sample_combined[c("tam_A", "tam_B")])
+kappa_tam  #0.7702391
 
-kappa_values <- c(kappa_animacy$kappa, kappa_gender$kappa, kappa_agent_pp$kappa, kappa_modal$kappa, kappa_tam$kappa, kappa_cluster$kappa, kappa_adversativity$kappa)
+kappa_values <- c(kappa_animacy$kappa, kappa_gender$kappa, kappa_agent_pp$kappa, kappa_modal$kappa, kappa_adversativity$kappa, kappa_cluster$kappa, kappa_tam$kappa)
 
 mean_kappa <- mean(kappa_values)
 mean_kappa #0.845142, very high agreement :)
@@ -609,8 +612,8 @@ mean_kappa #0.845142, very high agreement :)
 ```{r cohens-kappa-table, echo = FALSE}
 kappa_values <- c(kappa_values, mean_kappa)
 
-factors_passive <- c("subject animacy", "subject gender", "complément d'agent", "modal", "TAM", "cluster", "adversativity", "mean")
-kappa_strength <- c("almost perfect", "almost perfect", "almost perfect", "almost perfect", "substantial", "almost perfect", "substantial", "almost perfect")
+factors_passive <- c("Subject Animacy", "Subject Gender", "Complément d'Agent", "Modal", "Adversativity", "Cluster", "TAM","Mean")
+kappa_strength <- c("Almost Perfect", "Almost Perfect", "Almost Perfect", "Almost Perfect", "Substantial", "Almost Perfect", "Substantial", "Almost Perfect")
 
 kappa_table <- tibble(
   Factor = factors_passive,
@@ -618,13 +621,20 @@ kappa_table <- tibble(
   Interpretation = kappa_strength
 )
 
-kappa_table |> 
-  kbl(digits = 2, caption = "Cohen's ϰ values and their interpretation, following Landis and Koch (1977)", col.names = c("Factor", "Cohen's ϰ", "Strength of Agreement" )) |> 
-  kable_styling(bootstrap_options = c("hover","condensed", "responsive")) |> 
-  row_spec(8, bold = T)
 ```
 
-We classified the ϰ-values using the influential benchmark categorisation of Landis and Koch [-@landis1977measurement: 165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". Mean inter-rater agreement is high at `r  round(mean_kappa, 2)`. Agreement is lowest for the cateogories adversativity (`r round(kappa_adversativity$kappa, 2)`) and TAM (`r round(kappa_tam$kappa, 2)`).
+```{r tbl-kappa-values, echo = FALSE}
+#| label: tbl-kappa-values
+#| tbl-cap: Cohen's ϰ Values and their Interpretation, Following Landis and Koch (1977)
+
+kappa_table |> 
+  kbl(digits = 2, col.names = c("Factor", "Cohen's ϰ", "Strength of Agreement" )) |> 
+  kable_styling(bootstrap_options = c("hover","condensed", "responsive")) |> 
+  row_spec(8, bold = T)
+
+```
+
+We classified the ϰ-values using the influential benchmark categorisation of Landis and Koch [-@landis1977measurement: 165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". The mean inter-annotator agreement is high at `r  round(mean_kappa, 2)`. Agreement is lowest for the cateogories adversativity (`r round(kappa_adversativity$kappa, 2)`) and TAM (`r round(kappa_tam$kappa, 2)`).
 
 ### Data Preprocessing {#sec-data-preprocessing}
 
@@ -714,18 +724,18 @@ In addition to conducting a descriptive analysis of the data, we employed a bino
 
 The levels of each factors are ordered alphabetically by default. We rearranged the reference levels to be most useful for both modelling and interpreting: Where possible, we chose the most unmarked case as the reference level (passive variant: être; *complément d' agent*: 0; modal: no; TAM: non-progressive, cluster: neutral). If this would negatively affect the stability of the model, we instead selected the most frequent level (subject animacy: animate, subject gender: masculine). In the case of adversativity, the most balanced level (adversative) was chosen to facilitate interpretation and maintain consistency with the other factors.
 
-| Factors            | Label           | Levels                                   |
+| Factors | Label | Levels |
 |-------------------|-------------------|----------------------------------|
-| Passive variant    | passive_variant | être, se faire                           |
-| Subject animacy    | subj_animacy    | animate, inanimate                       |
-| Subject gender     | subj_gender     | masculine, feminine                      |
-| Complément d'agent | agent_pp        | 0, de, par                               |
-| Modal              | modal           | no, yes                                  |
-| TAM                | tam             | non-progressive, progressive             |
-| Cluster            | cluster         | neutral, communication, hitting-touching |
-| Adversativity      | adversativity   | adversative, non-adversative             |
+| Passive variant | passive_variant | être, se faire |
+| Subject animacy | subj_animacy | animate, inanimate |
+| Subject gender | subj_gender | masculine, feminine |
+| Complément d'agent | agent_pp | 0, de, par |
+| Modal | modal | no, yes |
+| Adversativity | adversativity | adversative, non-adversative |
+| Cluster | cluster | neutral, communication, hitting-touching |
+| TAM | tam | non-progressive, progressive |
 
-: Overview of variables for the [être]{.smallcaps}: [se faire]{.smallcaps} alternation {#tbl-levels .striped .hover .responsive}
+: Overview of Variables and their Reference Levels {#tbl-levels .striped .hover .responsive}
 
 ```{r reference-levels, include = FALSE}
 #change reference levels: "animate" to "inanimate", "communication" to "neutral", "adversative" to "non-adversative"
@@ -771,15 +781,21 @@ model_max_unknown <- glmer(
 summary(model_max_unknown) #AIC: 771.3 
 ```
 
-Although the main effect of `subj_gender` could not be interpreted due to its participation in an interaction, it is striking that the odds ratios of `subj_gender[unknown]` are very high with a huge confidence interval of 10.49 – 124.99. The AIC is `r round(AIC(model_max_unknown), 2)` with an R^2^ of 0.599 when excluding random effects and 0.748 when accounting for them. The vif-analysis revealed no high collinearity values for `subj_gender` or the interaction `subj_animacy:subj_gender`. However, as explained in @sec-data-preprocessing, we suspected an annotated-related artifact related to the level `unknown`. For that reason, we decided to compare the model to one fitted on the dataset without `unknown` constructions in the next step.
+@tbl-model-max-unknown shows the odds ratios, confidence intervals and $p$-values of the maximal model, along with the random effects, R^2^ and AIC. Although the main effect of `subj_gender` could not be interpreted due to its participation in an interaction, it is striking that the odds ratios of `subj_gender[unknown]` are very high with a huge confidence interval of 10.49 – 124.99. The AIC is `r round(AIC(model_max_unknown), 2)` with an R^2^ of 0.599 when excluding random effects and 0.748 when accounting for them. The vif-analysis, as displayed in @tbl-max-model-collinearity, revealed no high collinearity values for `subj_gender` or the interaction `subj_animacy:subj_gender`. However, as explained in @sec-data-preprocessing, we suspected an annotated-related artifact related to the level `unknown`. For that reason, we decided to compare the model to one fitted on the dataset without `unknown` constructions in the next step.
 
 ```{r max-model-unknown-tab, echo = FALSE}
+#| label: tbl-model-max-unknown
+#| tbl-cap: Results of the Maximal Logistic Regression Model Fitted on the Full Dataset
+
 tab_model(model_max_unknown, show.aic = TRUE) # Marginal R2 / Conditional R2: 0.599 / 0.748
 ```
 
 **Collinearity**
 
 ```{r collinearity-model-unknown, echo = FALSE}
+#| label: tbl-max-model-collinearity
+#| tbl-cap: Collinearity Values of the Maximal Logistic Regression Model
+
 kbl(vif(model_max_unknown))
 ```
 
@@ -799,9 +815,11 @@ summary(model_max) #AIC: 732.5
 vif(model_max)
 ```
 
-After excluding `unknown`, the model's AIC improved substantially to `r round(AIC(model_max), 2)`. The model has an R^2^ of 0.46 / 0.67. Although this is lower than for the model with `unknown`, and therefore explains less variance, overall, the model seems to make better (i.e. more stable and more precise) predictions. Since the variance explained by the random effects is larger than zero, the random effects had to be kept. Due to its better performance, the data without `unknown` were used in future models.
+After excluding `unknown`, the model's AIC improved substantially to `r round(AIC(model_max), 2)` (@tbl-model-max). The model has an R^2^ of 0.46 / 0.67. Although this is lower than for the model with `unknown`, and therefore explains less variance, overall, the model seems to make better (i.e. more stable and more precise) predictions. Since the variance explained by the random effects is larger than zero, the random effects had to be kept. Due to its better performance, the data without `unknown` were used in future models.
 
 ```{r full-passive-glmer-tab, echo = FALSE}
+#| label: tbl-model-max
+#| tbl-cap: Results of the Maximal Logistic Regression Model without `unknown`
 tab_model(model_max, show.aic = TRUE) #Marginal R2 / Conditional R2:	0.460 / 0.670
 ```
 
@@ -820,9 +838,11 @@ summary(model_back_1) #AIC: 725.4
 vif(model_back_1)
 ```
 
-All non-significant interactions (`cluster:adversativity`, `subj_animacy:cluster`, `subj_animacy:subj_gender`) were removed, improving the AIC to `r round(AIC(model_back_1), 2)` with an R^2^ of 0.450 / 0.664. Thus, without the interactions, model accuracy increased while the explained variance decreased slightly. With $p$-values \> 0.05, the categories `subj_gender`, `agent_pp`, `modal` and `tam` were still found to be non-significant.
+All non-significant interactions (`cluster:adversativity`, `subj_animacy:cluster`, `subj_animacy:subj_gender`) were removed, improving the AIC to `r round(AIC(model_back_1), 2)` with an R^2^ of 0.450 / 0.664 (@tbl-model-back-1). Thus, without the interactions, model accuracy increased while the explained variance decreased slightly. With $p$-values \> 0.05, the categories `subj_gender`, `agent_pp`, `modal` and `tam` were still found to be non-significant.
 
 ```{r model-back-1-tab, echo = FALSE}
+#| label: tbl-model-back-1
+#| tbl-cap: Results of the Logistic Regression Model without Non-significant Interactions
 tab_model(model_back_1, show.aic = TRUE) #	0.450 / 0.664 
 ```
 
@@ -841,11 +861,11 @@ final_model_summary <- summary(final_model) # AIC: 719.1
 vif(final_model)
 ```
 
-Non-significant fixed effects were removed one-by-one, starting with `tam`, which has the highest $p$-value. At each step, the main effect with the highest $p$-value was eliminated. The final model is reported here. Although `subj_gender` remained non-significant ($p$ \> 0.05), we retained it for theoretical and interpretative reasons. The AIC of `r round(AIC(final_model), 2)` indicates that removing `agent_pp`, `modal` and `tam` improved the model quality while R^2^ stayed constant at 0.451 / 0.662.
+Non-significant fixed effects were removed one-by-one, starting with `tam`, which has the highest $p$-value. At each step, the main effect with the highest $p$-value was eliminated. The results of the final model are reported in @tbl-final-model. Although `subj_gender` remained non-significant ($p$ \> 0.05), we retained it for theoretical and interpretative reasons. The AIC of `r round(AIC(final_model), 2)` indicates that removing `agent_pp`, `modal` and `tam` improved the model quality while R^2^ stayed constant at 0.451 / 0.662.
 
 ```{r final-model-tab, echo = FALSE}
 #| label: tbl-final-model
-#| tbl-cap: Overview of predictions made by the model chosen as 'final'
+#| tbl-cap: Results of the Logistic Regression Model Chosen as 'Final'
 tab_model(final_model, show.aic = TRUE) #Marginal R2 / Conditional R2	0.451 / 0.662
 #kbl(ggpredict(final_model))
 ```
@@ -859,7 +879,7 @@ To check goodness of fit and usability of the final model, we examined the resid
 
 ```{r residuals-diagnostics-binned, echo = FALSE}
 #| label: fig-binned-residuals
-#| fig-cap: Plot of binned residuals
+#| fig-cap: Plot of Binned Residuals
 # residuals: actual - predicted values
 predictions <- predict(final_model, type = "response", na.action = na.omit)
 binnedplot(predictions, residuals(final_model, type = "response"))
@@ -889,7 +909,7 @@ testQuantiles(sim_res)
 
 ```{r residuals-diagnostics-DHARMa-dispersion, echo = FALSE}
 #| label: fig-dharma-dispersion
-#| fig-cap: DHARMa dispersion plot of residuals
+#| fig-cap: DHARMa Dispersion Plot of Residuals
 testDispersion(sim_res)
 ```
 
@@ -897,7 +917,7 @@ testDispersion(sim_res)
 
 ```{r residuals-diagnostics-DHARMa-qq, echo = FALSE}
 #| label: fig-dharma-qq
-#| fig-cap: Q-Q Plot to test deviation of residuals
+#| fig-cap: DHARMa Q-Q Plot Testing the Deviation of Residuals
 plotQQunif(sim_res)
 ```
 
@@ -958,7 +978,7 @@ anova_df$`Relative Likelihood` <- c(NA, rel_likelihood)
 
 ```{r anova-kable-tab, echo = FALSE}
 #| label: tbl-anova
-#| tbl-cap: ANOVA of the final model
+#| tbl-cap: ANOVA of the Final Model
 kbl(anova_df, digits = 3) |> 
   kable_styling(bootstrap_options = c("hover","responsive")) |> 
   row_spec(2, bold = TRUE)
@@ -970,7 +990,7 @@ The ANOVA, as captured by @tbl-anova, shows that our model is highly significant
 
 We used bootstrapping to validate the stability of our model's coefficients. This method involves random resampling with replacement from the original dataset, analysing each resample, and comparing the resulting estimates to the original. It allows for internal model validation without the need for new external test data [@levshina_how_2015: 166].
 
-For this, the `bootMer()` function from the `lme4` package [@R-lme4] was applied to our mixed-effects model, resampling 1000 times with the same random seed that we used during data sampling for reproducibility. When running `bootMer()` to validate the stability of the fixed effects in our model, we encountered singularity warnings in most of the bootstrap iterations. Convergence during bootstrapping was achieved only when the `bobyqa` optimiser was used. Although `isSingular()` returned `FALSE` for the final model, the instability across resamples indicates limited reliability. Removing the `speaker` effect resolved the singularity issues. This suggests that there may be too little variance between speakers to reliably estimate this random effect. However, removing `speaker` also increases the model’s AIC from 719.2 to 732.0, indicating a poorer overall fit. Additionally, excluding the random effect would change the model’s structure and require re-specification and re-evaluation, which exceeds the scope of this term paper. For interpretation, we therefore rely on our original model, while acknowledging its limitations in terms of robustness. We consider the simplified model without `speaker` (see @fig-model-without-speaker) a potentially more stable alternative, which could be explored more in depth in future work.
+For this, the `bootMer()` function from the `lme4` package [@R-lme4] was applied to our mixed-effects model, resampling 1000 times with the same random seed that we used during data sampling for reproducibility. When running `bootMer()` to validate the stability of the fixed effects in our model, we encountered singularity warnings in most of the bootstrap iterations. Convergence during bootstrapping was achieved only when the `bobyqa` optimiser was used. Although `isSingular()` returned `FALSE` for the final model, the instability across resamples indicates limited reliability. Removing the `speaker` effect resolved the singularity issues. This suggests that there may be too little variance between speakers to reliably estimate this random effect. However, removing `speaker` also increases the model’s AIC from 719.2 to 732.0, indicating a poorer overall fit. Additionally, excluding the random effect would change the model’s structure and require re-specification and re-evaluation, which exceeds the scope of this term paper. For interpretation, we therefore rely on our original model, while acknowledging its limitations in terms of robustness. We consider the simplified model without `speaker` (see @tbl-model-without-speaker) a potentially more stable alternative, which could be explored more in depth in future work.
 
 ```{r bootstrap-validation, include = FALSE}
 
@@ -1008,15 +1028,13 @@ final_model_no_speaker <- glmer(
 
 </div>
 
-::: {#fig-model-without-speaker}
 ```{r tab-model-no-speaker, echo = FALSE}
+#| label: tbl-model-without-speaker
+#| tbl-cap: Results of the Final Model without the `speaker` Random Effect
 
 tab_model(final_model_no_speaker, show.aic = TRUE) 
 
 ```
-
-Final Model without the `speaker` Random Effect
-:::
 
 @tbl-bootstrap-summary shows the summary of the bootstrap statistics for our final model. As noted by Gries [-@gries_statistics_2021: 385], models often perform better on the data they were trained on because they capture patterns that may not generalise beyond the sample, which is called overfitting. According to Levshina [-@levshina_how_2015: 167], large differences between training and test performance, referred to as optimism, can indicate overfitting. In the summary of our bootstrap statistics in @tbl-bootstrap-summary, the differences between our original model and the means of the boostrapped samples can be seen in the bootstrap bias (`bootBias`).
 
@@ -1510,13 +1528,13 @@ As the multifaceted and partly conflicting literature suggests, the passive is a
 
 With regard to our hypotheses, although few significant effects were found, the strong interaction of subject animacy and adversativity clearly shows that [se faire]{.smallcaps} predominently occurs with animate subjects and in adversative contexts. Subject animacy seems to be the main mediating factor: [se faire]{.smallcaps} is very likely for animate subjects in both adversative and non-adversative contexts while its likelihood decreases significantly for inanimate subjects. This is in line with the vast previous evidence on [se faire]{.smallcaps}'s preference for animate subjects [@koenig_semantic_1992; @novakova_construction_2009: 111-112; @spang-hanssen_quelques_1967; @tasmowski-de_ryck_causatif_1987; @raineri_analyse_2010: 92]. However, our analysis challenge the claim by @tasmowski-de_ryck_causatif_1987 and @spang-hanssen_quelques_1967 that [se faire]{.smallcaps} strictly requires an animate subject: Our data provide evidence of inanimate subjects occuring with [se faire]{.smallcaps} (7%). Consequently, our model predicts that while [se faire]{.smallcaps} has a high chance to occur with animate subjects, it may also be found with inanimate subjects, particularly in adversative contexts.
 
-However(, as @kupferman_construction_1995 argues,) even a strong correlation of animate subjects, adversative verbs and [se faire]{.smallcaps} does not necessarily imply that the subject is responsible for the event and brings negative consequences upon themselves. Instead, the increased likelihood of [se faire]{.smallcaps} with inanimate subjects in adversative contexts compared to non-adversative contexts suggests that the construction emphasises subject affectedness more than [être]{.smallcaps}. \[Note, however, that inter-rater agreement was lowest for adversativity, suggesting some ambiguity regarding this factor, although it was still considered 'substantial'\]. Overall, we consider these findings to support the theory of [se faire]{.smallcaps} being preferred over canoncial [être]{.smallcaps} when marking subject affectedness.
+However(, as @kupferman_construction_1995 argues,) even a strong correlation of animate subjects, adversative verbs and [se faire]{.smallcaps} does not necessarily imply that the subject is responsible for the event and brings negative consequences upon themselves. Instead, the increased likelihood of [se faire]{.smallcaps} with inanimate subjects in adversative contexts compared to non-adversative contexts suggests that the construction emphasises subject affectedness more than [être]{.smallcaps}. \[Note, however, that inter-annotator agreement was lowest for adversativity, suggesting some ambiguity regarding this factor, although it was still considered 'substantial'\]. Overall, we consider these findings to support the theory of [se faire]{.smallcaps} being preferred over canoncial [être]{.smallcaps} when marking subject affectedness.
 
 The remaining factors used to test subject responsibility (subject gender, complement d'agent, modal) did not yield significant effects. <!-- This may be taken as further indication for .../ The absence of additional significant effects related to subject responsibility may further support this notion. --> This may further strengthen an argument against subject responsibility and in faavour of subject affectness.
 
 -   problematic category gender/ unknown; no real effect of gender - maybe tendency?
 
--   no effects of modal: summarising tense aspect and mood in a tam category of "progressivity" with strict classification of tenses (although sometimes not fitting in context) potentially problematic (but also needed to ensure inter-rater agreement and limited by the fact that neither of the authors is a native speaker of French) - overall labeling maybe not nuanced enough? The "modal" category in our study only includes modal verbs. Other similar constructions that express subject responsibility, such as *avoir besoin de*, *arriver à*, *réussir à*, *envier de*, *avoir des difficultés pour*, *avoir la possibilité de*, and *avoir envie de*, etc. could also be interesting to examine in future research.
+-   no effects of modal: summarising tense aspect and mood in a tam category of "progressivity" with strict classification of tenses (although sometimes not fitting in context) potentially problematic (but also needed to ensure inter-annotator agreement and limited by the fact that neither of the authors is a native speaker of French) - overall labeling maybe not nuanced enough? The "modal" category in our study only includes modal verbs. Other similar constructions that express subject responsibility, such as *avoir besoin de*, *arriver à*, *réussir à*, *envier de*, *avoir des difficultés pour*, *avoir la possibilité de*, and *avoir envie de*, etc. could also be interesting to examine in future research.
 
 -   regarding aspectuality
 
@@ -1591,22 +1609,22 @@ read.bibtex(file = "packages.bib")
 
 <div>
 
-| Verb Clusters [@francois_presentation_2007, 4]                    | Grouped Verb Clusters (Our Study) | Example Verbs                                                                                                                                                                                                 |
-|-------------------|-------------------|----------------------------------|
-| giving, depriving (don, privation)                                | neutral                           | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*)      |
-| entering, leaving (entrée, sortie)                                | neutral                           | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*)                    |
-| hitting, touching (frapper, toucher)                              | hitting-touching                  | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*)                                                  |
-| movement in place (mouvement sur place)                           | neutral                           | \-                                                                                                                                                                                                            |
-| equipping, disarming (munir, démunir)                             | neutral                           | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie \[...\]*)                                                                                                            |
-| transformation, change (transformation, changement)               | neutral                           | remplacer (*\[...\] afin que le premier puisse se faire remplacer par le second \[...\]*)                                                                                                                     |
-| realisation, preparation (réalisation, mise en état)              | neutral                           | photographier (*J'ajoute la diminution du nombre de points où l'on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'identité ou son passeport*.) |
-| physical states and behaviours (états physiques et comportements) | neutral                           | aider (*\[...\] afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'en sont pas informés.*)                                                                    |
-| locative (locatif)                                                | neutral                           | domicilier (*Beaucoup trichent en se faisant domicilier chez un parent \[...\]*)                                                                                                                              |
-| union, reunion (union, réunion)                                   | neutral                           | \-                                                                                                                                                                                                            |
-| psychological verbs (verbes psychologiques)                       | neutral                           | écouter (*Le problème, on l'a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*)                                                          |
-| seizing, clasping, possessing (saisir, serrer, posséder)          | neutral                           | élire (*\[...\] avant que M. Hollande ne se fasse élire en affirmant qu'il ne signerait pas le TSCG en l'état.*)                                                                                              |
-| communication                                                     | communication                     | accuser (*\[...\] il est devenu impossible de l'exprimer dans le débat public sans se faire accuser de haïr les policiers \[...\]*)                                                                           |
-| auxiliary verbs                                                   | \-                                | \-                                                                                                                                                                                                            |
+| Verb Clusters [@francois_presentation_2007, 4] | Grouped Verb Clusters (Our Study) | Example Verbs |
+|-------------------|-------------------|---------------------------------|
+| giving, depriving (don, privation) | neutral | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*) |
+| entering, leaving (entrée, sortie) | neutral | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*) |
+| hitting, touching (frapper, toucher) | hitting-touching | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*) |
+| movement in place (mouvement sur place) | neutral | \- |
+| equipping, disarming (munir, démunir) | neutral | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie \[...\]*) |
+| transformation, change (transformation, changement) | neutral | remplacer (*\[...\] afin que le premier puisse se faire remplacer par le second \[...\]*) |
+| realisation, preparation (réalisation, mise en état) | neutral | photographier (*J'ajoute la diminution du nombre de points où l'on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'identité ou son passeport*.) |
+| physical states and behaviours (états physiques et comportements) | neutral | aider (*\[...\] afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'en sont pas informés.*) |
+| locative (locatif) | neutral | domicilier (*Beaucoup trichent en se faisant domicilier chez un parent \[...\]*) |
+| union, reunion (union, réunion) | neutral | \- |
+| psychological verbs (verbes psychologiques) | neutral | écouter (*Le problème, on l'a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*) |
+| seizing, clasping, possessing (saisir, serrer, posséder) | neutral | élire (*\[...\] avant que M. Hollande ne se fasse élire en affirmant qu'il ne signerait pas le TSCG en l'état.*) |
+| communication | communication | accuser (*\[...\] il est devenu impossible de l'exprimer dans le débat public sans se faire accuser de haïr les policiers \[...\]*) |
+| auxiliary verbs | \- | \- |
 
 Verb cluster categorisation with example verbs based on the classes by @francois_presentation_2007 [4]
 

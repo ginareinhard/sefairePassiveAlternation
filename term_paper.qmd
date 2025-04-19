@@ -139,16 +139,6 @@ cat(paste(lemma_list, collapse = " | "))
 
 # Introduction
 
-The French construction *se faire* followed by an infinitive has evolved through analogy with the passive voice. Originally, it had a causative meaning, where the subject played an active role in the action. However, in some contexts, it can also be interpreted as passive, alternating with the *être* passive construction.
-
-This study investigates the factors that influence the choice between *se faire* and *être* in the passive alternation in spoken French, with a particular focus on parliamentary debates. Specifically, we aim to understand what factors contribute to speakers’ preference for one construction over the other.
-
-To address this question, we use a quantitative, multivariate, probabilistic approach to model corpus data. Our results show a main effect of semantic verb clusters, with communication verbs favouring *se faire* over *être* in passive constructions.
-
-and the logistic regression model revealed a significant interaction between subject animacy and adversativity
-
-------------------------------------------------------------------------
-
 <!-- Introduction, "opening hook" to guide reader into the topic in an interesting way -->
 
 The most common way of expressing passive in French is via [être]{.smallcaps}, as in *Les députés sont élus* ('The members of parliament are elected'). However, alternatively, one may use [se faire]{.smallcaps} to express passivity: *Les députés se font élire* ('The members of parliament got elected'). We use [être]{.smallcaps} and [se faire]{.smallcaps} in small capitals to refer specifically to the passive variants, distinguishing these forms from other uses of the verbs *être* and *se faire*. Previous research suggests that the choice between these two variants is not arbitrary: [se faire]{.smallcaps} may be chosen to convey a particular meaning or emphasise something that [être]{.smallcaps} cannot capture [@kupferman_construction_1995: 57-62]. But what exactly determines whether the alternative passive is chosen, or even preferred, over the canonical one?
@@ -169,15 +159,25 @@ Thirdly, Raineri [-@raineri_analyse_2010: 90] proposes that [se faire]{.smallcap
 
 <!-- establish research problem -> show research gap and how our study aims to fill that (method)-->
 
-These factors and the subtle differences between the passive variants have been studied extensively. However, to our knowledge, no quantitative study has investigated the exact factors predicting [se faire]{.smallcaps} over [être]{.smallcaps} using logistic regression modelling. Our study aims to fill this research gap: By applying a quantitative, multivariate, probabilistic approach to model corpus data, we investigate the factors that influence the choice between [se faire]{.smallcaps} and [être]{.smallcaps} in the passive alternation in spoken French, more precisely in the context of parliamentary debates. Although their generalisability may be limited, parliamentary debates offer a wide linguistic and thematic variety and are a rich source of contemporary spoken French.
+These factors and the subtle differences between the passive variants have been studied extensively. However, to our knowledge, no quantitative study has investigated the exact factors that predict [se faire]{.smallcaps} over [être]{.smallcaps} using logistic regression modelling. Our study aims to fill this research gap: By applying a quantitative, multivariate, probabilistic approach to model corpus data, we investigate the factors that influence the choice between [se faire]{.smallcaps} and [être]{.smallcaps} in the passive alternation in spoken French, more precisely in the context of parliamentary debates. Specifically, we aim to understand which factors contribute to speakers’ preference for one construction over the other. Although their generalisability may be limited, parliamentary debates offer a wide linguistic and thematic variety and are a rich source of contemporary spoken French. 
 
-Specifically, we aim to understand which factors contribute to speakers’ preference for one construction over the other. According to Gries [-@gries_statistics_2021: 238], regression modelling is suitable for linguistic analyses because it can capture the complex interplay of various factors. Furthermore, binomial logistic regression modelling is particularly well-suited for the study of alternations with two possible outcomes [@gries_statistics_2021: 238-239; @levshina_how_2015: 253-254]. It has been successfully employed for investigation of passive variations in other languages, such as English [@bohmann_large-scale_2023; @hundt_be-_2024], Swedish [@cuypere_corpus-based_2014], and Chinese [@guan_multifactorial_2024]. Therefore, such a model promises insightful results that may contribute to the discussion of the passive alternation and potentially provide new insights into the use of both [se faire]{.smallcaps} and [être]{.smallcaps}.
+According to Gries [-@gries_statistics_2021: 238], regression modelling is suitable for linguistic analyses because it can capture the complex interplay of various factors. Furthermore, binomial logistic regression modelling is particularly well-suited for the study of alternations with two possible outcomes [@gries_statistics_2021: 238-239; @levshina_how_2015: 253-254]. It has been successfully employed for investigation of passive variations in other languages, such as English [@bohmann_large-scale_2023; @hundt_be-_2024], Swedish [@cuypere_corpus-based_2014], and Chinese [@guan_multifactorial_2024]. Therefore, such a model promises insightful results that may contribute to the discussion of the passive alternation and potentially provide new insights into the use of both [se faire]{.smallcaps} and [être]{.smallcaps}.
 
 <!-- objectives: what do we intend to find out? -> i.e. research question/ hypothesis; minimally, directly clearly -->
 
 <!-- mapping out the structure of the paper -->
 
 We begin by describing the [être: se faire]{.smallcaps} alternation in detail in @sec-alternation. In the following subsections (@sec-etre, @sec-se-faire), we provide detailed information about the two participants of the alternation in order to establish the background and motivation for this study. @sec-factors concludes the theoretical background by introducing the variable context and outlining the three main factors that we hypothesise, based on the literature, to fundamentally determine the choice between [se faire]{.smallcaps} and [être]{.smallcaps}. @sec-data-and-methods details the methodology of this study: We explain the process of data collection (@sec-data-collection, including manual filtering, annotation and preprocessing steps) and the process of modelling binomial logistic regression (@sec-log-regression, including model selection and evaluation of model performance). We then report the results of our study in @sec-results, interpreting them within the key concepts previously introduced: subject responsibility (@sec-results-subj-resp), adversativity (@sec-results-adversativity), and aspectuality (@sec-results-aspectuality). This is followed by the discussion (@sec-discussion), in which our findings are embedded with the previous literature and our results are evaluated in the light of the larger research picture. In the same vein, the limitations of our study are noted and discussed. The paper concludes with @sec-conclusion, which concisely summarises our main findings and how they relate to passive alternation research, and provides directions for further corpus-based investigation.
+
+------------------------------------------------------------------------
+
+The French construction *se faire* followed by an infinitive has evolved through analogy with the passive voice. Originally, it had a causative meaning, where the subject played an active role in the action. However, in some contexts, it can also be interpreted as passive, alternating with the *être* passive construction.
+
+This study investigates the factors that influence the choice between *se faire* and *être* in the passive alternation in spoken French, with a particular focus on parliamentary debates. Specifically, we aim to understand what factors contribute to speakers’ preference for one construction over the other.
+
+To address this question, we use a quantitative, multivariate, probabilistic approach to model corpus data. Our results show a main effect of semantic verb clusters, with communication verbs favouring *se faire* over *être* in passive constructions.
+
+and the logistic regression model revealed a significant interaction between subject animacy and adversativity
 
 # The Passive Alternation of [être]{.smallcaps} and [se faire]{.smallcaps} {#sec-alternation}
 

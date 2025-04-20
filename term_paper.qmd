@@ -1518,43 +1518,42 @@ Although grammatical gender, like animacy, was tested as an aspect of subject re
 
 For inanimate subjects, the difference in frequency between male and female is smaller, which might indicate that gender plays a lesser role in the absence of animacy. In our analysis, we did not distinguish between human and non-human referents. However, previous work by **Da Cunha and Abeillé** has shown that this distinction can significantly influence the active/passive alternation in French. It is therefore possible that our categorisation of animate/inanimate contributed to the lack of a significant gender effect. In addition, the number of [se faire]{.smallcaps} constructions with inanimate subjects was scarce in our dataset, which could also have influenced the significance of the effect. It is also worth noting that some subject NPs, such as *les personnes* 'the people/individuals', which is grammatically feminine but semantically gender-neutral and animate, are frequent in the data and may influence the interaction between gender and animacy. Such cases are worthy of further investigation in future work.
 
--   problematic category gender/ unknown; no real effect of gender - maybe tendency?
+-   no effects of tam and modal: summarising tense aspect and mood in a TAM category of "progressivity" with strict classification of tenses (although sometimes not fitting in context) potentially problematic (but also needed to ensure inter-annotator agreement and limited by the fact that neither of the authors is a native speaker of French) - overall labeling maybe not nuanced enough? The "modal" category in our study only includes modal verbs. Other similar constructions that express subject responsibility, such as *avoir besoin de*, *arriver à*, *réussir à*, *envier de*, *avoir des difficultés pour*, *avoir la possibilité de*, and *avoir envie de*, etc. could also be interesting to examine in future research.
 
--   no effects of modal: summarising tense aspect and mood in a tam category of "progressivity" with strict classification of tenses (although sometimes not fitting in context) potentially problematic (but also needed to ensure inter-annotator agreement and limited by the fact that neither of the authors is a native speaker of French) - overall labeling maybe not nuanced enough? The "modal" category in our study only includes modal verbs. Other similar constructions that express subject responsibility, such as *avoir besoin de*, *arriver à*, *réussir à*, *envier de*, *avoir des difficultés pour*, *avoir la possibilité de*, and *avoir envie de*, etc. could also be interesting to examine in future research.
+The finding regarding aspectuality in our logistic regression model was unexpected and contrary to our initial hypothesis. The model shows a significant effect for the semantic verb cluster, with communication verbs significantly favouring [se faire]{.smallcaps}, which contrasts with our expectation that [être]{.smallcaps} would be more likely in these contexts. We could not explain this, as the interactions of verb cluster were neither significant for animacy, nor for adversativity. One possible explanation could have been that certain communication verbs, particularly those with an adversative nuance like *insulter* and *engueuler*, pattern similar to hitting-touching verbs, emphasising the subject’s affectedness.
 
--   regarding aspectuality
+Another possible explanation: communication verbs like *insulter* and *engueuler*, which are most frequent with [se faire]{.smallcaps} are dymanic and adversative, making them more likely to occur with [se faire]{.smallcaps} rather than the more neutral [être]{.smallcaps}. -\> [se faire]{.smallcaps} is also more frequent with hitting-touching verbs but non-significant
 
-    -   cluster effect: communication with [se faire]{.smallcaps}; (also preferred with hitting-touching verbs but non-significant)
+Regarding the animacy factor, initially, we expected the animacy of the subject to have a stronger effect if the verb is from the "hitting-touching" or the "neutral" category. [se faire]{.smallcaps} would be strongly favoured with animate subjects compared to inanimate subjects, while this effect would be weaker with communication verbs, which could favour [être]{.smallcaps} regardless of animacy.
 
-    -   random effect of lemma accounts for a lot of the variance - agrees with Bohmann [-@bohmann_large-scale_2023: 48] who reports evidence that the English \[get\] passive, which has been shown to be similar to [se faire]{.smallcaps} in several regards, "is largely lexically conditioned"
+Alternatively, this could reflect a more general tendency for [se faire]{.smallcaps} to appear in contexts where the subject is undergoing an action with a certain intensity, which might be more common with communication verbs than initially assumed?
 
-    -   @bellec_construction_2014 [209] similarly notes that [être]{.smallcaps} is more likely to describe a result or endpoint, whereas [se faire]{.smallcaps} is often used with verbs denoting progressive or ongoing actions, such as perception verbs. / Additionally, perception verbs, which imply a durative process, are also attested in [se faire]{.smallcaps} constructions [@novakova_construction_2009: 117].
+Maybe another possible influence: [se faire]{.smallcaps} is more likely in informal settings, [être]{.smallcaps} more likely in formal settings (**source**) -\> communication verbs like *insulter* and *engueuler* are also colloquial
 
-    -   Verbs like *insulter* (and *engueuler*, which is also frequent with *se faire*) are **colloquial and adversative**, making them more prone to occur with *se faire* rather than the more neutral *être*.
+-   random effect of lemma accounts for a lot of the variance - agrees with Bohmann [-@bohmann_large-scale_2023: 48] who reports evidence that the English \[get\] passive, which has been shown to be similar to [se faire]{.smallcaps} in several regards, "is largely lexically conditioned"
 
-    -   **verb cluster main effect; interaction with adversativity:** One possible explanation is that certain communication verbs, particularly those with an adversative nuance like *insulter* and *engueuler*, pattern similar to hitting-touching verbs, emphasising the subject’s affectedness. Alternatively, this could reflect a more general tendency for [se faire]{.smallcaps} to appear in contexts where the subject is undergoing an action with a certain intensity, which might be more common with communication verbs than initially assumed?
-
-    -   Regarding the animacy factor, initially, we expected the animacy of the subject to have a stronger effect if the verb is from the "hitting-touching" or the "neutral" category. [se faire]{.smallcaps} would be strongly favoured with animate subjects compared to inanimate subjects, while this effect would be weaker with communication verbs, which could favour [être]{.smallcaps} regardless of animacy.
-
-One limitation of our study is that the predictions of our model do not directly reflect real-life language use, as [être]{.smallcaps} is far more common than [se faire]{.smallcaps}, which is comparatively rare (ratio in ParlaMint: 324,836 (38.300) être: 1,254 se faire). We created a balanced dataset based on [se faire]{.smallcaps} lemmas to prevent our model from being dominated by frequency effects produced by extreme data unbalance.[^4]. This approach allowed us to investigate the factors influencing passive choice and their complex interplay. However, it must be kept in mind that this ratio is artificial does not reflect the reality of passive use, in which [être]{.smallcaps} is chosen as the default in most contexts, and [se faire]{.smallcaps} remains a marked exception.
-
-[^4]: Note that the ratio ended up not being exactly 50:50 because we chose to exclude the gender 'unknown' which removed 165 se faire and only 29 être constructions. However, this is is still much more balanced than the actual ratio.
-
--   refer to Bootstrap validation results
-
-A limitation of our study is that the lemmas were determined based on those occurring in *se faire* constructions, which may have influenced the analysis.
-
-"Both the potential insights and the problems entailed by this approach are considerable." [@bohmann_large-scale_2023: 49]
+-   @bellec_construction_2014 [209] similarly notes that [être]{.smallcaps} is more likely to describe a result or endpoint, whereas [se faire]{.smallcaps} is often used with verbs denoting progressive or ongoing actions, such as perception verbs. / Additionally, perception verbs, which imply a durative process, are also attested in [se faire]{.smallcaps} constructions [@novakova_construction_2009: 117].
 
 (Telicity seems to be another important distinction: According to @bellec_construction_2014 \[209\], the *être* passive is likely to describe a result or mark an endpoint of an action, while the *se faire* passive is used for actions in progress and verbs that are in their nature ongoing (e.g. perception verbs, @bellec_construction_2014 [209]). This could be reflected in the telicity of the verb, with telic verbs preferring the *être* passive and atelic verbs favouring the *se faire* passive.)
 
 -   implications for causativity debate?
 
+One limitation of our study is that the predictions of our model do not directly reflect real-life language use, as [être]{.smallcaps} is far more common than [se faire]{.smallcaps}, which is comparatively rare (ratio in ParlaMint: 324,836 (38.300) être: 1,254 se faire). We created a balanced dataset based on [se faire]{.smallcaps} lemmas to prevent our model from being dominated by frequency effects produced by extreme data unbalance.[^4]. This approach allowed us to investigate the factors influencing passive choice and their complex interplay. However, it must be kept in mind that this ratio is artificial does not reflect the reality of passive use, in which [être]{.smallcaps} is chosen as the default in most contexts, and [se faire]{.smallcaps} remains a marked exception.
+
+[^4]: Note that the ratio ended up not being exactly 50:50 because we chose to exclude the gender 'unknown' which removed 165 se faire and only 29 être constructions. However, this is is still much more balanced than the actual ratio.
+
+A limitation of our study is that the lemmas were determined based on those occurring in *se faire* constructions, which may have influenced the analysis.
+
+By removing all occurrences annotated as "unknown" gender from our dataset, we addressed potential bias and collinearity in our logistic regression model. However, this resulted in an imbalance between the numbers of occurrences of [être]{.smallcaps} and [se faire]{.smallcaps}. Training the model on this unbalanced data may have limited the generalisability of our results.
+
+-   refer to Bootstrap validation results
+-   potential problems revealed in diagnostics: suboptimal fit for some data (binned residuals) and bootstrap validation (convergence issues & minimal bias)
+
+"Both the potential insights and the problems entailed by this approach are considerable." [@bohmann_large-scale_2023: 49]
+
 <!-- Dataset/sample: problem: data are extremely unbalanced (ratio in ParlaMint être vs. se faire: ) -\\\> making the ratio 50: 50 would distort the reality significantly but if the ratio is kept the model will almost always predict êtrestrategy possibilities: - build a corpus where être is presented more than se faire but not as extreme (approximation, e.g. 40% se faire - 60% etre) ("over/undersampling within limits") - assign more weight to se faire constructions by "weights=" variable of glm function - \@bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive) - evaluate with precision & recall, not just accuracy (F1-score) -->
 
 As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + infinitive can sometimes have a 'passive effect' even without a direct 1:1 alternation with *être*.
-
-potential problems revealed in diagnostics: suboptimal fit for some data (binned residuals) and bootstrap validation (convergence issues & minimal bias)
 
 # Conclusion {#sec-conclusion}
 

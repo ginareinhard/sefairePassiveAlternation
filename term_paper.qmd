@@ -341,17 +341,15 @@ Regarding the factor of aspectuality, Keenan and Dryer [-@keenan_passive_2007: 3
 
 **Semantic Verb Clusters**
 
-[se faire]{.smallcaps} tends to occur with dynamic processes, particularly in contexts where the source role is agentive and the target role is affected, which is the typical case of semantic transitivity [@raineri_analyse_2010: 90, 238]. Several hypotheses in the literature attempt to explain the compatibility of certain verbs with [se faire]{.smallcaps}. For example, Kupferman [-@kupferman_construction_1995: 67] and Raineri [-@raineri_analyse_2010: 90] argue that [se faire]{.smallcaps} is compatible with dynamic verbs but not with state verbs or verbs of state change with an external "cause" argument. (However, exceptions to this pattern are noted by Novakova [-@novakova_construction_2009: 110], @martin_construction_2002 **pages?** and Raineri [-@raineri_analyse_2010: 100-103].)
+[se faire]{.smallcaps} tends to occur with dynamic processes, particularly in contexts where the source role is agentive and the target role is affected, which is the typical case of semantic transitivity [@raineri_analyse_2010: 90, 238]. Several hypotheses in the literature attempt to explain the compatibility of certain verbs with [se faire]{.smallcaps}. For example, Kupferman [-@kupferman_construction_1995: 67] and Raineri [-@raineri_analyse_2010: 90] argue that [se faire]{.smallcaps} is compatible with dynamic verbs but not with state verbs or verbs of state change with an external "cause" argument. *(However, exceptions to this pattern are noted by Novakova [-@novakova_construction_2009: 110], @martin_construction_2002 pages? and Raineri [-@raineri_analyse_2010: 100-103].)*
 
 As reported by Raineri [-@raineri_analyse_2010: 90], Martin [-@martin_construction_2002: 14] challenges the notion that an external source always implies agency. She argues that a source can induce a change of state without intentionality and should therefore be classified as an "effector" rather than an agent. To support this claim, she contrasts two examples:
 
-1.  
-
-    a.  \**Je me suis fait étrangler par mon écharpe.\
-        *'I was strangled by my scarf.'
-
-    b.  *Isadora Duncan s'est fait étrangler par son écharpe qui s'est prise dans l'essieu de sa voiture.\
-        *'Isadora Duncan was strangled by her scarf, which got caught in the axle of her car.'
+> 10.    a.  *Je me suis fait étrangler par mon écharpe.*\
+>        'I was strangled by my scarf.'
+>
+>        b.  *Isadora Duncan s'est fait étrangler par son écharpe qui s'est prise dans l'essieu de sa voiture.*\
+>        'Isadora Duncan was strangled by her scarf, which got caught in the axle of her car.'
 
 While the first sentence is ungrammatical, the second is more acceptable, suggesting that the role of the source does not necessarily imply agency. @martin_construction_2002 also argues that [se faire]{.smallcaps} with psychological verbs, such as in *Elle s'est fait séduire par Pierre* 'She was seduced by Pierre', is not always causative but can have a passive reading. Novakova [-@novakova_construction_2009: 110] also notes that, while rare, [se faire]{.smallcaps} can sometimes be interpreted passively with state verbs, as in *Il peine encore à se faire aimer par tous les siens* 'He still struggles to be loved by all his own'.
 
@@ -825,7 +823,6 @@ Non-significant fixed effects were removed one-by-one, starting with `tam`, whic
 #| label: tbl-final-model
 #| tbl-cap: Results of the Logistic Regression Model Chosen as Final
 tab_model(final_model, show.aic = TRUE) #Marginal R2 / Conditional R2	0.451 / 0.662
-#kbl(ggpredict(final_model))
 ```
 :::
 
@@ -905,15 +902,6 @@ null_model <- glmer(passive_variant ~ 1 + (1 | lemma) + (1 | speaker), data = pa
 # null_model <- glmer(passive_variant ~ 1 + (1 | lemma), data = passive_sample_clean, family = binomial)
 
 anova_final_model <- anova(final_model, null_model, test="Chisq")
-
-#highly significant!
-# ### model with unknown
-# null_model <- glmer(passive_variant ~ 1 + (1|lemma), data = passive_sample_without_unknown, family = binomial)
-# 
-# anova(final_model_without_unknown, null_model, test="Chisq")
-# #highly significant!!
-# #relative likelihood
-# (exp((AIC(null_model)-AIC(final_model_without_unknown))/2))
 ```
 
 ```{r anova-tab, include = FALSE}
@@ -952,14 +940,14 @@ For this, the `bootMer()` function from the `lme4` package [@R-lme4] was applied
 
 ```{r bootstrap-validation, include = FALSE}
 
-#bootstrap_final_model <- bootMer(
+# bootstrap_final_model <- bootMer(
 # final_model,
 # FUN = fixef,
 # nsim = 1000,
 # seed = 2142637384,
 # type = "parametric",
 # verbose = TRUE
-#)
+# )
 
 ```
 
@@ -999,9 +987,9 @@ tab_model(final_model_no_speaker, show.aic = TRUE)
 ::: {#tbl-bootstrap-summary}
 ```{r bootstrap-summary, echo = FALSE}
 
-#bootstrap_summary <- summary(bootstrap_final_model)
-
-#kbl(bootstrap_summary)
+# bootstrap_summary <- summary(bootstrap_final_model)
+# 
+# kbl(bootstrap_summary)
 ```
 
 Bootstrap Statistics for the Final Model
@@ -1011,19 +999,19 @@ For most predictors, the bootstrap bias is very small (at or below 0.05), indica
 
 ```{r bootstrap-df, include = FALSE}
 
-#bootstrap_df <- as.data.frame(bootstrap_final_model$t)
-
-#colnames(bootstrap_df) <- names(fixef(final_model))
+# bootstrap_df <- as.data.frame(bootstrap_final_model$t)
+# 
+# colnames(bootstrap_df) <- names(fixef(final_model))
 
 ```
 
 ::: {#fig-density-animacy}
 ```{r density-animacy, echo = FALSE}
 
-#ggplot(bootstrap_df, aes(x = subj_animacyinanimate)) +
-# geom_density(fill = "lightblue") +
-# labs(x = "Coefficient Estimate", y = "Density") +
-# theme_minimal()
+# ggplot(bootstrap_df, aes(x = subj_animacyinanimate)) +
+#  geom_density(fill = "lightblue") +
+#  labs(x = "Coefficient Estimate", y = "Density") +
+#  theme_minimal()
 
 ```
 
@@ -1035,7 +1023,7 @@ In contrast, the distribution for the significant main effect `clustercommunicat
 ::: {#fig-density-cluster}
 ```{r density-cluster, echo = FALSE}
 
-#ggplot(bootstrap_df, aes(x = clustercommunication)) +
+# ggplot(bootstrap_df, aes(x = clustercommunication)) +
 # geom_density(fill = "lightblue") +
 # labs(x = "Coefficient Estimate", y = "Density") +
 # theme_minimal()
@@ -1482,33 +1470,31 @@ As the multifaceted and partly conflicting literature suggests, the passive voic
 
 For our analysis, we had to make decisions regarding the inclusion and exclusion criteria of borderline cases. However, a different set of choices could have been equally justified and might have yielded different results. It could be valuable to examine the cases we excluded from our analysis to understand how they differ from genuine passive constructions. This would provide insight into the gray area where passive nuances are present, but no true alternation occurs, allowing for a closer examination of varying degrees of passivity.
 
-With regard to our hypotheses, although few significant effects were found, the significant interaction of subject animacy and adversativity clearly shows that [se faire]{.smallcaps} predominantly appears with animate subjects and in adversative contexts. [se faire]{.smallcaps} is very likely to occur with animate subjects in both adversative and non-adversative contexts, while with inanimate subjects its likelihood depends more on adversativity and clearly favours adversative contexts. This is in line with the vast previous evidence on [se faire]{.smallcaps}'s preference for animate subjects [@koenig_semantic_1992; @novakova_construction_2009: 111-112; @spang-hanssen_quelques_1967; @tasmowski-de_ryck_causatif_1987; @raineri_analyse_2010: 92]. However, our analysis challenges the claim by @tasmowski-de_ryck_causatif_1987 and @spang-hanssen_quelques_1967 that [se faire]{.smallcaps} strictly requires an animate subject: our data provide evidence that, while [se faire]{.smallcaps} has a high chance to occur with animate subjects, inanimate subjects can occur with [se faire]{.smallcaps} (`r   paste0(inanimate_sefaire_rel * 100, "%")`), particularly in adversative contexts.
+With regard to our hypotheses, although few significant effects were found, the significant interaction of subject animacy and adversativity clearly shows that [se faire]{.smallcaps} predominantly appears with animate subjects and in adversative contexts. [se faire]{.smallcaps} is very likely to occur with animate subjects in both adversative and non-adversative contexts, while inanimate subjects clearly favour adversative contexts. This is in line with the vast previous evidence on [se faire]{.smallcaps}'s preference for animate subjects [@koenig_semantic_1992; @novakova_construction_2009: 111-112; @spang-hanssen_quelques_1967; @tasmowski-de_ryck_causatif_1987; @raineri_analyse_2010: 92]. However, our analysis challenges the claim by @tasmowski-de_ryck_causatif_1987 and @spang-hanssen_quelques_1967 that [se faire]{.smallcaps} strictly requires an animate subject: our data provide evidence that, while [se faire]{.smallcaps} has a high chance to occur with animate subjects, inanimate subjects can occur with [se faire]{.smallcaps} (`r   paste0(inanimate_sefaire_rel * 100, "%")`), particularly in adversative contexts.
 
 Importantly, even a strong correlation of animate subjects, adversative verbs and [se faire]{.smallcaps} does not necessarily imply that the subject is responsible for the event and brings negative consequences upon themselves [@gaatone_desagreable_1983: 170; @kupferman_construction_1995: 59-60]. Rather, the increased likelihood of [se faire]{.smallcaps} with inanimate subjects in adversative contexts suggests that the construction emphasises subject affectedness more than [être]{.smallcaps}. Note, however, that inter-annotator agreement was lowest for adversativity, indicating some inaccuracy regarding this factor, although it was still considered "substantial". Overall, we consider these findings to support the view that [se faire]{.smallcaps} is preferred over canonical [être]{.smallcaps} when emphasising subject affectedness.
 
-Although grammatical gender, like animacy, was tested as an aspect of subject responsibility, it did not show a statistically significant effect in our logistic regression model, nor an interaction with animacy. For this reason, we do not draw any conclusions regarding gender, but consider the analysis of its absolute frequencies to be exploratory and tentative. In both passive variants, animate subjects are predominantly masculine in our sample, while inanimate subjects are more frequently feminine. [se faire]{.smallcaps}, which is often associated with higher subject responsibility or affectedness, occurs most frequently with animate masculine subjects, whereas [être]{.smallcaps} is more common with inanimate feminine subjects. This is consistent with our hypothesis that [se faire]{.smallcaps} is more typical for male subjects, suggesting a bias towards masculine subjects, with masculine subjects dominating in contexts of higher agency. In contrast, feminine gender appears more frequently with inanimate referents, possibly reflecting stereotypical associations with passivity or reduced agency. However, for inanimate subjects the difference in frequency between male and female gender is smaller, which might indicate that gender plays a lesser role for inanimate subjects.
+Although grammatical gender, like animacy, was tested as an aspect of subject responsibility, it did not show a statistically significant effect in our logistic regression model, nor an interaction with animacy. For this reason, we do not draw any conclusions regarding gender, but consider the analysis of its absolute frequencies to be exploratory and tentative: in both passive variants, animate subjects are predominantly masculine in our sample, while inanimate subjects are more frequently feminine. [se faire]{.smallcaps}, which is often associated with higher subject responsibility or affectedness, occurs most frequently with animate masculine subjects, whereas [être]{.smallcaps} is more common with inanimate feminine subjects. This is consistent with our hypothesis that [se faire]{.smallcaps} is more typical for male subjects, suggesting a bias towards masculine subjects, with masculine subjects dominating in contexts of higher agency. In contrast, feminine gender appears more frequently with inanimate referents, possibly reflecting stereotypical associations with passivity or reduced agency. However, for inanimate subjects the difference in frequency between male and female gender is smaller, which might indicate that gender plays a lesser role for inanimate subjects.
 
-In our analysis, we did not distinguish between human and non-human referents. However, in previous work on French by @da2022objectifying, where female referents were shown to appear less likely as subjects than male referents, this syntactic gender bias was significant only when the referents were human. It is therefore possible that our broader animate/inanimate categorisation contributed to the lack of a significant gender effect. In addition, the number of [se faire]{.smallcaps} constructions with inanimate subjects was scarce in our dataset, which could also have influenced the significance of the effect. It is also worth noting that some subject NPs, such as *les personnes* 'the people/individuals', which is grammatically feminine but semantically gender-neutral and animate, are frequent in the data and may influence the interaction between gender and animacy. Such cases are worthy of further investigation in future work.
+In the data annotation, we did not distinguish between human and non-human referents. However, in previous work on French by @da2022objectifying, where female referents were shown to appear less likely as subjects than male referents, this syntactic gender bias was significant only when the referents were human. It is therefore possible that our broader animate/inanimate categorisation contributed to the lack of a significant gender effect. In addition, the number of [se faire]{.smallcaps} constructions with inanimate subjects was scarce in our dataset, which could also have influenced the significance of the effect. It is also worth noting that particular subject NPs, such as *les personnes* 'the people/individuals', which is grammatically feminine but semantically gender-neutral and animate, are frequent in the data and may have influenced the interaction between gender and animacy. Such cases are worthy of further investigation in future work.
 
-The other factors used to operationalise subject responsibility - the presence of a *complément d'agent* and the use of a modal verb - also yielded no significant effects. This could further support the interpretation that [se faire]{.smallcaps} is more strongly related to subject affectedness than subject responsibility. It is also worth mentioning that our annotation of modality was limited to modal verbs. Other constructions expressing subject involvement or volition, such as *avoir besoin de*, *arriver à*, *réussir à*, *envier de*, *avoir des difficultés pour*, *avoir la possibilité de*, and *avoir envie de*, were not considered. These expressions, however, were markedly frequent in connection with [se faire]{.smallcaps} during the annotation process and may be worth considering to further investigate the relationship between subject responsibility and the use of [se faire]{.smallcaps}.
+The other factors used to operationalise subject responsibility - the presence of a *complément d'agent* and the use of a modal verb - also yielded no significant effects. This could further support the interpretation that [se faire]{.smallcaps} is more strongly related to subject affectedness than subject responsibility. It is also worth mentioning that our annotation of modality was limited to modal verbs. Other constructions expressing subject involvement or volition, such as *avoir besoin de*, *arriver à*, *réussir à*, *envier de*, *avoir des difficultés pour*, *avoir la possibilité de*, and *avoir envie de*, were not considered. However, we realised during the annotation process that these expressions are remarkably frequent in the context of [se faire]{.smallcaps}. Therefore, they may be worth considering, to further investigate the relationship between subject responsibility and the use of [se faire]{.smallcaps}.
 
-The findings regarding aspectuality in our logistic regression model are unexpected and contradict our initial hypothesis. Our model shows a significant effect for the semantic verb cluster, with communication verbs significantly favouring [se faire]{.smallcaps}, which contrasts with our expectation that [être]{.smallcaps} would be more likely in these contexts. We could not explain this result, as no significant interactions were found. The relationship between verb cluster and adversativity, as well as with subject animacy, may be more complex than initially anticipated, or our dataset may not have been optimally suited to detect a significant effect.
+The findings regarding aspectuality in our logistic regression model are unexpected and contradict our initial hypothesis. Our model shows a significant effect for the semantic verb cluster, with communication verbs significantly favouring [se faire]{.smallcaps}, which contrasts with our expectation that [être]{.smallcaps} would be more likely in these contexts. We could not explain this result, as no significant interactions were found. The relationship between verb cluster and adversativity, as well as with subject animacy, may be more complex than initially anticipated, or our dataset may not have been optimally suited to detect a significant interaction effect.
 
-Seeking an explanation within our theoretical framework, we examined the most frequent communication verb lemmas occurring with [se faire]{.smallcaps}. The most frequent lemmas (*insulter* and *engueuler*) carry a dynamic and adversative nuance and typically take an animate undergoer. These verbs may therefore behave similarly to hitting-touching verbs, emphasising subject affectedness. This could also be supported by the finding that [se faire]{.smallcaps} is more frequent with hitting-touching verbs than [être]{.smallcaps}, but this effect is also not statistically significant. Alternatively, other factors not considered in our analysis may account for these findings. Such factors could be register and medium: [se faire]{.smallcaps} is predominantly used in informal contexts [@raineri_analyse_2010: 87], whereas [être]{.smallcaps} is more frequently used in written than in spoken French [@da2022alternance: 76-77]. Verbs like *insulter* and *engueuler* could also be more typical of colloquial speech.
+Seeking an explanation within our theoretical framework, we examined the most frequent communication verb lemmas occurring with [se faire]{.smallcaps}. The most frequent lemmas (*insulter* and *engueuler*) carry a dynamic and adversative nuance and typically take an animate undergoer. These verbs may therefore behave similarly to hitting-touching verbs, emphasising subject affectedness. This could also be supported by the finding that [se faire]{.smallcaps} is more frequent with hitting-touching verbs than [être]{.smallcaps}, but this effect is also not statistically significant. Alternatively, other factors not considered in our analysis may account for these findings. Such factors could be register and medium: [se faire]{.smallcaps} is predominantly used in informal contexts and spoken language [@raineri_analyse_2010: 87, 105], whereas [être]{.smallcaps} is more frequently used in written than in spoken French [@da2022alternance: 76-77]. Verbs like *insulter* and *engueuler* could also be more typical of colloquial speech.
 
-An alternative explanation for this result is the inherent lexical properties of verbs. In our model, the random intercept for `lemma` (τ₀₀ = 1.94) indicates a substantial contribution to the variance, suggesting that certain verbs are more likely to occur with [se faire]{.smallcaps} due to their lexical properties. This emphasises the important role of lexical effects for the likelihood of [se faire]{.smallcaps} and aligns with Bohmann et al.’s findings [-@bohmann_large-scale_2023: 48] that English [get]{.smallcaps} is largely lexically determined. We believe that the application of memory-based learning methods, such as k-nearest neighbour classifiers, could provide more insights into the lexical conditioning of [se faire]{.smallcaps}, as they capture lexical properties without requiring explicit rule-based abstractions [@theijssen2013choosing : 243-244].
+An alternative explanation for this result is the inherent lexical properties of verbs. In our model, the random intercept for `lemma` (τ₀₀ = 1.94) indicates a substantial contribution to the variance, suggesting that certain verbs are more likely to occur with [se faire]{.smallcaps} due to their lexical properties. This emphasises the important role of lexical effects for the likelihood of [se faire]{.smallcaps} and aligns with Bohmann et al.[-@bohmann_large-scale_2023: 48]'s findings that English [get]{.smallcaps} is largely lexically determined. We believe that the application of memory-based learning methods, such as k-nearest neighbour classifiers, could provide more insights into the lexical conditioning of [se faire]{.smallcaps}, as they capture lexical properties without requiring explicit rule-based abstractions [@theijssen2013choosing: 243-244].
 
-In terms of aspectuality and TAM, our model did not reveal any significant effects. This result contradicts previous observations, such as those by Bellec [-@bellec_construction_2014: 209], who notes that [être]{.smallcaps} is more likely to describe an outcome or endpoint of an event, while [se faire]{.smallcaps} is more likely to occur with verbs referring to progressive or ongoing actions. Based on this, we had hypothesised that progressive aspect would favour [se faire]{.smallcaps}. In our analysis, TAM was broadly grouped into two categories: "progressive" and "non-progressive". We chose this approach to facilitate our annotation, and to ensure inter-annotator agreement, especially since neither annotator was a native French speaker. However, it may also have led to limitations. The annotation may not have been fine-grained enough to capture subtler aspectual nuances. This may partly account for the lack of a significant TAM effect in our results.
+In terms of aspectuality and TAM, our model did not reveal any significant effects. This contradicts previous observations, such as those by Bellec [-@bellec_construction_2014: 209], who notes that [être]{.smallcaps} is more likely to describe an outcome or endpoint of an event, while [se faire]{.smallcaps} is more likely to occur with verbs referring to progressive or ongoing actions. Based on this, we had hypothesised that progressive aspect would favour [se faire]{.smallcaps}. In our analysis, TAM was broadly grouped into two categories: "progressive" and "non-progressive". We chose this approach to facilitate our annotation and ensure inter-annotator agreement, especially since neither annotator was a native French speaker. However, this annotation may not have been fine-grained enough to capture subtle aspectual nuances. This may partly account for the lack of a significant TAM effect in our results.
 
 <!-- Another aspectual factor not included in our annotation, but worth considering as a factor in future research, is telicity. According to Bellec [-@bellec_construction_2014: 209], telic verbs, which mark the endpoint of an action, appear more typically with [être]{.smallcaps}, while atelic verbs, which are are inherently ongoing (e.g. perception verbs), are more likely with [se faire]{.smallcaps} [@bellec_construction_2014: 209]. This factor could also overlap with the verb cluster factor. -->
 
-One general limitation of our dataset is that it does not fully represent actual language use, where [être]{.smallcaps} is where [être]{.smallcaps} is the unmarked default passive and far more frequent than [se faire]{.smallcaps}, which is a marked and rare variant. In the ParlaMint 2.1 corpus, [être]{.smallcaps} occurs 324,836 times (**38.300 in ?**), compared to just 1,254 instances of [se faire]{.smallcaps}. To prevent the model from being skewed, we created a balanced dataset based on the lemmas occurring with [se faire]{.smallcaps}. While this approach allowed us to focus on the factors influencing the passive alternation, it introduced an artificial ratio. It may also have biased the lexical distribution towards verbs that are particularly compatible with [se faire]{.smallcaps}. In addition, we excluded all occurrences with "unknown" gender to avoid potential bias and collinearity in the model. This removed 165 [se faire]{.smallcaps} and only 29 [être]{.smallcaps} constructions, leading to some imbalance in the final dataset, and thereby potentially limiting the generalisability of our results.
+One general limitation of our dataset is that it does not fully represent actual language use, where [être]{.smallcaps} is the unmarked default passive and far more frequent than [se faire]{.smallcaps}, which is a marked and rare variant. In the ParlaMint 2.1 corpus, [être]{.smallcaps} occurs 324,836 times, compared to just 1,254 instances of [se faire]{.smallcaps}. To prevent the model from being skewed, we created a balanced dataset based on the lemmas occurring with [se faire]{.smallcaps}. While this approach allowed us to focus on the factors influencing the passive alternation, it introduced an artificial ratio. It may also have biased the lexical distribution towards verbs that are particularly compatible with [se faire]{.smallcaps}. In addition, we excluded all occurrences with "unknown" gender to avoid potential bias and collinearity in the model. This removed 165 [se faire]{.smallcaps} and only 29 [être]{.smallcaps} constructions, thereby leading to some imbalance in the final dataset. This potentially limits the generalisability of our results.
 
-Despite these limitations, the model diagnostics indicate a good overall fit, although certain aspects, such as suboptimal fits for specific data (as shown by the binned residuals), suggest potential areas for refinement. The bootstrap validation supports our model's stability, but indicates that some results should be interpreted with caution. We chose to retain the original model for interpretation, recognising the trade-off between stability and fit. We note that the simplified model (@tbl-model-without-speaker), which omits the speaker effect, may be a more robust alternative. Most fixed effects show minimal bias, although the bias for subject animacy (animate) suggests that its effect may be slightly less reliable than the other estimates. The verb cluster predictors have higher standard errors, which indicates some uncertainty. Overall, the estimates appear meaningful, but further work would be required to refine the model. While bootstrap validation provides insight into model stability, applying additional validation techniques would contribute to identifying overfitting and ensuring that the model performs well on unseen data. One possible approach would be cross-validation, where the dataset is split into several subsets and the model is trained on each subset and tested on the remaining data.
+Despite these limitations, the model diagnostics indicate a good overall fit. Although certain aspects, such as suboptimal fits for certain data, suggest potential areas for refinement, the visual inspection indicated a stable model that makes reliable predictions. The bootstrap validation supports our model's stability, but indicates that some results should be interpreted with caution. We retained the original model for interpretation, acknowledging the trade-off between stability and goodness of fit. In this context, we identified the simplified model (@tbl-model-without-speaker), which omits the speaker effect as a potential robust alternative. Most fixed effects show minimal bias, although the bias for subject animacy (animate) suggests that its effect may be slightly less reliable than the other estimates. The verb cluster predictors have higher standard errors, which indicates some uncertainty. Overall, the estimates appear meaningful, but further work would be required to refine the model. While bootstrap validation provides insight into model stability, the application of additional validation techniques would help identifying overfitting, thereby ensuring that the model performs well on unseen data. As a possible approach we suggest cross-validation, where the model is trained on several separate subsets of data and tested on the remaining data.
 
 <!-- Dataset/sample: problem: data are extremely unbalanced (ratio in ParlaMint être vs. se faire: ) -\\\> making the ratio 50: 50 would distort the reality significantly but if the ratio is kept the model will almost always predict êtrestrategy possibilities: - build a corpus where être is presented more than se faire but not as extreme (approximation, e.g. 40% se faire - 60% etre) ("over/undersampling within limits") - assign more weight to se faire constructions by "weights=" variable of glm function - \@bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive) - evaluate with precision & recall, not just accuracy (F1-score) -->
-
-To summarise, although the French [être:se faire]{.smallcaps} alternation presents considerable analytical challenges due to its complexity, our results provide empirical evidence for the influence of an interaction between subject animacy and adversativity as well as a main effect of the semantic verb cluster on this alternation. The interaction between subject animacy and adversativity suggests that [se faire]{.smallcaps} emphasises subject affectedness more than [être]{.smallcaps}. The results also show that [se faire]{.smallcaps} is not exclusively used with animate subjects, challenging previous research. The random effect of the lemma shows the important role of lexical effects in this alternation. However, the limitations of our dataset, annotation scheme, and model design require further refinement, particularly with regard to animacy, gender, aspect, and lexical variation. Methodologically, our model proves to be robust, but additional validation techniques, such as cross-validation, would improve the assessment of generalisability. Overall, this study offers a basis for a more refined analysis of the [être:se faire]{.smallcaps} passive alternation in French.
 
 <!-- "Both the potential insights and the problems entailed by this approach are considerable." [@bohmann_large-scale_2023: 49] -->
 
@@ -1517,6 +1503,8 @@ To summarise, although the French [être:se faire]{.smallcaps} alternation prese
 <!-- -   implications for causativity debate? -->
 
 # Conclusion {#sec-conclusion}
+
+To summarise, although the French [être:se faire]{.smallcaps} alternation presents considerable analytical challenges due to its complexity, our results provide empirical evidence for the influence of an interaction between subject animacy and adversativity as well as a main effect of the semantic verb cluster on this alternation. The interaction between subject animacy and adversativity suggests that [se faire]{.smallcaps} emphasises subject affectedness more than [être]{.smallcaps}. The results also show that [se faire]{.smallcaps} is not exclusively used with animate subjects, challenging previous research. The random effect of the lemma shows the important role of lexical effects in this alternation. However, the limitations of our dataset, annotation scheme, and model design require further refinement, particularly with regard to animacy, gender, aspect, and lexical variation. Methodologically, our model proves to be robust, but additional validation techniques, such as cross-validation, may improve the assessment of generalisability. Overall, this study offers a basis for a more refined analysis of the [être:se faire]{.smallcaps} passive alternation in French.
 
 -   Future studies: modality (spoken/written) as a factor (compare modalities), analyses on other modalities/varieties/registers
 

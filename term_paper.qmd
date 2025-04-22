@@ -1303,7 +1303,7 @@ inanimate_adversative_prediction <- interaction_prediction |>
 
 ```
 
-As @fig-animacy-adversativity-log shows, animate subjects strongly favour [se faire]{.smallcaps} over [être]{.smallcaps} regardless of adversativity, with the probability increasing only slightly in adversative contexts. With inanimate subjects, however, [se faire]{.smallcaps} is much more likely in adversative contexts (`r   paste0(round(inanimate_adversative_prediction * 100, 2), "%")`) than in non-adversative contexts, where it is almost never used. However, even in adversative contexts, être is predicted to be more common for inanimate subjects. For inanimate subjects, then, adversativity seems to be an important condition for [se faire]{.smallcaps} to be used at all.
+As @fig-animacy-adversativity-log shows, animate subjects strongly favour [se faire]{.smallcaps} over [être]{.smallcaps} regardless of adversativity, with the probability increasing only slightly in adversative contexts. With inanimate subjects, however, [se faire]{.smallcaps} is much more likely in adversative contexts (`r   paste0(round(inanimate_adversative_prediction * 100, 2), "%")`) than in non-adversative contexts, where it is almost never used. However, even in adversative contexts, [être]{.smallcaps} is predicted to be more common for inanimate subjects. For inanimate subjects, then, adversativity seems to be an important condition for [se faire]{.smallcaps} to be used at all.
 
 ::: {#fig-animacy-adversativity-log}
 ```{r interaction-model-plot, echo=FALSE}
@@ -1496,21 +1496,28 @@ Despite these limitations, the model diagnostics indicate a good overall fit. Al
 
 <!-- Dataset/sample: problem: data are extremely unbalanced (ratio in ParlaMint être vs. se faire: ) -\\\> making the ratio 50: 50 would distort the reality significantly but if the ratio is kept the model will almost always predict êtrestrategy possibilities: - build a corpus where être is presented more than se faire but not as extreme (approximation, e.g. 40% se faire - 60% etre) ("over/undersampling within limits") - assign more weight to se faire constructions by "weights=" variable of glm function - \@bohmann_large-scale_2023 kept the imbalance (ca. 3 Mio be passive vs. 25 000 get passive) - evaluate with precision & recall, not just accuracy (F1-score) -->
 
-<!-- "Both the potential insights and the problems entailed by this approach are considerable." [@bohmann_large-scale_2023: 49] -->
-
 <!-- As some linguists (e.g., Martin, Novakova / ... as above?) argue, *se faire* + infinitive can sometimes have a 'passive effect' even without a direct 1:1 alternation with *être*. -->
 
 <!-- -   implications for causativity debate? -->
 
 # Conclusion {#sec-conclusion}
+<!-- restate the problem, find novel way to circle back to the problem -->
+When constructing a passive sentence, French native speakers usually choose intuitively between the two variants [être]{.smallcaps} and [se faire]{.smallcaps}. However, this choice is not random, but influenced by many linguistic factors. Based on previous research, we narrowed down these factors and constructed a mixed-effects binomial logistic regression model that predicts the occurrence of either [être]{.smallcaps} or [se faire]{.smallcaps}. In order to provide a theoretically stable basis for the model, we clustered the factors under the overarching concepts of subject responsibility, adversativity and aspectuality. We hypothesised that [se faire]{.smallcaps} would be chosen more often in adversative, inchoative contexts with animate, male subjects. Since [se faire]{.smallcaps} is attested to occur more frequently in spoken than in written French, we chose to investigate its use and alternation in the context of parliamentary debates. Throughout this process, we aimed to make our study reproducible and transparent by preregistering the study and documenting every step accurately.
 
-To summarise, although the French [être:se faire]{.smallcaps} alternation presents considerable analytical challenges due to its complexity, our results provide empirical evidence for the influence of an interaction between subject animacy and adversativity as well as a main effect of the semantic verb cluster on this alternation. The interaction between subject animacy and adversativity suggests that [se faire]{.smallcaps} emphasises subject affectedness more than [être]{.smallcaps}. The results also show that [se faire]{.smallcaps} is not exclusively used with animate subjects, challenging previous research. The random effect of the lemma shows the important role of lexical effects in this alternation. However, the limitations of our dataset, annotation scheme, and model design require further refinement, particularly with regard to animacy, gender, aspect, and lexical variation. Methodologically, our model proves to be robust, but additional validation techniques, such as cross-validation, may improve the assessment of generalisability. Overall, this study offers a basis for a more refined analysis of the [être:se faire]{.smallcaps} passive alternation in French.
+During the in-depth investigation of the alternation, the complexity of the construction and the difficulty of our chosen task became apparent. We were faced with challenges of annotation, analysis, and interpretation, which we navigated collaboratively to the best of our ability and knowledge. Although the complexity of language necessarily exceeds what can be measured by the included factors and their interplay, our model produces noteworthy results.
 
--   Future studies: modality (spoken/written) as a factor (compare modalities), analyses on other modalities/varieties/registers
+<!-- summary -->
 
--   definiteness & pronominality of the subject
+<!-- although the French [être:se faire]{.smallcaps} alternation presents considerable analytical challenges due to its complexity,-->
 
--   memory-based learning
+To summarise, the interaction between subject animacy and adversativity suggests that [se faire]{.smallcaps} emphasises subject affectedness more than [être]{.smallcaps}. The results also show that [se faire]{.smallcaps} is not used  exclusively with animate subjects, thus challenging previous research. While [être]{.smallcaps} remains clearly preferred for inanimate subjects, adversative verbs increase the likelihood of inanimate subjects being used with [se faire]{.smallcaps}. Furthermore, a main effect of the semantic verb cluster on this alternation was found, with communication verbs surprisingly favouring [se faire]{.smallcaps}. Notably, the exact magnitude of these findings may be specific to the specialised genre of parliamentary debates. Nevertheless, since the effects of animacy and adversativity were so strong, we expect them to be applicable to a variety of spoken French. The random effect of the lemma shows the important role of lexical effects in this alternation. However, the limitations of our dataset, annotation scheme, and model design require further refinement, particularly with regard to animacy, gender, aspect, and lexical variation. Methodologically, our model proves to be robust, but additional validation techniques may improve the assessment of generalisability.
+
+<!-- discuss implications, key takeways; call for action for future research -->
+<!-- Finish your paper on a forward-looking note by suggesting how you or other researchers might build on this topic in the future and address any limitations of the current paper. -->
+
+Our analysis reveals interesting results that could pave the way for further investigation. For instance, it might be illuminating to model the lemma as a fixed effect rather than a random effect for better control and interpretability. In addition, a model trained on comparable written and spoken data would allow the inclusion of mode as a factor, thereby assessing the exact distribution of both passive variants and tracking how much more common [se faire]{.smallcaps} really is in spoken language. An approach outside of regression modelling may also be valuable: we suggest memory-based learning as a method that makes predictions of class membership (i.e. passive choice) based on basic features. 
+
+Overall, the corpus-based approach allowed us to meticulously model real-world spoken French and make substantiated inferences based on extensive statistical evidence. Therefore, we believe that this study offers a basis for future refined analyses of passive alternations in French. Our findings provide insight into the complex [être:se faire]{.smallcaps} alternation, and highlight the value of combining corpus-based methods with a theoretical framework when modelling linguistic alternations.
 
 # References
 

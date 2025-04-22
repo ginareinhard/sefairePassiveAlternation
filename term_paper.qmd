@@ -30,7 +30,6 @@ p {
 
 </style>
 ```
-
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -269,7 +268,6 @@ We recognize this "fuzzy" [@bohmann_large-scale_2023: 50] variable context as bo
 
 -   Subjects in passive sentences are preferably animate, definite, and pronominal. In the study by @da_cunha_lalternance_2020, animate, definite, and pronominal arguments that function as the objects in active sentences were more frequently found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice) -->
 ```
-
 ### Subject Responsibility {#sec-subj-resp}
 
 As indicated in @sec-debate, the question whether the referent of the subject of [se faire]{.smallcaps} holds any responsibility is central to the debate of the construction's passive-status [@sveberg_se_2012; @bellec_construction_2014: 212-213]. In line with their argument that [se faire]{.smallcaps} is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of [se faire]{.smallcaps} is always a causer and therefore always responsible to some degree. They contrast it to [être]{.smallcaps}'s subject referent, which is seen as more neutral [@gaatone_desagreable_1983: 164-166].
@@ -345,11 +343,13 @@ Regarding the factor of aspectuality, Keenan and Dryer [-@keenan_passive_2007: 3
 
 As reported by Raineri [-@raineri_analyse_2010: 90], Martin [-@martin_construction_2002: 14] challenges the notion that an external source always implies agency. She argues that a source can induce a change of state without intentionality and should therefore be classified as an "effector" rather than an agent. To support this claim, she contrasts two examples:
 
-> 10.    a.  *Je me suis fait étrangler par mon écharpe.*\
->        'I was strangled by my scarf.'
+> 10. 
 >
->        b.  *Isadora Duncan s'est fait étrangler par son écharpe qui s'est prise dans l'essieu de sa voiture.*\
->        'Isadora Duncan was strangled by her scarf, which got caught in the axle of her car.'
+>     a.  *Je me suis fait étrangler par mon écharpe.*\
+>         'I was strangled by my scarf.'
+>
+>     b.  *Isadora Duncan s'est fait étrangler par son écharpe qui s'est prise dans l'essieu de sa voiture.*\
+>         'Isadora Duncan was strangled by her scarf, which got caught in the axle of her car.'
 
 While the first sentence is ungrammatical, the second is more acceptable, suggesting that the role of the source does not necessarily imply agency. @martin_construction_2002 also argues that [se faire]{.smallcaps} with psychological verbs, such as in *Elle s'est fait séduire par Pierre* 'She was seduced by Pierre', is not always causative but can have a passive reading. Novakova [-@novakova_construction_2009: 110] also notes that, while rare, [se faire]{.smallcaps} can sometimes be interpreted passively with state verbs, as in *Il peine encore à se faire aimer par tous les siens* 'He still struggles to be loved by all his own'.
 
@@ -365,7 +365,7 @@ Hitting-touching verbs are dynamic and adversative, making them more likely to a
 
 To test this hypothesis, we categorised the verbs according to their lexical class. Following @da2022alternance, we used the verb cluster categories from the online version of the lexicon "Les Verbes Français" [@lvf], based on the work by @dubois1997verbes. A table presenting the French verb clusters defined by @francois_presentation_2007, on which this dictionary is based, along with examples from our dataset, is included in the appendix of this paper. If there was no exact match, we used the closest similar class. In one case, *caillasser*, there was no entry in the lexicon: here we classified it as a hitting-touching verb, given its similarity to verbs like *attaquer*, *frapper*, or *bombarder*.
 
-However, the effect of the verb cluster may interact with other factors, particularly animacy and adversativity. We also tested the interactions with these factors. We expect the animacy of the subject to have a stronger effect if the verb is from the 'hitting-touching' or the 'neutral' category. [se faire]{.smallcaps} could be strongly favoured with animate subjects compared to inanimate subjects, while this effect could be weaker with communication verbs, which could favour [être]{.smallcaps} regardless of animacy. The adversativity of the verb could favour [se faire]{.smallcaps} more in communication and neutral verbs than in hitting-touching verbs. While communication verbs may favour [être]{.smallcaps} and neutral verbs may not have a strong preference, adversative constructions may shift both toward [se faire]{.smallcaps}. Since hitting-touching verbs are inherently highly adversative, this factor is unlikely to strongly affect their passive preference.
+However, the effect of the verb cluster may interact with other factors, particularly animacy and adversativity. We also tested the interactions with these factors. We expect the animacy of the subject to have a stronger effect if the verb is from the "hitting-touching" or the "neutral" category. [se faire]{.smallcaps} could be strongly favoured with animate subjects compared to inanimate subjects, while this effect could be weaker with communication verbs, which could favour [être]{.smallcaps} regardless of animacy. The adversativity of the verb could favour [se faire]{.smallcaps} more in communication and neutral verbs than in hitting-touching verbs. While communication verbs may favour [être]{.smallcaps} and neutral verbs may not have a strong preference, adversative constructions may shift both toward [se faire]{.smallcaps}. Since hitting-touching verbs are inherently highly adversative, this factor is unlikely to strongly affect their passive preference.
 
 **Tense-Aspect-Mood (TAM)**
 
@@ -399,7 +399,7 @@ The genre of parliamentary debates is somewhat specialised and our results may n
 
 To extract our sample, we used a semi-automatic approach combining CQL expression-based extraction and manual filtering. Our aim was to obtain an equal number of occurrences of [être]{.smallcaps} and [se faire]{.smallcaps} constructions.
 
-First, we used a CQL expression to automatically extract a sample of 1,254 [se faire]{.smallcaps} constructions from the French ParlaMint corpus [@11356/1431]. After this, Annotator A manually filtered the data to exclude false-positives, i.e. constructions that did not meet our predefined criteria for [se faire]{.smallcaps} passives (see @sec-filtering-criteria). During the filtering process, Annotator A also annotated the lemmas of the constructions and compiled a list. After filtering, the final sample consisted of **532** valid [se faire]{.smallcaps} constructions.
+First, we used a CQL expression to automatically extract a sample of 1,254 [se faire]{.smallcaps} constructions from the French ParlaMint corpus [@11356/1431]. After this, Annotator A manually filtered the data to exclude false-positives, i.e. constructions that did not meet our predefined criteria for [se faire]{.smallcaps} passives (see @sec-filtering-criteria). During the filtering process, Annotator A also annotated the lemmas of the constructions and compiled a list. After filtering, the final sample consisted of 532 valid [se faire]{.smallcaps} constructions.
 
 ```{r lemma-list, include=FALSE}
 
@@ -456,7 +456,7 @@ This approach is also supported by linguistic analyses that suggest a continuum 
 
 ### Inter-Annotator Agreement
 
-In preparation for statistical modelling, we annotated the filtered sample for the features outlined in @sec-factors. A blind annotation process was used, where Annotator A and Annotator B were unaware of each other’s annotations. As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all *complément d' agents* of [se faire]{.smallcaps} during initial filtering, the column `agent_pp` was renamed to `agent_pp_A`. The datasets were then combined, variables were converted from characters to factors and empty values were replaced with `NA` to ensure proper handling of missing values in statistical analysis.
+In preparation for statistical modelling, we annotated the filtered sample for the features outlined in @sec-factors. A blind annotation process was used, where Annotator A and Annotator B were unaware of each other’s annotations. As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all *compléments d' agents* of [se faire]{.smallcaps} during initial filtering, the column `agent_pp` was renamed to `agent_pp_A`. The datasets were then combined, variables were converted from characters to factors and empty values were replaced with `NA` to ensure proper handling of missing values in statistical analysis.
 
 ```{r read-annotated-data, include = FALSE}
 sefaire_sample_annotated <- read.csv(file = here("data", "sefaire_sample_annotated.csv"))
@@ -526,7 +526,7 @@ passive_sample_combined |>
   summary()
 ```
 
-Since the analysis required detailed (and time-consuming) manual annotation, we decided to split the annotation work between us. However, to ensure consistent annotation, a representative sample of 320 observations (`r 320/1064*100` of all instances) were annotated by both of us. For these instances, we calculated Cohen's ϰ (Kappa) as a measure of inter-annotator agreement, following Levshina [-@levshina_how_2015: 201].
+Since the analysis required detailed (and time-consuming) manual annotation, we decided to split the annotation work between us. However, to ensure consistent annotation, a representative sample of 320 observations (`r round(320/1064*100, 2)` of all instances) were annotated by both of us. For these instances, we calculated Cohen's ϰ (Kappa) as a measure of inter-annotator agreement, following Levshina [-@levshina_how_2015: 201].
 
 ```{r cohens-kappa, include = FALSE}
 kappa_animacy <- ckappa(passive_sample_combined[c("subj_animacy_A", "subj_animacy_B")]) 
@@ -1181,7 +1181,7 @@ final_model_odds_ratios <- exp(final_model_coef)
 #exp(final_model_coef) / (1 + exp(final_model_coef))
 ```
 
-This section is divided into three parts, corresponding to the main concepts: subject responsibility, adversativity, and aspectuality. Contrary to our original hypotheses, the only significant main effect was found for the semantic verb cluster, with communicative verbs favouring [se faire]{.smallcaps} over [être]{.smallcaps}. In addition, the model shows a significant interaction between subject animacy and adversativity. @tbl-frequencies summarises the absolute and relative frequencies for each factor level, with the relative frequencies calculated on the basis of the total number of occurrences of [être]{.smallcaps} or [se faire]{.smallcaps}, respectively.
+This section is divided into three parts, corresponding to the overarching concepts: subject responsibility, adversativity, and aspectuality. Contrary to our original hypotheses, the only significant main effect was found for the semantic verb cluster, with communicative verbs favouring [se faire]{.smallcaps} over [être]{.smallcaps}. In addition, the model shows a significant interaction between subject animacy and adversativity. @tbl-frequencies summarises the absolute and relative frequencies for each factor level, with the relative frequencies calculated on the basis of the total number of occurrences of [être]{.smallcaps} or [se faire]{.smallcaps}, respectively.
 
 Logistic regression produces log odds, which were automatically converted to odds ratios via exponentiation during model selection using the `tab()` function. Since odds ratios are more intuitive to interpret than log odds, all effect estimates discussed below are presented as odds ratios. As @tbl-final-model indicates, the intercept of the final model is `r round(final_model_odds_ratios[1], 2)`. This means that in the context of the reference levels (the subject is animate and masculine, the cluster of the verb is neutral, and the construction has an adversative sense), the chances of [se faire]{.smallcaps} being used are `r round(final_model_odds_ratios[1], 2)` times greater than that of [être]{.smallcaps}.
 
@@ -1256,7 +1256,7 @@ Frequencies of [être]{.smallcaps} and [se faire]{.smallcaps} by Subject Gender 
 
 ## Adversativity {#sec-results-adversativity}
 
-Overall, non-adversative constructions occured more frequently than adversative constructions in our data, with a ratio of `r   paste0(round(adversativity_prop["non-adversative"], 2) * 100, "%")` to `r   paste0(round(adversativity_prop["adversative"], 2) * 100, "%")`. However, adversative constructions were more common with [se faire]{.smallcaps} than with [être]{.smallcaps}: while only about one fifth (`r   paste0(adversative_etre_rel * 100, "%")`) of [être]{.smallcaps} were adversative, this was the case for two fifths (`r   paste0(adversative_sefaire_rel * 100, "%")`) of [se faire]{.smallcaps}. The mosaic plot in @fig-adversativity illustrates the distribution of [être]{.smallcaps} and [se faire]{.smallcaps} across the adversativity levels.
+Overall, non-adversative constructions occured more frequently than adversative constructions in our data, with a ratio of `r   paste0(round(adversativity_prop["non-adversative"], 2) * 100, "%")` to `r   paste0(round(adversativity_prop["adversative"], 2) * 100, "%")`. However, adversative constructions were more common with [se faire]{.smallcaps} than with [être]{.smallcaps}: while only about one fifth (`r   paste0(adversative_etre_rel * 100, "%")`) of [être]{.smallcaps} were adversative, this was the case for two fifths (`r   paste0(adversative_sefaire_rel * 100, "%")`) of [se faire]{.smallcaps}. The mosaic plot in @fig-adversativity illustrates the proportional distribution of [être]{.smallcaps} and [se faire]{.smallcaps} across the adversativity levels.
 
 ::: {#fig-adversativity}
 ```{r adversativity-plot, echo = FALSE}
@@ -1264,13 +1264,13 @@ Overall, non-adversative constructions occured more frequently than adversative 
 mosaicplot(passive_variant ~ adversativity,
            data = passive_sample_clean,
            main = "",
-           xlab = "Adversativity",
-           ylab = "Passive Variant",
+           xlab = "Passive Variant",
+           ylab = "Adversativity",
            col = c("lightblue", "orange"))
 
 ```
 
-Proportional Distribution of [être]{.smallcaps} and [se faire]{.smallcaps} across the Adversativity Levels
+Proportional Distribution of [être]{.smallcaps} and [se faire]{.smallcaps} across Adversativity Levels
 :::
 
 ```{r interaction-values, include = FALSE}
@@ -1424,7 +1424,7 @@ freq_communication |>
 Frequencies of Lemmas in the Communication Verb Cluster for [être]{.smallcaps} and [se faire]{.smallcaps}
 :::
 
-Given this pattern, in line with our initial hypothesis, one possible explanation is that adversativity influences the choice of [se faire]{.smallcaps} within the communication verb cluster. However, there was no significant interaction between the verb cluster and the adversativity factor. As shown by the proportions of verb clusters across adversativity levels in @fig-interaction-adv-cluster, [se faire]{.smallcaps} is used more frequently with adversative communication verbs than with non-adversative communication verbs, while the opposite pattern can be observed for [être]{.smallcaps}. Note, however, that this trend is not strong enough to be statistically significant in the logistic regression. @fig-interaction-adv-cluster also illustrates that neutral, non-adversative verbs are predominant with [être]{.smallcaps}, which reflects that [être]{.smallcaps} is the default passive variant.
+Given this pattern, in line with our initial hypothesis, one possible explanation is that adversativity influences the choice of [se faire]{.smallcaps} within the communication verb cluster. However, there was no significant interaction between the verb cluster and the adversativity factor. As shown by the proportions of verb clusters across adversativity levels in @fig-interaction-adv-cluster, [se faire]{.smallcaps} is used more frequently with adversative communication verbs than with non-adversative communication verbs, while the opposite pattern can be observed for [être]{.smallcaps}. Note, however, that this trend is not strong enough to be statistically significant in the logistic regression.
 
 ::: {#fig-interaction-adv-cluster}
 ```{r interaction-adv-cluster, echo=FALSE}
@@ -1441,7 +1441,7 @@ ggplot(passive_sample_clean,
 
 ```
 
-Frequencies of [être]{.smallcaps} and [se faire]{.smallcaps} by Verb Cluster and Adversativity
+Proportions of the Verb Clusters by Adversativity for [être]{.smallcaps} and [se faire]{.smallcaps}
 :::
 
 Similarly to the adversativity of the verb, the animacy of the subject could play a role in the distribution of [se faire]{.smallcaps} and [être]{.smallcaps} with communication verbs like *insulter* and *engueuler*, which typically occur with an animate undergoer. Again, a trend can be observed in the frequencies, but there is no significant interaction between the verb cluster and the animacy factors. @fig-interaction-anim-cluster shows the proportions of [être]{.smallcaps} and [se faire]{.smallcaps} across verb clusters and subject animacy. [être]{.smallcaps} is more frequent with communication verbs when the subject is inanimate, whereas [se faire]{.smallcaps} is more common with communication verbs when the subject is animate. As with the frequencies discussed in @sec-results-gender, these plots are included solely for exploratory interpretation, as neither the interaction between verb cluster and adversativity nor the interaction with animacy reached statistical significance.
@@ -1461,7 +1461,7 @@ ggplot(passive_sample_clean,
 
 ```
 
-Frequencies of [être]{.smallcaps} and [se faire]{.smallcaps} by Verb Cluster and Subject Animacy
+Proportions of the Verb Clusters by Subject Animacy for [être]{.smallcaps} and [se faire]{.smallcaps}
 :::
 
 # Discussion {#sec-discussion}
@@ -1501,8 +1501,10 @@ Despite these limitations, the model diagnostics indicate a good overall fit. Al
 <!-- -   implications for causativity debate? -->
 
 # Conclusion {#sec-conclusion}
+
 <!-- restate the problem, find novel way to circle back to the problem -->
-When constructing a passive sentence, French native speakers usually choose intuitively between the two variants [être]{.smallcaps} and [se faire]{.smallcaps}. However, this choice is not random, but influenced by many linguistic factors. Based on previous research, we narrowed down these factors and constructed a mixed-effects binomial logistic regression model that predicts the occurrence of either [être]{.smallcaps} or [se faire]{.smallcaps}. In order to provide a theoretically stable basis for the model, we clustered the factors under the overarching concepts of subject responsibility, adversativity and aspectuality. We hypothesised that [se faire]{.smallcaps} would be chosen more often in adversative, inchoative contexts with animate, male subjects. Since [se faire]{.smallcaps} is attested to occur more frequently in spoken than in written French, we chose to investigate its use and alternation in the context of parliamentary debates. Throughout this process, we aimed to make our study reproducible and transparent by preregistering the study and documenting every step accurately.
+
+When constructing a passive sentence, French native speakers usually choose intuitively between the two variants [être]{.smallcaps} and [se faire]{.smallcaps}. However, this choice is not random, but influenced by many linguistic factors. Based on previous research, we narrowed down these factors and constructed a mixed-effects binomial logistic regression model that predicts the occurrence of either [être]{.smallcaps} or [se faire]{.smallcaps}. In order to provide a theoretically stable basis for the model, we clustered the factors under the overarching concepts of subject responsibility, adversativity, and aspectuality. We hypothesised that [se faire]{.smallcaps} would be chosen more often with animate, male subjects, in adversative, inchoative contexts, and in combination with verbs from the semantic cluster of "hitting-touching". Since [se faire]{.smallcaps} is attested to occur more frequently in spoken than in written French, we chose to investigate its use and alternation in the context of parliamentary debates. Throughout this process, we aimed to make our study reproducible and transparent by preregistering it and documenting every step accurately.
 
 During the in-depth investigation of the alternation, the complexity of the construction and the difficulty of our chosen task became apparent. We were faced with challenges of annotation, analysis, and interpretation, which we navigated collaboratively to the best of our ability and knowledge. Although the complexity of language necessarily exceeds what can be measured by the included factors and their interplay, our model produces noteworthy results.
 
@@ -1510,12 +1512,13 @@ During the in-depth investigation of the alternation, the complexity of the cons
 
 <!-- although the French [être:se faire]{.smallcaps} alternation presents considerable analytical challenges due to its complexity,-->
 
-To summarise, the interaction between subject animacy and adversativity suggests that [se faire]{.smallcaps} emphasises subject affectedness more than [être]{.smallcaps}. The results also show that [se faire]{.smallcaps} is not used  exclusively with animate subjects, thus challenging previous research. While [être]{.smallcaps} remains clearly preferred for inanimate subjects, adversative verbs increase the likelihood of inanimate subjects being used with [se faire]{.smallcaps}. Furthermore, a main effect of the semantic verb cluster on this alternation was found, with communication verbs surprisingly favouring [se faire]{.smallcaps}. Notably, the exact magnitude of these findings may be specific to the specialised genre of parliamentary debates. Nevertheless, since the effects of animacy and adversativity were so strong, we expect them to be applicable to a variety of spoken French. The random effect of the lemma shows the important role of lexical effects in this alternation. However, the limitations of our dataset, annotation scheme, and model design require further refinement, particularly with regard to animacy, gender, aspect, and lexical variation. Methodologically, our model proves to be robust, but additional validation techniques may improve the assessment of generalisability.
+To summarise, the interaction between subject animacy and adversativity suggests that [se faire]{.smallcaps} emphasises subject affectedness more than [être]{.smallcaps}. The results also shows that [se faire]{.smallcaps} is not used exclusively with animate subjects, challenging previous research. While [être]{.smallcaps} remains clearly preferred for inanimate subjects, adversative verbs increase the likelihood of inanimate subjects being used with [se faire]{.smallcaps}. Furthermore, a main effect of the semantic verb cluster on this alternation was found, with communication verbs surprisingly favouring [se faire]{.smallcaps}. Notably, the exact magnitude of these findings may be specific to the specialised genre of parliamentary debates. Nevertheless, since the effects of animacy and adversativity were so strong, we expect them to be applicable to a variety of spoken French. The random effect of the lemma shows the important role of lexical effects in this alternation. However, the limitations of our dataset, annotation scheme, and model design require further refinement, particularly with regard to animacy, gender, aspect, and lexical variation. Methodologically, our model proves to be robust, but additional validation techniques may improve the assessment of its generalisability.
 
 <!-- discuss implications, key takeways; call for action for future research -->
+
 <!-- Finish your paper on a forward-looking note by suggesting how you or other researchers might build on this topic in the future and address any limitations of the current paper. -->
 
-Our analysis reveals interesting results that could pave the way for further investigation. For instance, it might be illuminating to model the lemma as a fixed effect rather than a random effect for better control and interpretability. In addition, a model trained on comparable written and spoken data would allow the inclusion of mode as a factor, thereby assessing the exact distribution of both passive variants and tracking how much more common [se faire]{.smallcaps} really is in spoken language. An approach outside of regression modelling may also be valuable: we suggest memory-based learning as a method that makes predictions of class membership (i.e. passive choice) based on basic features. 
+Our analysis reveals interesting results that could pave the way for further investigation. For instance, it might be illuminating to model the lemma as a fixed effect rather than a random effect for better control and interpretability. In addition, a model trained on comparable written and spoken data would allow the inclusion of mode as a factor, thereby assessing the exact distribution of both passive variants and tracking how much more common [se faire]{.smallcaps} really is in spoken language. An approach outside of regression modelling may also be valuable: we suggest memory-based learning as a method that makes predictions of class membership (i.e. passive choice) based on basic features.
 
 Overall, the corpus-based approach allowed us to meticulously model real-world spoken French and make substantiated inferences based on extensive statistical evidence. Therefore, we believe that this study offers a basis for future refined analyses of passive alternations in French. Our findings provide insight into the complex [être:se faire]{.smallcaps} alternation, and highlight the value of combining corpus-based methods with a theoretical framework when modelling linguistic alternations.
 
@@ -1546,38 +1549,34 @@ read.bibtex(file = "packages.bib")
 
 # Declaration of Collaboration
 
-From Elens slides: 
-If you worked in a pair, include a paragraph at the end entitled
-“Declaration of collaboration” briefly explaining how you
-collaborated (who did what, to what extent, etc.)
+From Elens slides: If you worked in a pair, include a paragraph at the end entitled “Declaration of collaboration” briefly explaining how you collaborated (who did what, to what extent, etc.)
 
-Inspiration: https://www.elsevier.com/researcher/author/policies-
-and-guidelines/credit-author-statement
+Inspiration: https://www.elsevier.com/researcher/author/policies- and-guidelines/credit-author-statement
 
 # Appendix {.appendix}
 
-## Verb cluster categorisation with example verbs {.appendix}
+## Verb Cluster Categorisation with Example Verbs {.appendix}
 
 <div>
 
-| Verb Clusters [@francois_presentation_2007, 4] | Grouped Verb Clusters (Our Study) | Example Verbs |
+| Verb Clusters [@francois_presentation_2007, 4]                    | Grouped Verb Clusters (Our Study) | Example Verbs                                                                                                                                                                                                 |
 |--------------------|--------------------|--------------------------------|
-| giving, depriving (don, privation) | neutral | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*) |
-| entering, leaving (entrée, sortie) | neutral | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*) |
-| hitting, touching (frapper, toucher) | hitting-touching | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*) |
-| movement in place (mouvement sur place) | neutral | \- |
-| equipping, disarming (munir, démunir) | neutral | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie \[...\]*) |
-| transformation, change (transformation, changement) | neutral | remplacer (*\[...\] afin que le premier puisse se faire remplacer par le second \[...\]*) |
-| realisation, preparation (réalisation, mise en état) | neutral | photographier (*J'ajoute la diminution du nombre de points où l'on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'identité ou son passeport*.) |
-| physical states and behaviours (états physiques et comportements) | neutral | aider (*\[...\] afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'en sont pas informés.*) |
-| locative (locatif) | neutral | domicilier (*Beaucoup trichent en se faisant domicilier chez un parent \[...\]*) |
-| union, reunion (union, réunion) | neutral | \- |
-| psychological verbs (verbes psychologiques) | neutral | écouter (*Le problème, on l'a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*) |
-| seizing, clasping, possessing (saisir, serrer, posséder) | neutral | élire (*\[...\] avant que M. Hollande ne se fasse élire en affirmant qu'il ne signerait pas le TSCG en l'état.*) |
-| communication | communication | accuser (*\[...\] il est devenu impossible de l'exprimer dans le débat public sans se faire accuser de haïr les policiers \[...\]*) |
-| auxiliary verbs | \- | \- |
+| giving, depriving (don, privation)                                | neutral                           | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*)      |
+| entering, leaving (entrée, sortie)                                | neutral                           | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*)                    |
+| hitting, touching (frapper, toucher)                              | hitting-touching                  | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*)                                                  |
+| movement in place (mouvement sur place)                           | neutral                           | \-                                                                                                                                                                                                            |
+| equipping, disarming (munir, démunir)                             | neutral                           | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie \[...\]*)                                                                                                            |
+| transformation, change (transformation, changement)               | neutral                           | remplacer (*\[...\] afin que le premier puisse se faire remplacer par le second \[...\]*)                                                                                                                     |
+| realisation, preparation (réalisation, mise en état)              | neutral                           | photographier (*J'ajoute la diminution du nombre de points où l'on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'identité ou son passeport*.) |
+| physical states and behaviours (états physiques et comportements) | neutral                           | aider (*\[...\] afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'en sont pas informés.*)                                                                    |
+| locative (locatif)                                                | neutral                           | domicilier (*Beaucoup trichent en se faisant domicilier chez un parent \[...\]*)                                                                                                                              |
+| union, reunion (union, réunion)                                   | neutral                           | \-                                                                                                                                                                                                            |
+| psychological verbs (verbes psychologiques)                       | neutral                           | écouter (*Le problème, on l'a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*)                                                          |
+| seizing, clasping, possessing (saisir, serrer, posséder)          | neutral                           | élire (*\[...\] avant que M. Hollande ne se fasse élire en affirmant qu'il ne signerait pas le TSCG en l'état.*)                                                                                              |
+| communication                                                     | communication                     | accuser (*\[...\] il est devenu impossible de l'exprimer dans le débat public sans se faire accuser de haïr les policiers \[...\]*)                                                                           |
+| auxiliary verbs                                                   | \-                                | \-                                                                                                                                                                                                            |
 
-Verb cluster categorisation with example verbs based on the classes by @francois_presentation_2007 [4]
+Verb Cluster Categorisation with Example Verbs Based on the Classes by @francois_presentation_2007 [4]
 
 </div>
 

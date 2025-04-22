@@ -30,6 +30,7 @@ p {
 
 </style>
 ```
+
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -268,6 +269,7 @@ We recognize this "fuzzy" [@bohmann_large-scale_2023: 50] variable context as bo
 
 -   Subjects in passive sentences are preferably animate, definite, and pronominal. In the study by @da_cunha_lalternance_2020, animate, definite, and pronominal arguments that function as the objects in active sentences were more frequently found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice) -->
 ```
+
 ### Subject Responsibility {#sec-subj-resp}
 
 As indicated in @sec-debate, the question whether the referent of the subject of [se faire]{.smallcaps} holds any responsibility is central to the debate of the construction's passive-status [@sveberg_se_2012; @bellec_construction_2014: 212-213]. In line with their argument that [se faire]{.smallcaps} is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of [se faire]{.smallcaps} is always a causer and therefore always responsible to some degree. They contrast it to [être]{.smallcaps}'s subject referent, which is seen as more neutral [@gaatone_desagreable_1983: 164-166].
@@ -321,7 +323,7 @@ Novakova [-@novakova_construction_2009: 116-117] notes that modal verbs frequent
 
 We assign the label modal if a form of one of the modals *devoir*, *vouloir* or *pouvoir* has scope on [se faire]{.smallcaps}. We limit the modal category to these three modal verbs to ensure consitent annotation; verbs that could have a modal sense in some contexts (e.g. *savoir*) and paraphrasal constructions indicating subject responsibility (e.g. *avoir besoin de, arriver à, réussir à, envier de, avoir des difficultés pour, avoir la possibilité de, avoir envie de*) are not assigned modal status.
 
-### Adversativity
+### Adversativity {#sec-adversativity}
 
 The factor of adversativity is reflected in the semantics of the verb and captures the negative consequences of the described action for the subject. This factor has been shown to influence the choice between the English [be]{.smallcaps} and [get]{.smallcaps} passives [@chappell1980get; @hundt_be-_2024: 89, 96-97; @bohmann_large-scale_2023], with [get]{.smallcaps} being realised more often with adversative verbs than [be]{.smallcaps}. Since Raineri [-@raineri_analyse_2010: 87] draws parallels between the [get]{.smallcaps} and [se faire]{.smallcaps} passive, we see an adversativity effect for [se faire]{.smallcaps} as likely.
 
@@ -432,23 +434,23 @@ Regarding tense, we chose to include all tenses in our analysis, including the p
 
 A typical example of a [se faire]{.smallcaps} construcion that met our criteria is:
 
-> (1) *Les élus se font très souvent insulter \[...\]\
->     *'The elected officials are often insulted \[...\]'
+> *Les élus se font très souvent insulter \[...\]\
+> *'The elected officials are often insulted \[...\]'
 
 The corresponding [être]{.smallcaps} paraphrase would be:
 
-> (1) *Les élus sont très souvent insultés.\
->     *'The elected officials are often insulted.'
+> *Les élus sont très souvent insultés.\
+> *'The elected officials are often insulted.'
 
 In contrast, expressions such as *se faire connaître* were excluded. For example:
 
-> (1) *Cette baisse est ensuite une conséquence de la crise économique de 2018 dont les effets se font connaître aujourd'hui.\
->     *'This decline is then a consequence of the 2018 economic crisis, the effects of which are becoming known today.'
+> *Cette baisse est ensuite une conséquence de la crise économique de 2018 dont les effets se font connaître aujourd'hui.\
+> *'This decline is then a consequence of the 2018 economic crisis, the effects of which are becoming known today.'
 
 When paraphrased with [être]{.smallcaps}, *connus* takes on an adjectival function:
 
-> (1) *Cette baisse est ensuite une conséquence de la crise économique de 2018 dont les effets sont connus aujourd'hui.*\
->     'This decline is then a consequence of the 2018 economic crisis, the effects of which are known today.'
+> *Cette baisse est ensuite une conséquence de la crise économique de 2018 dont les effets sont connus aujourd'hui.*\
+> 'This decline is then a consequence of the 2018 economic crisis, the effects of which are known today.'
 
 While we excluded purely causative constructions, the distinction between causative and passive constructions was not always clear. The question arose: when is a construction semantically close enough to a passive alternation, and when does its meaning lean too much toward a causative interpretation? As expected, given the ongoing debate about the passive status of [se faire]{.smallcaps} (see @sec-debate) and the difficulties noted by Bohmann et al. [-@bohmann_large-scale_2023] in their study of the English [be]{.smallcaps}:[get]{.smallcaps} passive alternation, we encountered a number of unclear cases during the manual filtering of constructions. We acknowledge that, similar to their study, there is no straightforward distinction between causative and passive readings, and some degree of subjectivity in categorization is unavoidable.
 
@@ -526,7 +528,7 @@ passive_sample_combined |>
   summary()
 ```
 
-Since the analysis required detailed (and time-consuming) manual annotation, we decided to split the annotation work between us. However, to ensure consistent annotation, a representative sample of 320 observations (`r round(320/1064*100, 2)` of all instances) were annotated by both of us. For these instances, we calculated Cohen's ϰ (Kappa) as a measure of inter-annotator agreement, following Levshina [-@levshina_how_2015: 201].
+Since the analysis required detailed (and time-consuming) manual annotation, we decided to split the annotation work between us. However, to ensure consistent annotation, a representative sample of 320 observations (`r round(320/1064*100, 2)` of all instances) were annotated by both of us. For these instances, we calculated Cohen's ϰ (Kappa) as a measure of inter-annotator agreement, following Levshina [-@levshina_how_2015: 201]. The values and their interpretation are displayed in @tbl-kappa-values.
 
 ```{r cohens-kappa, include = FALSE}
 kappa_animacy <- ckappa(passive_sample_combined[c("subj_animacy_A", "subj_animacy_B")]) 
@@ -843,14 +845,6 @@ binnedplot(predictions, residuals(final_model, type = "response"))
 At first glance, the binned residuals visualised in @fig-binned-residuals appear to be quite random with no obvious patterns and with most residuals close to 0. The grey lines mark the bounds of the standard error; ideally, these bounds should emcompass 95% of the binned residuals [@Gelman_Hill_2006: 97]. Although the SE bounds essentially capture the shape of the residuals and the majority of the residuals fall within them, a considerable proportion also fall outside the desired area: 11 out of 29 (`r paste0(round(11/29, 2) * 100, "%")`), which is well above the desired 5%.
 
 In this context, a slight pattern emerges: negative deviations are more common for low to medium expected values (i.e. low predicted probability of [se faire]{.smallcaps}), while positive deviations occur more often for high expected values (i.e. high predicted probability of [se faire]{.smallcaps}). In the mid-range (0.3-0.7), where [être]{.smallcaps} and [se faire]{.smallcaps} are predicted to be about equally likely, the binned residuals are exclusively negative (`y < 0`). Thus, when the correct level was [être]{.smallcaps}, the model often predicted a higher probability of [se faire]{.smallcaps}. This pattern is reversed for predicted probabilities of `x > 0.7`: all deviations are positive (`y > 0`), indicating that when [se faire]{.smallcaps} was the correct variant, the model slightly underestimated the probabilities of [se faire]{.smallcaps} occurring and could have been even more confident. In addition, there is one extremely negative bin between `x = 0.4 - 0.5`, indicating that the model drastically overestimated [se faire]{.smallcaps} in this range.
-
-```{r outlier-bin, include=FALSE}
-outlier_bin <- subset(passive_sample_clean, predictions >= 0.4 & predictions < 0.5)
-summary(outlier_bin)
-table(outlier_bin$passive_variant, outlier_bin$subj_animacy, outlier_bin$adversativity)
-```
-
-<!-- Looking at the data from this bin, it is striking that it contains more occurrences of the rather atypical (compared to se faire) combination of être + animate subject [+ adversative] than se faire (but only 6), since the combination of subject animacy and strongly predicts se faire -> the model is likely to make incorrect predictions for all these cases, predicting se faire and incorrectly classifying être passives as se faire? overgeneralisations for animacy and adversativity? > This suggests that the model overestimates the predictive power of animacy and generalises too much from the frequent co-occurrence of se faire and animate subjects, misclassifying atypical être+animate cases.-->
 
 To investigate these potentially problematic characteristics further and determine whether they indicate systematic prediction errors of the model, we conducted additional residuals tests. Following the recommendations of Gries [-@gries_statistics_2021: 445], we used functions from the `DHARMa` package [@R-DHARMa] to gain more detailed insight into the residuals structure.
 
@@ -1547,11 +1541,114 @@ options("citation_format" = "pandoc")
 read.bibtex(file = "packages.bib")
 ```
 
-# Declaration of Collaboration
+# Declaration of Collaboration {#sec-declaration-collab}
 
-From Elens slides: If you worked in a pair, include a paragraph at the end entitled “Declaration of collaboration” briefly explaining how you collaborated (who did what, to what extent, etc.)
+We, Gina Reinhard and Rose Hörsting, wrote this term paper in close collaboration. All decisions were made by mutual agreement. We both contributed equally to the planning, design, and analysis of this study. The following authors' statement is based on the [CRediT author statement](https://www.elsevier.com/researcher/author/policies-and-guidelines/credit-author-statement) and provides a detailed description of who was responsible for which parts and to what extent. The categories suggested by CRediT are adapted for our purposes and supplemented by references to the corresponding sections of this paper. Notably, many sections were true team efforts and cannot be clearly attributed to one person alone. In such cases, the contributions are listed for both authors.
 
-Inspiration: https://www.elsevier.com/researcher/author/policies- and-guidelines/credit-author-statement
+```{=html}
+<!-- CRediT author statement - categories
+Conceptualization
+Methodology
+Software
+Validation
+Formal analysis
+Investigation
+Resources
+Data Curation
+Writing-Original Draft
+Writing - Review & Editing
+Visualization
+Supervision
+Project administration -->
+```
+
+**Gina Reinhard**:
+
+-   Conceptualisation
+
+-   Methodology
+
+    -   Data Collection/ Curation: CQL for se faire, manual filtering of 1,254 se faire constructions, manual annotation of 648 passive constructions
+
+    -   Reference levels
+
+-   Validation
+
+    -   Model Diagnostics: Bootstrap Validation
+
+-   Formal analysis / Investigation
+
+    -   Results: Overall frequencies, Subject Responsibility (Subject Animacy and Subject Gender), Adversativity, Aspectuality
+
+-   Writing-Original Draft (including Code)
+
+    -   2.1; 2.3.4
+
+    -   3.1.1, 3.1.2, 3.1.3; 3.2.3 (Bootstrap Validation)
+
+    -   4 (...)
+
+    -   5 (...)
+
+-   Writing - Review & Editing: ...
+
+-   Visualisation / Preparation, creation and/or presentation of the published work, specifically visualization/ data presentation
+
+    -   Table 9, Table 10, Table 11, Table 12, Table 13, Table 14, Table 15
+
+    -   (Figure 1), Figure 5, Figure 6, Figure 7, Figure 8?, Figure 10, Figure 11, Figure 12
+
+**Rose Hörsting**:
+
+-   Conceptualisation
+
+-   Methodology
+
+    -   Data Collection/ Curation: CQL for être, manual annotation of 648 passive constructions
+
+    -   Reference Levels, Model Selection
+
+-   Validation
+
+    -   Model Diagnostics: Residuals, Concordance Index, Significance
+
+-   Formal analysis, Investigation
+
+    -   Results: Log odds & Intercept, Subject Animacy, Adversativity
+
+-   Writing - Original Draft (including Code)
+
+    -   @sec-introduction (Introduction)
+
+    -   @sec-se-faire: @sec-sefaire-structure-meaning, large parts of @sec-debate; @sec-factors: @sec-sefaire-context, @sec-subj-resp (Intro Subject Responsibility, Subject Animacy, Modal Verb), @sec-adversativity, contributions to Tense-Aspect-Mood (TAM) in @sec-aspectuality
+    
+    -   @sec-data-collection: @sec-corpus, @sec-semi-automatic-approach, @sec-iaa, @sec-data-preprocessing, contributions to @sec-filtering-criteria; all of @sec-log-regression except bootstrap validation
+
+    -   @sec-results-animacy, @sec-results-adversativity
+
+    -   contributions to @sec-discussion (first three paragraphs & second to last paragraph)
+
+    -   @sec-conclusion (Conclusion)
+
+    -   (Declaration of Collaboration, @sec-declaration-collab)
+
+-   Writing - Review & Editing: throughout the whole paper, especially in Discussion
+
+-   Visualisation
+
+    -   @tbl-kappa-values, @tbl-levels, @tbl-model-max-unknown, @tbl-max-model-collinearity, @tbl-model-max, @tbl-model-back-1, @tbl-final-model, @tbl-anova, contributions to @tbl-frequencies
+
+    -   @fig-binned-residuals, @fig-dharma-dispersion, @fig-dharma-qq, @fig-adversativity ?, @fig-animacy-adversativity-log
+
+```{=html}
+<!--   (Resources / Provision of study materials, reagents, materials, patients, laboratory samples, animals, instrumentation, computing resources, or other analysis tools)
+
+-   Supervision
+
+-   Project administration) -->
+```
+
+For a full overview of the exact contributions of each author, please consult our Git repository: ...
 
 # Appendix {.appendix}
 
@@ -1559,22 +1656,22 @@ Inspiration: https://www.elsevier.com/researcher/author/policies- and-guidelines
 
 <div>
 
-| Verb Clusters [@francois_presentation_2007, 4]                    | Grouped Verb Clusters (Our Study) | Example Verbs                                                                                                                                                                                                 |
+| Verb Clusters [@francois_presentation_2007, 4] | Grouped Verb Clusters (Our Study) | Example Verbs |
 |--------------------|--------------------|--------------------------------|
-| giving, depriving (don, privation)                                | neutral                           | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*)      |
-| entering, leaving (entrée, sortie)                                | neutral                           | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*)                    |
-| hitting, touching (frapper, toucher)                              | hitting-touching                  | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*)                                                  |
-| movement in place (mouvement sur place)                           | neutral                           | \-                                                                                                                                                                                                            |
-| equipping, disarming (munir, démunir)                             | neutral                           | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie \[...\]*)                                                                                                            |
-| transformation, change (transformation, changement)               | neutral                           | remplacer (*\[...\] afin que le premier puisse se faire remplacer par le second \[...\]*)                                                                                                                     |
-| realisation, preparation (réalisation, mise en état)              | neutral                           | photographier (*J'ajoute la diminution du nombre de points où l'on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'identité ou son passeport*.) |
-| physical states and behaviours (états physiques et comportements) | neutral                           | aider (*\[...\] afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'en sont pas informés.*)                                                                    |
-| locative (locatif)                                                | neutral                           | domicilier (*Beaucoup trichent en se faisant domicilier chez un parent \[...\]*)                                                                                                                              |
-| union, reunion (union, réunion)                                   | neutral                           | \-                                                                                                                                                                                                            |
-| psychological verbs (verbes psychologiques)                       | neutral                           | écouter (*Le problème, on l'a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*)                                                          |
-| seizing, clasping, possessing (saisir, serrer, posséder)          | neutral                           | élire (*\[...\] avant que M. Hollande ne se fasse élire en affirmant qu'il ne signerait pas le TSCG en l'état.*)                                                                                              |
-| communication                                                     | communication                     | accuser (*\[...\] il est devenu impossible de l'exprimer dans le débat public sans se faire accuser de haïr les policiers \[...\]*)                                                                           |
-| auxiliary verbs                                                   | \-                                | \-                                                                                                                                                                                                            |
+| giving, depriving (don, privation) | neutral | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*) |
+| entering, leaving (entrée, sortie) | neutral | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*) |
+| hitting, touching (frapper, toucher) | hitting-touching | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*) |
+| movement in place (mouvement sur place) | neutral | \- |
+| equipping, disarming (munir, démunir) | neutral | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie \[...\]*) |
+| transformation, change (transformation, changement) | neutral | remplacer (*\[...\] afin que le premier puisse se faire remplacer par le second \[...\]*) |
+| realisation, preparation (réalisation, mise en état) | neutral | photographier (*J'ajoute la diminution du nombre de points où l'on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'identité ou son passeport*.) |
+| physical states and behaviours (états physiques et comportements) | neutral | aider (*\[...\] afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'en sont pas informés.*) |
+| locative (locatif) | neutral | domicilier (*Beaucoup trichent en se faisant domicilier chez un parent \[...\]*) |
+| union, reunion (union, réunion) | neutral | \- |
+| psychological verbs (verbes psychologiques) | neutral | écouter (*Le problème, on l'a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*) |
+| seizing, clasping, possessing (saisir, serrer, posséder) | neutral | élire (*\[...\] avant que M. Hollande ne se fasse élire en affirmant qu'il ne signerait pas le TSCG en l'état.*) |
+| communication | communication | accuser (*\[...\] il est devenu impossible de l'exprimer dans le débat public sans se faire accuser de haïr les policiers \[...\]*) |
+| auxiliary verbs | \- | \- |
 
 Verb Cluster Categorisation with Example Verbs Based on the Classes by @francois_presentation_2007 [4]
 

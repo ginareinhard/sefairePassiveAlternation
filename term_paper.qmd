@@ -136,7 +136,7 @@ cat(paste(lemma_list, collapse = " | "))
 
 ```
 
-# Introduction
+# Introduction {#sec-introduction}
 
 The most common way of expressing passive in French is via [être]{.smallcaps}, as in *Les députés sont élus* ('The members of parliament are elected'), as attested in the ParlaMint corpus [@11356/1431]. However, alternatively, one may use [se faire]{.smallcaps} to express passivity: *Les députés se font élire* ('The members of parliament got elected'). We use [être]{.smallcaps} and [se faire]{.smallcaps} in small capitals to refer specifically to the passive variants, distinguishing these forms from other uses of the verbs *être* and *se faire*. Previous research suggests that the choice between these two variants is not arbitrary: [se faire]{.smallcaps} may be chosen to convey a particular meaning or emphasise something that [être]{.smallcaps} cannot capture [@kupferman_construction_1995: 57-62]. But what exactly determines whether the alternative passive is chosen, or even preferred, over the canonical one?
 
@@ -200,7 +200,7 @@ To summarise, [être]{.smallcaps} is the canonical form of passivisation in Fren
 
 ## Alternative Passive: [se faire]{.smallcaps} {#sec-se-faire}
 
-### Structure and Meaning
+### Structure and Meaning {#sec-sefaire-structure-meaning}
 
 When constructing a passive sentence, French speakers may choose to use [se faire]{.smallcaps} instead of the canonical [être]{.smallcaps}, as [se faire]{.smallcaps} provides an alternative way to express passive meaning in French. As example 3 shows, [se faire]{.smallcaps} consists of the pronoun *se* (which shows agreement with the subject), a form of the verb *faire* ('to do'), and a verb in the infinitive.
 
@@ -454,7 +454,7 @@ While we excluded purely causative constructions, the distinction between causat
 
 This approach is also supported by linguistic analyses that suggest a continuum between causative and passive meanings in constructions with *se faire* (see @sec-debate). We identified numerous cases where a clear binary distinction between passive and causative was not possible, for example when the subject is both the undergoer and the causer of the action. In general, we opted for a broad approach, including as many constructions as possible. This means that even when the causative reading appeared more natural (because the subject initiates the event), we included the construction as long as a passive understanding was also plausible (since the subject also undergoes the action). Representative examples of such constructions in our sample include *se faire vacciner* 'to be/get vaccinated', *se faire élire* 'to be/get elected' or 'to stand for election', *se faire remarquer* 'to be/get noticed' or 'to draw attention to oneself'.
 
-### Inter-Annotator Agreement
+### Inter-Annotator Agreement {#sec-iaa}
 
 In preparation for statistical modelling, we annotated the filtered sample for the features outlined in @sec-factors. A blind annotation process was used, where Annotator A and Annotator B were unaware of each other’s annotations. As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all *compléments d' agents* of [se faire]{.smallcaps} during initial filtering, the column `agent_pp` was renamed to `agent_pp_A`. The datasets were then combined, variables were converted from characters to factors and empty values were replaced with `NA` to ensure proper handling of missing values in statistical analysis.
 
@@ -712,7 +712,7 @@ kbl(levels_table)
 
 ```
 
-### Model Selection
+### Model Selection {#sec-model-selection}
 
 We fit a mixed-effects binomial logistic regression model in `R` following Levshina [-@levshina_how_2015: 253-276] and Gries [-@gries_statistics_2021: 393-452]. The model estimates the log of the odds that a given construction is realized with [se faire]{.smallcaps}. To account for individual variation, we included the verb lemma and the speaker (as indicated in the meta data of ParlaMint 2.1) as random effects.
 
@@ -1202,7 +1202,7 @@ Absolute and Relative Frequencies of the Factors Levels for [être]{.smallcaps} 
 
 While several predictors were tested in relation to subject responsibility, only subject animacy showed a significant effect, though this is influenced by its interaction with adversativity. No significant effects were found for the *complément d’agent*, or modal verbs factors, and they are therefore not discussed further. While subject gender does not reach statistical significance, its distribution may suggest a potential tendency and is included here for exploratory purposes.
 
-### Animacy
+### Animacy {#sec-results-animacy}
 
 As outlined in @sec-subj-resp, subject animacy is linked to subject responsibility or affectedness. @tbl-animacy illustrates the absolute and relative frequencies of the subject animacy levels for [être]{.smallcaps} and [se faire]{.smallcaps} in our data. With [être]{.smallcaps}, inanimate subjects occur more frequently than animate ones (`r   paste0(animate_etre_rel * 100, "%")` animate, `r   paste0(inaninmate_etre_rel * 100, "%")` inanimate), whereas [se faire]{.smallcaps} shows a strong preference for animate subjects (`r   paste0(animate_sefaire_rel * 100, "%")` animate, `r   paste0(inanimate_sefaire_rel * 100, "%")` inanimate). This distribution aligns with our expectations for [se faire]{.smallcaps}, but contradicts our hypothesis for [être]{.smallcaps}, which we also expected to occur more frequently with animate than with inanimate subjects. The findings for [se faire]{.smallcaps} replicate previous research [e.g. @novakova_construction_2009] and support the consensus that [se faire]{.smallcaps} strongly prefers animate subjects (@sec-subj-resp). If subject animacy is taken as an indicator of subject affectedness, the distribution suggests that subjects of [se faire]{.smallcaps} are likely being more affected by the event than those of [être.]{.smallcaps}
 

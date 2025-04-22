@@ -1544,6 +1544,16 @@ options("citation_format" = "pandoc")
 read.bibtex(file = "packages.bib")
 ```
 
+# Declaration of Collaboration
+
+From Elens slides: 
+If you worked in a pair, include a paragraph at the end entitled
+“Declaration of collaboration” briefly explaining how you
+collaborated (who did what, to what extent, etc.)
+
+Inspiration: https://www.elsevier.com/researcher/author/policies-
+and-guidelines/credit-author-statement
+
 # Appendix {.appendix}
 
 ## Verb cluster categorisation with example verbs {.appendix}

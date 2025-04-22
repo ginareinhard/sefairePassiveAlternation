@@ -2,7 +2,7 @@
 title: "Term paper"
 subtitle: ""
 author: "Rose Hörsting & Gina Reinhard"
-date: "2025-03-15"
+date: "`r format(Sys.Date())`"
 engine: knitr
 bibliography: references.bib
 format: 

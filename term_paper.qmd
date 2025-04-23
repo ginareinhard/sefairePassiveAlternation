@@ -415,23 +415,23 @@ Regarding tense, we chose to include all tenses in our analysis, including the p
 
 A typical example of a [se faire]{.smallcaps} construcion that met our criteria is:
 
-> *Les élus se font très souvent insulter \[...\]\
-> *'The elected officials are often insulted \[...\]'
+>11.  *Les élus se font très souvent insulter \[...\]\
+>     *'The elected officials are often insulted \[...\]'
 
 The corresponding [être]{.smallcaps} paraphrase would be:
 
-> *Les élus sont très souvent insultés.\
-> *'The elected officials are often insulted.'
+> 12. *Les élus sont très souvent insultés.\
+>     *'The elected officials are often insulted.'
 
 In contrast, expressions such as *se faire connaître* were excluded. For example:
 
-> *Cette baisse est ensuite une conséquence de la crise économique de 2018 dont les effets se font connaître aujourd'hui.\
-> *'This decline is then a consequence of the 2018 economic crisis, the effects of which are becoming known today.'
+> 13. *Cette baisse est ensuite une conséquence de la crise économique de 2018 dont les effets se font connaître aujourd'hui.\
+>     *'This decline is then a consequence of the 2018 economic crisis, the effects of which are becoming known today.'
 
 When paraphrased with [être]{.smallcaps}, *connus* takes on an adjectival function:
 
-> *Cette baisse est ensuite une conséquence de la crise économique de 2018 dont les effets sont connus aujourd'hui.*\
-> 'This decline is then a consequence of the 2018 economic crisis, the effects of which are known today.'
+> 14. *Cette baisse est ensuite une conséquence de la crise économique de 2018 dont les effets sont connus aujourd'hui.*\
+>     'This decline is then a consequence of the 2018 economic crisis, the effects of which are known today.'
 
 While we excluded purely causative constructions, the distinction between causative and passive constructions was not always clear. The question arose: when is a construction semantically close enough to a passive alternation, and when does its meaning lean too much toward a causative interpretation? As expected, given the ongoing debate about the passive status of [se faire]{.smallcaps} (see @sec-debate) and the difficulties noted by Bohmann et al. [-@bohmann_large-scale_2023: 34-36] in their study of the English [be]{.smallcaps}:[get]{.smallcaps} passive alternation, we encountered a number of unclear cases during the manual filtering of constructions. We acknowledge that, similar to their study, there is no straightforward distinction between causative and passive readings, and some degree of subjectivity in categorization is unavoidable.
 
@@ -720,7 +720,7 @@ model_max_unknown <- glmer(
 summary(model_max_unknown) #AIC: 771.3 
 ```
 
-@tbl-model-max-unknown shows the odds ratios, confidence intervals and $p$-values of the maximal model, along with the random effects, R^2^ and AIC. Although the main effect of `subj_gender` could not be interpreted due to its participation in an interaction, it is striking that the odds ratios of `subj_gender[unknown]` are very high with a huge confidence interval of 10.49 – 124.99. The AIC is `r round(AIC(model_max_unknown), 3)` with an R^2^ of 0.599 when excluding random effects and 0.748 when accounting for them. The vif-analysis, as displayed in @tbl-max-model-collinearity, revealed no high collinearity values for `subj_gender` or the interaction `subj_animacy:subj_gender`. However, as explained in @sec-data-preprocessing, we suspected an annotated-related artifact related to the level `unknown`. For that reason, in the next step, we decided to compare the model to one fitted on the dataset without `unknown`.
+@tbl-model-max-unknown shows the odds ratios, confidence intervals and $p$-values of the maximal model, along with the random effects, R^2^ and AIC. Although the main effect of `subj_gender` could not be interpreted due to its participation in an interaction, it is striking that the odds ratios of `subj_gender[unknown]` are very high with a huge confidence interval of 10.49 – 124.99. The AIC is `r round(AIC(model_max_unknown), 2)` with an R^2^ of 0.599 when excluding random effects and 0.748 when accounting for them. The vif-analysis, as displayed in @tbl-max-model-collinearity, revealed no high collinearity values for `subj_gender` or the interaction `subj_animacy:subj_gender`. However, as explained in @sec-data-preprocessing, we suspected an annotated-related artifact related to the level `unknown`. For that reason, in the next step, we decided to compare the model to one fitted on the dataset without `unknown`.
 
 ```{r max-model-unknown-tab, echo = FALSE}
 #| label: tbl-model-max-unknown
@@ -754,7 +754,7 @@ summary(model_max) #AIC: 732.5
 vif(model_max)
 ```
 
-After excluding `unknown`, the model's AIC improved substantially to `r round(AIC(model_max), 3)` (@tbl-model-max). The model has an R^2^ of 0.46 / 0.67. Although this is lower than for the model with `unknown`, and therefore explains less variance, overall, the model seems to make better (i.e. more stable and more precise) predictions. Since the variance explained by the random effects is larger than zero, the random effects had to be kept. Due to its better performance, the data without `unknown` were used in future models. However, the model with `unknown` was also optimised using backward stepwise selection and is reported in the appendix.
+After excluding `unknown`, the model's AIC improved substantially to `r round(AIC(model_max), 2)` (@tbl-model-max). The model has an R^2^ of 0.46 / 0.67. Although this is lower than for the model with `unknown`, and therefore explains less variance, overall, the model seems to make better (i.e. more stable and more precise) predictions. Since the variance explained by the random effects is larger than zero, the random effects had to be kept. Due to its better performance, the data without `unknown` were used in future models. However, the model with `unknown` was also optimised using backward stepwise selection and is reported in the appendix.
 
 ```{r full-passive-glmer-tab, echo = FALSE}
 #| label: tbl-model-max
@@ -777,7 +777,7 @@ summary(model_back_1)
 vif(model_back_1)
 ```
 
-All non-significant interactions (`subj_animacy:subj_gender`, `subj_animacy:cluster`, `cluster:adversativity`) were removed, improving the AIC to `r round(AIC(model_back_1), 3)` with an R^2^ of 0.450 / 0.664 (@tbl-model-back-1). Thus, without the interactions, model accuracy increases while the explained variance decreases slightly. With $p$-values \> 0.05, the categories `subj_gender`, `agent_pp`, `modal` and `tam` remain non-significant.
+All non-significant interactions (`subj_animacy:subj_gender`, `subj_animacy:cluster`, `cluster:adversativity`) were removed, improving the AIC to `r round(AIC(model_back_1), 2)` with an R^2^ of 0.450 / 0.664 (@tbl-model-back-1). Thus, without the interactions, model accuracy increases while the explained variance decreases slightly. With $p$-values \> 0.05, the categories `subj_gender`, `agent_pp`, `modal` and `tam` remain non-significant.
 
 ```{r model-back-1-tab, echo = FALSE}
 #| label: tbl-model-back-1
@@ -800,7 +800,7 @@ final_model_summary <- summary(final_model)
 vif(final_model)
 ```
 
-Non-significant fixed effects were removed one-by-one, starting with `tam`, which has the highest $p$-value. At each step, the main effect with the highest $p$-value was eliminated. The results of the final model are reported in @tbl-final-model. Although `subj_gender` remains non-significant ($p$ \> 0.05), we retained it for theoretical and interpretative reasons. The AIC of `r round(AIC(final_model), 3)` indicates that removing `agent_pp`, `modal` and `tam` improves the model quality while R^2^ stays constant at 0.451 / 0.662.
+Non-significant fixed effects were removed one-by-one, starting with `tam`, which has the highest $p$-value. At each step, the main effect with the highest $p$-value was eliminated. The results of the final model are reported in @tbl-final-model. Although `subj_gender` remains non-significant ($p$ \> 0.05), we retained it for theoretical and interpretative reasons. The AIC of `r round(AIC(final_model), 2)` indicates that removing `agent_pp`, `modal` and `tam` improves the model quality while R^2^ stays constant at 0.451 / 0.662.
 
 ```{r final-model-tab, echo = FALSE}
 #| label: tbl-final-model
@@ -813,7 +813,7 @@ tab_model(final_model, show.aic = TRUE) #Marginal R2 / Conditional R2	0.451 / 0.
 
 **Residuals**
 
-To check goodness of fit and usability of the final model, we examined the residuals visually. Gelman and Hill [-@Gelman_Hill_2006: 97] state that due to to the discreteness of data in logistic regression, "plots of raw residuals from logistic regression are generally not useful". Instead, they recommend plotting binned residuals. Following this suggestion, we checked the residuals of the model using the `binnedplot()` function from the `arm` package [@R-arm], which sorts residuals into categories, so called "bins". By default, the number of bins equals the rounded squareroot of the total amount of data points (for our model: `r floor(sqrt(848))`).
+To check goodness of fit and usability of the final model, we examined the residuals visually. Gelman and Hill [-@Gelman_Hill_2006: 97] state that due to the discreteness of data in logistic regression, "plots of raw residuals from logistic regression are generally not useful". Instead, they recommend plotting binned residuals. Following this suggestion, we checked the residuals of the model using the `binnedplot()` function from the `arm` package [@R-arm], which sorts residuals into categories, so called "bins". By default, the number of bins equals the rounded squareroot of the total amount of data points (for our model: `r floor(sqrt(848))`).
 
 ```{r residuals-diagnostics-binned, echo = FALSE}
 #| label: fig-binned-residuals
@@ -823,9 +823,9 @@ predictions <- predict(final_model, type = "response", na.action = na.omit)
 binnedplot(predictions, residuals(final_model, type = "response"))
 ```
 
-At first glance, the binned residuals visualised in @fig-binned-residuals appear to be quite random with no obvious patterns and with most residuals close to 0. The grey lines mark the bounds of the standard error; ideally, these bounds should emcompass 95% of the binned residuals [@Gelman_Hill_2006: 97]. Although the SE bounds essentially capture the shape of the residuals and the majority of the residuals fall within them, a considerable proportion also fall outside the desired area: 11 out of 29 (`r paste0(round(11/29, 2) * 100, "%")`), which is well above the desired 5%.
+At first glance, the binned residuals visualised in @fig-binned-residuals appear to be quite random with no obvious patterns and with most residuals close to 0. The grey lines mark the bounds of the standard error; ideally, these bounds should emcompass 95% of the binned residuals [@Gelman_Hill_2006: 97]. Although the SE bounds essentially capture the shape of the residuals and the majority of the residuals fall within them, a considerable proportion also lie outside the desired area: 11 out of 29 (`r paste0(round(11/29, 2) * 100, "%")`), which is well above the desired 5%.
 
-In this context, a slight pattern emerges: negative deviations are more common for low to medium expected values (i.e. low predicted probability of [se faire]{.smallcaps}), while positive deviations occur more often for high expected values (i.e. high predicted probability of [se faire]{.smallcaps}). In the mid-range (0.3-0.7), where [être]{.smallcaps} and [se faire]{.smallcaps} are predicted to be about equally likely, the binned residuals are exclusively negative (`y < 0`). Thus, when the correct level was [être]{.smallcaps}, the model often predicted a higher probability of [se faire]{.smallcaps}. This pattern is reversed for predicted probabilities of `x > 0.7`: all deviations are positive (`y > 0`), indicating that when [se faire]{.smallcaps} was the correct variant, the model slightly underestimated the probabilities of [se faire]{.smallcaps} occurring and could have been even more confident. In addition, there is one extremely negative bin between `x = 0.4 - 0.5`, indicating that the model drastically overestimated [se faire]{.smallcaps} in this range.
+In this context, a slight pattern emerges: negative deviations are more common for low to medium expected values (i.e. low predicted probabilities of [se faire]{.smallcaps}), while positive deviations occur more often for high expected values (i.e. high predicted probabilities of [se faire]{.smallcaps}). In the mid-range (0.3-0.7), where [être]{.smallcaps} and [se faire]{.smallcaps} are predicted to be about equally likely, the binned residuals are exclusively negative (y < 0). Thus, when the correct level was [être]{.smallcaps}, the model often predicted a higher probability of [se faire]{.smallcaps}. This pattern is reversed for predicted probabilities above 0.7: all deviations are positive (y > 0), indicating that when [se faire]{.smallcaps} was the correct variant, the model slightly underestimated the probabilities of [se faire]{.smallcaps} occurring and could have been more confident. In addition, there is one extremely negative bin between 0.4 and 0.5, indicating that the model drastically overestimated [se faire]{.smallcaps} in this range.
 
 To investigate these potentially problematic characteristics further and determine whether they indicate systematic prediction errors of the model, we conducted additional residuals tests. Following the recommendations of Gries [-@gries_statistics_2021: 445], we used functions from the `DHARMa` package [@R-DHARMa] to gain more detailed insight into the residuals structure.
 
@@ -843,7 +843,7 @@ testQuantiles(sim_res)
 testDispersion(sim_res)
 ```
 
-@fig-dharma-dispersion illustrates that the residuals are slightly positively-skewed but approximately normally distributed. The results of the dispersion test indicate no evidence of over- or underdispersion (dispersion = `r round(testDispersion(sim_res)$statistic[[1]], 3)`, $p$ = `r round(testDispersion(sim_res)$p.value, 3)`). Since $p$ is greater than 0.05, the "null hypothesis of normality cannot be rejected" [@levshina_how_2015: 162], suggesting that the deviation is non-significant.
+@fig-dharma-dispersion illustrates that the residuals are slightly right-skewed but approximately normally distributed. The results of the dispersion test indicate no evidence of over- or underdispersion (dispersion = `r round(testDispersion(sim_res)$statistic[[1]], 3)`, $p$ = `r round(testDispersion(sim_res)$p.value, 3)`). Since $p$ is greater than 0.05, the "null hypothesis of normality cannot be rejected" [@levshina_how_2015: 162], suggesting that the deviation is non-significant.
 
 ```{r residuals-diagnostics-DHARMa-qq, echo = FALSE}
 #| label: fig-dharma-qq
@@ -851,9 +851,9 @@ testDispersion(sim_res)
 plotQQunif(sim_res)
 ```
 
-The Q-Q Plot (@fig-dharma-qq) reveals a significant deviation ($p$ = `r round(testUniformity(sim_res)$p.value, 3)`) as tested by the Kolmogorov-Smirnov test, which may point to unreliable inferential measures. However, as Levshina [-@levshina_how_2015: 56] notes, deviation tests depend on sample size: in large samples, test algorithms are highly sensitive to small deviations, many of which naturally occur in large datasets such as ours. Levshina [-@levshina_how_2015: 56] therefore recommends prioritising visual inspection over test results. Based on the overall distribution of the residuals, we assessed the magnitude of the deviation to be minor. The outlier test shows no significant deviations from the expected distribution.
+The Q-Q Plot (@fig-dharma-qq) reveals a significant deviation ($p$ = `r round(testUniformity(sim_res)$p.value, 3)`) as tested by the Kolmogorov-Smirnov test, which may point to unreliable inferential measures. However, as Levshina [-@levshina_how_2015: 56] notes, deviation tests depend on sample size: in large samples, test algorithms are highly sensitive to small deviations, many of which naturally occur in large datasets such as ours. Levshina [-@levshina_how_2015: 56] therefore recommends prioritising visual inspection over test results. In addition, the outlier test shows no significant deviations from the expected distribution. Based on the overall distribution of the residuals, we assessed the magnitude of the deviation revealed by the KS test to be minor. 
 
-Overall, we did not interpret the `DHARMa` plots as evidence of poor model performance. Among the residual test results, the most concerning was the pattern of non-optimal binned residuals. (@fig-binned-residuals). They revealed the model's overall overoptimism toward [se faire]{.smallcaps}, indicating that it slightly overpredicts [se faire]{.smallcaps} when [être]{.smallcaps} is correct. On the other hand, for very high probabilities of [se faire,]{.smallcaps} the model could be more confident in its predictions of [se faire]{.smallcaps}. Considering all residual diagnostics, we understand them to indicate a stable model structure, but we acknowledge that the model is by no means perfect and could be further improved.
+Overall, we did not interpret the `DHARMa` plots as evidence of poor model performance. Among the residual test results, the most concerning is the pattern of non-optimal binned residuals (@fig-binned-residuals). They reveal the model's overall overoptimism toward [se faire]{.smallcaps}, indicating that it slightly overpredicts [se faire]{.smallcaps} when [être]{.smallcaps} is correct. On the other hand, for very high probabilities of [se faire,]{.smallcaps} the model could be more confident in its predictions of [se faire]{.smallcaps}. Considering all residual diagnostics, we understood them to indicate a stable model structure, but we acknowledged that the model is by no means perfect and could be further improved.
 
 **Concordance Index**
 
@@ -865,11 +865,11 @@ outcome <- as.numeric(na.omit(passive_sample_clean)$passive_variant) - 1
 concordance_final_model <- Hmisc::somers2(predictions, outcome)["C"]
 ```
 
-As Levshina [-@levshina_how_2015: 256] describes, the concordance index measures the ability of the model to discriminate correctly by providing the proportion of times when the model predicts the use of the variant correctly. Our model has a high concordance index of `r   round(concordance_final_model, 2)`. According to the scale reported in Levshina [-@levshina_how_2015: 259], this indicates "outstanding discrimination".
+As Levshina [-@levshina_how_2015: 256] describes, the concordance index measures the ability of the model to discriminate correctly by providing the proportion of times when the model predicts the use of the variant correctly. Our model has a high concordance index of `r   round(concordance_final_model, 3)`. According to the scale reported by Levshina [-@levshina_how_2015: 259], this indicates "outstanding discrimination".
 
 **Significance**
 
-Additonally, we applied an overall significance test by comparing our final model to a model without predictors using an ANOVA [@gries_statistics_2021: 445-446].
+We applied an overall significance test by comparing our final model to a model without predictors (i.e. a null model) using an ANOVA [@gries_statistics_2021: 445-446].
 
 ```{r model2-significance, include = FALSE}
 null_model <- glmer(passive_variant ~ 1 + (1 | lemma) + (1 | speaker), data = passive_sample_clean, family = binomial)
@@ -905,13 +905,11 @@ kbl(anova_df, digits = 3) |>
   row_spec(2, bold = TRUE)
 ```
 
-The ANOVA, as captured by @tbl-anova, shows that our model is highly significant (LR-test=181.02, $p$ \<0.0001), indicating a strong improvement over the null model. The model has a vastly higher relative likelihood compared to the null model.
+As captured by @tbl-anova, the ANOVA shows that our model is highly significant (LR-test=181.02, $p$ \<0.0001), indicating a strong improvement over the null model. The model has a vastly higher relative likelihood compared to the null model.
 
 **Bootstrap Validation**
 
 We used bootstrapping to validate the stability of our model's coefficient estimates. This method involves random resampling with replacement from the original dataset, analysing each resample, and comparing the resulting estimates to the original. It allows for internal model validation without the need for new external test data [@levshina_how_2015: 166].
-
-For this, the `bootMer()` function from the `lme4` package [@R-lme4] was applied to our mixed-effects model, resampling 1000 times with the same random seed that we used during data sampling for reproducibility. When running `bootMer()` to validate the stability of the fixed effects in our model, we encountered singularity warnings in most of the bootstrap iterations. Convergence during bootstrapping was achieved only when the `bobyqa` optimiser was used. Although `isSingular()` returned `FALSE` for the final model, the instability across resamples indicates limited reliability. Removing the `speaker` effect resolved the singularity issues. This suggests that there may be too little variance between speakers to reliably estimate this random effect. However, removing `speaker` also increases the model’s AIC from 719.2 to 732.0, indicating a poorer overall fit. Additionally, excluding the random effect would change the model’s structure and require re-specification and re-evaluation, which exceeds the scope of this term paper. For interpretation, we therefore rely on our original model, while acknowledging its limitations in terms of robustness. We consider the simplified model without `speaker` (see @tbl-model-without-speaker) a potentially more stable alternative.
 
 ```{r bootstrap-validation, include = FALSE}
 
@@ -932,8 +930,6 @@ isSingular(final_model) #returns FALSE
 
 ```
 
-<div>
-
 ```{r final-model-no-speaker, include = TRUE}
 #| code-fold: true
 
@@ -947,7 +943,7 @@ final_model_no_speaker <- glmer(
 
 ```
 
-</div>
+For this, the `bootMer()` function from the `lme4` package [@R-lme4] was applied to our mixed-effects model, resampling 1000 times with the same random seed that we used during data sampling for reproducibility. When running `bootMer()` to validate the stability of the fixed effects in our model, we encountered singularity warnings in most of the bootstrap iterations. Convergence during bootstrapping was achieved only when the `bobyqa` optimiser was used. Although `isSingular()` returned `FALSE` for the final model, the instability across resamples indicates limited reliability. Removing the `speaker` effect resolved the singularity issues. This suggests that there may be too little variance between speakers to reliably estimate this random effect. However, removing `speaker` also increases the model’s AIC from `r round(AIC(final_model), 2)` to `r round(AIC(final_model_no_speaker), 2)`, indicating a poorer overall fit. Additionally, excluding the random effect would change the model’s structure and require re-specification and re-evaluation, which exceeds the scope of this term paper. For interpretation, we therefore rely on our original model, while acknowledging its limitations in terms of robustness. We consider the simplified model without `speaker` (see @tbl-model-without-speaker) a potentially more stable alternative.
 
 ```{r tab-model-no-speaker, echo = FALSE}
 #| label: tbl-model-without-speaker

@@ -441,7 +441,7 @@ This approach is also supported by linguistic analyses that suggest a continuum 
 
 ### Inter-Annotator Agreement {#sec-iaa}
 
-In preparation for statistical modelling, we annotated the filtered sample for the features outlined in @sec-factors. A blind annotation process was used, where Annotator A and Annotator B were unaware of each other’s annotations. As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all *compléments d' agents* of [se faire]{.smallcaps} during initial filtering, the column `agent_pp` was renamed to `agent_pp_A`. The datasets were then combined, variables were converted from characters to factors and empty values were replaced with `NA` to ensure proper handling of missing values in statistical analysis.
+In preparation for statistical modelling, we annotated the filtered sample for the features outlined in @sec-factors. A blind annotation process was used, where Annotator A and Annotator B were unaware of each other’s annotations. As [se faire]{.smallcaps} and [être]{.smallcaps} data were collected separately, some steps were necessary before conducting analyses on the data. First, the data was cleaned by aligning the speaker and reference columns. Since annotator A annotated all *compléments d' agents* of [se faire]{.smallcaps} during initial filtering, the column `agent_pp` was renamed to `agent_pp_A`. The datasets were then combined, variables were converted from characters to factors and empty values were replaced with `NA` to ensure proper handling of missing values in the statistical analysis.
 
 ```{r read-annotated-data, include = FALSE}
 sefaire_sample_annotated <- read.csv(file = here("data", "sefaire_sample_annotated.csv"))
@@ -511,7 +511,7 @@ passive_sample_combined |>
   summary()
 ```
 
-Since the analysis required detailed (and time-consuming) manual annotation, we decided to split the annotation work between us. However, to ensure consistent annotation, a representative sample of 320 observations (`r round(320/1064*100, 2)` of all instances) were annotated by both of us. For these instances, we calculated Cohen's ϰ (Kappa) as a measure of inter-annotator agreement, following Levshina [-@levshina_how_2015: 201]. The values and their interpretation are displayed in @tbl-kappa-values.
+Since the analysis required detailed (and time-consuming) manual annotation, we decided to split the annotation work between us. However, to ensure consistent annotation, a representative sample of 320 observations (`r round(320/1064*100, 2)`% of all instances) were annotated by both of us. For these instances, we calculated Cohen's ϰ (Kappa) as a measure of inter-annotator agreement, following Levshina [-@levshina_how_2015: 201]. The values and their interpretation are displayed in @tbl-kappa-values.
 
 ```{r cohens-kappa, include = FALSE}
 kappa_animacy <- ckappa(passive_sample_combined[c("subj_animacy_A", "subj_animacy_B")]) 
@@ -566,11 +566,11 @@ kappa_table |>
 
 ```
 
-We classified the ϰ-values using the influential benchmark categorisation of Landis and Koch [-@landis1977measurement: 165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". The mean inter-annotator agreement is high at `r  round(mean_kappa, 2)`. Agreement is lowest for the cateogories adversativity (`r round(kappa_adversativity$kappa, 2)`) and TAM (`r round(kappa_tam$kappa, 2)`).
+We classified the ϰ-values using the influential benchmark categorisation of Landis and Koch [-@landis1977measurement: 165], who define an agreement of 0.81 - 1.00 as "Almost Perfect". The mean inter-annotator agreement is high at `r  round(mean_kappa, 2)`. Agreement is lowest for the categories adversativity (`r round(kappa_adversativity$kappa, 2)`) and TAM (`r round(kappa_tam$kappa, 2)`).
 
 ### Data Preprocessing {#sec-data-preprocessing}
 
-For the main analysis, the combined data of [se faire]{.smallcaps} and [être]{.smallcaps} data were merged into one dataset where each column corresponds to one factor. The columns indicating factors include the annotations of the first annotator (i.e. annotator A for half of the observations, annotator B for the other half). The sample comprises 1064 observations, 532 for [se faire]{.smallcaps} and [être]{.smallcaps} each. We looked at the data distribution among the categories and levels to identify scarce combinations and patterns that could be problematic for analysis.
+For the main analysis, the combined data of [se faire]{.smallcaps} and [être]{.smallcaps} data were merged into a single dataset where each column corresponds to one factor. The columns indicating factors include the annotations of the first annotator (i.e. annotator A for half of the observations, annotator B for the other half). The sample comprises 1064 observations, 532 for [se faire]{.smallcaps} and [être]{.smallcaps} each. We looked at the data distribution among the categories and levels to identify scarce combinations and patterns that could be problematic for the analysis. A complete overview of frequencies can be found in @tbl-frequencies.
 
 ```{r merge-to-main-dataset}
 #| code-fold: true
@@ -612,11 +612,11 @@ table(passive_sample_clean$passive_variant, passive_sample_clean$cluster)
 table(passive_sample_clean$passive_variant, passive_sample_clean$adversativity)
 ```
 
-We observed certain patterns in the distribution of passive constructions across the levels of each factor: the subject animacy level "inanimate" has comparatively few occurrences with [se faire]{.smallcaps}. The subject gender level "mixed" appears infrequently overall and was excluded to avoid distorting the analysis and to ensure interpretability.
+We observed certain patterns in the passive distribution across the levels of each factor: the subject animacy level "inanimate" has comparatively few occurrences with [se faire]{.smallcaps}. The subject gender level "mixed" appears infrequently overall and was excluded to avoid distorting the analysis and to ensure interpretability.
 
-The subject gender level "unknown" appears much more often for [se faire]{.smallcaps} than for [être]{.smallcaps}. We suspected that this may be an annotation-related effect: when annotating gender, we took grammatical gender marking into account. Since [être]{.smallcaps} is realised with a participle that always agrees in gender with the subject, gender was always identifiable, and only impersonal constructions were annotated as "unknown". In contrast, [se faire]{.smallcaps} is very common in infinitive constructions, which do not indicate gender. Therefore, when gender was not inferable from the context, it was labelled "unknown". We suspect that this created an artifact, as "unknown" is strongly correlated with infinitive constructions, and thus with [se faire]{.smallcaps}. To test this, we created two separate datasets, one with "unknown" and one without, which will be compared in the analysis. The dataset without "unknown" contained 503 [être]{.smallcaps} and 367 [se faire]{.smallcaps} constructions.
+The subject gender level "unknown" occurs much more often with [se faire]{.smallcaps} than with [être]{.smallcaps}. We suspect that this may be an annotation-related effect: when annotating gender, we took grammatical gender marking into account. Since [être]{.smallcaps} is realised with a participle that always agrees in gender with the subject, gender was always identifiable, and only impersonal constructions were annotated as "unknown". In contrast, [se faire]{.smallcaps} is very common in infinitive constructions, which do not indicate gender. Therefore, when gender was not inferable from the context, it was labelled "unknown". We surmise that this created an artifact, as "unknown" is strongly correlated with infinitive constructions, and thus with [se faire]{.smallcaps}. To test this, we created two separate datasets, one with "unknown" and one without, which will be compared in the analysis. The dataset without "unknown" contains 503 [être]{.smallcaps} and 367 [se faire]{.smallcaps} constructions.
 
-The *complément d'agent* level "de" is also relatively rare with [se faire,]{.smallcaps} but we decided to keep it for interpretative reasons. However, we flagged it as a potential problem and kept the option open to exclude it later, if it proved to have a negative impact on the analysis.
+**The *complément d'agent* level "de" is also relatively rare with both variants, but we decided to keep it for interpretative reasons. However, we flagged it as a potential problem and kept the option open to exclude it later, if it proved to have a negative impact on the analysis.** <!-- maybe better to exclude/ delete because we never talk about it again? Or important that we recognise it? -->
 
 ```{r cleaning-main-data, include=FALSE}
 # exclude "mixed" gender because of low frequency (would likely skew the data)

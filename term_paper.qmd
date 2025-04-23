@@ -29,6 +29,7 @@ p {
 
 </style>
 ```
+
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -267,6 +268,7 @@ We recognize this "fuzzy" [@bohmann_large-scale_2023: 50] variable context as bo
 
 -   Subjects in passive sentences are preferably animate, definite, and pronominal. In the study by @da_cunha_lalternance_2020, animate, definite, and pronominal arguments that function as the objects in active sentences were more frequently found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice) -->
 ```
+
 ### Subject Responsibility {#sec-subj-resp}
 
 As indicated in @sec-debate, the question whether the referent of the subject of [se faire]{.smallcaps} holds any responsibility is central to the debate of the construction's passive-status [@sveberg_se_2012; @bellec_construction_2014: 212-213]. In line with their argument that [se faire]{.smallcaps} is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of [se faire]{.smallcaps} is always a causer and therefore always responsible to some degree. They contrast it to [être]{.smallcaps}'s subject referent, which is seen as more neutral [@gaatone_desagreable_1983: 164-166].
@@ -1558,6 +1560,7 @@ Visualization
 Supervision
 Project administration -->
 ```
+
 **Gina Reinhard**:
 
 -   Conceptualisation
@@ -1618,9 +1621,9 @@ Project administration -->
 
     -   @sec-introduction (Introduction)
 
-    -   @sec-se-faire: @sec-sefaire-structure-meaning, large parts of @sec-debate; @sec-factors: @sec-sefaire-context, @sec-subj-resp (Intro Subject Responsibility, Subject Animacy, Modal Verb), @sec-adversativity, contributions to Tense-Aspect-Mood (TAM) in @sec-aspectuality
+    -   @sec-se-faire, @sec-factors: @sec-sefaire-context, @sec-subj-resp (Intro Subject Responsibility, Subject Animacy, Modal Verb), @sec-adversativity, contributions to Tense-Aspect-Mood (TAM) in @sec-aspectuality
 
-    -   @sec-data-collection: @sec-corpus, @sec-semi-automatic-approach, @sec-iaa, @sec-data-preprocessing, contributions to @sec-filtering-criteria; all of @sec-log-regression except bootstrap validation
+    -   @sec-corpus, @sec-semi-automatic-approach, contributions to @sec-filtering-criteria, @sec-iaa, @sec-data-preprocessing, @sec-log-regression (except bootstrap validation)
 
     -   @sec-results-animacy, @sec-results-adversativity
 
@@ -1628,9 +1631,7 @@ Project administration -->
 
     -   @sec-conclusion (Conclusion)
 
-    -   (@sec-declaration-collab (Declaration of Collaboration))
-
--   Writing - Review & Editing: throughout the whole paper, especially in Discussion
+-   Writing - Review & Editing: throughout the whole paper
 
 -   Visualisation
 
@@ -1645,6 +1646,7 @@ Project administration -->
 
 -   Project administration) -->
 ```
+
 For a full overview of the exact contributions of each author, please consult our Git repository: <https://github.com/ginareinhard/sefairePassiveAlternation>
 
 # Appendix {.appendix}
@@ -1653,22 +1655,22 @@ For a full overview of the exact contributions of each author, please consult ou
 
 <div>
 
-| Verb Clusters [@francois_presentation_2007, 4]                    | Grouped Verb Clusters (Our Study) | Example Verbs                                                                                                                                                                                                 |
+| Verb Clusters [@francois_presentation_2007, 4] | Grouped Verb Clusters (Our Study) | Example Verbs |
 |--------------------|--------------------|--------------------------------|
-| giving, depriving (don, privation)                                | neutral                           | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*)      |
-| entering, leaving (entrée, sortie)                                | neutral                           | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*)                    |
-| hitting, touching (frapper, toucher)                              | hitting-touching                  | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*)                                                  |
-| movement in place (mouvement sur place)                           | neutral                           | \-                                                                                                                                                                                                            |
-| equipping, disarming (munir, démunir)                             | neutral                           | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie \[...\]*)                                                                                                            |
-| transformation, change (transformation, changement)               | neutral                           | remplacer (*\[...\] afin que le premier puisse se faire remplacer par le second \[...\]*)                                                                                                                     |
-| realisation, preparation (réalisation, mise en état)              | neutral                           | photographier (*J'ajoute la diminution du nombre de points où l'on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'identité ou son passeport*.) |
-| physical states and behaviours (états physiques et comportements) | neutral                           | aider (*\[...\] afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'en sont pas informés.*)                                                                    |
-| locative (locatif)                                                | neutral                           | domicilier (*Beaucoup trichent en se faisant domicilier chez un parent \[...\]*)                                                                                                                              |
-| union, reunion (union, réunion)                                   | neutral                           | \-                                                                                                                                                                                                            |
-| psychological verbs (verbes psychologiques)                       | neutral                           | écouter (*Le problème, on l'a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*)                                                          |
-| seizing, clasping, possessing (saisir, serrer, posséder)          | neutral                           | élire (*\[...\] avant que M. Hollande ne se fasse élire en affirmant qu'il ne signerait pas le TSCG en l'état.*)                                                                                              |
-| communication                                                     | communication                     | accuser (*\[...\] il est devenu impossible de l'exprimer dans le débat public sans se faire accuser de haïr les policiers \[...\]*)                                                                           |
-| auxiliary verbs                                                   | \-                                | \-                                                                                                                                                                                                            |
+| giving, depriving (don, privation) | neutral | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*) |
+| entering, leaving (entrée, sortie) | neutral | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*) |
+| hitting, touching (frapper, toucher) | hitting-touching | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*) |
+| movement in place (mouvement sur place) | neutral | \- |
+| equipping, disarming (munir, démunir) | neutral | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie \[...\]*) |
+| transformation, change (transformation, changement) | neutral | remplacer (*\[...\] afin que le premier puisse se faire remplacer par le second \[...\]*) |
+| realisation, preparation (réalisation, mise en état) | neutral | photographier (*J'ajoute la diminution du nombre de points où l'on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'identité ou son passeport*.) |
+| physical states and behaviours (états physiques et comportements) | neutral | aider (*\[...\] afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'en sont pas informés.*) |
+| locative (locatif) | neutral | domicilier (*Beaucoup trichent en se faisant domicilier chez un parent \[...\]*) |
+| union, reunion (union, réunion) | neutral | \- |
+| psychological verbs (verbes psychologiques) | neutral | écouter (*Le problème, on l'a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*) |
+| seizing, clasping, possessing (saisir, serrer, posséder) | neutral | élire (*\[...\] avant que M. Hollande ne se fasse élire en affirmant qu'il ne signerait pas le TSCG en l'état.*) |
+| communication | communication | accuser (*\[...\] il est devenu impossible de l'exprimer dans le débat public sans se faire accuser de haïr les policiers \[...\]*) |
+| auxiliary verbs | \- | \- |
 
 Verb Cluster Categorisation with Example Verbs Based on the Classes by @francois_presentation_2007 [4]
 

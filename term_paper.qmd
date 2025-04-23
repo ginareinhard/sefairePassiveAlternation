@@ -1249,7 +1249,7 @@ interaction_pvalue <- coefficients["subj_animacyinanimate:adversativitynon-adver
 
 ```
 
-The final logistic regression model (@tbl-final-model) reveals a highly significant interaction between subject animacy and adversativity with an odds ratio of `r   round(interaction_odds_ratio, 2)` and a confidence interval of `r   paste0(round(interaction_ci_min, 2), "-", round(interaction_ci_max, 2))` ($p$-value = `r   format(round(interaction_pvalue, 5), scientific = FALSE)`, rounded to \<0.001 in the model output). **This means that [se faire]{.smallcaps} is `r   round(interaction_odds_ratio, 2)` times as likely as [être]{.smallcaps} when the subject is inanimate and the context is non-adversative. Conversely, since the categories are binary, this also implies that [se faire]{.smallcaps} is much more likely in adversative contexts and with animate subjects than [être]{.smallcaps}.**
+The final logistic regression model (@tbl-final-model) reveals a highly significant interaction between subject animacy and adversativity with an odds ratio of `r   round(interaction_odds_ratio, 2)` and a confidence interval of `r   paste0(round(interaction_ci_min, 2), "-", round(interaction_ci_max, 2))` ($p$-value = `r   format(round(interaction_pvalue, 5), scientific = FALSE)`, rounded to \<0.001 in the model output). This means that [se faire]{.smallcaps} is `r   round(interaction_odds_ratio, 2)` times as likely as [être]{.smallcaps} when the subject is inanimate and the context is non-adversative. Conversely, since the categories are binary, this also implies that [se faire]{.smallcaps} is much more likely in adversative contexts and with animate subjects than [être]{.smallcaps}.
 
 ```{r interaction-pred, include = FALSE}
 

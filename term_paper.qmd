@@ -810,7 +810,7 @@ binnedplot(predictions, residuals(final_model, type = "response"))
 
 At first glance, the binned residuals visualised in @fig-binned-residuals appear to be quite random with no obvious patterns and with most residuals close to 0. The grey lines mark the bounds of the standard error; ideally, these bounds should emcompass 95% of the binned residuals [@Gelman_Hill_2006: 97]. Although the SE bounds essentially capture the shape of the residuals and the majority of the residuals fall within them, a considerable proportion also lie outside the desired area: 11 out of 29 (`r paste0(round(11/29, 2) * 100, "%")`), which is well above the desired 5%.
 
-In this context, a slight pattern emerges: negative deviations are more common for low to medium expected values (i.e. low predicted probabilities of [se faire]{.smallcaps}), while positive deviations occur more often for high expected values (i.e. high predicted probabilities of [se faire]{.smallcaps}). In the mid-range (0.3-0.7), where [être]{.smallcaps} and [se faire]{.smallcaps} are predicted to be about equally likely, the binned residuals are exclusively negative (y \< 0). Thus, when the correct level was [être]{.smallcaps}, the model often predicted a higher probability of [se faire]{.smallcaps}. This pattern is reversed for predicted probabilities above 0.7: all deviations are positive (y \> 0), indicating that when [se faire]{.smallcaps} was the correct variant, the model slightly underestimated the probabilities of [se faire]{.smallcaps} occurring and could have been more confident. In addition, there is one extremely negative bin between 0.4 and 0.5, indicating that the model drastically overestimated [se faire]{.smallcaps} in this range.
+In this context, a slight pattern emerges: negative deviations are more common for low to medium expected values (i.e. low predicted probabilities of [se faire]{.smallcaps}), while positive deviations occur more often for high expected values (i.e. high predicted probabilities of [se faire]{.smallcaps}). In the mid-range (0.3-0.7), where [être]{.smallcaps} and [se faire]{.smallcaps} are predicted to be about equally likely, the binned residuals are exclusively negative (y \< 0). Therefore, when the correct level was [être]{.smallcaps}, the model often predicted a higher probability of [se faire]{.smallcaps}. This is reversed for predicted probabilities above 0.7: all deviations are positive (y \> 0), indicating that when [se faire]{.smallcaps} was the correct variant, the model slightly underestimated the probabilities of [se faire]{.smallcaps} occurring and could have been more confident. In addition, there is one extremely negative bin between 0.4 and 0.5, indicating that the model drastically overestimated [se faire]{.smallcaps} in this range.
 
 To investigate these potentially problematic characteristics further and determine whether they indicate systematic prediction errors of the model, we conducted additional residuals tests. Following the recommendations of Gries [-@gries_statistics_2021: 445], we used functions from the `DHARMa` package [@R-DHARMa] to gain more detailed insight into the residuals structure.
 
@@ -884,7 +884,7 @@ anova_df$`Relative Likelihood` <- c(NA, rel_likelihood)
 
 ```{r anova-kable-tab, echo = FALSE}
 #| label: tbl-anova
-#| tbl-cap: ANOVA of the Final Model
+#| tbl-cap: ANOVA Results of the Final Model
 kbl(anova_df, digits = 3) |> 
   kable_styling(bootstrap_options = c("hover","responsive")) |> 
   row_spec(2, bold = TRUE)
@@ -915,6 +915,8 @@ isSingular(final_model) #returns FALSE
 
 ```
 
+For this, the `bootMer()` function from the `lme4` package [@R-lme4] was applied to our mixed-effects model, resampling 1000 times with the same random seed that we used during data sampling for reproducibility. When running `bootMer()` to validate the stability of the fixed effects in our model, we encountered singularity warnings in most of the bootstrap iterations. Convergence during bootstrapping was achieved only when the `bobyqa` optimiser was used. Although `isSingular()` returned `FALSE` for the final model, the instability across resamples indicates limited reliability. Removing the `speaker` effect (@tbl-model-without-speaker) resolved the singularity issues. This suggests that there may be too little variance between speakers to reliably estimate this random effect.
+
 ```{r final-model-no-speaker, include = TRUE}
 #| code-fold: true
 
@@ -928,8 +930,6 @@ final_model_no_speaker <- glmer(
 
 ```
 
-For this, the `bootMer()` function from the `lme4` package [@R-lme4] was applied to our mixed-effects model, resampling 1000 times with the same random seed that we used during data sampling for reproducibility. When running `bootMer()` to validate the stability of the fixed effects in our model, we encountered singularity warnings in most of the bootstrap iterations. Convergence during bootstrapping was achieved only when the `bobyqa` optimiser was used. Although `isSingular()` returned `FALSE` for the final model, the instability across resamples indicates limited reliability. Removing the `speaker` effect resolved the singularity issues. This suggests that there may be too little variance between speakers to reliably estimate this random effect. However, removing `speaker` also increases the model’s AIC from `r round(AIC(final_model), 2)` to `r round(AIC(final_model_no_speaker), 2)`, indicating a poorer overall fit. Additionally, excluding the random effect would change the model’s structure and require re-specification and re-evaluation, which exceeds the scope of this term paper. For interpretation, we therefore rely on our original model, while acknowledging its limitations in terms of robustness. We consider the simplified model without `speaker` (see @tbl-model-without-speaker) a potentially more stable alternative.
-
 ```{r tab-model-no-speaker, echo = FALSE}
 #| label: tbl-model-without-speaker
 #| tbl-cap: Results of the Final Model without the `speaker` Random Effect
@@ -937,6 +937,8 @@ For this, the `bootMer()` function from the `lme4` package [@R-lme4] was applied
 tab_model(final_model_no_speaker, show.aic = TRUE) 
 
 ```
+
+However, removing `speaker` also increases the model’s AIC from `r round(AIC(final_model), 2)` to `r round(AIC(final_model_no_speaker), 2)`, indicating a poorer overall fit. Additionally, excluding the random effect would change the model’s structure and require re-specification and re-evaluation, which exceeds the scope of this term paper. For interpretation, we therefore rely on our original model, while acknowledging its limitations in terms of robustness. We consider the simplified model without `speaker` (see @tbl-model-without-speaker) a potentially more stable alternative.
 
 As noted by Gries [-@gries_statistics_2021: 385], models often perform better on the data on which they were trained, but may not generalise to other samples if they adapt too closely to the structure and random variation of the training sample. This is called overfitting. According to Levshina [-@levshina_how_2015: 167], large differences between training and test performance (referred to as optimism) can indicate overfitting. In the summary of our bootstrap statistics for our final model in @tbl-bootstrap-summary, the differences between our original model and the means of the bootstrapped resamples can be seen in the bootstrap bias (`bootBias`). Note, however, that bootstrap validation does not provide information about how the model will perform on unseen data.
 

@@ -1645,7 +1645,7 @@ Project administration -->
 
 -   Project administration) -->
 ```
-For a full overview of the exact contributions of each author, please consult our Git repository: ...
+For a full overview of the exact contributions of each author, please consult our Git repository: <https://github.com/ginareinhard/sefairePassiveAlternation>
 
 # Appendix {.appendix}
 

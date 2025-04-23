@@ -898,14 +898,14 @@ We used bootstrapping to validate the stability of our model's coefficient estim
 
 ```{r bootstrap-validation, include = FALSE}
 
-# bootstrap_final_model <- bootMer(
-# final_model,
-# FUN = fixef,
-# nsim = 1000,
-# seed = 2142637384,
-# type = "parametric",
-# verbose = TRUE
-# )
+bootstrap_final_model <- bootMer(
+final_model,
+FUN = fixef,
+nsim = 1000,
+seed = 2142637384,
+type = "parametric",
+verbose = TRUE
+)
 
 ```
 
@@ -945,9 +945,9 @@ As noted by Gries [-@gries_statistics_2021: 385], models often perform better on
 ::: {#tbl-bootstrap-summary}
 ```{r bootstrap-summary, echo = FALSE}
 
-# bootstrap_summary <- summary(bootstrap_final_model)
-# 
-# kbl(bootstrap_summary)
+bootstrap_summary <- summary(bootstrap_final_model)
+
+kbl(bootstrap_summary)
 ```
 
 Bootstrap Statistics for the Final Model
@@ -957,19 +957,19 @@ For most predictors, the bootstrap bias is very small (at or below 0.05), indica
 
 ```{r bootstrap-df, include = FALSE}
 
-# bootstrap_df <- as.data.frame(bootstrap_final_model$t)
-# 
-# colnames(bootstrap_df) <- names(fixef(final_model))
+bootstrap_df <- as.data.frame(bootstrap_final_model$t)
+
+colnames(bootstrap_df) <- names(fixef(final_model))
 
 ```
 
 ::: {#fig-density-animacy}
 ```{r density-animacy, echo = FALSE}
 
-# ggplot(bootstrap_df, aes(x = subj_animacyinanimate)) +
-#  geom_density(fill = "lightblue") +
-#  labs(x = "Coefficient Estimate", y = "Density") +
-#  theme_minimal()
+ggplot(bootstrap_df, aes(x = subj_animacyinanimate)) +
+ geom_density(fill = "lightblue") +
+ labs(x = "Coefficient Estimate", y = "Density") +
+ theme_minimal()
 
 ```
 
@@ -981,10 +981,10 @@ In contrast, the distribution for the significant main effect `clustercommunicat
 ::: {#fig-density-cluster}
 ```{r density-cluster, echo = FALSE}
 
-# ggplot(bootstrap_df, aes(x = clustercommunication)) +
-# geom_density(fill = "lightblue") +
-# labs(x = "Coefficient Estimate", y = "Density") +
-# theme_minimal()
+ggplot(bootstrap_df, aes(x = clustercommunication)) +
+geom_density(fill = "lightblue") +
+labs(x = "Coefficient Estimate", y = "Density") +
+theme_minimal()
 
 ```
 

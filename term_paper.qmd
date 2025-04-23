@@ -703,21 +703,21 @@ kbl(levels_table)
 
 ### Model Selection {#sec-model-selection}
 
-We fit a mixed-effects binomial logistic regression model in `R` following Levshina [-@levshina_how_2015: 253-276] and Gries [-@gries_statistics_2021: 393-452]. The model estimates the log of the odds that a given construction is realized with [se faire]{.smallcaps}. To account for individual variation, we included the verb lemma and the speaker (as indicated in the meta data of ParlaMint 2.1) as random effects.
+We fit a mixed-effects binomial logistic regression model in `R` following Levshina [-@levshina_how_2015: 253-276] and Gries [-@gries_statistics_2021: 393-452]. The model estimates the log of the odds that a given construction is realised with [se faire]{.smallcaps}. To account for individual variation, we included the verb lemma and the speaker (as indicated in the meta data of ParlaMint 2.1) as random effects.
 
 We set a significance threshold $p$-value of 0.05 and applied backward stepwise selection [@gries_statistics_2021: 366]. Model quality was monitored and compared using the Aikaike Information Criterion (AIC), with preference given to the model with the lower AIC value [@gries_statistics_2021: 366]. Following Gries [-@gries_statistics_2021: 366], non-significant factors were removed one-by-one, starting with the one with the highest non-significant $p$-value. Additionally, we evaluated model fit using R^2^, aiming to find the model with the highest possible R^2^, that therefore explains most of the variance.
 
 ::: panel-tabset
 #### Maximal Model
 
-First, we constructed a model that includes all the factors described in @sec-levels, the interactions we hypothesised to be significant, and the random effects of speaker and lemma. While the model does not include all theoretically possible interactions, we considered it maximal in the sense that it encompasses all factors and interactions identified in the literature review as potentially meaningful and contributing to passive choice.
+First, we constructed a model that includes all the factors listed in @sec-levels, the interactions we hypothesised to be significant, and the random effects of speaker and lemma. While the model does not include all theoretically possible interactions, we considered it maximal in the sense that it encompasses all factors and interactions identified in the literature review as potentially meaningful and contributing to passive choice.
 
 `passive_variant ~ subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:gender + subj_animacy:cluster + subj_animacy:adversativity + cluster:adversativity + (1|lemma) + 1|speaker)`
 
 ```{r max-model-unknown, output = FALSE}
 #| code-fold: true
 model_max_unknown <- glmer(
-    passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:cluster + subj_animacy:adversativity + cluster:adversativity) + (1|speaker) + (1 | lemma),
+    passive_variant ~ (subj_animacy + subj_gender + agent_pp + modal + tam + cluster + adversativity + subj_animacy:subj_gender + subj_animacy:cluster + subj_animacy:adversativity + cluster:adversativity) + (1 | lemma) + (1|speaker),
     family = "binomial", 
     data = passive_sample_unknown,
     control = glmerControl(optimizer = "bobyqa")
@@ -726,7 +726,7 @@ model_max_unknown <- glmer(
 summary(model_max_unknown) #AIC: 771.3 
 ```
 
-@tbl-model-max-unknown shows the odds ratios, confidence intervals and $p$-values of the maximal model, along with the random effects, R^2^ and AIC. Although the main effect of `subj_gender` could not be interpreted due to its participation in an interaction, it is striking that the odds ratios of `subj_gender[unknown]` are very high with a huge confidence interval of 10.49 – 124.99. The AIC is `r round(AIC(model_max_unknown), 2)` with an R^2^ of 0.599 when excluding random effects and 0.748 when accounting for them. The vif-analysis, as displayed in @tbl-max-model-collinearity, revealed no high collinearity values for `subj_gender` or the interaction `subj_animacy:subj_gender`. However, as explained in @sec-data-preprocessing, we suspected an annotated-related artifact related to the level `unknown`. For that reason, we decided to compare the model to one fitted on the dataset without `unknown` constructions in the next step.
+@tbl-model-max-unknown shows the odds ratios, confidence intervals and $p$-values of the maximal model, along with the random effects, R^2^ and AIC. Although the main effect of `subj_gender` could not be interpreted due to its participation in an interaction, it is striking that the odds ratios of `subj_gender[unknown]` are very high with a huge confidence interval of 10.49 – 124.99. The AIC is `r round(AIC(model_max_unknown), 3)` with an R^2^ of 0.599 when excluding random effects and 0.748 when accounting for them. The vif-analysis, as displayed in @tbl-max-model-collinearity, revealed no high collinearity values for `subj_gender` or the interaction `subj_animacy:subj_gender`. However, as explained in @sec-data-preprocessing, we suspected an annotated-related artifact related to the level `unknown`. For that reason, in the next step, we decided to compare the model to one fitted on the dataset without `unknown`.
 
 ```{r max-model-unknown-tab, echo = FALSE}
 #| label: tbl-model-max-unknown
@@ -760,12 +760,12 @@ summary(model_max) #AIC: 732.5
 vif(model_max)
 ```
 
-After excluding `unknown`, the model's AIC improved substantially to `r round(AIC(model_max), 2)` (@tbl-model-max). The model has an R^2^ of 0.46 / 0.67. Although this is lower than for the model with `unknown`, and therefore explains less variance, overall, the model seems to make better (i.e. more stable and more precise) predictions. Since the variance explained by the random effects is larger than zero, the random effects had to be kept. Due to its better performance, the data without `unknown` were used in future models. However, the model with `unknown` was also optimised using backward stepwise selection and is reported in the appendix.
+After excluding `unknown`, the model's AIC improved substantially to `r round(AIC(model_max), 3)` (@tbl-model-max). The model has an R^2^ of 0.46 / 0.67. Although this is lower than for the model with `unknown`, and therefore explains less variance, overall, the model seems to make better (i.e. more stable and more precise) predictions. Since the variance explained by the random effects is larger than zero, the random effects had to be kept. Due to its better performance, the data without `unknown` were used in future models. However, the model with `unknown` was also optimised using backward stepwise selection and is reported in the appendix.
 
 ```{r full-passive-glmer-tab, echo = FALSE}
 #| label: tbl-model-max
 #| tbl-cap: Results of the Maximal Logistic Regression Model without `unknown`
-tab_model(model_max, show.aic = TRUE) #Marginal R2 / Conditional R2:	0.460 / 0.670
+tab_model(model_max, show.aic = TRUE)
 ```
 
 #### Model without Non-significant Interactions
@@ -779,16 +779,16 @@ model_back_1 <- glmer(
     control = glmerControl(optimizer = "bobyqa")
   )
 
-summary(model_back_1) #AIC: 725.4
+summary(model_back_1)
 vif(model_back_1)
 ```
 
-All non-significant interactions (`cluster:adversativity`, `subj_animacy:cluster`, `subj_animacy:subj_gender`) were removed, improving the AIC to `r round(AIC(model_back_1), 2)` with an R^2^ of 0.450 / 0.664 (@tbl-model-back-1). Thus, without the interactions, model accuracy increased while the explained variance decreased slightly. With $p$-values \> 0.05, the categories `subj_gender`, `agent_pp`, `modal` and `tam` were still found to be non-significant.
+All non-significant interactions (`subj_animacy:subj_gender`, `subj_animacy:cluster`, `cluster:adversativity`) were removed, improving the AIC to `r round(AIC(model_back_1), 3)` with an R^2^ of 0.450 / 0.664 (@tbl-model-back-1). Thus, without the interactions, model accuracy increases while the explained variance decreases slightly. With $p$-values \> 0.05, the categories `subj_gender`, `agent_pp`, `modal` and `tam` remain non-significant.
 
 ```{r model-back-1-tab, echo = FALSE}
 #| label: tbl-model-back-1
 #| tbl-cap: Results of the Logistic Regression Model without Non-significant Interactions
-tab_model(model_back_1, show.aic = TRUE) #	0.450 / 0.664 
+tab_model(model_back_1, show.aic = TRUE)
 ```
 
 #### Final Model
@@ -802,11 +802,11 @@ final_model <- glmer(
   data = passive_sample_clean,
   control = glmerControl(optimizer = "bobyqa")
 )
-final_model_summary <- summary(final_model) # AIC: 719.1
+final_model_summary <- summary(final_model)
 vif(final_model)
 ```
 
-Non-significant fixed effects were removed one-by-one, starting with `tam`, which has the highest $p$-value. At each step, the main effect with the highest $p$-value was eliminated. The results of the final model are reported in @tbl-final-model. Although `subj_gender` remained non-significant ($p$ \> 0.05), we retained it for theoretical and interpretative reasons. The AIC of `r round(AIC(final_model), 2)` indicates that removing `agent_pp`, `modal` and `tam` improved the model quality while R^2^ stayed constant at 0.451 / 0.662.
+Non-significant fixed effects were removed one-by-one, starting with `tam`, which has the highest $p$-value. At each step, the main effect with the highest $p$-value was eliminated. The results of the final model are reported in @tbl-final-model. Although `subj_gender` remains non-significant ($p$ \> 0.05), we retained it for theoretical and interpretative reasons. The AIC of `r round(AIC(final_model), 3)` indicates that removing `agent_pp`, `modal` and `tam` improves the model quality while R^2^ stays constant at 0.451 / 0.662.
 
 ```{r final-model-tab, echo = FALSE}
 #| label: tbl-final-model

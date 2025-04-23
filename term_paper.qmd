@@ -1,6 +1,5 @@
 ---
 title: "The French Passive Alternation: A Corpus-Based Study (of être and se faire) | A Corpus-Based Analysis of the French Passive Alternation"
-subtitle: ""
 author: "Rose Hörsting & Gina Reinhard"
 date: "`r format(Sys.Date())`"
 engine: knitr

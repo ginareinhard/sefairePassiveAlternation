@@ -30,6 +30,7 @@ p {
 
 </style>
 ```
+
 ```{r load-libraries, include=FALSE}
 
 library(here)
@@ -268,6 +269,7 @@ We recognize this "fuzzy" [@bohmann_large-scale_2023: 50] variable context as bo
 
 -   Subjects in passive sentences are preferably animate, definite, and pronominal. In the study by @da_cunha_lalternance_2020, animate, definite, and pronominal arguments that function as the objects in active sentences were more frequently found in the passive (and vice versa). -\> prominence / informational structure as significant factor. (And: constituent length, shorter constituents are preferred in subject position and favour the passive voice) -->
 ```
+
 ### Subject Responsibility {#sec-subj-resp}
 
 As indicated in @sec-debate, the question whether the referent of the subject of [se faire]{.smallcaps} holds any responsibility is central to the debate of the construction's passive-status [@sveberg_se_2012; @bellec_construction_2014: 212-213]. In line with their argument that [se faire]{.smallcaps} is a kind of causative, @gaatone_desagreable_1983 and @tasmowski-de_ryck_causatif_1987 state that the subject referent of [se faire]{.smallcaps} is always a causer and therefore always responsible to some degree. They contrast it to [être]{.smallcaps}'s subject referent, which is seen as more neutral [@gaatone_desagreable_1983: 164-166].
@@ -1504,7 +1506,7 @@ During the in-depth investigation of the alternation, the complexity of the cons
 
 <!-- although the French [être:se faire]{.smallcaps} alternation presents considerable analytical challenges due to its complexity,-->
 
-To summarise, the interaction between subject animacy and adversativity suggests that [se faire]{.smallcaps} emphasises subject affectedness more than [être]{.smallcaps}. The results also shows that [se faire]{.smallcaps} is not used exclusively with animate subjects, challenging previous research. While [être]{.smallcaps} remains clearly preferred for inanimate subjects, adversative verbs increase the likelihood of inanimate subjects being used with [se faire]{.smallcaps}. Furthermore, a main effect of the semantic verb cluster on this alternation was found, with communication verbs surprisingly favouring [se faire]{.smallcaps}. Notably, the exact magnitude of these findings may be specific to the specialised genre of parliamentary debates. Nevertheless, since the effects of animacy and adversativity were so strong, we expect them to be applicable to a variety of spoken French. The random effect of the lemma shows the important role of lexical effects in this alternation. However, the limitations of our dataset, annotation scheme, and model design require further refinement, particularly with regard to animacy, gender, aspect, and lexical variation. Methodologically, our model proves to be robust, but additional validation techniques may improve the assessment of its generalisability.
+To summarise, the interaction between subject animacy and adversativity suggests that [se faire]{.smallcaps} emphasises subject affectedness more than [être]{.smallcaps}. The results also show that [se faire]{.smallcaps} is not used exclusively with animate subjects, challenging previous research. While [être]{.smallcaps} remains clearly preferred for inanimate subjects, adversative verbs increase the likelihood of inanimate subjects being used with [se faire]{.smallcaps}. Furthermore, a main effect of the semantic verb cluster on this alternation was found, with communication verbs surprisingly favouring [se faire]{.smallcaps}. Notably, the exact magnitude of these findings may be specific to the specialised genre of parliamentary debates. Nevertheless, since the effects of animacy and adversativity were so strong, we expect them to be applicable to a variety of spoken French. The random effect of the lemma shows the important role of lexical effects in this alternation. However, the limitations of our dataset, annotation scheme, and model design require further refinement, particularly with regard to animacy, gender, aspect, and lexical variation. Methodologically, our model proves to be robust, but additional validation techniques may improve the assessment of its generalisability.
 
 <!-- discuss implications, key takeways; call for action for future research -->
 
@@ -1512,7 +1514,7 @@ To summarise, the interaction between subject animacy and adversativity suggests
 
 Our analysis reveals interesting results that could pave the way for further investigation. For instance, it might be illuminating to model the lemma as a fixed effect rather than a random effect for better control and interpretability. In addition, a model trained on comparable written and spoken data would allow the inclusion of mode as a factor, thereby assessing the exact distribution of both passive variants and tracking how much more common [se faire]{.smallcaps} really is in spoken language. An approach outside of regression modelling may also be valuable: we suggest memory-based learning as a method that makes predictions of class membership (i.e. passive choice) based on basic features.
 
-Overall, the corpus-based approach allowed us to meticulously model real-world spoken French and make substantiated inferences based on extensive statistical evidence. Therefore, we believe that this study offers a basis for future refined analyses of passive alternations in French. Our findings provide insight into the complex [être:se faire]{.smallcaps} alternation, and highlight the value of combining corpus-based methods with a theoretical framework when modelling linguistic alternations.
+Overall, the corpus-based approach allowed us to meticulously model real-world spoken French and make substantiated inferences based on extensive statistical evidence. Therefore, we believe that this study offers a basis for future refined analyses of passive alternations in French and other languages. Our findings provide insight into the complex [être:se faire]{.smallcaps} alternation, and highlight the value of combining corpus-based methods with a theoretical framework when modelling linguistic alternations.
 
 # References
 
@@ -1559,6 +1561,7 @@ Visualization
 Supervision
 Project administration -->
 ```
+
 **Gina Reinhard**:
 
 -   Conceptualisation
@@ -1586,6 +1589,8 @@ Project administration -->
     -   4 (...)
 
     -   5 (...)
+
+    -   ...
 
 -   Writing - Review & Editing: ...
 
@@ -1627,7 +1632,7 @@ Project administration -->
 
     -   @sec-conclusion (Conclusion)
 
-    -   (Declaration of Collaboration, @sec-declaration-collab)
+    -   (@sec-declaration-collab (Declaration of Collaboration))
 
 -   Writing - Review & Editing: throughout the whole paper, especially in Discussion
 
@@ -1644,6 +1649,7 @@ Project administration -->
 
 -   Project administration) -->
 ```
+
 For a full overview of the exact contributions of each author, please consult our Git repository: ...
 
 # Appendix {.appendix}
@@ -1652,22 +1658,22 @@ For a full overview of the exact contributions of each author, please consult ou
 
 <div>
 
-| Verb Clusters [@francois_presentation_2007, 4]                    | Grouped Verb Clusters (Our Study) | Example Verbs                                                                                                                                                                                                 |
+| Verb Clusters [@francois_presentation_2007, 4] | Grouped Verb Clusters (Our Study) | Example Verbs |
 |--------------------|--------------------|--------------------------------|
-| giving, depriving (don, privation)                                | neutral                           | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*)      |
-| entering, leaving (entrée, sortie)                                | neutral                           | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*)                    |
-| hitting, touching (frapper, toucher)                              | hitting-touching                  | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*)                                                  |
-| movement in place (mouvement sur place)                           | neutral                           | \-                                                                                                                                                                                                            |
-| equipping, disarming (munir, démunir)                             | neutral                           | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie \[...\]*)                                                                                                            |
-| transformation, change (transformation, changement)               | neutral                           | remplacer (*\[...\] afin que le premier puisse se faire remplacer par le second \[...\]*)                                                                                                                     |
-| realisation, preparation (réalisation, mise en état)              | neutral                           | photographier (*J'ajoute la diminution du nombre de points où l'on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'identité ou son passeport*.) |
-| physical states and behaviours (états physiques et comportements) | neutral                           | aider (*\[...\] afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'en sont pas informés.*)                                                                    |
-| locative (locatif)                                                | neutral                           | domicilier (*Beaucoup trichent en se faisant domicilier chez un parent \[...\]*)                                                                                                                              |
-| union, reunion (union, réunion)                                   | neutral                           | \-                                                                                                                                                                                                            |
-| psychological verbs (verbes psychologiques)                       | neutral                           | écouter (*Le problème, on l'a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*)                                                          |
-| seizing, clasping, possessing (saisir, serrer, posséder)          | neutral                           | élire (*\[...\] avant que M. Hollande ne se fasse élire en affirmant qu'il ne signerait pas le TSCG en l'état.*)                                                                                              |
-| communication                                                     | communication                     | accuser (*\[...\] il est devenu impossible de l'exprimer dans le débat public sans se faire accuser de haïr les policiers \[...\]*)                                                                           |
-| auxiliary verbs                                                   | \-                                | \-                                                                                                                                                                                                            |
+| giving, depriving (don, privation) | neutral | aider (*\[...\] une personne victime, à 57 ans, d'un accident entraînant l'apparition d'un handicap et qui se ferait aider pendant dix, quinze, voire vingt ans par son conjoint sans demander la PCH.*) |
+| entering, leaving (entrée, sortie) | neutral | engager (*\[...\] cela répond à votre attente à l'égard de fonctionnaires qui quitteraient l'administration pour se faire engager par ailleurs au moyen de contrats de forme différente.*) |
+| hitting, touching (frapper, toucher) | hitting-touching | tuer (*\[...\] ces hommes que l'on avait tant de difficulté à intégrer furent mobilisés pour aller combattre et se faire tuer au nom de notre pays \[...\]*) |
+| movement in place (mouvement sur place) | neutral | \- |
+| equipping, disarming (munir, démunir) | neutral | vacciner (*Il faut une prescription pour se faire vacciner contre la grippe en pharmacie \[...\]*) |
+| transformation, change (transformation, changement) | neutral | remplacer (*\[...\] afin que le premier puisse se faire remplacer par le second \[...\]*) |
+| realisation, preparation (réalisation, mise en état) | neutral | photographier (*J'ajoute la diminution du nombre de points où l'on peut se faire photographier et déposer son dossier en vue de faire établir ou renouveler sa carte nationale d'identité ou son passeport*.) |
+| physical states and behaviours (états physiques et comportements) | neutral | aider (*\[...\] afin de permettre aux enfants victimes de haine en ligne de se faire aider même si leurs parents n'en sont pas informés.*) |
+| locative (locatif) | neutral | domicilier (*Beaucoup trichent en se faisant domicilier chez un parent \[...\]*) |
+| union, reunion (union, réunion) | neutral | \- |
+| psychological verbs (verbes psychologiques) | neutral | écouter (*Le problème, on l'a dit, est de savoir comment mettre vraiment cela en pratique lorsque l'on constate une difficulté à se faire écouter.*) |
+| seizing, clasping, possessing (saisir, serrer, posséder) | neutral | élire (*\[...\] avant que M. Hollande ne se fasse élire en affirmant qu'il ne signerait pas le TSCG en l'état.*) |
+| communication | communication | accuser (*\[...\] il est devenu impossible de l'exprimer dans le débat public sans se faire accuser de haïr les policiers \[...\]*) |
+| auxiliary verbs | \- | \- |
 
 Verb Cluster Categorisation with Example Verbs Based on the Classes by @francois_presentation_2007 [4]
 

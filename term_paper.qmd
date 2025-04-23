@@ -722,7 +722,7 @@ model_max_unknown <- glmer(
 summary(model_max_unknown) #AIC: 771.3 
 ```
 
-@tbl-model-max-unknown shows the odds ratios, confidence intervals and $p$-values of the maximal model, along with the random effects, R^2^ and AIC. Although the main effect of `subj_gender` could not be interpreted due to its participation in an interaction, it is striking that the odds ratios of `subj_gender[unknown]` are very high with a huge confidence interval of 10.49 – 124.99. The AIC is `r round(AIC(model_max_unknown), 3)` with an R^2^ of 0.599 when excluding random effects and 0.748 when accounting for them. The vif-analysis, as displayed in @tbl-max-model-collinearity, revealed no high collinearity values for `subj_gender` or the interaction `subj_animacy:subj_gender`. However, as explained in @sec-data-preprocessing, we suspected an annotated-related artifact related to the level `unknown`. For that reason, in the next step, we decided to compare the model to one fitted on the dataset without `unknown`.
+@tbl-model-max-unknown shows the odds ratios, confidence intervals and $p$-values of the maximal model, along with the random effects, R^2^ and AIC. Although the main effect of `subj_gender` could not be interpreted due to its participation in an interaction, it is striking that the odds ratios of `subj_gender[unknown]` are very high with a huge confidence interval of 10.49 – 124.99. The AIC is `r round(AIC(model_max_unknown), 2)` with an R^2^ of 0.599 when excluding random effects and 0.748 when accounting for them. The vif-analysis, as displayed in @tbl-max-model-collinearity, revealed no high collinearity values for `subj_gender` or the interaction `subj_animacy:subj_gender`. However, as explained in @sec-data-preprocessing, we suspected an annotated-related artifact related to the level `unknown`. For that reason, in the next step, we decided to compare the model to one fitted on the dataset without `unknown`.
 
 ```{r max-model-unknown-tab, echo = FALSE}
 #| label: tbl-model-max-unknown
@@ -756,7 +756,7 @@ summary(model_max) #AIC: 732.5
 vif(model_max)
 ```
 
-After excluding `unknown`, the model's AIC improved substantially to `r round(AIC(model_max), 3)` (@tbl-model-max). The model has an R^2^ of 0.46 / 0.67. Although this is lower than for the model with `unknown`, and therefore explains less variance, overall, the model seems to make better (i.e. more stable and more precise) predictions. Since the variance explained by the random effects is larger than zero, the random effects had to be kept. Due to its better performance, the data without `unknown` were used in future models. However, the model with `unknown` was also optimised using backward stepwise selection and is reported in the appendix.
+After excluding `unknown`, the model's AIC improved substantially to `r round(AIC(model_max), 2)` (@tbl-model-max). The model has an R^2^ of 0.46 / 0.67. Although this is lower than for the model with `unknown`, and therefore explains less variance, overall, the model seems to make better (i.e. more stable and more precise) predictions. Since the variance explained by the random effects is larger than zero, the random effects had to be kept. Due to its better performance, the data without `unknown` were used in future models. However, the model with `unknown` was also optimised using backward stepwise selection and is reported in the appendix.
 
 ```{r full-passive-glmer-tab, echo = FALSE}
 #| label: tbl-model-max
@@ -779,7 +779,7 @@ summary(model_back_1)
 vif(model_back_1)
 ```
 
-All non-significant interactions (`subj_animacy:subj_gender`, `subj_animacy:cluster`, `cluster:adversativity`) were removed, improving the AIC to `r round(AIC(model_back_1), 3)` with an R^2^ of 0.450 / 0.664 (@tbl-model-back-1). Thus, without the interactions, model accuracy increases while the explained variance decreases slightly. With $p$-values \> 0.05, the categories `subj_gender`, `agent_pp`, `modal` and `tam` remain non-significant.
+All non-significant interactions (`subj_animacy:subj_gender`, `subj_animacy:cluster`, `cluster:adversativity`) were removed, improving the AIC to `r round(AIC(model_back_1), 2)` with an R^2^ of 0.450 / 0.664 (@tbl-model-back-1). Thus, without the interactions, model accuracy increases while the explained variance decreases slightly. With $p$-values \> 0.05, the categories `subj_gender`, `agent_pp`, `modal` and `tam` remain non-significant.
 
 ```{r model-back-1-tab, echo = FALSE}
 #| label: tbl-model-back-1
@@ -802,7 +802,7 @@ final_model_summary <- summary(final_model)
 vif(final_model)
 ```
 
-Non-significant fixed effects were removed one-by-one, starting with `tam`, which has the highest $p$-value. At each step, the main effect with the highest $p$-value was eliminated. The results of the final model are reported in @tbl-final-model. Although `subj_gender` remains non-significant ($p$ \> 0.05), we retained it for theoretical and interpretative reasons. The AIC of `r round(AIC(final_model), 3)` indicates that removing `agent_pp`, `modal` and `tam` improves the model quality while R^2^ stays constant at 0.451 / 0.662.
+Non-significant fixed effects were removed one-by-one, starting with `tam`, which has the highest $p$-value. At each step, the main effect with the highest $p$-value was eliminated. The results of the final model are reported in @tbl-final-model. Although `subj_gender` remains non-significant ($p$ \> 0.05), we retained it for theoretical and interpretative reasons. The AIC of `r round(AIC(final_model), 2)` indicates that removing `agent_pp`, `modal` and `tam` improves the model quality while R^2^ stays constant at 0.451 / 0.662.
 
 ```{r final-model-tab, echo = FALSE}
 #| label: tbl-final-model
@@ -913,8 +913,6 @@ As captured by @tbl-anova, the ANOVA shows that our model is highly significant 
 
 We used bootstrapping to validate the stability of our model's coefficient estimates. This method involves random resampling with replacement from the original dataset, analysing each resample, and comparing the resulting estimates to the original. It allows for internal model validation without the need for new external test data [@levshina_how_2015: 166].
 
-For this, the `bootMer()` function from the `lme4` package [@R-lme4] was applied to our mixed-effects model, resampling 1000 times with the same random seed that we used during data sampling for reproducibility. When running `bootMer()` to validate the stability of the fixed effects in our model, we encountered singularity warnings in most of the bootstrap iterations. Convergence during bootstrapping was achieved only when the `bobyqa` optimiser was used. Although `isSingular()` returned `FALSE` for the final model, the instability across resamples indicates limited reliability. Removing the `speaker` effect resolved the singularity issues. This suggests that there may be too little variance between speakers to reliably estimate this random effect. However, removing `speaker` also increases the model’s AIC from 719.2 to 732.0, indicating a poorer overall fit. Additionally, excluding the random effect would change the model’s structure and require re-specification and re-evaluation, which exceeds the scope of this term paper. For interpretation, we therefore rely on our original model, while acknowledging its limitations in terms of robustness. We consider the simplified model without `speaker` (see @tbl-model-without-speaker) a potentially more stable alternative.
-
 ```{r bootstrap-validation, include = FALSE}
 
 # bootstrap_final_model <- bootMer(
@@ -934,8 +932,6 @@ isSingular(final_model) #returns FALSE
 
 ```
 
-<div>
-
 ```{r final-model-no-speaker, include = TRUE}
 #| code-fold: true
 
@@ -949,7 +945,7 @@ final_model_no_speaker <- glmer(
 
 ```
 
-</div>
+For this, the `bootMer()` function from the `lme4` package [@R-lme4] was applied to our mixed-effects model, resampling 1000 times with the same random seed that we used during data sampling for reproducibility. When running `bootMer()` to validate the stability of the fixed effects in our model, we encountered singularity warnings in most of the bootstrap iterations. Convergence during bootstrapping was achieved only when the `bobyqa` optimiser was used. Although `isSingular()` returned `FALSE` for the final model, the instability across resamples indicates limited reliability. Removing the `speaker` effect resolved the singularity issues. This suggests that there may be too little variance between speakers to reliably estimate this random effect. However, removing `speaker` also increases the model’s AIC from `r round(AIC(final_model), 2)` to `r round(AIC(final_model_no_speaker), 2)`, indicating a poorer overall fit. Additionally, excluding the random effect would change the model’s structure and require re-specification and re-evaluation, which exceeds the scope of this term paper. For interpretation, we therefore rely on our original model, while acknowledging its limitations in terms of robustness. We consider the simplified model without `speaker` (see @tbl-model-without-speaker) a potentially more stable alternative.
 
 ```{r tab-model-no-speaker, echo = FALSE}
 #| label: tbl-model-without-speaker

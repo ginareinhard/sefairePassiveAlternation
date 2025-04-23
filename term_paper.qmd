@@ -772,7 +772,7 @@ summary(model_max) #AIC: 732.5
 vif(model_max)
 ```
 
-After excluding `unknown`, the model's AIC improved substantially to `r round(AIC(model_max), 2)` (@tbl-model-max). The model has an R^2^ of 0.46 / 0.67. Although this is lower than for the model with `unknown`, and therefore explains less variance, overall, the model seems to make better (i.e. more stable and more precise) predictions. Since the variance explained by the random effects is larger than zero, the random effects had to be kept. Due to its better performance, the data without `unknown` were used in future models.
+After excluding `unknown`, the model's AIC improved substantially to `r round(AIC(model_max), 2)` (@tbl-model-max). The model has an R^2^ of 0.46 / 0.67. Although this is lower than for the model with `unknown`, and therefore explains less variance, overall, the model seems to make better (i.e. more stable and more precise) predictions. Since the variance explained by the random effects is larger than zero, the random effects had to be kept. Due to its better performance, the data without `unknown` were used in future models. However, the model with `unknown` was also optimised using backward stepwise selection and is reported in the appendix.
 
 ```{r full-passive-glmer-tab, echo = FALSE}
 #| label: tbl-model-max
@@ -1544,23 +1544,6 @@ read.bibtex(file = "packages.bib")
 
 We, Gina Reinhard and Rose Hörsting, wrote this term paper in close collaboration. All decisions were made by mutual agreement. We both contributed equally to the planning, design, and analysis of this study. The following authors' statement is based on the [CRediT author statement](https://www.elsevier.com/researcher/author/policies-and-guidelines/credit-author-statement) and provides a detailed description of who was responsible for which parts and to what extent. The categories suggested by CRediT are adapted for our purposes and supplemented by references to the corresponding sections of this paper. Notably, many sections were true team efforts and cannot be clearly attributed to one person alone. In such cases, the contributions are listed for both authors.
 
-```{=html}
-<!-- CRediT author statement - categories
-Conceptualization
-Methodology
-Software
-Validation
-Formal analysis
-Investigation
-Resources
-Data Curation
-Writing-Original Draft
-Writing - Review & Editing
-Visualization
-Supervision
-Project administration -->
-```
-
 **Gina Reinhard**:
 
 -   Conceptualisation
@@ -1619,7 +1602,7 @@ Project administration -->
 
 -   Writing - Original Draft (including Code)
 
-    -   @sec-introduction (Introduction)
+    -   @sec-introduction
 
     -   @sec-se-faire, @sec-factors: @sec-sefaire-context, @sec-subj-resp (Intro Subject Responsibility, Subject Animacy, Modal Verb), @sec-adversativity, contributions to Tense-Aspect-Mood (TAM) in @sec-aspectuality
 
@@ -1629,7 +1612,7 @@ Project administration -->
 
     -   contributions to @sec-discussion (first three paragraphs & second to last paragraph)
 
-    -   @sec-conclusion (Conclusion)
+    -   @sec-conclusion
 
 -   Writing - Review & Editing: throughout the whole paper
 
@@ -1638,14 +1621,6 @@ Project administration -->
     -   @tbl-kappa-values, @tbl-levels, @tbl-model-max-unknown, @tbl-max-model-collinearity, @tbl-model-max, @tbl-model-back-1, @tbl-final-model, @tbl-anova, contributions to @tbl-frequencies
 
     -   @fig-binned-residuals, @fig-dharma-dispersion, @fig-dharma-qq, @fig-adversativity, @fig-animacy-adversativity-log
-
-```{=html}
-<!--   (Resources / Provision of study materials, reagents, materials, patients, laboratory samples, animals, instrumentation, computing resources, or other analysis tools)
-
--   Supervision
-
--   Project administration) -->
-```
 
 For a full overview of the exact contributions of each author, please consult our Git repository: <https://github.com/ginareinhard/sefairePassiveAlternation>
 
